@@ -6,13 +6,20 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
-    public string newGameScene;
+    public string characterSelectionScene;
+
+    public string gameSelectionScene;
 
     public GameObject continueButton;
+
+    public GameObject ConfirmationWindow;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        ConfirmationWindow.SetActive(false);
+
         if(PlayerPrefs.HasKey("Current_Scene"))
         {
             continueButton.SetActive(true);
@@ -33,16 +40,26 @@ public class MainMenu : MonoBehaviour
     //Functions for each button of the MainMenu
     public void Continue()
     {
-
+        SceneManager.LoadScene(gameSelectionScene);
     }
 
     public void NewGame()
     {
-        SceneManager.LoadScene(newGameScene);
+        SceneManager.LoadScene(characterSelectionScene);
+    }
+
+    public void ConfirmationWindowDisplay()
+    {
+        ConfirmationWindow.SetActive(true);
     }
 
     public void Exit()
     {
         Application.Quit();
+    }
+
+    public void NoExit()
+    {
+        ConfirmationWindow.SetActive(false);
     }
 }
