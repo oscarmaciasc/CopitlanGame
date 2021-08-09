@@ -1507,11 +1507,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1808583397}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 824d05089798f0e48802f489bdfdff68, type: 3}
+  m_Script: {fileID: 11500000, guid: 578f8e075d7a6794896b41478c9d9b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newGameScene: SampleScene
-  continueButton: {fileID: 815494422}
+  ConfirmationWindow: {fileID: 129610504}
 --- !u!114 &1808583399
 MonoBehaviour:
   m_ObjectHideFlags: 0
