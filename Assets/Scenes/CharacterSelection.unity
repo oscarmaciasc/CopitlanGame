@@ -636,6 +636,7 @@ GameObject:
   - component: {fileID: 456624076}
   - component: {fileID: 456624075}
   - component: {fileID: 456624074}
+  - component: {fileID: 456624073}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -643,6 +644,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &456624073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456624072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dd46e1a7425f6489764aff9d13f235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &456624074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -808,7 +821,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 577833499}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 456624073}
+        m_TargetAssemblyTypeName: CharacterSelection, Assembly-CSharp
+        m_MethodName: BackToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &577833499
 MonoBehaviour:
   m_ObjectHideFlags: 0
