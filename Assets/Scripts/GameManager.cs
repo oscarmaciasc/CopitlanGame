@@ -15,7 +15,44 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            //ExitMenu.instance.gameobject.setActive(true);
+            Debug.Log("Menu de salida");
+        }
+
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            //
+            Debug.Log("Menu de pausa");
+        }
+
+        if(Input.GetKeyDown(KeyCode.V))
+        {
+            //
+            Debug.Log("Flauta");
+        }
+
+
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            //
+            Debug.Log("Globo");
+        }
+
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            //
+            Debug.Log("Inventario");
+        }
+
+
+        if(Input.GetKeyDown(KeyCode.M))
+        {
+            //
+            Debug.Log("Mapa");
+        }
     }
 
     public void SaveData()
