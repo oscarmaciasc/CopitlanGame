@@ -204,7 +204,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 64888656}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1808583398}
+        m_TargetAssemblyTypeName: GameSelection, Assembly-CSharp
+        m_MethodName: BackToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &64888656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -947,7 +959,7 @@ GameObject:
   - component: {fileID: 737091742}
   - component: {fileID: 737091741}
   m_Layer: 5
-  m_Name: Exit
+  m_Name: Delete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -966,7 +978,7 @@ RectTransform:
   m_Children:
   - {fileID: 540709808}
   m_Father: {fileID: 1952271608}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1017,9 +1029,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: Exit
+      - m_Target: {fileID: 1808583398}
+        m_TargetAssemblyTypeName: GameSelection, Assembly-CSharp
+        m_MethodName: Delete
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1080,7 +1092,7 @@ GameObject:
   - component: {fileID: 773323554}
   - component: {fileID: 773323553}
   m_Layer: 5
-  m_Name: NotExit
+  m_Name: NoDelete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1099,7 +1111,7 @@ RectTransform:
   m_Children:
   - {fileID: 97710372}
   m_Father: {fileID: 1952271608}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1150,9 +1162,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: NoExit
+      - m_Target: {fileID: 1808583398}
+        m_TargetAssemblyTypeName: GameSelection, Assembly-CSharp
+        m_MethodName: NoDelete
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1867,7 +1879,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 578f8e075d7a6794896b41478c9d9b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConfirmationWindow: {fileID: 2103549603}
+  ConfirmationWindowDelete: {fileID: 2103549603}
+  Games:
+  - {fileID: 486415425}
+  - {fileID: 850509801}
+  - {fileID: 1449483665}
+  Names:
+  - Juego de Jaime
+  - Juego de Ter
+  - 
 --- !u!114 &1808583399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2030,7 +2050,7 @@ GameObject:
   - component: {fileID: 1952271608}
   - component: {fileID: 1952271609}
   m_Layer: 5
-  m_Name: ButtonsExitDiolog
+  m_Name: ButtonsDeleteDialog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2047,8 +2067,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 737091740}
   - {fileID: 773323552}
+  - {fileID: 737091740}
   m_Father: {fileID: 2103549604}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2165,7 +2185,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2053977386}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1808583398}
+        m_TargetAssemblyTypeName: GameSelection, Assembly-CSharp
+        m_MethodName: ConfirmationWindowDisplayDelete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2053977386
 MonoBehaviour:
   m_ObjectHideFlags: 0
