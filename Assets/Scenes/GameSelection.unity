@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 13516543}
   - component: {fileID: 13516542}
   m_Layer: 5
-  m_Name: Games (2)
+  m_Name: Game2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158,7 +158,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1763.4502, y: 249.8376}
+  m_SizeDelta: {x: 1780, y: 247.2155}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &13516542
 MonoBehaviour:
@@ -595,13 +595,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding:
     m_Left: 70
-    m_Right: 0
+    m_Right: 70
     m_Top: 80
     m_Bottom: 80
   m_ChildAlignment: 0
   m_Spacing: 80
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
@@ -1374,7 +1374,7 @@ GameObject:
   - component: {fileID: 1273558473}
   - component: {fileID: 1273558472}
   m_Layer: 5
-  m_Name: Games (3)
+  m_Name: Game3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1397,7 +1397,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1763.4502, y: 249.8376}
+  m_SizeDelta: {x: 1780, y: 247.2155}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1273558472
 MonoBehaviour:
@@ -1781,6 +1781,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ConfirmationWindowDelete: {fileID: 129610504}
+  Games:
+  - {fileID: 1958595363}
+  - {fileID: 13516540}
+  - {fileID: 1273558470}
+  Names:
+  - Partida de Alfredo
+  - Partide de Jaime
+  - 
 --- !u!114 &1808583399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1877,7 +1885,7 @@ GameObject:
   - component: {fileID: 1958595366}
   - component: {fileID: 1958595365}
   m_Layer: 5
-  m_Name: Games (1)
+  m_Name: Game1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1900,7 +1908,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1763.4502, y: 249.8376}
+  m_SizeDelta: {x: 1780, y: 247.2155}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1958595365
 MonoBehaviour:
