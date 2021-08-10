@@ -4,17 +4,34 @@ using UnityEngine;
 
 public class GameSelection : MonoBehaviour
 {
-    public GameObject ConfirmationWindow;
+    public GameObject ConfirmationWindowDelete;
+
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        ConfirmationWindow.SetActive(false);
+        ConfirmationWindowDelete.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void ConfirmationWindowDisplayDelete()
+    {
+        ConfirmationWindowDelete.SetActive(true);
+    }
+
+    public void Delete()
+    {
+
+    }
+
+    public void NoDelete()
+    {
+        ConfirmationWindowDelete.SetActive(false);
     }
 }
