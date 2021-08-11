@@ -40,7 +40,7 @@ public class GameSelection : MonoBehaviour
 
     public void Delete()
     {
-
+        //Delete the selected game
     }
 
     public void NoDelete()
@@ -51,5 +51,15 @@ public class GameSelection : MonoBehaviour
     public void BackToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void StartSequence()
+    {
+
+    }
+
+    public void LoadGame()
+    {
+
     }
 }
