@@ -2076,6 +2076,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   confirmationWindowDelete: {fileID: 2103549603}
   deleteGameButton: {fileID: 2053977383}
+  loadGameButton: {fileID: 815494422}
   games:
   - {fileID: 486415425}
   - {fileID: 850509801}

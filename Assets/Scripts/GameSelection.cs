@@ -7,6 +7,7 @@ public class GameSelection : MonoBehaviour
 {
     public GameObject confirmationWindowDelete;
     public GameObject deleteGameButton;
+    public GameObject loadGameButton;
     public GameObject[] games;
 
     public string[] names = new string[3];
@@ -16,6 +17,7 @@ public class GameSelection : MonoBehaviour
     {
         confirmationWindowDelete.SetActive(false);
         deleteGameButton.SetActive(false);
+        loadGameButton.SetActive(false);
 
         for (int i = 0; i < 3; i++)
         {
@@ -69,6 +71,7 @@ public class GameSelection : MonoBehaviour
     public void GameSelected()
     {
         deleteGameButton.SetActive(true);
+        loadGameButton.SetActive(true);
         //return in the function the id or name of the game we want to delete
     }
 }
