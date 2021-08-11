@@ -8,12 +8,17 @@ public class CharacterSelection : MonoBehaviour
 {
 
     public InputField nameInputField;
-    public string auxString;
+
+    public GameObject femaleArrow;
+    public GameObject maleArrow;
+
+    [SerializeField] private GameObject placeHolder;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        femaleArrow.SetActive(false);
+        maleArrow.SetActive(false);
     }
 
     // Update is called once per frame
@@ -29,15 +34,23 @@ public class CharacterSelection : MonoBehaviour
 
     public void LimitInputString()
     {
-        if (nameInputField.text.Length > 12)
-        {
-            /*auxString = nameInputField.text;
-            nameInputField.text.Remove();
-            for(int i=0; i<12; i++)
-            {
-                nameInputField.text += auxString[i].ToString();
-            }*/
-            nameInputField.characterLimit = 12;
-        }
+        nameInputField.characterLimit = 12;
+    }
+
+    public void Male()
+    {
+        femaleArrow.SetActive(false);
+        maleArrow.SetActive(true);
+    }
+
+    public void Female()
+    {
+        maleArrow.SetActive(false);
+        femaleArrow.SetActive(true);
+    }
+
+    public void DeactivatePlaceHolder()
+    {
+        nameInputField.placeholder.GetComponent<Text>().text = "";
     }
 }
