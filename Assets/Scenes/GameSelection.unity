@@ -2074,15 +2074,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 578f8e075d7a6794896b41478c9d9b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConfirmationWindowDelete: {fileID: 2103549603}
-  DeleteGameButton: {fileID: 2053977383}
-  Games:
+  confirmationWindowDelete: {fileID: 2103549603}
+  deleteGameButton: {fileID: 2053977383}
+  games:
   - {fileID: 486415425}
   - {fileID: 850509801}
   - {fileID: 1449483665}
-  Names:
-  - Juego de Jaime
-  - Juego de Ter
+  names:
+  - Partida de Jaime
+  - Partida de Ter
   - 
 --- !u!114 &1808583399
 MonoBehaviour:

@@ -12,13 +12,13 @@ public class MainMenu : MonoBehaviour
 
     public GameObject continueButton;
 
-    public GameObject ConfirmationWindow;
+    public GameObject confirmationWindow;
 
     // Start is called before the first frame update
     void Start()
     {
 
-        ConfirmationWindow.SetActive(false);
+        confirmationWindow.SetActive(false);
 
         /*if(PlayerPrefs.HasKey("Current_Scene"))
         {
@@ -50,7 +50,7 @@ public class MainMenu : MonoBehaviour
 
     public void ConfirmationWindowDisplay()
     {
-        ConfirmationWindow.SetActive(true);
+        confirmationWindow.SetActive(true);
     }
 
     public void Exit()
@@ -60,6 +60,6 @@ public class MainMenu : MonoBehaviour
 
     public void NoExit()
     {
-        ConfirmationWindow.SetActive(false);
+        confirmationWindow.SetActive(false);
     }
 }

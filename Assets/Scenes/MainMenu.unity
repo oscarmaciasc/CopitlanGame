@@ -1670,7 +1670,7 @@ MonoBehaviour:
   characterSelectionScene: CharacterSelection
   gameSelectionScene: GameSelection
   continueButton: {fileID: 1701207540}
-  ConfirmationWindow: {fileID: 1366909335}
+  confirmationWindow: {fileID: 1366909335}
 --- !u!1 &1804446645
 GameObject:
   m_ObjectHideFlags: 0

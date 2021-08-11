@@ -5,27 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class GameSelection : MonoBehaviour
 {
-    public GameObject ConfirmationWindowDelete;
-    public GameObject DeleteGameButton;
-    public GameObject[] Games;
+    public GameObject confirmationWindowDelete;
+    public GameObject deleteGameButton;
+    public GameObject[] games;
 
-    public string[] Names = new string[3];
+    public string[] names = new string[3];
 
     // Start is called before the first frame update
     void Start()
     {
-        ConfirmationWindowDelete.SetActive(false);
-        DeleteGameButton.SetActive(false);
+        confirmationWindowDelete.SetActive(false);
+        deleteGameButton.SetActive(false);
 
         for (int i = 0; i < 3; i++)
         {
-            if (Names[i] != "")
+            if (names[i] != "")
             {
-                Games[i].gameObject.SetActive(true);
+                games[i].gameObject.SetActive(true);
             }
             else
             {
-                Games[i].gameObject.SetActive(false);
+                games[i].gameObject.SetActive(false);
             }
         }
     }
@@ -38,7 +38,7 @@ public class GameSelection : MonoBehaviour
 
     public void ConfirmationWindowDisplayDelete()
     {
-        ConfirmationWindowDelete.SetActive(true);
+        confirmationWindowDelete.SetActive(true);
     }
 
     public void Delete()
@@ -48,7 +48,7 @@ public class GameSelection : MonoBehaviour
 
     public void NoDelete()
     {
-        ConfirmationWindowDelete.SetActive(false);
+        confirmationWindowDelete.SetActive(false);
     }
 
     public void BackToMainMenu()
@@ -68,7 +68,7 @@ public class GameSelection : MonoBehaviour
 
     public void GameSelected()
     {
-        DeleteGameButton.SetActive(true);
+        deleteGameButton.SetActive(true);
         //return in the function the id or name of the game we want to delete
     }
 }
