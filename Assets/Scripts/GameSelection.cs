@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameSelection : MonoBehaviour
@@ -16,8 +17,20 @@ public class GameSelection : MonoBehaviour
     void Start()
     {
         confirmationWindowDelete.SetActive(false);
-        deleteGameButton.SetActive(false);
-        loadGameButton.SetActive(false);
+        //deleteGameButton.SetActive(false);
+        //loadGameButton.SetActive(false);
+        deleteGameButton.GetComponent<Button>().interactable = false;
+        loadGameButton.GetComponent<Button>().interactable = false;
+
+        //Changin color and outline color when no game is selected
+        if (deleteGameButton.GetComponent<Button>().interactable == false || loadGameButton.GetComponent<Button>().interactable == false)
+        {
+            loadGameButton.transform.Find("Text").gameObject.GetComponent<Text>().color = new Color32(173, 134, 80, 140);
+            loadGameButton.transform.Find("Text").gameObject.GetComponent<Outline>().effectColor = new Color32(62, 38, 19, 140);
+
+            deleteGameButton.transform.Find("Text").gameObject.GetComponent<Text>().color = new Color32(173, 134, 80, 140);
+            deleteGameButton.transform.Find("Text").gameObject.GetComponent<Outline>().effectColor = new Color32(62, 38, 19, 140);
+        }
 
         for (int i = 0; i < 3; i++)
         {
@@ -35,7 +48,15 @@ public class GameSelection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        //Changin color and outline color when a game is selected
+        if (deleteGameButton.GetComponent<Button>().interactable == true || loadGameButton.GetComponent<Button>().interactable == true)
+        {
+            loadGameButton.transform.Find("Text").gameObject.GetComponent<Text>().color = new Color32(173, 134, 80, 255);
+            loadGameButton.transform.Find("Text").gameObject.GetComponent<Outline>().effectColor = new Color32(62, 38, 19, 255);
+
+            deleteGameButton.transform.Find("Text").gameObject.GetComponent<Text>().color = new Color32(173, 134, 80, 255);
+            deleteGameButton.transform.Find("Text").gameObject.GetComponent<Outline>().effectColor = new Color32(62, 38, 19, 255);
+        }
     }
 
     public void ConfirmationWindowDisplayDelete()
@@ -70,8 +91,10 @@ public class GameSelection : MonoBehaviour
 
     public void GameSelected()
     {
-        deleteGameButton.SetActive(true);
-        loadGameButton.SetActive(true);
-        //return in the function the id or name of the game we want to delete
+        //deleteGameButton.SetActive(true);
+        deleteGameButton.GetComponent<Button>().interactable = true;
+        //loadGameButton.SetActive(true);
+        loadGameButton.GetComponent<Button>().interactable = true;
+        //return in the function of the id or name of the game we want to delete
     }
 }
