@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameSelection : MonoBehaviour
 {
-       public GameObject ConfirmationWindowDelete;
-
+    public GameObject ConfirmationWindowDelete;
+    public GameObject DeleteGameButton;
     public GameObject[] Games;
 
     public string[] Names = new string[3];
@@ -15,13 +15,16 @@ public class GameSelection : MonoBehaviour
     void Start()
     {
         ConfirmationWindowDelete.SetActive(false);
-        for(int i=0; i<3; i++)
+        DeleteGameButton.SetActive(false);
+
+        for (int i = 0; i < 3; i++)
         {
-            if(Names[i] != "")
+            if (Names[i] != "")
             {
                 Games[i].gameObject.SetActive(true);
             }
-            else{
+            else
+            {
                 Games[i].gameObject.SetActive(false);
             }
         }
@@ -30,7 +33,7 @@ public class GameSelection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
     public void ConfirmationWindowDisplayDelete()
@@ -61,5 +64,11 @@ public class GameSelection : MonoBehaviour
     public void LoadGame()
     {
 
+    }
+
+    public void GameSelected()
+    {
+        DeleteGameButton.SetActive(true);
+        //return in the function the id or name of the game we want to delete
     }
 }
