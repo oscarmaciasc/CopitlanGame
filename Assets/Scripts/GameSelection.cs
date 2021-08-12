@@ -11,6 +11,10 @@ public class GameSelection : MonoBehaviour
     public GameObject loadGameButton;
     public GameObject[] games;
 
+    [SerializeField] private GameObject arrowGame1;
+    [SerializeField] private GameObject arrowGame2;
+    [SerializeField] private GameObject arrowGame3;
+
     public string[] names = new string[3];
 
     // Start is called before the first frame update
@@ -96,5 +100,26 @@ public class GameSelection : MonoBehaviour
         //loadGameButton.SetActive(true);
         loadGameButton.GetComponent<Button>().interactable = true;
         //return in the function of the id or name of the game we want to delete
+    }
+
+    public void Game1()
+    {
+        arrowGame2.SetActive(false);
+        arrowGame3.SetActive(false);
+        arrowGame1.SetActive(true);
+    }
+
+    public void Game2()
+    {
+        arrowGame1.SetActive(false);
+        arrowGame3.SetActive(false);
+        arrowGame2.SetActive(true);
+    }
+
+    public void Game3()
+    {
+        arrowGame1.SetActive(false);
+        arrowGame2.SetActive(false);
+        arrowGame3.SetActive(true);
     }
 }
