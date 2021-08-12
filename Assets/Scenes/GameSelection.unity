@@ -718,6 +718,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1808583398}
+        m_TargetAssemblyTypeName: GameSelection, Assembly-CSharp
+        m_MethodName: Game1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &540709807
 GameObject:
   m_ObjectHideFlags: 0
@@ -1611,6 +1623,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1808583398}
+        m_TargetAssemblyTypeName: GameSelection, Assembly-CSharp
+        m_MethodName: Game2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &868449914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1997,6 +2021,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1808583398}
+        m_TargetAssemblyTypeName: GameSelection, Assembly-CSharp
+        m_MethodName: Game3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1537206995
 GameObject:
   m_ObjectHideFlags: 0
@@ -2234,6 +2270,9 @@ MonoBehaviour:
   - {fileID: 486415425}
   - {fileID: 850509801}
   - {fileID: 1449483665}
+  arrowGame1: {fileID: 1934770512}
+  arrowGame2: {fileID: 432423078}
+  arrowGame3: {fileID: 1044253356}
   names:
   - Partida de Jaime
   - Partida de Ter
