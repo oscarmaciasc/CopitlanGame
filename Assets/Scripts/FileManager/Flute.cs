@@ -7,5 +7,15 @@ using System.Xml.Serialization;
 public class Flute
 {
    [XmlAttribute("name")]
-   public string name;
+   public string name{ get; set;}
+
+   public Flute()
+   {
+      
+   }
+
+   public Flute(string name)
+   {
+      this.name = name;
+   }
 }
