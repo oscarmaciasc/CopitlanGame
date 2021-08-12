@@ -1,55 +1,55 @@
 fileFormatVersion: 2
-guid: 72d99bcdf9d315340913f619f07e13e4
+guid: b1e102b40b30eac4f8889d79e39a118b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4039876194579418005
-    second: ProtagonistaMasculino_0
+      213: -3507567130992707473
+    second: ProtagonistaFemenina_0
   - first:
-      213: -397807156887774511
-    second: ProtagonistaMasculino_1
+      213: 1989432603917911874
+    second: ProtagonistaFemenina_1
   - first:
-      213: -8058241530185425362
-    second: ProtagonistaMasculino_2
+      213: -8835938057065676362
+    second: ProtagonistaFemenina_2
   - first:
-      213: -2926066420901743581
-    second: ProtagonistaMasculino_3
+      213: -8194095648178879630
+    second: ProtagonistaFemenina_3
   - first:
-      213: -4331453053633017163
-    second: ProtagonistaMasculino_4
+      213: 5381048508613585215
+    second: ProtagonistaFemenina_4
   - first:
-      213: -5721962769006044820
-    second: ProtagonistaMasculino_5
+      213: -8856765007435845609
+    second: ProtagonistaFemenina_5
   - first:
-      213: 3643045476686569870
-    second: ProtagonistaMasculino_6
+      213: 8798403667041160114
+    second: ProtagonistaFemenina_6
   - first:
-      213: 6697385892725737751
-    second: ProtagonistaMasculino_7
+      213: -2894992141140610132
+    second: ProtagonistaFemenina_7
   - first:
-      213: -595554546433626269
-    second: ProtagonistaMasculino_8
+      213: -1139695755119292337
+    second: ProtagonistaFemenina_8
   - first:
-      213: -3428211968956830194
-    second: ProtagonistaMasculino_9
+      213: 4038227074825528750
+    second: ProtagonistaFemenina_9
   - first:
-      213: 4978297207303517493
-    second: ProtagonistaMasculino_10
+      213: -6732279688272711998
+    second: ProtagonistaFemenina_10
   - first:
-      213: -1565141098988757823
-    second: ProtagonistaMasculino_11
+      213: 8421378603981288543
+    second: ProtagonistaFemenina_11
   - first:
-      213: -6184583823130669046
-    second: ProtagonistaMasculino_12
+      213: -2590494129307712313
+    second: ProtagonistaFemenina_12
   - first:
-      213: 5109190187919927386
-    second: ProtagonistaMasculino_13
+      213: 1882645938928767668
+    second: ProtagonistaFemenina_13
   - first:
-      213: -4467342393736070932
-    second: ProtagonistaMasculino_14
+      213: -5131484718617744301
+    second: ProtagonistaFemenina_14
   - first:
-      213: 1319627893262915031
-    second: ProtagonistaMasculino_15
+      213: 691770887666380073
+    second: ProtagonistaFemenina_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,8 +115,8 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 512
     resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
+    textureFormat: 4
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -127,8 +127,8 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 512
     resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
+    textureFormat: 4
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -139,7 +139,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ProtagonistaMasculino_0
+      name: ProtagonistaFemenina_0
       rect:
         serializedVersion: 2
         x: 0
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59b867aaef5801830800000000000000
-      internalID: 4039876194579418005
+      spriteID: f68f75b374e925fc0800000000000000
+      internalID: -3507567130992707473
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProtagonistaMasculino_1
+      name: ProtagonistaFemenina_1
       rect:
         serializedVersion: 2
         x: 32
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1da989c9f74ba7af0800000000000000
-      internalID: -397807156887774511
+      spriteID: 2478b1da962eb9b10800000000000000
+      internalID: 1989432603917911874
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProtagonistaMasculino_2
+      name: ProtagonistaFemenina_2
       rect:
         serializedVersion: 2
         x: 64
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2e5ffec5006b2090800000000000000
-      internalID: -8058241530185425362
+      spriteID: 6b1ce33e621706580800000000000000
+      internalID: -8835938057065676362
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProtagonistaMasculino_3
+      name: ProtagonistaFemenina_3
       rect:
         serializedVersion: 2
         x: 96
@@ -216,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 324f3f8d7168467d0800000000000000
-      internalID: -2926066420901743581
+      spriteID: 27349b21c69b84e80800000000000000
+      internalID: -8194095648178879630
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProtagonistaMasculino_4
+      name: ProtagonistaFemenina_4
       rect:
         serializedVersion: 2
         x: 128
@@ -237,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ba4ce0956693e3c0800000000000000
-      internalID: -4331453053633017163
+      spriteID: f39ee0bcb135daa40800000000000000
+      internalID: 5381048508613585215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProtagonistaMasculino_5
+      name: ProtagonistaFemenina_5
       rect:
         serializedVersion: 2
         x: 160
@@ -258,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6952678d218790b0800000000000000
-      internalID: -5721962769006044820
+      spriteID: 7103da0a623761580800000000000000
+      internalID: -8856765007435845609
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProtagonistaMasculino_6
+      name: ProtagonistaFemenina_6
       rect:
         serializedVersion: 2
         x: 192
@@ -279,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e812f723f82be8230800000000000000
-      internalID: 3643045476686569870
+      spriteID: 2bb8b7ce4853a1a70800000000000000
+      internalID: 8798403667041160114
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProtagonistaMasculino_7
+      name: ProtagonistaFemenina_7
       rect:
         serializedVersion: 2
         x: 224
@@ -300,14 +300,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71941a33cf4e1fc50800000000000000
-      internalID: 6697385892725737751
+      spriteID: ca334c76cfbe2d7d0800000000000000
+      internalID: -2894992141140610132
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProtagonistaMasculino_8
+      name: ProtagonistaFemenina_8
       rect:
         serializedVersion: 2
         x: 256
@@ -321,14 +321,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36f647f9b4a2cb7f0800000000000000
-      internalID: -595554546433626269
+      spriteID: f401814cfbcfe20f0800000000000000
+      internalID: -1139695755119292337
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProtagonistaMasculino_9
+      name: ProtagonistaFemenina_9
       rect:
         serializedVersion: 2
         x: 288
@@ -342,14 +342,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0ee59fa06b8c60d0800000000000000
-      internalID: -3428211968956830194
+      spriteID: ea5275d012aaa0830800000000000000
+      internalID: 4038227074825528750
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProtagonistaMasculino_10
+      name: ProtagonistaFemenina_10
       rect:
         serializedVersion: 2
         x: 320
@@ -363,14 +363,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53535a31fe6761540800000000000000
-      internalID: 4978297207303517493
+      spriteID: 2ce6debea432292a0800000000000000
+      internalID: -6732279688272711998
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProtagonistaMasculino_11
+      name: ProtagonistaFemenina_11
       rect:
         serializedVersion: 2
         x: 352
@@ -384,14 +384,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1cc19638670874ae0800000000000000
-      internalID: -1565141098988757823
+      spriteID: f543161d83fbed470800000000000000
+      internalID: 8421378603981288543
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProtagonistaMasculino_12
+      name: ProtagonistaFemenina_12
       rect:
         serializedVersion: 2
         x: 384
@@ -405,14 +405,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a005baab7c1fb2aa0800000000000000
-      internalID: -6184583823130669046
+      spriteID: 7c401ed7057bc0cd0800000000000000
+      internalID: -2590494129307712313
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProtagonistaMasculino_13
+      name: ProtagonistaFemenina_13
       rect:
         serializedVersion: 2
         x: 416
@@ -426,14 +426,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a58e0e0086d77e640800000000000000
-      internalID: 5109190187919927386
+      spriteID: 4b25eabb180802a10800000000000000
+      internalID: 1882645938928767668
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProtagonistaMasculino_14
+      name: ProtagonistaFemenina_14
       rect:
         serializedVersion: 2
         x: 448
@@ -447,14 +447,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce8715b03cfc002c0800000000000000
-      internalID: -4467342393736070932
+      spriteID: 35ca17016dd49c8b0800000000000000
+      internalID: -5131484718617744301
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProtagonistaMasculino_15
+      name: ProtagonistaFemenina_15
       rect:
         serializedVersion: 2
         x: 480
@@ -468,8 +468,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d512a5c392405210800000000000000
-      internalID: 1319627893262915031
+      spriteID: 92daf4905f9a99900800000000000000
+      internalID: 691770887666380073
       vertices: []
       indices: 
       edges: []
