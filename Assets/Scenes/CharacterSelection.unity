@@ -715,6 +715,7 @@ MonoBehaviour:
   femaleArrow: {fileID: 35517506}
   maleArrow: {fileID: 2126801629}
   placeHolder: {fileID: 236073289}
+  startGameButton: {fileID: 1747049747}
 --- !u!114 &456624074
 MonoBehaviour:
   m_ObjectHideFlags: 0
