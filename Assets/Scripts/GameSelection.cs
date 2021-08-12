@@ -20,6 +20,9 @@ public class GameSelection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        arrowGame1.SetActive(false);
+        arrowGame2.SetActive(false);
+        arrowGame3.SetActive(false);
         confirmationWindowDelete.SetActive(false);
         //deleteGameButton.SetActive(false);
         //loadGameButton.SetActive(false);
@@ -94,6 +97,12 @@ public class GameSelection : MonoBehaviour
     }
 
     public void GameSelected()
+    {
+        ButtonActivator();
+        
+    }
+
+    private void ButtonActivator()
     {
         //deleteGameButton.SetActive(true);
         deleteGameButton.GetComponent<Button>().interactable = true;
