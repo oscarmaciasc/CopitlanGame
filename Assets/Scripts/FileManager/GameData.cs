@@ -23,7 +23,7 @@ public class GameData
 
     public GameData() {}
 
-    public GameData(Resource[] resource, Permission[] permission, Flute[] flute, Balloon[] balloon) {
+    public GameData(string name, Resource[] resource, Permission[] permission, Flute[] flute, Balloon[] balloon) {
         this.resource = resource;
         this.permission = permission;
         this.flute = flute;

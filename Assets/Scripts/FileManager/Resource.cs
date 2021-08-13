@@ -14,7 +14,7 @@ public class Resource
 
     public Resource()
     {
-
+      
     }
 
     public Resource(string name, int quantity)
