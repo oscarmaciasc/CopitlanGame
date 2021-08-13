@@ -6,10 +6,21 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
+    public static GameManager instance;
+    public bool escapePressed;
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        escapePressed = false;
     }
 
     // Update is called once per frame
@@ -17,7 +28,7 @@ public class GameManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            //ExitMenu.instance.gameobject.setActive(true);
+            escapePressed = true;
             Debug.Log("Menu de salida");
         }
 
