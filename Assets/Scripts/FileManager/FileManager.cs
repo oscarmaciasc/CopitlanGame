@@ -7,14 +7,17 @@ using System.IO;
 using static System.Environment;
 using static System.IO.Path;
 
-[XmlRoot("GameDataTest")]
 public class FileManager : MonoBehaviour
 {
     public void Save()
     {
-        XmlSerializer serializer = new XmlSerializer(typeof(Resource));
+        /*
+        public Resource[] resources = new Resource[];
+
+        XmlSerializer serializer = new XmlSerializer(typeof(string[]));
         FileStream xmlWriter = new FileStream(CurrentDirectory + "/gameData1.xml", FileMode.Create);
-        serializer.Serialize(xmlWriter, new Resource(name="gold", quantity: 14));
+        serializer.Serialize(xmlWriter, new string["a", "b"]);
         xmlWriter.Close();
+        */
     }
 }
