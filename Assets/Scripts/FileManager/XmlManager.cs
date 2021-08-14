@@ -19,6 +19,7 @@ public class XmlManager : MonoBehaviour
     public Permission[] permissions;
     public Flute[] flutes;
     public Balloon[] balloons;
+    public MusicalMasteryLvl[] musicalMasteryLvl;
     public GameData gameData;
 
     // This function also allows us to create a new game, altough any object is empty.
@@ -28,6 +29,7 @@ public class XmlManager : MonoBehaviour
 
         playerName = "Fabian";
 
+        /*
         resources = new Resource[]{
             new Resource { name = "gold", quantity=10},
             new Resource { name = "iron", quantity=5},
@@ -53,7 +55,15 @@ public class XmlManager : MonoBehaviour
             new Balloon { name = "balloonLvl3"}
         };
 
-        gameData = new GameData(playerName, resources, permissions, flutes, balloons);
+        musicalMasteryLvl = new MusicalMasteryLvl[]
+        {
+            new MusicalMasteryLvl { name = "outterCircle" },
+            new MusicalMasteryLvl { name = "triangle" },
+            new MusicalMasteryLvl { name = "innerCircle" }
+        };
+        */
+
+        gameData = new GameData(playerName);
 
         XmlSerializer serializer = new XmlSerializer(typeof(GameData));
         FileStream xmlWriter = new FileStream(CurrentDirectory + "/xmlTest.xml", FileMode.Create);
