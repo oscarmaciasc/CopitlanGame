@@ -11,15 +11,4 @@ public class Resource
 
     [XmlElement("quantity")]
     public int quantity { get; set; }
-
-    public Resource()
-    {
-      
-    }
-
-    public Resource(string name, int quantity)
-    {
-        this.name = name;
-        this.quantity = quantity;
-    }
 }

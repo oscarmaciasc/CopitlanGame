@@ -4,8 +4,8 @@ using UnityEngine;
 using System.Xml;
 using System.Xml.Serialization;
 
-public class Permission : MonoBehaviour
+public class Permission
 {
     [XmlAttribute("nombre")]
-    public string nombre;
+    public string name;
 }

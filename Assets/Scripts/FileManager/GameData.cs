@@ -21,9 +21,12 @@ public class GameData
     [XmlElement ("Balloons")]
     public Balloon[] balloon { get; set; }
 
+    
+
     public GameData() {}
 
     public GameData(string name, Resource[] resource, Permission[] permission, Flute[] flute, Balloon[] balloon) {
+        this.name = name;
         this.resource = resource;
         this.permission = permission;
         this.flute = flute;
