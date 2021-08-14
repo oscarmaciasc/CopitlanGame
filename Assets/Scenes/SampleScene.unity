@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theRB: {fileID: 325085705}
-  moveSpeed: 5
+  moveSpeed: 3
   myAnim: {fileID: 325085708}
 --- !u!58 &325085704
 CircleCollider2D:
@@ -1437,7 +1437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theRB: {fileID: 703081607}
-  moveSpeed: 5
+  moveSpeed: 3
   myAnim: {fileID: 703081608}
 --- !u!58 &703081606
 CircleCollider2D:
