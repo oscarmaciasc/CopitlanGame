@@ -21,9 +21,9 @@ public class XmlManager : MonoBehaviour
     public Balloon[] balloons;
     public GameData gameData;
 
+    // This function also allows us to create a new game, altough any object is empty.
     public void Save()
     {
-
         // Filling the object arrays
 
         playerName = "Fabian";
@@ -61,15 +61,20 @@ public class XmlManager : MonoBehaviour
         xmlWriter.Close();
     }
 
-    /*public void Load()
+    public void Load()
     {
-        XmlSerializer serializer = new XmlSerializer(typeof(XmlManagerData));
-        FileStream xmlRead = new FileStream(Application.dataPath + "/xmlTest.xml", FileMode.Open);
-        xmlManagerData = serializer.Deserialize(xmlRead) as XmlManagerData;
-        Debug.Log("Test String: " + xmlManagerData.testString +
-            " Test Bool: " + xmlManagerData.testBool +
-            " Test Int: " + xmlManagerData.testInt +
-            " TestF loat: " + xmlManagerData.testFloat);
+        XmlSerializer serializer = new XmlSerializer(typeof(GameData));
+        FileStream xmlRead = new FileStream(CurrentDirectory + "/xmlTest.xml", FileMode.Open);
+        gameData = serializer.Deserialize(xmlRead) as GameData;
+        Debug.Log("Nombre del jugador: " + gameData.name +
+            "\nRecurso: " + gameData.resource[0].name +
+            "\nGlobo: " + gameData.balloon[0].name +
+            "\nFlauta: " + gameData.flute[0].name);
         xmlRead.Close();
-    }*/
+    }
+
+    public void Delete()
+    {
+        File.Delete(CurrentDirectory + "/xmlTest.xml");
+    }
 }

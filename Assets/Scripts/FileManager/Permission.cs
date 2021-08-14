@@ -6,6 +6,6 @@ using System.Xml.Serialization;
 
 public class Permission
 {
-    [XmlAttribute("nombre")]
+    [XmlAttribute("name")]
     public string name;
 }

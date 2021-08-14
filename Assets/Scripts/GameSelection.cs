@@ -26,8 +26,7 @@ public class GameSelection : MonoBehaviour
         confirmationWindowDelete.SetActive(false);
         //deleteGameButton.SetActive(false);
         //loadGameButton.SetActive(false);
-        deleteGameButton.GetComponent<Button>().interactable = false;
-        loadGameButton.GetComponent<Button>().interactable = false;
+        DeactivateButtons();
 
         //Changin color and outline color when no game is selected
         if (deleteGameButton.GetComponent<Button>().interactable == false || loadGameButton.GetComponent<Button>().interactable == false)
@@ -76,7 +75,7 @@ public class GameSelection : MonoBehaviour
         //Delete the selected game
     }
 
-    public void NoDelete()
+    public void DeactivateWindowDelete()
     {
         confirmationWindowDelete.SetActive(false);
     }
@@ -130,5 +129,12 @@ public class GameSelection : MonoBehaviour
         arrowGame1.SetActive(false);
         arrowGame2.SetActive(false);
         arrowGame3.SetActive(true);
+    }
+
+    public void DeactivateButtons()
+    {
+        deleteGameButton.GetComponent<Button>().interactable = false;
+        loadGameButton.GetComponent<Button>().interactable = false;
+        // Condition: if game 1 deactivate arrow 1, if game 2 deactivate game 2, etc...
     }
 }

@@ -9,16 +9,16 @@ public class GameData
     [XmlAttribute ("name")]
     public string name { get; set; }
 
-    [XmlElement ("Resources")]
+    [XmlArray ("Resources")]
     public Resource[] resource { get; set; }
     
-    [XmlElement ("Permissions")]
+    [XmlArray ("Permissions")]
     public Permission[] permission { get; set; }
     
-    [XmlElement ("Flutes")]
+    [XmlArray ("Flutes")]
     public Flute[] flute { get; set; }
 
-    [XmlElement ("Balloons")]
+    [XmlArray ("Balloons")]
     public Balloon[] balloon { get; set; }
 
     
