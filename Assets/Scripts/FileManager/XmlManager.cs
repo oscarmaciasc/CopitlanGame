@@ -55,8 +55,10 @@ public class XmlManager : MonoBehaviour
 
         gameData = new GameData(playerName, resources, permissions, flutes, balloons);
 
+        bool[] count = GamesCount();
+
         XmlSerializer serializer = new XmlSerializer(typeof(GameData));
-        FileStream xmlWriter = new FileStream(CurrentDirectory + "/xmlTest.xml", FileMode.Create);
+        FileStream xmlWriter = new FileStream(CurrentDirectory + "/GameData1.xml", FileMode.Create);
         serializer.Serialize(xmlWriter, gameData);
         xmlWriter.Close();
     }
@@ -64,7 +66,7 @@ public class XmlManager : MonoBehaviour
     public void Load()
     {
         XmlSerializer serializer = new XmlSerializer(typeof(GameData));
-        FileStream xmlRead = new FileStream(CurrentDirectory + "/xmlTest.xml", FileMode.Open);
+        FileStream xmlRead = new FileStream(CurrentDirectory + "/GameData1.xml", FileMode.Open);
         gameData = serializer.Deserialize(xmlRead) as GameData;
         Debug.Log("Nombre del jugador: " + gameData.name +
             "\nRecurso: " + gameData.resource[0].name +
@@ -75,6 +77,33 @@ public class XmlManager : MonoBehaviour
 
     public void Delete()
     {
-        File.Delete(CurrentDirectory + "/xmlTest.xml");
+        File.Delete(CurrentDirectory + "/GameData1.xml");
     }
+    public bool[] GamesCount() {
+        bool[] count = new bool[3];
+
+        if (File.Exists(CurrentDirectory + "/GameData1.xml")) {
+            count[0] = true;
+        }
+        else {
+            count[0] = false;
+        }
+
+        if (File.Exists(CurrentDirectory + "/GameData2.xml")) {
+            count[0] = true;
+        }
+        else {
+            count[0] = false;
+        }
+
+        if (File.Exists(CurrentDirectory + "/GameData3.xml")) {
+            count[0] = true;
+        }
+        else {
+            count[0] = false;
+        }
+
+        return count;
+    }
+    
 }
