@@ -23,54 +23,64 @@ public class XmlManager : MonoBehaviour
     public MusicalMasteryLvl[] musicalMasteryLvl;
     public GameData gameData;
 
-    // This function also allows us to create a new game, altough any object is empty.
-    public void Save()
-    {
-        // Filling the object arrays
+    // Called when a new game is created
+    public void Create() {
+        int gameIndex = CanCreateGame();
 
+        if(gameIndex != 0) {
+            Save(gameIndex);
+        }
+        else {
+            Debug.Log("No");
+            // Activate the "No more than 3 games" panel
+        }
+    }
+
+    // Return the position in wich can create a game file or 0 in case is not posible
+    public int CanCreateGame() {
+        bool[] count = GamesCount();
+        
+        if(count[0] == false) {
+            return 1;
+        }
+        else if (count[1] == false) {
+            return 2;
+        }
+        else if (count[2] == false) {
+            return 3;
+        }
+        else {
+            return 0;
+        }
+    }
+
+    // This function also allows us to create a new game, altough any object is empty.
+    public void Save(int gameIndex)
+    {
+        string fileName = "";
+
+        //*********************Fake***********************
         playerName = "Fabian";
         isWoman = false;
-
-        /*
-        resources = new Resource[]{
-            new Resource { name = "gold", quantity=10},
-            new Resource { name = "iron", quantity=5},
-            new Resource { name = "wood", quantity=30}
-        };
-
-        permissions = new Permission[]{
-            new Permission { name = "outterCircle"},
-            new Permission { name = "innerCircle"},
-            new Permission { name = "triangle"}
-        };
-
-        flutes = new Flute[]{
-            new Flute { name = "woodenFlute"},
-            new Flute { name = "wooden-ironFlute"},
-            new Flute { name = "ironFlute"},
-            new Flute { name = "goldenFlute"}
-        };
-
-        balloons = new Balloon[]{
-            new Balloon { name = "balloonLvl1"},
-            new Balloon { name = "balloonLvl2"},
-            new Balloon { name = "balloonLvl3"}
-        };
-
-        musicalMasteryLvl = new MusicalMasteryLvl[]
-        {
-            new MusicalMasteryLvl { name = "outterCircle" },
-            new MusicalMasteryLvl { name = "triangle" },
-            new MusicalMasteryLvl { name = "innerCircle" }
-        };
-        */
-
+        //*********************Fake***********************
+        
         gameData = new GameData(playerName, isWoman);
 
-        bool[] count = GamesCount();
-
         XmlSerializer serializer = new XmlSerializer(typeof(GameData));
-        FileStream xmlWriter = new FileStream(CurrentDirectory + "/GameData1.xml", FileMode.Create);
+
+        switch (gameIndex) {
+            case 1:
+                fileName = "/GameData1.xml";
+            break;
+            case 2:
+                fileName = "/GameData2.xml";
+            break;
+            case 3:
+                fileName = "/GameData3.xml";
+            break;
+        }
+
+        FileStream xmlWriter = new FileStream(CurrentDirectory + fileName, FileMode.Create);
         serializer.Serialize(xmlWriter, gameData);
         xmlWriter.Close();
     }
@@ -91,6 +101,7 @@ public class XmlManager : MonoBehaviour
     {
         File.Delete(CurrentDirectory + "/GameData1.xml");
     }
+    
     public bool[] GamesCount() {
         bool[] count = new bool[3];
 
@@ -102,17 +113,17 @@ public class XmlManager : MonoBehaviour
         }
 
         if (File.Exists(CurrentDirectory + "/GameData2.xml")) {
-            count[0] = true;
+            count[1] = true;
         }
         else {
-            count[0] = false;
+            count[1] = false;
         }
 
         if (File.Exists(CurrentDirectory + "/GameData3.xml")) {
-            count[0] = true;
+            count[2] = true;
         }
         else {
-            count[0] = false;
+            count[2] = false;
         }
 
         return count;
