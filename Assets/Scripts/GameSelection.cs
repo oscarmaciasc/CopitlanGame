@@ -114,7 +114,6 @@ public class GameSelection : MonoBehaviour
     {
         arrowGame2.SetActive(false);
         arrowGame3.SetActive(false);
-        //arrowGame1.gameObject.GetComponent<Image>().color = new Color(255, 255, 255, Mathf.MoveTowards(1f, 255f, 1f));
         arrowGame1.SetActive(true);
     }
 
@@ -122,16 +121,13 @@ public class GameSelection : MonoBehaviour
     {
         arrowGame1.SetActive(false);
         arrowGame3.SetActive(false);
-        //arrowGame2.GetComponent<Image>().color = new Color(255, 255, 255, 1);
         arrowGame2.SetActive(true);
-        //arrowGame2.GetComponent<Image>().color = new Color(255, 255, 255, Mathf.MoveTowards(1f, 255f, 1f * Time.deltaTime));
     }
 
     public void Game3()
     {
         arrowGame1.SetActive(false);
         arrowGame2.SetActive(false);
-        //<arrowGame3.gameObject.GetComponent<Image>().color = new Color(255, 255, 255, Mathf.MoveTowards(1f, 255f, 1f));
         arrowGame3.SetActive(true);
     }
 
