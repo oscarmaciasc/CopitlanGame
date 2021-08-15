@@ -61,10 +61,10 @@ public class XmlManager : MonoBehaviour
 
         //*********************Fake***********************
         playerName = "Fabian";
-        //*********************Fake***********************
         isWoman = false;
-
-        gameData = new GameData(playerName);
+        //*********************Fake***********************
+        
+        gameData = new GameData(playerName, isWoman);
 
         XmlSerializer serializer = new XmlSerializer(typeof(GameData));
 
