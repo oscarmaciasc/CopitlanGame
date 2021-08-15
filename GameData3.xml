@@ -24,6 +24,6 @@
     <Balloon name="balloonLvl1" />
   </Balloons>
   <MusicalMasteryLvl>
-    <MusicalMasteryLvl name="outterCircle" />
+    <MusicalMasteryLvl name="apprentice" />
   </MusicalMasteryLvl>
 </gameData>
