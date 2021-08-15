@@ -6,17 +6,24 @@ public class PlayerController : MonoBehaviour
 {
 
     public static PlayerController instance;
-
     public Rigidbody2D theRB;
     public float moveSpeed;
-
-    //reference to the animator
     public Animator myAnim;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        // This means that there can be only one player in the scene
+        if(instance == null)
+        {
+            instance = this;
+        } 
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
