@@ -9,6 +9,9 @@ public class GameData
     [XmlAttribute ("name")]
     public string name { get; set; }
 
+    [XmlAttribute ("gender")]
+    public bool isWoman { get; set; }
+
     [XmlArray ("Resources")]
     public Resource[] resource { get; set; }
     
@@ -27,7 +30,7 @@ public class GameData
     public GameData(){}
 
     // Player Initialization 
-    public GameData(string playerName) 
+    public GameData(string playerName, bool playerGender) 
     {
         this.resource = new Resource[4];
         this.resource[0] = new Resource();
@@ -48,6 +51,7 @@ public class GameData
         this.musicalMasteryLvl[0] = new MusicalMasteryLvl();
 
         this.name = playerName;
+        this.isWoman = playerGender;
         this.resource[0].name = "wood";
         this.resource[0].quantity = 0;
         this.resource[1].name = "iron";

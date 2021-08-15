@@ -15,6 +15,7 @@ public class XmlManager : MonoBehaviour
 {
 
     public string playerName;
+    public bool isWoman;
     public Resource[] resources;
     public Permission[] permissions;
     public Flute[] flutes;
@@ -28,6 +29,7 @@ public class XmlManager : MonoBehaviour
         // Filling the object arrays
 
         playerName = "Fabian";
+        isWoman = false;
 
         /*
         resources = new Resource[]{
@@ -63,7 +65,7 @@ public class XmlManager : MonoBehaviour
         };
         */
 
-        gameData = new GameData(playerName);
+        gameData = new GameData(playerName, isWoman);
 
         bool[] count = GamesCount();
 
