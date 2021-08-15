@@ -1,30 +1,29 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Fabian">
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Fabian" gender="false">
   <Resources>
-    <Resource name="gold">
-      <quantity>10</quantity>
+    <Resource name="wood">
+      <quantity>0</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>5</quantity>
+      <quantity>0</quantity>
     </Resource>
-    <Resource name="wood">
-      <quantity>30</quantity>
+    <Resource name="gold">
+      <quantity>0</quantity>
+    </Resource>
+    <Resource name="fuel">
+      <quantity>0</quantity>
     </Resource>
   </Resources>
   <Permissions>
     <Permission name="outterCircle" />
-    <Permission name="innerCircle" />
-    <Permission name="triangle" />
   </Permissions>
   <Flutes>
     <Flute name="woodenFlute" />
-    <Flute name="wooden-ironFlute" />
-    <Flute name="ironFlute" />
-    <Flute name="goldenFlute" />
   </Flutes>
   <Balloons>
     <Balloon name="balloonLvl1" />
-    <Balloon name="balloonLvl2" />
-    <Balloon name="balloonLvl3" />
   </Balloons>
+  <MusicalMasteryLvl>
+    <MusicalMasteryLvl name="apprentice" />
+  </MusicalMasteryLvl>
 </gameData>
