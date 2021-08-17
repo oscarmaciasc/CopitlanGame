@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 35517507}
   - component: {fileID: 35517509}
   - component: {fileID: 35517508}
+  - component: {fileID: 35517510}
   m_Layer: 5
   m_Name: FemaleArrow
   m_TagString: Untagged
@@ -281,6 +282,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 35517506}
   m_CullTransparentMesh: 1
+--- !u!95 &35517510
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35517506}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 79ab7574aae6ff942a2b3d2e5656e03e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &37526833
 GameObject:
   m_ObjectHideFlags: 0
@@ -2055,6 +2075,7 @@ GameObject:
   - component: {fileID: 2126801630}
   - component: {fileID: 2126801632}
   - component: {fileID: 2126801631}
+  - component: {fileID: 2126801633}
   m_Layer: 5
   m_Name: MaleArrow
   m_TagString: Untagged
@@ -2119,6 +2140,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126801629}
   m_CullTransparentMesh: 1
+--- !u!95 &2126801633
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126801629}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 79ab7574aae6ff942a2b3d2e5656e03e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2144765549
 GameObject:
   m_ObjectHideFlags: 0

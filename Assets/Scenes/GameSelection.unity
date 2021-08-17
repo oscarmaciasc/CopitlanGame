@@ -990,6 +990,7 @@ GameObject:
   - component: {fileID: 432423079}
   - component: {fileID: 432423081}
   - component: {fileID: 432423080}
+  - component: {fileID: 432423082}
   m_Layer: 5
   m_Name: ArrowGame2
   m_TagString: Untagged
@@ -1054,6 +1055,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 432423078}
   m_CullTransparentMesh: 1
+--- !u!95 &432423082
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432423078}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b2c8055d046c5a044859e564f10f3ef2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &455395552
 GameObject:
   m_ObjectHideFlags: 0
@@ -2801,6 +2821,7 @@ GameObject:
   - component: {fileID: 1044253357}
   - component: {fileID: 1044253359}
   - component: {fileID: 1044253358}
+  - component: {fileID: 1044253360}
   m_Layer: 5
   m_Name: ArrowGame3
   m_TagString: Untagged
@@ -2865,6 +2886,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044253356}
   m_CullTransparentMesh: 1
+--- !u!95 &1044253360
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044253356}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b2c8055d046c5a044859e564f10f3ef2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1049691366
 GameObject:
   m_ObjectHideFlags: 0
