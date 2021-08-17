@@ -27,6 +27,9 @@ public class GameData
     [XmlArray ("MusicalMasteryLvl")]
     public MusicalMasteryLvl[] musicalMasteryLvl { get; set; }
 
+    [XmlArray ("MusicSheets")]
+    public MusicSheet[] musicSheet { get; set; }
+
     public GameData(){}
 
     // Player Initialization 
@@ -50,6 +53,9 @@ public class GameData
         this.musicalMasteryLvl = new MusicalMasteryLvl[1];
         this.musicalMasteryLvl[0] = new MusicalMasteryLvl();
 
+        this.musicSheet = new MusicSheet[1];
+        this.musicSheet[0] = new MusicSheet();
+
         this.name = playerName;
         this.isWoman = playerGender;
         this.resource[0].name = "wood";
@@ -64,14 +70,17 @@ public class GameData
         this.flute[0].name = "woodenFlute";
         this.balloon[0].name = "balloonLvl1";
         this.musicalMasteryLvl[0].name = "apprentice";
+        this.musicSheet[0].name = "musicSheet1";
     }
 
     // Player Update
-    public GameData(string name, Resource[] resource, Permission[] permission, Flute[] flute, Balloon[] balloon, MusicalMasteryLvl[] musicalMasteryLvl) {
+    public GameData(string name, Resource[] resource, Permission[] permission, Flute[] flute, Balloon[] balloon, MusicalMasteryLvl[] musicalMasteryLvl, MusicSheet[] musicSheet) {
         this.name = name;
         this.resource = resource;
         this.permission = permission;
         this.flute = flute;
         this.balloon = balloon;
+        this.musicalMasteryLvl = musicalMasteryLvl;
+        this.musicSheet = musicSheet;
     }
 }

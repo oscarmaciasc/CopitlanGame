@@ -21,6 +21,7 @@ public class XmlManager : MonoBehaviour
     public Flute[] flutes;
     public Balloon[] balloons;
     public MusicalMasteryLvl[] musicalMasteryLvl;
+    public MusicSheet[] musicSheets;
     public GameData gameData;
 
     // Called when a new game is created
