@@ -18,6 +18,7 @@ public class NoteManager : MonoBehaviour
         int positionY = arrayPositions[Random.Range(0, arrayPositions.Length)];
 
         //Replace "+700" by the anchor position of the Pentagram
+        //This only works for FullHD Resolutions
         gameObject.transform.position = new Vector3(transform.parent.position.x + 730, transform.parent.position.y + positionY, 0);
     }
 
