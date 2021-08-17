@@ -60,10 +60,10 @@ public class XmlManager : MonoBehaviour
     {
         string fileName = "";
 
-        //*********************Fake***********************
+        //*********************Fake********************
         playerName = "Fabian";
         isWoman = false;
-        //*********************Fake***********************
+        //*********************Fake********************
         
         gameData = new GameData(playerName, isWoman);
 
