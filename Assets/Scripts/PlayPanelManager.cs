@@ -8,7 +8,7 @@ public class PlayPanelManager : MonoBehaviour
 {
     private bool noteSuccessful;
     private bool canPress;
-    char numberNote = 'k';
+    char numberNote = '1';
     char keyToCompare = '\0';
     int goodNotes = 0;
 
