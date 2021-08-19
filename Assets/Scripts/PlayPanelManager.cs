@@ -6,19 +6,21 @@ using System.Linq;
 
 public class PlayPanelManager : MonoBehaviour
 {
-    [SerializeField]private GameObject note;
-    private bool noteSuccessful;
-    private bool canPress;
+    [SerializeField] private GameObject note;
+    public bool noteSuccessful;
+    public bool canPress;
+    public bool haveBeenPressed;
     string numberNote = "";
     string keyPressed = "";
     int goodNotes = 0;
-
-    
 
     // Start is called before the first frame update
     void Start()
     {
         canPress = false;
+        noteSuccessful = false;
+        haveBeenPressed = false;
+        note.gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 200);
     }
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class PlayPanelManager : MonoBehaviour
         if (canPress && Input.anyKeyDown)
         {
             CompareKeys();
+            note.gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 200);
         }
     }
 
@@ -45,15 +48,27 @@ public class PlayPanelManager : MonoBehaviour
         {
             Debug.Log("Detecting note...");
             col.gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-
             canPress = true;
         }
+
+
     }
 
     void OnTriggerExit2D(Collider2D col)
     {
         col.gameObject.SetActive(false);
         canPress = false;
+
+        if (keyPressed == "" && !haveBeenPressed)
+        {
+            Debug.Log("You miss that note");
+
+            // Change the note color to red
+            note.gameObject.GetComponent<Image>().color = new Color32(234, 87, 91, 200);
+            keyPressed = "";
+            noteSuccessful = false;
+            canPress = false;
+        }
     }
 
     public void CompareKeys()
@@ -64,7 +79,7 @@ public class PlayPanelManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha0) || Input.GetKeyDown(KeyCode.Keypad0))
         {
             keyPressed = "0";
-        } 
+        }
         else if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
         {
             keyPressed = "1";
@@ -101,19 +116,33 @@ public class PlayPanelManager : MonoBehaviour
         {
             keyPressed = "9";
         }
+        else
+        {
+            haveBeenPressed = false;
+        }
 
         if (keyPressed == numberNote)
         {
             Debug.Log("You got one point");
+
+            // Change the note color to green
+            note.gameObject.GetComponent<Image>().color = new Color(87, 234, 91, 200);
+
             noteSuccessful = true;
             goodNotes++;
             canPress = false;
+            haveBeenPressed = true;
         }
         else if (keyPressed != "")
         {
-            Debug.Log("You miss that key");
+            Debug.Log("Wrong key");
+
+            // Change the note color to red
+            note.gameObject.GetComponent<Image>().color = new Color32(234, 87, 91, 200);
+
             noteSuccessful = false;
             canPress = false;
+            haveBeenPressed = true;
         }
         Debug.Log("KeyToCompare is: " + keyPressed);
         Debug.Log("NumberNote is: " + numberNote);
