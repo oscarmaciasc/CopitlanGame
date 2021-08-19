@@ -86,4 +86,8 @@ public class CharacterSelection : MonoBehaviour
     {
         nameInputField.placeholder.GetComponent<Text>().text = "";
     }
+    public void InitGame()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
 }

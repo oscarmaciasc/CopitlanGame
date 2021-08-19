@@ -137,4 +137,18 @@ public class GameSelection : MonoBehaviour
         loadGameButton.GetComponent<Button>().interactable = false;
         // Condition: if game 1 deactivate arrow 1, if game 2 deactivate game 2, etc...
     }
+
+    public void CharacterSelection()
+    {
+        if(XmlManager.instance.CanCreateGame() != 0)
+        {
+            SceneManager.LoadScene("CharacterSelection");
+        }
+        else
+        {
+            Debug.Log("You already have 3 games");
+            // Deactivate NewGame button
+            // also implement this on MainMenu newGame
+        }
+    }
 }

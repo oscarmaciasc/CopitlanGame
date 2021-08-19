@@ -20,7 +20,7 @@ public class PlayPanelManager : MonoBehaviour
         canPress = false;
         noteSuccessful = false;
         haveBeenPressed = false;
-        note.gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 200);
+        NoteManager.instance.gameObject.GetComponent<NoteManager>().SetMediumOpacity();
     }
 
     // Update is called once per frame
@@ -31,7 +31,6 @@ public class PlayPanelManager : MonoBehaviour
         if (canPress && Input.anyKeyDown)
         {
             CompareKeys();
-            note.gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 200);
         }
     }
 
@@ -62,13 +61,11 @@ public class PlayPanelManager : MonoBehaviour
         if (keyPressed == "" && !haveBeenPressed)
         {
             Debug.Log("You miss that note");
-
-            // Change the note color to red
-            note.gameObject.GetComponent<Image>().color = new Color32(234, 87, 91, 200);
             keyPressed = "";
             noteSuccessful = false;
             canPress = false;
         }
+        NoteManager.instance.gameObject.GetComponent<NoteManager>().SetMediumOpacity();
     }
 
     public void CompareKeys()
@@ -126,7 +123,7 @@ public class PlayPanelManager : MonoBehaviour
             Debug.Log("You got one point");
 
             // Change the note color to green
-            note.gameObject.GetComponent<Image>().color = new Color(87, 234, 91, 200);
+            NoteManager.instance.gameObject.GetComponent<NoteManager>().SetGreen();
 
             noteSuccessful = true;
             goodNotes++;
@@ -138,7 +135,7 @@ public class PlayPanelManager : MonoBehaviour
             Debug.Log("Wrong key");
 
             // Change the note color to red
-            note.gameObject.GetComponent<Image>().color = new Color32(234, 87, 91, 200);
+            NoteManager.instance.gameObject.GetComponent<NoteManager>().SetRed();
 
             noteSuccessful = false;
             canPress = false;

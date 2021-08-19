@@ -14,6 +14,7 @@ using static System.Environment;
 public class XmlManager : MonoBehaviour
 {
 
+    public static XmlManager instance;
     public string playerName;
     public bool isWoman;
     public Resource[] resources;
@@ -23,6 +24,14 @@ public class XmlManager : MonoBehaviour
     public MusicalMasteryLvl[] musicalMasteryLvl;
     public MusicSheet[] musicSheets;
     public GameData gameData;
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+    }
 
     // Called when a new game is created
     public void Create() {

@@ -278,7 +278,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPanel: {fileID: 299881746}
-  note: {fileID: 0}
 --- !u!61 &79600161
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -303,7 +302,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 200, y: 230}
+  m_Size: {x: 172, y: 230}
   m_EdgeRadius: 0
 --- !u!212 &79600162
 SpriteRenderer:
@@ -2865,7 +2864,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 200, y: 230}
+  m_Size: {x: 172, y: 230}
   m_EdgeRadius: 0
 --- !u!114 &1084994035
 MonoBehaviour:
@@ -2880,6 +2879,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   note: {fileID: 264587215109723315, guid: f8511620661a1604187442dfd02e90ee, type: 3}
+  noteSuccessful: 0
+  canPress: 0
+  haveBeenPressed: 0
 --- !u!50 &1084994036
 Rigidbody2D:
   serializedVersion: 4

@@ -36,4 +36,22 @@ public class NoteManager : MonoBehaviour
     {
          gameObject.transform.position = new Vector3(gameObject.transform.position.x - 180 * Time.deltaTime, gameObject.transform.position.y, gameObject.transform.position.z);
     }
+
+    public void SetGreen()
+    {
+        Debug.Log("Green");
+        gameObject.GetComponent<Image>().color = new Color32(87, 234, 91, 200);
+    }
+
+    public void SetRed()
+    {
+        Debug.Log("Red");
+        gameObject.GetComponent<Image>().color = new Color32(234, 87, 91, 200);
+    }
+
+    public void SetMediumOpacity()
+    {
+        Debug.Log("Opacity");
+        gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+    }
 }
