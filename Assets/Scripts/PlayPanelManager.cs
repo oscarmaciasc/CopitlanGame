@@ -6,11 +6,14 @@ using System.Linq;
 
 public class PlayPanelManager : MonoBehaviour
 {
+    [SerializeField]private GameObject note;
     private bool noteSuccessful;
     private bool canPress;
-    char numberNote = '1';
-    char keyToCompare = '\0';
+    string numberNote = "";
+    string keyPressed = "";
     int goodNotes = 0;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +24,7 @@ public class PlayPanelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Key to compare = NoteText
+
         //This condition do CompareKeys only OnTrigger and when a key is pressed
         if (canPress && Input.anyKeyDown)
         {
@@ -32,6 +35,12 @@ public class PlayPanelManager : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("Collision");
+
+        // Key to compare = NoteText
+        // This was in update but it fits better here
+        numberNote = NoteManager.instance.number;
+        Debug.Log("Prueba texto: " + note.transform.Find("NoteText").gameObject.GetComponent<Text>().text);
+
         if (col.gameObject.GetComponent<NoteManager>() != null)
         {
             Debug.Log("Detecting note...");
@@ -51,30 +60,62 @@ public class PlayPanelManager : MonoBehaviour
     {
         //Detecting the key pressed
         //Si la tecla presionada corresponde al número de la nota entonces marcar correcto
-        var allKeys = System.Enum.GetValues(typeof(KeyCode)).Cast<KeyCode>();
-        foreach (var key in allKeys)
+
+        if (Input.GetKeyDown(KeyCode.Alpha0) || Input.GetKeyDown(KeyCode.Keypad0))
         {
-            if (Input.GetKeyDown(key))
-            {
-                //keyToCompare = (char)key;
-                Debug.Log("Key in foreach is: " + key);
-                keyToCompare = (char)key;
-            }
+            keyPressed = "0";
+        } 
+        else if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            keyPressed = "1";
         }
-        if (keyToCompare == numberNote)
+        else if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            keyPressed = "2";
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
+        {
+            keyPressed = "3";
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4))
+        {
+            keyPressed = "4";
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha5) || Input.GetKeyDown(KeyCode.Keypad5))
+        {
+            keyPressed = "5";
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha6) || Input.GetKeyDown(KeyCode.Keypad6))
+        {
+            keyPressed = "6";
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha7) || Input.GetKeyDown(KeyCode.Keypad7))
+        {
+            keyPressed = "7";
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha8) || Input.GetKeyDown(KeyCode.Keypad8))
+        {
+            keyPressed = "8";
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha9) || Input.GetKeyDown(KeyCode.Keypad9))
+        {
+            keyPressed = "9";
+        }
+
+        if (keyPressed == numberNote)
         {
             Debug.Log("You got one point");
             noteSuccessful = true;
-            goodNotes ++;
+            goodNotes++;
             canPress = false;
         }
-        else if(keyToCompare != '\0')
+        else if (keyPressed != "")
         {
             Debug.Log("You miss that key");
             noteSuccessful = false;
             canPress = false;
         }
-        Debug.Log("KeyToCompare is: " + keyToCompare);
+        Debug.Log("KeyToCompare is: " + keyPressed);
         Debug.Log("NumberNote is: " + numberNote);
         Debug.Log("Correct notes: " + goodNotes);
     }
@@ -82,11 +123,11 @@ public class PlayPanelManager : MonoBehaviour
     //Streaks
     public void NoteStreak()
     {
-        if(goodNotes == 10 /*&& Partitura == Facil*/)
+        if (goodNotes == 10 /*&& Partitura == Facil*/)
         {
             //PartitureVelocity = PartituraFacil.velocidad * 1.2;
         }
 
         //Etc etc...
-    }  
+    }
 }

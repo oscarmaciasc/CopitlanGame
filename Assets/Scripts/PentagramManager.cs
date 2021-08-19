@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PentagramManager : MonoBehaviour
 {
-
     [SerializeField] private GameObject notePrefab;
 
     // Start is called before the first frame update
     void Start()
     {
+        // Generating random notes for testing purposes
         Instantiate(this.notePrefab, this.transform.position, Quaternion.identity).transform.SetParent(this.gameObject.transform);
         Debug.Log("PentagramManager Started");
     }
