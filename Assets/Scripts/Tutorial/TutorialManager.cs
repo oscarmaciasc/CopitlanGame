@@ -69,9 +69,8 @@ private void Awake() {
     }
 
     public void StartPlaying() {
-        // *****************FAKE*****************
         this.gameObject.SetActive(false);
         pentagramPanel.gameObject.SetActive(true);
-        // *****************FAKE*****************
+        // Get to the Game Scene
     }
 }
