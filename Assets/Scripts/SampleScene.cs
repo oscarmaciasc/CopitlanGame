@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class SampleScene : MonoBehaviour
 {
-
     [SerializeField] private GameObject exitPanel;
     [SerializeField] private GameObject confirmationWindowExit;
     [SerializeField] private Button returnArrow;
