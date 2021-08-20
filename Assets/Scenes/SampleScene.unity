@@ -2723,11 +2723,10 @@ GameObject:
   - component: {fileID: 1084994031}
   - component: {fileID: 1084994033}
   - component: {fileID: 1084994034}
-  - component: {fileID: 1084994035}
   - component: {fileID: 1084994036}
   m_Layer: 5
   m_Name: PlayPanel
-  m_TagString: Untagged
+  m_TagString: collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2866,22 +2865,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 172, y: 230}
   m_EdgeRadius: 0
---- !u!114 &1084994035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1084994029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95e0ce851e562954a9cf1d15064a5ea6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  note: {fileID: 264587215109723315, guid: f8511620661a1604187442dfd02e90ee, type: 3}
-  noteSuccessful: 0
-  canPress: 0
-  haveBeenPressed: 0
 --- !u!50 &1084994036
 Rigidbody2D:
   serializedVersion: 4
@@ -3181,6 +3164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notePrefab: {fileID: 264587215109723315, guid: f8511620661a1604187442dfd02e90ee, type: 3}
+  timeLastNote: 2
 --- !u!1 &1252838764
 GameObject:
   m_ObjectHideFlags: 0
