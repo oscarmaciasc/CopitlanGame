@@ -11,10 +11,10 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private GameObject startPlayingPanel;
     [SerializeField] private GameObject pentagramPanel;
 
-private void Awake() {
-    if(instance == null)
-        instance = this;
-}
+    private void Awake() {
+        if(instance == null)
+            instance = this;
+    }
     private void Start() {
         // deactivating all dialogs and panels in start
         dialog1.gameObject.SetActive(false);

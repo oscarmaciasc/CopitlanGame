@@ -3686,21 +3686,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1808583403}
-        m_TargetAssemblyTypeName: XmlManager, Assembly-CSharp
-        m_MethodName: Create
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1808583398}
         m_TargetAssemblyTypeName: GameSelection, Assembly-CSharp
-        m_MethodName: CharacterSelection
+        m_MethodName: Create
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3791,10 +3779,9 @@ MonoBehaviour:
   arrowGame1: {fileID: 1934770512}
   arrowGame2: {fileID: 432423078}
   arrowGame3: {fileID: 1044253356}
-  names:
-  - Partida de Jaime
-  - Partida de Ter
-  - 
+  nameGame1: {fileID: 2084318964}
+  nameGame2: {fileID: 1049691366}
+  nameGame3: {fileID: 714557426}
 --- !u!114 &1808583399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3892,8 +3879,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87fd586a3adfb97449a4c42143715f26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: 
-  isWoman: 0
 --- !u!1 &1878390365
 GameObject:
   m_ObjectHideFlags: 0
