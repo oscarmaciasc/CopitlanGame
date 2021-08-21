@@ -15,16 +15,9 @@ public class XmlManager : MonoBehaviour
 {
 
     public static XmlManager instance;
-    public string playerName;
-    public bool isWoman;
-    public Resource[] resources;
-    public Permission[] permissions;
-    public Flute[] flutes;
-    public Balloon[] balloons;
-    public MusicalMasteryLvl[] musicalMasteryLvl;
-    public MusicSheet[] musicSheets;
-    public GameData gameData;
-
+    private string playerName;
+    private bool isWoman;
+    
     private void Awake()
     {
         if(instance == null)
@@ -34,15 +27,15 @@ public class XmlManager : MonoBehaviour
     }
 
     // Called when a new game is created
-    public void Create() {
+    public bool Create() {
         int gameIndex = CanCreateGame();
 
         if(gameIndex != 0) {
             Save(gameIndex);
+            return true;
         }
         else {
-            Debug.Log("No");
-            // Activate the "No more than 3 games" panel
+            return false;
         }
     }
 
@@ -74,7 +67,7 @@ public class XmlManager : MonoBehaviour
         isWoman = false;
         //*********************Fake********************
         
-        gameData = new GameData(playerName, isWoman);
+        GameData gameData = new GameData(playerName, isWoman);
 
         XmlSerializer serializer = new XmlSerializer(typeof(GameData));
 
@@ -95,23 +88,33 @@ public class XmlManager : MonoBehaviour
         xmlWriter.Close();
     }
 
-    public void Load()
+    // Fill gameData array
+    public GameData[] Load()
     {
-        XmlSerializer serializer = new XmlSerializer(typeof(GameData));
-        FileStream xmlRead = new FileStream(CurrentDirectory + "/GameData1.xml", FileMode.Open);
-        gameData = serializer.Deserialize(xmlRead) as GameData;
-        Debug.Log("Nombre del jugador: " + gameData.name +
-            "\nRecurso: " + gameData.resource[0].name +
-            "\nGlobo: " + gameData.balloon[0].name +
-            "\nFlauta: " + gameData.flute[0].name);
-        xmlRead.Close();
+        bool[] count = GamesCount();
+        GameData[] gamesData = new GameData[3];
+        GameData gameData = new GameData();
+
+        for(int i = 0; i < 3; i++) {
+            if(count[i]) {
+                XmlSerializer serializer = new XmlSerializer(typeof(GameData));
+                FileStream xmlRead = new FileStream(CurrentDirectory + "/GameData" + (i + 1) + ".xml", FileMode.Open);
+                gameData = serializer.Deserialize(xmlRead) as GameData;
+                xmlRead.Close();
+                gamesData[i] = gameData;
+            }
+        }
+
+        return gamesData;
     }
 
+    // Delete a file
     public void Delete()
     {
         File.Delete(CurrentDirectory + "/GameData1.xml");
     }
     
+    // Return an bool array in wich are the positions of existent games
     public bool[] GamesCount() {
         bool[] count = new bool[3];
 

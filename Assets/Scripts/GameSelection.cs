@@ -10,12 +10,16 @@ public class GameSelection : MonoBehaviour
     public GameObject deleteGameButton;
     public GameObject loadGameButton;
     public GameObject[] games;
+    private GameData[] gamesData = new GameData[3];
+    private int gamesNumber = 0;
 
     [SerializeField] private GameObject arrowGame1;
     [SerializeField] private GameObject arrowGame2;
     [SerializeField] private GameObject arrowGame3;
+    [SerializeField] private GameObject nameGame1;
+    [SerializeField] private GameObject nameGame2;
+    [SerializeField] private GameObject nameGame3;
 
-    public string[] names = new string[3];
 
     // Start is called before the first frame update
     void Start()
@@ -38,17 +42,7 @@ public class GameSelection : MonoBehaviour
             deleteGameButton.transform.Find("Text").gameObject.GetComponent<Outline>().effectColor = new Color32(62, 38, 19, 140);
         }
 
-        for (int i = 0; i < 3; i++)
-        {
-            if (names[i] != "")
-            {
-                games[i].gameObject.SetActive(true);
-            }
-            else
-            {
-                games[i].gameObject.SetActive(false);
-            }
-        }
+        ActivateGamePanels();
     }
 
     // Update is called once per frame
@@ -65,11 +59,68 @@ public class GameSelection : MonoBehaviour
         }
     }
 
+    public void ActivateGamePanels() {
+        gamesData = XmlManager.instance.Load();
+        
+        for(int i = 0; i < 3; i++) {
+            if(gamesData[i] != null) {
+                gamesNumber++;
+            }
+        }
+
+        if(gamesNumber > 0) {
+            for (int i = 0; i < 3; i++)
+            {
+                if (gamesData[i] != null)
+                {
+                    Debug.Log(gamesData[i].name);
+                    games[i].gameObject.SetActive(true);
+                    FillGamePanel(i);
+                }
+                else
+                {
+                    games[i].gameObject.SetActive(false);
+                }
+            }
+        }
+        else {
+            for (int i = 0; i < 3; i++)
+            {
+                games[i].gameObject.SetActive(false);
+            }
+        }
+    }
+
+    public void FillGamePanel(int i) {
+
+
+        switch(i) {
+            case 0:
+                nameGame1.gameObject.GetComponent<Text>().text = gamesData[i].name;
+            break;
+            case 1:
+                nameGame2.gameObject.GetComponent<Text>().text = gamesData[i].name;
+            break;
+            case 2:
+                nameGame3.gameObject.GetComponent<Text>().text = gamesData[i].name;
+            break;
+        }
+    }
+
     public void ConfirmationWindowDisplayDelete()
     {
         confirmationWindowDelete.SetActive(true);
     }
 
+    public void Create() {
+        if(XmlManager.instance.Create()) {
+            SceneManager.LoadScene("CharacterSelection");
+        }
+        else {
+            Debug.Log("No xD");
+            // Activate the "No more than 3 games" panel
+        }
+    }
     public void Delete()
     {
         //Delete the selected game
@@ -136,19 +187,5 @@ public class GameSelection : MonoBehaviour
         deleteGameButton.GetComponent<Button>().interactable = false;
         loadGameButton.GetComponent<Button>().interactable = false;
         // Condition: if game 1 deactivate arrow 1, if game 2 deactivate game 2, etc...
-    }
-
-    public void CharacterSelection()
-    {
-        if(XmlManager.instance.CanCreateGame() != 0)
-        {
-            SceneManager.LoadScene("CharacterSelection");
-        }
-        else
-        {
-            Debug.Log("You already have 3 games");
-            // Deactivate NewGame button
-            // also implement this on MainMenu newGame
-        }
     }
 }
