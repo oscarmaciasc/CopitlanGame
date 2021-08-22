@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Partitures : MonoBehaviour
 {
+    public static Partitures instance;
     public string partitureName;
     public string partitureDifficulty;
     public float velocity;
     public string musicToPlay;
+    public int limitStreak = 10;
+
 
     public Partitures() { }
 
@@ -20,6 +23,7 @@ public class Partitures : MonoBehaviour
         {
             this.partitureDifficulty = "easy";
             this.velocity = 1f;
+
             if (partitureName == "1")
             {
                 this.musicToPlay = "/track1";
@@ -37,7 +41,7 @@ public class Partitures : MonoBehaviour
         if (partitureName == "4" || partitureName == "5" || partitureName == "6")
         {
             this.partitureDifficulty = "medium";
-            this.velocity = 1.5f;
+            this.velocity = 0.5f;
             if (partitureName == "4")
             {
                 this.musicToPlay = "/track4";
@@ -55,7 +59,7 @@ public class Partitures : MonoBehaviour
         if (partitureName == "7" || partitureName == "8" || partitureName == "9")
         {
             this.partitureDifficulty = "hard";
-            this.velocity = 2f;
+            this.velocity = 0.1f;
             if (partitureName == "7")
             {
                 this.musicToPlay = "/track7";
@@ -77,16 +81,39 @@ public class Partitures : MonoBehaviour
             this.musicToPlay = "/track10";
         }
     }
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-
+        this.velocity = 1f;
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    public void LimitStreak()
+    {
+        if (PentagramManager.streak == limitStreak)
+        {
+            velocity -= 0.20f;
+            limitStreak += 10;
+        }
+
+        if (PentagramManager.streak == 0)
+        {
+            velocity = 1f;
+        }
+
+        Debug.Log("PARTITURE VELOCITY: " + velocity);
     }
 }
