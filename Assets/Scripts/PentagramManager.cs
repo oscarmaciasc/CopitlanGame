@@ -6,11 +6,16 @@ public class PentagramManager : MonoBehaviour
 {
     [SerializeField] private GameObject notePrefab;
     public float timeLastNote = 2f;
+    public static int streak = 0;
+    public GameObject objectTest;
+    public GameObject test;
+
+    //Partitures partitura;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //partitura = new Partitures("1");
         Debug.Log("PentagramManager Started");
     }
 
@@ -18,8 +23,9 @@ public class PentagramManager : MonoBehaviour
     void Update()
     {
         // Generating random notes for testing purposes
-            Partitures partitura = new Partitures("1");
-            if ((Time.time - timeLastNote) >= partitura.velocity)
+        
+            
+            if ((Time.time - timeLastNote) >= Partitures.instance.velocity)
             {
                 Instantiate(this.notePrefab, this.transform.position, Quaternion.identity).transform.SetParent(this.gameObject.transform);
                 timeLastNote = Time.time;

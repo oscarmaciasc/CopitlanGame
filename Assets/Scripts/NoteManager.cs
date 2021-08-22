@@ -10,15 +10,12 @@ public class NoteManager : MonoBehaviour
     private int[] arrayPositions = { 34, 67, 100, 133, 166 };
     private string[] arrayNumberNotes = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
-    //*************************************************************************************************************************************
-
     [SerializeField] private GameObject note;
     public bool noteSuccessful;
     public bool canPress;
     public bool haveBeenPressed;
     string numberNote = "";
     string keyPressed = "";
-    int goodNotes = 0;
 
     private void Awake()
     {
@@ -55,15 +52,26 @@ public class NoteManager : MonoBehaviour
     {
         gameObject.transform.position = new Vector3(gameObject.transform.position.x - 180 * Time.deltaTime, gameObject.transform.position.y, gameObject.transform.position.z);
 
-        //***************************************************************************************************************************
-
         //This condition do CompareKeys only OnTrigger and when a key is pressed
         if (canPress && Input.anyKeyDown)
         {
             CompareKeys();
         }
+
+        /*
+        if(noteSuccessful)
+        {
+            streak ++;
+        }
+        else
+        {
+            streak = 0;
+        }
+        */
     }
 
+
+    //Identfy that the collider is the playpanel collider
     void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("Collision");
@@ -90,6 +98,7 @@ public class NoteManager : MonoBehaviour
             keyPressed = "";
             noteSuccessful = false;
             canPress = false;
+            PentagramManager.streak = 0;
         }
         gameObject.GetComponent<NoteManager>().SetMediumOpacity();
     }
@@ -152,11 +161,11 @@ public class NoteManager : MonoBehaviour
             SetGreen();
 
             noteSuccessful = true;
-            goodNotes++;
+            PentagramManager.streak++;
             canPress = false;
             haveBeenPressed = true;
         }
-        else if (keyPressed != "")
+        else if (keyPressed != numberNote && keyPressed != "")
         {
             Debug.Log("Wrong key");
 
@@ -166,44 +175,33 @@ public class NoteManager : MonoBehaviour
             noteSuccessful = false;
             canPress = false;
             haveBeenPressed = true;
+            PentagramManager.streak = 0;
         }
+
+        Partitures.instance.LimitStreak();
+
         Debug.Log("KeyToCompare is: " + keyPressed);
         Debug.Log("NumberNote is: " + numberNote);
-        Debug.Log("Correct notes: " + goodNotes);
-    }
-
-    //Streaks
-    public void NoteStreak()
-    {
-        if (goodNotes == 10 /*&& Partitura == Facil*/)
-        {
-            //PartitureVelocity = PartituraFacil.velocidad * 1.2;
-        }
-
-        //Etc etc...
+        Debug.Log("Racha: " + PentagramManager.streak);
     }
 
     public void SetGreen()
     {
-        Debug.Log("Green");
         gameObject.GetComponent<Image>().color = new Color32(87, 234, 91, 255);
     }
 
     public void SetRed()
     {
-        Debug.Log("Red");
         gameObject.GetComponent<Image>().color = new Color32(234, 87, 91, 255);
     }
 
     public void SetMediumOpacity()
     {
-        Debug.Log("Medium Opacity");
         gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
     }
 
     public void SetFullOpacity()
     {
-        Debug.Log("Full Opacity");
         gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
     }
 }
