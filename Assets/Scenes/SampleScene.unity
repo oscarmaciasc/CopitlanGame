@@ -3165,6 +3165,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notePrefab: {fileID: 264587215109723315, guid: f8511620661a1604187442dfd02e90ee, type: 3}
   timeLastNote: 2
+  objectTest: {fileID: 1491699981}
+  test: {fileID: 0}
 --- !u!1 &1252838764
 GameObject:
   m_ObjectHideFlags: 0
@@ -3854,6 +3856,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1469525681}
   m_CullTransparentMesh: 1
+--- !u!1 &1491699981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1491699983}
+  - component: {fileID: 1491699982}
+  m_Layer: 0
+  m_Name: PartitureTest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1491699982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491699981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c74a817d8f8304b953c83cdb8b46f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partitureName: 
+  partitureDifficulty: 
+  velocity: 0
+  musicToPlay: 
+  limitStreak: 10
+--- !u!4 &1491699983
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491699981}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 869.76825, y: 605.0487, z: -33611.656}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1508457431
 GameObject:
   m_ObjectHideFlags: 0
