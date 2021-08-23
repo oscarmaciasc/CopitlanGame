@@ -25,7 +25,7 @@ public class Note : MonoBehaviour
     private void Move()
     {
         // Making the note move all along the pentagram
-        gameObject.transform.position = new Vector3(gameObject.transform.position.x - 180 * Time.deltaTime, gameObject.transform.position.y, gameObject.transform.position.z);
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x - 240 * Time.deltaTime, gameObject.transform.position.y, gameObject.transform.position.z);
     }
 
     public void OpacityFull() {
