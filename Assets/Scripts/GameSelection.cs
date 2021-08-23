@@ -9,16 +9,18 @@ public class GameSelection : MonoBehaviour
     public GameObject confirmationWindowDelete;
     public GameObject deleteGameButton;
     public GameObject loadGameButton;
-    public GameObject[] games;
+    public GameObject[] gamePanels;
     private GameData[] gamesData = new GameData[3];
     private int gamesNumber = 0;
 
+    [SerializeField] private GameObject createGameButton;
     [SerializeField] private GameObject arrowGame1;
     [SerializeField] private GameObject arrowGame2;
     [SerializeField] private GameObject arrowGame3;
-    [SerializeField] private GameObject nameGame1;
-    [SerializeField] private GameObject nameGame2;
-    [SerializeField] private GameObject nameGame3;
+    [SerializeField] private GameObject[] nameGames = new GameObject[3];
+    [SerializeField] private GameObject[] permitsOutCir = new GameObject[3];
+    [SerializeField] private GameObject[] permitsTrian = new GameObject[3];
+    [SerializeField] private GameObject[] permitsInCir = new GameObject[3];
 
 
     // Start is called before the first frame update
@@ -30,6 +32,7 @@ public class GameSelection : MonoBehaviour
         confirmationWindowDelete.SetActive(false);
         //deleteGameButton.SetActive(false);
         //loadGameButton.SetActive(false);
+        
         DeactivateButtons();
 
         //Changin color and outline color when no game is selected
@@ -42,12 +45,14 @@ public class GameSelection : MonoBehaviour
             deleteGameButton.transform.Find("Text").gameObject.GetComponent<Outline>().effectColor = new Color32(62, 38, 19, 140);
         }
 
+        // Activate and filling game panels with files info
         ActivateGamePanels();
     }
 
     // Update is called once per frame
     void Update()
     {
+        CanCreateGame();
         //Changin color and outline color when a game is selected
         if (deleteGameButton.GetComponent<Button>().interactable == true || loadGameButton.GetComponent<Button>().interactable == true)
         {
@@ -60,6 +65,7 @@ public class GameSelection : MonoBehaviour
     }
 
     public void ActivateGamePanels() {
+        // Activates and fills game panels with files info
         gamesData = XmlManager.instance.Load();
         
         for(int i = 0; i < 3; i++) {
@@ -74,36 +80,53 @@ public class GameSelection : MonoBehaviour
                 if (gamesData[i] != null)
                 {
                     Debug.Log(gamesData[i].name);
-                    games[i].gameObject.SetActive(true);
+                    gamePanels[i].gameObject.SetActive(true);
                     FillGamePanel(i);
                 }
                 else
                 {
-                    games[i].gameObject.SetActive(false);
+                    gamePanels[i].gameObject.SetActive(false);
                 }
             }
         }
         else {
             for (int i = 0; i < 3; i++)
             {
-                games[i].gameObject.SetActive(false);
+                gamePanels[i].gameObject.SetActive(false);
             }
         }
     }
 
     public void FillGamePanel(int i) {
+        // Fills game panel info with files info
+        nameGames[i].gameObject.GetComponent<Text>().text = gamesData[i].name;
+        if(gamesData[i].DoesHavePermit("innerCircle")) {
+            permitsOutCir[i].gameObject.SetActive(true);
+            permitsTrian[i].gameObject.SetActive(true);
+            permitsInCir[i].gameObject.SetActive(true);
+        }
+        else if (gamesData[i].DoesHavePermit("triangle")) {
+            permitsOutCir[i].gameObject.SetActive(true);
+            permitsTrian[i].gameObject.SetActive(true);
+            permitsInCir[i].gameObject.SetActive(false);
+        }
+        else if (gamesData[i].DoesHavePermit("outterCircle")) {
+            permitsOutCir[i].gameObject.SetActive(true);
+            permitsTrian[i].gameObject.SetActive(false);
+            permitsInCir[i].gameObject.SetActive(false);
+        }
+        
+    }
 
-
-        switch(i) {
-            case 0:
-                nameGame1.gameObject.GetComponent<Text>().text = gamesData[i].name;
-            break;
-            case 1:
-                nameGame2.gameObject.GetComponent<Text>().text = gamesData[i].name;
-            break;
-            case 2:
-                nameGame3.gameObject.GetComponent<Text>().text = gamesData[i].name;
-            break;
+    private void CanCreateGame() {
+        // Deactivate the create game button if there are three games already and viceversa loko
+        if(XmlManager.instance.CanCreateGame() == 0)
+        {
+            DeactivateCreateGameButton();
+        }
+        else
+        {
+            ActivateCreateGameButton();
         }
     }
 
@@ -187,5 +210,19 @@ public class GameSelection : MonoBehaviour
         deleteGameButton.GetComponent<Button>().interactable = false;
         loadGameButton.GetComponent<Button>().interactable = false;
         // Condition: if game 1 deactivate arrow 1, if game 2 deactivate game 2, etc...
+    }
+
+    private void DeactivateCreateGameButton()
+    {
+        createGameButton.gameObject.GetComponent<Button>().interactable = false;
+        createGameButton.transform.Find("Text").gameObject.GetComponent<Text>().color = new Color32(173, 134, 80, 140);
+        createGameButton.transform.Find("Text").gameObject.GetComponent<Outline>().effectColor = new Color32(62, 38, 19, 140);
+    }
+
+    private void ActivateCreateGameButton()
+    {
+        createGameButton.gameObject.GetComponent<Button>().interactable = true;
+        createGameButton.transform.Find("Text").gameObject.GetComponent<Text>().color = new Color32(173, 134, 80, 255);
+        createGameButton.transform.Find("Text").gameObject.GetComponent<Outline>().effectColor = new Color32(62, 38, 19, 255);
     }
 }

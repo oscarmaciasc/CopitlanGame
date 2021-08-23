@@ -83,4 +83,14 @@ public class GameData
         this.musicalMasteryLvl = musicalMasteryLvl;
         this.musicSheet = musicSheet;
     }
+
+    public bool DoesHavePermit(string permitType) {
+        for(int i = 0; i < permission.Length; i++) {
+            if(permitType == permission[i].name) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
 }

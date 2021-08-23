@@ -1860,9 +1860,9 @@ RectTransform:
   m_Father: {fileID: 1952271608}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 630, y: -90}
   m_SizeDelta: {x: 255, y: 80}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &737091741
@@ -2029,9 +2029,9 @@ RectTransform:
   m_Father: {fileID: 1952271608}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -90}
   m_SizeDelta: {x: 255, y: 80}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &773323553
@@ -3056,9 +3056,9 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 5
+  m_ChildAlignment: 3
   m_Spacing: 0
-  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
@@ -3216,9 +3216,9 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 5
+  m_ChildAlignment: 3
   m_Spacing: 0
-  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
@@ -3772,16 +3772,30 @@ MonoBehaviour:
   confirmationWindowDelete: {fileID: 2103549603}
   deleteGameButton: {fileID: 2053977383}
   loadGameButton: {fileID: 815494422}
-  games:
+  gamePanels:
   - {fileID: 486415425}
   - {fileID: 850509801}
   - {fileID: 1449483665}
+  createGameButton: {fileID: 1760917113}
   arrowGame1: {fileID: 1934770512}
   arrowGame2: {fileID: 432423078}
   arrowGame3: {fileID: 1044253356}
-  nameGame1: {fileID: 2084318964}
-  nameGame2: {fileID: 1049691366}
-  nameGame3: {fileID: 714557426}
+  nameGames:
+  - {fileID: 2084318964}
+  - {fileID: 1049691366}
+  - {fileID: 714557426}
+  permitsOutCir:
+  - {fileID: 513686906}
+  - {fileID: 328627453}
+  - {fileID: 975167275}
+  permitsTrian:
+  - {fileID: 51342473}
+  - {fileID: 1609606901}
+  - {fileID: 900469577}
+  permitsInCir:
+  - {fileID: 203950452}
+  - {fileID: 816665150}
+  - {fileID: 119120384}
 --- !u!114 &1808583399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4523,7 +4537,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2103549604
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4639,9 +4653,9 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 5
+  m_ChildAlignment: 3
   m_Spacing: 0
-  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
