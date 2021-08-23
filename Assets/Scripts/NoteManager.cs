@@ -50,24 +50,13 @@ public class NoteManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.position = new Vector3(gameObject.transform.position.x - 180 * Time.deltaTime, gameObject.transform.position.y, gameObject.transform.position.z);
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x - 240 * Time.deltaTime, gameObject.transform.position.y, gameObject.transform.position.z);
 
         //This condition do CompareKeys only OnTrigger and when a key is pressed
         if (canPress && Input.anyKeyDown)
         {
             CompareKeys();
         }
-
-        /*
-        if(noteSuccessful)
-        {
-            streak ++;
-        }
-        else
-        {
-            streak = 0;
-        }
-        */
     }
 
 
@@ -79,7 +68,7 @@ public class NoteManager : MonoBehaviour
         // Key to compare = NoteText
         // This was in update but it fits better here
         numberNote = number;
-        if (col.gameObject != null)
+        if (col.gameObject.GetComponent<PlayPanelManager>() != null)
         {
             Debug.Log("Detecting note...");
             SetFullOpacity();

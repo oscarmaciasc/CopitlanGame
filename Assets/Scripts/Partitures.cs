@@ -8,21 +8,55 @@ public class Partitures : MonoBehaviour
     public string partitureName;
     public string partitureDifficulty;
     public float velocity;
+    public float partitureVelocity;
     public string musicToPlay;
     public int limitStreak = 10;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
-    public Partitures() { }
+    // Start is called before the first frame update
+    void Start()
+    {
+       
+    }
 
-    public Partitures(string partitureName)
+    // Update is called once per frame
+    void Update()
     {
 
+    }
+
+    public void LimitStreak()
+    {
+        if (PentagramManager.streak == limitStreak)
+        {
+            velocity -= 0.20f;
+            limitStreak += 10;
+        }
+
+        if (PentagramManager.streak == 0)
+        {
+            velocity = partitureVelocity;
+        }
+
+        Debug.Log("PARTITURE VELOCITY: " + velocity);
+    }
+
+    public void setVelocity(string partitureName)
+    {
         this.partitureName = partitureName;
 
         if (partitureName == "1" || partitureName == "2" || partitureName == "3")
         {
             this.partitureDifficulty = "easy";
             this.velocity = 1f;
+            this.partitureVelocity = 1f;
 
             if (partitureName == "1")
             {
@@ -42,6 +76,8 @@ public class Partitures : MonoBehaviour
         {
             this.partitureDifficulty = "medium";
             this.velocity = 0.5f;
+            this.partitureVelocity = 0.5f;
+
             if (partitureName == "4")
             {
                 this.musicToPlay = "/track4";
@@ -59,7 +95,9 @@ public class Partitures : MonoBehaviour
         if (partitureName == "7" || partitureName == "8" || partitureName == "9")
         {
             this.partitureDifficulty = "hard";
-            this.velocity = 0.1f;
+            this.velocity = 0.2f;
+            this.partitureVelocity = 0.2f;
+
             if (partitureName == "7")
             {
                 this.musicToPlay = "/track7";
@@ -77,43 +115,10 @@ public class Partitures : MonoBehaviour
         if (partitureName == "10")
         {
             this.partitureDifficulty = "epic";
-            this.velocity = 2.5f;
+            this.velocity = 0.1f;
+            this.partitureVelocity = 0.1f;
+
             this.musicToPlay = "/track10";
         }
-    }
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        this.velocity = 1f;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    public void LimitStreak()
-    {
-        if (PentagramManager.streak == limitStreak)
-        {
-            velocity -= 0.20f;
-            limitStreak += 10;
-        }
-
-        if (PentagramManager.streak == 0)
-        {
-            velocity = 1f;
-        }
-
-        Debug.Log("PARTITURE VELOCITY: " + velocity);
     }
 }

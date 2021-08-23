@@ -8,14 +8,21 @@ public class PentagramManager : MonoBehaviour
     public float timeLastNote = 2f;
     public static int streak = 0;
     public GameObject objectTest;
-    public GameObject test;
-
-    //Partitures partitura;
+    public string partitureName;
+    public static PentagramManager instance;
+     private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        //partitura = new Partitures("1");
+        partitureName = "10";
+        Partitures.instance.setVelocity(partitureName);
         Debug.Log("PentagramManager Started");
     }
 
