@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D theRB;
     public float moveSpeed;
     public Animator myAnim;
+    public string areaTransitionName;
 
     // Start is called before the first frame update
     void Start()
