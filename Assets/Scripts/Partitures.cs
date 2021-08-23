@@ -51,7 +51,6 @@ public class Partitures : MonoBehaviour
     public void setVelocity(string partitureName)
     {
         this.partitureName = partitureName;
-
         if (partitureName == "1" || partitureName == "2" || partitureName == "3")
         {
             this.partitureDifficulty = "easy";
