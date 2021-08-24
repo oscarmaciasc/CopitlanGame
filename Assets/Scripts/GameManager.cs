@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
     public bool escapePressed;
+    public bool vPressed;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         escapePressed = false;
+        vPressed = false;
     }
 
     // Update is called once per frame
@@ -40,7 +42,7 @@ public class GameManager : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.V))
         {
-            //
+            vPressed = true;
             Debug.Log("Flauta");
         }
 

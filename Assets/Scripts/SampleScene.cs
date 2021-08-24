@@ -10,6 +10,11 @@ public class SampleScene : MonoBehaviour
     [SerializeField] private Button returnArrow;
     [SerializeField] private GameObject successfulSavedPanel;
     [SerializeField] private GameObject successfulSavedExitPanel;
+    [SerializeField] private GameObject partitureSelectionPanel;
+    [SerializeField] private GameObject interpretatePartitureButton;
+    [SerializeField] private GameObject[] partiturePanels = new GameObject[10];
+    [SerializeField] private GameObject[] arrowSelectionPartiture = new GameObject[10];
+
 
     // Start is called before the first frame update
     void Start()
@@ -17,15 +22,28 @@ public class SampleScene : MonoBehaviour
         exitPanel.SetActive(false);
         confirmationWindowExit.SetActive(false);
         successfulSavedPanel.SetActive(false);
+        DeactivatePartitureSelectionPanel();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.instance.escapePressed == true)
-        {
+        CheckForInputs();
+    }
+
+    private void CheckForInputs()
+    {
+        if (GameManager.instance.escapePressed == true) {
             exitPanel.SetActive(true);
         }
+        if (GameManager.instance.vPressed == true)
+        {
+            ActivatePartitureSelectionPanel();
+        }
+    }
+
+    public void BackPartitureSelection() {
+        DeactivatePartitureSelectionPanel();
     }
 
     public void activateSavePanel()
@@ -76,4 +94,79 @@ public class SampleScene : MonoBehaviour
         Debug.Log("Saved");
     }
 
+    private void DeactivatePartitureSelectionPanel()
+    {
+        partitureSelectionPanel.gameObject.SetActive(false);
+        GameManager.instance.vPressed = false;
+        DeativateArrowsPartitureSelection();
+        
+        interpretatePartitureButton.gameObject.GetComponent<Button>().interactable = false;
+        interpretatePartitureButton.transform.Find("Text").gameObject.GetComponent<Text>().color = new Color32(50, 30, 14, 140);
+    }
+
+    private void ActivatePartitureSelectionPanel()
+    {
+        partitureSelectionPanel.SetActive(true);
+    }
+
+    private void DeativateArrowsPartitureSelection() 
+    {
+        for(int i = 0; i < 10; i++) {
+            arrowSelectionPartiture[i].SetActive(false);
+        }
+    }
+
+    public void onClickPartiturePanel1() {
+        partiturePanelPressed(0);
+    }
+
+    public void onClickPartiturePanel2() {
+        partiturePanelPressed(1);
+    }
+
+    public void onClickPartiturePanel3() {
+        partiturePanelPressed(2);
+    }
+
+    public void onClickPartiturePanel4() {
+        partiturePanelPressed(3);
+    }
+
+    public void onClickPartiturePanel5() {
+        partiturePanelPressed(4);
+    }
+
+    public void onClickPartiturePanel6() {
+        partiturePanelPressed(5);
+    }
+
+    public void onClickPartiturePanel7() {
+        partiturePanelPressed(6);
+    }
+
+    public void onClickPartiturePanel8() {
+        partiturePanelPressed(7);
+    }
+
+    public void onClickPartiturePanel9() {
+        partiturePanelPressed(8);
+    }
+
+    public void onClickPartiturePanel10() {
+        partiturePanelPressed(9);
+    }
+
+    public void partiturePanelPressed(int partitureSelected) {
+        interpretatePartitureButton.gameObject.GetComponent<Button>().interactable = true;
+        interpretatePartitureButton.transform.Find("Text").gameObject.GetComponent<Text>().color = new Color32(50, 30, 14, 255);
+
+        for(int i = 0; i < 10; i++) {
+            if(partitureSelected == i) {
+                arrowSelectionPartiture[i].SetActive(true);
+            }
+            else {
+                arrowSelectionPartiture[i].SetActive(false);
+            }
+        }
+    }
 }
