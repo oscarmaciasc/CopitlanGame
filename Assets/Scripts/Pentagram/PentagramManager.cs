@@ -21,7 +21,7 @@ public class PentagramManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        partitureName = "4";
+        partitureName = "10";
         Partitures.instance.setVelocity(partitureName);
         Debug.Log("PentagramManager Started");
     }

@@ -11,6 +11,10 @@ public class AreaExit : MonoBehaviour
     public AreaEntrance theEntrance;
     public float waitToLoad = 1f;
     private bool shouldLoadAfterFade;
+
+    // The area transition name is called InitSequence1 - 1 because its the first scene
+    // and is the first areaExit
+
     // Start is called before the first frame update
     void Start()
     {

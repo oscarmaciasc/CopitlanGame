@@ -15,6 +15,8 @@ public class AreaEntrance : MonoBehaviour
         }
 
         UIFade.instance.FadeFromBlack();
+
+        Debug.Log("Area Entrance");
     }
 
     // Update is called once per frame

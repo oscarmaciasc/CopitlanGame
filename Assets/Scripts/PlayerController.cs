@@ -15,10 +15,10 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         // This means that there can be only one player in the scene
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
-        } 
+        }
         else
         {
             Destroy(gameObject);
@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
         myAnim.SetFloat("moveX", theRB.velocity.x);
         myAnim.SetFloat("moveY", theRB.velocity.y);
 
-        if(Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
+        if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
         {
             myAnim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
             myAnim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
