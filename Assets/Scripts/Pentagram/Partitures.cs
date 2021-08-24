@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Partitures : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Partitures : MonoBehaviour
     public float partitureVelocity;
     public string musicToPlay;
     public int limitStreak = 10;
+    public string[] numberNotes = new string[10];
 
     private void Awake()
     {
@@ -23,7 +25,7 @@ public class Partitures : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+
     }
 
     // Update is called once per frame
@@ -34,6 +36,9 @@ public class Partitures : MonoBehaviour
 
     public void LimitStreak()
     {
+
+        // We have to Limit the streak to a certain number of streak, maybe 40.
+
         if (PentagramManager.streak == limitStreak)
         {
             velocity -= 0.20f;
@@ -57,6 +62,14 @@ public class Partitures : MonoBehaviour
             this.velocity = 1f;
             this.partitureVelocity = 1f;
 
+            for (int i = 0; i < 4; i++)
+            {
+                this.numberNotes[i] = i + "";
+            }
+
+            // Filling a new array deleting the null positions of numberNotes[]
+            this.numberNotes = numberNotes.Where(x => !string.IsNullOrEmpty(x)).ToArray();
+
             if (partitureName == "1")
             {
                 this.musicToPlay = "/track1";
@@ -76,6 +89,14 @@ public class Partitures : MonoBehaviour
             this.partitureDifficulty = "medium";
             this.velocity = 0.5f;
             this.partitureVelocity = 0.5f;
+
+            for (int i = 0; i < 7; i++)
+            {
+                this.numberNotes[i] = i + "";
+            }
+
+            // Filling a new array deleting the null positions of numberNotes[]
+            this.numberNotes = numberNotes.Where(x => !string.IsNullOrEmpty(x)).ToArray();
 
             if (partitureName == "4")
             {
@@ -97,6 +118,14 @@ public class Partitures : MonoBehaviour
             this.velocity = 0.2f;
             this.partitureVelocity = 0.2f;
 
+            for (int i = 0; i < 10; i++)
+            {
+                this.numberNotes[i] = i + "";
+            }
+
+            // Filling a new array deleting the null positions of numberNotes[]
+            this.numberNotes = numberNotes.Where(x => !string.IsNullOrEmpty(x)).ToArray();
+
             if (partitureName == "7")
             {
                 this.musicToPlay = "/track7";
@@ -116,6 +145,14 @@ public class Partitures : MonoBehaviour
             this.partitureDifficulty = "epic";
             this.velocity = 0.1f;
             this.partitureVelocity = 0.1f;
+
+            for (int i = 0; i < 10; i++)
+            {
+                this.numberNotes[i] = i + "";
+            }
+
+            // Filling a new array deleting the null positions of numberNotes[]
+            this.numberNotes = numberNotes.Where(x => !string.IsNullOrEmpty(x)).ToArray();
 
             this.musicToPlay = "/track10";
         }

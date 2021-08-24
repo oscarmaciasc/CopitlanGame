@@ -8,7 +8,6 @@ public class NoteManager : MonoBehaviour
     public static NoteManager instance;
     public string number = "";
     private int[] arrayPositions = { 34, 67, 100, 133, 166 };
-    private string[] arrayNumberNotes = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
     [SerializeField] private GameObject note;
     public bool noteSuccessful;
@@ -31,7 +30,7 @@ public class NoteManager : MonoBehaviour
         Debug.Log("NoteManager Started");
 
         int positionY = arrayPositions[Random.Range(0, arrayPositions.Length)];
-        number = arrayNumberNotes[Random.Range(0, arrayNumberNotes.Length)];
+        number = Partitures.instance.numberNotes[Random.Range(0, Partitures.instance.numberNotes.Length)];
 
         //Replace "+700" by the anchor position of the Pentagram
         //This only works for FullHD Resolutions
