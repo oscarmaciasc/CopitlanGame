@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class SampleScene : MonoBehaviour
 {
+
+    public static SampleScene instance;
     [SerializeField] private GameObject exitPanel;
     [SerializeField] private GameObject confirmationWindowExit;
     [SerializeField] private Button returnArrow;
@@ -14,7 +16,15 @@ public class SampleScene : MonoBehaviour
     [SerializeField] private GameObject interpretatePartitureButton;
     [SerializeField] private GameObject[] partiturePanels = new GameObject[10];
     [SerializeField] private GameObject[] arrowSelectionPartiture = new GameObject[10];
+    public string panelPartitureName;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +43,8 @@ public class SampleScene : MonoBehaviour
 
     private void CheckForInputs()
     {
-        if (GameManager.instance.escapePressed == true) {
+        if (GameManager.instance.escapePressed == true)
+        {
             exitPanel.SetActive(true);
         }
         if (GameManager.instance.vPressed == true)
@@ -42,7 +53,8 @@ public class SampleScene : MonoBehaviour
         }
     }
 
-    public void BackPartitureSelection() {
+    public void BackPartitureSelection()
+    {
         DeactivatePartitureSelectionPanel();
     }
 
@@ -99,7 +111,7 @@ public class SampleScene : MonoBehaviour
         partitureSelectionPanel.gameObject.SetActive(false);
         GameManager.instance.vPressed = false;
         DeativateArrowsPartitureSelection();
-        
+
         interpretatePartitureButton.gameObject.GetComponent<Button>().interactable = false;
         interpretatePartitureButton.transform.Find("Text").gameObject.GetComponent<Text>().color = new Color32(50, 30, 14, 140);
     }
@@ -109,62 +121,127 @@ public class SampleScene : MonoBehaviour
         partitureSelectionPanel.SetActive(true);
     }
 
-    private void DeativateArrowsPartitureSelection() 
+    private void DeativateArrowsPartitureSelection()
     {
-        for(int i = 0; i < 10; i++) {
+        for (int i = 0; i < 10; i++)
+        {
             arrowSelectionPartiture[i].SetActive(false);
         }
     }
 
-    public void onClickPartiturePanel1() {
+    public void onClickPartiturePanel1()
+    {
         partiturePanelPressed(0);
+
+        // get partiture name and send it to PentagramManager
+        panelPartitureName = partiturePanels[0].gameObject.transform.Find("InfoLayout1").gameObject.transform.Find("HorizontalLayout1").gameObject.transform.Find("Name1").gameObject.GetComponent<Text>().text;
+
+        Debug.Log(panelPartitureName);
     }
 
-    public void onClickPartiturePanel2() {
+    public void onClickPartiturePanel2()
+    {
         partiturePanelPressed(1);
+
+        // get partiture name and send it to PentagramManager
+        panelPartitureName = partiturePanels[1].gameObject.transform.Find("InfoLayout2").gameObject.transform.Find("HorizontalLayout2").gameObject.transform.Find("Name2").gameObject.GetComponent<Text>().text;
+
+        Debug.Log(panelPartitureName);
     }
 
-    public void onClickPartiturePanel3() {
+    public void onClickPartiturePanel3()
+    {
         partiturePanelPressed(2);
+
+        // get partiture name and send it to PentagramManager
+        panelPartitureName = partiturePanels[2].gameObject.transform.Find("InfoLayout3").gameObject.transform.Find("HorizontalLayout3").gameObject.transform.Find("Name3").gameObject.GetComponent<Text>().text;
+
+        Debug.Log(panelPartitureName);
     }
 
-    public void onClickPartiturePanel4() {
+    public void onClickPartiturePanel4()
+    {
         partiturePanelPressed(3);
+
+        // get partiture name and send it to PentagramManager
+        panelPartitureName = partiturePanels[3].gameObject.transform.Find("InfoLayout4").gameObject.transform.Find("HorizontalLayout4").gameObject.transform.Find("Name4").gameObject.GetComponent<Text>().text;
+
+        Debug.Log(panelPartitureName);
     }
 
-    public void onClickPartiturePanel5() {
+    public void onClickPartiturePanel5()
+    {
         partiturePanelPressed(4);
+
+        // get partiture name and send it to PentagramManager
+        panelPartitureName = partiturePanels[4].gameObject.transform.Find("InfoLayout5").gameObject.transform.Find("HorizontalLayout5").gameObject.transform.Find("Name5").gameObject.GetComponent<Text>().text;
+
+        Debug.Log(panelPartitureName);
     }
 
-    public void onClickPartiturePanel6() {
+    public void onClickPartiturePanel6()
+    {
         partiturePanelPressed(5);
+
+        // get partiture name and send it to PentagramManager
+        panelPartitureName = partiturePanels[5].gameObject.transform.Find("InfoLayout6").gameObject.transform.Find("HorizontalLayout6").gameObject.transform.Find("Name6").gameObject.GetComponent<Text>().text;
+
+        Debug.Log(panelPartitureName);
     }
 
-    public void onClickPartiturePanel7() {
+    public void onClickPartiturePanel7()
+    {
         partiturePanelPressed(6);
+
+        // get partiture name and send it to PentagramManager
+        panelPartitureName = partiturePanels[6].gameObject.transform.Find("InfoLayout7").gameObject.transform.Find("HorizontalLayout7").gameObject.transform.Find("Name7").gameObject.GetComponent<Text>().text;
+
+        Debug.Log(panelPartitureName);
     }
 
-    public void onClickPartiturePanel8() {
+    public void onClickPartiturePanel8()
+    {
         partiturePanelPressed(7);
+
+        // get partiture name and send it to PentagramManager
+        panelPartitureName = partiturePanels[7].gameObject.transform.Find("InfoLayout8").gameObject.transform.Find("HorizontalLayout8").gameObject.transform.Find("Name8").gameObject.GetComponent<Text>().text;
+
+        Debug.Log(panelPartitureName);
     }
 
-    public void onClickPartiturePanel9() {
+    public void onClickPartiturePanel9()
+    {
         partiturePanelPressed(8);
+
+        // get partiture name and send it to PentagramManager
+        panelPartitureName = partiturePanels[8].gameObject.transform.Find("InfoLayout9").gameObject.transform.Find("HorizontalLayout9").gameObject.transform.Find("Name9").gameObject.GetComponent<Text>().text;
+
+        Debug.Log(panelPartitureName);
     }
 
-    public void onClickPartiturePanel10() {
+    public void onClickPartiturePanel10()
+    {
         partiturePanelPressed(9);
+
+        // get partiture name and send it to PentagramManager
+        panelPartitureName = partiturePanels[9].gameObject.transform.Find("InfoLayout10").gameObject.transform.Find("HorizontalLayout10").gameObject.transform.Find("Name10").gameObject.GetComponent<Text>().text;
+
+        Debug.Log(panelPartitureName);
     }
 
-    public void partiturePanelPressed(int partitureSelected) {
+    public void partiturePanelPressed(int partitureSelected)
+    {
         interpretatePartitureButton.gameObject.GetComponent<Button>().interactable = true;
         interpretatePartitureButton.transform.Find("Text").gameObject.GetComponent<Text>().color = new Color32(50, 30, 14, 255);
 
-        for(int i = 0; i < 10; i++) {
-            if(partitureSelected == i) {
+        for (int i = 0; i < 10; i++)
+        {
+            if (partitureSelected == i)
+            {
                 arrowSelectionPartiture[i].SetActive(true);
             }
-            else {
+            else
+            {
                 arrowSelectionPartiture[i].SetActive(false);
             }
         }

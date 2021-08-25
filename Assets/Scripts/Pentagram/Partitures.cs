@@ -69,7 +69,7 @@ public class Partitures : MonoBehaviour
     public void setVelocity(string partitureName)
     {
         this.partitureName = partitureName;
-        if (partitureName == "1" || partitureName == "2" || partitureName == "3")
+        if (partitureName == "Partitura 1" || partitureName == "Partitura 2" || partitureName == "Partitura 3")
         {
             this.partitureDifficulty = "easy";
             this.velocity = 1f;
@@ -98,7 +98,7 @@ public class Partitures : MonoBehaviour
             }
         }
 
-        if (partitureName == "4" || partitureName == "5" || partitureName == "6")
+        if (partitureName == "Partitura 4" || partitureName == "Partitura 5" || partitureName == "Partitura 6")
         {
             this.partitureDifficulty = "medium";
             this.velocity = 0.9f;
@@ -127,7 +127,7 @@ public class Partitures : MonoBehaviour
             }
         }
 
-        if (partitureName == "7" || partitureName == "8" || partitureName == "9")
+        if (partitureName == "Partitura 7" || partitureName == "Partitura 8" || partitureName == "Partitura 9")
         {
             this.partitureDifficulty = "hard";
             this.velocity = 0.8f;
@@ -156,7 +156,7 @@ public class Partitures : MonoBehaviour
             }
         }
 
-        if (partitureName == "10")
+        if (partitureName == "Partitura 10")
         {
             this.partitureDifficulty = "epic";
             this.velocity = 0.7f;
