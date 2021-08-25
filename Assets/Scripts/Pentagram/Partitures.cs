@@ -49,7 +49,7 @@ public class Partitures : MonoBehaviour
         {
             if (PentagramManager.streak == upStreak)
             {
-                velocity -= 0.18f;
+                velocity -= 0.15f;
                 upStreak += 10;
             }
 
