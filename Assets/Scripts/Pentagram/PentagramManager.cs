@@ -23,7 +23,6 @@ public class PentagramManager : MonoBehaviour
     {
         partitureName = "10";
         Partitures.instance.setVelocity(partitureName);
-        Debug.Log("PentagramManager Started");
     }
 
     // Update is called once per frame

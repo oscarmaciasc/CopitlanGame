@@ -27,8 +27,6 @@ public class NoteManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("NoteManager Started");
-
         int positionY = arrayPositions[Random.Range(0, arrayPositions.Length)];
         number = Partitures.instance.numberNotes[Random.Range(0, Partitures.instance.numberNotes.Length)];
 
@@ -62,14 +60,11 @@ public class NoteManager : MonoBehaviour
     //Identfy that the collider is the playpanel collider
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("Collision");
-
         // Key to compare = NoteText
         // This was in update but it fits better here
         numberNote = number;
         if (col.gameObject.GetComponent<PlayPanelManager>() != null)
         {
-            Debug.Log("Detecting note...");
             SetFullOpacity();
             canPress = true;
         }
@@ -143,8 +138,6 @@ public class NoteManager : MonoBehaviour
 
         if (keyPressed == numberNote)
         {
-            Debug.Log("You got one point");
-
             // Change the note color to green
             SetGreen();
 
@@ -155,8 +148,6 @@ public class NoteManager : MonoBehaviour
         }
         else if (keyPressed != numberNote && keyPressed != "")
         {
-            Debug.Log("Wrong key");
-
             // Change the note color to red
             SetRed();
 
@@ -167,9 +158,6 @@ public class NoteManager : MonoBehaviour
         }
 
         Partitures.instance.LimitStreak();
-
-        Debug.Log("KeyToCompare is: " + keyPressed);
-        Debug.Log("NumberNote is: " + numberNote);
         Debug.Log("Racha: " + PentagramManager.streak);
     }
 

@@ -11,7 +11,8 @@ public class Partitures : MonoBehaviour
     public float velocity;
     public float partitureVelocity;
     public string musicToPlay;
-    public int limitStreak = 10;
+    public int upStreak = 10;
+    public int limitStreak;
     public string[] numberNotes = new string[10];
 
     private void Awake()
@@ -37,17 +38,29 @@ public class Partitures : MonoBehaviour
     public void LimitStreak()
     {
 
-        // We have to Limit the streak to a certain number of streak, maybe 40.
+        // We have to Limit the streak to a certain number of streak
+        // Streak now aumenting in 15% instead of 20%
+        // Partiture easy max streak: 30
+        // Partiture medium max streak: 20
+        // Partiture hard max streak: 20
+        // Partiture epic max streak: 10
 
-        if (PentagramManager.streak == limitStreak)
+        if (PentagramManager.streak <= limitStreak)
         {
-            velocity -= 0.20f;
-            limitStreak += 10;
+            if (PentagramManager.streak == upStreak)
+            {
+                velocity -= 0.18f;
+                upStreak += 10;
+            }
+
+            if (PentagramManager.streak == 0)
+            {
+                velocity = partitureVelocity;
+            }
         }
-
-        if (PentagramManager.streak == 0)
+        else
         {
-            velocity = partitureVelocity;
+            PentagramManager.streak = limitStreak;
         }
 
         Debug.Log("PARTITURE VELOCITY: " + velocity);
@@ -61,6 +74,7 @@ public class Partitures : MonoBehaviour
             this.partitureDifficulty = "easy";
             this.velocity = 1f;
             this.partitureVelocity = 1f;
+            this.limitStreak = 30;
 
             for (int i = 0; i < 4; i++)
             {
@@ -87,8 +101,9 @@ public class Partitures : MonoBehaviour
         if (partitureName == "4" || partitureName == "5" || partitureName == "6")
         {
             this.partitureDifficulty = "medium";
-            this.velocity = 0.5f;
-            this.partitureVelocity = 0.5f;
+            this.velocity = 0.9f;
+            this.partitureVelocity = 0.9f;
+            this.limitStreak = 20;
 
             for (int i = 0; i < 7; i++)
             {
@@ -115,8 +130,9 @@ public class Partitures : MonoBehaviour
         if (partitureName == "7" || partitureName == "8" || partitureName == "9")
         {
             this.partitureDifficulty = "hard";
-            this.velocity = 0.2f;
-            this.partitureVelocity = 0.2f;
+            this.velocity = 0.8f;
+            this.partitureVelocity = 0.8f;
+            this.limitStreak = 20;
 
             for (int i = 0; i < 10; i++)
             {
@@ -143,8 +159,9 @@ public class Partitures : MonoBehaviour
         if (partitureName == "10")
         {
             this.partitureDifficulty = "epic";
-            this.velocity = 0.1f;
-            this.partitureVelocity = 0.1f;
+            this.velocity = 0.6f;
+            this.partitureVelocity = 0.6f;
+            this.limitStreak = 10;
 
             for (int i = 0; i < 10; i++)
             {
