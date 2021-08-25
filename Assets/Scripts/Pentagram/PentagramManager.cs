@@ -22,6 +22,7 @@ public class PentagramManager : MonoBehaviour
     void Start()
     {
         partitureName = SampleScene.instance.panelPartitureName;
+        Debug.Log("You have selected: " + partitureName);
         Partitures.instance.setVelocity(partitureName);
     }
 
