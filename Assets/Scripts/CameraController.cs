@@ -17,6 +17,9 @@ public class CameraController : MonoBehaviour
     {
         //target = PlayerController.instance.transform;
 
+        // Search all the objects on the scene and find any object that has the PlayerController script attached to.
+        target = FindObjectOfType<PlayerController>().transform;
+
         // Limit the camera
         //bottomLeftLimit = theMap.localBounds.min;
     }
