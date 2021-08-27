@@ -27,14 +27,18 @@ public class HabitantMovement : MonoBehaviour
         if (canMove && destinyCoordX == 0 && destinyCoordY == 0)
         {
             GetRandomCoord();
+            StartCoroutine(Wait5Secs());
             StepToDestinyCoord();
             HasReachedDestiny();
         }
         else if (canMove)
         {
+            StartCoroutine(Wait5Secs());
             StepToDestinyCoord();
             HasReachedDestiny();
         }
+
+        StartCoroutine(Wait5Secs());
 
         /*
         if (AvoidCollision.instance.hasCollided != true)
@@ -68,7 +72,7 @@ public class HabitantMovement : MonoBehaviour
         }
     }
 
-    public void StepToDestinyCoord()
+    private void StepToDestinyCoord()
     {
         if (firstMovement == 1f)
         {
@@ -88,11 +92,11 @@ public class HabitantMovement : MonoBehaviour
         //Move X
         if (gameObject.transform.position.x < destinyCoordX)
         {
-            gameObject.transform.position = new Vector3(transform.position.x + 1 * Time.deltaTime, transform.position.y, 0);
+            gameObject.transform.position = new Vector3(transform.position.x + 1, transform.position.y, 0);
         }
         else if (gameObject.transform.position.x > destinyCoordX)
         {
-            gameObject.transform.position = new Vector3(transform.position.x - 1 * Time.deltaTime, transform.position.y, 0);
+            gameObject.transform.position = new Vector3(transform.position.x - 1, transform.position.y, 0);
         }
     }
 
@@ -101,11 +105,11 @@ public class HabitantMovement : MonoBehaviour
         // Move Y
         if (gameObject.transform.position.y < destinyCoordY)
         {
-            gameObject.transform.position = new Vector3(transform.position.x, transform.position.y + 1 * Time.deltaTime, 0);
+            gameObject.transform.position = new Vector3(transform.position.x, transform.position.y + 1, 0);
         }
         else if (gameObject.transform.position.y > destinyCoordY)
         {
-            gameObject.transform.position = new Vector3(transform.position.x, transform.position.y - 1 * Time.deltaTime, 0);
+            gameObject.transform.position = new Vector3(transform.position.x, transform.position.y - 1, 0);
         }
     }
 
@@ -116,10 +120,19 @@ public class HabitantMovement : MonoBehaviour
         firstMovement = Random.Range(1, 2);
 
         destinyCoordX = (int)gameObject.transform.position.x + randomX;
+        Debug.Log("DestinyCoordX(" + destinyCoordX + ") = " + "PositionX(" + (int)gameObject.transform.position.x + ") + RandomX(" + randomX + ")");
         destinyCoordY = (int)gameObject.transform.position.y + randomY;
+        Debug.Log("DestinyCoordY(" + destinyCoordY + ") = " + "PositionY(" + (int)gameObject.transform.position.y + ") + RandomY(" + randomY + ")");
 
         Debug.Log("Destino X: " + destinyCoordX);
         Debug.Log("Destino Y: " + destinyCoordY);
     }
-    
+
+    IEnumerator Wait5Secs()
+    {
+        Debug.Log("Time: " + Time.time);
+        yield return new WaitForSecondsRealtime(5);
+        Debug.Log("Time: " + Time.time);
+    }
+
 }
