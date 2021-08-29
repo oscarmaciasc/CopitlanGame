@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogManager : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class DialogManager : MonoBehaviour
 
     public static DialogManager instance;
 
-    private bool justStarted;
+    public bool justStarted;
 
 
     // Start is called before the first frame update
@@ -35,6 +36,7 @@ public class DialogManager : MonoBehaviour
             {
                 if(!justStarted)
                 {
+                    Debug.Log("Entrando");
                     currentLine++;
 
                     if(currentLine >= dialogLines.Length)
@@ -65,8 +67,12 @@ public class DialogManager : MonoBehaviour
 
         dialogText.text = dialogLines[0];
         dialogBox.SetActive(true);
-
         justStarted = true;
+
+        if (SceneManager.GetActiveScene().name == "InitSequence1")
+        {
+            justStarted = false;
+        }
 
         PlayerController.instance.canMove = false;
     }

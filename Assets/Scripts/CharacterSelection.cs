@@ -88,6 +88,6 @@ public class CharacterSelection : MonoBehaviour
     }
     public void InitGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("InitSequence1");
     }
 }

@@ -11,6 +11,8 @@ public class HabitantMovement : MonoBehaviour
     private int destinyCoordX;
     private int destinyCoordY;
     public bool canMove;
+    public float moveRate = 5f;
+    public float nextMove = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -27,18 +29,14 @@ public class HabitantMovement : MonoBehaviour
         if (canMove && destinyCoordX == 0 && destinyCoordY == 0)
         {
             GetRandomCoord();
-            StartCoroutine(Wait5Secs());
             StepToDestinyCoord();
             HasReachedDestiny();
         }
         else if (canMove)
         {
-            StartCoroutine(Wait5Secs());
             StepToDestinyCoord();
             HasReachedDestiny();
         }
-
-        StartCoroutine(Wait5Secs());
 
         /*
         if (AvoidCollision.instance.hasCollided != true)
@@ -92,11 +90,19 @@ public class HabitantMovement : MonoBehaviour
         //Move X
         if (gameObject.transform.position.x < destinyCoordX)
         {
-            gameObject.transform.position = new Vector3(transform.position.x + 1, transform.position.y, 0);
+            if (Time.time > nextMove)
+            {
+                nextMove = Time.time + moveRate;
+                gameObject.transform.position = new Vector3(transform.position.x + 1, transform.position.y, 0);
+            }
         }
         else if (gameObject.transform.position.x > destinyCoordX)
         {
-            gameObject.transform.position = new Vector3(transform.position.x - 1, transform.position.y, 0);
+            if (Time.time > nextMove)
+            {
+                nextMove = Time.time + moveRate;
+                gameObject.transform.position = new Vector3(transform.position.x - 1, transform.position.y, 0);
+            }
         }
     }
 
@@ -105,11 +111,19 @@ public class HabitantMovement : MonoBehaviour
         // Move Y
         if (gameObject.transform.position.y < destinyCoordY)
         {
-            gameObject.transform.position = new Vector3(transform.position.x, transform.position.y + 1, 0);
+            if (Time.time > nextMove)
+            {
+                nextMove = Time.time + moveRate;
+                gameObject.transform.position = new Vector3(transform.position.x, transform.position.y + 1, 0);
+            }
         }
         else if (gameObject.transform.position.y > destinyCoordY)
         {
-            gameObject.transform.position = new Vector3(transform.position.x, transform.position.y - 1, 0);
+            if (Time.time > nextMove)
+            {
+                nextMove = Time.time + moveRate;
+                gameObject.transform.position = new Vector3(transform.position.x, transform.position.y - 1, 0);
+            }
         }
     }
 
@@ -126,13 +140,6 @@ public class HabitantMovement : MonoBehaviour
 
         Debug.Log("Destino X: " + destinyCoordX);
         Debug.Log("Destino Y: " + destinyCoordY);
-    }
-
-    IEnumerator Wait5Secs()
-    {
-        Debug.Log("Time: " + Time.time);
-        yield return new WaitForSecondsRealtime(5);
-        Debug.Log("Time: " + Time.time);
     }
 
 }
