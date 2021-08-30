@@ -19,6 +19,8 @@ public class DialogManager : MonoBehaviour
 
     public bool justStarted;
 
+    public bool conversationIsFinished = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +46,7 @@ public class DialogManager : MonoBehaviour
                         dialogBox.SetActive(false);
 
                         PlayerController.instance.canMove = true;
+                        conversationIsFinished = true;
                     }
                     else
                     {

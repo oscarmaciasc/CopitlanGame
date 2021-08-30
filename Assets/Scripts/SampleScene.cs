@@ -16,6 +16,7 @@ public class SampleScene : MonoBehaviour
     [SerializeField] private GameObject interpretatePartitureButton;
     [SerializeField] private GameObject[] partiturePanels = new GameObject[10];
     [SerializeField] private GameObject[] arrowSelectionPartiture = new GameObject[10];
+    [SerializeField] private GameObject pentagramPanel;
     public string panelPartitureName;
 
     private void Awake()
@@ -49,7 +50,12 @@ public class SampleScene : MonoBehaviour
         }
         if (GameManager.instance.vPressed == true)
         {
-            ActivatePartitureSelectionPanel();
+            // If a partiture is already playing, we cant select another partiture.
+            // We have to set pentagramPanel to false when the partiture is over. 
+            if(pentagramPanel.activeInHierarchy == false)
+            {
+                ActivatePartitureSelectionPanel();
+            }
         }
     }
 
@@ -245,5 +251,11 @@ public class SampleScene : MonoBehaviour
                 arrowSelectionPartiture[i].SetActive(false);
             }
         }
+    }
+
+    public void onPartitureSelected()
+    {
+        DeactivatePartitureSelectionPanel();
+        pentagramPanel.SetActive(true);
     }
 }
