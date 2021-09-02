@@ -50,7 +50,8 @@ public class InitSequence2 : MonoBehaviour
             PlayerController.instance.canMove = false;
         }
         justStarted = false;
-        yield return new WaitForSeconds(1);
+        // Delay for initSequence2 message
+        yield return new WaitForSeconds(0.5f);
         if (!hasBeenActivated)
         {
             pressVPanel.SetActive(true);
