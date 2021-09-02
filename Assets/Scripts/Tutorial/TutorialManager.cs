@@ -11,16 +11,20 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private GameObject startPlayingPanel;
     [SerializeField] private GameObject pentagramPanel;
 
-    private void Awake() {
-        if(instance == null)
+    private void Awake()
+    {
+        if (instance == null)
             instance = this;
     }
-    private void Start() {
+    private void Start()
+    {
         // deactivating all dialogs and panels in start
         dialog1.gameObject.SetActive(false);
         dialog2.gameObject.SetActive(false);
         dialog3.gameObject.SetActive(false);
         startPlayingPanel.gameObject.SetActive(false);
+
+        Debug.Log("Entering TutorialManager");
     }
 
     private void Update()
@@ -42,10 +46,12 @@ public class TutorialManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha1) || Input.anyKeyDown)
             {
                 dialog2.gameObject.SetActive(false);
-                if(Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1)) {
+                if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
+                {
                     Note.instance.SetGreen();
                 }
-                else {
+                else
+                {
                     Note.instance.SetRed();
                 }
                 Time.timeScale = 1;
@@ -53,24 +59,30 @@ public class TutorialManager : MonoBehaviour
         }
     }
 
-    public void ProcessDialog1() {
+    public void ProcessDialog1()
+    {
         dialog1.gameObject.SetActive(true);
         Time.timeScale = 0;
     }
-    
-    public void ProcessDialog2() {
+
+    public void ProcessDialog2()
+    {
         dialog2.gameObject.SetActive(true);
         Time.timeScale = 0;
     }
-    
-    public void ProcessDialog3() {
+
+    public void ProcessDialog3()
+    {
         dialog3.gameObject.SetActive(true);
         Time.timeScale = 0;
     }
 
-    public void StartPlaying() {
+    public void StartPlaying()
+    {
         this.gameObject.SetActive(false);
         pentagramPanel.gameObject.SetActive(true);
+
+        
         // Get to the Game Scene
     }
 }

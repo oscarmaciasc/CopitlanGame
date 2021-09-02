@@ -46,7 +46,15 @@ public class DialogManager : MonoBehaviour
                         dialogBox.SetActive(false);
 
                         PlayerController.instance.canMove = true;
-                        conversationIsFinished = true;
+
+                        // Only if the conversation is finished and we are in InitSequence2
+                        if(SceneManager.GetActiveScene().name == "InitSequence2")
+                        {
+                            conversationIsFinished = true;
+                            // When we are playing the tutorial we dont want to be able to talk to the child again
+                            // Deactivate the npc0 collider
+                            DialogActivator.instance.canActivate = false;
+                        }
                     }
                     else
                     {

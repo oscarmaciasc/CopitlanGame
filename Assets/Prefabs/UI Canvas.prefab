@@ -12997,6 +12997,8 @@ MonoBehaviour:
   - test
   - array
   currentLine: 0
+  justStarted: 0
+  conversationIsFinished: 0
 --- !u!1 &7728140893198606293
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,13 +6,15 @@ using UnityEngine.SceneManagement;
 public class DialogActivator : MonoBehaviour
 {
 
+    public static DialogActivator instance;
     public string[] lines;
     public string[] linesInitSequence1;
-    private bool canActivate;
+    public bool canActivate;
 
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         canActivate = false;
         StartCoroutine(InitSequence1Dialogs());
     }
@@ -50,7 +52,7 @@ public class DialogActivator : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "InitSequence1")
         {
             PlayerController.instance.canMove = false;
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(2);
             DialogManager.instance.ShowDialog(linesInitSequence1);
         }
     }

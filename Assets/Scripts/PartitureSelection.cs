@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SampleScene : MonoBehaviour
+public class PartitureSelection : MonoBehaviour
 {
 
-    public static SampleScene instance;
+    public static PartitureSelection instance;
     [SerializeField] private GameObject exitPanel;
     [SerializeField] private GameObject confirmationWindowExit;
     [SerializeField] private Button returnArrow;
@@ -52,6 +52,8 @@ public class SampleScene : MonoBehaviour
         {
             // If a partiture is already playing, we cant select another partiture.
             // We have to set pentagramPanel to false when the partiture is over. 
+
+            // Second condition is codigo puerco, check this later.
             if(pentagramPanel.activeInHierarchy == false)
             {
                 ActivatePartitureSelectionPanel();

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PentagramManager : MonoBehaviour
 {
@@ -21,7 +22,14 @@ public class PentagramManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        partitureName = SampleScene.instance.panelPartitureName;
+        if(SceneManager.GetActiveScene().name == "InitSequence2")
+        {
+            partitureName = PartitureSelectionTutorial.instance.panelPartitureName;
+        }
+        else
+        {
+            partitureName = PartitureSelection.instance.panelPartitureName;
+        }
         Debug.Log("You have selected: " + partitureName);
         Partitures.instance.setVelocity(partitureName);
     }

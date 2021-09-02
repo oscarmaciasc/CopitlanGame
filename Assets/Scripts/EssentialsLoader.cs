@@ -5,16 +5,16 @@ using UnityEngine;
 public class EssentialsLoader : MonoBehaviour
 {
 
-    public GameObject UIScreen;
+    //public GameObject UIScreen;
     public GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(UIFade.instance == null)
+        /*if(UIFade.instance == null)
         {
             UIFade.instance = Instantiate(UIScreen).GetComponent<UIFade>();
-        }
+        }*/
 
         if(PlayerController.instance == null)
         {
