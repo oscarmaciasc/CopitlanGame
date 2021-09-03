@@ -8,7 +8,6 @@ public class DialogActivator : MonoBehaviour
 
     public static DialogActivator instance;
     public string[] lines;
-    public string[] linesInitSequence1;
     public bool canActivate;
 
     // Start is called before the first frame update
@@ -16,7 +15,6 @@ public class DialogActivator : MonoBehaviour
     {
         instance = this;
         canActivate = false;
-        StartCoroutine(InitSequence1Dialogs());
     }
 
     // Update is called once per frame
@@ -27,7 +25,6 @@ public class DialogActivator : MonoBehaviour
         {
             DialogManager.instance.ShowDialog(lines);
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -43,19 +40,6 @@ public class DialogActivator : MonoBehaviour
         if (other.tag == "Player")
         {
             canActivate = false;
-        }
-    }
-
-    //This function is IEnumerator because we need a delay before we display the message in the scene
-    IEnumerator InitSequence1Dialogs()
-    {
-        if (SceneManager.GetActiveScene().name == "InitSequence1")
-        {
-            PlayerController.instance.canMove = false;
-
-            // Delay in initSequence1 scene
-            yield return new WaitForSeconds(3);
-            DialogManager.instance.ShowDialog(linesInitSequence1);
         }
     }
 }

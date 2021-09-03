@@ -17,6 +17,7 @@ public class PartitureSelectionTutorial : MonoBehaviour
     [SerializeField] private GameObject[] partiturePanels = new GameObject[10];
     [SerializeField] private GameObject[] arrowSelectionPartiture = new GameObject[10];
     [SerializeField] public GameObject pentagramPanel;
+    [SerializeField] private GameObject tutorialInterface;
     public string panelPartitureName;
 
     private void Awake()
@@ -243,9 +244,7 @@ public class PartitureSelectionTutorial : MonoBehaviour
     public void onPartitureSelected()
     {
         DeactivatePartitureSelectionPanel();
-        //open tutorial interface
-        //-----------------------
-
-        //pentagramPanel.SetActive(true);
+        //open tutorial
+        tutorialInterface.SetActive(true);
     }
 }

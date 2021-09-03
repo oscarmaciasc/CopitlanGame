@@ -14417,4 +14417,5 @@ MonoBehaviour:
   - {fileID: 1361560380}
   - {fileID: 111141717}
   pentagramPanel: {fileID: 381781944}
+  tutorialInterface: {fileID: 1818296043}
   panelPartitureName: 

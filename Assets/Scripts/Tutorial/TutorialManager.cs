@@ -80,6 +80,7 @@ public class TutorialManager : MonoBehaviour
     public void StartPlaying()
     {
         this.gameObject.SetActive(false);
+        pentagramPanel.SetActive(true);
         pentagramPanel.gameObject.SetActive(true);
 
         
