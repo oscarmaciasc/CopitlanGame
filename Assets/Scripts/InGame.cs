@@ -12,6 +12,7 @@ public class InGame : MonoBehaviour
     [SerializeField] private Button returnArrow;
     [SerializeField] private GameObject successfulSavedPanel;
     [SerializeField] private GameObject successfulSavedExitPanel;
+    [SerializeField] public GameObject partitureSelectionPanel;
    
     private void Awake()
     {
@@ -27,6 +28,7 @@ public class InGame : MonoBehaviour
         exitPanel.SetActive(false);
         confirmationWindowExit.SetActive(false);
         successfulSavedPanel.SetActive(false);
+        successfulSavedExitPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -41,6 +43,18 @@ public class InGame : MonoBehaviour
         {
             exitPanel.SetActive(true);
         }
+        if (GameManager.instance.vPressed == true)
+        {
+            if (partitureSelectionPanel.activeInHierarchy == false)
+            {
+                ActivatePartitureSelectionPanel();
+            }
+        }
+    }
+
+    private void ActivatePartitureSelectionPanel()
+    {
+        partitureSelectionPanel.SetActive(true);
     }
 
     public void activateSavePanel()
@@ -77,7 +91,6 @@ public class InGame : MonoBehaviour
     {
         Save();
         successfulSavedExitPanel.SetActive(true);
-        Application.Quit();
     }
 
     public void ExitWithoutSaving()

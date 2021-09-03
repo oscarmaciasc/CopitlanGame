@@ -7,7 +7,7 @@ public class PartitureSelection : MonoBehaviour
 {
 
     public static PartitureSelection instance;
-    [SerializeField] private GameObject partitureSelectionPanel;
+    [SerializeField] public GameObject partitureSelectionPanel;
     [SerializeField] private GameObject interpretatePartitureButton;
     [SerializeField] private GameObject[] partiturePanels = new GameObject[10];
     [SerializeField] private GameObject[] arrowSelectionPartiture = new GameObject[10];
@@ -19,28 +19,24 @@ public class PartitureSelection : MonoBehaviour
     void Start()
     {
         instance = this;
-        DeactivatePartitureSelectionPanel();
+        DeactivateNoOwnedPartiturePanels();
+        DeativateArrowsPartitureSelection();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        CheckForInputs();
     }
 
-    private void CheckForInputs()
-    {
-        if (GameManager.instance.vPressed == true)
-        {
-            // If a partiture is already playing, we cant select another partiture.
-            // We have to set pentagramPanel to false when the partiture is over. 
+    private void DeactivateNoOwnedPartiturePanels() {
+        
+        /*
+        // ***********************************************************
+        int i = 0;
+        // ***********************************************************
+        GameData[] gameData = XmlManager.instance.Load();
+        MusicSheet[] partitures = GameData[i].musicSheet;
 
-            // Second condition is codigo puerco, check this later.
-            if (pentagramPanel.activeInHierarchy == false)
-            {
-                ActivatePartitureSelectionPanel();
-            }
-        }
+        */
     }
 
     public void BackPartitureSelection()
@@ -48,7 +44,7 @@ public class PartitureSelection : MonoBehaviour
         DeactivatePartitureSelectionPanel();
     }
 
-    private void DeactivatePartitureSelectionPanel()
+    public void DeactivatePartitureSelectionPanel()
     {
         partitureSelectionPanel.gameObject.SetActive(false);
         GameManager.instance.vPressed = false;
@@ -56,11 +52,6 @@ public class PartitureSelection : MonoBehaviour
 
         interpretatePartitureButton.gameObject.GetComponent<Button>().interactable = false;
         interpretatePartitureButton.transform.Find("Text").gameObject.GetComponent<Text>().color = new Color32(50, 30, 14, 140);
-    }
-
-    private void ActivatePartitureSelectionPanel()
-    {
-        partitureSelectionPanel.SetActive(true);
     }
 
     private void DeativateArrowsPartitureSelection()
