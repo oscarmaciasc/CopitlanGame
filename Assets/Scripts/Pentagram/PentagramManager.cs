@@ -28,7 +28,7 @@ public class PentagramManager : MonoBehaviour
         }
         else
         {
-            partitureName = PartitureSelection.instance.panelPartitureName;
+            partitureName = InGame.instance.panelPartitureName;
         }
         Debug.Log("You have selected: " + partitureName);
         Partitures.instance.setVelocity(partitureName);
