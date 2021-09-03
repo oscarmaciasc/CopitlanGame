@@ -3,100 +3,49 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PartitureSelectionTutorial : MonoBehaviour
+public class PartitureSelection : MonoBehaviour
 {
 
-    public static PartitureSelectionTutorial instance;
-    [SerializeField] private GameObject exitPanel;
-    [SerializeField] private GameObject confirmationWindowExit;
-    [SerializeField] private Button returnArrow;
-    [SerializeField] private GameObject successfulSavedPanel;
-    [SerializeField] private GameObject successfulSavedExitPanel;
+    public static PartitureSelection instance;
     [SerializeField] private GameObject partitureSelectionPanel;
     [SerializeField] private GameObject interpretatePartitureButton;
     [SerializeField] private GameObject[] partiturePanels = new GameObject[10];
     [SerializeField] private GameObject[] arrowSelectionPartiture = new GameObject[10];
-    [SerializeField] public GameObject pentagramPanel;
+    [SerializeField] private GameObject pentagramPanel;
     public string panelPartitureName;
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-    }
 
     // Start is called before the first frame update
     void Start()
     {
-        exitPanel.SetActive(false);
-        confirmationWindowExit.SetActive(false);
-        successfulSavedPanel.SetActive(false);
+        instance = this;
         DeactivatePartitureSelectionPanel();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // This allows us to activate the partitureSelectionPanel only when the vPressed message is display.
-        if (!InitSequence2.instance.hasBeenActivated)
+        CheckForInputs();
+    }
+
+    private void CheckForInputs()
+    {
+        if (GameManager.instance.vPressed == true)
         {
-            GameManager.instance.vPressed = false;
+            // If a partiture is already playing, we cant select another partiture.
+            // We have to set pentagramPanel to false when the partiture is over. 
+
+            // Second condition is codigo puerco, check this later.
+            if (pentagramPanel.activeInHierarchy == false)
+            {
+                ActivatePartitureSelectionPanel();
+            }
         }
     }
 
     public void BackPartitureSelection()
     {
         DeactivatePartitureSelectionPanel();
-    }
-
-    public void activateSavePanel()
-    {
-        Save();
-        successfulSavedPanel.SetActive(true);
-        returnArrow.interactable = false;
-    }
-
-    public void activateSaveExitPanel()
-    {
-        successfulSavedExitPanel.SetActive(true);
-        Save();
-    }
-
-    public void Exit()
-    {
-        confirmationWindowExit.SetActive(true);
-        returnArrow.interactable = false;
-        //Opacity 255 arrow
-        //returnArrow.transform.Find("Image").gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-    }
-
-    public void Return()
-    {
-        exitPanel.SetActive(false);
-        GameManager.instance.escapePressed = false;
-        successfulSavedPanel.SetActive(false);
-        successfulSavedExitPanel.SetActive(false);
-        returnArrow.interactable = true;
-    }
-
-    public void SaveAndExit()
-    {
-        Save();
-        successfulSavedExitPanel.SetActive(true);
-        Application.Quit();
-    }
-
-    public void ExitWithoutSaving()
-    {
-        Debug.Log("Bye");
-        Application.Quit();
-    }
-
-    public void Save()
-    {
-        Debug.Log("Saved");
     }
 
     private void DeactivatePartitureSelectionPanel()
@@ -243,9 +192,6 @@ public class PartitureSelectionTutorial : MonoBehaviour
     public void onPartitureSelected()
     {
         DeactivatePartitureSelectionPanel();
-        //open tutorial interface
-        //-----------------------
-
-        //pentagramPanel.SetActive(true);
+        pentagramPanel.SetActive(true);
     }
 }
