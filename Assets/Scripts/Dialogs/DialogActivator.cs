@@ -52,7 +52,9 @@ public class DialogActivator : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "InitSequence1")
         {
             PlayerController.instance.canMove = false;
-            yield return new WaitForSeconds(2);
+
+            // Delay in initSequence1 scene
+            yield return new WaitForSeconds(3);
             DialogManager.instance.ShowDialog(linesInitSequence1);
         }
     }
