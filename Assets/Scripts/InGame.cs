@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PartitureSelection : MonoBehaviour
+public class InGame : MonoBehaviour
 {
 
-    public static PartitureSelection instance;
+    public static InGame instance;
     [SerializeField] private GameObject exitPanel;
     [SerializeField] private GameObject confirmationWindowExit;
     [SerializeField] private Button returnArrow;
