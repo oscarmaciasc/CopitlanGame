@@ -635,7 +635,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Partida 1:'
+  m_Text: 'Partida 2:'
 --- !u!222 &184413351
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3534,7 +3534,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Partida 1:'
+  m_Text: 'Partida 3:'
 --- !u!222 &1685773433
 CanvasRenderer:
   m_ObjectHideFlags: 0
