@@ -12,6 +12,7 @@ public class GameSelection : MonoBehaviour
     public GameObject[] gamePanels;
     private GameData[] gamesData = new GameData[3];
     private int gamesNumber = 0;
+    private int index = 0;
 
     [SerializeField] private GameObject createGameButton;
     [SerializeField] private GameObject arrowGame1;
@@ -139,14 +140,24 @@ public class GameSelection : MonoBehaviour
         if(XmlManager.instance.CanCreateGame() != 0) {
             SceneManager.LoadScene("CharacterSelection");
         }
-        else {
-            Debug.Log("No xD");
-            // Activate the "No more than 3 games" panel
-        }
     }
+
+    public void Load()
+    {
+
+    }
+
     public void Delete()
     {
-        //Delete the selected game
+        XmlManager.instance.Delete(index);
+        DeactivateWindowDelete();
+        DeactivateButtons();
+        SceneManager.LoadScene("GameSelection");
+    }
+
+    public void ActivateDeletePanel()
+    {
+        ConfirmationWindowDisplayDelete();
     }
 
     public void DeactivateWindowDelete()
@@ -159,15 +170,9 @@ public class GameSelection : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void LoadGame()
-    {
-
-    }
-
     public void GameSelected()
     {
         ButtonActivator();
-        
     }
 
     private void ButtonActivator()
@@ -184,6 +189,7 @@ public class GameSelection : MonoBehaviour
         arrowGame2.SetActive(false);
         arrowGame3.SetActive(false);
         arrowGame1.SetActive(true);
+        index = 1;
     }
 
     public void Game2()
@@ -191,6 +197,7 @@ public class GameSelection : MonoBehaviour
         arrowGame1.SetActive(false);
         arrowGame3.SetActive(false);
         arrowGame2.SetActive(true);
+        index = 2;
     }
 
     public void Game3()
@@ -198,6 +205,7 @@ public class GameSelection : MonoBehaviour
         arrowGame1.SetActive(false);
         arrowGame2.SetActive(false);
         arrowGame3.SetActive(true);
+        index = 3;
     }
 
     public void DeactivateButtons()
