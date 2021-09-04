@@ -27,7 +27,6 @@ public class InitSequence1 : MonoBehaviour
     IEnumerator InitSequence1Dialogs()
     {
         PlayerController.instance.canMove = false;
-        //PlayerController.instance.myAnim.
         // Delay in initSequence1 scene
         exclamation.SetActive(true);
         yield return new WaitForSeconds(3);

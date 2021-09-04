@@ -16,6 +16,8 @@ public class NoteManager : MonoBehaviour
     string numberNote = "";
     string keyPressed = "";
 
+    public int passedNotes = 0;
+
     private void Awake()
     {
         if (instance == null)
@@ -68,6 +70,7 @@ public class NoteManager : MonoBehaviour
             SetFullOpacity();
             canPress = true;
         }
+        PentagramManager.instance.passedNotes++;
     }
 
     void OnTriggerExit2D(Collider2D col)

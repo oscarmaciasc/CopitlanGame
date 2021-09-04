@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class InitSequence2 : MonoBehaviour
 {
@@ -12,8 +13,11 @@ public class InitSequence2 : MonoBehaviour
     [SerializeField] private GameObject partitureSelectionPanel;
     [SerializeField] private GameObject backArrow;
     [SerializeField] private GameObject pentagramPanel;
+    [SerializeField] private GameObject dialogBox;
+    public string[] childReaction;
     public bool hasBeenActivated;
-    private bool justStarted;
+    public bool hasfinishedDialogs = false;
+    public bool justStarted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,30 +25,31 @@ public class InitSequence2 : MonoBehaviour
         instance = this;
         hasBeenActivated = false;
         justStarted = true;
+
+        Debug.Log("STARTING TUTORIAL");
     }
 
     // Update is called once per frame
     void Update()
     {
-        // DialogManager.instance.conversationIsFinished was the previous condition when we display the tutorial after the conversation
-        if (DialogManager.instance.conversationIsFinished)
+        if (DialogManager.instance.currentLine == 3)
         {
-            Debug.Log("STARTING TUTORIAL");
+            DialogManager.instance.dialogBox.SetActive(false);
             StartCoroutine(StartTutorial());
             ActivatePartiturePanel();
-            if(pressVPanel.activeInHierarchy || partitureSelectionPanel.activeInHierarchy || PartitureSelectionTutorial.instance.pentagramPanel.activeInHierarchy)
+            if (pressVPanel.activeInHierarchy || partitureSelectionPanel.activeInHierarchy || PartitureSelectionTutorial.instance.pentagramPanel.activeInHierarchy || tutorialInterface.activeInHierarchy || DialogManager.instance.dialogBox.activeInHierarchy)
             {
+                Debug.Log("Esto si");
+                if(dialogBox.activeInHierarchy)
+                {
+                    Debug.Log("No te quiero hacer caso loko");
+                }
                 PlayerController.instance.canMove = false;
+                DialogActivator.instance.canActivate = false;
             }
             else
             {
                 PlayerController.instance.canMove = true;
-            }
-
-            if(PentagramManager.instance.hasFinishedPartiture)
-            {
-                pentagramPanel.SetActive(false);
-                SceneManager.LoadScene("SampleScene");
             }
         }
     }
@@ -52,13 +57,13 @@ public class InitSequence2 : MonoBehaviour
     //This function is IEnumerator because we need a delay before we display the tutorial
     IEnumerator StartTutorial()
     {
-        if(justStarted)
+        if (justStarted)
         {
             PlayerController.instance.canMove = false;
         }
         justStarted = false;
         // Delay for initSequence2 message
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         if (!hasBeenActivated)
         {
             pressVPanel.SetActive(true);
@@ -74,5 +79,36 @@ public class InitSequence2 : MonoBehaviour
             partitureSelectionPanel.SetActive(true);
             backArrow.SetActive(false);
         }
+    }
+
+    public void HasFinishedPartiture()
+    {
+        StartCoroutine(DeactivatePentagramPanel());
+
+        // Change npc0 dialogs
+
+        // IF %notes is high {} fill a new array with the dialogs
+       
+
+        // if the conversation is finished passed to the other scene
+
+        StartCoroutine(ShowChildDialogs());
+        if (DialogManager.instance.conversationIsFinished)
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
+    }
+
+    IEnumerator DeactivatePentagramPanel()
+    {
+        yield return new WaitForSeconds(1);
+        pentagramPanel.SetActive(false);
+    }
+
+    IEnumerator ShowChildDialogs()
+    {
+        DialogManager.instance.conversationIsFinished = false;
+        yield return new WaitForSeconds(2);
+        DialogManager.instance.ShowDialog(childReaction);
     }
 }
