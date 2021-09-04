@@ -102,14 +102,14 @@ public class XmlManager : MonoBehaviour
         return gamesData;
     }
 
-    public GameData LoadGame(int i)
+    public GameData LoadGame(int index)
     {
         bool[] count = GamesCount();
         GameData gameData = new GameData();
 
-        if(count[i]) {
+        if(count[index]) {
             XmlSerializer serializer = new XmlSerializer(typeof(GameData));
-            FileStream xmlRead = new FileStream(CurrentDirectory + "/GameData" + (i + 1) + ".xml", FileMode.Open);
+            FileStream xmlRead = new FileStream(CurrentDirectory + "/GameData" + (index + 1) + ".xml", FileMode.Open);
             gameData = serializer.Deserialize(xmlRead) as GameData;
             xmlRead.Close();
         }
@@ -121,9 +121,10 @@ public class XmlManager : MonoBehaviour
     }
 
     // Delete a file
-    public void Delete()
+    public void Delete(int index)
     {
-        File.Delete(CurrentDirectory + "/GameData1.xml");
+        string filePath = "/GameData" + index + ".xml";
+        File.Delete(CurrentDirectory + filePath);
     }
     
     // Return an bool array in wich are the positions of existent games
