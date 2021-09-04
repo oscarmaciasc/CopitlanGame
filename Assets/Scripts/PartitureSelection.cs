@@ -73,7 +73,7 @@ public class PartitureSelection : MonoBehaviour
 
         // get partiture name and send it to PentagramManager
         panelPartitureName = partiturePanels[0].gameObject.transform.Find("InfoLayout1").gameObject.transform.Find("HorizontalLayout1").gameObject.transform.Find("Name1").gameObject.GetComponent<Text>().text;
-
+        
         Debug.Log(panelPartitureName);
     }
 
