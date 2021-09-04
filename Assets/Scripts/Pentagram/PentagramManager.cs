@@ -10,8 +10,10 @@ public class PentagramManager : MonoBehaviour
     public static int streak = 0;
     public GameObject objectTest;
     public string partitureName;
+    public int i = 0;
+    public bool hasFinishedPartiture;
     public static PentagramManager instance;
-     private void Awake()
+    private void Awake()
     {
         if (instance == null)
         {
@@ -22,7 +24,9 @@ public class PentagramManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(SceneManager.GetActiveScene().name == "InitSequence2")
+        hasFinishedPartiture = false;
+
+        if (SceneManager.GetActiveScene().name == "InitSequence2")
         {
             partitureName = PartitureSelectionTutorial.instance.panelPartitureName;
         }
@@ -38,12 +42,20 @@ public class PentagramManager : MonoBehaviour
     void Update()
     {
         // Generating random notes for testing purposes
-        
-            
+
+        if (i < Partitures.instance.numberOfPartitureNotes)
+        {
+            Debug.Log("i: " + i);
             if ((Time.time - timeLastNote) >= Partitures.instance.velocity)
             {
                 Instantiate(this.notePrefab, this.transform.position, Quaternion.identity).transform.SetParent(this.gameObject.transform);
                 timeLastNote = Time.time;
+                i++;
             }
+        } 
+        else
+        {
+            hasFinishedPartiture = true;
+        }
     }
 }
