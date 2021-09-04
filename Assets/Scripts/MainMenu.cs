@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
@@ -14,20 +15,15 @@ public class MainMenu : MonoBehaviour
 
     public GameObject confirmationWindow;
 
+    [SerializeField] private GameObject newGameButton;
+
     // Start is called before the first frame update
     void Start()
     {
-
-        confirmationWindow.SetActive(false);
-
-        /*if(PlayerPrefs.HasKey("Current_Scene"))
-        {
-            continueButton.SetActive(true);
+        if(XmlManager.instance.CanCreateGame() == 0) {
+            DeactivateNewGameButton();
         }
-        else
-        {
-            continueButton.SetActive(false);
-        }*/
+        confirmationWindow.SetActive(false);
     }
 
     // Update is called once per frame
@@ -35,7 +31,6 @@ public class MainMenu : MonoBehaviour
     {
         
     }
-
 
     //Functions for each button of the MainMenu
     public void Continue()
@@ -61,5 +56,11 @@ public class MainMenu : MonoBehaviour
     public void NoExit()
     {
         confirmationWindow.SetActive(false);
+    }
+
+    private void DeactivateNewGameButton() {
+        newGameButton.gameObject.GetComponent<Button>().interactable = false;
+        newGameButton.transform.Find("Text").gameObject.GetComponent<Text>().color = new Color32(173, 134, 80, 140);
+        newGameButton.transform.Find("Text").gameObject.GetComponent<Outline>().effectColor = new Color32(62, 38, 19, 140);
     }
 }
