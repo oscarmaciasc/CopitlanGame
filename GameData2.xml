@@ -29,6 +29,6 @@
     <MusicalMasteryLvl name="apprentice" />
   </MusicalMasteryLvl>
   <MusicSheets>
-    <MusicSheet name="musicSheet1" />
+    <MusicSheet name="partiture1" />
   </MusicSheets>
 </gameData>

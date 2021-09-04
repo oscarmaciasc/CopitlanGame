@@ -66,7 +66,7 @@ public class GameSelection : MonoBehaviour
 
     public void ActivateGamePanels() {
         // Activates and fills game panels with files info
-        gamesData = XmlManager.instance.Load();
+        gamesData = XmlManager.instance.LoadAllGames();
         
         for(int i = 0; i < 3; i++) {
             if(gamesData[i] != null) {
