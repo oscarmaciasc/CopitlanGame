@@ -136,7 +136,7 @@ public class GameSelection : MonoBehaviour
     }
 
     public void Create() {
-        if(XmlManager.instance.Create()) {
+        if(XmlManager.instance.CanCreateGame() != 0) {
             SceneManager.LoadScene("CharacterSelection");
         }
         else {
@@ -157,11 +157,6 @@ public class GameSelection : MonoBehaviour
     public void BackToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
-    }
-
-    public void StartSequence()
-    {
-
     }
 
     public void LoadGame()

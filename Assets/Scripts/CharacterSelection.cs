@@ -18,44 +18,19 @@ public class CharacterSelection : MonoBehaviour
     void Start()
     {
         hasBeenSelected = false;
-        femaleArrow.SetActive(false);
-        maleArrow.SetActive(false);
+
+        DeactivatePlayerArrows();
 
         //Deactive Button
         startGameButton.GetComponent<Button>().interactable = false;
 
-        //Changin color and outline color when no character or name is selected
-        if (startGameButton.GetComponent<Button>().interactable == false)
-        {
-            startGameButton.transform.Find("Text").gameObject.GetComponent<Text>().color = new Color32(173, 134, 80, 140);
-            startGameButton.transform.Find("Text").gameObject.GetComponent<Outline>().effectColor = new Color32(62, 38, 19, 140);
-        }
+        SetMediumButtonsTextOppacitty();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(hasBeenSelected && nameInputField.transform.Find("Text").GetComponent<Text>().text != "")
-        {
-            //Activate Button
-            startGameButton.GetComponent<Button>().interactable = true;
-        }
-        else
-        {
-             startGameButton.GetComponent<Button>().interactable = false;
-        }
-
-        //Changin color and outline color when no character or name is selected
-        if (startGameButton.GetComponent<Button>().interactable == true)
-        {
-            startGameButton.transform.Find("Text").gameObject.GetComponent<Text>().color = new Color32(173, 134, 80, 255);
-            startGameButton.transform.Find("Text").gameObject.GetComponent<Outline>().effectColor = new Color32(62, 38, 19, 255);
-        }
-        else
-        {
-            startGameButton.transform.Find("Text").gameObject.GetComponent<Text>().color = new Color32(173, 134, 80, 140);
-            startGameButton.transform.Find("Text").gameObject.GetComponent<Outline>().effectColor = new Color32(62, 38, 19, 140);
-        }
+        ChangingButtonState();
     }
 
     public void BackToMainMenu()
@@ -86,8 +61,61 @@ public class CharacterSelection : MonoBehaviour
     {
         nameInputField.placeholder.GetComponent<Text>().text = "";
     }
+
+    private void DeactivatePlayerArrows()
+    {
+        femaleArrow.SetActive(false);
+        maleArrow.SetActive(false);
+    }
+
+    private void SetMediumButtonsTextOppacitty()
+    {
+        //Changin color and outline color when no character or name is selected
+        if (startGameButton.GetComponent<Button>().interactable == false)
+        {
+            startGameButton.transform.Find("Text").gameObject.GetComponent<Text>().color = new Color32(173, 134, 80, 140);
+            startGameButton.transform.Find("Text").gameObject.GetComponent<Outline>().effectColor = new Color32(62, 38, 19, 140);
+        }
+    }
+
+    private void ChangingButtonState()
+    {
+        if (hasBeenSelected && nameInputField.transform.Find("Text").GetComponent<Text>().text != "")
+        {
+            //Activate Button
+            startGameButton.GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            startGameButton.GetComponent<Button>().interactable = false;
+        }
+
+        //Changin color and outline color when no character or name is selected
+        if (startGameButton.GetComponent<Button>().interactable == true)
+        {
+            startGameButton.transform.Find("Text").gameObject.GetComponent<Text>().color = new Color32(173, 134, 80, 255);
+            startGameButton.transform.Find("Text").gameObject.GetComponent<Outline>().effectColor = new Color32(62, 38, 19, 255);
+        }
+        else
+        {
+            startGameButton.transform.Find("Text").gameObject.GetComponent<Text>().color = new Color32(173, 134, 80, 140);
+            startGameButton.transform.Find("Text").gameObject.GetComponent<Outline>().effectColor = new Color32(62, 38, 19, 140);
+        }
+    }
+
     public void InitGame()
     {
+        bool gender;
+
+        if(femaleArrow.gameObject.activeInHierarchy) {
+            gender = true;
+        }
+        else {
+            gender = false;
+        }
+        
+        XmlManager.instance.Create(nameInputField.transform.Find("Text").GetComponent<Text>().text, gender);
+
         SceneManager.LoadScene("InitSequence1");
     }
 }

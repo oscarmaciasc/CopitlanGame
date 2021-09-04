@@ -27,11 +27,12 @@ public class XmlManager : MonoBehaviour
     }
 
     // Called when a new game is created
-    public bool Create() {
+    public bool Create(string name, bool gender) {
         int gameIndex = CanCreateGame();
+        GameData gameData = new GameData(name, gender);
 
         if(gameIndex != 0) {
-            Save(gameIndex);
+            Save(gameIndex, gameData);
             return true;
         }
         else {
@@ -58,16 +59,9 @@ public class XmlManager : MonoBehaviour
     }
 
     // This function also allows us to create a new game, altough any object is empty.
-    public void Save(int gameIndex)
+    public void Save(int gameIndex, GameData gameData)
     {
         string fileName = "";
-
-        //*********************Fake********************
-        playerName = "Fabian";
-        isWoman = false;
-        //*********************Fake********************
-        
-        GameData gameData = new GameData(playerName, isWoman);
 
         XmlSerializer serializer = new XmlSerializer(typeof(GameData));
 
