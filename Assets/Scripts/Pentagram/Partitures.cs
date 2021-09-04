@@ -14,6 +14,7 @@ public class Partitures : MonoBehaviour
     public int upStreak = 10;
     public int limitStreak;
     public string[] numberNotes = new string[10];
+    public int numberOfPartitureNotes;
 
     private void Awake()
     {
@@ -75,6 +76,7 @@ public class Partitures : MonoBehaviour
             this.velocity = 1f;
             this.partitureVelocity = 1f;
             this.limitStreak = 30;
+            this.numberOfPartitureNotes = 10;
 
             for (int i = 0; i < 4; i++)
             {
@@ -104,6 +106,7 @@ public class Partitures : MonoBehaviour
             this.velocity = 0.9f;
             this.partitureVelocity = 0.9f;
             this.limitStreak = 20;
+            this.numberOfPartitureNotes = 10;
 
             for (int i = 0; i < 7; i++)
             {
@@ -133,6 +136,7 @@ public class Partitures : MonoBehaviour
             this.velocity = 0.8f;
             this.partitureVelocity = 0.8f;
             this.limitStreak = 20;
+            this.numberOfPartitureNotes = 10;
 
             for (int i = 0; i < 10; i++)
             {
@@ -162,6 +166,7 @@ public class Partitures : MonoBehaviour
             this.velocity = 0.7f;
             this.partitureVelocity = 0.7f;
             this.limitStreak = 10;
+            this.numberOfPartitureNotes = 3;
 
             for (int i = 0; i < 10; i++)
             {

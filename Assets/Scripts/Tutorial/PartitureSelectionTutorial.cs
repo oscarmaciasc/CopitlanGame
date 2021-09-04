@@ -45,6 +45,8 @@ public class PartitureSelectionTutorial : MonoBehaviour
         {
             GameManager.instance.vPressed = false;
         }
+
+        
     }
 
     public void BackPartitureSelection()

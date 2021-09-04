@@ -11,6 +11,7 @@ public class InitSequence2 : MonoBehaviour
     [SerializeField] private GameObject pressVPanel;
     [SerializeField] private GameObject partitureSelectionPanel;
     [SerializeField] private GameObject backArrow;
+    [SerializeField] private GameObject pentagramPanel;
     public bool hasBeenActivated;
     private bool justStarted;
 
@@ -38,6 +39,12 @@ public class InitSequence2 : MonoBehaviour
             else
             {
                 PlayerController.instance.canMove = true;
+            }
+
+            if(PentagramManager.instance.hasFinishedPartiture)
+            {
+                pentagramPanel.SetActive(false);
+                SceneManager.LoadScene("SampleScene");
             }
         }
     }
