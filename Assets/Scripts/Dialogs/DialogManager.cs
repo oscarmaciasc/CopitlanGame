@@ -14,10 +14,8 @@ public class DialogManager : MonoBehaviour
 
     //Keep track in wich line we are
     public int currentLine;
-
-    public static DialogManager instance;
-
     public bool justStarted;
+    public static DialogManager instance;
 
     public bool conversationIsFinished = false;
 
@@ -34,38 +32,37 @@ public class DialogManager : MonoBehaviour
         // if dialog box is open and the player release the Enter key we pass to other line and update the text
         if (dialogBox.activeInHierarchy)
         {
-            if(Input.GetKeyUp(KeyCode.Return))
+            if (Input.GetKeyUp(KeyCode.Return))
             {
-                if(!justStarted)
+                if (!justStarted)
                 {
-                    Debug.Log("Entrando");
                     currentLine++;
 
-                    if(currentLine >= dialogLines.Length)
+                    if (currentLine >= dialogLines.Length)
                     {
                         dialogBox.SetActive(false);
 
                         PlayerController.instance.canMove = true;
 
                         // Only if the conversation is finished and we are in InitSequence2
-                        if(SceneManager.GetActiveScene().name == "InitSequence2")
-                        {
-                            conversationIsFinished = true;
-                            // When we are playing the tutorial we dont want to be able to talk to the child again
-                            // Deactivate the npc0 collider
-                            DialogActivator.instance.canActivate = false;
-                        }
+                        // if (SceneManager.GetActiveScene().name == "InitSequence2")
+                        // {
+                        //     //conversationIsFinished = true;
+                        //     // When we are playing the tutorial we dont want to be able to talk to the child again
+                        //     // Deactivate the npc0 collider
+                        //     DialogActivator.instance.canActivate = false;
+                        // }
                     }
                     else
                     {
                         dialogText.text = dialogLines[currentLine];
                     }
-                } 
+                }
                 else
                 {
                     justStarted = false;
                 }
-                
+
             }
         }
     }
@@ -85,6 +82,6 @@ public class DialogManager : MonoBehaviour
             justStarted = false;
         }
 
-        PlayerController.instance.canMove = false;
+        // PlayerController.instance.canMove = false;
     }
 }
