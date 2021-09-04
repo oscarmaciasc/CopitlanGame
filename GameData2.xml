@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Cabeza Nabo" gender="false">
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Baby its you" gender="true">
   <Resources>
     <Resource name="wood">
       <quantity>0</quantity>
@@ -16,8 +16,6 @@
   </Resources>
   <Permissions>
     <Permission name="outterCircle" />
-    <Permission name="triangle" />
-    <Permission name="innerCircle" />
   </Permissions>
   <Flutes>
     <Flute name="woodenFlute" />
