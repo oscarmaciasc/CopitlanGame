@@ -70,7 +70,7 @@ public class GameData
         this.flute[0].name = "woodenFlute";
         this.balloon[0].name = "balloonLvl1";
         this.musicalMasteryLvl[0].name = "apprentice";
-        this.musicSheet[0].name = "musicSheet1";
+        this.musicSheet[0].name = "partiture1";
     }
 
     // Player Update
@@ -87,6 +87,16 @@ public class GameData
     public bool DoesHavePermit(string permitType) {
         for(int i = 0; i < permission.Length; i++) {
             if(permitType == permission[i].name) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+    
+    public bool DoesHavePartiture(string partitureName) {
+        for(int i = 0; i < musicSheet.Length; i++) {
+            if(partitureName == musicSheet[i].name) {
                 return true;
             }
         }

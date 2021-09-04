@@ -28,15 +28,20 @@ public class PartitureSelection : MonoBehaviour
     }
 
     private void DeactivateNoOwnedPartiturePanels() {
-        
-        /*
-        // ***********************************************************
-        int i = 0;
-        // ***********************************************************
-        GameData[] gameData = XmlManager.instance.Load();
-        MusicSheet[] partitures = GameData[i].musicSheet;
+        // ******************************FAKE*****************************
+        int index = 2;
+        // ******************************FAKE*****************************
+        GameData gameData = new GameData();
+        gameData = XmlManager.instance.LoadGame(index);
 
-        */
+        for (int i = 0; i < 10; i++) {
+            if(gameData.DoesHavePartiture("partiture" + (i + 1))) {
+                partiturePanels[i].SetActive(true);
+            }
+            else {
+                partiturePanels[i].SetActive(false);
+            }
+        }
     }
 
     public void BackPartitureSelection()

@@ -89,7 +89,7 @@ public class XmlManager : MonoBehaviour
     }
 
     // Fill gameData array
-    public GameData[] Load()
+    public GameData[] LoadAllGames()
     {
         bool[] count = GamesCount();
         GameData[] gamesData = new GameData[3];
@@ -106,6 +106,24 @@ public class XmlManager : MonoBehaviour
         }
 
         return gamesData;
+    }
+
+    public GameData LoadGame(int i)
+    {
+        bool[] count = GamesCount();
+        GameData gameData = new GameData();
+
+        if(count[i]) {
+            XmlSerializer serializer = new XmlSerializer(typeof(GameData));
+            FileStream xmlRead = new FileStream(CurrentDirectory + "/GameData" + (i + 1) + ".xml", FileMode.Open);
+            gameData = serializer.Deserialize(xmlRead) as GameData;
+            xmlRead.Close();
+        }
+        else {
+            Debug.Log("There is not an file game cabeza huevo");
+        }
+
+        return gameData;
     }
 
     // Delete a file
