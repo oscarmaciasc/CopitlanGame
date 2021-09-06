@@ -35,6 +35,7 @@ public class InGame : MonoBehaviour
     void Update()
     {
         CheckForInputs();
+        CheckCanMove();
     }
 
     private void CheckForInputs()
@@ -52,6 +53,8 @@ public class InGame : MonoBehaviour
         }
     }
 
+
+    //********************************************************************************
     private void ActivatePartitureSelectionPanel()
     {
         partitureSelectionPanel.SetActive(true);
@@ -102,5 +105,18 @@ public class InGame : MonoBehaviour
     public void Save()
     {
         Debug.Log("Saved");
+    }
+
+    //********************************************************************************
+    public void CheckCanMove()
+    {
+        if (partitureSelectionPanel.activeInHierarchy)
+            {
+                PlayerController.instance.canMove = false;
+            }
+            else
+            {
+                PlayerController.instance.canMove = true;
+            }
     }
 }
