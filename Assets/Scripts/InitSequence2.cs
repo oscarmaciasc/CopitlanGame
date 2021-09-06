@@ -18,6 +18,7 @@ public class InitSequence2 : MonoBehaviour
     public bool hasBeenActivated;
     public bool hasfinishedDialogs = false;
     public bool justStarted = false;
+    public bool secondMessage = false;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +53,21 @@ public class InitSequence2 : MonoBehaviour
                 PlayerController.instance.canMove = true;
             }
         }
+
+        // This is made to avoid the second enter on the message dialog when the player finishes the partiture
+        if(DialogManager.instance.dialogLines[0] == "Que linda cancion")
+        {
+            DialogManager.instance.justStarted = false;
+
+            // Flag to tell we are in the second message
+            secondMessage = true;
+        }
+
+        if(secondMessage && DialogManager.instance.currentLine == 2)
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
+
     }
 
     //This function is IEnumerator because we need a delay before we display the tutorial

@@ -12040,6 +12040,7 @@ MonoBehaviour:
   hasBeenActivated: 0
   hasfinishedDialogs: 0
   justStarted: 0
+  secondMessage: 0
 --- !u!1 &1871497980
 GameObject:
   m_ObjectHideFlags: 0
