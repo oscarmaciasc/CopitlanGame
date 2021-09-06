@@ -225,6 +225,14 @@ public class PartitureSelectionTutorial : MonoBehaviour
         Debug.Log(panelPartitureName);
     }
 
+    public void ActivatePanel(int index) {
+        partiturePanels[index].SetActive(true);
+    }
+
+    public void DeactivatePanel(int index) {
+        partiturePanels[index].SetActive(false);
+    }
+
     public void partiturePanelPressed(int partitureSelected)
     {
         interpretatePartitureButton.gameObject.GetComponent<Button>().interactable = true;

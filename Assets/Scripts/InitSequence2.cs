@@ -77,7 +77,30 @@ public class InitSequence2 : MonoBehaviour
         {
             pressVPanel.SetActive(false);
             partitureSelectionPanel.SetActive(true);
+            DeactivateNoOwnedPartiturePanels();
             backArrow.SetActive(false);
+        }
+    }
+
+    private void DeactivateNoOwnedPartiturePanels()
+    {
+        Debug.Log("Deactivating no owned partiture panels");
+        // ******************************FAKE*****************************
+        int index = 1;
+        // ******************************FAKE*****************************
+        GameData gameData = new GameData();
+        gameData = XmlManager.instance.LoadGame(index);
+
+        for (int i = 0; i < 10; i++)
+        {
+            if (gameData.DoesHavePartiture("partiture" + (i + 1)))
+            {
+                PartitureSelectionTutorial.instance.ActivatePanel(i);
+            }
+            else
+            {
+                PartitureSelectionTutorial.instance.DeactivatePanel(i);
+            }
         }
     }
 
