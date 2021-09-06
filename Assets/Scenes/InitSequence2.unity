@@ -8294,7 +8294,7 @@ GameObject:
   - component: {fileID: 1285037132}
   - component: {fileID: 1285037131}
   m_Layer: 5
-  m_Name: Dailog1Text
+  m_Name: Dailog2Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8352,8 +8352,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel eros
-    sagittis, dignissim libero vitae, euismod risus. '
+  m_Text: "Cuando las notas lleguen a la zona osbcura podras presionar ahora el numero
+    que aparece dentro de ellas.\n\t (Presiona el numero)"
 --- !u!222 &1285037132
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11131,8 +11131,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel eros
-    sagittis, dignissim libero vitae, euismod risus. '
+  m_Text: "Si presionas el numero correcto la nota cambiara a verde, si presionas
+    el incorrecto cambiara a rojo.\n\t\t   (Presiona Enter)"
 --- !u!222 &1762995601
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11153,7 +11153,7 @@ GameObject:
   - component: {fileID: 1762995601}
   - component: {fileID: 1762995600}
   m_Layer: 5
-  m_Name: Dailog1Text
+  m_Name: Dailog3Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13240,8 +13240,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel eros
-    sagittis, dignissim libero vitae, euismod risus. '
+  m_Text: "Al interpretar una partitura apareceran \"notas\" con numeros dentro que
+    avanzan de derecha a izquierda.\n\t\t   (Presiona Enter)"
 --- !u!222 &1994136248
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13898,7 +13898,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2116909078
 RectTransform:
   m_ObjectHideFlags: 0
