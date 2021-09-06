@@ -29,6 +29,8 @@ public class InGame : MonoBehaviour
         confirmationWindowExit.SetActive(false);
         successfulSavedPanel.SetActive(false);
         successfulSavedExitPanel.SetActive(false);
+
+        UIFade.instance.FadeFromBlack();
     }
 
     // Update is called once per frame

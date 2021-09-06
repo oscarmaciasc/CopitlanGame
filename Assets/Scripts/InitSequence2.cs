@@ -41,7 +41,7 @@ public class InitSequence2 : MonoBehaviour
             if (pressVPanel.activeInHierarchy || partitureSelectionPanel.activeInHierarchy || PartitureSelectionTutorial.instance.pentagramPanel.activeInHierarchy || tutorialInterface.activeInHierarchy || DialogManager.instance.dialogBox.activeInHierarchy)
             {
                 Debug.Log("Esto si");
-                if(dialogBox.activeInHierarchy)
+                if (dialogBox.activeInHierarchy)
                 {
                     Debug.Log("No te quiero hacer caso loko");
                 }
@@ -55,19 +55,19 @@ public class InitSequence2 : MonoBehaviour
         }
 
         // This is made to avoid the second enter on the message dialog when the player finishes the partiture
-        if(DialogManager.instance.dialogLines[0] == "Que linda cancion")
+        if (DialogManager.instance.dialogLines[0] == "Que linda cancion")
         {
             DialogManager.instance.justStarted = false;
 
             // Flag to tell we are in the second message
             secondMessage = true;
+            PlayerController.instance.canMove = false;
         }
 
-        if(secondMessage && DialogManager.instance.currentLine == 2)
+        if (secondMessage && DialogManager.instance.currentLine == 2)
         {
             SceneManager.LoadScene("SampleScene");
         }
-
     }
 
     //This function is IEnumerator because we need a delay before we display the tutorial
@@ -127,14 +127,14 @@ public class InitSequence2 : MonoBehaviour
         // Change npc0 dialogs
 
         // IF %notes is high {} fill a new array with the dialogs
-       
+
 
         // if the conversation is finished passed to the other scene
 
         StartCoroutine(ShowChildDialogs());
         if (DialogManager.instance.conversationIsFinished)
         {
-            SceneManager.LoadScene("SampleScene");
+            ChangeScene();
         }
     }
 
@@ -149,5 +149,13 @@ public class InitSequence2 : MonoBehaviour
         DialogManager.instance.conversationIsFinished = false;
         yield return new WaitForSeconds(2);
         DialogManager.instance.ShowDialog(childReaction);
+    }
+
+    public void ChangeScene()
+    {
+        // Make a delay before loading in the new scene
+        UIFade.instance.FadeToBlack();
+        SceneManager.LoadScene("SampleScene");
+
     }
 }
