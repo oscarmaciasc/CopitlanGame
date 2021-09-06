@@ -81,7 +81,5 @@ public class DialogManager : MonoBehaviour
         {
             justStarted = false;
         }
-
-        // PlayerController.instance.canMove = false;
     }
 }

@@ -1895,9 +1895,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. '
+  m_Text: 'Eres una persona que vive a las afueras de Copitlan.
+
+    Copitlan es
+    una ciudad en donde los habitantes estan tristes y no saben el por que, quizas
+    algo les falta en su vida...'
 --- !u!222 &1903296719
 CanvasRenderer:
   m_ObjectHideFlags: 0
