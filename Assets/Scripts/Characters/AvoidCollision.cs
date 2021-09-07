@@ -17,22 +17,20 @@ public class AvoidCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // Change the collider position depending on the animator movement... (maybe)
+        if(transform.parent.GetComponent<Animator>().GetFloat("moveY") == 1)
+        {
+            //this.transform.position.y = 1.50f;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "MovingHabitant")
-        {
-            hasCollided = true;
-        }
+        hasCollided = true;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(other.tag == "MovingHabitant")
-        {
-            hasCollided = false;
-        }
+        hasCollided = false;
     }
 }

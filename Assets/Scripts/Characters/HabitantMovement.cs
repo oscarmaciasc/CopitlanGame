@@ -23,10 +23,6 @@ public class HabitantMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        canMove = false;
-        destinyCoordX = 0;
-        destinyCoordY = 0;
-
         // Initializing the first coords for the habitant
         currentPositionX = gameObject.transform.position.x;
         currentPositionY = gameObject.transform.position.y;
@@ -38,6 +34,8 @@ public class HabitantMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        AvoidingCollisions();
+
         if (counter == 2)
         {
             // Wait 5 seconds
@@ -74,7 +72,35 @@ public class HabitantMovement : MonoBehaviour
         }
     }
 
-    public void GetRandomCoordTest()
+    private void AvoidingCollisions()
+    {
+        if (AvoidCollision.instance.hasCollided)
+        {
+            if (myAnim.GetFloat("moveX") == -1)
+            {
+                // move x to 5
+                vector2DestinyX = new Vector2(transform.position.x + 5, currentPositionY);
+            }
+            else if (myAnim.GetFloat("moveX") == 1)
+            {
+                // move x to 5
+                vector2DestinyX = new Vector2(transform.position.x - 5, currentPositionY);
+            }
+
+            if (myAnim.GetFloat("moveY") == -1)
+            {
+                vector2DestinyY = new Vector2(currentPositionX, transform.position.y + 5);
+            }
+            else if (myAnim.GetFloat("moveY") == 1)
+            {
+                vector2DestinyY = new Vector2(currentPositionX, transform.position.y - 5);
+            }
+
+            AvoidCollision.instance.hasCollided = false;
+        }
+    }
+
+    private void GetRandomCoordTest()
     {
         randomX = Random.Range(-5, 5);
         randomY = Random.Range(-5, 5);
@@ -84,7 +110,7 @@ public class HabitantMovement : MonoBehaviour
         Debug.Log("First Movement: " + firstMovement);
     }
 
-    public void MoveXTest()
+    private void MoveXTest()
     {
         if (vector2DestinyX.x != gameObject.transform.position.x)
         {
@@ -118,7 +144,7 @@ public class HabitantMovement : MonoBehaviour
         }
     }
 
-    public void MoveYTest()
+    private void MoveYTest()
     {
         if (vector2DestinyY.y != gameObject.transform.position.y)
         {
