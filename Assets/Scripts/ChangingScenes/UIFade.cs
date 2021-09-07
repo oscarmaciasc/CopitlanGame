@@ -45,10 +45,10 @@ public class UIFade : MonoBehaviour
 
         if (shouldFadeFromBlack)
         {
-            fadeScreen.color = new Color(fadeScreen.color.r, fadeScreen.color.g, fadeScreen.color.b, Mathf.MoveTowards(fadeScreen.color.a, 0f, fadeSpeed * Time.fixedDeltaTime));
             Debug.Log("Cambiando a Transparente");
             Debug.Log("a: " + fadeScreen.color.a);
-
+            fadeScreen.color = new Color(fadeScreen.color.r, fadeScreen.color.g, fadeScreen.color.b, Mathf.MoveTowards(fadeScreen.color.a, 0f, fadeSpeed * Time.fixedDeltaTime));
+            
             if (fadeScreen.color.a == 0f)
             {
                 Debug.Log("Ya cambie a Transparente");
@@ -61,7 +61,6 @@ public class UIFade : MonoBehaviour
     {
         shouldFadeToBlack = true;
         shouldFadeFromBlack = false;
-
     }
 
     public void FadeFromBlack()

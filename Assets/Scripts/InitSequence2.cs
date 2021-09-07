@@ -19,6 +19,8 @@ public class InitSequence2 : MonoBehaviour
     public bool hasfinishedDialogs = false;
     public bool justStarted = false;
     public bool secondMessage = false;
+    public bool shouldCountDown = false;
+    public float waitToLoad = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -64,9 +66,9 @@ public class InitSequence2 : MonoBehaviour
             PlayerController.instance.canMove = false;
         }
 
-        if (secondMessage && DialogManager.instance.currentLine == 2)
+        if (secondMessage && DialogManager.instance.currentLine >= 1)
         {
-            SceneManager.LoadScene("SampleScene");
+            Invoke("ChangeScene", 2f);
         }
     }
 
@@ -132,10 +134,7 @@ public class InitSequence2 : MonoBehaviour
         // if the conversation is finished passed to the other scene
 
         StartCoroutine(ShowChildDialogs());
-        if (DialogManager.instance.conversationIsFinished)
-        {
-            ChangeScene();
-        }
+
     }
 
     IEnumerator DeactivatePentagramPanel()
@@ -154,8 +153,12 @@ public class InitSequence2 : MonoBehaviour
     public void ChangeScene()
     {
         // Make a delay before loading in the new scene
-        UIFade.instance.FadeToBlack();
-        SceneManager.LoadScene("SampleScene");
 
+        UIFade.instance.FadeToBlack();
+        waitToLoad -= Time.deltaTime;
+        if (waitToLoad <= 0)
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
     }
 }
