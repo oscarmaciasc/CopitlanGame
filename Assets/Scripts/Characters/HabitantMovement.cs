@@ -11,8 +11,14 @@ public class HabitantMovement : MonoBehaviour
     private int destinyCoordX;
     private int destinyCoordY;
     public bool canMove;
-    public float moveRate = 5f;
-    public float nextMove = 0.0f;
+    public Animator myAnim;
+    public float moveSpeed;
+    public Vector2 vector2DestinyX;
+    public Vector2 vector2DestinyY;
+    public float currentPositionX = 0;
+    public float currentPositionY = 0;
+    public int counter = 0;
+    public float timeToWait = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,126 +26,132 @@ public class HabitantMovement : MonoBehaviour
         canMove = false;
         destinyCoordX = 0;
         destinyCoordY = 0;
+
+        // Initializing the first coords for the habitant
+        currentPositionX = gameObject.transform.position.x;
+        currentPositionY = gameObject.transform.position.y;
+
+        GetRandomCoordTest();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (counter == 2)
+        {
+            // Wait 5 seconds
+            timeToWait = 5f;
 
-        if (canMove && destinyCoordX == 0 && destinyCoordY == 0)
-        {
-            GetRandomCoord();
-            StepToDestinyCoord();
-            HasReachedDestiny();
-        }
-        else if (canMove)
-        {
-            StepToDestinyCoord();
-            HasReachedDestiny();
+            counter = 0;
+            GetRandomCoordTest();
         }
 
-        /*
-        if (AvoidCollision.instance.hasCollided != true)
+        // This condition waits 5 seconds
+        timeToWait -= Time.deltaTime;
+        if (timeToWait <= 0)
         {
-            MoveRandomPosition();
-
-            // if the character get to the coords, then wait 5 seconds
-            if (Time.time == 5f)
+            if (firstMovement == 1)
             {
-                // Repit the algorithm
-                MoveRandomPosition();
+                // If the habitant stop moving in x
+                if (myAnim.GetFloat("moveX") == 0)
+                {
+                    // This assigns a value in x and let the value in y of the gameobject current position.
+                    vector2DestinyX = new Vector2(transform.position.x + randomX, currentPositionY);
+                }
+                MoveXTest();
             }
-        }
-        else
-        {
-            MoveRandomPosition();
-        }
-        */
-
-    }
-
-    private void HasReachedDestiny()
-    {
-        Debug.Log("Position X: " + gameObject.transform.position.x);
-        Debug.Log("Position Y: " + gameObject.transform.position.y);
-        if (gameObject.transform.position.x == destinyCoordX && gameObject.transform.position.y == destinyCoordY)
-        {
-            canMove = false;
-            destinyCoordX = 0;
-            destinyCoordY = 0;
-        }
-    }
-
-    private void StepToDestinyCoord()
-    {
-        if (firstMovement == 1f)
-        {
-            MoveX();
-            MoveY();
-        }
-        else
-        {
-            MoveY();
-            MoveX();
-        }
-
-    }
-
-    private void MoveX()
-    {
-        //Move X
-        if (gameObject.transform.position.x < destinyCoordX)
-        {
-            if (Time.time > nextMove)
+            else
             {
-                nextMove = Time.time + moveRate;
-                gameObject.transform.position = new Vector3(transform.position.x + 1, transform.position.y, 0);
-            }
-        }
-        else if (gameObject.transform.position.x > destinyCoordX)
-        {
-            if (Time.time > nextMove)
-            {
-                nextMove = Time.time + moveRate;
-                gameObject.transform.position = new Vector3(transform.position.x - 1, transform.position.y, 0);
+                // If the habitant stop moving in y
+                if (myAnim.GetFloat("moveY") == 0)
+                {
+                    // This assigns a value in y and let the value in x of the gameobject current position.
+                    vector2DestinyY = new Vector2(currentPositionX, transform.position.y + randomY);
+                }
+                MoveYTest();
             }
         }
     }
 
-    private void MoveY()
-    {
-        // Move Y
-        if (gameObject.transform.position.y < destinyCoordY)
-        {
-            if (Time.time > nextMove)
-            {
-                nextMove = Time.time + moveRate;
-                gameObject.transform.position = new Vector3(transform.position.x, transform.position.y + 1, 0);
-            }
-        }
-        else if (gameObject.transform.position.y > destinyCoordY)
-        {
-            if (Time.time > nextMove)
-            {
-                nextMove = Time.time + moveRate;
-                gameObject.transform.position = new Vector3(transform.position.x, transform.position.y - 1, 0);
-            }
-        }
-    }
-
-    public void GetRandomCoord()
+    public void GetRandomCoordTest()
     {
         randomX = Random.Range(-5, 5);
         randomY = Random.Range(-5, 5);
         firstMovement = Random.Range(1, 2);
-
-        destinyCoordX = (int)gameObject.transform.position.x + randomX;
-        Debug.Log("DestinyCoordX(" + destinyCoordX + ") = " + "PositionX(" + (int)gameObject.transform.position.x + ") + RandomX(" + randomX + ")");
-        destinyCoordY = (int)gameObject.transform.position.y + randomY;
-        Debug.Log("DestinyCoordY(" + destinyCoordY + ") = " + "PositionY(" + (int)gameObject.transform.position.y + ") + RandomY(" + randomY + ")");
-
-        Debug.Log("Destino X: " + destinyCoordX);
-        Debug.Log("Destino Y: " + destinyCoordY);
+        Debug.Log("Random X: " + randomX);
+        Debug.Log("Random Y: " + randomY);
+        Debug.Log("First Movement: " + firstMovement);
     }
+
+    public void MoveXTest()
+    {
+        if (vector2DestinyX.x != gameObject.transform.position.x)
+        {
+            gameObject.transform.position = Vector2.MoveTowards(transform.position, vector2DestinyX, moveSpeed * Time.deltaTime);
+
+            if (vector2DestinyX.x > gameObject.transform.position.x)
+            {
+                myAnim.SetFloat("moveX", 1);
+
+                // Making the player Idle in the last direction
+                myAnim.SetFloat("lastMoveX", 1);
+            }
+            else if (vector2DestinyX.x < gameObject.transform.position.x)
+            {
+                myAnim.SetFloat("moveX", -1);
+
+                // Making the player Idle in the last direction
+                myAnim.SetFloat("lastMoveX", -1);
+            }
+        }
+        else
+        {
+            // Finish the movement
+            myAnim.SetFloat("moveX", 0);
+
+            // Assign current positionX
+            currentPositionX = gameObject.transform.position.x;
+
+            counter++;
+            firstMovement = 2;
+        }
+    }
+
+    public void MoveYTest()
+    {
+        if (vector2DestinyY.y != gameObject.transform.position.y)
+        {
+            gameObject.transform.position = Vector2.MoveTowards(transform.position, vector2DestinyY, moveSpeed * Time.deltaTime);
+
+            if (vector2DestinyY.y > gameObject.transform.position.y)
+            {
+                myAnim.SetFloat("moveY", 1);
+
+                // Making the player Idle in the last direction
+                myAnim.SetFloat("lastMoveY", 1);
+            }
+            else if (vector2DestinyY.y < gameObject.transform.position.y)
+            {
+                myAnim.SetFloat("moveY", -1);
+
+                // Making the player Idle in the last direction
+                myAnim.SetFloat("lastMoveY", -1);
+            }
+        }
+        else
+        {
+            myAnim.SetFloat("moveY", 0);
+
+            // Assign current positionX
+            currentPositionY = gameObject.transform.position.y;
+
+            counter++;
+            firstMovement = 1;
+        }
+    }
+
+
+    //***************************************************************************************************************************
 
 }

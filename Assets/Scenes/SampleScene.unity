@@ -319,7 +319,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 348387935}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.462, y: -0.85, z: 0}
+  m_LocalPosition: {x: -6.77, y: -0.85, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -452,13 +452,15 @@ GameObject:
   - component: {fileID: 703081605}
   - component: {fileID: 703081607}
   - component: {fileID: 703081608}
+  - component: {fileID: 703081609}
+  - component: {fileID: 703081610}
   m_Layer: 0
   m_Name: NPC0
   m_TagString: MovingHabitant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &703081603
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -607,8 +609,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 0
-  moveRate: 5
-  nextMove: 0
+  myAnim: {fileID: 703081610}
+  moveSpeed: 1
+  vector2DestinyX: {x: 0, y: 0}
+  vector2DestinyY: {x: 0, y: 0}
+  currentPositionX: 0
+  currentPositionY: 0
+  counter: 0
+  timeToWait: 0
+--- !u!50 &703081609
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703081602}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!95 &703081610
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703081602}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 1927c122a5ee72d4fba6167c43ea25dc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &756824159 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 974284128, guid: cc6deea581a65364391abd104cfaced7, type: 3}
@@ -726,7 +774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5865885559916751504, guid: f26d8ccb71cf9904b8441aa08b93a6a1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.55
+      value: -7.7
       objectReference: {fileID: 0}
     - target: {fileID: 5865885559916751504, guid: f26d8ccb71cf9904b8441aa08b93a6a1, type: 3}
       propertyPath: m_LocalPosition.y
