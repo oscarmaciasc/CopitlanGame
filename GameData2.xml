@@ -16,6 +16,7 @@
   </Resources>
   <Permissions>
     <Permission name="outterCircle" />
+    <Permission name="triangle" />
   </Permissions>
   <Flutes>
     <Flute name="woodenFlute" />
@@ -28,5 +29,7 @@
   </MusicalMasteryLvl>
   <MusicSheets>
     <MusicSheet name="partiture1" />
+    <MusicSheet name="partiture3" />
+    <MusicSheet name="partiture5" />
   </MusicSheets>
 </gameData>
