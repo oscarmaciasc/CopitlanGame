@@ -1,32 +1,42 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
+using System.Collections;
 
-public class CameraController : MonoBehaviour
-{
+public class CameraController : MonoBehaviour {
 
-    public Transform target;
-    // Reference to the tilemap
-    //public Tilemap theMap;
-    private Vector3 bottomLeftLimit;
-    private Vector3 topRightLimit;
+    public static CameraController instance;
 
-    // Start is called before the first frame update
-    void Start()
+    //Public variable to store a reference to the player game object
+    public GameObject player;
+
+    //Private variable to store the offset distance between the player and camera
+    private Vector3 offset;
+
+    // Use this for initialization
+    void Start () 
     {
-        //target = PlayerController.instance.transform;
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            // if theres another cameraController with the instance set, destroy myself
+            // but if the instance has been set but its me, then dont destroy me
+            if(instance != this)
+            {
+                Destroy(gameObject);
+            }
+        }
 
-        // Search all the objects on the scene and find any object that has the PlayerController script attached to.
-        target = FindObjectOfType<PlayerController>().transform;
-
-        // Limit the camera
-        //bottomLeftLimit = theMap.localBounds.min;
+        DontDestroyOnLoad(gameObject);
+        //Calculate and store the offset value by getting the distance between the player's position and camera's position.
+        offset = transform.position - player.transform.position;
     }
 
-    // Update is called once per frame
-    void LateUpdate()
+    // LateUpdate is called after Update each frame
+    void LateUpdate () 
     {
-        //transform.position = new Vector3(target.position.x, target.position.y, target.position.z);
+        // Set the position of the camera's transform to be the same as the player's, but offset by the calculated offset distance.
+        transform.position = player.transform.position + offset;
     }
 }

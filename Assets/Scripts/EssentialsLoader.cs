@@ -7,6 +7,7 @@ public class EssentialsLoader : MonoBehaviour
 
     //public GameObject UIScreen;
     public GameObject player;
+    public GameObject camera;
 
     // Start is called before the first frame update
     void Start()
@@ -18,8 +19,14 @@ public class EssentialsLoader : MonoBehaviour
 
         if(PlayerController.instance == null)
         {
-            PlayerController clone = Instantiate(player).GetComponent<PlayerController>();
-            PlayerController.instance = clone;
+            PlayerController clonePlayer = Instantiate(player).GetComponent<PlayerController>();
+            PlayerController.instance = clonePlayer;
+        }
+
+        if(CameraController.instance == null)
+        {
+            CameraController cloneCamera = Instantiate(camera).GetComponent<CameraController>();
+            CameraController.instance = cloneCamera;
         }
     }
 
