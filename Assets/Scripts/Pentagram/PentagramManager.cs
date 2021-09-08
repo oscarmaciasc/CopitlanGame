@@ -13,7 +13,7 @@ public class PentagramManager : MonoBehaviour
     public int generatedNotes = 0;
     public int passedNotes = 0;
     public static PentagramManager instance;
-    
+
     private void Awake()
     {
         if (instance == null)
@@ -49,10 +49,14 @@ public class PentagramManager : MonoBehaviour
                 timeLastNote = Time.time;
                 generatedNotes++;
             }
-        } 
-        else if(passedNotes >= generatedNotes)
+        }
+        else if (passedNotes >= generatedNotes)
         {
-            InitSequence2.instance.HasFinishedPartiture();
+            // Only for testing, maybe we`ll have t change this code to improve the efficiency
+            if (SceneManager.GetActiveScene().name == "InitSequence2")
+            {
+                InitSequence2.instance.HasFinishedPartiture();
+            }
         }
     }
 }
