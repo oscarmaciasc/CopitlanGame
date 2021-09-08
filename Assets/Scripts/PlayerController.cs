@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public Animator myAnim;
     public string areaTransitionName;
 
+    public int indexGame = 0;
+
     public bool canMove = true;
 
     // Start is called before the first frame update
@@ -32,6 +34,8 @@ public class PlayerController : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+
+        indexGame = XmlManager.instance.gameIndex;
     }
 
     // Update is called once per frame

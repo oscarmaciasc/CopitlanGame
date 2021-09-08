@@ -17,6 +17,7 @@ public class XmlManager : MonoBehaviour
     public static XmlManager instance;
     private string playerName;
     private bool isWoman;
+    public int gameIndex;
     
     private void Awake()
     {
@@ -28,7 +29,7 @@ public class XmlManager : MonoBehaviour
 
     // Called when a new game is created
     public bool Create(string name, bool gender) {
-        int gameIndex = CanCreateGame();
+        gameIndex = CanCreateGame();
         GameData gameData = new GameData(name, gender);
 
         if(gameIndex != 0) {

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Ya estuvo suavea" gender="false">
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="ratatata" gender="false">
   <Resources>
     <Resource name="wood">
-      <quantity>1</quantity>
+      <quantity>0</quantity>
     </Resource>
     <Resource name="iron">
       <quantity>0</quantity>
@@ -16,7 +16,6 @@
   </Resources>
   <Permissions>
     <Permission name="outterCircle" />
-    <Permission name="triangle" />
   </Permissions>
   <Flutes>
     <Flute name="woodenFlute" />
@@ -29,7 +28,5 @@
   </MusicalMasteryLvl>
   <MusicSheets>
     <MusicSheet name="partiture1" />
-    <MusicSheet name="partiture3" />
-    <MusicSheet name="partiture5" />
   </MusicSheets>
 </gameData>
