@@ -81,6 +81,21 @@ public class XmlManager : MonoBehaviour
         serializer.Serialize(xmlWriter, gameData);
         xmlWriter.Close();
     }
+    
+    public void IncreaseResource(int gameIndex, int resourceID, int quantityAdded)
+    {
+        GameData gameData = LoadGame(gameIndex);
+        
+        Debug.Log(gameData.name);
+        Debug.Log(gameData.resource[resourceID].quantity + " + " + quantityAdded);
+        gameData.name += "a";
+
+        int quantityNew = gameData.resource[resourceID].quantity + quantityAdded;
+
+        gameData.resource[resourceID].quantity = quantityNew;
+
+        Save(gameIndex, gameData);
+    }
 
     // Fill gameData array
     public GameData[] LoadAllGames()
@@ -154,5 +169,4 @@ public class XmlManager : MonoBehaviour
 
         return count;
     }
-    
 }
