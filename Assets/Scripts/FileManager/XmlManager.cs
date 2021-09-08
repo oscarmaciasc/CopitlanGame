@@ -86,10 +86,6 @@ public class XmlManager : MonoBehaviour
     public void IncreaseResource(int gameIndex, int resourceID, int quantityAdded)
     {
         GameData gameData = LoadGame(gameIndex);
-        
-        Debug.Log(gameData.name);
-        Debug.Log(gameData.resource[resourceID].quantity + " + " + quantityAdded);
-        gameData.name += "a";
 
         int quantityNew = gameData.resource[resourceID].quantity + quantityAdded;
 
@@ -125,7 +121,7 @@ public class XmlManager : MonoBehaviour
 
         if(count[index]) {
             XmlSerializer serializer = new XmlSerializer(typeof(GameData));
-            FileStream xmlRead = new FileStream(CurrentDirectory + "/GameData" + (index + 1) + ".xml", FileMode.Open);
+            FileStream xmlRead = new FileStream(CurrentDirectory + "/GameData" + index + ".xml", FileMode.Open);
             gameData = serializer.Deserialize(xmlRead) as GameData;
             xmlRead.Close();
         }

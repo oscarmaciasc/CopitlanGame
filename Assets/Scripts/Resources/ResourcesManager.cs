@@ -12,7 +12,24 @@ public class ResourcesManager : MonoBehaviour
 
     void Update()
     {
-        
+        ControlGeneration();
+    }
+
+    private void ControlGeneration()
+    {
+        // if (generatedNotes < Partitures.instance.numberOfPartitureNotes)
+        // {
+        //     if ((Time.time - timeLastNote) >= Partitures.instance.velocity)
+        //     {
+        //         Instantiate(this.notePrefab, this.transform.position, Quaternion.identity).transform.SetParent(this.gameObject.transform);
+        //         timeLastNote = Time.time;
+        //         generatedNotes++;
+        //     }
+        // }
+        // else if (passedNotes >= generatedNotes)
+        // {
+        //     InitSequence2.instance.HasFinishedPartiture();
+        // }
     }
 
     // Called when a resource is collected.

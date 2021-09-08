@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="ratatata" gender="false">
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Chicharron prensado" gender="false">
   <Resources>
     <Resource name="wood">
-      <quantity>0</quantity>
+      <quantity>6</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>0</quantity>
+      <quantity>3</quantity>
     </Resource>
     <Resource name="gold">
-      <quantity>0</quantity>
+      <quantity>2</quantity>
     </Resource>
     <Resource name="fuel">
       <quantity>0</quantity>
