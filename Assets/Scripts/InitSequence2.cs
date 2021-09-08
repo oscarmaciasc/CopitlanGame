@@ -28,6 +28,7 @@ public class InitSequence2 : MonoBehaviour
         instance = this;
         hasBeenActivated = false;
         justStarted = true;
+        PlayerController.instance.canMove = true;
 
         Debug.Log("STARTING TUTORIAL");
     }
@@ -35,6 +36,11 @@ public class InitSequence2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(DialogManager.instance.dialogBox.activeInHierarchy)
+        {
+            PlayerController.instance.canMove = false;
+        }
+
         if (DialogManager.instance.currentLine == 3)
         {
             DialogManager.instance.dialogBox.SetActive(false);
@@ -42,17 +48,8 @@ public class InitSequence2 : MonoBehaviour
             ActivatePartiturePanel();
             if (pressVPanel.activeInHierarchy || partitureSelectionPanel.activeInHierarchy || PartitureSelectionTutorial.instance.pentagramPanel.activeInHierarchy || tutorialInterface.activeInHierarchy || DialogManager.instance.dialogBox.activeInHierarchy)
             {
-                Debug.Log("Esto si");
-                if (dialogBox.activeInHierarchy)
-                {
-                    Debug.Log("No te quiero hacer caso loko");
-                }
                 PlayerController.instance.canMove = false;
                 DialogActivator.instance.canActivate = false;
-            }
-            else
-            {
-                PlayerController.instance.canMove = true;
             }
         }
 

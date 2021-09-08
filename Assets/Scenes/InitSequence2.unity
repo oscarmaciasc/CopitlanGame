@@ -12042,8 +12042,7 @@ MonoBehaviour:
   justStarted: 0
   secondMessage: 0
   shouldCountDown: 0
-  waitTime: 3
-  counter: 0
+  waitToLoad: 1
 --- !u!1 &1871497980
 GameObject:
   m_ObjectHideFlags: 0
@@ -12121,7 +12120,6 @@ GameObject:
   - component: {fileID: 1882008349}
   - component: {fileID: 1882008348}
   - component: {fileID: 1882008347}
-  - component: {fileID: 1882008346}
   m_Layer: 0
   m_Name: NPC0
   m_TagString: MovingHabitant
@@ -12129,21 +12127,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1882008346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1882008345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1b327ef8fc61dc49897596310566be0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canMove: 0
-  moveRate: 5
-  nextMove: 0
 --- !u!114 &1882008347
 MonoBehaviour:
   m_ObjectHideFlags: 0
