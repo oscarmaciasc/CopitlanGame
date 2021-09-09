@@ -661,6 +661,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c91102384f8bd824f9c6cee671cfe63d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isWood: 1
+  isIron: 0
+  isGold: 0
+  resourcesPreFabs:
+  - {fileID: 2780565272749316320, guid: bd19bb17ae814d84c93557dd94cbff26, type: 3}
+  - {fileID: 875199510570534738, guid: 324b6dd67cdc10b40a14077516bfc1ea, type: 3}
+  - {fileID: 953601144459696580, guid: 0d211c4c7d17c014dbb49f84d1b98799, type: 3}
 --- !u!4 &1246286150
 Transform:
   m_ObjectHideFlags: 0
@@ -669,7 +676,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1246286148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.3106108, y: -0.662613, z: -10.745177}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -864,6 +871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87fd586a3adfb97449a4c42143715f26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameIndex: 0
 --- !u!4 &1751442165
 Transform:
   m_ObjectHideFlags: 0

@@ -2,13 +2,13 @@
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Chicharron prensado" gender="false">
   <Resources>
     <Resource name="wood">
-      <quantity>6</quantity>
+      <quantity>303</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>3</quantity>
+      <quantity>24</quantity>
     </Resource>
     <Resource name="gold">
-      <quantity>2</quantity>
+      <quantity>13</quantity>
     </Resource>
     <Resource name="fuel">
       <quantity>0</quantity>
