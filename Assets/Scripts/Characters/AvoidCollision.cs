@@ -29,21 +29,17 @@ public class AvoidCollision : MonoBehaviour
         // Change the collider position depending on the animator movement... (maybe)
         if(transform.parent.GetComponent<Animator>().GetFloat("moveY") == 1)
         {
-            Debug.Log("Collider Top");
             this.transform.localPosition += topPosition;
         } else if(transform.parent.GetComponent<Animator>().GetFloat("moveY") == -1)
         {
-            Debug.Log("Collider Bottom");
             this.transform.localPosition += bottomPosition;
         }
         
         if(transform.parent.GetComponent<Animator>().GetFloat("moveX") == 1)
         {
-            Debug.Log("Collider Right");
             this.transform.localPosition += rightPosition;
         } else if(transform.parent.GetComponent<Animator>().GetFloat("moveX") == -1)
         {
-            Debug.Log("Collider Left");
             this.transform.localPosition += leftPosition;
         }
     }

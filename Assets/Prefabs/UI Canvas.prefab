@@ -12325,6 +12325,8 @@ MonoBehaviour:
   timeLastNote: 2
   objectTest: {fileID: 0}
   partitureName: 
+  generatedNotes: 0
+  passedNotes: 0
 --- !u!1 &2075859937
 GameObject:
   m_ObjectHideFlags: 0

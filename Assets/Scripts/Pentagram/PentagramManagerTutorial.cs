@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class PentagramManager : MonoBehaviour
+public class PentagramManagerTutorial : MonoBehaviour
 {
+
     [SerializeField] private GameObject notePrefab;
     public float timeLastNote = 2f;
     public static int streak = 0;
@@ -11,7 +13,7 @@ public class PentagramManager : MonoBehaviour
     public string partitureName;
     public int generatedNotes = 0;
     public int passedNotes = 0;
-    public static PentagramManager instance;
+    public static PentagramManagerTutorial instance;
 
     private void Awake()
     {
@@ -19,16 +21,16 @@ public class PentagramManager : MonoBehaviour
         {
             instance = this;
         }
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        partitureName = PartitureSelection.instance.panelPartitureName;
+        partitureName = PartitureSelectionTutorial.instance.panelPartitureName;
 
         Debug.Log("You have selected: " + partitureName);
         Partitures.instance.setVelocity(partitureName);
-        //HasStreak();
     }
 
     // Update is called once per frame
@@ -47,17 +49,8 @@ public class PentagramManager : MonoBehaviour
         else if (passedNotes >= generatedNotes)
         {
             // Only for testing, maybe we`ll have t change this code to improve the efficiency
-            InGame.instance.HasFinishedPartiture();
-        }
-    }
 
-    private void HasStreak()
-    {
-        // if the interpretation is free, then theres no streak.
-        // add conditions for other kind of habitants
-        if (StaticHabitant.instance.canInterpretatePartiture)
-        {
-            Partitures.instance.limitStreak = 0;
+            InitSequence2.instance.HasFinishedPartiture();
         }
     }
 }
