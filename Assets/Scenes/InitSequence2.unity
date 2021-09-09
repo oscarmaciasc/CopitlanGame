@@ -757,6 +757,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da6547526fb0e29448d976dcf403669b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rightPosition: {x: 0, y: 0, z: 0}
+  leftPosition: {x: 0, y: 0, z: 0}
+  topPosition: {x: 0, y: 0, z: 0}
+  bottomPosition: {x: 0, y: 0, z: 0}
   hasCollided: 0
 --- !u!58 &94011021
 CircleCollider2D:
@@ -2575,7 +2579,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 381781944}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5847042d74475c14abb6fd73bbe56d8e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4826898a90671794899276198c7231c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   notePrefab: {fileID: 264587215109723315, guid: f8511620661a1604187442dfd02e90ee, type: 3}

@@ -13,7 +13,8 @@ public class InGame : MonoBehaviour
     [SerializeField] private GameObject successfulSavedPanel;
     [SerializeField] private GameObject successfulSavedExitPanel;
     [SerializeField] public GameObject partitureSelectionPanel;
-   
+    [SerializeField] public GameObject pentagramPanel;
+
     private void Awake()
     {
         if (instance == null)
@@ -113,12 +114,23 @@ public class InGame : MonoBehaviour
     public void CheckCanMove()
     {
         if (partitureSelectionPanel.activeInHierarchy)
-            {
-                PlayerController.instance.canMove = false;
-            }
-            else
-            {
-                PlayerController.instance.canMove = true;
-            }
+        {
+            PlayerController.instance.canMove = false;
+        }
+        else
+        {
+            PlayerController.instance.canMove = true;
+        }
+    }
+
+    public void HasFinishedPartiture()
+    {
+        StartCoroutine(DeactivatePentagramPanel());
+    }
+
+    IEnumerator DeactivatePentagramPanel()
+    {
+        yield return new WaitForSeconds(1);
+        pentagramPanel.SetActive(false);
     }
 }
