@@ -22,12 +22,6 @@ public class EssentialsLoader : MonoBehaviour
             PlayerController clonePlayer = Instantiate(player).GetComponent<PlayerController>();
             PlayerController.instance = clonePlayer;
         }
-
-        if(CameraController.instance == null)
-        {
-            CameraController cloneCamera = Instantiate(camera).GetComponent<CameraController>();
-            CameraController.instance = cloneCamera;
-        }
     }
 
     // Update is called once per frame
