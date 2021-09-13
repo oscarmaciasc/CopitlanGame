@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
     public void SetBounds(Vector3 botLeft, Vector3 topRight)
     {
         // This addition is made to avoid the sprite of the player from being choped up.
-        bottomLeftLimit = botLeft + new Vector3(1f, 1f, 0f);
-        topRightLimit = topRight + new Vector3(-1f, -1f, 0f);
+        bottomLeftLimit = botLeft + new Vector3(.5f, 1f, 0f);
+        topRightLimit = topRight + new Vector3(-.5f, -1f, 0f);
     }
 }
