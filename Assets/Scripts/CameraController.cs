@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.Tilemaps;
 
@@ -16,7 +17,7 @@ public class CameraController : MonoBehaviour
 
     private float halfHeight;
     private float halfWidth;
-    void start()
+    void Start()
     {
         target = FindObjectOfType<PlayerController>().transform;
 
@@ -29,6 +30,9 @@ public class CameraController : MonoBehaviour
         theMap.CompressBounds();
         bottomLeftLimit = theMap.localBounds.min + new Vector3(halfWidth, halfHeight, 0f);
         topRightLimit = theMap.localBounds.max + new Vector3(-halfWidth, -halfHeight, 0f);
+
+        Debug.Log("Min: " + theMap.localBounds.min);
+        Debug.Log("Max: " + theMap.localBounds.max);
 
         //  We send the bound limits to the PlayerController script to keep the player inside the map
         PlayerController.instance.SetBounds(theMap.localBounds.min, theMap.localBounds.max);
