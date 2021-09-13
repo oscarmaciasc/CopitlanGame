@@ -69,13 +69,13 @@ public class PlayerController : MonoBehaviour
         }
 
         // Keeping the player inside the map
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, bottomLeftLimit.x, topRightLimit.x), Mathf.Clamp(transform.position.y, bottomLeftLimit.y, topRightLimit.y), transform.position.z);
+        //transform.position = new Vector3(Mathf.Clamp(transform.position.x, bottomLeftLimit.x, topRightLimit.x), Mathf.Clamp(transform.position.y, bottomLeftLimit.y, topRightLimit.y), transform.position.z);
     }
 
-    public void SetBounds(Vector3 botLeft, Vector3 topRight)
-    {
-        // This addition is made to avoid the sprite of the player from being choped up.
-        bottomLeftLimit = botLeft + new Vector3(1f, 1f, 0f);
-        topRightLimit = topRight + new Vector3(-1f, -1f, 0f);
-    }
+    // public void SetBounds(Vector3 botLeft, Vector3 topRight)
+    // {
+    //     // This addition is made to avoid the sprite of the player from being choped up.
+    //     bottomLeftLimit = botLeft + new Vector3(1f, 1f, 0f);
+    //     topRightLimit = topRight + new Vector3(-1f, -1f, 0f);
+    // }
 }
