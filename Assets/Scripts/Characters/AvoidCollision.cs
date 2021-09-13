@@ -6,21 +6,13 @@ public class AvoidCollision : MonoBehaviour
 {
 
     public static AvoidCollision instance;
-    public Vector3 rightPosition;
-    public Vector3 leftPosition;
-    public Vector3 topPosition;
-    public Vector3 bottomPosition;
     public bool hasCollided;
+    public float habitantHeight;
 
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-
-        rightPosition = new Vector3(0.65f, 0.30f, 0f);
-        leftPosition = new Vector3(-0.65f, 0.30f, 0f);
-        topPosition = new Vector3(-0.03f, 1.6f, 0f);
-        bottomPosition = new Vector3(-0.01f, 0.02f, 0f);
     }
 
     // Update is called once per frame
@@ -29,18 +21,18 @@ public class AvoidCollision : MonoBehaviour
         // Change the collider position depending on the animator movement... (maybe)
         if(transform.parent.GetComponent<Animator>().GetFloat("moveY") == 1)
         {
-            this.transform.localPosition += topPosition;
+            this.transform.position = new Vector2(this.transform.parent.position.x, this.transform.parent.position.y + habitantHeight);
         } else if(transform.parent.GetComponent<Animator>().GetFloat("moveY") == -1)
         {
-            this.transform.localPosition += bottomPosition;
+            this.transform.position = new Vector2(this.transform.parent.position.x, this.transform.parent.position.y);
         }
         
         if(transform.parent.GetComponent<Animator>().GetFloat("moveX") == 1)
         {
-            this.transform.localPosition += rightPosition;
+            this.transform.position = new Vector2(this.transform.parent.position.x + 0.65f, this.transform.parent.position.y + 0.4f);
         } else if(transform.parent.GetComponent<Animator>().GetFloat("moveX") == -1)
         {
-            this.transform.localPosition += leftPosition;
+            this.transform.position = new Vector2(this.transform.parent.position.x - 0.65f, this.transform.parent.position.y + 0.4f);
         }
     }
 

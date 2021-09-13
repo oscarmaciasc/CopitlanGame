@@ -74,26 +74,28 @@ public class HabitantMovement : MonoBehaviour
 
     private void AvoidingCollisions()
     {
+
+        // The only problem here is the posibility of a loop when having to colliders very close.
         if (AvoidCollision.instance.hasCollided)
         {
             if (myAnim.GetFloat("moveX") == -1)
             {
                 // move x to 5
-                vector2DestinyX = new Vector2(transform.position.x + 5, currentPositionY);
+                vector2DestinyX = new Vector2(transform.position.x + 3, currentPositionY);
             }
             else if (myAnim.GetFloat("moveX") == 1)
             {
                 // move x to 5
-                vector2DestinyX = new Vector2(transform.position.x - 5, currentPositionY);
+                vector2DestinyX = new Vector2(transform.position.x - 3, currentPositionY);
             }
 
             if (myAnim.GetFloat("moveY") == -1)
             {
-                vector2DestinyY = new Vector2(currentPositionX, transform.position.y + 5);
+                vector2DestinyY = new Vector2(currentPositionX, transform.position.y + 3);
             }
             else if (myAnim.GetFloat("moveY") == 1)
             {
-                vector2DestinyY = new Vector2(currentPositionX, transform.position.y - 5);
+                vector2DestinyY = new Vector2(currentPositionX, transform.position.y - 3);
             }
 
             AvoidCollision.instance.hasCollided = false;
