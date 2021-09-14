@@ -20,6 +20,7 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         target = FindObjectOfType<PlayerController>().transform;
+        Debug.Log("Target: " + target);
 
         halfHeight = Camera.main.orthographicSize;
         halfWidth = halfHeight * Camera.main.aspect;
@@ -30,9 +31,6 @@ public class CameraController : MonoBehaviour
         theMap.CompressBounds();
         bottomLeftLimit = theMap.localBounds.min + new Vector3(halfWidth, halfHeight, 0f);
         topRightLimit = theMap.localBounds.max + new Vector3(-halfWidth, -halfHeight, 0f);
-
-        Debug.Log("Min: " + theMap.localBounds.min);
-        Debug.Log("Max: " + theMap.localBounds.max);
 
         //  We send the bound limits to the PlayerController script to keep the player inside the map
         PlayerController.instance.SetBounds(theMap.localBounds.min, theMap.localBounds.max);
