@@ -7,6 +7,7 @@ public class StaticHabitant : MonoBehaviour
 
     public static StaticHabitant instance;
     public bool canInterpretatePartiture = true;
+    public bool conversatinFinished = false;
 
     // Start is called before the first frame update
     void Start()
@@ -17,9 +18,9 @@ public class StaticHabitant : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(DialogActivator.instance.canActivate && DialogManager.instance.conversationIsFinished)
+        if(DialogActivator.instance.canActivate && conversatinFinished)
         {
-            Debug.Log("Sigue la partitura");
+            Debug.Log("Sigue la Partitura");
         }
     }
 }
