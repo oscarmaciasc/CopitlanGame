@@ -43,6 +43,7 @@ public class DialogManager : MonoBehaviour
                         dialogBox.SetActive(false);
 
                         PlayerController.instance.canMove = true;
+                        conversationIsFinished = true;
 
                         // Only if the conversation is finished and we are in InitSequence2
                         // if (SceneManager.GetActiveScene().name == "InitSequence2")

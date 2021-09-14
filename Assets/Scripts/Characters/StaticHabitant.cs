@@ -17,6 +17,9 @@ public class StaticHabitant : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(DialogActivator.instance.canActivate && DialogManager.instance.conversationIsFinished)
+        {
+            Debug.Log("Sigue la partitura");
+        }
     }
 }
