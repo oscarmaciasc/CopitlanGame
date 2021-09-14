@@ -757,11 +757,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da6547526fb0e29448d976dcf403669b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightPosition: {x: 0, y: 0, z: 0}
-  leftPosition: {x: 0, y: 0, z: 0}
-  topPosition: {x: 0, y: 0, z: 0}
-  bottomPosition: {x: 0, y: 0, z: 0}
   hasCollided: 0
+  habitantHeight: 0
 --- !u!58 &94011021
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2582,7 +2579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4826898a90671794899276198c7231c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notePrefab: {fileID: 264587215109723315, guid: f8511620661a1604187442dfd02e90ee, type: 3}
+  notePrefab: {fileID: 264587215109723315, guid: 3cf8e13694a1f9f4aa32a165d8b4495c, type: 3}
   timeLastNote: 2
   objectTest: {fileID: 0}
   partitureName: 
@@ -6552,6 +6549,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7417249011018122520, guid: b4b39ddb450104d49a0c4bb01a0ce63f, type: 3}
       propertyPath: camera
+      value: 
+      objectReference: {fileID: 4070676006020204692, guid: f519f797a9eb7fa4a85268d10ad2af7d, type: 3}
+    - target: {fileID: 7417249011018122520, guid: b4b39ddb450104d49a0c4bb01a0ce63f, type: 3}
+      propertyPath: cameraLoader
       value: 
       objectReference: {fileID: 4070676006020204692, guid: f519f797a9eb7fa4a85268d10ad2af7d, type: 3}
     m_RemovedComponents: []
