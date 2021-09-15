@@ -49,6 +49,7 @@ public class InitSequence2 : MonoBehaviour
             if (pressVPanel.activeInHierarchy || partitureSelectionPanel.activeInHierarchy || PartitureSelectionTutorial.instance.pentagramPanel.activeInHierarchy || tutorialInterface.activeInHierarchy || DialogManager.instance.dialogBox.activeInHierarchy)
             {
                 PlayerController.instance.canMove = false;
+                
                 DialogActivator.instance.canActivate = false;
             }
         }

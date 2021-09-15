@@ -58,7 +58,7 @@ public class InGame : MonoBehaviour
 
 
     //********************************************************************************
-    private void ActivatePartitureSelectionPanel()
+    public void ActivatePartitureSelectionPanel()
     {
         partitureSelectionPanel.SetActive(true);
     }

@@ -23,8 +23,11 @@ public class DialogActivator : MonoBehaviour
         // if we are in the interactuable zone and we press enter and the dialog box is not already open
         if (canActivate && Input.GetKeyDown(KeyCode.Return) && !DialogManager.instance.dialogBox.activeInHierarchy)
         {
+            
+            DialogManager.instance.GetHabitant(this.gameObject);
             DialogManager.instance.ShowDialog(lines);
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -41,5 +44,10 @@ public class DialogActivator : MonoBehaviour
         {
             canActivate = false;
         }
+    }
+
+    public bool CanActive()
+    {
+        return canActivate;
     }
 }
