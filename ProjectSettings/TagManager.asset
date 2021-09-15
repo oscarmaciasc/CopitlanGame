@@ -6,6 +6,7 @@ TagManager:
   tags:
   - collider
   - MovingHabitant
+  - PartitureHabitant
   layers:
   - Default
   - TransparentFX

@@ -598,7 +598,7 @@ GameObject:
   - component: {fileID: 1572518534}
   m_Layer: 0
   m_Name: NPC1
-  m_TagString: MovingHabitant
+  m_TagString: PartitureHabitant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -637,6 +637,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canInterpretatePartiture: 1
+  conversationFinished: 0
+  canActivate: 0
 --- !u!114 &1572518536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5025,7 +5027,7 @@ GameObject:
   - component: {fileID: 2008861101}
   m_Layer: 0
   m_Name: NPC2
-  m_TagString: MovingHabitant
+  m_TagString: PartitureHabitant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5064,6 +5066,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canInterpretatePartiture: 1
+  conversationFinished: 0
+  canActivate: 0
 --- !u!114 &2008861103
 MonoBehaviour:
   m_ObjectHideFlags: 0

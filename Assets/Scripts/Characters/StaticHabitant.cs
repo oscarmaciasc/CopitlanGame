@@ -5,9 +5,12 @@ using UnityEngine;
 public class StaticHabitant : MonoBehaviour
 {
 
+    // Partiture Habitants
+
     public static StaticHabitant instance;
     public bool canInterpretatePartiture = true;
-    public bool conversatinFinished = false;
+    public bool conversationFinished = false;
+    public bool canActivate;
 
     // Start is called before the first frame update
     void Start()
@@ -18,9 +21,13 @@ public class StaticHabitant : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(DialogActivator.instance.canActivate && conversatinFinished)
+        // We recive the canActive variable from DialogActivator from the especific gameObject were talking to.
+        canActivate = this.gameObject.GetComponent<DialogActivator>().CanActive();
+
+        if(canActivate && conversationFinished)
         {
-            Debug.Log("Sigue la Partitura");
+            DialogActivator.instance.canActivate = false;
+            InGame.instance.ActivatePartitureSelectionPanel();
         }
     }
 }
