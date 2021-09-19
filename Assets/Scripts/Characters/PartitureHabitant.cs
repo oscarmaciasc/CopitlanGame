@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StaticHabitant : MonoBehaviour
+public class PartitureHabitant : MonoBehaviour
 {
 
     // Partiture Habitants
 
-    public static StaticHabitant instance;
+    public static PartitureHabitant instance;
     public bool canInterpretatePartiture = true;
     public bool conversationFinished = false;
     public bool canActivate;
+    public bool firstTime = true;
 
     // Start is called before the first frame update
     void Start()
@@ -24,10 +25,15 @@ public class StaticHabitant : MonoBehaviour
         // We recive the canActive variable from DialogActivator from the especific gameObject were talking to.
         canActivate = this.gameObject.GetComponent<DialogActivator>().CanActive();
 
-        if(canActivate && conversationFinished)
+        PentagramManager.streak = 0;
+
+        if (canActivate && conversationFinished && firstTime)
         {
-            DialogActivator.instance.canActivate = false;
             InGame.instance.ActivatePartitureSelectionPanel();
+            canActivate = this.gameObject.GetComponent<DialogActivator>().CanActiveFalse();
+            //if(partitureIsFinished)
+            //firstTime = false;
         }
+
     }
 }

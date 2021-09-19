@@ -15,6 +15,7 @@ public class NoteManager : MonoBehaviour
     public bool haveBeenPressed;
     string numberNote = "";
     string keyPressed = "";
+    
 
     public int passedNotes = 0;
 
@@ -56,6 +57,8 @@ public class NoteManager : MonoBehaviour
         {
             CompareKeys();
         }
+
+    
     }
 
 
@@ -159,6 +162,7 @@ public class NoteManager : MonoBehaviour
             haveBeenPressed = true;
             PentagramManager.streak = 0;
         }
+
 
         Partitures.instance.LimitStreak();
         Debug.Log("Racha: " + PentagramManager.streak);

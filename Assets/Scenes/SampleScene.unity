@@ -361,6 +361,7 @@ MonoBehaviour:
   successfulSavedExitPanel: {fileID: 185873759}
   partitureSelectionPanel: {fileID: 80739966}
   pentagramPanel: {fileID: 282387092}
+  dialogBox: {fileID: 1641508646}
 --- !u!1 &1246286148
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,6 +783,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1641508646 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2011644848, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+  m_PrefabInstance: {fileID: 2039936167}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1647579862 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 936727751, guid: cc6deea581a65364391abd104cfaced7, type: 3}
