@@ -14,6 +14,7 @@ public class InGame : MonoBehaviour
     [SerializeField] private GameObject successfulSavedExitPanel;
     [SerializeField] public GameObject partitureSelectionPanel;
     [SerializeField] public GameObject pentagramPanel;
+    [SerializeField] private GameObject dialogBox;
 
     private void Awake()
     {
@@ -113,7 +114,7 @@ public class InGame : MonoBehaviour
     //********************************************************************************
     public void CheckCanMove()
     {
-        if (partitureSelectionPanel.activeInHierarchy)
+        if (partitureSelectionPanel.activeInHierarchy || dialogBox.activeInHierarchy || pentagramPanel.activeInHierarchy)
         {
             PlayerController.instance.canMove = false;
         }

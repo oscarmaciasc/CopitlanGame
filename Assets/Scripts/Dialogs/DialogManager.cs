@@ -45,7 +45,7 @@ public class DialogManager : MonoBehaviour
                         dialogBox.SetActive(false);
 
                         PlayerController.instance.canMove = true;
-                        habitant.GetComponent<StaticHabitant>().conversationFinished = true;
+                        habitant.GetComponent<PartitureHabitant>().conversationFinished = true;
                        
                     }
                     else

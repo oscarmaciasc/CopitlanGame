@@ -28,7 +28,6 @@ public class PentagramManager : MonoBehaviour
 
         Debug.Log("You have selected: " + partitureName);
         Partitures.instance.setVelocity(partitureName);
-        //HasStreak();
     }
 
     // Update is called once per frame
@@ -48,16 +47,6 @@ public class PentagramManager : MonoBehaviour
         {
             // Only for testing, maybe we`ll have t change this code to improve the efficiency
             InGame.instance.HasFinishedPartiture();
-        }
-    }
-
-    private void HasStreak()
-    {
-        // if the interpretation is free, then theres no streak.
-        // add conditions for other kind of habitants
-        if (StaticHabitant.instance.canInterpretatePartiture)
-        {
-            Partitures.instance.limitStreak = 0;
         }
     }
 }

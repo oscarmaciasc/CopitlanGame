@@ -50,4 +50,10 @@ public class DialogActivator : MonoBehaviour
     {
         return canActivate;
     }
+
+    public bool CanActiveFalse()
+    {
+        canActivate = false;
+        return canActivate;
+    }
 }
