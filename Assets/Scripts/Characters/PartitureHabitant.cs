@@ -12,6 +12,7 @@ public class PartitureHabitant : MonoBehaviour
     public bool conversationFinished = false;
     public bool canActivate;
     public bool firstTime = true;
+    public bool partitureFinished = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,9 +32,16 @@ public class PartitureHabitant : MonoBehaviour
         {
             InGame.instance.ActivatePartitureSelectionPanel();
             canActivate = this.gameObject.GetComponent<DialogActivator>().CanActiveFalse();
-            //if(partitureIsFinished)
-            //firstTime = false;
+            if(partitureFinished)
+            {
+                firstTime = false;
+            }
         }
 
+    }
+
+    public void HasFinishedPartiture()
+    {
+        partitureFinished = true;
     }
 }

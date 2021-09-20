@@ -47,6 +47,9 @@ public class PentagramManager : MonoBehaviour
         {
             // Only for testing, maybe we`ll have t change this code to improve the efficiency
             InGame.instance.HasFinishedPartiture();
+
+            // This is not working and i dont know why
+            PartitureHabitant.instance.HasFinishedPartiture();
         }
     }
 }

@@ -26,7 +26,6 @@ public class CameraController : MonoBehaviour
         halfWidth = halfHeight * Camera.main.aspect;
 
         //  We assign the corners of our map
-        //  Maybe we`ll have to change the image for a tileMap to use: tileMap.localBounds 
 
         theMap.CompressBounds();
         bottomLeftLimit = theMap.localBounds.min + new Vector3(halfWidth, halfHeight, 0f);
