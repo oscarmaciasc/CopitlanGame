@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class HabitantMovement : MonoBehaviour
 {
-
     private int randomX;
     private int randomY;
     private int firstMovement;
@@ -19,6 +18,9 @@ public class HabitantMovement : MonoBehaviour
     public float currentPositionY = 0;
     public int counter = 0;
     public float timeToWait = 0f;
+
+    private Vector3 bottomLeftLimit;
+    private Vector3 topRightLimit;
 
     // Start is called before the first frame update
     void Start()
@@ -70,12 +72,15 @@ public class HabitantMovement : MonoBehaviour
                 MoveYTest();
             }
         }
+
+        // // Keeping the npc inside the map
+        // transform.position = new Vector3(Mathf.Clamp(transform.position.x, theMap.localBounds.min.x, topRightLimit.x), Mathf.Clamp(transform.position.y, bottomLeftLimit.y, topRightLimit.y), transform.position.z);
     }
 
     private void AvoidingCollisions()
     {
 
-        // The only problem here is the posibility of a loop when having to colliders very close.
+        // The only problem here is the posibility of a loop when having two colliders very close.
         if (AvoidCollision.instance.hasCollided)
         {
             if (myAnim.GetFloat("moveX") == -1)
@@ -178,8 +183,4 @@ public class HabitantMovement : MonoBehaviour
             firstMovement = 1;
         }
     }
-
-
-    //***************************************************************************************************************************
-
 }
