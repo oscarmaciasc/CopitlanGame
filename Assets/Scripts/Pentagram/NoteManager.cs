@@ -15,9 +15,7 @@ public class NoteManager : MonoBehaviour
     public bool haveBeenPressed;
     string numberNote = "";
     string keyPressed = "";
-    
-
-    public int passedNotes = 0;
+    public int correctNotes = 0;
 
     private void Awake()
     {
@@ -151,6 +149,7 @@ public class NoteManager : MonoBehaviour
             PentagramManager.streak++;
             canPress = false;
             haveBeenPressed = true;
+            PentagramManager.instance.correctNotes++;
         }
         else if (keyPressed != numberNote && keyPressed != "")
         {
