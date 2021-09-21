@@ -13,6 +13,7 @@ public class Mines : MonoBehaviour
     private Vector2 destiny;
     public bool finishedPartiture = false;
     public int percentageToPass;
+    public int correctNotes = 0;
     
 
     // Start is called before the first frame update
@@ -25,11 +26,13 @@ public class Mines : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         GetPercentage();
         CheckIfCanPass();
 
         // Falta aun que si falla pueda volver a intentarlo
         // Falta limitar a que solo se pueda interpretar partituras faciles en Tecalli y Acan y media en Seti
+        // Falta aun que este script sea persnalizado para los habitantes de minas
     }
 
     public void HasFinishedPartiture()
@@ -39,7 +42,7 @@ public class Mines : MonoBehaviour
 
     public void GetPercentage()
     {
-        if(finishedPartiture)
+        if(this.finishedPartiture)
         {
             if(((PentagramManager.instance.correctNotes*100) / (PentagramManager.instance.TotalNotes())) >= percentageToPass)
             {
