@@ -1007,8 +1007,9 @@ GameObject:
   - component: {fileID: 1583705632}
   - component: {fileID: 1583705631}
   - component: {fileID: 1583705630}
-  - component: {fileID: 1583705636}
   - component: {fileID: 1583705637}
+  - component: {fileID: 1583705638}
+  - component: {fileID: 1583705636}
   m_Layer: 0
   m_Name: Tecalli0
   m_TagString: PartitureHabitant
@@ -1187,6 +1188,8 @@ MonoBehaviour:
   canPass: 0
   myAnim: {fileID: 1583705637}
   moveSpeed: 1
+  finishedPartiture: 0
+  percentageToPass: 80
 --- !u!95 &1583705637
 Animator:
   serializedVersion: 3
@@ -1206,6 +1209,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1583705638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583705629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf43f54d5788f1940aec6bcd352477a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canInterpretatePartiture: 1
+  conversationFinished: 0
+  canActivate: 0
+  firstTime: 1
+  partitureFinished: 0
 --- !u!114 &1638445964 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1240519340, guid: cc6deea581a65364391abd104cfaced7, type: 3}

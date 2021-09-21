@@ -12,6 +12,8 @@ public class PentagramManager : MonoBehaviour
     public int generatedNotes = 0;
     public int passedNotes = 0;
     public static PentagramManager instance;
+    public bool partitureFinished = false;
+    public int correctNotes = 0;
 
     private void Awake()
     {
@@ -45,11 +47,24 @@ public class PentagramManager : MonoBehaviour
         }
         else if (passedNotes >= generatedNotes)
         {
-            // Only for testing, maybe we`ll have t change this code to improve the efficiency
+            partitureFinished = true;
+
             InGame.instance.HasFinishedPartiture();
 
             // This is not working and i dont know why
             PartitureHabitant.instance.HasFinishedPartiture();
+
+            Mines.instance.HasFinishedPartiture();
         }
+    }
+
+    public bool PartitureFinished()
+    {
+        return partitureFinished;
+    }
+
+    public int TotalNotes()
+    {
+        return passedNotes;
     }
 }
