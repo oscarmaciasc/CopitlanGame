@@ -58,7 +58,10 @@ public class DialogManager : MonoBehaviour
                     else
                     {
                         dialogText.text = dialogLines[currentLine];
-                        habitant.GetComponent<PartitureHabitant>().conversationFinished = false;
+                        if (habitant.GetComponent<PartitureHabitant>() != null)
+                        {
+                             habitant.GetComponent<PartitureHabitant>().conversationFinished = false;
+                        }
                     }
                 }
                 else
