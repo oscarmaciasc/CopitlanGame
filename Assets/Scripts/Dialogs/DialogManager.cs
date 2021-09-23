@@ -54,6 +54,18 @@ public class DialogManager : MonoBehaviour
                             habitant.GetComponent<PartitureHabitant>().conversationFinished = true;
                             habitant.GetComponent<PartitureHabitant>().firstTime = true;
                         }
+
+                        if(habitant.GetComponent<KasakirGuard>() != null)
+                        {
+                            habitant.GetComponent<KasakirGuard>().conversationFinished = true;
+                        }
+
+                        if(habitant.GetComponent<QuizaniGuard>() != null)
+                        {
+                            habitant.GetComponent<QuizaniGuard>().conversationFinished = true;
+                        }
+
+                        
                     }
                     else
                     {

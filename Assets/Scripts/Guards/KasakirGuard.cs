@@ -10,10 +10,17 @@ public class KasakirGuard : MonoBehaviour
 
     public GameObject habitant;
 
+    public Animator myAnim;
+    public float moveSpeed;
+    private Vector2 destiny;
+    [SerializeField] private GameObject theEntrance;
+
+    public bool conversationFinished = false;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        destiny = new Vector2(transform.position.x + 2, transform.position.y);
     }
 
     // Update is called once per frame
@@ -28,12 +35,35 @@ public class KasakirGuard : MonoBehaviour
         {
             // The player has the requested permission
             habitant.GetComponent<DialogActivator>().lines = permit;
+
+            if (conversationFinished)
+            {
+                Move();
+            }
         }
         else
         {
             habitant.GetComponent<DialogActivator>().lines = noPermit;
         }
 
+    }
+
+    public void Move()
+    {
+        if (destiny.x != gameObject.transform.position.x)
+        {
+            gameObject.transform.position = Vector2.MoveTowards(transform.position, destiny, moveSpeed * Time.deltaTime);
+            myAnim.SetFloat("moveX", 1);
+
+            // Making the player Idle in the last direction
+            myAnim.SetFloat("lastMoveY", -1);
+        }
+        else
+        {
+            // Finish the movement
+            myAnim.SetFloat("moveX", 0);
+            theEntrance.SetActive(true);
+        }
     }
 
 }

@@ -14,8 +14,6 @@ public class AreaEntrance : MonoBehaviour
             PlayerController.instance.transform.position = transform.position;
         }
 
-        //UIFade.instance.FadeFromBlack();
-
         Debug.Log("Area Entrance");
         FindObjectOfType<UIFade>().FadeFromBlack();
     }
