@@ -26,8 +26,6 @@ public class PartitureHabitant : MonoBehaviour
         // We recive the canActive variable from DialogActivator from the especific gameObject were talking to.
         canActivate = this.gameObject.GetComponent<DialogActivator>().CanActive();
 
-        conversationFinished = DialogManager.instance.conversationIsFinished;
-
         PentagramManager.streak = 0;
 
         if (this.canActivate && this.conversationFinished && firstTime)
@@ -35,8 +33,11 @@ public class PartitureHabitant : MonoBehaviour
             InGame.instance.ActivatePartitureSelectionPanel();
             firstTime = false;
         }
-        if (partitureFinished)
+        
+
+        if (partitureFinished && this.gameObject.GetComponent<Mines>() == null)
         {
+            
             canActivate = this.gameObject.GetComponent<DialogActivator>().CanActiveFalse();
         }
 

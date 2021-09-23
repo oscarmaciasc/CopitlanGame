@@ -833,8 +833,8 @@ MonoBehaviour:
   canInterpretatePartiture: 1
   conversationFinished: 0
   canActivate: 0
-  firstTime: 1
   partitureFinished: 0
+  firstTime: 1
 --- !u!114 &1572518536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1189,7 +1189,8 @@ MonoBehaviour:
   myAnim: {fileID: 1583705637}
   moveSpeed: 1
   finishedPartiture: 0
-  percentageToPass: 80
+  percentageToPass: 50
+  correctNotes: 0
 --- !u!95 &1583705637
 Animator:
   serializedVersion: 3
@@ -1224,8 +1225,8 @@ MonoBehaviour:
   canInterpretatePartiture: 1
   conversationFinished: 0
   canActivate: 0
-  firstTime: 1
   partitureFinished: 0
+  firstTime: 1
 --- !u!114 &1638445964 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1240519340, guid: cc6deea581a65364391abd104cfaced7, type: 3}
@@ -20605,8 +20606,8 @@ MonoBehaviour:
   canInterpretatePartiture: 1
   conversationFinished: 0
   canActivate: 0
-  firstTime: 1
   partitureFinished: 0
+  firstTime: 1
 --- !u!114 &2008861103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21304,6 +21305,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1041116254, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: pentagramPanel
+      value: 
+      objectReference: {fileID: 282387092}
     - target: {fileID: 1057887802, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

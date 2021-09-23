@@ -20,6 +20,7 @@ public class DialogManager : MonoBehaviour
     public bool conversationIsFinished = false;
 
     public GameObject habitant;
+    [SerializeField] private GameObject pentagramPanel;
 
 
     // Start is called before the first frame update
@@ -45,13 +46,17 @@ public class DialogManager : MonoBehaviour
                         dialogBox.SetActive(false);
 
                         PlayerController.instance.canMove = true;
-                        conversationIsFinished = true;
-                        //habitant.GetComponent<PartitureHabitant>().conversationFinished = true;
-                       
+
+                        if (habitant.GetComponent<PartitureHabitant>() != null)
+                        {
+                            habitant.GetComponent<PartitureHabitant>().conversationFinished = true;
+                            habitant.GetComponent<PartitureHabitant>().firstTime = true;
+                        }
                     }
                     else
                     {
                         dialogText.text = dialogLines[currentLine];
+                        habitant.GetComponent<PartitureHabitant>().conversationFinished = false;
                     }
                 }
                 else
@@ -61,6 +66,14 @@ public class DialogManager : MonoBehaviour
 
             }
         }
+
+        if(pentagramPanel.activeInHierarchy)
+        {
+            // Send the habitant to PentagramManager script
+            // turn canActivate to false
+            pentagramPanel.GetComponent<PentagramManager>().GetHabitant(this.habitant);
+        }
+
     }
 
     public void ShowDialog(string[] newLines)
@@ -82,7 +95,7 @@ public class DialogManager : MonoBehaviour
     public void GetHabitant(GameObject getHabitant)
     {
         // habitant is the npc im talking to
-        habitant = getHabitant; 
+        habitant = getHabitant;
         Debug.Log("Nombre de habitante: " + getHabitant.name);
     }
 }

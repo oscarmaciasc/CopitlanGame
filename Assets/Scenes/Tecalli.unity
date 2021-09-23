@@ -22375,6 +22375,9 @@ MonoBehaviour:
   partitureName: 
   generatedNotes: 0
   passedNotes: 0
+  partitureFinished: 0
+  correctNotes: 0
+  habitant: {fileID: 0}
 --- !u!114 &7144856896788541498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27007,6 +27010,7 @@ MonoBehaviour:
   justStarted: 0
   conversationIsFinished: 0
   habitant: {fileID: 0}
+  pentagramPanel: {fileID: 7144856896774810334}
 --- !u!114 &7144856897737551448
 MonoBehaviour:
   m_ObjectHideFlags: 0

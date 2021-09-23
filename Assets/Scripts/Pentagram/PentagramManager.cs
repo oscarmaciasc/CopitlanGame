@@ -14,6 +14,7 @@ public class PentagramManager : MonoBehaviour
     public static PentagramManager instance;
     public bool partitureFinished = false;
     public int correctNotes = 0;
+    [SerializeField] private GameObject habitant;
 
     private void Awake()
     {
@@ -32,9 +33,19 @@ public class PentagramManager : MonoBehaviour
         Partitures.instance.setVelocity(partitureName);
     }
 
+    void OnEnable()
+    {
+        Debug.Log("He vuelto a activar el Pentagram");
+        passedNotes = 0;
+        generatedNotes = 0;
+        correctNotes = 0;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        
+
         // Generating random notes for testing purposes
         if (generatedNotes < Partitures.instance.numberOfPartitureNotes)
         {
@@ -51,10 +62,18 @@ public class PentagramManager : MonoBehaviour
 
             InGame.instance.HasFinishedPartiture();
 
-            // This is not working and i dont know why
-            PartitureHabitant.instance.HasFinishedPartiture();
+            if(habitant.GetComponent<PartitureHabitant>() != null)
+            {
+                habitant.GetComponent<PartitureHabitant>().partitureFinished = true;
+            }
 
-            Mines.instance.HasFinishedPartiture();
+            if(habitant.GetComponent<Mines>() != null)
+            {
+                habitant.GetComponent<Mines>().finishedPartiture = true;
+            }
+
+            
+
         }
     }
 
@@ -65,6 +84,13 @@ public class PentagramManager : MonoBehaviour
 
     public int TotalNotes()
     {
-        return passedNotes;
+        return Partitures.instance.numberOfPartitureNotes;
+    }
+
+    public void GetHabitant(GameObject getHabitant)
+    {
+        // habitant is the npc im talking to
+        habitant = getHabitant;
+        Debug.Log("Nombre de habitante: " + getHabitant.name);
     }
 }

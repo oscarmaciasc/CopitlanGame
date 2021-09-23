@@ -27,6 +27,8 @@ public class Mines : MonoBehaviour
     void Update()
     {
 
+
+
         GetPercentage();
         CheckIfCanPass();
 
@@ -35,24 +37,21 @@ public class Mines : MonoBehaviour
         // Falta aun que este script sea persnalizado para los habitantes de minas
     }
 
-    public void HasFinishedPartiture()
-    {
-        finishedPartiture = true;
-    }
-
     public void GetPercentage()
     {
-        if(this.finishedPartiture)
+        if(finishedPartiture)
         {
             if(((PentagramManager.instance.correctNotes*100) / (PentagramManager.instance.TotalNotes())) >= percentageToPass)
             {
                 Debug.Log("Enhorabuena, has pasado");
+                this.gameObject.GetComponent<DialogActivator>().CanActiveFalse();
                 canPass = true;
             }
             else
             {
                 Debug.Log("No me terminas de convencer, intentalo de nuevo");
                 canPass = false;
+                finishedPartiture = false;
             }
             Debug.Log("Correct Notes: " + PentagramManager.instance.correctNotes);
             Debug.Log("Total Notes: " + PentagramManager.instance.TotalNotes());
