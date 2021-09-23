@@ -27,6 +27,11 @@ public class XmlManager : MonoBehaviour
         }
     }
 
+    // Called when a game is selected in GameSelection interface;
+    public void CreateTempFile(int gameIndex) {
+        
+    }
+
     // Called when a new game is created
     public bool Create(string name, bool gender) {
         gameIndex = CanCreateGame();
@@ -126,7 +131,7 @@ public class XmlManager : MonoBehaviour
             xmlRead.Close();
         }
         else {
-            Debug.Log("There is not an file game cabeza huevo");
+            Debug.Log("There is not a file game cabeza huevo");
         }
 
         return gameData;
