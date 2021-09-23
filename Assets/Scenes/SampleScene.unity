@@ -21309,6 +21309,10 @@ PrefabInstance:
       propertyPath: pentagramPanel
       value: 
       objectReference: {fileID: 282387092}
+    - target: {fileID: 1041116254, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: partitureSelectionPanel
+      value: 
+      objectReference: {fileID: 80739966}
     - target: {fileID: 1057887802, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

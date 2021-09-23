@@ -20,7 +20,8 @@ public class DialogManager : MonoBehaviour
     public bool conversationIsFinished = false;
 
     public GameObject habitant;
-    [SerializeField] private GameObject pentagramPanel;
+    public GameObject pentagramPanel;
+    public GameObject partitureSelectionPanel;
 
 
     // Start is called before the first frame update
@@ -33,6 +34,7 @@ public class DialogManager : MonoBehaviour
     void Update()
     {
         // if dialog box is open and the player release the Enter key we pass to other line and update the text
+        
         if (dialogBox.activeInHierarchy)
         {
             if (Input.GetKeyUp(KeyCode.Return))
@@ -67,10 +69,9 @@ public class DialogManager : MonoBehaviour
             }
         }
 
-        if(pentagramPanel.activeInHierarchy)
+        if (pentagramPanel.activeInHierarchy)
         {
             // Send the habitant to PentagramManager script
-            // turn canActivate to false
             pentagramPanel.GetComponent<PentagramManager>().GetHabitant(this.habitant);
         }
 
