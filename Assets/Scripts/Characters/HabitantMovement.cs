@@ -80,8 +80,10 @@ public class HabitantMovement : MonoBehaviour
     private void AvoidingCollisions()
     {
 
-        // The only problem here is the posibility of a loop when having two colliders very close.
-        if (AvoidCollision.instance.hasCollided)
+        // Identify wich habitant is colliding, avoiding usisng instances
+
+        // Access the child of the object habitant to have the specific habitant is colliding
+        if (transform.Find("collider").GetComponent<AvoidCollision>().hasCollided == true)
         {
             if (myAnim.GetFloat("moveX") == -1)
             {
@@ -103,7 +105,7 @@ public class HabitantMovement : MonoBehaviour
                 vector2DestinyY = new Vector2(currentPositionX, transform.position.y - 3);
             }
 
-            AvoidCollision.instance.hasCollided = false;
+            transform.Find("collider").GetComponent<AvoidCollision>().hasCollided = false;
         }
     }
 
