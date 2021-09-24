@@ -29,16 +29,28 @@ public class XmlManager : MonoBehaviour
 
     // Called when a game is selected in GameSelection interface;
     public void CreateTempFile(int gameIndex) {
-        
+        TempFile tempFile = new TempFile(gameIndex);
+
+        XmlSerializer serializer = new XmlSerializer(typeof(TempFile));
+        FileStream xmlWriter = new FileStream(CurrentDirectory + "/TempFile.xml", FileMode.Create);
+        serializer.Serialize(xmlWriter, tempFile);
+        xmlWriter.Close();
+    }
+
+    // Delete the temporal file
+    public void DeleteTempFile()
+    {
+        File.Delete(CurrentDirectory + "/TempFile.xml");
     }
 
     // Called when a new game is created
     public bool Create(string name, bool gender) {
-        gameIndex = CanCreateGame();
+        int gameIndex = CanCreateGame();
         GameData gameData = new GameData(name, gender);
 
         if(gameIndex != 0) {
             Save(gameIndex, gameData);
+            CreateTempFile(gameIndex);
             return true;
         }
         else {
@@ -88,9 +100,11 @@ public class XmlManager : MonoBehaviour
         xmlWriter.Close();
     }
     
-    public void IncreaseResource(int gameIndex, int resourceID, int quantityAdded)
+    public void IncreaseResource(int resourceID, int quantityAdded)
     {
-        GameData gameData = LoadGame(gameIndex);
+        int gameIndex = GetGameIndex();
+
+        GameData gameData = LoadGame();
 
         int quantityNew = gameData.resource[resourceID].quantity + quantityAdded;
 
@@ -119,8 +133,9 @@ public class XmlManager : MonoBehaviour
         return gamesData;
     }
 
-    public GameData LoadGame(int index)
+    public GameData LoadGame()
     {
+        int index = GetGameIndex();
         bool[] count = GamesCount();
         GameData gameData = new GameData();
 
@@ -170,5 +185,16 @@ public class XmlManager : MonoBehaviour
         }
 
         return count;
+    }
+
+    private int GetGameIndex() {
+        TempFile tempFile = new TempFile();
+
+        XmlSerializer serializer = new XmlSerializer(typeof(TempFile));
+        FileStream xmlRead = new FileStream(CurrentDirectory + "/TempFile.xml", FileMode.Open);
+        tempFile = serializer.Deserialize(xmlRead) as TempFile;
+        xmlRead.Close();
+
+        return tempFile.gameIndex;
     }
 }

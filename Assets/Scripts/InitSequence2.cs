@@ -101,11 +101,8 @@ public class InitSequence2 : MonoBehaviour
     private void DeactivateNoOwnedPartiturePanels()
     {
         Debug.Log("Deactivating no owned partiture panels");
-        // ******************************FAKE*****************************
-        int index = 1;
-        // ******************************FAKE*****************************
         GameData gameData = new GameData();
-        gameData = XmlManager.instance.LoadGame(index);
+        gameData = XmlManager.instance.LoadGame();
 
         for (int i = 0; i < 10; i++)
         {

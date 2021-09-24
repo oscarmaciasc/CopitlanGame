@@ -2,7 +2,7 @@
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Test" gender="false">
   <Resources>
     <Resource name="wood">
-      <quantity>309</quantity>
+      <quantity>334</quantity>
     </Resource>
     <Resource name="iron">
       <quantity>24</quantity>
