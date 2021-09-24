@@ -27,9 +27,8 @@ public class NaranGuard : MonoBehaviour
     void Update()
     {
         GameData gameData = new GameData();
-
-        // Replace the fake game index later...
-        gameData = XmlManager.instance.LoadGame(1);
+        
+        gameData = XmlManager.instance.LoadGame();
 
         if (gameData.DoesHavePermit("innerCircle"))
         {

@@ -60,9 +60,6 @@ public class ResourcesManager : MonoBehaviour
     // Gold = 2
     // Fuel = 3
     public void resourceCollected(int resourceID, int quantity) {
-        // ******************************FAKE*****************************
-        int index = 2;
-        // ******************************FAKE*****************************
-        XmlManager.instance.IncreaseResource(index, resourceID, quantity);
+        XmlManager.instance.IncreaseResource(resourceID, quantity);
     }
 }

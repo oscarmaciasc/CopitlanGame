@@ -28,11 +28,8 @@ public class PartitureSelection : MonoBehaviour
     }
 
     private void DeactivateNoOwnedPartiturePanels() {
-        // ******************************FAKE*****************************
-        int index = 2;
-        // ******************************FAKE*****************************
         GameData gameData = new GameData();
-        gameData = XmlManager.instance.LoadGame(index);
+        gameData = XmlManager.instance.LoadGame();
 
         for (int i = 0; i < 10; i++) {
             if(gameData.DoesHavePartiture("partiture" + (i + 1))) {

@@ -28,8 +28,7 @@ public class KasakirGuard : MonoBehaviour
     {
         GameData gameData = new GameData();
 
-        // Replace the fake game index later...
-        gameData = XmlManager.instance.LoadGame(1);
+        gameData = XmlManager.instance.LoadGame();
 
         if (gameData.DoesHavePermit("outterCircle"))
         {

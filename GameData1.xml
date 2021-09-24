@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Viktor" gender="false">
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Tsumugi" gender="true">
   <Resources>
     <Resource name="wood">
-      <quantity>0</quantity>
+      <quantity>18</quantity>
     </Resource>
     <Resource name="iron">
       <quantity>0</quantity>
@@ -29,5 +29,8 @@
   </MusicalMasteryLvl>
   <MusicSheets>
     <MusicSheet name="partiture1" />
+    <MusicSheet name="partiture2" />
+    <MusicSheet name="partiture5" />
+    <MusicSheet name="partiture10" />
   </MusicSheets>
 </gameData>

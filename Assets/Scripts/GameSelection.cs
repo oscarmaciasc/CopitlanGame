@@ -144,7 +144,7 @@ public class GameSelection : MonoBehaviour
 
     public void Load()
     {
-        
+        XmlManager.instance.CreateTempFile(index);
     }
 
     public void Delete()
