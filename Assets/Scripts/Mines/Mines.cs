@@ -14,13 +14,14 @@ public class Mines : MonoBehaviour
     public bool finishedPartiture = false;
     public int percentageToPass;
     public int correctNotes = 0;
+    [SerializeField] private GameObject pentagramPanel;
     
 
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-        destiny = new Vector2(transform.position.x + 3, transform.position.y);
+        destiny = new Vector2(transform.position.x + 2, transform.position.y);
     }
 
     // Update is called once per frame
@@ -60,7 +61,7 @@ public class Mines : MonoBehaviour
 
     public void CheckIfCanPass()
     {
-        if (canPass)
+        if (canPass && !pentagramPanel.activeInHierarchy)
         {
             if (destiny.x != gameObject.transform.position.x)
             {
@@ -68,14 +69,13 @@ public class Mines : MonoBehaviour
                 myAnim.SetFloat("moveX", 1);
 
                 // Making the player Idle in the last direction
-                myAnim.SetFloat("lastMoveX", 1);
+                myAnim.SetFloat("lastMoveY", -1);
             }
             else
             {
                 // Finish the movement
                 myAnim.SetFloat("moveX", 0);
                 
-                Destroy(this.gameObject);
                 theEntrance.SetActive(true);
             }
         }
