@@ -57,7 +57,7 @@ public class QuizaniGuard : MonoBehaviour
             myAnim.SetFloat("moveX", 1);
 
             // Making the player Idle in the last direction
-            myAnim.SetFloat("lastMoveX", 1);
+            myAnim.SetFloat("lastMoveY", -1);
         }
         else
         {
