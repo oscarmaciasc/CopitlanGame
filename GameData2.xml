@@ -2,7 +2,7 @@
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Test" gender="false">
   <Resources>
     <Resource name="wood">
-      <quantity>316</quantity>
+      <quantity>448</quantity>
     </Resource>
     <Resource name="iron">
       <quantity>24</quantity>
@@ -28,5 +28,8 @@
   </MusicalMasteryLvl>
   <MusicSheets>
     <MusicSheet name="partiture1" />
+    <MusicSheet name="partiture2" />
+    <MusicSheet name="partiture4" />
+    <MusicSheet name="partiture5" />
   </MusicSheets>
 </gameData>

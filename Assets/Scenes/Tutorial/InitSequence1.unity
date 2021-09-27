@@ -904,6 +904,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1041116254, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: pentagramPanel
+      value: 
+      objectReference: {fileID: 386035630}
+    - target: {fileID: 1041116254, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: partitureSelectionPanel
+      value: 
+      objectReference: {fileID: 386035629}
     - target: {fileID: 1057887802, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1450,6 +1458,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+--- !u!1 &386035629 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 593456848, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+  m_PrefabInstance: {fileID: 386035628}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &386035630 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2045364576, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+  m_PrefabInstance: {fileID: 386035628}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &712398319
 GameObject:
   m_ObjectHideFlags: 0

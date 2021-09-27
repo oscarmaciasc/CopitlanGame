@@ -27,6 +27,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Mines/Tecalli.unity
     guid: 948d9fffb37fad74db93084478b613e8
   - enabled: 1
+    path: Assets/Scenes/Mines/Acan.unity
+    guid: dc699869641384b4ab7a6feec705e9a8
+  - enabled: 1
+    path: Assets/Scenes/Mines/Seti.unity
+    guid: d12da5c062c76ea4c91a4dec2c5467f1
+  - enabled: 1
     path: Assets/Scenes/Dirigentes/Kasakir.unity
     guid: d6d61291a5aed5745a065c2eb64fa662
   - enabled: 1
