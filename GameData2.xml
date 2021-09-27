@@ -28,5 +28,8 @@
   </MusicalMasteryLvl>
   <MusicSheets>
     <MusicSheet name="partiture1" />
+    <MusicSheet name="partiture2" />
+    <MusicSheet name="partiture4" />
+    <MusicSheet name="partiture5" />
   </MusicSheets>
 </gameData>

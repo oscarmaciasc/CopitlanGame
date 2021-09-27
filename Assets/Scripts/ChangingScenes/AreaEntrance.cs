@@ -11,7 +11,7 @@ public class AreaEntrance : MonoBehaviour
     {
         if(transitionName == PlayerController.instance.areaTransitionName)
         {
-            PlayerController.instance.transform.position = transform.position;
+            PlayerController.instance.transform.position = this.transform.position;
         }
 
         Debug.Log("Area Entrance");
