@@ -34,7 +34,7 @@ public class DialogManager : MonoBehaviour
     void Update()
     {
         // if dialog box is open and the player release the Enter key we pass to other line and update the text
-        
+
         if (dialogBox.activeInHierarchy)
         {
             if (Input.GetKeyUp(KeyCode.Return))
@@ -55,24 +55,33 @@ public class DialogManager : MonoBehaviour
                             habitant.GetComponent<PartitureHabitant>().firstTime = true;
                         }
 
-                        if(habitant.GetComponent<KasakirGuard>() != null)
+                        if (habitant.GetComponent<KasakirGuard>() != null)
                         {
                             habitant.GetComponent<KasakirGuard>().conversationFinished = true;
                         }
 
-                        if(habitant.GetComponent<QuizaniGuard>() != null)
+                        if (habitant.GetComponent<QuizaniGuard>() != null)
                         {
                             habitant.GetComponent<QuizaniGuard>().conversationFinished = true;
                         }
 
-                        
+                        if (habitant.GetComponent<Mines>() != null)
+                        {
+                            habitant.GetComponent<Mines>().LimitPartitures(habitant);
+                        }
+                        else
+                        {
+                            // Activate the other panels.
+                        }
+
+
                     }
                     else
                     {
                         dialogText.text = dialogLines[currentLine];
                         if (habitant.GetComponent<PartitureHabitant>() != null)
                         {
-                             habitant.GetComponent<PartitureHabitant>().conversationFinished = false;
+                            habitant.GetComponent<PartitureHabitant>().conversationFinished = false;
                         }
                     }
                 }

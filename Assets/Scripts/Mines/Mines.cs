@@ -15,7 +15,8 @@ public class Mines : MonoBehaviour
     public int percentageToPass;
     public int correctNotes = 0;
     [SerializeField] private GameObject pentagramPanel;
-    
+    [SerializeField] private GameObject partitureSelectionPanel;
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,22 +28,17 @@ public class Mines : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-
         GetPercentage();
         CheckIfCanPass();
 
-        // Falta aun que si falla pueda volver a intentarlo
         // Falta limitar a que solo se pueda interpretar partituras faciles en Tecalli y Acan y media en Seti
-        // Falta aun que este script sea persnalizado para los habitantes de minas
     }
 
     public void GetPercentage()
     {
-        if(finishedPartiture)
+        if (finishedPartiture)
         {
-            if(((PentagramManager.instance.correctNotes*100) / (PentagramManager.instance.TotalNotes())) >= percentageToPass)
+            if (((PentagramManager.instance.correctNotes * 100) / (PentagramManager.instance.TotalNotes())) >= percentageToPass)
             {
                 Debug.Log("Enhorabuena, has pasado");
                 this.gameObject.GetComponent<DialogActivator>().CanActiveFalse();
@@ -75,13 +71,44 @@ public class Mines : MonoBehaviour
             {
                 // Finish the movement
                 myAnim.SetFloat("moveX", 0);
-                
+
                 theEntrance.SetActive(true);
             }
         }
         else
         {
             // Interpretate Partiture again
+        }
+    }
+
+    public void LimitPartitures(GameObject habitant)
+    {
+        if(habitant.GetComponent<PartitureHabitant>().conversationFinished == true)
+        {
+            partitureSelectionPanel.SetActive(true);
+        }
+        
+        if (partitureSelectionPanel.activeInHierarchy)
+        {
+             Debug.Log("Habitant name: " + habitant);
+
+            if (habitant.name == "Tecalli0")
+            {
+                // Deactivate everything but easyPartiture 1
+                Debug.Log("tecalli está loko");
+                PartitureSelection.instance.DeactivateMinePartitures("PanelPartiture1");
+            }
+            else if (habitant.name == "Acan0")
+            {
+                // Deactivate everything but easyPartiture 2
+                PartitureSelection.instance.DeactivateMinePartitures("PanelPartiture2");
+                Debug.Log("Acan esta mamadisimo");
+            }
+            else if (habitant.name == "Seti0")
+            {
+                // Deactivate everything but mediumPartitures 4 & 5
+                PartitureSelection.instance.DeactivateMinePartitures2("PanelPartiture4", "PanelPartiture5");
+            }
         }
     }
 }

@@ -2,7 +2,7 @@
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Tsumugi" gender="true">
   <Resources>
     <Resource name="wood">
-      <quantity>18</quantity>
+      <quantity>238</quantity>
     </Resource>
     <Resource name="iron">
       <quantity>0</quantity>

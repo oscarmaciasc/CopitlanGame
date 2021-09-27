@@ -15,6 +15,14 @@ public class PartitureSelection : MonoBehaviour
     public string panelPartitureName;
 
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,17 +33,56 @@ public class PartitureSelection : MonoBehaviour
 
     void Update()
     {
+
     }
 
-    private void DeactivateNoOwnedPartiturePanels() {
+    private void DeactivateNoOwnedPartiturePanels()
+    {
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
 
-        for (int i = 0; i < 10; i++) {
-            if(gameData.DoesHavePartiture("partiture" + (i + 1))) {
+        for (int i = 0; i < 10; i++)
+        {
+            if (gameData.DoesHavePartiture("partiture" + (i + 1)))
+            {
                 partiturePanels[i].SetActive(true);
             }
-            else {
+            else
+            {
+                partiturePanels[i].SetActive(false);
+            }
+        }
+    }
+
+    public void DeactivateMinePartitures(string name)
+    {
+        Debug.Log("Estoy recibiendo: " + name);
+        for (int i = 0; i < 10; i++)
+        {
+            Debug.Log("Nombre [" + i + "]: " + partiturePanels[i].name);
+            if (partiturePanels[i].name == name)
+            {
+                //Debug.Log("Activados: " + partiturePanels[i]);
+                partiturePanels[i].SetActive(true);
+            }
+            else
+            {
+                //Debug.Log("Desactivados: " + partiturePanels[i]);
+                partiturePanels[i].SetActive(false);
+            }
+        }
+    }
+
+    public void DeactivateMinePartitures2(string name, string name2)
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            if (partiturePanels[i].name == name || partiturePanels[i].name == name2)
+            {
+                partiturePanels[i].SetActive(true);
+            }
+            else
+            {
                 partiturePanels[i].SetActive(false);
             }
         }
@@ -70,7 +117,7 @@ public class PartitureSelection : MonoBehaviour
 
         // get partiture name and send it to PentagramManager
         panelPartitureName = partiturePanels[0].gameObject.transform.Find("InfoLayout1").gameObject.transform.Find("HorizontalLayout1").gameObject.transform.Find("Name1").gameObject.GetComponent<Text>().text;
-        
+
         Debug.Log(panelPartitureName);
     }
 
