@@ -7,6 +7,7 @@ public class PentagramManager : MonoBehaviour
     [SerializeField] private GameObject notePrefab;
     public float timeLastNote = 2f;
     public static int streak = 0;
+    public static int maxStreak = 0;
     public GameObject objectTest;
     public string partitureName;
     public int generatedNotes = 0;
@@ -70,6 +71,11 @@ public class PentagramManager : MonoBehaviour
             if(habitant.GetComponent<Mines>() != null)
             {
                 habitant.GetComponent<Mines>().finishedPartiture = true;
+            }
+
+            if(habitant.GetComponent<Audience>() != null)
+            {
+                habitant.GetComponent<Audience>().finishedPartiture = true;
             }
 
             

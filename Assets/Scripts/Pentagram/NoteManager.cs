@@ -147,6 +147,13 @@ public class NoteManager : MonoBehaviour
 
             noteSuccessful = true;
             PentagramManager.streak++;
+
+            if(PentagramManager.streak > PentagramManager.maxStreak)
+            {
+                PentagramManager.maxStreak = PentagramManager.streak;
+            }
+
+
             canPress = false;
             haveBeenPressed = true;
             PentagramManager.instance.correctNotes++;

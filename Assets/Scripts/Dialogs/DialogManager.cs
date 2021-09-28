@@ -96,7 +96,7 @@ public class DialogManager : MonoBehaviour
         if (pentagramPanel.activeInHierarchy)
         {
             // Send the habitant to PentagramManager script
-            pentagramPanel.GetComponent<PentagramManager>().GetHabitant(this.habitant);
+           pentagramPanel. GetComponent<PentagramManager>().GetHabitant(this.habitant);
         }
 
     }

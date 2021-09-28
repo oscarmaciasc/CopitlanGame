@@ -1398,6 +1398,9 @@ MonoBehaviour:
   canActivate: 0
   partitureFinished: 0
   firstTime: 1
+  canShowPartitures: 1
+  newLines: []
+  habitant: {fileID: 0}
 --- !u!95 &1146112890
 Animator:
   serializedVersion: 3
@@ -1946,6 +1949,9 @@ MonoBehaviour:
   canActivate: 0
   partitureFinished: 0
   firstTime: 1
+  canShowPartitures: 1
+  newLines: []
+  habitant: {fileID: 0}
 --- !u!95 &1328285342
 Animator:
   serializedVersion: 3
@@ -2429,6 +2435,11 @@ MonoBehaviour:
   canActivate: 0
   partitureFinished: 0
   firstTime: 1
+  canShowPartitures: 1
+  newLines:
+  - Vaya, nunca habia escuchado algo asi
+  - Gracias
+  habitant: {fileID: 0}
 --- !u!114 &1572518536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2823,6 +2834,9 @@ MonoBehaviour:
   canActivate: 0
   partitureFinished: 0
   firstTime: 1
+  canShowPartitures: 1
+  newLines: []
+  habitant: {fileID: 0}
 --- !u!114 &1638445964 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1240519340, guid: cc6deea581a65364391abd104cfaced7, type: 3}
@@ -22493,6 +22507,11 @@ MonoBehaviour:
   canActivate: 0
   partitureFinished: 0
   firstTime: 1
+  canShowPartitures: 1
+  newLines:
+  - El dirigente Naran es una gran persona
+  - lastima que se encuentre lejos de aqui
+  habitant: {fileID: 0}
 --- !u!114 &2008861103
 MonoBehaviour:
   m_ObjectHideFlags: 0

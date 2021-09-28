@@ -14,7 +14,7 @@ public class InGame : MonoBehaviour
     [SerializeField] private GameObject successfulSavedExitPanel;
     [SerializeField] public GameObject partitureSelectionPanel;
     [SerializeField] public GameObject pentagramPanel;
-    [SerializeField] private GameObject dialogBox;
+    [SerializeField] private GameObject dialogBox; 
 
     private void Awake()
     {
@@ -62,6 +62,18 @@ public class InGame : MonoBehaviour
     public void ActivatePartitureSelectionPanel()
     {
         partitureSelectionPanel.SetActive(true);
+        PartitureSelection.instance.DeativateArrowsPartitureSelection();
+        if(!PartitureHabitant.instance.HasPartituresFilter())
+        {
+            Debug.Log(PartitureHabitant.instance.HasPartituresFilter());
+            PartitureSelection.instance.DeactivateNoOwnedPartiturePanels();
+            PartitureSelection.instance.DeativateArrowsPartitureSelection();
+        }
+    }
+
+    public void DeactivatePartitureSelectionPanel()
+    {
+        partitureSelectionPanel.SetActive(false);
     }
 
     public void activateSavePanel()

@@ -27,8 +27,8 @@ public class PartitureSelection : MonoBehaviour
     void Start()
     {
         instance = this;
-        DeactivateNoOwnedPartiturePanels();
-        DeativateArrowsPartitureSelection();
+        //DeactivateNoOwnedPartiturePanels();
+        //DeativateArrowsPartitureSelection();
     }
 
     void Update()
@@ -36,7 +36,7 @@ public class PartitureSelection : MonoBehaviour
 
     }
 
-    private void DeactivateNoOwnedPartiturePanels()
+    public void DeactivateNoOwnedPartiturePanels()
     {
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
@@ -103,7 +103,7 @@ public class PartitureSelection : MonoBehaviour
         interpretatePartitureButton.transform.Find("Text").gameObject.GetComponent<Text>().color = new Color32(50, 30, 14, 140);
     }
 
-    private void DeativateArrowsPartitureSelection()
+    public void DeativateArrowsPartitureSelection()
     {
         for (int i = 0; i < 10; i++)
         {

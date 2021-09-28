@@ -30,8 +30,6 @@ public class Mines : MonoBehaviour
     {
         GetPercentage();
         CheckIfCanPass();
-
-        // Falta limitar a que solo se pueda interpretar partituras faciles en Tecalli y Acan y media en Seti
     }
 
     public void GetPercentage()

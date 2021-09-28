@@ -27,6 +27,8 @@ public class DialogActivator : MonoBehaviour
             // Only show dialogs when partitureSelectionPanel and pentagramManager are not active
             if (!DialogManager.instance.partitureSelectionPanel.activeInHierarchy && !DialogManager.instance.pentagramPanel.activeInHierarchy)
             {
+                
+                PartitureHabitant.instance.GetHabitant(this.gameObject);
                 DialogManager.instance.GetHabitant(this.gameObject);
                 DialogManager.instance.ShowDialog(lines);
             }
