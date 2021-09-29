@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Audience : MonoBehaviour
 {
-
+    public static Audience instance;
     public bool finishedPartiture = false;
     public int percentageToPass;
     public int res;
+    public bool canPass = false;
+    [SerializeField] private GameObject partitureSelectionPanel;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        instance = this;
     }
 
     // Update is called once per frame
@@ -27,22 +29,42 @@ public class Audience : MonoBehaviour
         {
             if (((PentagramManager.instance.correctNotes * 100) / (PentagramManager.instance.TotalNotes())) >= percentageToPass)
             {
-                Debug.Log("Enhorabuena, has pasado");
+                canPass = true;
                 this.gameObject.GetComponent<DialogActivator>().CanActiveFalse();
 
-                res = (60) + (((PentagramManager.maxStreak)*(40))/(PentagramManager.instance.TotalNotes()));
-                Debug.Log("Max Streak: " + PentagramManager.maxStreak);
-                Debug.Log("Porcentaje de aprobacion de dirigente: " + res); 
+                res = (60) + (((PentagramManager.maxStreak) * (40)) / (PentagramManager.instance.TotalNotes()));
 
                 // Sent this to stats and do the following math in the game
             }
             else
             {
-                Debug.Log("No me terminas de convencer, intentalo de nuevo");
+                canPass = false;
                 finishedPartiture = false;
             }
-            Debug.Log("Correct Notes: " + PentagramManager.instance.correctNotes);
-            Debug.Log("Total Notes: " + PentagramManager.instance.TotalNotes());
+        }
+    }
+
+    public void LimitPartitures(GameObject habitant)
+    {
+        if (habitant.GetComponent<PartitureHabitant>().conversationFinished == true && !canPass)
+        {
+            partitureSelectionPanel.SetActive(true);
+        }
+
+        if (partitureSelectionPanel.activeInHierarchy)
+        {
+            if (habitant.name == "Kasakir")
+            {
+                PartitureSelection.instance.DeactivateDirigentPartitures("PanelPartiture1", "PanelPartiture2", "PanelPartiture3");
+            }
+            else if (habitant.name == "Quizani")
+            {
+                PartitureSelection.instance.DeactivateDirigentPartitures("PanelPartiture4", "PanelPartiture5", "PanelPartiture6");
+            }
+            else if (habitant.name == "Naran")
+            {
+                PartitureSelection.instance.DeactivateDirigentPartitures("PanelPartiture7", "PanelPartiture8", "PanelPartiture9");
+            }
         }
     }
 }

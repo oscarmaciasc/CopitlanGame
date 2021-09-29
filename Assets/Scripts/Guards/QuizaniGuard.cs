@@ -6,11 +6,9 @@ public class QuizaniGuard : MonoBehaviour
 {
 
     private string[] noPermit = { "No tienes el permiso necesario", "Obten el permiso convenciendo a los dirigentes", "Suerte y hasta la proxima" };
-
     private string[] permit = { "Adelante caballero", "Tiene el permiso necesario" };
-
+    private string[] finished = { "Adios", "vuelve pronto" };
     public GameObject habitant;
-
     public Animator myAnim;
     public float moveSpeed;
     private Vector2 destiny;
@@ -39,6 +37,7 @@ public class QuizaniGuard : MonoBehaviour
             if (conversationFinished)
             {
                 Move();
+                habitant.GetComponent<DialogActivator>().lines = finished;
             }
         }
         else

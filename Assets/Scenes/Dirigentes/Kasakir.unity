@@ -3175,6 +3175,8 @@ MonoBehaviour:
   finishedPartiture: 0
   percentageToPass: 60
   res: 0
+  canPass: 0
+  partitureSelectionPanel: {fileID: 75170780}
 --- !u!114 &607797507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3192,6 +3194,9 @@ MonoBehaviour:
   canActivate: 0
   partitureFinished: 0
   firstTime: 1
+  canShowPartitures: 1
+  newLines: []
+  habitant: {fileID: 0}
 --- !u!95 &607797508
 Animator:
   serializedVersion: 3

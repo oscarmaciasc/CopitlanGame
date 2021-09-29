@@ -56,18 +56,14 @@ public class PartitureSelection : MonoBehaviour
 
     public void DeactivateMinePartitures(string name)
     {
-        Debug.Log("Estoy recibiendo: " + name);
         for (int i = 0; i < 10; i++)
         {
-            Debug.Log("Nombre [" + i + "]: " + partiturePanels[i].name);
             if (partiturePanels[i].name == name)
             {
-                //Debug.Log("Activados: " + partiturePanels[i]);
                 partiturePanels[i].SetActive(true);
             }
             else
             {
-                //Debug.Log("Desactivados: " + partiturePanels[i]);
                 partiturePanels[i].SetActive(false);
             }
         }
@@ -87,6 +83,45 @@ public class PartitureSelection : MonoBehaviour
             }
         }
     }
+
+    //*************************************************************************************************************************
+
+    // Dirigents
+    public void DeactivateDirigentPartitures(string name, string name2, string name3)
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            if (partiturePanels[i].name == name || partiturePanels[i].name == name2 || partiturePanels[i].name == name3)
+            {
+                partiturePanels[i].SetActive(true);
+            }
+            else
+            {
+                partiturePanels[i].SetActive(false);
+            }
+        }
+    }
+
+    //*************************************************************************************************************************
+    //*************************************************************************************************************************
+
+    // Leader
+    public void DeactivateLeaderPartitures(string name)
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            if (partiturePanels[i].name == name)
+            {
+                partiturePanels[i].SetActive(true);
+            }
+            else
+            {
+                partiturePanels[i].SetActive(false);
+            }
+        }
+    }
+
+    //*************************************************************************************************************************
 
     public void BackPartitureSelection()
     {

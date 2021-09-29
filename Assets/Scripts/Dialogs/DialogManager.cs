@@ -65,13 +65,18 @@ public class DialogManager : MonoBehaviour
                             habitant.GetComponent<QuizaniGuard>().conversationFinished = true;
                         }
 
+                        if (habitant.GetComponent<NaranGuard>() != null)
+                        {
+                            habitant.GetComponent<NaranGuard>().conversationFinished = true;
+                        }
+
                         if (habitant.GetComponent<Mines>() != null)
                         {
                             habitant.GetComponent<Mines>().LimitPartitures(habitant);
                         }
-                        else
+                        if (habitant.GetComponent<Audience>() != null)
                         {
-                            // Activate the other panels.
+                            habitant.GetComponent<Audience>().LimitPartitures(habitant);
                         }
 
 

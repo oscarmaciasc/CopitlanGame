@@ -7,6 +7,7 @@ public class KasakirGuard : MonoBehaviour
     private string[] noPermit = { "No tienes el permiso necesario", "Obten el permiso convenciendo a los dirigentes", "Suerte y hasta la proxima" };
 
     private string[] permit = { "Adelante caballero", "Tiene el permiso necesario" };
+    private string[] finished = { "Sigue tu aventura", "espero regreses pronto" };
 
     public GameObject habitant;
 
@@ -38,6 +39,7 @@ public class KasakirGuard : MonoBehaviour
             if (conversationFinished)
             {
                 Move();
+                habitant.GetComponent<DialogActivator>().lines = finished;
             }
         }
         else

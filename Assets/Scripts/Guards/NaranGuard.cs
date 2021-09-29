@@ -6,9 +6,8 @@ public class NaranGuard : MonoBehaviour
 {
 
     private string[] noPermit = { "No tienes el permiso necesario", "Obten el permiso convenciendo a los dirigentes", "Suerte y hasta la proxima" };
-
     private string[] permit = { "Adelante caballero", "Tiene el permiso necesario" };
-
+    private string[] finished = { "Espero te vaya bien", "el siguiente dirigente es dificil de convencer" };
     public GameObject habitant;
     public Animator myAnim;
     public float moveSpeed;
@@ -38,6 +37,7 @@ public class NaranGuard : MonoBehaviour
             if (conversationFinished)
             {
                 Move();
+                habitant.GetComponent<DialogActivator>().lines = finished;
             }
         }
         else

@@ -16,6 +16,8 @@ public class Mines : MonoBehaviour
     public int correctNotes = 0;
     [SerializeField] private GameObject pentagramPanel;
     [SerializeField] private GameObject partitureSelectionPanel;
+    public string[] goodLines;
+    public string[] badLines;
 
 
     // Start is called before the first frame update
@@ -38,18 +40,15 @@ public class Mines : MonoBehaviour
         {
             if (((PentagramManager.instance.correctNotes * 100) / (PentagramManager.instance.TotalNotes())) >= percentageToPass)
             {
-                Debug.Log("Enhorabuena, has pasado");
-                this.gameObject.GetComponent<DialogActivator>().CanActiveFalse();
                 canPass = true;
+                this.gameObject.GetComponent<DialogActivator>().lines = goodLines;
             }
             else
             {
-                Debug.Log("No me terminas de convencer, intentalo de nuevo");
+                this.gameObject.GetComponent<DialogActivator>().lines = badLines;
                 canPass = false;
                 finishedPartiture = false;
             }
-            Debug.Log("Correct Notes: " + PentagramManager.instance.correctNotes);
-            Debug.Log("Total Notes: " + PentagramManager.instance.TotalNotes());
         }
     }
 
@@ -73,34 +72,26 @@ public class Mines : MonoBehaviour
                 theEntrance.SetActive(true);
             }
         }
-        else
-        {
-            // Interpretate Partiture again
-        }
     }
 
     public void LimitPartitures(GameObject habitant)
     {
-        if(habitant.GetComponent<PartitureHabitant>().conversationFinished == true)
+        if (habitant.GetComponent<PartitureHabitant>().conversationFinished == true && !canPass)
         {
             partitureSelectionPanel.SetActive(true);
         }
-        
+
         if (partitureSelectionPanel.activeInHierarchy)
         {
-             Debug.Log("Habitant name: " + habitant);
-
             if (habitant.name == "Tecalli0")
             {
                 // Deactivate everything but easyPartiture 1
-                Debug.Log("tecalli está loko");
                 PartitureSelection.instance.DeactivateMinePartitures("PanelPartiture1");
             }
             else if (habitant.name == "Acan0")
             {
                 // Deactivate everything but easyPartiture 2
                 PartitureSelection.instance.DeactivateMinePartitures("PanelPartiture2");
-                Debug.Log("Acan esta mamadisimo");
             }
             else if (habitant.name == "Seti0")
             {

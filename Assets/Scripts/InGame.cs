@@ -93,8 +93,6 @@ public class InGame : MonoBehaviour
     {
         confirmationWindowExit.SetActive(true);
         returnArrow.interactable = false;
-        //Opacity 255 arrow
-        //returnArrow.transform.Find("Image").gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
     }
 
     public void Return()
