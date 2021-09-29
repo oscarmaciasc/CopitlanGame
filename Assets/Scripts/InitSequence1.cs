@@ -31,6 +31,6 @@ public class InitSequence1 : MonoBehaviour
         exclamation.SetActive(true);
         yield return new WaitForSeconds(3);
         exclamation.SetActive(false);
-        DialogManager.instance.ShowDialog(linesInitSequence1);
+        DialogManagerTutorial.instance.ShowDialog(linesInitSequence1);
     }
 }

@@ -36,35 +36,35 @@ public class InitSequence2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(DialogManager.instance.dialogBox.activeInHierarchy)
+        if(DialogManagerTutorial.instance.dialogBox.activeInHierarchy)
         {
             PlayerController.instance.canMove = false;
         }
 
-        if (DialogManager.instance.currentLine == 3)
+        if (DialogManagerTutorial.instance.currentLine == 3)
         {
-            DialogManager.instance.dialogBox.SetActive(false);
+            DialogManagerTutorial.instance.dialogBox.SetActive(false);
             StartCoroutine(StartTutorial());
             ActivatePartiturePanel();
-            if (pressVPanel.activeInHierarchy || partitureSelectionPanel.activeInHierarchy || PartitureSelectionTutorial.instance.pentagramPanel.activeInHierarchy || tutorialInterface.activeInHierarchy || DialogManager.instance.dialogBox.activeInHierarchy)
+            if (pressVPanel.activeInHierarchy || partitureSelectionPanel.activeInHierarchy || PartitureSelectionTutorial.instance.pentagramPanel.activeInHierarchy || tutorialInterface.activeInHierarchy || DialogManagerTutorial.instance.dialogBox.activeInHierarchy)
             {
                 PlayerController.instance.canMove = false;
                 
-                DialogActivator.instance.canActivate = false;
+                DialogActivatorTutorial.instance.canActivate = false;
             }
         }
 
         // This is made to avoid the second enter on the message dialog when the player finishes the partiture
-        if (DialogManager.instance.dialogLines[0] == "Que linda cancion")
+        if (DialogManagerTutorial.instance.dialogLines[0] == "Que linda cancion")
         {
-            DialogManager.instance.justStarted = false;
+            DialogManagerTutorial.instance.justStarted = false;
 
             // Flag to tell we are in the second message
             secondMessage = true;
             PlayerController.instance.canMove = false;
         }
 
-        if (secondMessage && DialogManager.instance.currentLine >= 1)
+        if (secondMessage && DialogManagerTutorial.instance.currentLine >= 1)
         {
             Invoke("ChangeScene", 2f);
         }
@@ -140,9 +140,9 @@ public class InitSequence2 : MonoBehaviour
 
     IEnumerator ShowChildDialogs()
     {
-        DialogManager.instance.conversationIsFinished = false;
+        DialogManagerTutorial.instance.conversationIsFinished = false;
         yield return new WaitForSeconds(2);
-        DialogManager.instance.ShowDialog(childReaction);
+        DialogManagerTutorial.instance.ShowDialog(childReaction);
     }
 
     public void ChangeScene()
