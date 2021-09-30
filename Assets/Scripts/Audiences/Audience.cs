@@ -46,9 +46,9 @@ public class Audience : MonoBehaviour
             if (((PentagramManager.instance.correctNotes * 100) / (PentagramManager.instance.TotalNotes())) >= percentageToPass)
             {
                 canPass = true;
-
-                res = (60) + (((PentagramManager.maxStreak) * (40)) / (PentagramManager.instance.TotalNotes()));
-
+                Debug.Log("ResStreak: " + PentagramManager.streakRes);
+                res = (60) + (((PentagramManager.streakRes) * (40)) / ((PentagramManager.instance.TotalNotes())));
+                Debug.Log("Racha total: " + PentagramManager.streakRes);
                 Debug.Log("Resultado del calculo: " + res);
 
                 successInterpretation = true;

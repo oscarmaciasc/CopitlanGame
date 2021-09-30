@@ -7,7 +7,10 @@ public class PentagramManager : MonoBehaviour
     [SerializeField] private GameObject notePrefab;
     public float timeLastNote = 2f;
     public static int streak = 0;
+    public static int auxStreak = 0;
     public static int maxStreak = 0;
+    public static int maxStreak2 = 0;
+    public static int streakRes = 0;
     public GameObject objectTest;
     public string partitureName;
     public int generatedNotes = 0;
