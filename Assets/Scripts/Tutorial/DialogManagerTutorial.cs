@@ -45,7 +45,6 @@ public class DialogManagerTutorial : MonoBehaviour
                         dialogBox.SetActive(false);
 
                         PlayerController.instance.canMove = true;
-                        habitant.GetComponent<PartitureHabitant>().conversationFinished = true;
                        
                     }
                     else
@@ -76,12 +75,5 @@ public class DialogManagerTutorial : MonoBehaviour
         {
             justStarted = false;
         }
-    }
-
-    public void GetHabitant(GameObject getHabitant)
-    {
-        // habitant is the npc im talking to
-        habitant = getHabitant; 
-        Debug.Log("Nombre de habitante: " + getHabitant.name);
     }
 }

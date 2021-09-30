@@ -23,8 +23,6 @@ public class DialogActivatorTutorial : MonoBehaviour
         // if we are in the interactuable zone and we press enter and the dialog box is not already open
         if (canActivate && Input.GetKeyDown(KeyCode.Return) && !DialogManagerTutorial.instance.dialogBox.activeInHierarchy)
         {
-            
-            DialogManagerTutorial.instance.GetHabitant(this.gameObject);
             DialogManagerTutorial.instance.ShowDialog(lines);
         }
 
