@@ -39,17 +39,28 @@ public class Audience : MonoBehaviour
 
     }
 
-    public void GetPercentage()
+    public void GetPercentage(GameObject habitant)
     {
         if (finishedPartiture)
         {
             if (((PentagramManager.instance.correctNotes * 100) / (PentagramManager.instance.TotalNotes())) >= percentageToPass)
             {
                 canPass = true;
-                Debug.Log("ResStreak: " + PentagramManager.streakRes);
                 res = (60) + (((PentagramManager.streakRes) * (40)) / ((PentagramManager.instance.TotalNotes())));
-                Debug.Log("Racha total: " + PentagramManager.streakRes);
-                Debug.Log("Resultado del calculo: " + res);
+
+                // send res as array to a file
+                if (habitant.name == "Kasakir")
+                {
+                    XmlManager.instance.SaveAudienceResult(0, res);
+                }
+                else if (habitant.name == "Quizani")
+                {
+                    XmlManager.instance.SaveAudienceResult(1, res);
+                }
+                else if (habitant.name == "Naran")
+                {
+                    XmlManager.instance.SaveAudienceResult(2, res);
+                }
 
                 successInterpretation = true;
             }
@@ -59,6 +70,11 @@ public class Audience : MonoBehaviour
                 finishedPartiture = false;
             }
         }
+    }
+
+    public int GetRes()
+    {
+        return res;
     }
 
     public void LimitPartitures(GameObject habitant)

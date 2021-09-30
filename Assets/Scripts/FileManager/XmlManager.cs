@@ -123,6 +123,19 @@ public class XmlManager : MonoBehaviour
         Save(gameIndex, gameData);
     }
 
+    public void SaveAudienceResult(int audienceResultID, int result)
+    {
+        int gameIndex = GetGameIndex();
+
+        GameData gamedata = LoadGame();
+
+        int audienceResult = gamedata.audienceResult[audienceResultID].result + result;
+
+        gamedata.audienceResult[audienceResultID].result = audienceResult;
+
+        Save(gameIndex, gamedata);
+    }
+
     // Fill gameData array
     public GameData[] LoadAllGames()
     {

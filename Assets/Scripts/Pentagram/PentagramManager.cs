@@ -78,8 +78,17 @@ public class PentagramManager : MonoBehaviour
             if(habitant.GetComponent<Audience>() != null)
             {
                 habitant.GetComponent<Audience>().finishedPartiture = true;
-                habitant.GetComponent<Audience>().GetPercentage();
+                habitant.GetComponent<Audience>().GetPercentage(habitant);
                 habitant.GetComponent<Audience>().ChangeDirigentDialogLines(habitant);
+            }
+
+            if(habitant.GetComponent<Leader>() != null)
+            {
+                // do calculate function when partitureFinished
+                if(habitant.name == "Naran")
+                {
+                    habitant.GetComponent<Leader>().GetAudienceResults();
+                }
             }
 
             
