@@ -18,17 +18,18 @@ public class XmlManager : MonoBehaviour
     private string playerName;
     private bool isWoman;
     public int gameIndex;
-    
+
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
     }
 
     // Called when a game is selected in GameSelection interface;
-    public void CreateTempFile(int gameIndex) {
+    public void CreateTempFile(int gameIndex)
+    {
         TempFile tempFile = new TempFile(gameIndex);
 
         XmlSerializer serializer = new XmlSerializer(typeof(TempFile));
@@ -44,34 +45,42 @@ public class XmlManager : MonoBehaviour
     }
 
     // Called when a new game is created
-    public bool Create(string name, bool gender) {
+    public bool Create(string name, bool gender)
+    {
         int gameIndex = CanCreateGame();
         GameData gameData = new GameData(name, gender);
 
-        if(gameIndex != 0) {
+        if (gameIndex != 0)
+        {
             Save(gameIndex, gameData);
             CreateTempFile(gameIndex);
             return true;
         }
-        else {
+        else
+        {
             return false;
         }
     }
 
     // Return the position in wich can create a game file or 0 in case is not posible
-    public int CanCreateGame() {
+    public int CanCreateGame()
+    {
         bool[] count = GamesCount();
-        
-        if(count[0] == false) {
+
+        if (count[0] == false)
+        {
             return 1;
         }
-        else if (count[1] == false) {
+        else if (count[1] == false)
+        {
             return 2;
         }
-        else if (count[2] == false) {
+        else if (count[2] == false)
+        {
             return 3;
         }
-        else {
+        else
+        {
             return 0;
         }
     }
@@ -83,23 +92,24 @@ public class XmlManager : MonoBehaviour
 
         XmlSerializer serializer = new XmlSerializer(typeof(GameData));
 
-        switch (gameIndex) {
+        switch (gameIndex)
+        {
             case 1:
                 fileName = "/GameData1.xml";
-            break;
+                break;
             case 2:
                 fileName = "/GameData2.xml";
-            break;
+                break;
             case 3:
                 fileName = "/GameData3.xml";
-            break;
+                break;
         }
 
         FileStream xmlWriter = new FileStream(CurrentDirectory + fileName, FileMode.Create);
         serializer.Serialize(xmlWriter, gameData);
         xmlWriter.Close();
     }
-    
+
     public void IncreaseResource(int resourceID, int quantityAdded)
     {
         int gameIndex = GetGameIndex();
@@ -113,6 +123,15 @@ public class XmlManager : MonoBehaviour
         Save(gameIndex, gameData);
     }
 
+    public void AddPermission(string permission)
+    {
+        int gameIndex = GetGameIndex();
+
+        GameData gameData = LoadGame();
+
+        
+    }
+
     // Fill gameData array
     public GameData[] LoadAllGames()
     {
@@ -120,8 +139,10 @@ public class XmlManager : MonoBehaviour
         GameData[] gamesData = new GameData[3];
         GameData gameData = new GameData();
 
-        for(int i = 0; i < 3; i++) {
-            if(count[i]) {
+        for (int i = 0; i < 3; i++)
+        {
+            if (count[i])
+            {
                 XmlSerializer serializer = new XmlSerializer(typeof(GameData));
                 FileStream xmlRead = new FileStream(CurrentDirectory + "/GameData" + (i + 1) + ".xml", FileMode.Open);
                 gameData = serializer.Deserialize(xmlRead) as GameData;
@@ -139,13 +160,15 @@ public class XmlManager : MonoBehaviour
         bool[] count = GamesCount();
         GameData gameData = new GameData();
 
-        if(count[index]) {
+        if (count[index])
+        {
             XmlSerializer serializer = new XmlSerializer(typeof(GameData));
             FileStream xmlRead = new FileStream(CurrentDirectory + "/GameData" + index + ".xml", FileMode.Open);
             gameData = serializer.Deserialize(xmlRead) as GameData;
             xmlRead.Close();
         }
-        else {
+        else
+        {
             Debug.Log("There is not a file game cabeza huevo");
         }
 
@@ -158,36 +181,44 @@ public class XmlManager : MonoBehaviour
         string filePath = "/GameData" + index + ".xml";
         File.Delete(CurrentDirectory + filePath);
     }
-    
+
     // Return an bool array in wich are the positions of existent games
-    public bool[] GamesCount() {
+    public bool[] GamesCount()
+    {
         bool[] count = new bool[3];
 
-        if (File.Exists(CurrentDirectory + "/GameData1.xml")) {
+        if (File.Exists(CurrentDirectory + "/GameData1.xml"))
+        {
             count[0] = true;
         }
-        else {
+        else
+        {
             count[0] = false;
         }
 
-        if (File.Exists(CurrentDirectory + "/GameData2.xml")) {
+        if (File.Exists(CurrentDirectory + "/GameData2.xml"))
+        {
             count[1] = true;
         }
-        else {
+        else
+        {
             count[1] = false;
         }
 
-        if (File.Exists(CurrentDirectory + "/GameData3.xml")) {
+        if (File.Exists(CurrentDirectory + "/GameData3.xml"))
+        {
             count[2] = true;
         }
-        else {
+        else
+        {
             count[2] = false;
         }
 
         return count;
     }
 
-    private int GetGameIndex() {
+    private int GetGameIndex()
+    {
         TempFile tempFile = new TempFile();
 
         XmlSerializer serializer = new XmlSerializer(typeof(TempFile));
