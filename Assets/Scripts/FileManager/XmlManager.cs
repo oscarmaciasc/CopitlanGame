@@ -139,14 +139,14 @@ public class XmlManager : MonoBehaviour
         bool[] count = GamesCount();
         GameData gameData = new GameData();
 
-        if(count[index]) {
+        if(count[index - 1]) {
             XmlSerializer serializer = new XmlSerializer(typeof(GameData));
             FileStream xmlRead = new FileStream(CurrentDirectory + "/GameData" + index + ".xml", FileMode.Open);
             gameData = serializer.Deserialize(xmlRead) as GameData;
             xmlRead.Close();
         }
         else {
-            Debug.Log("There is not a file game cabeza huevo");
+            Debug.Log("There is not a game file cabeza huevo");
         }
 
         return gameData;

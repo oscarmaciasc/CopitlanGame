@@ -5,10 +5,10 @@
       <quantity>18</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>0</quantity>
+      <quantity>1</quantity>
     </Resource>
     <Resource name="gold">
-      <quantity>0</quantity>
+      <quantity>4</quantity>
     </Resource>
     <Resource name="fuel">
       <quantity>0</quantity>
@@ -16,7 +16,6 @@
   </Resources>
   <Permissions>
     <Permission name="outterCircle" />
-    <Permission name="triangle" />
   </Permissions>
   <Flutes>
     <Flute name="woodenFlute" />
