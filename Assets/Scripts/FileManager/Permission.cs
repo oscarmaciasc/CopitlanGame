@@ -8,4 +8,10 @@ public class Permission
 {
     [XmlAttribute("name")]
     public string name;
+
+    public Permission() {}
+
+    public Permission(string name) {
+        this.name = name;
+    }
 }

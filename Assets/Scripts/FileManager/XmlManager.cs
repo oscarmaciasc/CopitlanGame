@@ -123,13 +123,25 @@ public class XmlManager : MonoBehaviour
         Save(gameIndex, gameData);
     }
 
-    public void AddPermission(string permission)
+    public void AddPermission(string NewPermission)
     {
         int gameIndex = GetGameIndex();
 
         GameData gameData = LoadGame();
 
-        
+        int newLength = gameData.permission.Length + 1;
+
+        Permission[] permissions = new Permission[newLength];
+
+        for(int i = 0; i < gameData.permission.Length; i++) {
+            permissions[i] = gameData.permission[i];
+        }
+
+        permissions[newLength - 1] = new Permission(NewPermission);
+
+        gameData.permission = permissions;
+
+        Save(gameIndex, gameData);
     }
 
     // Fill gameData array

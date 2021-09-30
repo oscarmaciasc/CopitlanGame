@@ -16,8 +16,8 @@
   </Resources>
   <Permissions>
     <Permission name="outterCircle" />
-    <Permission name="triangle" />
     <Permission name="innerCircle" />
+    <Permission name="triangle" />
   </Permissions>
   <Flutes>
     <Flute name="woodenFlute" />
