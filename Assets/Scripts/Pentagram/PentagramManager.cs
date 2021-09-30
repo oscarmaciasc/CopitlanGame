@@ -7,7 +7,10 @@ public class PentagramManager : MonoBehaviour
     [SerializeField] private GameObject notePrefab;
     public float timeLastNote = 2f;
     public static int streak = 0;
+    public static int auxStreak = 0;
     public static int maxStreak = 0;
+    public static int maxStreak2 = 0;
+    public static int streakRes = 0;
     public GameObject objectTest;
     public string partitureName;
     public int generatedNotes = 0;
@@ -75,8 +78,17 @@ public class PentagramManager : MonoBehaviour
             if(habitant.GetComponent<Audience>() != null)
             {
                 habitant.GetComponent<Audience>().finishedPartiture = true;
-                habitant.GetComponent<Audience>().GetPercentage();
+                habitant.GetComponent<Audience>().GetPercentage(habitant);
                 habitant.GetComponent<Audience>().ChangeDirigentDialogLines(habitant);
+            }
+
+            if(habitant.GetComponent<Leader>() != null)
+            {
+                // do calculate function when partitureFinished
+                if(habitant.name == "Naran")
+                {
+                    habitant.GetComponent<Leader>().GetAudienceResults();
+                }
             }
 
             

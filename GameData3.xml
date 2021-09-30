@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Manu" gender="false">
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Ivanovich" gender="true">
   <Resources>
     <Resource name="wood">
       <quantity>0</quantity>
@@ -28,8 +28,16 @@
   </MusicalMasteryLvl>
   <MusicSheets>
     <MusicSheet name="partiture1" />
-    <MusicSheet name="partiture2" />
-    <MusicSheet name="partiture4" />
-    <MusicSheet name="partiture5" />
   </MusicSheets>
+  <AudienceResults>
+    <AudienceResult name="kasakirResult">
+      <result>0</result>
+    </AudienceResult>
+    <AudienceResult name="quizaniResult">
+      <result>0</result>
+    </AudienceResult>
+    <AudienceResult name="naranResult">
+      <result>0</result>
+    </AudienceResult>
+  </AudienceResults>
 </gameData>

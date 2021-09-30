@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Tsumugi" gender="true">
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Alekei" gender="false">
   <Resources>
     <Resource name="wood">
-      <quantity>238</quantity>
+      <quantity>0</quantity>
     </Resource>
     <Resource name="iron">
       <quantity>1</quantity>
@@ -30,8 +30,16 @@
   </MusicalMasteryLvl>
   <MusicSheets>
     <MusicSheet name="partiture1" />
-    <MusicSheet name="partiture2" />
-    <MusicSheet name="partiture4" />
-    <MusicSheet name="partiture5" />
   </MusicSheets>
+  <AudienceResults>
+    <AudienceResult name="kasakirResult">
+      <result>0</result>
+    </AudienceResult>
+    <AudienceResult name="quizaniResult">
+      <result>0</result>
+    </AudienceResult>
+    <AudienceResult name="naranResult">
+      <result>0</result>
+    </AudienceResult>
+  </AudienceResults>
 </gameData>

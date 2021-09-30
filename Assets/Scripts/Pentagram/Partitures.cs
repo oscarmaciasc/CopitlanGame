@@ -13,6 +13,7 @@ public class Partitures : MonoBehaviour
     public string musicToPlay;
     public int upStreak = 10;
     public int limitStreak;
+    public bool canAddAuxStreak = false;
     public string[] numberNotes = new string[10];
     public int numberOfPartitureNotes;
 
@@ -46,7 +47,7 @@ public class Partitures : MonoBehaviour
         // Partiture hard max streak: 20
         // Partiture epic max streak: 10
 
-        if (PentagramManager.streak <= limitStreak)
+        if (PentagramManager.streak < limitStreak)
         {
             if (PentagramManager.streak == upStreak)
             {
@@ -62,6 +63,8 @@ public class Partitures : MonoBehaviour
         else
         {
             PentagramManager.streak = limitStreak;
+            PentagramManager.maxStreak = limitStreak;
+            canAddAuxStreak = true;
         }
     }
 
@@ -73,7 +76,7 @@ public class Partitures : MonoBehaviour
             this.partitureDifficulty = "easy";
             this.velocity = 1f;
             this.partitureVelocity = 1f;
-            this.limitStreak = 30;
+            this.limitStreak = 10;
             this.numberOfPartitureNotes = 10;
 
             for (int i = 0; i < 4; i++)

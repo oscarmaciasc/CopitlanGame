@@ -56,7 +56,7 @@ public class NoteManager : MonoBehaviour
             CompareKeys();
         }
 
-    
+
     }
 
 
@@ -86,6 +86,10 @@ public class NoteManager : MonoBehaviour
             noteSuccessful = false;
             canPress = false;
             PentagramManager.streak = 0;
+            if (Partitures.instance.canAddAuxStreak)
+            {
+                PentagramManager.auxStreak = 0;
+            }
         }
         gameObject.GetComponent<NoteManager>().SetMediumOpacity();
     }
@@ -146,13 +150,31 @@ public class NoteManager : MonoBehaviour
             SetGreen();
 
             noteSuccessful = true;
-            PentagramManager.streak++;
+            if (PentagramManager.streak < Partitures.instance.limitStreak)
+            {
+                PentagramManager.streak++;
+            }
+
+            if (Partitures.instance.canAddAuxStreak)
+            {
+                PentagramManager.auxStreak++;
+            }
 
             // Setting the max streak to calculate the dirigent aprobation percentage
-            if(PentagramManager.streak > PentagramManager.maxStreak)
+            if (PentagramManager.streak > PentagramManager.maxStreak)
             {
                 PentagramManager.maxStreak = PentagramManager.streak;
             }
+
+            if (PentagramManager.maxStreak == Partitures.instance.limitStreak)
+            {
+                if (PentagramManager.auxStreak > PentagramManager.maxStreak2)
+                {
+                    PentagramManager.maxStreak2 = PentagramManager.auxStreak;
+                }
+            }
+
+            PentagramManager.streakRes = PentagramManager.maxStreak + PentagramManager.maxStreak2;
 
 
             canPress = false;
@@ -168,11 +190,13 @@ public class NoteManager : MonoBehaviour
             canPress = false;
             haveBeenPressed = true;
             PentagramManager.streak = 0;
+            if (Partitures.instance.canAddAuxStreak)
+            {
+                PentagramManager.auxStreak = 0;
+            }
         }
 
-
         Partitures.instance.LimitStreak();
-        Debug.Log("Racha: " + PentagramManager.streak);
     }
 
     public void SetGreen()

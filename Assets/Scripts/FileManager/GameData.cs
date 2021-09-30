@@ -30,6 +30,9 @@ public class GameData
     [XmlArray ("MusicSheets")]
     public MusicSheet[] musicSheet { get; set; }
 
+    [XmlArray ("AudienceResults")]
+    public AudienceResult[] audienceResult { get; set; }
+
     public GameData(){}
 
     // Player Initialization 
@@ -56,6 +59,12 @@ public class GameData
         this.musicSheet = new MusicSheet[1];
         this.musicSheet[0] = new MusicSheet();
 
+        this.audienceResult = new AudienceResult[3];
+        this.audienceResult[0] = new AudienceResult();
+        this.audienceResult[1] = new AudienceResult();
+        this.audienceResult[2] = new AudienceResult();
+
+
         this.name = playerName;
         this.isWoman = playerGender;
         this.resource[0].name = "wood";
@@ -71,10 +80,16 @@ public class GameData
         this.balloon[0].name = "balloonLvl1";
         this.musicalMasteryLvl[0].name = "apprentice";
         this.musicSheet[0].name = "partiture1";
+        this.audienceResult[0].name = "kasakirResult";
+        this.audienceResult[0].result = 0;
+        this.audienceResult[1].name = "quizaniResult";
+        this.audienceResult[1].result = 0;
+        this.audienceResult[2].name = "naranResult";
+        this.audienceResult[2].result = 0;
     }
 
     // Player Update
-    public GameData(string name, Resource[] resource, Permission[] permission, Flute[] flute, Balloon[] balloon, MusicalMasteryLvl[] musicalMasteryLvl, MusicSheet[] musicSheet) {
+    public GameData(string name, Resource[] resource, Permission[] permission, Flute[] flute, Balloon[] balloon, MusicalMasteryLvl[] musicalMasteryLvl, MusicSheet[] musicSheet, AudienceResult[] audienceResults) {
         this.name = name;
         this.resource = resource;
         this.permission = permission;
@@ -82,6 +97,7 @@ public class GameData
         this.balloon = balloon;
         this.musicalMasteryLvl = musicalMasteryLvl;
         this.musicSheet = musicSheet;
+        this.audienceResult = audienceResult;
     }
 
     public bool DoesHavePermit(string permitType) {
@@ -102,5 +118,19 @@ public class GameData
         }
         
         return false;
+    }
+
+    public int ReturnAudienceResult(int id)
+    {
+        for(int i = 0; i < audienceResult.Length; i++)
+        {
+            if(id == i)
+            {
+                return audienceResult[i].result;
+            }
+        } 
+
+        return 0;
+        
     }
 }
