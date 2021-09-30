@@ -123,15 +123,6 @@ public class XmlManager : MonoBehaviour
         Save(gameIndex, gameData);
     }
 
-    public void AddPermission(string permission)
-    {
-        int gameIndex = GetGameIndex();
-
-        GameData gameData = LoadGame();
-
-        
-    }
-
     // Fill gameData array
     public GameData[] LoadAllGames()
     {
