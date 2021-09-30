@@ -123,6 +123,19 @@ public class XmlManager : MonoBehaviour
         Save(gameIndex, gameData);
     }
 
+    public void SaveAudienceResult(int audienceResultID, int result)
+    {
+        int gameIndex = GetGameIndex();
+
+        GameData gamedata = LoadGame();
+
+        int audienceResult = gamedata.audienceResult[audienceResultID].result + result;
+
+        gamedata.audienceResult[audienceResultID].result = audienceResult;
+
+        Save(gameIndex, gamedata);
+    }
+
     public void AddPermission(string NewPermission)
     {
         int gameIndex = GetGameIndex();
@@ -133,7 +146,8 @@ public class XmlManager : MonoBehaviour
 
         Permission[] permissions = new Permission[newLength];
 
-        for(int i = 0; i < gameData.permission.Length; i++) {
+        for (int i = 0; i < gameData.permission.Length; i++)
+        {
             permissions[i] = gameData.permission[i];
         }
 
@@ -172,13 +186,15 @@ public class XmlManager : MonoBehaviour
         bool[] count = GamesCount();
         GameData gameData = new GameData();
 
-        if(count[index - 1]) {
+        if (count[index - 1])
+        {
             XmlSerializer serializer = new XmlSerializer(typeof(GameData));
             FileStream xmlRead = new FileStream(CurrentDirectory + "/GameData" + index + ".xml", FileMode.Open);
             gameData = serializer.Deserialize(xmlRead) as GameData;
             xmlRead.Close();
         }
-        else {
+        else
+        {
             Debug.Log("There is not a game file cabeza huevo");
         }
 
