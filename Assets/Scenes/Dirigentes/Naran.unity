@@ -1656,8 +1656,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finishedPartiture: 0
-  percentageToPass: 70
+  percentageToPass: 80
   res: 0
+  canPass: 0
+  partitureSelectionPanel: {fileID: 693728165}
 --- !u!114 &228479511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1675,6 +1677,10 @@ MonoBehaviour:
   canActivate: 0
   partitureFinished: 0
   firstTime: 1
+  canShowPartitures: 1
+  newLines:
+  - Interesante descubrimiento el que has traido hasta mis puertas
+  habitant: {fileID: 0}
 --- !u!95 &228479512
 Animator:
   serializedVersion: 3
@@ -1728,9 +1734,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - Estoy molesto
-  - No dejare pasar a nadie
-  - '*sonidos de clara molestia*'
+  - Soy el dirigente Naran
+  - A mi no me suele impresionar nadie
+  - Puedes intentarlo, pero no creo que resulte muchahito
   canActivate: 0
 --- !u!61 &228479515
 BoxCollider2D:
@@ -4337,7 +4343,7 @@ MonoBehaviour:
   conversationIsFinished: 0
   habitant: {fileID: 0}
   pentagramPanel: {fileID: 868465394}
-  partitureSelectionPanel: {fileID: 0}
+  partitureSelectionPanel: {fileID: 693728165}
 --- !u!114 &638688633
 MonoBehaviour:
   m_ObjectHideFlags: 0

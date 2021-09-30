@@ -3250,9 +3250,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - Estoy molesto
-  - No dejare pasar a nadie
-  - '*sonidos de clara molestia*'
+  - Hola viajero
+  - He escuchado que quieres mostrarme algo
+  - Adelante...
   canActivate: 0
 --- !u!61 &607797511
 BoxCollider2D:

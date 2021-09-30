@@ -148,6 +148,7 @@ public class NoteManager : MonoBehaviour
             noteSuccessful = true;
             PentagramManager.streak++;
 
+            // Setting the max streak to calculate the dirigent aprobation percentage
             if(PentagramManager.streak > PentagramManager.maxStreak)
             {
                 PentagramManager.maxStreak = PentagramManager.streak;

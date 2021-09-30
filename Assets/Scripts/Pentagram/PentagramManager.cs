@@ -36,7 +36,6 @@ public class PentagramManager : MonoBehaviour
 
     void OnEnable()
     {
-        Debug.Log("He vuelto a activar el Pentagram");
         passedNotes = 0;
         generatedNotes = 0;
         correctNotes = 0;
@@ -97,6 +96,5 @@ public class PentagramManager : MonoBehaviour
     {
         // habitant is the npc im talking to
         habitant = getHabitant;
-        Debug.Log("Nombre de habitante: " + getHabitant.name);
     }
 }

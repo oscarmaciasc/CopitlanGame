@@ -27166,7 +27166,7 @@ MonoBehaviour:
   conversationIsFinished: 0
   habitant: {fileID: 0}
   pentagramPanel: {fileID: 893502259}
-  partitureSelectionPanel: {fileID: 0}
+  partitureSelectionPanel: {fileID: 954209976}
 --- !u!114 &1301176843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27983,8 +27983,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finishedPartiture: 0
-  percentageToPass: 80
+  percentageToPass: 70
   res: 0
+  canPass: 0
+  partitureSelectionPanel: {fileID: 954209976}
 --- !u!114 &1470364016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28002,6 +28004,9 @@ MonoBehaviour:
   canActivate: 0
   partitureFinished: 0
   firstTime: 1
+  canShowPartitures: 1
+  newLines: []
+  habitant: {fileID: 0}
 --- !u!95 &1470364017
 Animator:
   serializedVersion: 3
@@ -28055,9 +28060,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - Estoy molesto
-  - No dejare pasar a nadie
-  - '*sonidos de clara molestia*'
+  - "Asi que has venido hasta aqui con ese objeto extra\xF1o entre las manos..."
+  - Tengo que admitir que me causa cierto interes
+  - '*Expresion de intriga*'
   canActivate: 0
 --- !u!61 &1470364020
 BoxCollider2D:

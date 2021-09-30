@@ -63,8 +63,6 @@ public class Partitures : MonoBehaviour
         {
             PentagramManager.streak = limitStreak;
         }
-
-        Debug.Log("PARTITURE VELOCITY: " + velocity);
     }
 
     public void setVelocity(string partitureName)

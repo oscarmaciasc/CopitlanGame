@@ -65,6 +65,8 @@ public class Audience : MonoBehaviour
             {
                 PartitureSelection.instance.DeactivateDirigentPartitures("PanelPartiture7", "PanelPartiture8", "PanelPartiture9");
             }
+
+            
         }
     }
 }

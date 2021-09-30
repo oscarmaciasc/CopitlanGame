@@ -89,9 +89,13 @@ public class PartitureSelection : MonoBehaviour
     // Dirigents
     public void DeactivateDirigentPartitures(string name, string name2, string name3)
     {
+
+        GameData gameData = new GameData();
+        gameData = XmlManager.instance.LoadGame();
+
         for (int i = 0; i < 10; i++)
         {
-            if (partiturePanels[i].name == name || partiturePanels[i].name == name2 || partiturePanels[i].name == name3)
+            if ((gameData.DoesHavePartiture("partiture" + (i + 1))) && (partiturePanels[i].name == name || partiturePanels[i].name == name2 || partiturePanels[i].name == name3))
             {
                 partiturePanels[i].SetActive(true);
             }
