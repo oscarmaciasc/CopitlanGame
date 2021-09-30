@@ -13,6 +13,7 @@ public class PartitureSelection : MonoBehaviour
     [SerializeField] private GameObject[] arrowSelectionPartiture = new GameObject[10];
     [SerializeField] private GameObject pentagramPanel;
     public string panelPartitureName;
+    private bool partituresFound = false;
 
 
     private void Awake()
@@ -34,6 +35,11 @@ public class PartitureSelection : MonoBehaviour
     void Update()
     {
 
+    }
+
+    void OnEnable()
+    {
+        partituresFound = false;
     }
 
     public void DeactivateNoOwnedPartiturePanels()
@@ -89,20 +95,28 @@ public class PartitureSelection : MonoBehaviour
     // Dirigents
     public void DeactivateDirigentPartitures(string name, string name2, string name3)
     {
+        Debug.Log("Entering Deactivate");
 
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
 
         for (int i = 0; i < 10; i++)
         {
-            if ((gameData.DoesHavePartiture("partiture" + (i + 1))) && (partiturePanels[i].name == name || partiturePanels[i].name == name2 || partiturePanels[i].name == name3))
+            if ((gameData.DoesHavePartiture("partiture" + (i + 1))) && ((partiturePanels[i].name == name) || (partiturePanels[i].name == name2) || (partiturePanels[i].name == name3)))
             {
+                partituresFound = true;
                 partiturePanels[i].SetActive(true);
             }
             else
             {
                 partiturePanels[i].SetActive(false);
             }
+        }
+
+        // If partitures are not found set boolean in Audience algorithm
+        if (!partituresFound)
+        {
+            Audience.instance.NotFoundPartitures();
         }
     }
 

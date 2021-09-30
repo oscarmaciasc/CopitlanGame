@@ -20,7 +20,6 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         target = FindObjectOfType<PlayerController>().transform;
-        Debug.Log("Target: " + target);
 
         halfHeight = Camera.main.orthographicSize;
         halfWidth = halfHeight * Camera.main.aspect;

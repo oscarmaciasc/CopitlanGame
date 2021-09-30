@@ -7,8 +7,23 @@ public class Audience : MonoBehaviour
     public static Audience instance;
     public bool finishedPartiture = false;
     public int percentageToPass;
-    public int res;
+    public int res = 0;
     public bool canPass = false;
+    public bool notFound = false;
+    public bool canActivatePartiturePanel = true;
+    private string[] noPartituresDialog = {"Parece que no tienes la partitura necesaria", "Vuelve cuando la tengas" };
+    private string[] KasakirSuccess1 = {"Me has convencido", "te otorgo el permiso del triangulo para que vayas y hagas felices a mas personas"};
+    private string[] KasakirSuccess2 = {"Estoy realmente sorprendido", "tienes que mostrarle esto al mundo entero", "te otorgo el permiso del triangulo para que vayas y hagas felices a mas personas"};
+    private string[] KasakirSuccess3 = {"Estoy profundamente conmovido", "jamas habia escuchado nada igual", "mis ojos se humedecen al escuchar algo tan bello", "te otorgo el permiso del triangulo para que vayas y hagas felices a mas personas"};
+    private string[] KasakirFailure = {"No me has convencido del todo", "no veo el valor de esto en la ciudad", "reintentalo si quieres..."};
+    private string[] QuizaniSuccess1 = {"Me has convencido", "te otorgo el permiso del circulo interior para que vayas y hagas entrar en razon a Naran", "esto tiene que ser escuchado"};
+    private string[] QuizaniSuccess2 = {"Estoy realmente sorprendido", "te otorgo el permiso del circulo interior para que vayas y hagas entrar en razon a Naran", "suerte viajero"};
+    private string[] QuizaniSuccess3 = {"Estoy profundamente conmovido", "me siento feliz y diferente, como si mi alma sonriera", "te otorgo el permiso del circulo interior para que vayas y hagas entrar en razon a Naran"};
+    private string[] QuizaniFailure = {};
+    private string[] NaranSucces1 = {};
+    private string[] NaranSucces2 = {};
+    private string[] NaranSucces3 = {};
+    private string[] NaranFailure = {};
     [SerializeField] private GameObject partitureSelectionPanel;
 
     // Start is called before the first frame update
@@ -20,7 +35,7 @@ public class Audience : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetPercentage();
+        
     }
 
     public void GetPercentage()
@@ -30,11 +45,10 @@ public class Audience : MonoBehaviour
             if (((PentagramManager.instance.correctNotes * 100) / (PentagramManager.instance.TotalNotes())) >= percentageToPass)
             {
                 canPass = true;
-                this.gameObject.GetComponent<DialogActivator>().CanActiveFalse();
 
                 res = (60) + (((PentagramManager.maxStreak) * (40)) / (PentagramManager.instance.TotalNotes()));
 
-                // Sent this to stats and do the following math in the game
+                Debug.Log("Resultado del calculo: " + res);
             }
             else
             {
@@ -46,7 +60,7 @@ public class Audience : MonoBehaviour
 
     public void LimitPartitures(GameObject habitant)
     {
-        if (habitant.GetComponent<PartitureHabitant>().conversationFinished == true && !canPass)
+        if (habitant.GetComponent<PartitureHabitant>().conversationFinished == true && !canPass && canActivatePartiturePanel)
         {
             partitureSelectionPanel.SetActive(true);
         }
@@ -66,7 +80,70 @@ public class Audience : MonoBehaviour
                 PartitureSelection.instance.DeactivateDirigentPartitures("PanelPartiture7", "PanelPartiture8", "PanelPartiture9");
             }
 
-            
+            if (notFound)
+            {
+                partitureSelectionPanel.SetActive(false);
+                habitant.GetComponent<DialogActivator>().lines = noPartituresDialog;
+                canActivatePartiturePanel = false;
+                habitant.GetComponent<PartitureHabitant>().canShowPartitures = false;
+            }
         }
+    }
+
+    public void ChangeDirigentDialogLines(GameObject habitant)
+    {
+        if(habitant.name == "Kasakir")
+        {
+            if(res >= 60 && res < 80)
+            {
+                habitant.gameObject.GetComponent<DialogActivator>().lines = KasakirSuccess1;
+            } else if(res >= 80 && res < 90)
+            {
+                habitant.gameObject.GetComponent<DialogActivator>().lines = KasakirSuccess2;
+            } else if(res >= 90)
+            {
+                habitant.gameObject.GetComponent<DialogActivator>().lines = KasakirSuccess3;
+            } else 
+            {
+                habitant.gameObject.GetComponent<DialogActivator>().lines = KasakirFailure;
+            }
+        } else if(habitant.name == "Quizani")
+        {
+            if(res >= 70 && res < 80)
+            {
+                habitant.gameObject.GetComponent<DialogActivator>().lines = QuizaniSuccess1;
+            } else if(res >= 80 && res < 90)
+            {
+                habitant.gameObject.GetComponent<DialogActivator>().lines = QuizaniSuccess2;
+            } else if(res >= 90)
+            {
+                habitant.gameObject.GetComponent<DialogActivator>().lines = QuizaniSuccess3;
+            } else 
+            {
+                habitant.gameObject.GetComponent<DialogActivator>().lines = QuizaniFailure;
+            }
+        }
+        else if(habitant.name == "Naran")
+        {
+            if(res >= 80 && res < 90)
+            {
+                habitant.gameObject.GetComponent<DialogActivator>().lines = NaranSucces1;
+            } else if(res >= 90 && res < 95)
+            {
+                habitant.gameObject.GetComponent<DialogActivator>().lines = NaranSucces1;
+            } else if(res >= 95)
+            {
+                habitant.gameObject.GetComponent<DialogActivator>().lines = NaranSucces1;
+            } else 
+            {
+                habitant.gameObject.GetComponent<DialogActivator>().lines = NaranFailure;
+            }
+        }
+    }
+
+    public bool NotFoundPartitures()
+    {
+        notFound = true;
+        return notFound;
     }
 }

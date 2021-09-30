@@ -27986,6 +27986,7 @@ MonoBehaviour:
   percentageToPass: 70
   res: 0
   canPass: 0
+  notFound: 0
   partitureSelectionPanel: {fileID: 954209976}
 --- !u!114 &1470364016
 MonoBehaviour:
@@ -28060,7 +28061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - "Asi que has venido hasta aqui con ese objeto extra\xF1o entre las manos..."
+  - Asi que has venido hasta aqui con ese objeto raro entre las manos...
   - Tengo que admitir que me causa cierto interes
   - '*Expresion de intriga*'
   canActivate: 0
