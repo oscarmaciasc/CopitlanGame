@@ -17,7 +17,9 @@ public class PentagramManager : MonoBehaviour
     public int passedNotes = 0;
     public static PentagramManager instance;
     public bool partitureFinished = false;
+    public bool doOnlyOnce = true;
     public int correctNotes = 0;
+    public static int globalCounter = 0;
     [SerializeField] private GameObject habitant;
 
     private void Awake()
@@ -47,7 +49,7 @@ public class PentagramManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
 
         // Generating random notes for testing purposes
         if (generatedNotes < Partitures.instance.numberOfPartitureNotes)
@@ -59,39 +61,43 @@ public class PentagramManager : MonoBehaviour
                 generatedNotes++;
             }
         }
-        else if (passedNotes >= generatedNotes)
+        else if (globalCounter == generatedNotes)
         {
             partitureFinished = true;
 
             InGame.instance.HasFinishedPartiture();
 
-            if(habitant.GetComponent<PartitureHabitant>() != null)
+            if (habitant.GetComponent<PartitureHabitant>() != null)
             {
                 habitant.GetComponent<PartitureHabitant>().partitureFinished = true;
             }
 
-            if(habitant.GetComponent<Mines>() != null)
+            if (habitant.GetComponent<Mines>() != null)
             {
                 habitant.GetComponent<Mines>().finishedPartiture = true;
             }
 
-            if(habitant.GetComponent<Audience>() != null)
+            if (habitant.GetComponent<Audience>() != null)
             {
                 habitant.GetComponent<Audience>().finishedPartiture = true;
-                habitant.GetComponent<Audience>().GetPercentage(habitant);
-                habitant.GetComponent<Audience>().ChangeDirigentDialogLines(habitant);
+                if (doOnlyOnce)
+                {
+                    habitant.GetComponent<Audience>().GetPercentage(habitant);
+                    habitant.GetComponent<Audience>().ChangeDirigentDialogLines(habitant);
+                    doOnlyOnce = false;
+                }
             }
 
-            if(habitant.GetComponent<Leader>() != null)
+            if (habitant.GetComponent<Leader>() != null)
             {
                 // do calculate function when partitureFinished
-                if(habitant.name == "Naran")
+                if (habitant.name == "Naran")
                 {
                     habitant.GetComponent<Leader>().GetAudienceResults();
                 }
             }
 
-            
+
 
         }
     }

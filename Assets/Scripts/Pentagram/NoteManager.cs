@@ -86,6 +86,8 @@ public class NoteManager : MonoBehaviour
             noteSuccessful = false;
             canPress = false;
             PentagramManager.streak = 0;
+            PentagramManager.globalCounter++;
+            Debug.Log(PentagramManager.globalCounter);
             if (Partitures.instance.canAddAuxStreak)
             {
                 PentagramManager.auxStreak = 0;
@@ -148,6 +150,8 @@ public class NoteManager : MonoBehaviour
         {
             // Change the note color to green
             SetGreen();
+            PentagramManager.globalCounter++;
+            Debug.Log(PentagramManager.globalCounter);
 
             noteSuccessful = true;
             if (PentagramManager.streak < Partitures.instance.limitStreak)
@@ -185,7 +189,8 @@ public class NoteManager : MonoBehaviour
         {
             // Change the note color to red
             SetRed();
-
+            PentagramManager.globalCounter++;
+            Debug.Log(PentagramManager.globalCounter);
             noteSuccessful = false;
             canPress = false;
             haveBeenPressed = true;

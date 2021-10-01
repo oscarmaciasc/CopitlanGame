@@ -47,6 +47,7 @@ public class Audience : MonoBehaviour
             {
                 canPass = true;
                 res = (60) + (((PentagramManager.streakRes) * (40)) / ((PentagramManager.instance.TotalNotes())));
+                Debug.Log("Resultado: " + res);
 
                 // send res as array to a file
                 if (habitant.name == "Kasakir")

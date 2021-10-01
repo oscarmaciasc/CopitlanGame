@@ -129,7 +129,6 @@ public class GameData
                 return audienceResult[i].result;
             }
         } 
-
         return 0;
         
     }

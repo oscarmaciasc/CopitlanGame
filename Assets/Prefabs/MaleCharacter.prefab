@@ -139,6 +139,8 @@ MonoBehaviour:
   moveSpeed: 3
   myAnim: {fileID: 5865885559916751511}
   areaTransitionName: 
+  indexGame: 0
+  canMove: 1
 --- !u!95 &5865885559916751511
 Animator:
   serializedVersion: 3

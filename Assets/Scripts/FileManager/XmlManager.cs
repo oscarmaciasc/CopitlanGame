@@ -129,9 +129,7 @@ public class XmlManager : MonoBehaviour
 
         GameData gamedata = LoadGame();
 
-        int audienceResult = gamedata.audienceResult[audienceResultID].result + result;
-
-        gamedata.audienceResult[audienceResultID].result = audienceResult;
+        gamedata.audienceResult[audienceResultID].result = result;
 
         Save(gameIndex, gamedata);
     }

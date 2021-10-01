@@ -31,7 +31,7 @@
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">
-      <result>0</result>
+      <result>100</result>
     </AudienceResult>
     <AudienceResult name="quizaniResult">
       <result>0</result>
