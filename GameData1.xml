@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Alekei" gender="false">
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="game1" gender="false">
   <Resources>
     <Resource name="wood">
       <quantity>0</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>1</quantity>
+      <quantity>0</quantity>
     </Resource>
     <Resource name="gold">
-      <quantity>4</quantity>
+      <quantity>0</quantity>
     </Resource>
     <Resource name="fuel">
       <quantity>0</quantity>
@@ -16,8 +16,6 @@
   </Resources>
   <Permissions>
     <Permission name="outterCircle" />
-    <Permission name="innerCircle" />
-    <Permission name="triangle" />
   </Permissions>
   <Flutes>
     <Flute name="woodenFlute" />
@@ -41,5 +39,19 @@
     <AudienceResult name="naranResult">
       <result>0</result>
     </AudienceResult>
+    <AudienceResult name="necalliResult">
+      <result>0</result>
+    </AudienceResult>
   </AudienceResults>
+  <MineEntrances>
+    <MineEntrance name="tecalliEntrance">
+      <shouldBeActive>false</shouldBeActive>
+    </MineEntrance>
+    <MineEntrance name="acanEntrance">
+      <shouldBeActive>false</shouldBeActive>
+    </MineEntrance>
+    <MineEntrance name="setiEntrance">
+      <shouldBeActive>false</shouldBeActive>
+    </MineEntrance>
+  </MineEntrances>
 </gameData>

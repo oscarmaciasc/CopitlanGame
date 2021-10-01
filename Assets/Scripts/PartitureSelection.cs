@@ -137,6 +137,12 @@ public class PartitureSelection : MonoBehaviour
                 partiturePanels[i].SetActive(false);
             }
         }
+
+        // If partitures are not found set boolean in Audience algorithm
+        if (!partituresFound)
+        {
+            Audience.instance.NotFoundPartitures();
+        }
     }
 
     //*************************************************************************************************************************

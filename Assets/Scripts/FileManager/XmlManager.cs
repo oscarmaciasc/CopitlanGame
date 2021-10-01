@@ -134,6 +134,17 @@ public class XmlManager : MonoBehaviour
         Save(gameIndex, gamedata);
     }
 
+    public void SaveMineEntranceState(int mineEntranceID, bool shouldBeActive)
+    {
+        int gameIndex = GetGameIndex();
+
+        GameData gamedata = LoadGame();
+
+        gamedata.mineEntrance[mineEntranceID].shouldBeActive = shouldBeActive;
+
+        Save(gameIndex, gamedata);
+    }
+
     public void AddPermission(string NewPermission)
     {
         int gameIndex = GetGameIndex();

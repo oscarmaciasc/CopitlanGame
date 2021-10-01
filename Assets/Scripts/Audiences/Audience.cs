@@ -19,11 +19,11 @@ public class Audience : MonoBehaviour
     private string[] QuizaniSuccess1 = { "Me has convencido", "te otorgo el permiso del circulo interior para que vayas y hagas entrar en razon a Naran", "esto tiene que ser escuchado" };
     private string[] QuizaniSuccess2 = { "Estoy realmente sorprendido", "te otorgo el permiso del circulo interior para que vayas y hagas entrar en razon a Naran", "suerte viajero" };
     private string[] QuizaniSuccess3 = { "Estoy profundamente conmovido", "me siento feliz y diferente, como si mi alma sonriera", "te otorgo el permiso del circulo interior para que vayas y hagas entrar en razon a Naran" };
-    private string[] QuizaniFailure = { };
-    private string[] NaranSucces1 = { };
-    private string[] NaranSucces2 = { };
-    private string[] NaranSucces3 = { };
-    private string[] NaranFailure = { };
+    private string[] QuizaniFailure = { "Ni siquiera tocaste bien" , "se escuchaba algo extraño", "vuelve a intentarlo"};
+    private string[] NaranSucces1 = { "Me has convencido", "adelante, ve con nuestro lider" };
+    private string[] NaranSucces2 = { "Estoy realmente sorprendido", "adelante, nuestro lider Necalli estara feliz de escuchar esto" };
+    private string[] NaranSucces3 = { "Estoy profundamente conmovido" , "ahora la vida cobra color y me siento muy feliz", "no tengo palabras para agradecerte", "tienes que mostrarle esto al lider Naran, sigue tu camino"};
+    private string[] NaranFailure = { "No veo por que el lider deberia de escuchar algo asi" , "reintentalo a ver si me gusta esta vez..."};
     private bool successInterpretation = false;
     [SerializeField] private GameObject partitureSelectionPanel;
 
@@ -47,20 +47,36 @@ public class Audience : MonoBehaviour
             {
                 canPass = true;
                 res = (60) + (((PentagramManager.streakRes) * (40)) / ((PentagramManager.instance.TotalNotes())));
+                Debug.Log("streakRes: " + PentagramManager.streakRes);
                 Debug.Log("Resultado: " + res);
+
+                GameData gameData = new GameData();
+                gameData = XmlManager.instance.LoadGame();
 
                 // send res as array to a file
                 if (habitant.name == "Kasakir")
                 {
                     XmlManager.instance.SaveAudienceResult(0, res);
+                    if(!gameData.DoesHavePermit("triangle"))
+                    {
+                        XmlManager.instance.AddPermission("triangle");
+                    }
                 }
                 else if (habitant.name == "Quizani")
                 {
                     XmlManager.instance.SaveAudienceResult(1, res);
+                    if (!gameData.DoesHavePartiture("innerCircle"))
+                    {
+                        XmlManager.instance.AddPermission("innerCircle");
+                    }
                 }
                 else if (habitant.name == "Naran")
                 {
                     XmlManager.instance.SaveAudienceResult(2, res);
+                    if (!gameData.DoesHavePartiture("innerCircle"))
+                    {
+                        XmlManager.instance.AddPermission("naranRoyalPalace");
+                    }
                 }
 
                 successInterpretation = true;
@@ -71,11 +87,6 @@ public class Audience : MonoBehaviour
                 finishedPartiture = false;
             }
         }
-    }
-
-    public int GetRes()
-    {
-        return res;
     }
 
     public void LimitPartitures(GameObject habitant)
@@ -98,6 +109,9 @@ public class Audience : MonoBehaviour
             else if (habitant.name == "Naran")
             {
                 PartitureSelection.instance.DeactivateDirigentPartitures("PanelPartiture7", "PanelPartiture8", "PanelPartiture9");
+            } else if (habitant.name == "Necalli")
+            {
+                PartitureSelection.instance.DeactivateLeaderPartitures("PanelPartiture10");
             }
 
             if (notFound)
@@ -152,11 +166,11 @@ public class Audience : MonoBehaviour
                 }
                 else if (res >= 90 && res < 95)
                 {
-                    habitant.gameObject.GetComponent<DialogActivator>().lines = NaranSucces1;
+                    habitant.gameObject.GetComponent<DialogActivator>().lines = NaranSucces2;
                 }
                 else if (res >= 95)
                 {
-                    habitant.gameObject.GetComponent<DialogActivator>().lines = NaranSucces1;
+                    habitant.gameObject.GetComponent<DialogActivator>().lines = NaranSucces3;
                 }
             }
         }

@@ -70,6 +70,11 @@ public class DialogManager : MonoBehaviour
                             habitant.GetComponent<NaranGuard>().conversationFinished = true;
                         }
 
+                        if (habitant.GetComponent<NecalliGuard>() != null)
+                        {
+                            habitant.GetComponent<NecalliGuard>().conversationFinished = true;
+                        }
+
                         if (habitant.GetComponent<Mines>() != null)
                         {
                             habitant.GetComponent<Mines>().LimitPartitures(habitant);
@@ -101,7 +106,7 @@ public class DialogManager : MonoBehaviour
         if (pentagramPanel.activeInHierarchy)
         {
             // Send the habitant to PentagramManager script
-           pentagramPanel. GetComponent<PentagramManager>().GetHabitant(this.habitant);
+            pentagramPanel.GetComponent<PentagramManager>().GetHabitant(this.habitant);
         }
 
     }

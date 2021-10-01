@@ -70,9 +70,29 @@ public class Mines : MonoBehaviour
                 myAnim.SetFloat("moveX", 0);
 
                 theEntrance.SetActive(true);
+
+                // Save that this entrance has to be active in files 
+
+                GameData gameData = new GameData();
+                gameData = XmlManager.instance.LoadGame();
+
+                if (this.gameObject.name == "Tecalli0")
+                {
+                    XmlManager.instance.SaveMineEntranceState(0, true);
+                }
+                else if (this.gameObject.name == "Acan0")
+                {
+                    XmlManager.instance.SaveMineEntranceState(0, true);
+                }
+                else if (this.gameObject.name == "Seti0")
+                {
+                    XmlManager.instance.SaveMineEntranceState(0, true);
+                }
+
             }
         }
     }
+
 
     public void LimitPartitures(GameObject habitant)
     {

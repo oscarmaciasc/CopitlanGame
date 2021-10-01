@@ -33,6 +33,10 @@ public class GameData
     [XmlArray ("AudienceResults")]
     public AudienceResult[] audienceResult { get; set; }
 
+    [XmlArray("MineEntrances")]
+    public MineEntrance[] mineEntrance { get; set; }
+
+
     public GameData(){}
 
     // Player Initialization 
@@ -59,10 +63,16 @@ public class GameData
         this.musicSheet = new MusicSheet[1];
         this.musicSheet[0] = new MusicSheet();
 
-        this.audienceResult = new AudienceResult[3];
+        this.audienceResult = new AudienceResult[4];
         this.audienceResult[0] = new AudienceResult();
         this.audienceResult[1] = new AudienceResult();
         this.audienceResult[2] = new AudienceResult();
+        this.audienceResult[3] = new AudienceResult();
+
+        this.mineEntrance = new MineEntrance[3];
+        this.mineEntrance[0] = new MineEntrance();
+        this.mineEntrance[1] = new MineEntrance();
+        this.mineEntrance[2] = new MineEntrance();
 
 
         this.name = playerName;
@@ -86,10 +96,19 @@ public class GameData
         this.audienceResult[1].result = 0;
         this.audienceResult[2].name = "naranResult";
         this.audienceResult[2].result = 0;
+        this.audienceResult[3].name = "necalliResult";
+        this.audienceResult[3].result = 0;
+        this.mineEntrance[0].name = "tecalliEntrance";
+        this.mineEntrance[0].shouldBeActive = false;
+        this.mineEntrance[1].name = "acanEntrance";
+        this.mineEntrance[1].shouldBeActive = false;
+        this.mineEntrance[2].name = "setiEntrance";
+        this.mineEntrance[2].shouldBeActive = false;
+
     }
 
     // Player Update
-    public GameData(string name, Resource[] resource, Permission[] permission, Flute[] flute, Balloon[] balloon, MusicalMasteryLvl[] musicalMasteryLvl, MusicSheet[] musicSheet, AudienceResult[] audienceResults) {
+    public GameData(string name, Resource[] resource, Permission[] permission, Flute[] flute, Balloon[] balloon, MusicalMasteryLvl[] musicalMasteryLvl, MusicSheet[] musicSheet, AudienceResult[] audienceResult, MineEntrance[] mineEntrance) {
         this.name = name;
         this.resource = resource;
         this.permission = permission;
@@ -98,6 +117,7 @@ public class GameData
         this.musicalMasteryLvl = musicalMasteryLvl;
         this.musicSheet = musicSheet;
         this.audienceResult = audienceResult;
+        this.mineEntrance = mineEntrance;
     }
 
     public bool DoesHavePermit(string permitType) {
@@ -117,6 +137,19 @@ public class GameData
             }
         }
         
+        return false;
+    }
+
+    public bool MineEntranceShouldBeActive(int id)
+    {
+        for(int i = 0; i < mineEntrance.Length; i++)
+        {
+            if(id == i)
+            {
+                return mineEntrance[i].shouldBeActive;
+            }
+        }
+
         return false;
     }
 

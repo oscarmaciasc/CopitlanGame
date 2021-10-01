@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class InGame : MonoBehaviour
 {
@@ -14,7 +15,11 @@ public class InGame : MonoBehaviour
     [SerializeField] private GameObject successfulSavedExitPanel;
     [SerializeField] public GameObject partitureSelectionPanel;
     [SerializeField] public GameObject pentagramPanel;
-    [SerializeField] private GameObject dialogBox; 
+    [SerializeField] private GameObject dialogBox;
+    [SerializeField] private GameObject tecalliEntrance;
+    [SerializeField] private GameObject acanEntrance;
+    [SerializeField] private GameObject setiEntrance;
+
 
     private void Awake()
     {
@@ -31,8 +36,27 @@ public class InGame : MonoBehaviour
         confirmationWindowExit.SetActive(false);
         successfulSavedPanel.SetActive(false);
         successfulSavedExitPanel.SetActive(false);
-
         UIFade.instance.FadeFromBlack();
+
+        if (SceneManager.GetActiveScene().name == "SampleScene")
+        {
+            GameData gameData = new GameData();
+            gameData = XmlManager.instance.LoadGame();
+
+            gameData.MineEntranceShouldBeActive(0);
+            if (gameData.mineEntrance[0].shouldBeActive)
+            {
+                tecalliEntrance.SetActive(true);
+            }
+            else if (gameData.mineEntrance[1].shouldBeActive)
+            {
+                acanEntrance.SetActive(true);
+            }
+            else if (gameData.mineEntrance[2].shouldBeActive)
+            {
+                setiEntrance.SetActive(true);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -63,7 +87,7 @@ public class InGame : MonoBehaviour
     {
         partitureSelectionPanel.SetActive(true);
         PartitureSelection.instance.DeativateArrowsPartitureSelection();
-        if(!PartitureHabitant.instance.HasPartituresFilter())
+        if (!PartitureHabitant.instance.HasPartituresFilter())
         {
             Debug.Log(PartitureHabitant.instance.HasPartituresFilter());
             PartitureSelection.instance.DeactivateNoOwnedPartiturePanels();

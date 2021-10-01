@@ -1924,6 +1924,9 @@ MonoBehaviour:
   partitureSelectionPanel: {fileID: 80739966}
   pentagramPanel: {fileID: 282387092}
   dialogBox: {fileID: 1641508646}
+  tecalliEntrance: {fileID: 1192244553}
+  acanEntrance: {fileID: 1297083168}
+  setiEntrance: {fileID: 996694214}
 --- !u!1 &1224067205
 GameObject:
   m_ObjectHideFlags: 0
