@@ -16,6 +16,7 @@
   </Resources>
   <Permissions>
     <Permission name="outterCircle" />
+    <Permission name="triangle" />
   </Permissions>
   <Flutes>
     <Flute name="woodenFlute" />
@@ -35,7 +36,7 @@
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">
-      <result>0</result>
+      <result>88</result>
     </AudienceResult>
     <AudienceResult name="quizaniResult">
       <result>0</result>

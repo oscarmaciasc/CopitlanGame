@@ -92,12 +92,11 @@ public class PentagramManager : MonoBehaviour
             if (habitant.GetComponent<Audience>() != null)
             {
                 habitant.GetComponent<Audience>().finishedPartiture = true;
-                if (doOnlyOnce)
-                {
+                
                     habitant.GetComponent<Audience>().GetPercentage(habitant);
                     habitant.GetComponent<Audience>().ChangeDirigentDialogLines(habitant);
-                    doOnlyOnce = false;
-                }
+                   
+                
             }
 
             if (habitant.GetComponent<Leader>() != null)
