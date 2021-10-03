@@ -19,6 +19,7 @@ public class AreaExit : MonoBehaviour
     void Start()
     {
         theEntrance.transitionName = areaTransitionName;
+        shouldLoadAfterFade = false;
     }
 
     // Update is called once per frame

@@ -140,19 +140,6 @@ public class GameData
         return false;
     }
 
-    public bool MineEntranceShouldBeActive(int id)
-    {
-        for(int i = 0; i < mineEntrance.Length; i++)
-        {
-            if(id == i)
-            {
-                return mineEntrance[i].shouldBeActive;
-            }
-        }
-
-        return false;
-    }
-
     public int ReturnAudienceResult(int id)
     {
         for(int i = 0; i < audienceResult.Length; i++)

@@ -18,7 +18,6 @@ public class PentagramManager : MonoBehaviour
     public static PentagramManager instance;
     public bool partitureFinished = false;
     public bool doOnlyOnce = true;
-    public bool doOnlyOnceMines = true;
     public int correctNotes = 0;
     public static int globalCounter = 0;
     [SerializeField] private GameObject habitant;
@@ -65,7 +64,7 @@ public class PentagramManager : MonoBehaviour
         else if (globalCounter == generatedNotes)
         {
             partitureFinished = true;
-
+            Debug.Log("Mamarracho");
             InGame.instance.HasFinishedPartiture();
 
             if (habitant.GetComponent<PartitureHabitant>() != null)

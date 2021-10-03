@@ -62,10 +62,15 @@ public class PartitureSelection : MonoBehaviour
 
     public void DeactivateMinePartitures(string name)
     {
+
+        GameData gameData = new GameData();
+        gameData = XmlManager.instance.LoadGame();
+
         for (int i = 0; i < 10; i++)
         {
-            if (partiturePanels[i].name == name)
+            if ((gameData.DoesHavePartiture("partiture" + (i + 1))) && ((partiturePanels[i].name == name)))
             {
+                partituresFound = true;
                 partiturePanels[i].SetActive(true);
             }
             else
@@ -77,10 +82,14 @@ public class PartitureSelection : MonoBehaviour
 
     public void DeactivateMinePartitures2(string name, string name2)
     {
+        GameData gameData = new GameData();
+        gameData = XmlManager.instance.LoadGame();
+
         for (int i = 0; i < 10; i++)
         {
-            if (partiturePanels[i].name == name || partiturePanels[i].name == name2)
+            if ((gameData.DoesHavePartiture("partiture" + (i + 1))) && ((partiturePanels[i].name == name) || (partiturePanels[i].name == name2)))
             {
+                partituresFound = true;
                 partiturePanels[i].SetActive(true);
             }
             else
@@ -142,6 +151,7 @@ public class PartitureSelection : MonoBehaviour
         if (!partituresFound)
         {
             Audience.instance.NotFoundPartitures();
+
         }
     }
 

@@ -77,7 +77,12 @@ public class DialogManager : MonoBehaviour
 
                         if (habitant.GetComponent<Mines>() != null)
                         {
-                            habitant.GetComponent<Mines>().LimitPartitures(habitant);
+                            if(!habitant.GetComponent<Mines>().hasFinished)
+                            {
+                                habitant.GetComponent<Mines>().LimitPartitures(habitant);
+                            } else {
+                                habitant.GetComponent<Mines>().canPass = true;
+                            }
                         }
                         if (habitant.GetComponent<Audience>() != null)
                         {

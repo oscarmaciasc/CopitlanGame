@@ -28,6 +28,9 @@
   </MusicalMasteryLvl>
   <MusicSheets>
     <MusicSheet name="partiture1" />
+    <MusicSheet name="partiture2" />
+    <MusicSheet name="partiture5" />
+    <MusicSheet name="partiture9" />
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">

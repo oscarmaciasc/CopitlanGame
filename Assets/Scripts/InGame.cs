@@ -43,7 +43,7 @@ public class InGame : MonoBehaviour
             GameData gameData = new GameData();
             gameData = XmlManager.instance.LoadGame();
 
-            gameData.MineEntranceShouldBeActive(0);
+           
             if (gameData.mineEntrance[0].shouldBeActive)
             {
                 tecalliEntrance.SetActive(true);

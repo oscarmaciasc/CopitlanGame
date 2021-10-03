@@ -18,6 +18,11 @@ public class Mines : MonoBehaviour
     [SerializeField] private GameObject partitureSelectionPanel;
     public string[] goodLines;
     public string[] badLines;
+    public bool hasFinished = false;
+    public bool notFound = false;
+    private string[] noPartituresDialog = { "Parece que no tienes la partitura necesaria", "Vuelve cuando la tengas" };
+    public bool canActivatePartiturePanel = true;
+
 
 
     // Start is called before the first frame update
@@ -25,6 +30,28 @@ public class Mines : MonoBehaviour
     {
         instance = this;
         destiny = new Vector2(transform.position.x + 2, transform.position.y);
+
+        GameData gameData = new GameData();
+        gameData = XmlManager.instance.LoadGame();
+
+        if (gameData.mineEntrance[0].shouldBeActive)
+        {
+            hasFinished = true;
+            this.gameObject.GetComponent<DialogActivator>().lines = goodLines;
+            this.gameObject.GetComponent<PartitureHabitant>().canShowPartitures = false;
+        }
+        else if (gameData.mineEntrance[1].shouldBeActive)
+        {
+            hasFinished = true;
+            this.gameObject.GetComponent<DialogActivator>().lines = goodLines;
+            this.gameObject.GetComponent<PartitureHabitant>().canShowPartitures = false;
+        }
+        else if (gameData.mineEntrance[2].shouldBeActive)
+        {
+            hasFinished = true;
+            this.gameObject.GetComponent<DialogActivator>().lines = goodLines;
+            this.gameObject.GetComponent<PartitureHabitant>().canShowPartitures = false;
+        }
     }
 
     // Update is called once per frame
@@ -58,11 +85,7 @@ public class Mines : MonoBehaviour
         {
             if (destiny.x != gameObject.transform.position.x)
             {
-                gameObject.transform.position = Vector2.MoveTowards(transform.position, destiny, moveSpeed * Time.deltaTime);
-                myAnim.SetFloat("moveX", 1);
-
-                // Making the player Idle in the last direction
-                myAnim.SetFloat("lastMoveY", -1);
+                Move();
             }
             else
             {
@@ -72,9 +95,6 @@ public class Mines : MonoBehaviour
                 theEntrance.SetActive(true);
 
                 // Save that this entrance has to be active in files 
-
-                GameData gameData = new GameData();
-                gameData = XmlManager.instance.LoadGame();
 
                 if (this.gameObject.name == "Tecalli0")
                 {
@@ -96,7 +116,7 @@ public class Mines : MonoBehaviour
 
     public void LimitPartitures(GameObject habitant)
     {
-        if (habitant.GetComponent<PartitureHabitant>().conversationFinished == true && !canPass)
+        if (habitant.GetComponent<PartitureHabitant>().conversationFinished == true && !canPass  && canActivatePartiturePanel)
         {
             partitureSelectionPanel.SetActive(true);
         }
@@ -118,6 +138,29 @@ public class Mines : MonoBehaviour
                 // Deactivate everything but mediumPartitures 4 & 5
                 PartitureSelection.instance.DeactivateMinePartitures2("PanelPartiture4", "PanelPartiture5");
             }
+
+            if (notFound)
+            {
+                partitureSelectionPanel.SetActive(false);
+                habitant.GetComponent<DialogActivator>().lines = noPartituresDialog;
+                canActivatePartiturePanel = false;
+                habitant.GetComponent<PartitureHabitant>().canShowPartitures = false;
+            }
         }
+    }
+
+    public bool NotFoundPartitures()
+    {
+        notFound = true;
+        return notFound;
+    }
+
+    public void Move()
+    {
+        gameObject.transform.position = Vector2.MoveTowards(transform.position, destiny, moveSpeed * Time.deltaTime);
+        myAnim.SetFloat("moveX", 1);
+
+        // Making the player Idle in the last direction
+        myAnim.SetFloat("lastMoveY", -1);
     }
 }
