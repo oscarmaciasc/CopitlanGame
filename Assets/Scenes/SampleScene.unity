@@ -1162,7 +1162,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826641934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.25, y: -3.72, z: 0}
+  m_LocalPosition: {x: -0.19, y: -4.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1192244556}
@@ -1943,11 +1943,11 @@ MonoBehaviour:
   successfulSavedExitPanel: {fileID: 185873759}
   partitureSelectionPanel: {fileID: 80739966}
   pentagramPanel: {fileID: 282387092}
-  PauseMenuPanel: {fileID: 425948754}
   dialogBox: {fileID: 1641508646}
   tecalliEntrance: {fileID: 1192244553}
   acanEntrance: {fileID: 1297083168}
   setiEntrance: {fileID: 996694214}
+  PauseMenuPanel: {fileID: 425948754}
 --- !u!1 &1224067205
 GameObject:
   m_ObjectHideFlags: 0
@@ -2438,7 +2438,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1335736974}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.32, y: -3.23, z: 0}
+  m_LocalPosition: {x: -0.21, y: -3.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1297083171}
@@ -25846,7 +25846,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2032731045}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.35, y: -3.27, z: 0}
+  m_LocalPosition: {x: -0.35, y: -4.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 996694217}

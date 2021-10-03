@@ -43,6 +43,10 @@ public class Tecalli : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!hasFinished)
+        {
+            GetPercentage();
+        }
         CheckIfCanPass();
     }
 

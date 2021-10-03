@@ -179,7 +179,7 @@ public class NoteManager : MonoBehaviour
             }
 
             PentagramManager.streakRes = PentagramManager.maxStreak + PentagramManager.maxStreak2;
-            Debug.Log("streakRes: " + PentagramManager.streakRes + " = maxStreak[" + PentagramManager.maxStreak + "] + maxStreak2[" + PentagramManager.maxStreak2 + "]");
+            //Debug.Log("streakRes: " + PentagramManager.streakRes + " = maxStreak[" + PentagramManager.maxStreak + "] + maxStreak2[" + PentagramManager.maxStreak2 + "]");
 
 
             canPress = false;

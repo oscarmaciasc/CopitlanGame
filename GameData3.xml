@@ -49,10 +49,10 @@
   </AudienceResults>
   <MineEntrances>
     <MineEntrance name="tecalliEntrance">
-      <shouldBeActive>false</shouldBeActive>
+      <shouldBeActive>true</shouldBeActive>
     </MineEntrance>
     <MineEntrance name="acanEntrance">
-      <shouldBeActive>false</shouldBeActive>
+      <shouldBeActive>true</shouldBeActive>
     </MineEntrance>
     <MineEntrance name="setiEntrance">
       <shouldBeActive>false</shouldBeActive>

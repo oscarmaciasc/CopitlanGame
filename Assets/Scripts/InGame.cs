@@ -44,16 +44,16 @@ public class InGame : MonoBehaviour
             GameData gameData = new GameData();
             gameData = XmlManager.instance.LoadGame();
 
-           
+
             if (gameData.mineEntrance[0].shouldBeActive)
             {
                 tecalliEntrance.SetActive(true);
             }
-            else if (gameData.mineEntrance[1].shouldBeActive)
+            if (gameData.mineEntrance[1].shouldBeActive)
             {
                 acanEntrance.SetActive(true);
             }
-            else if (gameData.mineEntrance[2].shouldBeActive)
+            if (gameData.mineEntrance[2].shouldBeActive)
             {
                 setiEntrance.SetActive(true);
             }
@@ -80,7 +80,8 @@ public class InGame : MonoBehaviour
                 ActivatePartitureSelectionPanel();
             }
         }
-        if (GameManager.instance.pPressed) {
+        if (GameManager.instance.pPressed)
+        {
             if (PauseMenuPanel.activeInHierarchy == false)
             {
                 ActivatePauseMenuPanel();

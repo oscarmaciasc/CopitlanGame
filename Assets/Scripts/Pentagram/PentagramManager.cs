@@ -45,6 +45,8 @@ public class PentagramManager : MonoBehaviour
         passedNotes = 0;
         generatedNotes = 0;
         correctNotes = 0;
+        globalCounter = 0;
+        streakRes = 0;
     }
 
     // Update is called once per frame
@@ -65,7 +67,6 @@ public class PentagramManager : MonoBehaviour
         else if (globalCounter == generatedNotes)
         {
             partitureFinished = true;
-            Debug.Log("Mamarracho");
             InGame.instance.HasFinishedPartiture();
 
             if (habitant.GetComponent<PartitureHabitant>() != null)
@@ -75,35 +76,17 @@ public class PentagramManager : MonoBehaviour
 
             if (habitant.GetComponent<Tecalli>() != null)
             {
-                if (doOnlyOnceTecalli)
-                {
-                    Debug.Log("Entering Tecalli");
-                    habitant.GetComponent<Tecalli>().finishedPartiture = true;
-                    habitant.GetComponent<Tecalli>().GetPercentage();
-                    doOnlyOnceTecalli = false;
-                }
+                habitant.GetComponent<Tecalli>().finishedPartiture = true;
             }
 
             if (habitant.GetComponent<Acan>() != null)
             {
-                if (doOnlyOnceTecalli)
-                {
-                    Debug.Log("Entering Acan");
-                    habitant.GetComponent<Acan>().finishedPartiture = true;
-                    habitant.GetComponent<Acan>().GetPercentage();
-                    doOnlyOnceTecalli = false;
-                }
+                habitant.GetComponent<Acan>().finishedPartiture = true;
             }
 
             if (habitant.GetComponent<Seti>() != null)
             {
-                if (doOnlyOnceTecalli)
-                {
-                    Debug.Log("Entering Tecalli");
-                    habitant.GetComponent<Seti>().finishedPartiture = true;
-                    habitant.GetComponent<Seti>().GetPercentage();
-                    doOnlyOnceTecalli = false;
-                }
+                habitant.GetComponent<Seti>().finishedPartiture = true;
             }
 
             if (habitant.GetComponent<Audience>() != null)
