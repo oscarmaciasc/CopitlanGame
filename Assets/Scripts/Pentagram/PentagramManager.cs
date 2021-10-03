@@ -18,6 +18,7 @@ public class PentagramManager : MonoBehaviour
     public static PentagramManager instance;
     public bool partitureFinished = false;
     public bool doOnlyOnce = true;
+    public bool doOnlyOnceTecalli = true;
     public int correctNotes = 0;
     public static int globalCounter = 0;
     [SerializeField] private GameObject habitant;
@@ -72,9 +73,37 @@ public class PentagramManager : MonoBehaviour
                 habitant.GetComponent<PartitureHabitant>().partitureFinished = true;
             }
 
-            if (habitant.GetComponent<Mines>() != null)
+            if (habitant.GetComponent<Tecalli>() != null)
             {
-                habitant.GetComponent<Mines>().finishedPartiture = true;
+                if (doOnlyOnceTecalli)
+                {
+                    Debug.Log("Entering Tecalli");
+                    habitant.GetComponent<Tecalli>().finishedPartiture = true;
+                    habitant.GetComponent<Tecalli>().GetPercentage();
+                    doOnlyOnceTecalli = false;
+                }
+            }
+
+            if (habitant.GetComponent<Acan>() != null)
+            {
+                if (doOnlyOnceTecalli)
+                {
+                    Debug.Log("Entering Acan");
+                    habitant.GetComponent<Acan>().finishedPartiture = true;
+                    habitant.GetComponent<Acan>().GetPercentage();
+                    doOnlyOnceTecalli = false;
+                }
+            }
+
+            if (habitant.GetComponent<Seti>() != null)
+            {
+                if (doOnlyOnceTecalli)
+                {
+                    Debug.Log("Entering Tecalli");
+                    habitant.GetComponent<Seti>().finishedPartiture = true;
+                    habitant.GetComponent<Seti>().GetPercentage();
+                    doOnlyOnceTecalli = false;
+                }
             }
 
             if (habitant.GetComponent<Audience>() != null)

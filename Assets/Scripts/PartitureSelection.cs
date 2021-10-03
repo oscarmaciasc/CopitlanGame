@@ -60,7 +60,7 @@ public class PartitureSelection : MonoBehaviour
         }
     }
 
-    public void DeactivateMinePartitures(string name)
+    public void DeactivateMinePartitures(string name, GameObject habitant)
     {
 
         GameData gameData = new GameData();
@@ -76,6 +76,17 @@ public class PartitureSelection : MonoBehaviour
             else
             {
                 partiturePanels[i].SetActive(false);
+            }
+        }
+
+        if (!partituresFound)
+        {
+            if(habitant.name == "Tecalli0")
+            {
+                Tecalli.instance.NotFoundPartitures();
+            } else if(habitant.name == "Acan0")
+            {
+                Acan.instance.NotFoundPartitures();
             }
         }
     }
@@ -97,6 +108,12 @@ public class PartitureSelection : MonoBehaviour
                 partiturePanels[i].SetActive(false);
             }
         }
+
+        if (!partituresFound)
+        {
+            Seti.instance.NotFoundPartitures();
+        }
+        
     }
 
     //*************************************************************************************************************************

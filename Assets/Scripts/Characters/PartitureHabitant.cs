@@ -16,6 +16,8 @@ public class PartitureHabitant : MonoBehaviour
     public bool canShowPartitures = true;
     public string[] newLines;
     public GameObject habitant;
+    
+    
 
     // Start is called before the first frame update
     void Start()
@@ -41,12 +43,12 @@ public class PartitureHabitant : MonoBehaviour
             firstTime = false;
         }
 
-        if (partitureFinished && this.gameObject.GetComponent<Mines>() == null && this.gameObject.GetComponent<Audience>() == null)
+        if (partitureFinished && this.gameObject.GetComponent<Tecalli>() == null && this.gameObject.GetComponent<Acan>() == null && this.gameObject.GetComponent<Seti>() == null && this.gameObject.GetComponent<Audience>() == null)
         {
             canShowPartitures = false;
             // change lines
             this.gameObject.GetComponent<DialogActivator>().lines = newLines;
-        } else if (partitureFinished && ((this.gameObject.GetComponent<Mines>() != null && this.gameObject.GetComponent<Mines>().canPass) || (this.gameObject.GetComponent<Audience>() != null && this.gameObject.GetComponent<Audience>().canPass)))
+        } else if (partitureFinished && ((this.gameObject.GetComponent<Tecalli>() != null && this.gameObject.GetComponent<Tecalli>().canPass) || (this.gameObject.GetComponent<Acan>() != null && this.gameObject.GetComponent<Acan>().canPass) || (this.gameObject.GetComponent<Seti>() != null && this.gameObject.GetComponent<Seti>().canPass) || (this.gameObject.GetComponent<Audience>() != null && this.gameObject.GetComponent<Audience>().canPass)))
         {
             canShowPartitures = false;
             GameManager.instance.vPressed = false;
@@ -61,7 +63,7 @@ public class PartitureHabitant : MonoBehaviour
 
     public bool HasPartituresFilter()
     {
-        if (habitant.GetComponent<Mines>() != null || habitant.GetComponent<Audience>() != null)
+        if (habitant.GetComponent<Tecalli>() != null || habitant.GetComponent<Acan>() != null || habitant.GetComponent<Seti>() != null|| habitant.GetComponent<Audience>() != null)
         {
             return true;
         }

@@ -29,6 +29,7 @@
   <MusicSheets>
     <MusicSheet name="partiture1" />
     <MusicSheet name="partiture2" />
+    <MusicSheet name="partiture4" />
     <MusicSheet name="partiture5" />
     <MusicSheet name="partiture9" />
   </MusicSheets>
@@ -48,7 +49,7 @@
   </AudienceResults>
   <MineEntrances>
     <MineEntrance name="tecalliEntrance">
-      <shouldBeActive>true</shouldBeActive>
+      <shouldBeActive>false</shouldBeActive>
     </MineEntrance>
     <MineEntrance name="acanEntrance">
       <shouldBeActive>false</shouldBeActive>

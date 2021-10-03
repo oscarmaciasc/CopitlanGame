@@ -75,15 +75,45 @@ public class DialogManager : MonoBehaviour
                             habitant.GetComponent<NecalliGuard>().conversationFinished = true;
                         }
 
-                        if (habitant.GetComponent<Mines>() != null)
+                        if (habitant.GetComponent<Tecalli>() != null)
                         {
-                            if(!habitant.GetComponent<Mines>().hasFinished)
+                            if (!habitant.GetComponent<Tecalli>().hasFinished)
                             {
-                                habitant.GetComponent<Mines>().LimitPartitures(habitant);
-                            } else {
-                                habitant.GetComponent<Mines>().canPass = true;
+                                habitant.GetComponent<Tecalli>().LimitPartitures();
+                            }
+                            else
+                            {
+                                habitant.GetComponent<Tecalli>().canPass = true;
+                                habitant.GetComponent<Tecalli>().finishedPartiture = true;
                             }
                         }
+
+                        if (habitant.GetComponent<Acan>() != null)
+                        {
+                            if (!habitant.GetComponent<Acan>().hasFinished)
+                            {
+                                habitant.GetComponent<Acan>().LimitPartitures();
+                            }
+                            else
+                            {
+                                habitant.GetComponent<Acan>().canPass = true;
+                                habitant.GetComponent<Acan>().finishedPartiture = true;
+                            }
+                        }
+
+                        if (habitant.GetComponent<Seti>() != null)
+                        {
+                            if (!habitant.GetComponent<Seti>().hasFinished)
+                            {
+                                habitant.GetComponent<Seti>().LimitPartitures();
+                            }
+                            else
+                            {
+                                habitant.GetComponent<Seti>().canPass = true;
+                                habitant.GetComponent<Seti>().finishedPartiture = true;
+                            }
+                        }
+
                         if (habitant.GetComponent<Audience>() != null)
                         {
                             habitant.GetComponent<Audience>().LimitPartitures(habitant);

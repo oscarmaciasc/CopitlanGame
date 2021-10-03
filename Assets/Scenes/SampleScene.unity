@@ -1606,25 +1606,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1146112887}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f845d56d424622b42a678ce12e9636d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 78c849733a0f44947bffa9e165c6d470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goodLines:
+  - Estoy agradecida, me has alegrado el dia
+  badLines:
+  - No me terminas de convencer, intentalo de nuevo
+  hasFinished: 0
+  finishedPartiture: 0
   theEntrance: {fileID: 996694214}
   canPass: 0
   myAnim: {fileID: 1146112890}
   moveSpeed: 1
-  finishedPartiture: 0
-  percentageToPass: 80
-  correctNotes: 0
   pentagramPanel: {fileID: 282387092}
   partitureSelectionPanel: {fileID: 80739966}
-  goodLines:
-  - Seti significa brillante en nahuatl
-  - Nuestro lider Necalli bautizo asi esta mina
-  - Es un hombre muy inteligente
-  badLines:
-  - Regresa por donde veniste
-  - No he sentido nada
+  canActivatePartiturePanel: 1
+  notFound: 0
+  percentageToPass: 80
 --- !u!114 &1146112889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2167,24 +2166,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1328285339}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f845d56d424622b42a678ce12e9636d0, type: 3}
+  m_Script: {fileID: 11500000, guid: b3ef94a655f86ad4aa76bc9dd0089a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goodLines:
+  - Estoy agradecida, me has alegrado el dia
+  badLines:
+  - No me terminas de convencer, intentalo de nuevo
+  hasFinished: 0
+  finishedPartiture: 0
   theEntrance: {fileID: 1297083168}
   canPass: 0
   myAnim: {fileID: 1328285342}
   moveSpeed: 1
-  finishedPartiture: 0
-  percentageToPass: 65
-  correctNotes: 0
   pentagramPanel: {fileID: 282387092}
   partitureSelectionPanel: {fileID: 80739966}
-  goodLines:
-  - En la mina podrias encontrar sorpresas
-  - Mucha suerte viajero!
-  badLines:
-  - Me he quedado mas aburrido que antes
-  - Adios
+  canActivatePartiturePanel: 1
+  notFound: 0
+  percentageToPass: 65
 --- !u!114 &1328285341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3040,22 +3039,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1583705629}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f845d56d424622b42a678ce12e9636d0, type: 3}
+  m_Script: {fileID: 11500000, guid: c9985525b8f67de4cb4243c5f7f9c472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theEntrance: {fileID: 1192244553}
-  canPass: 0
-  myAnim: {fileID: 1583705637}
-  moveSpeed: 1
-  finishedPartiture: 0
-  percentageToPass: 50
-  correctNotes: 0
-  pentagramPanel: {fileID: 282387092}
-  partitureSelectionPanel: {fileID: 80739966}
   goodLines:
   - Estoy agradecida, me has alegrado el dia
   badLines:
   - No me terminas de convencer, intentalo de nuevo
+  hasFinished: 0
+  finishedPartiture: 0
+  theEntrance: {fileID: 1192244553}
+  canPass: 0
+  myAnim: {fileID: 1583705637}
+  moveSpeed: 1
+  pentagramPanel: {fileID: 282387092}
+  partitureSelectionPanel: {fileID: 80739966}
+  canActivatePartiturePanel: 1
+  notFound: 0
+  percentageToPass: 50
 --- !u!95 &1583705637
 Animator:
   serializedVersion: 3
