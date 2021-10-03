@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public bool escapePressed;
     public bool vPressed;
+    public bool pPressed;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     {
         escapePressed = false;
         vPressed = false;
+        pPressed = false;
     }
 
     // Update is called once per frame
@@ -36,7 +38,7 @@ public class GameManager : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.P))
         {
-            //
+            pPressed = true;
             Debug.Log("Menu de pausa");
         }
 

@@ -14,6 +14,7 @@ public class InGame : MonoBehaviour
     [SerializeField] private GameObject successfulSavedExitPanel;
     [SerializeField] public GameObject partitureSelectionPanel;
     [SerializeField] public GameObject pentagramPanel;
+    [SerializeField] private GameObject PauseMenuPanel;
     [SerializeField] private GameObject dialogBox; 
 
     private void Awake()
@@ -44,17 +45,33 @@ public class InGame : MonoBehaviour
 
     private void CheckForInputs()
     {
-        if (GameManager.instance.escapePressed == true)
+        if (GameManager.instance.escapePressed)
         {
             exitPanel.SetActive(true);
         }
-        if (GameManager.instance.vPressed == true)
+        if (GameManager.instance.vPressed)
         {
             if (partitureSelectionPanel.activeInHierarchy == false)
             {
                 ActivatePartitureSelectionPanel();
             }
         }
+        if (GameManager.instance.pPressed) {
+            if (PauseMenuPanel.activeInHierarchy == false)
+            {
+                ActivatePauseMenuPanel();
+            }
+        }
+    }
+
+    public void ActivatePauseMenuPanel()
+    {
+        PauseMenuPanel.SetActive(true);
+    }
+
+    public void DeactivatePauseMenuPanel()
+    {
+        PauseMenuPanel.SetActive(false);
     }
 
 
