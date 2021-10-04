@@ -17,6 +17,8 @@
   <Permissions>
     <Permission name="outterCircle" />
     <Permission name="triangle" />
+    <Permission name="innerCircle" />
+    <Permission name="necalliRoyalPalace" />
   </Permissions>
   <Flutes>
     <Flute name="woodenFlute" />
@@ -31,17 +33,19 @@
   <MusicSheets>
     <MusicSheet name="partiture1" />
     <MusicSheet name="partiture2" />
+    <MusicSheet name="partiture5" />
     <MusicSheet name="partiture9" />
+    <MusicSheet name="partiture10" />
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">
-      <result>84</result>
+      <result>100</result>
     </AudienceResult>
     <AudienceResult name="quizaniResult">
-      <result>0</result>
+      <result>100</result>
     </AudienceResult>
     <AudienceResult name="naranResult">
-      <result>0</result>
+      <result>64</result>
     </AudienceResult>
     <AudienceResult name="necalliResult">
       <result>0</result>

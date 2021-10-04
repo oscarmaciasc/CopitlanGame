@@ -43,6 +43,8 @@ public class Audience : MonoBehaviour
     {
         if (finishedPartiture)
         {
+            Debug.Log("Notas correctas: " + PentagramManager.instance.correctNotes);
+            Debug.Log("Notes: " + PentagramManager.instance.TotalNotes());
             if (((PentagramManager.instance.correctNotes * 100) / (PentagramManager.instance.TotalNotes())) >= percentageToPass)
             {
                 canPass = true;
@@ -65,7 +67,7 @@ public class Audience : MonoBehaviour
                 else if (habitant.name == "Quizani")
                 {
                     XmlManager.instance.SaveAudienceResult(1, res);
-                    if (!gameData.DoesHavePartiture("innerCircle"))
+                    if (!gameData.DoesHavePermit("innerCircle"))
                     {
                         XmlManager.instance.AddPermission("innerCircle");
                     }
@@ -73,9 +75,9 @@ public class Audience : MonoBehaviour
                 else if (habitant.name == "Naran")
                 {
                     XmlManager.instance.SaveAudienceResult(2, res);
-                    if (!gameData.DoesHavePartiture("innerCircle"))
+                    if (!gameData.DoesHavePermit("necalliRoyalPalace"))
                     {
-                        XmlManager.instance.AddPermission("naranRoyalPalace");
+                        XmlManager.instance.AddPermission("necalliRoyalPalace");
                     }
                 }
 

@@ -9,14 +9,11 @@ public class Leader : MonoBehaviour
     public int quizaniResult = 0;
     public int naranResult = 0;
     public int res = 0;
-    public GameObject kasakir;
-    public GameObject quizani;
-    public GameObject naran;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame

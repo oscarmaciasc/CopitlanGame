@@ -46,7 +46,11 @@ public class PentagramManager : MonoBehaviour
         generatedNotes = 0;
         correctNotes = 0;
         globalCounter = 0;
-        streakRes = 0;
+        streakRes = 0;  
+        maxStreak = 0;
+        maxStreak2 = 0;
+        auxStreak = 0;
+        streak = 0;
     }
 
     // Update is called once per frame
@@ -92,17 +96,14 @@ public class PentagramManager : MonoBehaviour
             if (habitant.GetComponent<Audience>() != null)
             {
                 habitant.GetComponent<Audience>().finishedPartiture = true;
-                
-                    habitant.GetComponent<Audience>().GetPercentage(habitant);
-                    habitant.GetComponent<Audience>().ChangeDirigentDialogLines(habitant);
-                   
-                
+                habitant.GetComponent<Audience>().GetPercentage(habitant);
+                habitant.GetComponent<Audience>().ChangeDirigentDialogLines(habitant);
             }
 
             if (habitant.GetComponent<Leader>() != null)
             {
                 // do calculate function when partitureFinished
-                if (habitant.name == "Naran")
+                if (habitant.name == "Necalli")
                 {
                     habitant.GetComponent<Leader>().GetAudienceResults();
                 }

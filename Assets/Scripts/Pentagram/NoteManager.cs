@@ -152,35 +152,46 @@ public class NoteManager : MonoBehaviour
             SetGreen();
             PentagramManager.globalCounter++;
             Debug.Log(PentagramManager.globalCounter);
+            //Debug.Log("ARRIBA");
 
             noteSuccessful = true;
+            Debug.Log("streakAFUERA: " + PentagramManager.streak);
             if (PentagramManager.streak < Partitures.instance.limitStreak)
             {
+                Debug.Log("streakADENTRO: " + PentagramManager.streak);
                 PentagramManager.streak++;
+                 Debug.Log("streakADENTRO++: " + PentagramManager.streak);
             }
+            Debug.Log("streakDESPUES: " + PentagramManager.streak);
+            //Debug.Log("ARRIBA2");
 
             if (Partitures.instance.canAddAuxStreak)
             {
                 PentagramManager.auxStreak++;
             }
+            //Debug.Log("ARRIBA3");
 
             // Setting the max streak to calculate the dirigent aprobation percentage
             if (PentagramManager.streak > PentagramManager.maxStreak)
             {
+                Debug.Log("Entrando");
                 PentagramManager.maxStreak = PentagramManager.streak;
             }
+            //Debug.Log("ARRIBA4");
 
             if (PentagramManager.maxStreak == Partitures.instance.limitStreak)
             {
+                Debug.Log("Entrando2");
                 if (PentagramManager.auxStreak > PentagramManager.maxStreak2)
                 {
+                    Debug.Log("Entrando3");
                     PentagramManager.maxStreak2 = PentagramManager.auxStreak;
                 }
             }
-
+            
             PentagramManager.streakRes = PentagramManager.maxStreak + PentagramManager.maxStreak2;
-            //Debug.Log("streakRes: " + PentagramManager.streakRes + " = maxStreak[" + PentagramManager.maxStreak + "] + maxStreak2[" + PentagramManager.maxStreak2 + "]");
-
+            Debug.Log("streakRes: " + PentagramManager.streakRes + " = maxStreak[" + PentagramManager.maxStreak + "] + maxStreak2[" + PentagramManager.maxStreak2 + "]");
+            //Debug.Log("ARRIBA5");
 
             canPress = false;
             haveBeenPressed = true;
