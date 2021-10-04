@@ -20,6 +20,7 @@ public class InGame : MonoBehaviour
     [SerializeField] private GameObject acanEntrance;
     [SerializeField] private GameObject setiEntrance;
     [SerializeField] private GameObject PauseMenuPanel;
+    private bool pauseMenuHasBeenStarted = false;
 
 
     private void Awake()
@@ -91,7 +92,13 @@ public class InGame : MonoBehaviour
 
     public void ActivatePauseMenuPanel()
     {
-        PauseMenuPanel.SetActive(true);
+        if(!this.pauseMenuHasBeenStarted) {
+            PauseMenuPanel.SetActive(true);
+            pauseMenuHasBeenStarted = true;
+        }
+        else {
+            PauseMenu.instance.ActivatePanel();
+        }
     }
 
     public void DeactivatePauseMenuPanel()
