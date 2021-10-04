@@ -12329,6 +12329,7 @@ MonoBehaviour:
   passedNotes: 0
   partitureFinished: 0
   doOnlyOnce: 1
+  doOnlyOnceTecalli: 1
   correctNotes: 0
   habitant: {fileID: 0}
 --- !u!1 &2075859937
@@ -13279,13 +13280,34 @@ MonoBehaviour:
   InfoButton: {fileID: 2843467688950999838}
   BackButton: {fileID: 1732573993108084899}
   MapPanel: {fileID: 871011769126704850}
-  InventoryPanel: {fileID: 0}
+  InventoryPanel: {fileID: 4372299050502948161}
   BalloonPanel: {fileID: 4738738446841796721}
   InfoPanel: {fileID: 7275822846277882769}
   InvResourcesPanel: {fileID: 1071997561188014814}
   InvFlutesPanel: {fileID: 7787231479729074351}
   InvPartituresPanel: {fileID: 1629713639967789303}
-  PauseMenuPanel: {fileID: 0}
+  resourceQuantity:
+  - {fileID: 5759314086048265375}
+  - {fileID: 6845749914717222444}
+  - {fileID: 7253384183630626933}
+  - {fileID: 1626183913572132939}
+  flutes:
+  - {fileID: 6047916823599748827}
+  - {fileID: 962457287542606425}
+  - {fileID: 6576819389343045850}
+  - {fileID: 5949271668682311735}
+  partitures:
+  - {fileID: 2817840374969812463}
+  - {fileID: 8701180903757218762}
+  - {fileID: 169696133499044184}
+  - {fileID: 6737294672884268413}
+  - {fileID: 2434433859958009581}
+  - {fileID: 218852402485565699}
+  - {fileID: 7873352601658654827}
+  - {fileID: 1036976184923838791}
+  - {fileID: 7811960368175495569}
+  - {fileID: 5600190783082588906}
+  PauseMenuPanel: {fileID: 120873221050265937}
 --- !u!1 &169696133499044184
 GameObject:
   m_ObjectHideFlags: 0
@@ -22414,7 +22436,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2711841127790625547
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23170,7 +23192,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6462435437014273439
 RectTransform:
   m_ObjectHideFlags: 0
