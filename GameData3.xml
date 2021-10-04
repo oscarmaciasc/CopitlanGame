@@ -36,7 +36,7 @@
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">
-      <result>88</result>
+      <result>84</result>
     </AudienceResult>
     <AudienceResult name="quizaniResult">
       <result>0</result>
@@ -53,7 +53,7 @@
       <shouldBeActive>true</shouldBeActive>
     </MineEntrance>
     <MineEntrance name="acanEntrance">
-      <shouldBeActive>true</shouldBeActive>
+      <shouldBeActive>false</shouldBeActive>
     </MineEntrance>
     <MineEntrance name="setiEntrance">
       <shouldBeActive>false</shouldBeActive>

@@ -77,7 +77,7 @@ public class InGame : MonoBehaviour
         {
             if (partitureSelectionPanel.activeInHierarchy == false)
             {
-                ActivatePartitureSelectionPanel();
+                ActivatePartitureSelectionPanelFreely();
             }
         }
         if (GameManager.instance.pPressed)
@@ -111,6 +111,13 @@ public class InGame : MonoBehaviour
             PartitureSelection.instance.DeactivateNoOwnedPartiturePanels();
             PartitureSelection.instance.DeativateArrowsPartitureSelection();
         }
+    }
+
+    public void ActivatePartitureSelectionPanelFreely()
+    {
+        partitureSelectionPanel.SetActive(true);
+        PartitureSelection.instance.DeactivateNoOwnedPartiturePanels();
+        PartitureSelection.instance.DeativateArrowsPartitureSelection();
     }
 
     public void DeactivatePartitureSelectionPanel()
