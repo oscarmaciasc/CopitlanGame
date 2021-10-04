@@ -114,9 +114,6 @@ public class HabitantMovement : MonoBehaviour
         randomX = Random.Range(-5, 5);
         randomY = Random.Range(-5, 5);
         firstMovement = Random.Range(1, 2);
-        Debug.Log("Random X: " + randomX);
-        Debug.Log("Random Y: " + randomY);
-        Debug.Log("First Movement: " + firstMovement);
     }
 
     private void MoveXTest()
