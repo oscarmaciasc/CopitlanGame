@@ -17,8 +17,6 @@ public class PartitureHabitant : MonoBehaviour
     public string[] newLines;
     public GameObject habitant;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +38,6 @@ public class PartitureHabitant : MonoBehaviour
         //     Debug.Log("pongo a 0 la racha");
         //     PentagramManager.streak = 0;
         // }
-
 
         if (this.canActivate && this.conversationFinished && firstTime && canShowPartitures)
         {
