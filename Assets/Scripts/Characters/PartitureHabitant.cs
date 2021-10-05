@@ -34,12 +34,12 @@ public class PartitureHabitant : MonoBehaviour
         // If its not an audience streak = 0
         
         // We have to identify the specific gameobject were talking to but how do we do that if we dont interact
-        if (this.gameObject.GetComponent<Audience>() == null)
-        {
-            Debug.Log("Hago referencia a: " + this.gameObject.name);
-            Debug.Log("pongo a 0 la racha");
-            PentagramManager.streak = 0;
-        }
+        // if (this.gameObject.GetComponent<Audience>() == null)
+        // {
+        //     Debug.Log("Hago referencia a: " + this.gameObject.name);
+        //     Debug.Log("pongo a 0 la racha");
+        //     PentagramManager.streak = 0;
+        // }
 
 
         if (this.canActivate && this.conversationFinished && firstTime && canShowPartitures)
@@ -48,13 +48,13 @@ public class PartitureHabitant : MonoBehaviour
             firstTime = false;
         }
 
-        if (partitureFinished && this.gameObject.GetComponent<Tecalli>() == null && this.gameObject.GetComponent<Acan>() == null && this.gameObject.GetComponent<Seti>() == null && this.gameObject.GetComponent<Audience>() == null)
+        if (partitureFinished && this.gameObject.GetComponent<Tecalli>() == null && this.gameObject.GetComponent<Acan>() == null && this.gameObject.GetComponent<Seti>() == null && this.gameObject.GetComponent<Audience>() == null && this.gameObject.GetComponent<Leader>() == null)
         {
             canShowPartitures = false;
             // change lines
             this.gameObject.GetComponent<DialogActivator>().lines = newLines;
         }
-        else if (partitureFinished && ((this.gameObject.GetComponent<Tecalli>() != null && this.gameObject.GetComponent<Tecalli>().canPass) || (this.gameObject.GetComponent<Acan>() != null && this.gameObject.GetComponent<Acan>().canPass) || (this.gameObject.GetComponent<Seti>() != null && this.gameObject.GetComponent<Seti>().canPass) || (this.gameObject.GetComponent<Audience>() != null && this.gameObject.GetComponent<Audience>().canPass)))
+        else if (partitureFinished && ((this.gameObject.GetComponent<Tecalli>() != null && this.gameObject.GetComponent<Tecalli>().canPass) || (this.gameObject.GetComponent<Acan>() != null && this.gameObject.GetComponent<Acan>().canPass) || (this.gameObject.GetComponent<Seti>() != null && this.gameObject.GetComponent<Seti>().canPass) || (this.gameObject.GetComponent<Audience>() != null && this.gameObject.GetComponent<Audience>().canPass) || (this.gameObject.GetComponent<Leader>() != null && this.gameObject.GetComponent<Leader>().canPass)))
         {
             canShowPartitures = false;
             GameManager.instance.vPressed = false;
@@ -69,7 +69,7 @@ public class PartitureHabitant : MonoBehaviour
 
     public bool HasPartituresFilter()
     {
-        if (habitant.GetComponent<Tecalli>() != null || habitant.GetComponent<Acan>() != null || habitant.GetComponent<Seti>() != null || habitant.GetComponent<Audience>() != null)
+        if (habitant.GetComponent<Tecalli>() != null || habitant.GetComponent<Acan>() != null || habitant.GetComponent<Seti>() != null || habitant.GetComponent<Audience>() != null || habitant.GetComponent<Leader>() != null)
         {
             return true;
         }

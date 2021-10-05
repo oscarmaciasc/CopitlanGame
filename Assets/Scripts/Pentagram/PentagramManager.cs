@@ -18,7 +18,6 @@ public class PentagramManager : MonoBehaviour
     public static PentagramManager instance;
     public bool partitureFinished = false;
     public bool doOnlyOnce = true;
-    public bool doOnlyOnceTecalli = true;
     public int correctNotes = 0;
     public static int globalCounter = 0;
     [SerializeField] private GameObject habitant;
@@ -102,10 +101,14 @@ public class PentagramManager : MonoBehaviour
 
             if (habitant.GetComponent<Leader>() != null)
             {
-                // do calculate function when partitureFinished
-                if (habitant.name == "Necalli")
+                habitant.GetComponent<Leader>().finishedPartiture = true;
+                habitant.GetComponent<Leader>().GetAudienceResults();
+                habitant.GetComponent<Leader>().GetPercentage(habitant);
+                habitant.GetComponent<Leader>().ChangeLeaderDialogLines(habitant);
+                if(doOnlyOnce && habitant.GetComponent<Leader>().canActivateFinal)
                 {
-                    habitant.GetComponent<Leader>().GetAudienceResults();
+                    habitant.GetComponent<Leader>().GetCityHappinessPercentage();
+                    doOnlyOnce = false;
                 }
             }
 

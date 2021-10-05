@@ -61,6 +61,7 @@ public class NaranGuard : MonoBehaviour
             // Finish the movement
             myAnim.SetFloat("moveX", 0);
             theEntrance.SetActive(true);
+            XmlManager.instance.SaveDirigentEntranceState(2, true);
         }
     }
 }

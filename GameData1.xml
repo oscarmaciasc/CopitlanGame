@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="game1" gender="false">
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="pablo marmol" gender="false">
   <Resources>
     <Resource name="wood">
       <quantity>0</quantity>
@@ -54,4 +54,15 @@
       <shouldBeActive>false</shouldBeActive>
     </MineEntrance>
   </MineEntrances>
+  <DirigentEntrances>
+    <DirigentEntrance name="kasakirEntrance">
+      <shouldBeActive>false</shouldBeActive>
+    </DirigentEntrance>
+    <DirigentEntrance name="quizaniEntrance">
+      <shouldBeActive>false</shouldBeActive>
+    </DirigentEntrance>
+    <DirigentEntrance name="naranEntrance">
+      <shouldBeActive>false</shouldBeActive>
+    </DirigentEntrance>
+  </DirigentEntrances>
 </gameData>

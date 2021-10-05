@@ -5688,6 +5688,7 @@ MonoBehaviour:
   generatedNotes: 0
   passedNotes: 0
   partitureFinished: 0
+  doOnlyOnce: 1
   correctNotes: 0
   habitant: {fileID: 0}
 --- !u!212 &893502261
@@ -27141,6 +27142,13 @@ MonoBehaviour:
   partitureSelectionPanel: {fileID: 954209976}
   pentagramPanel: {fileID: 893502259}
   dialogBox: {fileID: 2009824384}
+  tecalliEntrance: {fileID: 0}
+  acanEntrance: {fileID: 0}
+  setiEntrance: {fileID: 0}
+  kasakirEntrance: {fileID: 0}
+  quizaniEntrance: {fileID: 0}
+  naranEntrance: {fileID: 0}
+  PauseMenuPanel: {fileID: 0}
 --- !u!114 &1301176842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27262,7 +27270,7 @@ RectTransform:
   - {fileID: 954209980}
   - {fileID: 2009824387}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -27987,6 +27995,18 @@ MonoBehaviour:
   res: 0
   canPass: 0
   notFound: 0
+  canActivatePartiturePanel: 1
+  goodLinesKasakir:
+  - Adelante, continua tu camino viajero
+  - Quizani no es facil de convencer
+  goodLinesQuizani:
+  - Adelante, continua tu camino viajero
+  - Naran no es facil de convencer
+  goodLinesNaran:
+  - Has llegado demasiado lejos
+  - continua con tu camino y convence al lider Necalli
+  hasFinished: 0
+  habitant: {fileID: 0}
   partitureSelectionPanel: {fileID: 954209976}
 --- !u!114 &1470364016
 MonoBehaviour:
@@ -28180,7 +28200,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1487973793
 GameObject:
@@ -29351,50 +29371,6 @@ RectTransform:
   m_AnchoredPosition: {x: -25, y: 0}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 1, y: 0.5}
---- !u!1 &1676776685
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1676776687}
-  - component: {fileID: 1676776686}
-  m_Layer: 0
-  m_Name: Area Entrance
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1676776686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1676776685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 696d3e3d955284c448839e0281d531b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transitionName: InGame-Quizani
---- !u!4 &1676776687
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1676776685}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.22, y: -1.11, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1680789108
 GameObject:
   m_ObjectHideFlags: 0
@@ -29851,6 +29827,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798228496}
   m_CullTransparentMesh: 1
+--- !u!1001 &1816753997
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1789286872359436609, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: transitionName
+      value: InGame-Quizani
+      objectReference: {fileID: 0}
+    - target: {fileID: 2898164435462665868, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 2898164435462665868, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239821966134746270, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239821966134746270, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239821966134746270, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239821966134746270, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239821966134746270, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239821966134746270, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239821966134746270, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239821966134746270, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239821966134746270, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239821966134746270, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239821966134746270, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8905299658810223276, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_Name
+      value: Area Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021669119073903171, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: areaToLoad
+      value: SampleScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021669119073903171, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: areaTransitionName
+      value: InGame-Quizani
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
 --- !u!1 &1888088900
 GameObject:
   m_ObjectHideFlags: 0

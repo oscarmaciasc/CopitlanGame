@@ -152,10 +152,15 @@ public class PartitureSelection : MonoBehaviour
     // Leader
     public void DeactivateLeaderPartitures(string name)
     {
+
+        GameData gameData = new GameData();
+        gameData = XmlManager.instance.LoadGame();
+
         for (int i = 0; i < 10; i++)
         {
-            if (partiturePanels[i].name == name)
+            if ((gameData.DoesHavePartiture("partiture" + (i + 1))) && (partiturePanels[i].name == name))
             {
+                partituresFound = true;
                 partiturePanels[i].SetActive(true);
             }
             else
@@ -167,7 +172,7 @@ public class PartitureSelection : MonoBehaviour
         // If partitures are not found set boolean in Audience algorithm
         if (!partituresFound)
         {
-            Audience.instance.NotFoundPartitures();
+            Leader.instance.NotFoundPartitures();
 
         }
     }

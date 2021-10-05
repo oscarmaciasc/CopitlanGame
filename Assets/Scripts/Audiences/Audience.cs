@@ -19,18 +19,59 @@ public class Audience : MonoBehaviour
     private string[] QuizaniSuccess1 = { "Me has convencido", "te otorgo el permiso del circulo interior para que vayas y hagas entrar en razon a Naran", "esto tiene que ser escuchado" };
     private string[] QuizaniSuccess2 = { "Estoy realmente sorprendido", "te otorgo el permiso del circulo interior para que vayas y hagas entrar en razon a Naran", "suerte viajero" };
     private string[] QuizaniSuccess3 = { "Estoy profundamente conmovido", "me siento feliz y diferente, como si mi alma sonriera", "te otorgo el permiso del circulo interior para que vayas y hagas entrar en razon a Naran" };
-    private string[] QuizaniFailure = { "Ni siquiera tocaste bien" , "se escuchaba algo extraño", "vuelve a intentarlo"};
+    private string[] QuizaniFailure = { "Ni siquiera tocaste bien", "se escuchaba algo extraño", "vuelve a intentarlo" };
     private string[] NaranSucces1 = { "Me has convencido", "adelante, ve con nuestro lider" };
     private string[] NaranSucces2 = { "Estoy realmente sorprendido", "adelante, nuestro lider Necalli estara feliz de escuchar esto" };
-    private string[] NaranSucces3 = { "Estoy profundamente conmovido" , "ahora la vida cobra color y me siento muy feliz", "no tengo palabras para agradecerte", "tienes que mostrarle esto al lider Naran, sigue tu camino"};
-    private string[] NaranFailure = { "No veo por que el lider deberia de escuchar algo asi" , "reintentalo a ver si me gusta esta vez..."};
+    private string[] NaranSucces3 = { "Estoy profundamente conmovido", "ahora la vida cobra color y me siento muy feliz", "no tengo palabras para agradecerte", "tienes que mostrarle esto al lider Naran, sigue tu camino" };
+    private string[] NaranFailure = { "No veo por que el lider deberia de escuchar algo asi", "reintentalo a ver si me gusta esta vez..." };
+    public string[] goodLinesKasakir = { "Adelante, continua tu camino viajero", "Quizani no es facil de convencer" };
+    public string[] goodLinesQuizani = { "Adelante, continua tu camino viajero", "Naran no es facil de convencer" };
+    public string[] goodLinesNaran = { "Has llegado demasiado lejos", "continua con tu camino y convence al lider Necalli" };
     private bool successInterpretation = false;
+    public bool hasFinished = false;
+    public GameObject habitant;
     [SerializeField] private GameObject partitureSelectionPanel;
 
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
+
+        GameData gameData = new GameData();
+        gameData = XmlManager.instance.LoadGame();
+
+        if (gameData.audienceResult[0].result >= 60)
+        {
+            habitant = GameObject.Find("Kasakir");
+            if (habitant != null)
+            {
+                habitant.GetComponent<Audience>().hasFinished = true;
+                habitant.GetComponent<DialogActivator>().lines = goodLinesKasakir;
+                habitant.GetComponent<PartitureHabitant>().canShowPartitures = false;
+            }
+        }
+
+        if (gameData.audienceResult[1].result >= 70)
+        {
+             habitant = GameObject.Find("Quizani");
+            if (habitant != null)
+            {
+                habitant.GetComponent<Audience>().hasFinished = true;
+                habitant.GetComponent<DialogActivator>().lines = goodLinesQuizani;
+                habitant.GetComponent<PartitureHabitant>().canShowPartitures = false;
+            }
+        }
+
+        if (gameData.audienceResult[2].result >= 80)
+        {
+             habitant = GameObject.Find("Naran");
+            if (habitant != null)
+            {
+                habitant.GetComponent<Audience>().hasFinished = true;
+                habitant.GetComponent<DialogActivator>().lines = goodLinesNaran;
+                habitant.GetComponent<PartitureHabitant>().canShowPartitures = false;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -59,7 +100,7 @@ public class Audience : MonoBehaviour
                 if (habitant.name == "Kasakir")
                 {
                     XmlManager.instance.SaveAudienceResult(0, res);
-                    if(!gameData.DoesHavePermit("triangle"))
+                    if (!gameData.DoesHavePermit("triangle"))
                     {
                         XmlManager.instance.AddPermission("triangle");
                     }
@@ -111,7 +152,8 @@ public class Audience : MonoBehaviour
             else if (habitant.name == "Naran")
             {
                 PartitureSelection.instance.DeactivateDirigentPartitures("PanelPartiture7", "PanelPartiture8", "PanelPartiture9");
-            } else if (habitant.name == "Necalli")
+            }
+            else if (habitant.name == "Necalli")
             {
                 PartitureSelection.instance.DeactivateLeaderPartitures("PanelPartiture10");
             }

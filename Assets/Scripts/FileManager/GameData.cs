@@ -36,6 +36,9 @@ public class GameData
     [XmlArray("MineEntrances")]
     public MineEntrance[] mineEntrance { get; set; }
 
+    [XmlArray("DirigentEntrances")]
+    public DirigentEntrance[] dirigentEntrance { get; set; }
+
 
     public GameData(){}
 
@@ -74,6 +77,11 @@ public class GameData
         this.mineEntrance[1] = new MineEntrance();
         this.mineEntrance[2] = new MineEntrance();
 
+        this.dirigentEntrance = new DirigentEntrance[3];
+        this.dirigentEntrance[0] = new DirigentEntrance();
+        this.dirigentEntrance[1] = new DirigentEntrance();
+        this.dirigentEntrance[2] = new DirigentEntrance();
+
 
         this.name = playerName;
         this.isWoman = playerGender;
@@ -104,11 +112,17 @@ public class GameData
         this.mineEntrance[1].shouldBeActive = false;
         this.mineEntrance[2].name = "setiEntrance";
         this.mineEntrance[2].shouldBeActive = false;
+        this.dirigentEntrance[0].name = "kasakirEntrance";
+        this.dirigentEntrance[0].shouldBeActive = false;
+        this.dirigentEntrance[1].name = "quizaniEntrance";
+        this.dirigentEntrance[1].shouldBeActive = false;
+        this.dirigentEntrance[2].name = "naranEntrance";
+        this.dirigentEntrance[2].shouldBeActive = false;
 
     }
 
     // Player Update
-    public GameData(string name, Resource[] resource, Permission[] permission, Flute[] flute, Balloon[] balloon, MusicalMasteryLvl[] musicalMasteryLvl, MusicSheet[] musicSheet, AudienceResult[] audienceResult, MineEntrance[] mineEntrance) {
+    public GameData(string name, Resource[] resource, Permission[] permission, Flute[] flute, Balloon[] balloon, MusicalMasteryLvl[] musicalMasteryLvl, MusicSheet[] musicSheet, AudienceResult[] audienceResult, MineEntrance[] mineEntrance, DirigentEntrance[] dirigentEntrance) {
         this.name = name;
         this.resource = resource;
         this.permission = permission;
@@ -118,6 +132,7 @@ public class GameData
         this.musicSheet = musicSheet;
         this.audienceResult = audienceResult;
         this.mineEntrance = mineEntrance;
+        this.dirigentEntrance = dirigentEntrance;
     }
 
     public bool DoesHavePermit(string permitType) {
@@ -138,18 +153,5 @@ public class GameData
         }
         
         return false;
-    }
-
-    public int ReturnAudienceResult(int id)
-    {
-        for(int i = 0; i < audienceResult.Length; i++)
-        {
-            if(id == i)
-            {
-                return audienceResult[i].result;
-            }
-        } 
-        return 0;
-        
     }
 }

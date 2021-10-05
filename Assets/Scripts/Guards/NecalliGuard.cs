@@ -12,7 +12,6 @@ public class NecalliGuard : MonoBehaviour
     public Animator myAnim;
     public float moveSpeed;
     private Vector2 destiny;
-    [SerializeField] private GameObject theEntrance;
 
     public bool conversationFinished = false;
 
@@ -29,7 +28,7 @@ public class NecalliGuard : MonoBehaviour
 
         gameData = XmlManager.instance.LoadGame();
 
-        if (gameData.DoesHavePermit("naranRoyalPalace"))
+        if (gameData.DoesHavePermit("necalliRoyalPalace"))
         {
             // The player has the requested permission
             habitant.GetComponent<DialogActivator>().lines = permit;
@@ -60,7 +59,6 @@ public class NecalliGuard : MonoBehaviour
         {
             // Finish the movement
             myAnim.SetFloat("moveX", 0);
-            theEntrance.SetActive(true);
         }
     }
 }

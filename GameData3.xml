@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="game3" gender="false">
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="federer" gender="false">
   <Resources>
     <Resource name="wood">
-      <quantity>58</quantity>
+      <quantity>0</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>200</quantity>
+      <quantity>0</quantity>
     </Resource>
     <Resource name="gold">
-      <quantity>11</quantity>
+      <quantity>0</quantity>
     </Resource>
     <Resource name="fuel">
-      <quantity>14</quantity>
+      <quantity>0</quantity>
     </Resource>
   </Resources>
   <Permissions>
@@ -22,7 +22,6 @@
   </Permissions>
   <Flutes>
     <Flute name="woodenFlute" />
-    <Flute name="woodenIronFlute" />
   </Flutes>
   <Balloons>
     <Balloon name="balloonLvl1" />
@@ -33,22 +32,24 @@
   <MusicSheets>
     <MusicSheet name="partiture1" />
     <MusicSheet name="partiture2" />
+    <MusicSheet name="partiture4" />
     <MusicSheet name="partiture5" />
+    <MusicSheet name="partiture8" />
     <MusicSheet name="partiture9" />
     <MusicSheet name="partiture10" />
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">
-      <result>100</result>
+      <result>84</result>
     </AudienceResult>
     <AudienceResult name="quizaniResult">
       <result>100</result>
     </AudienceResult>
     <AudienceResult name="naranResult">
-      <result>64</result>
+      <result>100</result>
     </AudienceResult>
     <AudienceResult name="necalliResult">
-      <result>0</result>
+      <result>100</result>
     </AudienceResult>
   </AudienceResults>
   <MineEntrances>
@@ -62,4 +63,15 @@
       <shouldBeActive>false</shouldBeActive>
     </MineEntrance>
   </MineEntrances>
+  <DirigentEntrances>
+    <DirigentEntrance name="kasakirEntrance">
+      <shouldBeActive>true</shouldBeActive>
+    </DirigentEntrance>
+    <DirigentEntrance name="quizaniEntrance">
+      <shouldBeActive>true</shouldBeActive>
+    </DirigentEntrance>
+    <DirigentEntrance name="naranEntrance">
+      <shouldBeActive>true</shouldBeActive>
+    </DirigentEntrance>
+  </DirigentEntrances>
 </gameData>

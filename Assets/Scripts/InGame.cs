@@ -19,6 +19,9 @@ public class InGame : MonoBehaviour
     [SerializeField] private GameObject tecalliEntrance;
     [SerializeField] private GameObject acanEntrance;
     [SerializeField] private GameObject setiEntrance;
+    [SerializeField] private GameObject kasakirEntrance;
+    [SerializeField] private GameObject quizaniEntrance;
+    [SerializeField] private GameObject naranEntrance;
     [SerializeField] private GameObject PauseMenuPanel;
     private bool pauseMenuHasBeenStarted = false;
 
@@ -57,6 +60,19 @@ public class InGame : MonoBehaviour
             if (gameData.mineEntrance[2].shouldBeActive)
             {
                 setiEntrance.SetActive(true);
+            }
+
+            if(gameData.dirigentEntrance[0].shouldBeActive)
+            {
+                kasakirEntrance.SetActive(true);
+            }
+            if(gameData.dirigentEntrance[1].shouldBeActive)
+            {
+                quizaniEntrance.SetActive(true);
+            }
+            if(gameData.dirigentEntrance[2].shouldBeActive)
+            {
+                naranEntrance.SetActive(true);
             }
         }
     }

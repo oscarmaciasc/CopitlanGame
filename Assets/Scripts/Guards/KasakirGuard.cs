@@ -64,6 +64,8 @@ public class KasakirGuard : MonoBehaviour
             // Finish the movement
             myAnim.SetFloat("moveX", 0);
             theEntrance.SetActive(true);
+            XmlManager.instance.SaveDirigentEntranceState(0, true);
+            Debug.Log("ya guarde la info");
         }
     }
 

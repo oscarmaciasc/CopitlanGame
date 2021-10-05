@@ -62,6 +62,7 @@ public class QuizaniGuard : MonoBehaviour
             // Finish the movement
             myAnim.SetFloat("moveX", 0);
             theEntrance.SetActive(true);
+            XmlManager.instance.SaveDirigentEntranceState(1, true);
         }
     }
 
