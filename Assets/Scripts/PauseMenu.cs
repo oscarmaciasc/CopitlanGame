@@ -21,6 +21,9 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject[] resourceQuantity = new GameObject[4];
     [SerializeField] private GameObject[] flutes = new GameObject[4];
     [SerializeField] private GameObject[] partitures = new GameObject[10];
+    [SerializeField] private GameObject balloon1Panel;
+    [SerializeField] private GameObject balloon2Panel;
+    [SerializeField] private GameObject balloon3Panel;
     [SerializeField] private GameObject PauseMenuPanel;
 
     private GameData gameData;
@@ -60,7 +63,35 @@ public class PauseMenu : MonoBehaviour
         MapPanel.SetActive(false);
         InventoryPanel.SetActive(false);
         BalloonPanel.SetActive(true);
+        SetBallon();
         InfoPanel.SetActive(false);
+    }
+
+    private void SetBallon() {
+        string balloonName = "";
+
+        for(int i = 0; i < 3; i++) {
+            balloonName = "balloonLvl" + (i + 1).ToString();
+            if(gameData.DoesHaveBalloon(balloonName)) {
+                switch(i) {
+                    case 0:
+                        balloon1Panel.SetActive(true);
+                        balloon2Panel.SetActive(false);
+                        balloon3Panel.SetActive(false);
+                    break;
+                    case 1:
+                        balloon1Panel.SetActive(false);
+                        balloon2Panel.SetActive(true);
+                        balloon3Panel.SetActive(false);
+                    break;
+                    case 2:
+                        balloon1Panel.SetActive(false);
+                        balloon2Panel.SetActive(false);
+                        balloon3Panel.SetActive(true);
+                    break;
+                }
+            }
+        }
     }
 
     public void ActivateInfoPanel() {
@@ -111,11 +142,9 @@ public class PauseMenu : MonoBehaviour
 
     private void SetPartitures() {
         string partitureName = "";
-        int partitureNum = 0;
+
         for(int i = 0; i < 10; i++) {
-            partitureNum = i;
-            partitureNum++;
-            partitureName = "partiture" + partitureNum.ToString();
+            partitureName = "partiture" + (i + 1).ToString();
             
             Debug.Log(partitureName);
             if(gameData.DoesHavePartiture(partitureName)) {

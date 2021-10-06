@@ -13307,6 +13307,9 @@ MonoBehaviour:
   - {fileID: 1036976184923838791}
   - {fileID: 7811960368175495569}
   - {fileID: 5600190783082588906}
+  balloon1Panel: {fileID: 2894558593328517190}
+  balloon2Panel: {fileID: 5448576358610680747}
+  balloon3Panel: {fileID: 994429800148005142}
   PauseMenuPanel: {fileID: 120873221050265937}
 --- !u!1 &169696133499044184
 GameObject:
@@ -19894,7 +19897,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 750, y: -702}
+  m_AnchoredPosition: {x: 750, y: -52}
   m_SizeDelta: {x: 1350, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1387913386610666379
@@ -22436,7 +22439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2711841127790625547
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23192,7 +23195,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6462435437014273439
 RectTransform:
   m_ObjectHideFlags: 0

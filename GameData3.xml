@@ -22,14 +22,13 @@
   <Flutes>
     <Flute name="woodenFlute" />
   </Flutes>
-  <Balloons>
-    <Balloon name="balloonLvl1" />
-  </Balloons>
-  <MusicalMasteryLvl>
-    <MusicalMasteryLvl name="apprentice" />
-  </MusicalMasteryLvl>
+  <Balloon name="balloonLvl2" />
+  <MusicalMasteryLvl name="apprentice" />
   <MusicSheets>
     <MusicSheet name="partiture1" />
+    <MusicSheet name="partiture2" />
+    <MusicSheet name="partiture4" />
+    <MusicSheet name="partiture5" />
     <MusicSheet name="partiture9" />
     <MusicSheet name="partiture10" />
   </MusicSheets>

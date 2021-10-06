@@ -20,12 +20,8 @@
   <Flutes>
     <Flute name="woodenFlute" />
   </Flutes>
-  <Balloons>
-    <Balloon name="balloonLvl1" />
-  </Balloons>
-  <MusicalMasteryLvl>
-    <MusicalMasteryLvl name="apprentice" />
-  </MusicalMasteryLvl>
+  <Balloon name="balloonLvl1" />
+  <MusicalMasteryLvl name="apprentice" />
   <MusicSheets>
     <MusicSheet name="partiture1" />
   </MusicSheets>
