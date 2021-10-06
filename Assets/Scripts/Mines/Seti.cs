@@ -10,6 +10,7 @@ public class Seti : MonoBehaviour
     public string[] goodLines = { "Estoy agradecida, me has alegrado el dia" };
     public string[] badLines = { "No me terminas de convencer, intentalo de nuevo" };
     private string[] noPartituresDialog = { "Parece que no tienes la partitura necesaria", "Vuelve cuando la tengas" };
+    private string[] missingSister = { "Mi hermana se ve muy convencida, pero yo no he escuchado nada..." };
 
     public bool hasFinished = false;
     public bool finishedPartiture = false;
@@ -22,12 +23,23 @@ public class Seti : MonoBehaviour
     public bool canActivatePartiturePanel = true;
     public bool notFound = false;
     public int percentageToPass = 80;
+    public bool bothFinished = false;
+    public GameObject habitantOne;
+    public GameObject habitantTwo;
 
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-        destiny = new Vector2(transform.position.x + 2, transform.position.y);
+
+        if (this.gameObject.name == "Seti0")
+        {
+            destiny = new Vector2(transform.position.x - 2, transform.position.y);
+        }
+        else if (this.gameObject.name == "Seti1")
+        {
+            destiny = new Vector2(transform.position.x + 2, transform.position.y);
+        }
 
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
@@ -38,15 +50,15 @@ public class Seti : MonoBehaviour
             this.gameObject.GetComponent<DialogActivator>().lines = goodLines;
             this.gameObject.GetComponent<PartitureHabitant>().canShowPartitures = false;
         }
+
+        habitantOne = GameObject.Find("Seti0");
+        habitantTwo = GameObject.Find("Seti1");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!hasFinished)
-        {
-            GetPercentage();
-        }
+        
         CheckIfCanPass();
     }
 
@@ -54,6 +66,9 @@ public class Seti : MonoBehaviour
     {
         if (finishedPartiture)
         {
+            Debug.Log("correctNotes: " + PentagramManager.instance.correctNotes);
+            Debug.Log("totalNotes: " + PentagramManager.instance.TotalNotes());
+            Debug.Log("percentageToPass: " + percentageToPass);
             if (((PentagramManager.instance.correctNotes * 100) / (PentagramManager.instance.TotalNotes())) >= percentageToPass)
             {
                 canPass = true;
@@ -61,8 +76,9 @@ public class Seti : MonoBehaviour
             }
             else
             {
+                Debug.Log("no debo");
                 this.gameObject.GetComponent<DialogActivator>().lines = badLines;
-                canPass = false;
+                 canPass = false;
                 finishedPartiture = false;
             }
         }
@@ -70,7 +86,7 @@ public class Seti : MonoBehaviour
 
     public void CheckIfCanPass()
     {
-        if (canPass && finishedPartiture)
+        if (canPass && finishedPartiture && bothFinished)
         {
             if (destiny.x != gameObject.transform.position.x)
             {
@@ -88,7 +104,7 @@ public class Seti : MonoBehaviour
                 theEntrance.SetActive(true);
 
                 // Save that this entrance has to be active in files 
-                if (finishedPartiture && canPass)
+                if (finishedPartiture && canPass && bothFinished)
                 {
                     XmlManager.instance.SaveMineEntranceState(2, true);
                 }
@@ -96,7 +112,7 @@ public class Seti : MonoBehaviour
         }
     }
 
-    public void LimitPartitures()
+    public void LimitPartitures(GameObject habitant)
     {
         if (this.gameObject.GetComponent<PartitureHabitant>().conversationFinished == true && !canPass && canActivatePartiturePanel)
         {
@@ -112,9 +128,9 @@ public class Seti : MonoBehaviour
         if (notFound)
         {
             partitureSelectionPanel.SetActive(false);
-            this.gameObject.GetComponent<DialogActivator>().lines = noPartituresDialog;
+            habitant.GetComponent<DialogActivator>().lines = noPartituresDialog;
             canActivatePartiturePanel = false;
-            this.gameObject.GetComponent<PartitureHabitant>().canShowPartitures = false;
+            habitant.GetComponent<PartitureHabitant>().canShowPartitures = false;
         }
     }
 
@@ -122,5 +138,23 @@ public class Seti : MonoBehaviour
     {
         notFound = true;
         return notFound;
+    }
+
+    public void BothFinished(GameObject habitant)
+    {
+        if (finishedPartiture)
+        {
+            if (habitantOne.GetComponent<Seti>().canPass && habitantTwo.GetComponent<Seti>().canPass)
+            {
+                habitantOne.GetComponent<Seti>().bothFinished = true;
+                habitantTwo.GetComponent<Seti>().bothFinished = true;
+            }
+            else
+            {
+                habitant.GetComponent<DialogActivator>().lines = missingSister;
+                habitantOne.GetComponent<Seti>().bothFinished = false;
+                habitantTwo.GetComponent<Seti>().bothFinished = false;
+            }
+        }
     }
 }

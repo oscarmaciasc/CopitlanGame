@@ -105,7 +105,7 @@ public class DialogManager : MonoBehaviour
                         {
                             if (!habitant.GetComponent<Seti>().hasFinished)
                             {
-                                habitant.GetComponent<Seti>().LimitPartitures();
+                                habitant.GetComponent<Seti>().LimitPartitures(habitant);
                             }
                             else
                             {

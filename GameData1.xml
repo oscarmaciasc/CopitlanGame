@@ -23,9 +23,10 @@
     <Flute name="woodenFlute" />
   </Flutes>
   <Balloon name="balloonLvl1" />
-  <MusicalMasteryLvl name="apprentice" />
+  <MusicalMasteryLvl name="experienced" />
   <MusicSheets>
     <MusicSheet name="partiture1" />
+    <MusicSheet name="partiture4" />
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">
@@ -49,7 +50,7 @@
       <shouldBeActive>false</shouldBeActive>
     </MineEntrance>
     <MineEntrance name="setiEntrance">
-      <shouldBeActive>false</shouldBeActive>
+      <shouldBeActive>true</shouldBeActive>
     </MineEntrance>
   </MineEntrances>
   <DirigentEntrances>

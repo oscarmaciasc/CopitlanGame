@@ -28,6 +28,7 @@
   <MusicalMasteryLvl name="legend" />
   <MusicSheets>
     <MusicSheet name="partiture4" />
+    <MusicSheet name="partiture5" />
     <MusicSheet name="partiture7" />
     <MusicSheet name="partiture10" />
   </MusicSheets>
