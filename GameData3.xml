@@ -2,16 +2,16 @@
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="game3" gender="false">
   <Resources>
     <Resource name="wood">
-      <quantity>58</quantity>
+      <quantity>0</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>200</quantity>
+      <quantity>0</quantity>
     </Resource>
     <Resource name="gold">
-      <quantity>11</quantity>
+      <quantity>0</quantity>
     </Resource>
     <Resource name="fuel">
-      <quantity>14</quantity>
+      <quantity>0</quantity>
     </Resource>
   </Resources>
   <Permissions>
@@ -20,17 +20,14 @@
   </Permissions>
   <Flutes>
     <Flute name="woodenFlute" />
-    <Flute name="woodenIronFlute" />
   </Flutes>
-  <Balloons>
-    <Balloon name="balloonLvl1" />
-  </Balloons>
-  <MusicalMasteryLvl>
-    <MusicalMasteryLvl name="apprentice" />
-  </MusicalMasteryLvl>
+  <Balloon name="balloonLvl2" />
+  <MusicalMasteryLvl name="apprentice" />
   <MusicSheets>
     <MusicSheet name="partiture1" />
     <MusicSheet name="partiture2" />
+    <MusicSheet name="partiture4" />
+    <MusicSheet name="partiture5" />
     <MusicSheet name="partiture9" />
   </MusicSheets>
   <AudienceResults>

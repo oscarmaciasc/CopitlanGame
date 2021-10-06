@@ -21,11 +21,11 @@ public class GameData
     [XmlArray ("Flutes")]
     public Flute[] flute { get; set; }
 
-    [XmlArray ("Balloons")]
-    public Balloon[] balloon { get; set; }
+    [XmlElement ("Balloon")]
+    public Balloon balloon { get; set; }
 
-    [XmlArray ("MusicalMasteryLvl")]
-    public MusicalMasteryLvl[] musicalMasteryLvl { get; set; }
+    [XmlElement ("MusicalMasteryLvl")]
+    public MusicalMasteryLvl musicalMasteryLvl { get; set; }
 
     [XmlArray ("MusicSheets")]
     public MusicSheet[] musicSheet { get; set; }
@@ -54,11 +54,9 @@ public class GameData
         this.flute = new Flute[1];
         this.flute[0] = new Flute();
 
-        this.balloon = new Balloon[1];
-        this.balloon[0] = new Balloon();
+        this.balloon = new Balloon();
 
-        this.musicalMasteryLvl = new MusicalMasteryLvl[1];
-        this.musicalMasteryLvl[0] = new MusicalMasteryLvl();
+        this.musicalMasteryLvl = new MusicalMasteryLvl();
 
         this.musicSheet = new MusicSheet[1];
         this.musicSheet[0] = new MusicSheet();
@@ -87,8 +85,8 @@ public class GameData
         this.resource[3].quantity = 0;
         this.permission[0].name = "outterCircle";
         this.flute[0].name = "woodenFlute";
-        this.balloon[0].name = "balloonLvl1";
-        this.musicalMasteryLvl[0].name = "apprentice";
+        this.balloon.name = "balloonLvl1";
+        this.musicalMasteryLvl.name = "apprentice";
         this.musicSheet[0].name = "partiture1";
         this.audienceResult[0].name = "kasakirResult";
         this.audienceResult[0].result = 0;
@@ -108,7 +106,7 @@ public class GameData
     }
 
     // Player Update
-    public GameData(string name, Resource[] resource, Permission[] permission, Flute[] flute, Balloon[] balloon, MusicalMasteryLvl[] musicalMasteryLvl, MusicSheet[] musicSheet, AudienceResult[] audienceResult, MineEntrance[] mineEntrance) {
+    public GameData(string name, Resource[] resource, Permission[] permission, Flute[] flute, Balloon balloon, MusicalMasteryLvl musicalMasteryLvl, MusicSheet[] musicSheet, AudienceResult[] audienceResult, MineEntrance[] mineEntrance) {
         this.name = name;
         this.resource = resource;
         this.permission = permission;
@@ -135,6 +133,14 @@ public class GameData
             if(partitureName == musicSheet[i].name) {
                 return true;
             }
+        }
+        
+        return false;
+    }
+    
+    public bool DoesHaveBalloon(string balloonName) {
+        if(balloon.name == balloonName) {
+            return true;
         }
         
         return false;
