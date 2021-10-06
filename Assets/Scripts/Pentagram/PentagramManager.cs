@@ -126,7 +126,8 @@ public class PentagramManager : MonoBehaviour
                 habitant.GetComponent<HabitantMath>().GetPercentage(habitant);
             }
 
-
+            // Save musicalmasterylevel
+            SaveMusicalMasteryLvl();
 
         }
     }
@@ -145,5 +146,40 @@ public class PentagramManager : MonoBehaviour
     {
         // habitant is the npc im talking to
         habitant = getHabitant;
+    }
+
+    public void SaveMusicalMasteryLvl()
+    {
+        if (Partitures.instance.partitureDifficulty == "easy")
+        {
+            GameData gameData = new GameData();
+            gameData = XmlManager.instance.LoadGame();
+
+            XmlManager.instance.AddMusicalMasteryLvl("apprentice");
+        }
+
+        if (Partitures.instance.partitureDifficulty == "medium")
+        {
+            GameData gameData = new GameData();
+            gameData = XmlManager.instance.LoadGame();
+
+            XmlManager.instance.AddMusicalMasteryLvl("experienced");
+        }
+
+        if (Partitures.instance.partitureDifficulty == "hard")
+        {
+            GameData gameData = new GameData();
+            gameData = XmlManager.instance.LoadGame();
+
+            XmlManager.instance.AddMusicalMasteryLvl("master");
+        }
+
+        if (Partitures.instance.partitureDifficulty == "epic")
+        {
+            GameData gameData = new GameData();
+            gameData = XmlManager.instance.LoadGame();
+
+            XmlManager.instance.AddMusicalMasteryLvl("legend");
+        }
     }
 }

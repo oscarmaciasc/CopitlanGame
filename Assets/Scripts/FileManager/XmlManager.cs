@@ -190,6 +190,17 @@ public class XmlManager : MonoBehaviour
         Save(gameIndex, gameData);
     }
 
+    public void AddMusicalMasteryLvl(string name)
+    {
+        int gameIndex = GetGameIndex();
+
+        GameData gameData = LoadGame();
+
+        gameData.musicalMasteryLvl.name = name;
+
+        Save(gameIndex, gameData);
+    }
+
     // Fill gameData array
     public GameData[] LoadAllGames()
     {

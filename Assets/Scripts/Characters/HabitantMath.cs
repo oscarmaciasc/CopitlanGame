@@ -36,6 +36,9 @@ public class HabitantMath : MonoBehaviour
             uniqueHabitantPercentage = (PentagramManager.instance.correctNotes * 100) / (PentagramManager.instance.TotalNotes());
 
             XmlManager.instance.SaveHabitantsResults(index, uniqueHabitantPercentage);
+
+            // Call Fabians function
+            // Round the result to int
         }
     }
 }

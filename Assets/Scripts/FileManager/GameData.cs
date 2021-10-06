@@ -155,6 +155,16 @@ public class GameData
         return false;
     }
 
+    public bool DoesHaveMusicalMasteryLevel(string nombre)
+    {
+        if (musicalMasteryLvl.name == nombre)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     public int GetAudienceResult(string audienceName) {
         for (int i = 0; i < 4; i++) {
             if(audienceResult[i].name == audienceName) {
@@ -164,7 +174,7 @@ public class GameData
         return 1000;
     }
     
-    public string GetMusicalMaestryLevel() {
+    public string GetMusicalMasteryLevel() {
         if(musicalMasteryLvl.name == "apprentice") {
             return "Aprendiz";
         }

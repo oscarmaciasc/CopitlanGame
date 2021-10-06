@@ -116,7 +116,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     private void SetInfo() {
-        musicalMasteryLevel.transform.GetComponent<Text>().text = gameData.GetMusicalMaestryLevel();
+        musicalMasteryLevel.transform.GetComponent<Text>().text = gameData.GetMusicalMasteryLevel();
 
         // *************************** KINDA FAKE ***************************
         Debug.Log("Necalli: " + gameData.GetAudienceResult("necalliResult"));
