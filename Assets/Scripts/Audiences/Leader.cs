@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Leader : MonoBehaviour
 {
@@ -13,7 +14,6 @@ public class Leader : MonoBehaviour
     public bool canPass = false;
     public bool canActivatePartiturePanel = true;
     public bool finishedPartiture = false;
-    private int percentageToPass = 90;
     private int resNecalli = 0;
     private int aprobationPercentageNecalli = 0;
     private int cityHappinessPercentage = 0;
@@ -37,7 +37,7 @@ public class Leader : MonoBehaviour
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
 
-        if (gameData.audienceResult[3].result >= 90)
+        if (gameData.audienceResult[3].result >= 60)
         {
             habitant = GameObject.Find("Necalli");
             if (habitant != null)
@@ -73,7 +73,7 @@ public class Leader : MonoBehaviour
     {
         if (finishedPartiture)
         {
-            if (((PentagramManager.instance.correctNotes * 100) / (PentagramManager.instance.TotalNotes())) >= percentageToPass)
+            if (((PentagramManager.instance.correctNotes * 100) / (PentagramManager.instance.TotalNotes())) >= 60)
             {
                 canPass = true;
                 resNecalli = (60) + (((PentagramManager.streakRes) * (40)) / ((PentagramManager.instance.TotalNotes())));
@@ -90,8 +90,17 @@ public class Leader : MonoBehaviour
 
                 // send res as array to a file
                 XmlManager.instance.SaveAudienceResult(3, aprobationPercentageNecalli);
-                successInterpretation = true;
-                canActivateFinal = true;
+
+                if (aprobationPercentageNecalli >= 90)
+                {
+                    successInterpretation = true;
+                    canActivateFinal = true;
+                } else
+                {
+                    successInterpretation = false;
+                    canPass = false;
+                    finishedPartiture = false;
+                }
             }
             else
             {
@@ -105,7 +114,7 @@ public class Leader : MonoBehaviour
     {
         if (successInterpretation)
         {
-
+            Debug.Log("necalli: " + aprobationPercentageNecalli);
             if (aprobationPercentageNecalli >= 90 && aprobationPercentageNecalli < 94)
             {
                 habitant.gameObject.GetComponent<DialogActivator>().lines = necalliSuccess1;
@@ -156,6 +165,7 @@ public class Leader : MonoBehaviour
         gameData = XmlManager.instance.LoadGame();
 
         cityHappinessPercentage = gameData.GetAndSaveHappinesPercentage();
+        Debug.Log("CityHappiness: " + cityHappinessPercentage);
 
         if (cityHappinessPercentage >= 72 && cityHappinessPercentage < 90)
         {
@@ -177,14 +187,17 @@ public class Leader : MonoBehaviour
         if (final == 1)
         {
             Debug.Log("Final 1");
+            //SceneManager.LoadScene("Final1");
         }
         else if (final == 2)
         {
             Debug.Log("Final 2");
+            //SceneManager.LoadScene("Final2");
         }
         else if (final == 3)
         {
             Debug.Log("Final 3");
+            //SceneManager.LoadScene("Final3");
         }
     }
 

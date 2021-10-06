@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Myrcella" gender="true">
   <TimePlayed time="0" />
-  <HappinessPercentage percentage="50" />
+  <HappinessPercentage percentage="76" />
   <Resources>
     <Resource name="wood">
       <quantity>0</quantity>
@@ -25,23 +25,24 @@
     <Flute name="woodenFlute" />
   </Flutes>
   <Balloon name="balloonLvl1" />
-  <MusicalMasteryLvl name="experienced" />
+  <MusicalMasteryLvl name="legend" />
   <MusicSheets>
     <MusicSheet name="partiture4" />
     <MusicSheet name="partiture7" />
+    <MusicSheet name="partiture10" />
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">
-      <result>0</result>
+      <result>60</result>
     </AudienceResult>
     <AudienceResult name="quizaniResult">
-      <result>100</result>
+      <result>70</result>
     </AudienceResult>
     <AudienceResult name="naranResult">
-      <result>0</result>
+      <result>80</result>
     </AudienceResult>
     <AudienceResult name="necalliResult">
-      <result>0</result>
+      <result>95</result>
     </AudienceResult>
   </AudienceResults>
   <MineEntrances>
