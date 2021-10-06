@@ -83,9 +83,7 @@ public class GameData
         this.dirigentEntrance[1] = new DirigentEntrance();
         this.dirigentEntrance[2] = new DirigentEntrance();
 
-        this.habitantResult = new HabitantResult[80];
-        this.habitantResult[0] = new HabitantResult();
-
+        habitantInitializer();
 
         this.name = playerName;
         this.isWoman = playerGender;
@@ -122,10 +120,6 @@ public class GameData
         this.dirigentEntrance[1].shouldBeActive = false;
         this.dirigentEntrance[2].name = "naranEntrance";
         this.dirigentEntrance[2].shouldBeActive = false;
-        this.habitantResult[0].name = "";
-        this.habitantResult[0].result = 0;
-
-
     }
 
     // Player Update
@@ -170,4 +164,16 @@ public class GameData
         return false;
     }
     
+
+    public void habitantInitializer()
+    {
+        this.habitantResult = new HabitantResult[80];
+
+        for(int i = 0; i < 80; i++)
+        {
+            this.habitantResult[i] = new HabitantResult();
+            this.habitantResult[i].id = i;
+            this.habitantResult[i].result = 0;
+        }
+    }
 }

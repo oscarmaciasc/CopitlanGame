@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="adrian" gender="false">
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="federer" gender="false">
   <Resources>
     <Resource name="wood">
       <quantity>0</quantity>
@@ -62,8 +62,245 @@
     </DirigentEntrance>
   </DirigentEntrances>
   <HabitantResults>
-    <HabitantResult name="">
-      <res>0</res>
+    <HabitantResult id="0">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="1">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="2">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="3">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="4">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="5">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="6">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="7">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="8">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="9">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="10">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="11">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="12">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="13">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="14">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="15">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="16">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="17">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="18">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="19">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="20">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="21">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="22">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="23">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="24">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="25">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="26">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="27">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="28">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="29">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="30">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="31">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="32">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="33">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="34">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="35">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="36">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="37">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="38">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="39">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="40">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="41">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="42">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="43">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="44">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="45">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="46">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="47">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="48">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="49">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="50">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="51">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="52">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="53">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="54">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="55">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="56">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="57">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="58">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="59">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="60">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="61">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="62">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="63">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="64">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="65">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="66">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="67">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="68">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="69">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="70">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="71">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="72">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="73">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="74">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="75">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="76">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="77">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="78">
+      <Result>0</Result>
+    </HabitantResult>
+    <HabitantResult id="79">
+      <Result>0</Result>
     </HabitantResult>
   </HabitantResults>
 </gameData>

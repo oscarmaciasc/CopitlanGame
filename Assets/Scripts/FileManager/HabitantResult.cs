@@ -6,9 +6,9 @@ using System.Xml.Serialization;
 
 public class HabitantResult
 {
-    [XmlAttribute("name")]
-    public string name { get; set; }
+    [XmlAttribute("id")]
+    public int id { get; set; }
     
-    [XmlElement("res")]
+    [XmlElement("Result")]
     public int result { get; set; }
 }
