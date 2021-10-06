@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="samu" gender="false">
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Myrcella" gender="true">
+  <TimePlayed time="0" />
   <Resources>
     <Resource name="wood">
       <quantity>0</quantity>
@@ -21,19 +22,14 @@
   <Flutes>
     <Flute name="woodenFlute" />
   </Flutes>
-  <Balloon name="balloonLvl2" />
+  <Balloon name="balloonLvl1" />
   <MusicalMasteryLvl name="apprentice" />
   <MusicSheets>
     <MusicSheet name="partiture1" />
-    <MusicSheet name="partiture2" />
-    <MusicSheet name="partiture4" />
-    <MusicSheet name="partiture5" />
-    <MusicSheet name="partiture9" />
-    <MusicSheet name="partiture10" />
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">
-      <result>84</result>
+      <result>0</result>
     </AudienceResult>
     <AudienceResult name="quizaniResult">
       <result>0</result>
@@ -47,7 +43,7 @@
   </AudienceResults>
   <MineEntrances>
     <MineEntrance name="tecalliEntrance">
-      <shouldBeActive>true</shouldBeActive>
+      <shouldBeActive>false</shouldBeActive>
     </MineEntrance>
     <MineEntrance name="acanEntrance">
       <shouldBeActive>false</shouldBeActive>
@@ -58,7 +54,7 @@
   </MineEntrances>
   <DirigentEntrances>
     <DirigentEntrance name="kasakirEntrance">
-      <shouldBeActive>true</shouldBeActive>
+      <shouldBeActive>false</shouldBeActive>
     </DirigentEntrance>
     <DirigentEntrance name="quizaniEntrance">
       <shouldBeActive>false</shouldBeActive>
@@ -72,7 +68,7 @@
       <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="1">
-      <Result>80</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="2">
       <Result>0</Result>

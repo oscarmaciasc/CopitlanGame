@@ -12329,7 +12329,6 @@ MonoBehaviour:
   passedNotes: 0
   partitureFinished: 0
   doOnlyOnce: 1
-  doOnlyOnceTecalli: 1
   correctNotes: 0
   habitant: {fileID: 0}
 --- !u!1 &2075859937
@@ -13310,7 +13309,19 @@ MonoBehaviour:
   balloon1Panel: {fileID: 2894558593328517190}
   balloon2Panel: {fileID: 5448576358610680747}
   balloon3Panel: {fileID: 994429800148005142}
-  PauseMenuPanel: {fileID: 120873221050265937}
+  pauseMenuPanel: {fileID: 120873221050265937}
+  musicalMasteryLevel: {fileID: 4459533962065140524}
+  happinessPercentage: {fileID: 196451984181729321}
+  minPlayed: {fileID: 2035021261923634743}
+  minWalked: {fileID: 8678358186788199615}
+  minBalloon: {fileID: 4240350824625257322}
+  interactedHabitants: {fileID: 4812472084016821891}
+  collectables: {fileID: 3587325801234580776}
+  outterCirclePermission: {fileID: 6814385107212179308}
+  trianglePermission: {fileID: 7234446529303914586}
+  innerCirclePermission: {fileID: 492744031876579194}
+  femalePanel: {fileID: 3076532489754163801}
+  malePanel: {fileID: 1790776111026105435}
 --- !u!1 &169696133499044184
 GameObject:
   m_ObjectHideFlags: 0
@@ -16095,7 +16106,7 @@ GameObject:
   - component: {fileID: 4937655465814626313}
   - component: {fileID: 4400206846485636988}
   m_Layer: 5
-  m_Name: HabitantsInteractuatedLayout
+  m_Name: HabitantsInteractedLayout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19897,7 +19908,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 750, y: -52}
+  m_AnchoredPosition: {x: 750, y: -702}
   m_SizeDelta: {x: 1350, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1387913386610666379
@@ -20805,7 +20816,7 @@ GameObject:
   - component: {fileID: 7568278136300655883}
   - component: {fileID: 5845637355645317786}
   m_Layer: 5
-  m_Name: HabitantsInteractuatedLabel
+  m_Name: HabitantsInteractedLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23195,7 +23206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6462435437014273439
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23670,7 +23681,7 @@ GameObject:
   - component: {fileID: 2314412869941523152}
   - component: {fileID: 905903593065602354}
   m_Layer: 5
-  m_Name: HabitantsInteractuatedText
+  m_Name: HabitantsInteractedText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
