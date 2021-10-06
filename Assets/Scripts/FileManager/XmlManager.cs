@@ -156,6 +156,19 @@ public class XmlManager : MonoBehaviour
         Save(gameIndex, gamedata);
     }
 
+    public void SaveHabitantsResults(string name, int habitantID, int res)
+    {
+        Debug.Log("Si entro a la funcion");
+        int gameIndex = GetGameIndex();
+
+        GameData gamedata = LoadGame();
+
+        gamedata.habitantResult[habitantID].name = name;
+        gamedata.habitantResult[habitantID].result = res;
+
+        Save(gameIndex, gamedata);
+    }
+
     public void AddPermission(string NewPermission)
     {
         int gameIndex = GetGameIndex();

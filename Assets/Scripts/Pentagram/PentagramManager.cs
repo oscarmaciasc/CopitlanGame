@@ -45,7 +45,7 @@ public class PentagramManager : MonoBehaviour
         generatedNotes = 0;
         correctNotes = 0;
         globalCounter = 0;
-        streakRes = 0;  
+        streakRes = 0;
         maxStreak = 0;
         maxStreak2 = 0;
         auxStreak = 0;
@@ -65,6 +65,14 @@ public class PentagramManager : MonoBehaviour
                 Instantiate(this.notePrefab, this.transform.position, Quaternion.identity).transform.SetParent(this.gameObject.transform);
                 timeLastNote = Time.time;
                 generatedNotes++;
+            }
+
+            // If the habitant doesnt has audience, then streak = 0.
+            if (habitant.GetComponent<Audience>() == null && habitant.GetComponent<Leader>() == null)
+            {
+                Debug.Log("Hago referencia a: " + habitant.name);
+                Debug.Log("pongo a 0 la racha");
+                streak = 0;
             }
         }
         else if (globalCounter == generatedNotes)
@@ -105,11 +113,17 @@ public class PentagramManager : MonoBehaviour
                 habitant.GetComponent<Leader>().GetAudienceResults();
                 habitant.GetComponent<Leader>().GetPercentage(habitant);
                 habitant.GetComponent<Leader>().ChangeLeaderDialogLines(habitant);
-                if(doOnlyOnce && habitant.GetComponent<Leader>().canActivateFinal)
+                if (doOnlyOnce && habitant.GetComponent<Leader>().canActivateFinal)
                 {
                     habitant.GetComponent<Leader>().GetCityHappinessPercentage();
                     doOnlyOnce = false;
                 }
+            }
+
+            if (habitant.GetComponent<HabitantMath>() != null)
+            {
+                habitant.GetComponent<HabitantMath>().finishedPartiture = true;
+                habitant.GetComponent<HabitantMath>().GetPercentage(habitant);
             }
 
 

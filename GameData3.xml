@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="federer" gender="false">
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="magnus carl" gender="false">
   <Resources>
     <Resource name="wood">
       <quantity>0</quantity>
@@ -16,7 +16,6 @@
   </Resources>
   <Permissions>
     <Permission name="outterCircle" />
-    <Permission name="triangle" />
     <Permission name="innerCircle" />
     <Permission name="necalliRoyalPalace" />
   </Permissions>
@@ -31,22 +30,18 @@
   </MusicalMasteryLvl>
   <MusicSheets>
     <MusicSheet name="partiture1" />
-    <MusicSheet name="partiture2" />
-    <MusicSheet name="partiture4" />
-    <MusicSheet name="partiture5" />
-    <MusicSheet name="partiture8" />
     <MusicSheet name="partiture9" />
     <MusicSheet name="partiture10" />
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">
-      <result>84</result>
+      <result>0</result>
     </AudienceResult>
     <AudienceResult name="quizaniResult">
-      <result>100</result>
+      <result>0</result>
     </AudienceResult>
     <AudienceResult name="naranResult">
-      <result>100</result>
+      <result>92</result>
     </AudienceResult>
     <AudienceResult name="necalliResult">
       <result>100</result>
@@ -54,7 +49,7 @@
   </AudienceResults>
   <MineEntrances>
     <MineEntrance name="tecalliEntrance">
-      <shouldBeActive>true</shouldBeActive>
+      <shouldBeActive>false</shouldBeActive>
     </MineEntrance>
     <MineEntrance name="acanEntrance">
       <shouldBeActive>false</shouldBeActive>
@@ -65,13 +60,18 @@
   </MineEntrances>
   <DirigentEntrances>
     <DirigentEntrance name="kasakirEntrance">
-      <shouldBeActive>true</shouldBeActive>
+      <shouldBeActive>false</shouldBeActive>
     </DirigentEntrance>
     <DirigentEntrance name="quizaniEntrance">
-      <shouldBeActive>true</shouldBeActive>
+      <shouldBeActive>false</shouldBeActive>
     </DirigentEntrance>
     <DirigentEntrance name="naranEntrance">
       <shouldBeActive>true</shouldBeActive>
     </DirigentEntrance>
   </DirigentEntrances>
+  <HabitantResults>
+    <HabitantResult name="NPC0">
+      <res>30</res>
+    </HabitantResult>
+  </HabitantResults>
 </gameData>

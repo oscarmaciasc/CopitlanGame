@@ -39,6 +39,9 @@ public class GameData
     [XmlArray("DirigentEntrances")]
     public DirigentEntrance[] dirigentEntrance { get; set; }
 
+    [XmlArray("HabitantResults")]
+    public HabitantResult[] habitantResult { get; set; }
+
 
     public GameData(){}
 
@@ -82,6 +85,9 @@ public class GameData
         this.dirigentEntrance[1] = new DirigentEntrance();
         this.dirigentEntrance[2] = new DirigentEntrance();
 
+        this.habitantResult = new HabitantResult[80];
+        this.habitantResult[0] = new HabitantResult();
+
 
         this.name = playerName;
         this.isWoman = playerGender;
@@ -118,11 +124,14 @@ public class GameData
         this.dirigentEntrance[1].shouldBeActive = false;
         this.dirigentEntrance[2].name = "naranEntrance";
         this.dirigentEntrance[2].shouldBeActive = false;
+        this.habitantResult[0].name = "";
+        this.habitantResult[0].result = 0;
+
 
     }
 
     // Player Update
-    public GameData(string name, Resource[] resource, Permission[] permission, Flute[] flute, Balloon[] balloon, MusicalMasteryLvl[] musicalMasteryLvl, MusicSheet[] musicSheet, AudienceResult[] audienceResult, MineEntrance[] mineEntrance, DirigentEntrance[] dirigentEntrance) {
+    public GameData(string name, Resource[] resource, Permission[] permission, Flute[] flute, Balloon[] balloon, MusicalMasteryLvl[] musicalMasteryLvl, MusicSheet[] musicSheet, AudienceResult[] audienceResult, MineEntrance[] mineEntrance, DirigentEntrance[] dirigentEntrance, HabitantResult[] habitantResult) {
         this.name = name;
         this.resource = resource;
         this.permission = permission;
@@ -133,6 +142,7 @@ public class GameData
         this.audienceResult = audienceResult;
         this.mineEntrance = mineEntrance;
         this.dirigentEntrance = dirigentEntrance;
+        this.habitantResult = habitantResult;
     }
 
     public bool DoesHavePermit(string permitType) {

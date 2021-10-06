@@ -21,6 +21,19 @@ public class PartitureHabitant : MonoBehaviour
     void Start()
     {
         instance = this;
+
+        GameData gameData = new GameData();
+        gameData = XmlManager.instance.LoadGame();
+
+        //check if habitant has a partiture calification saved, if it has then hanitant.partiturefinished = true.
+        for (int i = 0; i < gameData.habitantResult.Length; i++)
+        {
+            if (gameData.habitantResult[i].result > 0)
+            {
+                GameObject.Find(gameData.habitantResult[i].name).GetComponent<PartitureHabitant>().partitureFinished = true;
+                //this.gameObject.GetComponent<PartitureHabitant>().partitureFinished = true;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -28,16 +41,6 @@ public class PartitureHabitant : MonoBehaviour
     {
         // We recive the canActive variable from DialogActivator from the especific gameObject were talking to.
         canActivate = this.gameObject.GetComponent<DialogActivator>().CanActive();
-
-        // If its not an audience streak = 0
-        
-        // We have to identify the specific gameobject were talking to but how do we do that if we dont interact
-        // if (this.gameObject.GetComponent<Audience>() == null)
-        // {
-        //     Debug.Log("Hago referencia a: " + this.gameObject.name);
-        //     Debug.Log("pongo a 0 la racha");
-        //     PentagramManager.streak = 0;
-        // }
 
         if (this.canActivate && this.conversationFinished && firstTime && canShowPartitures)
         {
@@ -47,6 +50,8 @@ public class PartitureHabitant : MonoBehaviour
 
         if (partitureFinished && this.gameObject.GetComponent<Tecalli>() == null && this.gameObject.GetComponent<Acan>() == null && this.gameObject.GetComponent<Seti>() == null && this.gameObject.GetComponent<Audience>() == null && this.gameObject.GetComponent<Leader>() == null)
         {
+
+
             canShowPartitures = false;
             // change lines
             this.gameObject.GetComponent<DialogActivator>().lines = newLines;
