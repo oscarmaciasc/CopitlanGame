@@ -24,7 +24,7 @@ public class InGame : MonoBehaviour
     [SerializeField] private GameObject naranEntrance;
     [SerializeField] private GameObject PauseMenuPanel;
     private bool pauseMenuHasBeenStarted = false;
-
+    private float lastSaved = 0f;
 
     private void Awake()
     {
@@ -159,6 +159,7 @@ public class InGame : MonoBehaviour
     {
         successfulSavedExitPanel.SetActive(true);
         Save();
+        lastSaved = Time.time;
     }
 
     public void Exit()
@@ -190,7 +191,8 @@ public class InGame : MonoBehaviour
 
     public void Save()
     {
-        Debug.Log("Saved");
+        Debug.Log(Time.time + " - " + lastSaved);
+        XmlManager.instance.UpdateTimePlayed(Time.time - lastSaved);
     }
 
     //********************************************************************************

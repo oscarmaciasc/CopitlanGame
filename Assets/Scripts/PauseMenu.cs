@@ -121,11 +121,9 @@ public class PauseMenu : MonoBehaviour
         // *************************** KINDA FAKE ***************************
         Debug.Log("Necalli: " + gameData.GetAudienceResult("necalliResult"));
         happinessPercentage.transform.GetComponent<Text>().text = gameData.happinessPercentage.percentage.ToString();
-
-        minPlayed.transform.GetComponent<Text>().text = gameData.timePlayed.time.ToString();
         // *************************** KINDA FAKE ***************************
 
-        
+        minPlayed.transform.GetComponent<Text>().text = FormatTime(gameData.timePlayed.time);
 
         if(gameData.DoesHavePermit("outterCircle")) {
             outterCirclePermission.SetActive(true);
@@ -208,5 +206,11 @@ public class PauseMenu : MonoBehaviour
     public void DeactivatePauseMenuPanel() {
         pauseMenuPanel.gameObject.SetActive(false);
         GameManager.instance.pPressed = false;
+    }
+
+    private string FormatTime(float time) {
+        int minutes = (int) time / 60;
+        int seconds = (int) (time - (60 * minutes));
+        return string.Format("{0:00}:{1:00}", minutes, seconds );
     }
 }
