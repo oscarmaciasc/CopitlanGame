@@ -168,6 +168,16 @@ public class XmlManager : MonoBehaviour
         Save(gameIndex, gamedata);
     }
 
+    public void UpdateHappinessPercentage(int percentage) {
+        int gameIndex = GetGameIndex();
+
+        GameData gameData = LoadGame();
+
+        gameData.happinessPercentage.percentage = percentage;
+
+        Save(gameIndex, gameData);
+    }
+
     public void AddPermission(string NewPermission)
     {
         int gameIndex = GetGameIndex();
