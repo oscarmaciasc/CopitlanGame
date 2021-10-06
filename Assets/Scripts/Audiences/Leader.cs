@@ -16,8 +16,7 @@ public class Leader : MonoBehaviour
     private int percentageToPass = 90;
     private int resNecalli = 0;
     private int aprobationPercentageNecalli = 0;
-    private double cityHappinessPercentage = 0;
-    private int habitantHappinessPercentage = 0;
+    private int cityHappinessPercentage = 0;
     public bool canActivateFinal = false;
     private bool successInterpretation = false;
     private string[] noPartituresDialog = { "Parece que no tienes la partitura necesaria", "Vuelve cuando la tengas" };
@@ -25,7 +24,7 @@ public class Leader : MonoBehaviour
     private string[] necalliSuccess2 = { "Estoy realmente sorprendido", "No entiendo como podiamos vivir sin esto", "te nombro Fundador de la Musica en Copitlan" };
     private string[] necalliSuccess3 = { "Estoy profundamente conmovido", "mis ojos se llenan de lagrimas pero no siento tristeza, solo una inmensa alegria", "esto es lo mejor que le ha pasado a Copitlan en siglos", "la musica volvera y te nombrare guardian de la felicidad" };
     private string[] necalliFailure = { "No me convence", "no veo por que te dejaron pasar a mi palacio", "quiza estes nervioso", "reintentalo si tienes el valor..." };
-    private string[] goodLinesNecalli = {"*se escuchan sollozos de felicidad*", "es increible, no tengo palabras"};
+    private string[] goodLinesNecalli = { "*se escuchan sollozos de felicidad*", "es increible, no tengo palabras" };
     [SerializeField] private GameObject partitureSelectionPanel;
     public bool hasFinished = false;
     private GameObject habitant;
@@ -80,7 +79,7 @@ public class Leader : MonoBehaviour
                 resNecalli = (60) + (((PentagramManager.streakRes) * (40)) / ((PentagramManager.instance.TotalNotes())));
                 aprobationPercentageNecalli = (resNecalli) + (resAudience / 30);
 
-                if(aprobationPercentageNecalli >= 100)
+                if (aprobationPercentageNecalli >= 100)
                 {
                     // This is to avoid strange situations where the calculate returns more than 100
                     aprobationPercentageNecalli = 100;
@@ -90,7 +89,7 @@ public class Leader : MonoBehaviour
                 gameData = XmlManager.instance.LoadGame();
 
                 // send res as array to a file
-                XmlManager.instance.SaveAudienceResult(3, resNecalli);
+                XmlManager.instance.SaveAudienceResult(3, aprobationPercentageNecalli);
                 successInterpretation = true;
                 canActivateFinal = true;
             }
@@ -135,7 +134,7 @@ public class Leader : MonoBehaviour
 
         if (partitureSelectionPanel.activeInHierarchy)
         {
-            
+
             if (habitant.name == "Necalli")
             {
                 PartitureSelection.instance.DeactivateLeaderPartitures("PanelPartiture10");
@@ -153,15 +152,20 @@ public class Leader : MonoBehaviour
 
     public void GetCityHappinessPercentage()
     {
-        cityHappinessPercentage = (aprobationPercentageNecalli * 0.8) + (habitantHappinessPercentage * 0.2);
+        GameData gameData = new GameData();
+        gameData = XmlManager.instance.LoadGame();
 
-        if(cityHappinessPercentage >= 72 && cityHappinessPercentage < 90)
+        cityHappinessPercentage = gameData.GetAndSaveHappinesPercentage();
+
+        if (cityHappinessPercentage >= 72 && cityHappinessPercentage < 90)
         {
             ActivateFinal(1);
-        } else if (cityHappinessPercentage >= 90 && cityHappinessPercentage < 95)
+        }
+        else if (cityHappinessPercentage >= 90 && cityHappinessPercentage < 95)
         {
             ActivateFinal(2);
-        } else if (cityHappinessPercentage >= 95 && cityHappinessPercentage <= 100)
+        }
+        else if (cityHappinessPercentage >= 95 && cityHappinessPercentage <= 100)
         {
             ActivateFinal(3);
         }
@@ -173,10 +177,12 @@ public class Leader : MonoBehaviour
         if (final == 1)
         {
             Debug.Log("Final 1");
-        } else if (final == 2)
+        }
+        else if (final == 2)
         {
             Debug.Log("Final 2");
-        } else if (final == 3)
+        }
+        else if (final == 3)
         {
             Debug.Log("Final 3");
         }
