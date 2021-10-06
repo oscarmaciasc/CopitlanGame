@@ -25896,7 +25896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finishedPartiture: 0
   uniqueHabitantPercentage: 0
-  index: 0
+  index: 1
 --- !u!1 &2032731045
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,19 +21,6 @@ public class PartitureHabitant : MonoBehaviour
     void Start()
     {
         instance = this;
-
-        GameData gameData = new GameData();
-        gameData = XmlManager.instance.LoadGame();
-
-        //check if habitant has a partiture calification saved, if it has then hanitant.partiturefinished = true.
-        for (int i = 0; i < gameData.habitantResult.Length; i++)
-        {
-            if (gameData.habitantResult[i].result > 0)
-            {
-                GameObject.Find(gameData.habitantResult[i].name).GetComponent<PartitureHabitant>().partitureFinished = true;
-                //this.gameObject.GetComponent<PartitureHabitant>().partitureFinished = true;
-            }
-        }
     }
 
     // Update is called once per frame
