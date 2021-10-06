@@ -120,10 +120,12 @@ public class PauseMenu : MonoBehaviour
 
         // *************************** KINDA FAKE ***************************
         Debug.Log("Necalli: " + gameData.GetAudienceResult("necalliResult"));
-        happinessPercentage.transform.GetComponent<Text>().text = ((gameData.GetAudienceResult("necalliResult") * 0.8) + (100 * 0.2)).ToString();
+        happinessPercentage.transform.GetComponent<Text>().text = gameData.happinessPercentage.percentage.ToString();
 
         minPlayed.transform.GetComponent<Text>().text = gameData.timePlayed.time.ToString();
         // *************************** KINDA FAKE ***************************
+
+        
 
         if(gameData.DoesHavePermit("outterCircle")) {
             outterCirclePermission.SetActive(true);

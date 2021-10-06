@@ -15,6 +15,9 @@ public class GameData
     [XmlElement ("TimePlayed")]
     public TimePlayed timePlayed { get; set; }
 
+    [XmlElement ("HappinessPercentage")]
+    public HappinessPercentage happinessPercentage { get; set; }
+
     [XmlArray ("Resources")]
     public Resource[] resource { get; set; }
     
@@ -52,6 +55,8 @@ public class GameData
     public GameData(string playerName, bool playerGender) 
     {
         this.timePlayed = new TimePlayed();
+
+        this.happinessPercentage = new HappinessPercentage();
 
         this.resource = new Resource[4];
         this.resource[0] = new Resource();
@@ -93,6 +98,7 @@ public class GameData
         this.name = playerName;
         this.isWoman = playerGender;
         this.timePlayed.time = 0f;
+        this.happinessPercentage.percentage = 0;
         this.resource[0].name = "wood";
         this.resource[0].quantity = 0;
         this.resource[1].name = "iron";

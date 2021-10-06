@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Myrcella" gender="true">
   <TimePlayed time="0" />
+  <HappinessPercentage percentage="50" />
   <Resources>
     <Resource name="wood">
       <quantity>0</quantity>
@@ -17,7 +18,6 @@
   </Resources>
   <Permissions>
     <Permission name="outterCircle" />
-    <Permission name="triangle" />
   </Permissions>
   <Flutes>
     <Flute name="woodenFlute" />
