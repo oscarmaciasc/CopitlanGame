@@ -12,6 +12,9 @@ public class GameData
     [XmlAttribute ("gender")]
     public bool isWoman { get; set; }
 
+    [XmlElement ("TimePlayed")]
+    public TimePlayed timePlayed { get; set; }
+
     [XmlArray ("Resources")]
     public Resource[] resource { get; set; }
     
@@ -48,6 +51,8 @@ public class GameData
     // Player Initialization 
     public GameData(string playerName, bool playerGender) 
     {
+        this.timePlayed = new TimePlayed();
+
         this.resource = new Resource[4];
         this.resource[0] = new Resource();
         this.resource[1] = new Resource();
@@ -87,6 +92,7 @@ public class GameData
 
         this.name = playerName;
         this.isWoman = playerGender;
+        this.timePlayed.time = 0f;
         this.resource[0].name = "wood";
         this.resource[0].quantity = 0;
         this.resource[1].name = "iron";
@@ -122,21 +128,6 @@ public class GameData
         this.dirigentEntrance[2].shouldBeActive = false;
     }
 
-    // Player Update
-    public GameData(string name, Resource[] resource, Permission[] permission, Flute[] flute, Balloon balloon, MusicalMasteryLvl musicalMasteryLvl, MusicSheet[] musicSheet, AudienceResult[] audienceResult, MineEntrance[] mineEntrance) {
-        this.name = name;
-        this.resource = resource;
-        this.permission = permission;
-        this.flute = flute;
-        this.balloon = balloon;
-        this.musicalMasteryLvl = musicalMasteryLvl;
-        this.musicSheet = musicSheet;
-        this.audienceResult = audienceResult;
-        this.mineEntrance = mineEntrance;
-        this.dirigentEntrance = dirigentEntrance;
-        this.habitantResult = habitantResult;
-    }
-
     public bool DoesHavePermit(string permitType) {
         for(int i = 0; i < permission.Length; i++) {
             if(permitType == permission[i].name) {
@@ -163,7 +154,32 @@ public class GameData
         
         return false;
     }
+
+    public int GetAudienceResult(string audienceName) {
+        for (int i = 0; i < 4; i++) {
+            if(audienceResult[i].name == audienceName) {
+                return audienceResult[i].result;
+            }
+        }
+        return 1000;
+    }
     
+    public string GetMusicalMaestryLevel() {
+        if(musicalMasteryLvl.name == "apprentice") {
+            return "Aprendiz";
+        }
+        else if(musicalMasteryLvl.name == "experienced") {
+            return "Diestro";
+        }
+        else if(musicalMasteryLvl.name == "master") {
+            return "Maestro";
+        }
+        else if(musicalMasteryLvl.name == "legend") {
+            return "Leyenda";
+        }
+
+        return "none";
+    }
 
     public void habitantInitializer()
     {

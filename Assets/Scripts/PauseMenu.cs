@@ -24,7 +24,20 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject balloon1Panel;
     [SerializeField] private GameObject balloon2Panel;
     [SerializeField] private GameObject balloon3Panel;
-    [SerializeField] private GameObject PauseMenuPanel;
+    [SerializeField] private GameObject pauseMenuPanel;
+    [SerializeField] private GameObject musicalMasteryLevel;
+    [SerializeField] private GameObject happinessPercentage;
+    [SerializeField] private GameObject minPlayed;
+    [SerializeField] private GameObject minWalked;
+    [SerializeField] private GameObject minBalloon;
+    [SerializeField] private GameObject interactedHabitants;
+    [SerializeField] private GameObject collectables;
+    [SerializeField] private GameObject outterCirclePermission;
+    [SerializeField] private GameObject trianglePermission;
+    [SerializeField] private GameObject innerCirclePermission;
+    [SerializeField] private GameObject femalePanel;
+    [SerializeField] private GameObject malePanel;
+
 
     private GameData gameData;
 
@@ -37,7 +50,7 @@ public class PauseMenu : MonoBehaviour
     public void ActivatePanel() {
         LoadGameData();
         ActivateMapPanel();
-        PauseMenuPanel.SetActive(true);
+        pauseMenuPanel.SetActive(true);
     }
 
     private void LoadGameData() {
@@ -99,6 +112,40 @@ public class PauseMenu : MonoBehaviour
         InventoryPanel.SetActive(false);
         BalloonPanel.SetActive(false);
         InfoPanel.SetActive(true);
+        SetInfo();
+    }
+
+    private void SetInfo() {
+        musicalMasteryLevel.transform.GetComponent<Text>().text = gameData.GetMusicalMaestryLevel();
+
+        // *************************** KINDA FAKE ***************************
+        Debug.Log("Necalli: " + gameData.GetAudienceResult("necalliResult"));
+        happinessPercentage.transform.GetComponent<Text>().text = ((gameData.GetAudienceResult("necalliResult") * 0.8) + (100 * 0.2)).ToString();
+
+        minPlayed.transform.GetComponent<Text>().text = gameData.timePlayed.time.ToString();
+        // *************************** KINDA FAKE ***************************
+
+        if(gameData.DoesHavePermit("outterCircle")) {
+            outterCirclePermission.SetActive(true);
+        }
+        else {
+            outterCirclePermission.SetActive(false);
+        }
+
+        if(gameData.DoesHavePermit("triangle")) {
+            trianglePermission.SetActive(true);
+        }
+        else {
+            trianglePermission.SetActive(false);
+        }
+
+        if(gameData.DoesHavePermit("innerCircle")) {
+            innerCirclePermission.SetActive(true);
+        }
+        else {
+            innerCirclePermission.SetActive(false);
+        }
+
     }
 
     public void ActivateInvResourcesPanel() {
@@ -157,7 +204,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void DeactivatePauseMenuPanel() {
-        PauseMenuPanel.gameObject.SetActive(false);
+        pauseMenuPanel.gameObject.SetActive(false);
         GameManager.instance.pPressed = false;
     }
 }
