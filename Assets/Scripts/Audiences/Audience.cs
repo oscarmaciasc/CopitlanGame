@@ -153,10 +153,6 @@ public class Audience : MonoBehaviour
             {
                 PartitureSelection.instance.DeactivateDirigentPartitures("PanelPartiture7", "PanelPartiture8", "PanelPartiture9");
             }
-            else if (habitant.name == "Necalli")
-            {
-                PartitureSelection.instance.DeactivateLeaderPartitures("PanelPartiture10");
-            }
 
             if (notFound)
             {
