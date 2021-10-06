@@ -33,6 +33,8 @@ public class Leader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
+
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
 
@@ -133,19 +135,8 @@ public class Leader : MonoBehaviour
 
         if (partitureSelectionPanel.activeInHierarchy)
         {
-            if (habitant.name == "Kasakir")
-            {
-                PartitureSelection.instance.DeactivateDirigentPartitures("PanelPartiture1", "PanelPartiture2", "PanelPartiture3");
-            }
-            else if (habitant.name == "Quizani")
-            {
-                PartitureSelection.instance.DeactivateDirigentPartitures("PanelPartiture4", "PanelPartiture5", "PanelPartiture6");
-            }
-            else if (habitant.name == "Naran")
-            {
-                PartitureSelection.instance.DeactivateDirigentPartitures("PanelPartiture7", "PanelPartiture8", "PanelPartiture9");
-            }
-            else if (habitant.name == "Necalli")
+            
+            if (habitant.name == "Necalli")
             {
                 PartitureSelection.instance.DeactivateLeaderPartitures("PanelPartiture10");
             }

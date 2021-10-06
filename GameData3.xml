@@ -18,14 +18,15 @@
   </Resources>
   <Permissions>
     <Permission name="outterCircle" />
+    <Permission name="triangle" />
+    <Permission name="innerCircle" />
   </Permissions>
   <Flutes>
     <Flute name="woodenFlute" />
   </Flutes>
   <Balloon name="balloonLvl1" />
-  <MusicalMasteryLvl name="master" />
+  <MusicalMasteryLvl name="experienced" />
   <MusicSheets>
-    <MusicSheet name="partiture1" />
     <MusicSheet name="partiture4" />
     <MusicSheet name="partiture7" />
   </MusicSheets>
@@ -34,7 +35,7 @@
       <result>0</result>
     </AudienceResult>
     <AudienceResult name="quizaniResult">
-      <result>0</result>
+      <result>100</result>
     </AudienceResult>
     <AudienceResult name="naranResult">
       <result>0</result>
@@ -56,13 +57,13 @@
   </MineEntrances>
   <DirigentEntrances>
     <DirigentEntrance name="kasakirEntrance">
-      <shouldBeActive>false</shouldBeActive>
+      <shouldBeActive>true</shouldBeActive>
     </DirigentEntrance>
     <DirigentEntrance name="quizaniEntrance">
-      <shouldBeActive>false</shouldBeActive>
+      <shouldBeActive>true</shouldBeActive>
     </DirigentEntrance>
     <DirigentEntrance name="naranEntrance">
-      <shouldBeActive>false</shouldBeActive>
+      <shouldBeActive>true</shouldBeActive>
     </DirigentEntrance>
   </DirigentEntrances>
   <HabitantResults>
