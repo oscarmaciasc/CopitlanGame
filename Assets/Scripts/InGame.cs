@@ -8,11 +8,15 @@ public class InGame : MonoBehaviour
 {
 
     public static InGame instance;
+    [SerializeField] private GameObject exitMenu;
+    [SerializeField] private GameObject savePanel;
+    [SerializeField] private GameObject overwriteSavePanel;
+    [SerializeField] private GameObject succesfullySavePanel;
     [SerializeField] private GameObject exitPanel;
-    [SerializeField] private GameObject confirmationWindowExit;
+    [SerializeField] private GameObject saveOnExitPanel;
+    [SerializeField] private GameObject overwriteExitPanel;
+    [SerializeField] private GameObject successfullyExitPanel;
     [SerializeField] private Button returnArrow;
-    [SerializeField] private GameObject successfulSavedPanel;
-    [SerializeField] private GameObject successfulSavedExitPanel;
     [SerializeField] public GameObject partitureSelectionPanel;
     [SerializeField] public GameObject pentagramPanel;
     [SerializeField] private GameObject dialogBox;
@@ -37,10 +41,8 @@ public class InGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        exitPanel.SetActive(false);
-        confirmationWindowExit.SetActive(false);
-        successfulSavedPanel.SetActive(false);
-        successfulSavedExitPanel.SetActive(false);
+        DeactivateAllExitMenuPanels();
+
         UIFade.instance.FadeFromBlack();
 
         if (SceneManager.GetActiveScene().name == "SampleScene")
@@ -62,15 +64,15 @@ public class InGame : MonoBehaviour
                 setiEntrance.SetActive(true);
             }
 
-            if(gameData.dirigentEntrance[0].shouldBeActive)
+            if (gameData.dirigentEntrance[0].shouldBeActive)
             {
                 kasakirEntrance.SetActive(true);
             }
-            if(gameData.dirigentEntrance[1].shouldBeActive)
+            if (gameData.dirigentEntrance[1].shouldBeActive)
             {
                 quizaniEntrance.SetActive(true);
             }
-            if(gameData.dirigentEntrance[2].shouldBeActive)
+            if (gameData.dirigentEntrance[2].shouldBeActive)
             {
                 naranEntrance.SetActive(true);
             }
@@ -88,7 +90,7 @@ public class InGame : MonoBehaviour
     {
         if (GameManager.instance.escapePressed)
         {
-            exitPanel.SetActive(true);
+            ActivateExitMenu();
         }
         if (GameManager.instance.vPressed)
         {
@@ -103,6 +105,28 @@ public class InGame : MonoBehaviour
             {
                 ActivatePauseMenuPanel();
             }
+        }
+    }
+
+    private void DeactivateAllExitMenuPanels()
+    {
+        exitMenu.SetActive(false);
+        savePanel.SetActive(false);
+        overwriteSavePanel.SetActive(false);
+        succesfullySavePanel.SetActive(false);
+        exitPanel.SetActive(false);
+        saveOnExitPanel.SetActive(false);
+        overwriteExitPanel.SetActive(false);
+        successfullyExitPanel.SetActive(false);
+    }
+
+    private void ActivateExitMenu()
+    {
+        if(!partitureSelectionPanel.activeInHierarchy) {
+            exitMenu.SetActive(true);
+        }
+        else {
+            GameManager.instance.escapePressed = false;
         }
     }
 
@@ -148,52 +172,91 @@ public class InGame : MonoBehaviour
         partitureSelectionPanel.SetActive(false);
     }
 
-    public void activateSavePanel()
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Exit Menu <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    public void ActivateSavePanel()
     {
-        Save();
-        successfulSavedPanel.SetActive(true);
+        savePanel.SetActive(true);
         returnArrow.interactable = false;
     }
-
-    public void activateSaveExitPanel()
+    
+    public void DeactivateSavePanel()
     {
-        successfulSavedExitPanel.SetActive(true);
-        Save();
-        lastSaved = Time.time;
+        savePanel.SetActive(false);
+        returnArrow.interactable = true;
     }
 
-    public void Exit()
+    public void ActivateSaveOverwritePanel() {
+        overwriteSavePanel.SetActive(true);
+        savePanel.SetActive(false);
+    }
+    
+    public void DeactivateSaveOverwritePanel()
     {
-        confirmationWindowExit.SetActive(true);
-        returnArrow.interactable = false;
+        overwriteSavePanel.SetActive(false);
+        returnArrow.interactable = true;
+    }
+
+    public void ActivateSaveSuccessfullyPanel() {
+        succesfullySavePanel.SetActive(true);
+        overwriteSavePanel.SetActive(false);
     }
 
     public void Return()
     {
-        exitPanel.SetActive(false);
+        exitMenu.SetActive(false);
         GameManager.instance.escapePressed = false;
-        successfulSavedPanel.SetActive(false);
-        successfulSavedExitPanel.SetActive(false);
+        succesfullySavePanel.SetActive(false);
+        successfullyExitPanel.SetActive(false);
         returnArrow.interactable = true;
-    }
-
-    public void SaveAndExit()
-    {
-        Save();
-        successfulSavedExitPanel.SetActive(true);
-    }
-
-    public void ExitWithoutSaving()
-    {
-        Debug.Log("Bye");
-        Application.Quit();
     }
 
     public void Save()
     {
-        Debug.Log(Time.time + " - " + lastSaved);
         XmlManager.instance.UpdateTimePlayed(Time.time - lastSaved);
+        lastSaved = Time.time;
     }
+
+    public void ActivateExitPanel()
+    {
+        exitPanel.SetActive(true);
+        returnArrow.interactable = false;
+    }
+
+    public void DeactivateExitPanel()
+    {
+        exitPanel.SetActive(false);
+        returnArrow.interactable = true;
+    }
+
+    public void ActivateSaveOnExitPanel()
+    {
+        saveOnExitPanel.SetActive(true);
+        exitPanel.SetActive(false);
+    }
+
+    public void ActivateExitOverwritePanel() {
+        overwriteExitPanel.SetActive(true);
+        saveOnExitPanel.SetActive(false);
+    }
+    
+    public void DeactivateExitOverwritePanel()
+    {
+        overwriteExitPanel.SetActive(false);
+        returnArrow.interactable = true;
+    }
+
+    public void ActivateExitSuccessfullyPanel() {
+        successfullyExitPanel.SetActive(true);
+        overwriteExitPanel.SetActive(false);
+    }
+
+    public void Exit()
+    {
+        Debug.Log("Bye");
+        Application.Quit();
+    }
+    
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Exit Menu <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
     //********************************************************************************
     public void CheckCanMove()
