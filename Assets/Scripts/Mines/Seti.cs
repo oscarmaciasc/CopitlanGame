@@ -67,8 +67,7 @@ public class Seti : MonoBehaviour
                 GetPercentage();
             }
             CheckIfCanPass();
-
-
+        }
         // Debug.Log("notFound se setea a: " + notFound);
     }
 
