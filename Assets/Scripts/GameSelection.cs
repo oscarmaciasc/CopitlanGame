@@ -15,6 +15,7 @@ public class GameSelection : MonoBehaviour
     private int index = 0;
 
     [SerializeField] private GameObject createGameButton;
+    [SerializeField] private GameObject noMoreThan3GamesPanel;
     [SerializeField] private GameObject arrowGame1;
     [SerializeField] private GameObject arrowGame2;
     [SerializeField] private GameObject arrowGame3;
@@ -220,6 +221,7 @@ public class GameSelection : MonoBehaviour
         createGameButton.gameObject.GetComponent<Button>().interactable = false;
         createGameButton.transform.Find("Text").gameObject.GetComponent<Text>().color = new Color32(173, 134, 80, 140);
         createGameButton.transform.Find("Text").gameObject.GetComponent<Outline>().effectColor = new Color32(62, 38, 19, 140);
+        noMoreThan3GamesPanel.SetActive(true);
     }
 
     private void ActivateCreateGameButton()
@@ -227,5 +229,6 @@ public class GameSelection : MonoBehaviour
         createGameButton.gameObject.GetComponent<Button>().interactable = true;
         createGameButton.transform.Find("Text").gameObject.GetComponent<Text>().color = new Color32(173, 134, 80, 255);
         createGameButton.transform.Find("Text").gameObject.GetComponent<Outline>().effectColor = new Color32(62, 38, 19, 255);
+        noMoreThan3GamesPanel.SetActive(false);
     }
 }

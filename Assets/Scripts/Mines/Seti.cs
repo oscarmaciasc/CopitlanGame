@@ -66,12 +66,12 @@ public class Seti : MonoBehaviour
         }
         CheckIfCanPass();
 
-        Debug.Log("notFound se setea a: " + notFound);
+        // Debug.Log("notFound se setea a: " + notFound);
     }
 
     public void GetPercentage()
     {
-         Debug.Log("Get Percentage notFound se setea a: " + notFound);
+        //  Debug.Log("Get Percentage notFound se setea a: " + notFound);
         if (finishedPartiture)
         {
             Debug.Log("correctNotes: " + PentagramManager.instance.correctNotes);
@@ -101,7 +101,7 @@ public class Seti : MonoBehaviour
 
     public void CheckIfCanPass()
     {
-         Debug.Log("CheckIfCanPass notFound se setea a: " + notFound);
+        //  Debug.Log("CheckIfCanPass notFound se setea a: " + notFound);
         if (canPass && finishedPartiture && bothFinished)
         {
             if (destiny.x != gameObject.transform.position.x)
