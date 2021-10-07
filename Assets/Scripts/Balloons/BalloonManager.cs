@@ -25,7 +25,7 @@ public class BalloonManager : MonoBehaviour
         initialPosition = this.gameObject.transform.position;
 
         // Fill tank with file info
-        currentFuel = gameData.GetCurrentFuel();
+        currentFuel = gameData.GetCurrentResource(3);
 
         if (currentFuel != 0)
         {

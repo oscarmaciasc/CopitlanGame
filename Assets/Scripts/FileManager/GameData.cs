@@ -213,9 +213,17 @@ public class GameData
         return "none";
     }
 
-    public int GetCurrentFuel()
+    public int GetCurrentResource(int id)
     {
-        return resource[3].quantity;
+        for (int i=0; i < resource.Length; i++)
+        {
+            if(i == id)
+            {
+                return resource[i].quantity;
+            }
+        }
+
+        return 1000;
     }
 
     public string GetBalloonName()

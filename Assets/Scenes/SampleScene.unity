@@ -25492,7 +25492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1951228272
 Animator:
   serializedVersion: 3
@@ -25706,6 +25706,8 @@ MonoBehaviour:
   velocity: 0
   cost: 
   currentFuel: 0
+  canMove: 1
+  initialPosition: {x: 0, y: 0}
 --- !u!1 &1983995828
 GameObject:
   m_ObjectHideFlags: 0
