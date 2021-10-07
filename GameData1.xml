@@ -7,7 +7,7 @@
       <quantity>0</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>0</quantity>
+      <quantity>15</quantity>
     </Resource>
     <Resource name="gold">
       <quantity>0</quantity>
@@ -23,7 +23,7 @@
     <Flute name="woodenFlute" />
   </Flutes>
   <Balloon name="balloonLvl1" />
-  <MusicalMasteryLvl name="experienced" />
+  <MusicalMasteryLvl name="apprentice" />
   <MusicSheets>
     <MusicSheet name="partiture1" />
     <MusicSheet name="partiture4" />
@@ -50,7 +50,7 @@
       <shouldBeActive>false</shouldBeActive>
     </MineEntrance>
     <MineEntrance name="setiEntrance">
-      <shouldBeActive>true</shouldBeActive>
+      <shouldBeActive>false</shouldBeActive>
     </MineEntrance>
   </MineEntrances>
   <DirigentEntrances>

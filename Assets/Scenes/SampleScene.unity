@@ -1630,6 +1630,7 @@ MonoBehaviour:
   bothFinished: 0
   habitantOne: {fileID: 0}
   habitantTwo: {fileID: 0}
+  habitant: {fileID: 0}
 --- !u!114 &1146112889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25998,6 +25999,7 @@ MonoBehaviour:
   bothFinished: 0
   habitantOne: {fileID: 0}
   habitantTwo: {fileID: 0}
+  habitant: {fileID: 0}
 --- !u!114 &2038755389
 MonoBehaviour:
   m_ObjectHideFlags: 0
