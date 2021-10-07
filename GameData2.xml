@@ -23,9 +23,11 @@
     <Flute name="woodenFlute" />
   </Flutes>
   <Balloon name="balloonLvl1" />
-  <MusicalMasteryLvl name="apprentice" />
+  <MusicalMasteryLvl name="experienced" />
   <MusicSheets>
     <MusicSheet name="partiture1" />
+    <MusicSheet name="partiture4" />
+    <MusicSheet name="partiture5" />
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">

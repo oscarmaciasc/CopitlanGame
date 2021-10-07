@@ -213,6 +213,16 @@ public class GameData
         return "none";
     }
 
+    public int GetCurrentFuel()
+    {
+        return resource[3].quantity;
+    }
+
+    public string GetBalloonName()
+    {
+        return balloon.name;
+    }
+
     public void habitantInitializer()
     {
         this.habitantResult = new HabitantResult[80];

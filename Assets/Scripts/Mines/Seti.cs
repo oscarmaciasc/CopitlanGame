@@ -60,19 +60,23 @@ public class Seti : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!hasFinished)
+        if (habitant != null)
         {
-            GetPercentage();
-        }
-        CheckIfCanPass();
+            if (!hasFinished)
+            {
+                GetPercentage();
+            }
+            CheckIfCanPass();
 
+
+        }
         Debug.Log("notFound se setea a: " + notFound);
     }
 
     public void GetPercentage()
     {
-         Debug.Log("Get Percentage notFound se setea a: " + notFound);
-        if (finishedPartiture)
+        Debug.Log("Get Percentage notFound se setea a: " + notFound);
+        if (habitant.GetComponent<Seti>().finishedPartiture)
         {
             Debug.Log("correctNotes: " + PentagramManager.instance.correctNotes);
             Debug.Log("totalNotes: " + PentagramManager.instance.TotalNotes());
@@ -89,19 +93,20 @@ public class Seti : MonoBehaviour
                 habitant.GetComponent<Seti>().finishedPartiture = false;
                 habitant.GetComponent<Seti>().canPass = false;
 
+
                 // if (habitant.GetComponent<Seti>().canPass)
                 // {
                 //     habitant.GetComponent<Seti>().finishedPartiture = true;
                 // }
             }
 
-            
+
         }
     }
 
     public void CheckIfCanPass()
     {
-         Debug.Log("CheckIfCanPass notFound se setea a: " + notFound);
+        Debug.Log("CheckIfCanPass notFound se setea a: " + notFound);
         if (canPass && finishedPartiture && bothFinished)
         {
             if (destiny.x != gameObject.transform.position.x)
