@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Sansa" gender="true">
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Sarita" gender="true">
   <TimePlayed time="0" />
   <HappinessPercentage percentage="0" />
   <Resources>

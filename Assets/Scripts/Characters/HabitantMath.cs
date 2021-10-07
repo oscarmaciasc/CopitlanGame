@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class HabitantMath : MonoBehaviour
 {
@@ -37,8 +38,10 @@ public class HabitantMath : MonoBehaviour
 
             XmlManager.instance.SaveHabitantsResults(index, uniqueHabitantPercentage);
 
-            // Call Fabians function
-            // Round the result to int
+            GameData gameData = new GameData();
+            gameData = XmlManager.instance.LoadGame();
+
+            gameData.GetAndSaveHappinesPercentage();
         }
     }
 }

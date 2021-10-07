@@ -96,10 +96,13 @@ public class PartitureSelection : MonoBehaviour
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
 
+        Debug.Log("FUNCION MINAS SETI");
+
         for (int i = 0; i < 10; i++)
         {
             if ((gameData.DoesHavePartiture("partiture" + (i + 1))) && ((partiturePanels[i].name == name) || (partiturePanels[i].name == name2)))
             {
+                Debug.Log("Si encuentro");
                 partituresFound = true;
                 partiturePanels[i].SetActive(true);
             }
@@ -111,7 +114,9 @@ public class PartitureSelection : MonoBehaviour
 
         if (!partituresFound)
         {
+            Debug.Log("ENTRANDO MIRA RANGEL");
             Seti.instance.NotFoundPartitures();
+            //Seti.instance.notFound = true;
         }
         
     }

@@ -3,40 +3,40 @@ using System.Collections.Generic;
 using System.Xml;
 using System.Xml.Serialization;
 
-[XmlRoot ("gameData")]
+[XmlRoot("gameData")]
 public class GameData
 {
-    [XmlAttribute ("name")]
+    [XmlAttribute("name")]
     public string name { get; set; }
 
-    [XmlAttribute ("gender")]
+    [XmlAttribute("gender")]
     public bool isWoman { get; set; }
 
-    [XmlElement ("TimePlayed")]
+    [XmlElement("TimePlayed")]
     public TimePlayed timePlayed { get; set; }
 
-    [XmlElement ("HappinessPercentage")]
+    [XmlElement("HappinessPercentage")]
     public HappinessPercentage happinessPercentage { get; set; }
 
-    [XmlArray ("Resources")]
+    [XmlArray("Resources")]
     public Resource[] resource { get; set; }
-    
-    [XmlArray ("Permissions")]
+
+    [XmlArray("Permissions")]
     public Permission[] permission { get; set; }
-    
-    [XmlArray ("Flutes")]
+
+    [XmlArray("Flutes")]
     public Flute[] flute { get; set; }
 
-    [XmlElement ("Balloon")]
+    [XmlElement("Balloon")]
     public Balloon balloon { get; set; }
 
-    [XmlElement ("MusicalMasteryLvl")]
+    [XmlElement("MusicalMasteryLvl")]
     public MusicalMasteryLvl musicalMasteryLvl { get; set; }
 
-    [XmlArray ("MusicSheets")]
+    [XmlArray("MusicSheets")]
     public MusicSheet[] musicSheet { get; set; }
 
-    [XmlArray ("AudienceResults")]
+    [XmlArray("AudienceResults")]
     public AudienceResult[] audienceResult { get; set; }
 
     [XmlArray("MineEntrances")]
@@ -49,10 +49,10 @@ public class GameData
     public HabitantResult[] habitantResult { get; set; }
 
 
-    public GameData(){}
+    public GameData() { }
 
     // Player Initialization 
-    public GameData(string playerName, bool playerGender) 
+    public GameData(string playerName, bool playerGender)
     {
         this.timePlayed = new TimePlayed();
 
@@ -134,30 +134,38 @@ public class GameData
         this.dirigentEntrance[2].shouldBeActive = false;
     }
 
-    public bool DoesHavePermit(string permitType) {
-        for(int i = 0; i < permission.Length; i++) {
-            if(permitType == permission[i].name) {
+    public bool DoesHavePermit(string permitType)
+    {
+        for (int i = 0; i < permission.Length; i++)
+        {
+            if (permitType == permission[i].name)
+            {
                 return true;
             }
         }
-        
+
         return false;
     }
-    
-    public bool DoesHavePartiture(string partitureName) {
-        for(int i = 0; i < musicSheet.Length; i++) {
-            if(partitureName == musicSheet[i].name) {
+
+    public bool DoesHavePartiture(string partitureName)
+    {
+        for (int i = 0; i < musicSheet.Length; i++)
+        {
+            if (partitureName == musicSheet[i].name)
+            {
                 return true;
             }
         }
-        
+
         return false;
     }
-    public bool DoesHaveBalloon(string balloonName) {
-        if(balloon.name == balloonName) {
+    public bool DoesHaveBalloon(string balloonName)
+    {
+        if (balloon.name == balloonName)
+        {
             return true;
         }
-        
+
         return false;
     }
 
@@ -171,26 +179,34 @@ public class GameData
         return false;
     }
 
-    public int GetAudienceResult(string audienceName) {
-        for (int i = 0; i < 4; i++) {
-            if(audienceResult[i].name == audienceName) {
+    public int GetAudienceResult(string audienceName)
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            if (audienceResult[i].name == audienceName)
+            {
                 return audienceResult[i].result;
             }
         }
         return 1000;
     }
-    
-    public string GetMusicalMasteryLevel() {
-        if(musicalMasteryLvl.name == "apprentice") {
+
+    public string GetMusicalMasteryLevel()
+    {
+        if (musicalMasteryLvl.name == "apprentice")
+        {
             return "Aprendiz";
         }
-        else if(musicalMasteryLvl.name == "experienced") {
+        else if (musicalMasteryLvl.name == "experienced")
+        {
             return "Diestro";
         }
-        else if(musicalMasteryLvl.name == "master") {
+        else if (musicalMasteryLvl.name == "master")
+        {
             return "Maestro";
         }
-        else if(musicalMasteryLvl.name == "legend") {
+        else if (musicalMasteryLvl.name == "legend")
+        {
             return "Leyenda";
         }
 
@@ -201,11 +217,36 @@ public class GameData
     {
         this.habitantResult = new HabitantResult[80];
 
-        for(int i = 0; i < 80; i++)
+        for (int i = 0; i < 80; i++)
         {
             this.habitantResult[i] = new HabitantResult();
             this.habitantResult[i].id = i;
             this.habitantResult[i].result = 0;
         }
+    }
+
+    public int GetHabitantHappinesPercentage()
+    {
+        int habitantHappinessPercentage = 0;
+
+        for (int i = 0; i < this.habitantResult.Length; i++)
+        {
+            habitantHappinessPercentage += habitantResult[i].result;
+        }
+
+        habitantHappinessPercentage /= 80;
+
+        return habitantHappinessPercentage;
+    }
+
+    public int GetAndSaveHappinesPercentage()
+    {
+        double necalliPercentage = GetAudienceResult("necalliResult") * (0.8);
+        double habitantPercentage = GetHabitantHappinesPercentage() * (0.2);
+        int res = (int)necalliPercentage + (int)habitantPercentage;
+
+        XmlManager.instance.UpdateHappinessPercentage(res);
+
+        return res;
     }
 }

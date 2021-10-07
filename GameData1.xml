@@ -7,7 +7,7 @@
       <quantity>0</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>0</quantity>
+      <quantity>15</quantity>
     </Resource>
     <Resource name="gold">
       <quantity>0</quantity>
@@ -26,6 +26,7 @@
   <MusicalMasteryLvl name="apprentice" />
   <MusicSheets>
     <MusicSheet name="partiture1" />
+    <MusicSheet name="partiture4" />
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">

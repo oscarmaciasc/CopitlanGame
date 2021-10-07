@@ -6,11 +6,11 @@ public class Audience : MonoBehaviour
 {
     public static Audience instance;
     public bool finishedPartiture = false;
-    public int percentageToPass;
     public int res = 0;
     public bool canPass = false;
     public bool notFound = false;
     public bool canActivatePartiturePanel = true;
+    public int percentageToPass;
     private string[] noPartituresDialog = { "Parece que no tienes la partitura necesaria", "Vuelve cuando la tengas" };
     private string[] KasakirSuccess1 = { "Me has convencido", "te otorgo el permiso del triangulo para que vayas y hagas felices a mas personas" };
     private string[] KasakirSuccess2 = { "Estoy realmente sorprendido", "tienes que mostrarle esto al mundo entero", "te otorgo el permiso del triangulo para que vayas y hagas felices a mas personas" };
@@ -51,9 +51,9 @@ public class Audience : MonoBehaviour
             }
         }
 
-        if (gameData.audienceResult[1].result >= 70)
+        if (gameData.audienceResult[1].result >= 60)
         {
-             habitant = GameObject.Find("Quizani");
+            habitant = GameObject.Find("Quizani");
             if (habitant != null)
             {
                 habitant.GetComponent<Audience>().hasFinished = true;
@@ -62,9 +62,9 @@ public class Audience : MonoBehaviour
             }
         }
 
-        if (gameData.audienceResult[2].result >= 80)
+        if (gameData.audienceResult[2].result >= 60)
         {
-             habitant = GameObject.Find("Naran");
+            habitant = GameObject.Find("Naran");
             if (habitant != null)
             {
                 habitant.GetComponent<Audience>().hasFinished = true;
@@ -86,7 +86,7 @@ public class Audience : MonoBehaviour
         {
             Debug.Log("Notas correctas: " + PentagramManager.instance.correctNotes);
             Debug.Log("Notes: " + PentagramManager.instance.TotalNotes());
-            if (((PentagramManager.instance.correctNotes * 100) / (PentagramManager.instance.TotalNotes())) >= percentageToPass)
+            if (((PentagramManager.instance.correctNotes * 100) / (PentagramManager.instance.TotalNotes())) >= 60)
             {
                 canPass = true;
                 res = (60) + (((PentagramManager.streakRes) * (40)) / ((PentagramManager.instance.TotalNotes())));
@@ -96,33 +96,51 @@ public class Audience : MonoBehaviour
                 GameData gameData = new GameData();
                 gameData = XmlManager.instance.LoadGame();
 
+
                 // send res as array to a file
                 if (habitant.name == "Kasakir")
                 {
                     XmlManager.instance.SaveAudienceResult(0, res);
-                    if (!gameData.DoesHavePermit("triangle"))
+                    if (res >= percentageToPass)
                     {
-                        XmlManager.instance.AddPermission("triangle");
+                        if (!gameData.DoesHavePermit("triangle"))
+                        {
+                            XmlManager.instance.AddPermission("triangle");
+                        }
                     }
                 }
                 else if (habitant.name == "Quizani")
                 {
                     XmlManager.instance.SaveAudienceResult(1, res);
-                    if (!gameData.DoesHavePermit("innerCircle"))
+                    if (res >= percentageToPass)
                     {
-                        XmlManager.instance.AddPermission("innerCircle");
+                        if (!gameData.DoesHavePermit("innerCircle"))
+                        {
+                            XmlManager.instance.AddPermission("innerCircle");
+                        }
                     }
                 }
                 else if (habitant.name == "Naran")
                 {
                     XmlManager.instance.SaveAudienceResult(2, res);
-                    if (!gameData.DoesHavePermit("necalliRoyalPalace"))
+                    if (res >= percentageToPass)
                     {
-                        XmlManager.instance.AddPermission("necalliRoyalPalace");
+                        if (!gameData.DoesHavePermit("necalliRoyalPalace"))
+                        {
+                            XmlManager.instance.AddPermission("necalliRoyalPalace");
+                        }
                     }
                 }
 
-                successInterpretation = true;
+                if (res >= percentageToPass)
+                {
+                    successInterpretation = true;
+                } else 
+                {
+                    successInterpretation = false;
+                    canPass = false;
+                    finishedPartiture = false;
+                }
             }
             else
             {
