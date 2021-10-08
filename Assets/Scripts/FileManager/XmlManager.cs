@@ -140,6 +140,9 @@ public class XmlManager : MonoBehaviour
             case 2:
                 maxQuantity = 50;
             break;
+            case 3:
+                maxQuantity = gameData.GetBalloonCapacity();
+            break;
         }
 
         if((gameData.resource[resourceID].quantity + quantityAdded) > maxQuantity) {
