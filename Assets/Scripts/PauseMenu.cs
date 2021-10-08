@@ -113,7 +113,7 @@ public class PauseMenu : MonoBehaviour
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
 
-        BalloonPanel.transform.Find("FuelLayout").Find("FuelLevel").GetComponent<Slider>().maxValue = gameData.GetBalloonFuelCapacity();
+        BalloonPanel.transform.Find("FuelLayout").Find("FuelLevel").GetComponent<Slider>().maxValue = gameData.GetBalloonCapacity();
         BalloonPanel.transform.Find("FuelLayout").Find("FuelLevel").GetComponent<Slider>().value = gameData.GetCurrentResource(3);
     }
 

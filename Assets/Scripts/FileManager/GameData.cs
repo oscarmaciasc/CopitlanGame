@@ -232,9 +232,10 @@ public class GameData
     }
 
     public int GetBalloonCapacity() {
-        string balloonName = "ballonLvl";
+        string balloonName;
         
         for(int i = 0; i < 3; i++) {
+            balloonName = "balloonLvl";
             balloonName += (i + 1).ToString();
             if(GetBalloonName() == balloonName) {
                 return 10 * (i + 2);
