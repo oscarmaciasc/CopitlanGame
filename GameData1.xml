@@ -1,13 +1,14 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Arya" gender="true">
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Ringo" gender="false">
   <TimePlayed time="0" />
+  <TimeWalked time="0" />
   <HappinessPercentage percentage="0" />
   <Resources>
     <Resource name="wood">
       <quantity>0</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>15</quantity>
+      <quantity>0</quantity>
     </Resource>
     <Resource name="gold">
       <quantity>0</quantity>
@@ -26,7 +27,6 @@
   <MusicalMasteryLvl name="apprentice" />
   <MusicSheets>
     <MusicSheet name="partiture1" />
-    <MusicSheet name="partiture4" />
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">
@@ -64,6 +64,7 @@
       <shouldBeActive>false</shouldBeActive>
     </DirigentEntrance>
   </DirigentEntrances>
+  <Collectables quantity="0" />
   <HabitantResults>
     <HabitantResult id="0">
       <Result>0</Result>

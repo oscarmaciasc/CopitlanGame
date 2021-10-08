@@ -16,7 +16,8 @@ public class PlayerController : MonoBehaviour
     public int indexGame = 0;
 
     public bool canMove = true;
-
+    public float lastWalked = 0f;
+    public float firstWalked = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,8 +64,11 @@ public class PlayerController : MonoBehaviour
         {
             if (canMove)
             {
+                SaveTimeWalked();
+
                 myAnim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
                 myAnim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
+
             }
         }
 
@@ -77,5 +81,12 @@ public class PlayerController : MonoBehaviour
         // This addition is made to avoid the sprite of the player from being choped up.
         bottomLeftLimit = botLeft + new Vector3(.5f, 1f, 0f);
         topRightLimit = topRight + new Vector3(-.5f, -1f, 0f);
+    }
+
+    public void SaveTimeWalked()
+    {
+        firstWalked = Time.time;
+        XmlManager.instance.UpdateTimeWalked(firstWalked - lastWalked);
+        lastWalked = Time.time;
     }
 }

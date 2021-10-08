@@ -123,6 +123,17 @@ public class XmlManager : MonoBehaviour
         Save(gameIndex, gameData);
     }
 
+    public void AddBalloon(string balloonName)
+    {
+        int gameIndex = GetGameIndex();
+
+        GameData gameData = LoadGame();
+
+        gameData.balloon.name = balloonName;
+
+        Save(gameIndex, gameData);
+    }
+
     public bool ThereIsEnoughSpace(int resourceID, int quantityAdded) 
     {
         int gameIndex = GetGameIndex();
@@ -207,7 +218,7 @@ public class XmlManager : MonoBehaviour
         Save(gameIndex, gameData);
     }
 
-    public void AddPermission(string NewPermission)
+    public void AddPermission(string newPermission)
     {
         int gameIndex = GetGameIndex();
 
@@ -222,9 +233,31 @@ public class XmlManager : MonoBehaviour
             permissions[i] = gameData.permission[i];
         }
 
-        permissions[newLength - 1] = new Permission(NewPermission);
+        permissions[newLength - 1] = new Permission(newPermission);
 
         gameData.permission = permissions;
+
+        Save(gameIndex, gameData);
+    }
+
+    public void AddFlute(string newFlute)
+    {
+        int gameIndex = GetGameIndex();
+
+        GameData gameData = LoadGame();
+
+        int newLength = gameData.flute.Length + 1;
+
+        Flute[] flutes = new Flute[newLength];
+
+        for (int i = 0; i < gameData.flute.Length; i++)
+        {
+            flutes[i] = gameData.flute[i];
+        }
+
+        flutes[newLength - 1] = new Flute(newFlute);
+
+        gameData.flute = flutes;
 
         Save(gameIndex, gameData);
     }
@@ -247,6 +280,17 @@ public class XmlManager : MonoBehaviour
         GameData gameData = LoadGame();
 
         gameData.timePlayed.time += timePlayed;
+
+        Save(gameIndex, gameData);
+    }
+
+    public void UpdateTimeWalked(float timeWalked)
+    {
+        int gameIndex = GetGameIndex();
+
+        GameData gameData = LoadGame();
+
+        gameData.timeWalked.time += timeWalked;
 
         Save(gameIndex, gameData);
     }

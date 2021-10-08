@@ -15,6 +15,9 @@ public class GameData
     [XmlElement("TimePlayed")]
     public TimePlayed timePlayed { get; set; }
 
+    [XmlElement("TimeWalked")]
+    public TimeWalked timeWalked { get; set; }
+
     [XmlElement("HappinessPercentage")]
     public HappinessPercentage happinessPercentage { get; set; }
 
@@ -45,6 +48,9 @@ public class GameData
     [XmlArray("DirigentEntrances")]
     public DirigentEntrance[] dirigentEntrance { get; set; }
 
+    [XmlElement("Collectables")]
+    public Collectable collectable { get; set; }
+
     [XmlArray("HabitantResults")]
     public HabitantResult[] habitantResult { get; set; }
 
@@ -54,7 +60,11 @@ public class GameData
     // Player Initialization 
     public GameData(string playerName, bool playerGender)
     {
+        this.collectable = new Collectable();
+
         this.timePlayed = new TimePlayed();
+        
+        this.timeWalked = new TimeWalked();
 
         this.happinessPercentage = new HappinessPercentage();
 
@@ -96,8 +106,10 @@ public class GameData
         habitantInitializer();
 
         this.name = playerName;
+        this.collectable.quantity = 0;
         this.isWoman = playerGender;
         this.timePlayed.time = 0f;
+        this.timeWalked.time = 0f;
         this.happinessPercentage.percentage = 0;
         this.resource[0].name = "wood";
         this.resource[0].quantity = 0;
@@ -162,6 +174,29 @@ public class GameData
     public bool DoesHaveBalloon(string balloonName)
     {
         if (balloon.name == balloonName)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public bool DoesHaveFlute(string fluteName)
+    {
+        for (int i = 0; i < flute.Length; i++)
+        {
+            if (flute[i].name == fluteName)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public bool DoesHaveAllCollectables()
+    {
+        if(collectable.quantity == 20)
         {
             return true;
         }

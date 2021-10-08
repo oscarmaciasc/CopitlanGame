@@ -44,27 +44,35 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         instance = this;
+
+
         ActivatePanel();
     }
 
-    public void ActivatePanel() {
+    public void ActivatePanel()
+    {
         LoadGameData();
         ActivateMapPanel();
         pauseMenuPanel.SetActive(true);
     }
 
-    private void LoadGameData() {
+    private void LoadGameData()
+    {
+        XmlManager.instance.UpdateTimePlayed(Time.time - InGame.instance.lastSaved);
+        InGame.instance.lastSaved = Time.time;
         gameData = XmlManager.instance.LoadGame();
     }
 
-    public void ActivateMapPanel() {
+    public void ActivateMapPanel()
+    {
         MapPanel.SetActive(true);
         InventoryPanel.SetActive(false);
         BalloonPanel.SetActive(false);
         InfoPanel.SetActive(false);
     }
 
-    public void ActivateInventoryPanel() {
+    public void ActivateInventoryPanel()
+    {
         MapPanel.SetActive(false);
         InventoryPanel.SetActive(true);
         ActivateInvResourcesPanel();
@@ -72,7 +80,8 @@ public class PauseMenu : MonoBehaviour
         InfoPanel.SetActive(false);
     }
 
-    public void ActivateBalloonPanel() {
+    public void ActivateBalloonPanel()
+    {
         MapPanel.SetActive(false);
         InventoryPanel.SetActive(false);
         BalloonPanel.SetActive(true);
@@ -81,28 +90,32 @@ public class PauseMenu : MonoBehaviour
         InfoPanel.SetActive(false);
     }
 
-    private void SetBallon() {
+    private void SetBallon()
+    {
         string balloonName = "";
 
-        for(int i = 0; i < 3; i++) {
+        for (int i = 0; i < 3; i++)
+        {
             balloonName = "balloonLvl" + (i + 1).ToString();
-            if(gameData.DoesHaveBalloon(balloonName)) {
-                switch(i) {
+            if (gameData.DoesHaveBalloon(balloonName))
+            {
+                switch (i)
+                {
                     case 0:
                         balloon1Panel.SetActive(true);
                         balloon2Panel.SetActive(false);
                         balloon3Panel.SetActive(false);
-                    break;
+                        break;
                     case 1:
                         balloon1Panel.SetActive(false);
                         balloon2Panel.SetActive(true);
                         balloon3Panel.SetActive(false);
-                    break;
+                        break;
                     case 2:
                         balloon1Panel.SetActive(false);
                         balloon2Panel.SetActive(false);
                         balloon3Panel.SetActive(true);
-                    break;
+                        break;
                 }
             }
         }
@@ -117,7 +130,8 @@ public class PauseMenu : MonoBehaviour
         BalloonPanel.transform.Find("FuelLayout").Find("FuelLevel").GetComponent<Slider>().value = gameData.GetCurrentResource(3);
     }
 
-    public void ActivateInfoPanel() {
+    public void ActivateInfoPanel()
+    {
         MapPanel.SetActive(false);
         InventoryPanel.SetActive(false);
         BalloonPanel.SetActive(false);
@@ -125,7 +139,8 @@ public class PauseMenu : MonoBehaviour
         SetInfo();
     }
 
-    private void SetInfo() {
+    private void SetInfo()
+    {
         musicalMasteryLevel.transform.GetComponent<Text>().text = gameData.GetMusicalMasteryLevel();
 
         // *************************** KINDA FAKE ***************************
@@ -133,97 +148,115 @@ public class PauseMenu : MonoBehaviour
         happinessPercentage.transform.GetComponent<Text>().text = gameData.happinessPercentage.percentage.ToString();
         // *************************** KINDA FAKE ***************************
 
-        XmlManager.instance.UpdateTimePlayed(Time.time - InGame.instance.lastSaved);
-        InGame.instance.lastSaved = Time.time;
-
         minPlayed.transform.GetComponent<Text>().text = FormatTime(gameData.timePlayed.time);
 
-        if(gameData.DoesHavePermit("outterCircle")) {
+        if (gameData.DoesHavePermit("outterCircle"))
+        {
             outterCirclePermission.SetActive(true);
         }
-        else {
+        else
+        {
             outterCirclePermission.SetActive(false);
         }
 
-        if(gameData.DoesHavePermit("triangle")) {
+        if (gameData.DoesHavePermit("triangle"))
+        {
             trianglePermission.SetActive(true);
         }
-        else {
+        else
+        {
             trianglePermission.SetActive(false);
         }
 
-        if(gameData.DoesHavePermit("innerCircle")) {
+        if (gameData.DoesHavePermit("innerCircle"))
+        {
             innerCirclePermission.SetActive(true);
         }
-        else {
+        else
+        {
             innerCirclePermission.SetActive(false);
         }
 
     }
 
-    public void ActivateInvResourcesPanel() {
+    public void ActivateInvResourcesPanel()
+    {
         InvResourcesPanel.SetActive(true);
         SetResourcesQuantity();
         InvFlutesPanel.SetActive(false);
         InvPartituresPanel.SetActive(false);
     }
 
-    private void SetResourcesQuantity() {
-        for(int i = 0; i < 4; i++) {
+    private void SetResourcesQuantity()
+    {
+        for (int i = 0; i < 4; i++)
+        {
             resourceQuantity[i].transform.GetComponent<Text>().text = gameData.resource[i].quantity.ToString();
         }
     }
 
-    public void ActivateInvFlutesPanel() {
+    public void ActivateInvFlutesPanel()
+    {
         InvResourcesPanel.SetActive(false);
         InvFlutesPanel.SetActive(true);
         SetFlutes();
         InvPartituresPanel.SetActive(false);
     }
 
-    private void SetFlutes() {
-        for(int i = 0; i <= gameData.flute.Length; i++) {
+    private void SetFlutes()
+    {
+        for (int i = 0; i <= gameData.flute.Length; i++)
+        {
             flutes[i].SetActive(true);
         }
 
-        if(gameData.flute.Length < 4) {
-            for(int i = gameData.flute.Length; i < 4; i++) {
+        if (gameData.flute.Length < 4)
+        {
+            for (int i = gameData.flute.Length; i < 4; i++)
+            {
                 flutes[i].SetActive(false);
             }
         }
     }
 
-    public void ActivateInvPartituresPanel() {
+    public void ActivateInvPartituresPanel()
+    {
         InvResourcesPanel.SetActive(false);
         InvFlutesPanel.SetActive(false);
         InvPartituresPanel.SetActive(true);
         SetPartitures();
     }
 
-    private void SetPartitures() {
+    private void SetPartitures()
+    {
         string partitureName = "";
 
-        for(int i = 0; i < 10; i++) {
+        for (int i = 0; i < 10; i++)
+        {
             partitureName = "partiture" + (i + 1).ToString();
-            
+
             Debug.Log(partitureName);
-            if(gameData.DoesHavePartiture(partitureName)) {
+            if (gameData.DoesHavePartiture(partitureName))
+            {
                 partitures[i].SetActive(true);
             }
-            else {
+            else
+            {
                 partitures[i].SetActive(false);
             }
         }
     }
 
-    public void DeactivatePauseMenuPanel() {
+    public void DeactivatePauseMenuPanel()
+    {
         pauseMenuPanel.gameObject.SetActive(false);
         GameManager.instance.pPressed = false;
     }
 
-    private string FormatTime(float time) {
-        int minutes = (int) time / 60;
-        int seconds = (int) (time - (60 * minutes));
-        return string.Format("{0:00}:{1:00}", minutes, seconds );
+    private string FormatTime(float time)
+    {
+        int minutes = (int)time / 60;
+        int seconds = (int)(time - (60 * minutes));
+        return string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }

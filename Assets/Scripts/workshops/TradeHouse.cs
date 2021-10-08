@@ -39,7 +39,7 @@ public class TradeHouse : MonoBehaviour
             }
             else
             {
-                Debug.Log("Ya tienes demasiado de este recurso");
+                Debug.Log("Has llegado al limite del inventario de este recurso");
             }
         }
         else

@@ -8,7 +8,6 @@ public class BalloonManager : MonoBehaviour
     public string balloonName;
     public int fuelLimit;
     public float velocity;
-    public int[] cost;
     public int currentFuel;
     public bool canMove = true;
     public Vector2 initialPosition;
@@ -77,18 +76,12 @@ public class BalloonManager : MonoBehaviour
         {
             this.fuelLimit = 30;
             this.velocity = 3.5f;
-            this.cost[0] = 500;
-            this.cost[1] = 50;
-            this.cost[2] = 5;
         }
 
         if (balloonName == "balloonLvl3")
         {
             this.fuelLimit = 40;
             this.velocity = 4;
-            this.cost[0] = 1000;
-            this.cost[1] = 100;
-            this.cost[2] = 10;
         }
     }
 }
