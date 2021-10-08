@@ -28,7 +28,7 @@ public class InGame : MonoBehaviour
     [SerializeField] private GameObject naranEntrance;
     [SerializeField] private GameObject PauseMenuPanel;
     private bool pauseMenuHasBeenStarted = false;
-    private float lastSaved = 0f;
+    public float lastSaved = 0f;
 
     private void Awake()
     {
