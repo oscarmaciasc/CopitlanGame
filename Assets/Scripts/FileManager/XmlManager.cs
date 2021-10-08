@@ -123,6 +123,32 @@ public class XmlManager : MonoBehaviour
         Save(gameIndex, gameData);
     }
 
+    public bool ThereIsEnoughSpace(int resourceID, int quantityAdded) 
+    {
+        int gameIndex = GetGameIndex();
+        int maxQuantity = 0;
+
+        GameData gameData = LoadGame();
+        
+        switch(resourceID) {
+            case 0:
+                maxQuantity = 5000;
+            break;
+            case 1:
+                maxQuantity = 500;
+            break;
+            case 2:
+                maxQuantity = 50;
+            break;
+        }
+
+        if((gameData.resource[resourceID].quantity + quantityAdded) > maxQuantity) {
+            return false;
+        }
+
+        return true;
+    }
+
     public void SaveAudienceResult(int audienceResultID, int result)
     {
         int gameIndex = GetGameIndex();

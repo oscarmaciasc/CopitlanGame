@@ -4,13 +4,13 @@
   <HappinessPercentage percentage="50" />
   <Resources>
     <Resource name="wood">
-      <quantity>0</quantity>
+      <quantity>5000</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>0</quantity>
+      <quantity>500</quantity>
     </Resource>
     <Resource name="gold">
-      <quantity>0</quantity>
+      <quantity>50</quantity>
     </Resource>
     <Resource name="fuel">
       <quantity>0</quantity>
