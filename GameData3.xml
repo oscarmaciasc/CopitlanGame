@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Myrcella" gender="true">
-  <TimePlayed time="612.605835" />
+  <TimePlayed time="674.8703" />
   <HappinessPercentage percentage="50" />
   <Resources>
     <Resource name="wood">
       <quantity>5000</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>500</quantity>
+      <quantity>490</quantity>
     </Resource>
     <Resource name="gold">
-      <quantity>50</quantity>
+      <quantity>24</quantity>
     </Resource>
     <Resource name="fuel">
-      <quantity>26</quantity>
+      <quantity>30</quantity>
     </Resource>
   </Resources>
   <Permissions>
