@@ -133,6 +133,9 @@ public class PauseMenu : MonoBehaviour
         happinessPercentage.transform.GetComponent<Text>().text = gameData.happinessPercentage.percentage.ToString();
         // *************************** KINDA FAKE ***************************
 
+        XmlManager.instance.UpdateTimePlayed(Time.time - InGame.instance.lastSaved);
+        InGame.instance.lastSaved = Time.time;
+
         minPlayed.transform.GetComponent<Text>().text = FormatTime(gameData.timePlayed.time);
 
         if(gameData.DoesHavePermit("outterCircle")) {
