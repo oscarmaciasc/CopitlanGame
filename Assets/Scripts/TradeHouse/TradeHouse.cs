@@ -32,8 +32,15 @@ public class TradeHouse : MonoBehaviour
         // If we have the necessary amount of resource we do the trade
         if (gameData.GetCurrentResource(resorceToSustractID) >= quantityToSustract)
         {
-            XmlManager.instance.IncreaseResource(resourceToGiveID, quantityToGive);
-            XmlManager.instance.IncreaseResource(resorceToSustractID, quantityToSustract);
+            if (XmlManager.instance.ThereIsEnoughSpace(resourceToGiveID, quantityToGive))
+            {
+                XmlManager.instance.IncreaseResource(resourceToGiveID, quantityToGive);
+                XmlManager.instance.IncreaseResource(resorceToSustractID, quantityToSustract);
+            }
+            else
+            {
+                Debug.Log("Ya tienes demasiado de este recurso");
+            }
         }
         else
         {

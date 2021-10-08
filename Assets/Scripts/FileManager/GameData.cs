@@ -231,6 +231,11 @@ public class GameData
         return balloon.name;
     }
 
+    public int GetBalloonFuelCapacity()
+    {
+        return 20;
+    }
+
     public void habitantInitializer()
     {
         this.habitantResult = new HabitantResult[80];

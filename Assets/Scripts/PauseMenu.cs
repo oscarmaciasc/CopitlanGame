@@ -77,6 +77,7 @@ public class PauseMenu : MonoBehaviour
         InventoryPanel.SetActive(false);
         BalloonPanel.SetActive(true);
         SetBallon();
+        SetSlider();
         InfoPanel.SetActive(false);
     }
 
@@ -105,6 +106,15 @@ public class PauseMenu : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void SetSlider()
+    {
+        GameData gameData = new GameData();
+        gameData = XmlManager.instance.LoadGame();
+
+        BalloonPanel.transform.Find("FuelLayout").Find("FuelLevel").GetComponent<Slider>().maxValue = gameData.GetBalloonFuelCapacity();
+        BalloonPanel.transform.Find("FuelLayout").Find("FuelLevel").GetComponent<Slider>().value = gameData.GetCurrentResource(3);
     }
 
     public void ActivateInfoPanel() {

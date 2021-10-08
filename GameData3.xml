@@ -13,7 +13,7 @@
       <quantity>50</quantity>
     </Resource>
     <Resource name="fuel">
-      <quantity>0</quantity>
+      <quantity>5</quantity>
     </Resource>
   </Resources>
   <Permissions>
@@ -24,7 +24,7 @@
   <Flutes>
     <Flute name="woodenFlute" />
   </Flutes>
-  <Balloon name="balloonLvl1" />
+  <Balloon name="balloonLvl2" />
   <MusicalMasteryLvl name="legend" />
   <MusicSheets>
     <MusicSheet name="partiture4" />

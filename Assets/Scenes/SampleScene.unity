@@ -27054,7 +27054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 974284128, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 975497388, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_IsActive
@@ -27704,6 +27704,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 80262340937402456, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_Text
+      value: Globo aerostatico de uso personal de la mejor calidad, creado por los
+        mejores artesanos de Copitlan con los mas finos materiales. Mas rapido que
+        una luciernaga!
+      objectReference: {fileID: 0}
     - target: {fileID: 109116798231944952, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -28068,6 +28074,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 847132463271511420, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 869412546107191997, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -28138,6 +28148,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 958748072236330064, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 994429800148005142, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1046399186009897101, guid: cc6deea581a65364391abd104cfaced7, type: 3}
@@ -28459,6 +28473,12 @@ PrefabInstance:
     - target: {fileID: 1992642236550624190, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2001472138821684727, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_Text
+      value: Globo aerostatico de uso personal. Tiene un estilo vanguardista y fresco,
+        avanza mas rapidamente con el nuevo sistema de combustible y la tela de cuero
+        reforzado.
       objectReference: {fileID: 0}
     - target: {fileID: 2015410366402764700, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_AnchorMax.y
@@ -29048,6 +29068,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2894558593328517190, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3007418180254955187, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -29058,6 +29082,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3007418180254955187, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034504111261076528, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076532489754163801, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3128386314527305496, guid: cc6deea581a65364391abd104cfaced7, type: 3}
@@ -29075,6 +29107,10 @@ PrefabInstance:
     - target: {fileID: 3128386314527305496, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3138873225961044262, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3170277816969133606, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_AnchorMax.y
@@ -29318,7 +29354,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3739184055614350828, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -702
+      value: -52
+      objectReference: {fileID: 0}
+    - target: {fileID: 3784181860347294001, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3784181860347294001, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3784181860347294001, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3784181860347294001, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3869279381907853300, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_AnchorMax.y
@@ -30456,6 +30508,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6469042045928233173, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_Text
+      value: Globo aerostatico de uso personal. Esta un poco remendado con parches
+        y se queda sin combustible bastante a menudo, pero te servira para llegar
+        mas rapido a tu destino.
+      objectReference: {fileID: 0}
     - target: {fileID: 6483952392991741774, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -30922,7 +30980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7275822846277882769, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7276701916433091541, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_AnchorMax.y
@@ -31440,6 +31498,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8144333214065698647, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8213219607292145682, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -31470,6 +31532,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8221673980689251743, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224275842583266801, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8237752209099034576, guid: cc6deea581a65364391abd104cfaced7, type: 3}
@@ -31634,7 +31700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8750977933107032007, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 8750977933107032007, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_AnchoredPosition.y
