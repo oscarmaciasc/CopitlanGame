@@ -1,20 +1,20 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="George" gender="false">
-  <TimePlayed time="0" />
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Myrcella" gender="true">
+  <TimePlayed time="674.8703" />
   <TimeWalked time="0" />
-  <HappinessPercentage percentage="0" />
+  <HappinessPercentage percentage="50" />
   <Resources>
     <Resource name="wood">
       <quantity>0</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>0</quantity>
+      <quantity>490</quantity>
     </Resource>
     <Resource name="gold">
-      <quantity>0</quantity>
+      <quantity>24</quantity>
     </Resource>
     <Resource name="fuel">
-      <quantity>0</quantity>
+      <quantity>30</quantity>
     </Resource>
   </Resources>
   <Permissions>
