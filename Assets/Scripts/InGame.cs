@@ -122,11 +122,11 @@ public class InGame : MonoBehaviour
 
     private void ActivateExitMenu()
     {
-        if(!partitureSelectionPanel.activeInHierarchy) {
-            exitMenu.SetActive(true);
+        if(partitureSelectionPanel.activeInHierarchy || pentagramPanel.activeInHierarchy) {
+            GameManager.instance.escapePressed = false;
         }
         else {
-            GameManager.instance.escapePressed = false;
+            exitMenu.SetActive(true);
         }
     }
 
@@ -172,7 +172,6 @@ public class InGame : MonoBehaviour
         partitureSelectionPanel.SetActive(false);
     }
 
-    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Exit Menu <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     public void ActivateSavePanel()
     {
         savePanel.SetActive(true);
@@ -255,8 +254,6 @@ public class InGame : MonoBehaviour
         Debug.Log("Bye");
         Application.Quit();
     }
-    
-    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Exit Menu <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
     //********************************************************************************
     public void CheckCanMove()

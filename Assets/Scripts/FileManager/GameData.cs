@@ -231,9 +231,17 @@ public class GameData
         return balloon.name;
     }
 
-    public int GetBalloonFuelCapacity()
-    {
-        return 20;
+    public int GetBalloonCapacity() {
+        string balloonName = "ballonLvl";
+        
+        for(int i = 0; i < 3; i++) {
+            balloonName += (i + 1).ToString();
+            if(GetBalloonName() == balloonName) {
+                return 10 * (i + 2);
+            }
+        }
+        
+        return 1000;
     }
 
     public void habitantInitializer()
