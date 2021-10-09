@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Myrcella" gender="true">
   <TimePlayed time="674.8703" />
-  <TimeWalked time="0" />
+  <TimeWalked time="91.64773" />
   <HappinessPercentage percentage="50" />
   <Resources>
     <Resource name="wood">

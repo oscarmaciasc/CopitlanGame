@@ -140,6 +140,12 @@ public class DialogManager : MonoBehaviour
                             }
                         }
 
+                        if (habitant.GetComponent<Blacksmith>() != null)
+                        {
+                            habitant.GetComponent<Blacksmith>().conversationFinished = true;
+                            habitant.GetComponent<Blacksmith>().HasBalloon(habitant);
+                        }
+
 
 
                     }

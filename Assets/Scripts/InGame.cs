@@ -27,6 +27,7 @@ public class InGame : MonoBehaviour
     [SerializeField] private GameObject quizaniEntrance;
     [SerializeField] private GameObject naranEntrance;
     [SerializeField] private GameObject PauseMenuPanel;
+    [SerializeField] private GameObject Blacksmith1Entrance;
     private bool pauseMenuHasBeenStarted = false;
     public float lastSaved = 0f;
 
@@ -76,6 +77,9 @@ public class InGame : MonoBehaviour
             {
                 naranEntrance.SetActive(true);
             }
+
+            
+            Blacksmith1Entrance.SetActive(true);
         }
     }
 
