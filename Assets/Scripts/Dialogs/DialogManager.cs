@@ -146,6 +146,12 @@ public class DialogManager : MonoBehaviour
                             habitant.GetComponent<Blacksmith>().HasBalloon(habitant);
                         }
 
+                        if (habitant.GetComponent<Trader>() != null)
+                        {
+                            habitant.GetComponent<Trader>().conversationFinished = true;
+                            habitant.GetComponent<Trader>().Trade(habitant);
+                        }
+
 
 
                     }

@@ -28,6 +28,7 @@ public class InGame : MonoBehaviour
     [SerializeField] private GameObject naranEntrance;
     [SerializeField] private GameObject PauseMenuPanel;
     [SerializeField] private GameObject Blacksmith1Entrance;
+    [SerializeField] private GameObject Tradehouse1Entrance;
     private bool pauseMenuHasBeenStarted = false;
     public float lastSaved = 0f;
 
@@ -80,6 +81,7 @@ public class InGame : MonoBehaviour
 
             
             Blacksmith1Entrance.SetActive(true);
+            Tradehouse1Entrance.SetActive(true);
         }
     }
 
