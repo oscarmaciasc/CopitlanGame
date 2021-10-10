@@ -255,7 +255,8 @@ public class XmlManager : MonoBehaviour
             flutes[i] = gameData.flute[i];
         }
 
-        flutes[newLength - 1] = new Flute(newFlute);
+        // We set the new flute name and default state to false
+        flutes[newLength - 1] = new Flute(newFlute, false);
 
         gameData.flute = flutes;
 

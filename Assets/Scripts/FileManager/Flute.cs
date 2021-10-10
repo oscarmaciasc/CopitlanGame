@@ -9,9 +9,13 @@ public class Flute
    [XmlAttribute("name")]
    public string name{ get; set;}
 
+   [XmlAttribute("isByDefault")]
+   public bool isByDefault{ get; set; }
+
    public Flute() {}
 
-    public Flute(string name) {
+    public Flute(string name, bool isByDefault) {
         this.name = name;
+        this.isByDefault = isByDefault;
     }
 }

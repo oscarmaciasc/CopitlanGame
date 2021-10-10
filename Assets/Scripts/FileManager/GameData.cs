@@ -121,6 +121,7 @@ public class GameData
         this.resource[3].quantity = 0;
         this.permission[0].name = "outterCircle";
         this.flute[0].name = "woodenFlute";
+        this.flute[0].isByDefault = true;
         this.balloon.name = "balloonLvl1";
         this.musicalMasteryLvl.name = "apprentice";
         this.musicSheet[0].name = "partiture1";

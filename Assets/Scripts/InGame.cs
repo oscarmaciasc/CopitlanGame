@@ -162,16 +162,18 @@ public class InGame : MonoBehaviour
         {
             Debug.Log(PartitureHabitant.instance.HasPartituresFilter());
             PartitureSelection.instance.DeactivateNoOwnedPartiturePanels();
+            PartitureSelection.instance.FluteFilter();
             PartitureSelection.instance.DeativateArrowsPartitureSelection();
         }
 
-        
+
     }
 
     public void ActivatePartitureSelectionPanelFreely()
     {
         partitureSelectionPanel.SetActive(true);
         PartitureSelection.instance.DeactivateNoOwnedPartiturePanels();
+        PartitureSelection.instance.FluteFilter();
         PartitureSelection.instance.DeativateArrowsPartitureSelection();
     }
 

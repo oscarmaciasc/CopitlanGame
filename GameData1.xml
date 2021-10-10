@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Ringo" gender="false">
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="pablov" gender="false">
   <TimePlayed time="0" />
   <TimeWalked time="0" />
   <HappinessPercentage percentage="0" />
@@ -21,7 +21,7 @@
     <Permission name="outterCircle" />
   </Permissions>
   <Flutes>
-    <Flute name="woodenFlute" />
+    <Flute name="woodenFlute" isByDefault="true" />
   </Flutes>
   <Balloon name="balloonLvl1" />
   <MusicalMasteryLvl name="apprentice" />

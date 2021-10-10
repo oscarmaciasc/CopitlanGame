@@ -81,14 +81,17 @@ public class PartitureSelection : MonoBehaviour
 
         if (!partituresFound)
         {
-            if(habitant.name == "Tecalli0")
+            if (habitant.name == "Tecalli0")
             {
                 Tecalli.instance.NotFoundPartitures();
-            } else if(habitant.name == "Acan0")
+            }
+            else if (habitant.name == "Acan0")
             {
                 Acan.instance.NotFoundPartitures();
             }
         }
+
+        FluteFilter();
     }
 
     public void DeactivateMinePartitures2(string name, string name2)
@@ -118,7 +121,9 @@ public class PartitureSelection : MonoBehaviour
             Seti.instance.NotFoundPartitures();
             //Seti.instance.notFound = true;
         }
-        
+
+        FluteFilter();
+
     }
 
     //*************************************************************************************************************************
@@ -144,14 +149,73 @@ public class PartitureSelection : MonoBehaviour
             }
         }
 
+        FluteFilter();
+
         // If partitures are not found set boolean in Audience algorithm
         if (!partituresFound)
         {
             Audience.instance.NotFoundPartitures();
         }
+
+        
     }
 
     //*************************************************************************************************************************
+
+    //*************************************************************************************************************************
+
+    // FluteFilter
+
+    public void FluteFilter()
+    {
+        Debug.Log("Flute Filter");
+        GameData gameData = new GameData();
+        gameData = XmlManager.instance.LoadGame();
+
+        // Desactivar la que no tiene que tener
+        for (int i = 0; i < gameData.flute.Length; i++)
+        {
+            if (gameData.flute[i].isByDefault)
+            {
+                if (gameData.flute[i].name == "woodenFlute")
+                {
+                    // we shouldnt active partiturePanel4, 5, 6, 7, 8, 9, 10
+                    for (int j = 0; j < partiturePanels.Length; j++)
+                    {
+                        if (partiturePanels[j].name == "PanelPartiture4" || partiturePanels[j].name == "PanelPartiture5" || partiturePanels[j].name == "PanelPartiture6" || partiturePanels[j].name == "PanelPartiture6" || partiturePanels[j].name == "PanelPartiture7" || partiturePanels[j].name == "PanelPartiture8" || partiturePanels[j].name == "PanelPartiture9" || partiturePanels[j].name == "PanelPartiture10")
+                        {
+                            partiturePanels[j].SetActive(false);
+                        }
+                    }
+                }
+                else if (gameData.flute[i].name == "woodenIronFlute")
+                {
+                    // we shouldnt active partiturePanel7, 8, 9, 10
+                    for (int k = 0; k < partiturePanels.Length; k++)
+                    {
+                        if (partiturePanels[k].name == "PanelPartiture7" || partiturePanels[k].name == "PanelPartiture8" || partiturePanels[k].name == "PanelPartiture9" || partiturePanels[k].name == "PanelPartiture10")
+                        {
+                            partiturePanels[k].SetActive(false);
+                        }
+                    }
+                }
+                else if (gameData.flute[i].name == "ironFlute")
+                {
+                    // we shouldnt active partiturePane10
+                    for (int l = 0; l < partiturePanels.Length; l++)
+                    {
+                        if (partiturePanels[l].name == "PanelPartiture10")
+                        {
+                            partiturePanels[l].SetActive(false);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //*************************************************************************************************************************
+
     //*************************************************************************************************************************
 
     // Leader
@@ -173,6 +237,8 @@ public class PartitureSelection : MonoBehaviour
                 partiturePanels[i].SetActive(false);
             }
         }
+
+        FluteFilter();
 
         // If partitures are not found set boolean in Audience algorithm
         if (!partituresFound)

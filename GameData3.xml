@@ -1,32 +1,41 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Myrcella" gender="true">
-  <TimePlayed time="810.5235" />
-  <TimeWalked time="333.9086" />
-  <HappinessPercentage percentage="50" />
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Elf" gender="false">
+  <TimePlayed time="0" />
+  <TimeWalked time="23.9203053" />
+  <HappinessPercentage percentage="0" />
   <Resources>
     <Resource name="wood">
-      <quantity>100</quantity>
+      <quantity>0</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>500</quantity>
+      <quantity>0</quantity>
     </Resource>
     <Resource name="gold">
-      <quantity>20</quantity>
+      <quantity>0</quantity>
     </Resource>
     <Resource name="fuel">
-      <quantity>20</quantity>
+      <quantity>0</quantity>
     </Resource>
   </Resources>
   <Permissions>
     <Permission name="outterCircle" />
   </Permissions>
   <Flutes>
-    <Flute name="woodenFlute" />
+    <Flute name="woodenFlute" isByDefault="true" />
   </Flutes>
   <Balloon name="balloonLvl1" />
   <MusicalMasteryLvl name="apprentice" />
   <MusicSheets>
     <MusicSheet name="partiture1" />
+    <MusicSheet name="partiture2" />
+    <MusicSheet name="partiture3" />
+    <MusicSheet name="partiture4" />
+    <MusicSheet name="partiture5" />
+    <MusicSheet name="partiture6" />
+    <MusicSheet name="partiture7" />
+    <MusicSheet name="partiture8" />
+    <MusicSheet name="partiture9" />
+    <MusicSheet name="partiture10" />
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">
