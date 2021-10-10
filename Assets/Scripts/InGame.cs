@@ -164,6 +164,8 @@ public class InGame : MonoBehaviour
             PartitureSelection.instance.DeactivateNoOwnedPartiturePanels();
             PartitureSelection.instance.DeativateArrowsPartitureSelection();
         }
+
+        
     }
 
     public void ActivatePartitureSelectionPanelFreely()
