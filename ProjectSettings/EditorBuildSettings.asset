@@ -51,9 +51,24 @@ EditorBuildSettings:
     path: Assets/Scenes/Final/Final3.unity
     guid: 4b5359e554111bb41828f475a7523a43
   - enabled: 1
-    path: Assets/Scenes/TradeHouse/TradeHouse1.unity
+    path: Assets/Scenes/Stores/TradeHouse/TradeHouse1.unity
     guid: 66feb529413a84b43a79f57403da2e14
   - enabled: 1
-    path: Assets/Scenes/BlacksmithHouse/BlacksmithHouse1.unity
+    path: Assets/Scenes/Stores/TradeHouse/TradeHouse2.unity
+    guid: 3cd7189639137944e94c1e72e0c9420d
+  - enabled: 1
+    path: Assets/Scenes/Stores/TradeHouse/TradeHouse3.unity
+    guid: 66eb4a25016b2c4489f83b6db6690f71
+  - enabled: 1
+    path: Assets/Scenes/Stores/BlacksmithHouse/BlacksmithHouse1.unity
     guid: 9824b54b7c38cf2438acf655d54c3d80
+  - enabled: 1
+    path: Assets/Scenes/Stores/BlacksmithHouse/BlacksmithHouse2.unity
+    guid: 06d2ff1387464de43b9ba48dad25c9c4
+  - enabled: 1
+    path: Assets/Scenes/Stores/Workshops/Workshop1.unity
+    guid: 3add33a9305a9fd4fb7cc44579ca2b25
+  - enabled: 1
+    path: Assets/Scenes/Stores/Workshops/Workshop2.unity
+    guid: 95ff6f9ac95ea6645aee55c10910a639
   m_configObjects: {}
