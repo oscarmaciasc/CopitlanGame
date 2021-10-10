@@ -22535,7 +22535,6 @@ GameObject:
   - component: {fileID: 929068100}
   - component: {fileID: 929068099}
   - component: {fileID: 929068098}
-  - component: {fileID: 929068097}
   - component: {fileID: 929068096}
   m_Layer: 0
   m_Name: Blacksmith
@@ -22560,25 +22559,6 @@ MonoBehaviour:
   ballonAvailable: balloonLvl2
   blacksmithInterface: {fileID: 898192478}
   dialogBox: {fileID: 948044998}
---- !u!95 &929068097
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 929068095}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 1e6b04b3f05c5ce469b59a5b0bffd0f8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!50 &929068098
 Rigidbody2D:
   serializedVersion: 4

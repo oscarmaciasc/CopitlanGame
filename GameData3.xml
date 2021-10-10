@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Elf" gender="false">
   <TimePlayed time="107.970459" />
-  <TimeWalked time="79.85303" />
+  <TimeWalked time="97.15784" />
   <HappinessPercentage percentage="0" />
   <Resources>
     <Resource name="wood">

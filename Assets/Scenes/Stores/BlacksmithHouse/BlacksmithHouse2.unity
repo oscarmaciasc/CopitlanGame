@@ -22563,7 +22563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversationFinished: 1
-  ballonAvailable: balloonLvl2
+  ballonAvailable: balloonLvl3
   blacksmithInterface: {fileID: 275549906}
   dialogBox: {fileID: 2132399111}
 --- !u!95 &1279763689
@@ -22620,7 +22620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - Buenas, bienvenido a la herreria
-  - Aqui podras mejorar tu globo al nivel 2
+  - Aqui podras mejorar tu globo al nivel 3
   canActivate: 0
 --- !u!61 &1279763692
 BoxCollider2D:
