@@ -8,6 +8,9 @@ public class Workshop : MonoBehaviour
     [SerializeField] private GameObject dialogBox;
     [SerializeField] private string fluteAvailable;
     [SerializeField] private GameObject workshopHabitant;
+    [SerializeField] private GameObject confirmationWood;
+    [SerializeField] private GameObject confirmationIron;
+    [SerializeField] private GameObject confirmationGold;
     private string[] hasFlute = { "Ya no tengo nada mas que ofrecerte", "Ya has comprado esta flauta" };
     private string[] notEnoughResources = { "No tienes la cantidad de recursos necesarios para esta compra" };
     private string[] welcome = { "Buenas, bienvenido al taller", "Aqui podras mejorar tu flauta" };
@@ -127,32 +130,53 @@ public class Workshop : MonoBehaviour
         workshopInterface.SetActive(false);
     }
 
-    public void OnClickWoodWorkshop1()
+    // ************************************************
+
+    public void OnClickConfirmationWoodWorkshop1()
     {
+        confirmationWood.SetActive(false);
         BuyFlute("woodenIronFlute", 0, 500);
     }
-
-    public void OnClickIronWorkshop1()
+    public void OnClickWoodWorkshop1()
     {
+        confirmationWood.SetActive(true);
+    }
+
+    public void OnClickConfirmationIronWorkshop1()
+    {
+        confirmationIron.SetActive(false);
         BuyFlute("woodenIronFlute", 1, 50);
+    }
+
+     public void OnClickIronWorkshop1()
+    {
+        confirmationIron.SetActive(true);
+    }
+
+    public void OnClickConfirmationGoldWorkshop1()
+    {
+        confirmationGold.SetActive(false);
+        BuyFlute("woodenIronFlute", 2, 5);
     }
 
     public void OnClickGoldWorkshop1()
     {
-        BuyFlute("woodenIronFlute", 2, 5);
+        confirmationGold.SetActive(true);
     }
 
-    public void OnClickWoodWorkshop2()
+    // ************************************************
+
+    public void OnClickConfirmationWoodWorkshop2()
     {
         BuyFlute("ironFlute", 0, 4000);
     }
 
-    public void OnClickIronWorkshop2()
+    public void OnClickConfirmationIronWorkshop2()
     {
         BuyFlute("ironFlute", 1, 400);
     }
 
-    public void OnClickGoldWorkshop2()
+    public void OnClickConfirmationGoldWorkshop2()
     {
         BuyFlute("ironFlute", 2, 40);
     }

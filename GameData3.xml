@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Elf" gender="false">
-  <TimePlayed time="322.128357" />
-  <TimeWalked time="2390.97827" />
+  <TimePlayed time="350.49472" />
+  <TimeWalked time="2681.40942" />
   <HappinessPercentage percentage="0" />
   <Resources>
     <Resource name="wood">
-      <quantity>100</quantity>
+      <quantity>0</quantity>
     </Resource>
     <Resource name="iron">
       <quantity>0</quantity>
@@ -24,7 +24,7 @@
     <Flute name="woodenFlute" isByDefault="false" />
     <Flute name="woodenIronFlute" isByDefault="true" />
   </Flutes>
-  <Balloon name="balloonLvl1" />
+  <Balloon name="balloonLvl2" />
   <MusicalMasteryLvl name="experienced" />
   <MusicSheets>
     <MusicSheet name="partiture1" />
