@@ -1,30 +1,31 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Elf" gender="false">
-  <TimePlayed time="195.776245" />
-  <TimeWalked time="1006.2774" />
+  <TimePlayed time="322.128357" />
+  <TimeWalked time="2390.97827" />
   <HappinessPercentage percentage="0" />
   <Resources>
     <Resource name="wood">
-      <quantity>200</quantity>
+      <quantity>100</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>50</quantity>
+      <quantity>0</quantity>
     </Resource>
     <Resource name="gold">
       <quantity>2</quantity>
     </Resource>
     <Resource name="fuel">
-      <quantity>0</quantity>
+      <quantity>15</quantity>
     </Resource>
   </Resources>
   <Permissions>
     <Permission name="outterCircle" />
   </Permissions>
   <Flutes>
-    <Flute name="woodenFlute" isByDefault="true" />
+    <Flute name="woodenFlute" isByDefault="false" />
+    <Flute name="woodenIronFlute" isByDefault="true" />
   </Flutes>
   <Balloon name="balloonLvl1" />
-  <MusicalMasteryLvl name="apprentice" />
+  <MusicalMasteryLvl name="experienced" />
   <MusicSheets>
     <MusicSheet name="partiture1" />
     <MusicSheet name="partiture2" />
@@ -64,7 +65,7 @@
   </MineEntrances>
   <DirigentEntrances>
     <DirigentEntrance name="kasakirEntrance">
-      <shouldBeActive>false</shouldBeActive>
+      <shouldBeActive>true</shouldBeActive>
     </DirigentEntrance>
     <DirigentEntrance name="quizaniEntrance">
       <shouldBeActive>false</shouldBeActive>
