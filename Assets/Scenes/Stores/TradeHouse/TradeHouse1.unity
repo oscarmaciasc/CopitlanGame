@@ -1866,7 +1866,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &360653085
 RectTransform:
   m_ObjectHideFlags: 0
@@ -38678,6 +38678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationFinished: 0
   tradeHouseInterface: {fileID: 1089876094}
+  dialogBox: {fileID: 848295928}
 --- !u!95 &2088848077
 Animator:
   serializedVersion: 3

@@ -28377,6 +28377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationFinished: 0
   tradeHouseInterface: {fileID: 1851244058}
+  dialogBox: {fileID: 2011187212}
 --- !u!95 &1171685863
 Animator:
   serializedVersion: 3
@@ -38638,7 +38639,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2106865847
 RectTransform:
   m_ObjectHideFlags: 0

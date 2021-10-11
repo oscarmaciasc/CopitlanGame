@@ -142,8 +142,12 @@ public class DialogManager : MonoBehaviour
 
                         if (habitant.GetComponent<Blacksmith>() != null)
                         {
-                            habitant.GetComponent<Blacksmith>().conversationFinished = true;
-                            habitant.GetComponent<Blacksmith>().HasBalloon(habitant);
+                            habitant.GetComponent<Blacksmith>().ShouldOpenInterface();
+                        }
+
+                        if (habitant.GetComponent<Workshop>() != null)
+                        {
+                            habitant.GetComponent<Workshop>().ShouldOpenInterface();
                         }
 
                         if (habitant.GetComponent<Trader>() != null)
@@ -193,6 +197,38 @@ public class DialogManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "InitSequence1")
         {
             justStarted = false;
+        }
+
+        if (SceneManager.GetActiveScene().name == "BlacksmithHouse1" && habitant.GetComponent<Blacksmith>().justStartedShouldBeFalse)
+        {
+            justStarted = false;
+        } else if (SceneManager.GetActiveScene().name == "BlacksmithHouse1" && !habitant.GetComponent<Blacksmith>().justStartedShouldBeFalse)
+        {
+            justStarted = true;
+        }
+
+        if (SceneManager.GetActiveScene().name == "BlacksmithHouse2" && habitant.GetComponent<Blacksmith>().justStartedShouldBeFalse)
+        {
+            justStarted = false;
+        } else if (SceneManager.GetActiveScene().name == "BlacksmithHouse2" && !habitant.GetComponent<Blacksmith>().justStartedShouldBeFalse)
+        {
+            justStarted = true;
+        }
+
+        if (SceneManager.GetActiveScene().name == "Workshop1" && habitant.GetComponent<Workshop>().justStartedShouldBeFalse)
+        {
+            justStarted = false;
+        } else if (SceneManager.GetActiveScene().name == "Workshop1" && !habitant.GetComponent<Workshop>().justStartedShouldBeFalse)
+        {
+            justStarted = true;
+        }
+
+        if (SceneManager.GetActiveScene().name == "Workshop2" && habitant.GetComponent<Workshop>().justStartedShouldBeFalse)
+        {
+            justStarted = false;
+        } else if (SceneManager.GetActiveScene().name == "Workshop2" && !habitant.GetComponent<Workshop>().justStartedShouldBeFalse)
+        {
+            justStarted = true;
         }
     }
 

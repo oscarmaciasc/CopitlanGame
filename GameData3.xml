@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Elf" gender="false">
-  <TimePlayed time="107.970459" />
-  <TimeWalked time="97.15784" />
+  <TimePlayed time="195.776245" />
+  <TimeWalked time="919.131042" />
   <HappinessPercentage percentage="0" />
   <Resources>
     <Resource name="wood">
-      <quantity>300</quantity>
+      <quantity>200</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>0</quantity>
+      <quantity>10</quantity>
     </Resource>
     <Resource name="gold">
-      <quantity>1</quantity>
+      <quantity>2</quantity>
     </Resource>
     <Resource name="fuel">
       <quantity>0</quantity>

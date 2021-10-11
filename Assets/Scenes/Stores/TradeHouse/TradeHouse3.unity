@@ -1981,6 +1981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationFinished: 0
   tradeHouseInterface: {fileID: 1962831202}
+  dialogBox: {fileID: 1483287079}
 --- !u!95 &474438919
 Animator:
   serializedVersion: 3
