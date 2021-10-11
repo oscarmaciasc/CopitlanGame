@@ -12,6 +12,7 @@ public class Blacksmith : MonoBehaviour
     public bool justStartedShouldBeFalse = false;
     public bool doOnlyOnce = true;
     public bool shouldOpenInterface = true;
+    public bool once = true;
     [SerializeField] private string ballonAvailable;
     [SerializeField] private GameObject blacksmithInterface;
     [SerializeField] private GameObject dialogBox;
@@ -28,7 +29,10 @@ public class Blacksmith : MonoBehaviour
     {
         if (blacksmithInterface.activeInHierarchy)
         {
-            dialogBox.SetActive(false);
+            blacksmithHabitant.GetComponent<DialogActivator>().canActivate = false;
+        } else
+        {
+            blacksmithHabitant.GetComponent<DialogActivator>().canActivate = true;
         }
     }
 
@@ -60,7 +64,7 @@ public class Blacksmith : MonoBehaviour
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
 
-
+        
 
         // If we have the necessary amount of resource we do the trade
         if (gameData.GetCurrentResource(resourceToSustractID) >= quantityToSustract)
@@ -72,6 +76,7 @@ public class Blacksmith : MonoBehaviour
             XmlManager.instance.AddBalloon(balloonToBuy);
 
             blacksmithInterface.SetActive(false);
+            Debug.Log("Desactivando interfaz");
 
             HasBalloon();
 
@@ -85,10 +90,15 @@ public class Blacksmith : MonoBehaviour
         {
             // Change blacksmith dialog to say
             blacksmithInterface.SetActive(false);
+            Debug.Log("Desactivando interfaz");
 
             blacksmithHabitant.GetComponent<DialogActivator>().lines = notEnoughResources;
             shouldOpenInterface = false;
-            blacksmithHabitant.GetComponent<Blacksmith>().justStartedShouldBeFalse = true;
+            if (once)
+            {
+                blacksmithHabitant.GetComponent<Blacksmith>().justStartedShouldBeFalse = true;
+                once = false;
+            }
             DialogManager.instance.ShowDialog(notEnoughResources);
             dialogBox.SetActive(true);
 
@@ -113,6 +123,7 @@ public class Blacksmith : MonoBehaviour
     {
         blacksmithHabitant.GetComponent<DialogActivator>().lines = welcome;
         blacksmithHabitant.GetComponent<Blacksmith>().justStartedShouldBeFalse = false;
+        blacksmithHabitant.GetComponent<Blacksmith>().shouldOpenInterface = true;
     }
 
     public void BackButton()

@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Elf" gender="false">
   <TimePlayed time="195.776245" />
-  <TimeWalked time="919.131042" />
+  <TimeWalked time="1006.2774" />
   <HappinessPercentage percentage="0" />
   <Resources>
     <Resource name="wood">
       <quantity>200</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>10</quantity>
+      <quantity>50</quantity>
     </Resource>
     <Resource name="gold">
       <quantity>2</quantity>
