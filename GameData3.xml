@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="lalovega" gender="false">
-  <TimePlayed time="200.749847" />
+  <TimePlayed time="208.181641" />
   <TimeWalked time="51.8413239" />
   <HappinessPercentage percentage="0" />
   <Resources>
@@ -74,7 +74,7 @@
       <shouldBeActive>false</shouldBeActive>
     </DirigentEntrance>
   </DirigentEntrances>
-  <Collectables quantity="0" />
+  <Collectables quantity="5" />
   <HabitantResults>
     <HabitantResult id="0">
       <Result>0</Result>
