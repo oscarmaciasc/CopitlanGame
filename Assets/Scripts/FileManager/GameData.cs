@@ -54,6 +54,9 @@ public class GameData
     [XmlArray("HabitantResults")]
     public HabitantResult[] habitantResult { get; set; }
 
+    [XmlArray("HabitantsInteracted")]
+    public HabitantInteracted[] habitantInteracted { get; set; }
+
 
     public GameData() { }
 
@@ -104,6 +107,7 @@ public class GameData
         this.dirigentEntrance[2] = new DirigentEntrance();
 
         habitantInitializer();
+        habitantInteractedInitializer();
 
         this.name = playerName;
         this.collectable.quantity = 0;
@@ -290,6 +294,18 @@ public class GameData
             this.habitantResult[i] = new HabitantResult();
             this.habitantResult[i].id = i;
             this.habitantResult[i].result = 0;
+        }
+    }
+
+    public void habitantInteractedInitializer()
+    {
+        this.habitantInteracted = new HabitantInteracted[186];
+
+         for (int i = 0; i < 186; i++)
+        {
+            this.habitantInteracted[i] = new HabitantInteracted();
+            this.habitantInteracted[i].id = i;
+            this.habitantInteracted[i].interacted = false;
         }
     }
 

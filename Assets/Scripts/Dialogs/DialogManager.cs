@@ -157,7 +157,6 @@ public class DialogManager : MonoBehaviour
                         }
 
 
-
                     }
                     else
                     {

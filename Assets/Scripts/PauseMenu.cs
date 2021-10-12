@@ -37,6 +37,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject innerCirclePermission;
     [SerializeField] private GameObject femalePanel;
     [SerializeField] private GameObject malePanel;
+    private int counter = 0;
 
 
     private GameData gameData;
@@ -47,6 +48,11 @@ public class PauseMenu : MonoBehaviour
 
 
         ActivatePanel();
+    }
+
+    void OnEnable()
+    {
+        counter = 0;
     }
 
     public void ActivatePanel()
@@ -149,6 +155,18 @@ public class PauseMenu : MonoBehaviour
         // *************************** KINDA FAKE ***************************
 
         minPlayed.transform.GetComponent<Text>().text = FormatTime(gameData.timePlayed.time);
+        minWalked.transform.GetComponent<Text>().text = FormatTime(gameData.timeWalked.time);
+        
+        for (int i = 0; i < gameData.habitantInteracted.Length; i++)
+        {
+            if(gameData.habitantInteracted[i].interacted)
+            {
+                Debug.Log("counter: " + counter);
+                counter ++;
+            }
+        }
+
+        interactedHabitants.transform.GetComponent<Text>().text = counter.ToString();
 
         if (gameData.DoesHavePermit("outterCircle"))
         {

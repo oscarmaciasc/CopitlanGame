@@ -30,6 +30,12 @@ public class DialogActivator : MonoBehaviour
                 PartitureHabitant.instance.GetHabitant(this.gameObject);
                 DialogManager.instance.GetHabitant(this.gameObject);
                 DialogManager.instance.ShowDialog(lines);
+                //set boolean of habitant.interacted to true 
+
+                if(this.gameObject.GetComponent<InteractedHabitants>() != null)
+                {
+                    this.gameObject.GetComponent<InteractedHabitants>().SetInteracted();
+                }
             }
         }
 

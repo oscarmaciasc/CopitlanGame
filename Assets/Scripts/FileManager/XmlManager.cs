@@ -185,6 +185,32 @@ public class XmlManager : MonoBehaviour
         Save(gameIndex, gamedata);
     }
 
+    public void SaveInteractedHabitantState(int index)
+    {
+        int gameIndex = GetGameIndex();
+
+        GameData gameData = LoadGame();
+
+        gameData.habitantInteracted[index].interacted = true;
+
+        Save(gameIndex, gameData);
+    }
+
+    public bool InteractedTrue(int index)
+    {
+        int gameIndex = GetGameIndex();
+
+        GameData gameData = LoadGame();
+
+        if(gameData.habitantInteracted[index].interacted)
+        {
+            return true;
+        } else
+        {
+            return false;
+        }
+    }
+
     public void SaveDirigentEntranceState(int dirigentEntranceID, bool shouldBeActive)
     {
         int gameIndex = GetGameIndex();

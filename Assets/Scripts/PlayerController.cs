@@ -16,8 +16,8 @@ public class PlayerController : MonoBehaviour
     public int indexGame = 0;
 
     public bool canMove = true;
-    public float lastWalked = 0f;
-    public float firstWalked = 0f;
+    public float stopWalked = 0f;
+    public float startWalked = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -64,7 +64,11 @@ public class PlayerController : MonoBehaviour
         {
             if (canMove)
             {
-                SaveTimeWalked();
+                if(startWalked == 0)
+                {
+                    SetFirstWalked();
+                    Debug.Log("startWalked: " + startWalked);
+                }
 
                 myAnim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
                 myAnim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
@@ -72,8 +76,44 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            Debug.Log("ReleaseUpArrow");
+            CheckIfIsMoving();
+        }
+
+        if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            Debug.Log("ReleaseDownArrow");
+            CheckIfIsMoving();
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            Debug.Log("ReleaseLeftArrow");
+            CheckIfIsMoving();
+        }
+
+        if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            Debug.Log("ReleaseRightArrow");
+            CheckIfIsMoving();
+        }
+
         // Keeping the player inside the map
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, bottomLeftLimit.x, topRightLimit.x), Mathf.Clamp(transform.position.y, bottomLeftLimit.y, topRightLimit.y), transform.position.z);
+    }
+
+    public void CheckIfIsMoving()
+    {
+        if (theRB.velocity == Vector2.zero)
+        {
+            Debug.Log("Not Moving");
+            SaveTimeWalked();
+        } else
+        {
+            Debug.Log("Moving");
+        }
     }
 
     public void SetBounds(Vector3 botLeft, Vector3 topRight)
@@ -83,10 +123,17 @@ public class PlayerController : MonoBehaviour
         topRightLimit = topRight + new Vector3(-.5f, -1f, 0f);
     }
 
+    public void SetFirstWalked()
+    {
+        startWalked = Time.time;
+    }
+
     public void SaveTimeWalked()
     {
-        firstWalked = Time.time;
-        XmlManager.instance.UpdateTimeWalked(firstWalked - lastWalked);
-        lastWalked = Time.time;
+        stopWalked = Time.time;
+        Debug.Log("stopWalked: " + stopWalked);
+        XmlManager.instance.UpdateTimeWalked(stopWalked - startWalked);
+        startWalked = 0;
+        stopWalked = 0;
     }
 }

@@ -11,6 +11,7 @@ public class BalloonManager : MonoBehaviour
     public int currentFuel;
     public bool canMove = true;
     public Vector2 initialPosition;
+    public Animator myAnim;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +45,7 @@ public class BalloonManager : MonoBehaviour
     {
         if (canMove)
         {
-            if (this.gameObject.transform.position.x >= initialPosition.x + 10 || this.gameObject.transform.position.x <= initialPosition.x - 10 || this.gameObject.transform.position.y >= initialPosition.y + 10 || this.gameObject.transform.position.y <= initialPosition.y - 10)
+            if (this.gameObject.transform.position.x >= initialPosition.x + 2 || this.gameObject.transform.position.x <= initialPosition.x - 2 || this.gameObject.transform.position.y >= initialPosition.y + 2 || this.gameObject.transform.position.y <= initialPosition.y - 2)
             {
                 Debug.Log("Entering IF");
                 initialPosition = this.gameObject.transform.position;
@@ -54,11 +55,14 @@ public class BalloonManager : MonoBehaviour
                 if (currentFuel <= 0)
                 {
                     canMove = false;
+                    myAnim.SetFloat("moveX", 0);
+                    myAnim.SetFloat("moveY", 0);
                 }
             }
-        } else 
+        }
+        else
         {
-            Debug.Log("Te has acabado el combustible, compra puerco");
+            Debug.Log("Te has acabado el combustible, compra");
         }
     }
 
