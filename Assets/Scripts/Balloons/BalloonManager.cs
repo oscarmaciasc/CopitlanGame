@@ -45,7 +45,7 @@ public class BalloonManager : MonoBehaviour
     {
         if (canMove)
         {
-            if (this.gameObject.transform.position.x >= initialPosition.x + 2 || this.gameObject.transform.position.x <= initialPosition.x - 2 || this.gameObject.transform.position.y >= initialPosition.y + 2 || this.gameObject.transform.position.y <= initialPosition.y - 2)
+            if (this.gameObject.transform.position.x >= initialPosition.x + 10 || this.gameObject.transform.position.x <= initialPosition.x - 10 || this.gameObject.transform.position.y >= initialPosition.y + 10 || this.gameObject.transform.position.y <= initialPosition.y - 10)
             {
                 Debug.Log("Entering IF");
                 initialPosition = this.gameObject.transform.position;
