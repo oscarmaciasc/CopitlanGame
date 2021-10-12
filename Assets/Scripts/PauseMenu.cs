@@ -156,6 +156,7 @@ public class PauseMenu : MonoBehaviour
 
         minPlayed.transform.GetComponent<Text>().text = FormatTime(gameData.timePlayed.time);
         minWalked.transform.GetComponent<Text>().text = FormatTime(gameData.timeWalked.time);
+        minBalloon.transform.GetComponent<Text>().text = FormatTime(gameData.timeBalloon.time);
         collectables.transform.GetComponent<Text>().text = gameData.collectable.quantity.ToString();
         
         for (int i = 0; i < gameData.habitantInteracted.Length; i++)

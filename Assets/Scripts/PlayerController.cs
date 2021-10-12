@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
     public static PlayerController instance;
     public Rigidbody2D theRB;
     public float moveSpeed;
@@ -12,12 +11,11 @@ public class PlayerController : MonoBehaviour
     private Vector3 topRightLimit;
     public Animator myAnim;
     public string areaTransitionName;
-
     public int indexGame = 0;
-
     public bool canMove = true;
     public float stopWalked = 0f;
     public float startWalked = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,9 +38,6 @@ public class PlayerController : MonoBehaviour
 
         // This is the real line of code we need
         //indexGame = XmlManager.instance.gameIndex;
-
-        // Testing line
-        indexGame = 1;
     }
 
     // Update is called once per frame
@@ -64,7 +59,7 @@ public class PlayerController : MonoBehaviour
         {
             if (canMove)
             {
-                if(startWalked == 0)
+                if (startWalked == 0)
                 {
                     SetFirstWalked();
                     Debug.Log("startWalked: " + startWalked);
@@ -72,7 +67,6 @@ public class PlayerController : MonoBehaviour
 
                 myAnim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
                 myAnim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
-
             }
         }
 
@@ -110,7 +104,8 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Not Moving");
             SaveTimeWalked();
-        } else
+        }
+        else
         {
             Debug.Log("Moving");
         }

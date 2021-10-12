@@ -18,6 +18,9 @@ public class GameData
     [XmlElement("TimeWalked")]
     public TimeWalked timeWalked { get; set; }
 
+    [XmlElement("TimeBalloon")]
+    public TimeBalloon timeBalloon { get; set; }
+
     [XmlElement("HappinessPercentage")]
     public HappinessPercentage happinessPercentage { get; set; }
 
@@ -69,6 +72,8 @@ public class GameData
         
         this.timeWalked = new TimeWalked();
 
+        this.timeBalloon = new TimeBalloon();
+
         this.happinessPercentage = new HappinessPercentage();
 
         this.resource = new Resource[4];
@@ -114,6 +119,7 @@ public class GameData
         this.isWoman = playerGender;
         this.timePlayed.time = 0f;
         this.timeWalked.time = 0f;
+        this.timeBalloon.time = 0f;
         this.happinessPercentage.percentage = 0;
         this.resource[0].name = "wood";
         this.resource[0].quantity = 0;

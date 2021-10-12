@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="lalovega" gender="false">
-  <TimePlayed time="208.181641" />
-  <TimeWalked time="51.8413239" />
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="gees" gender="false">
+  <TimePlayed time="26.6019974" />
+  <TimeWalked time="7.595614" />
+  <TimeBalloon time="0" />
   <HappinessPercentage percentage="0" />
   <Resources>
     <Resource name="wood">
@@ -21,22 +22,12 @@
     <Permission name="outterCircle" />
   </Permissions>
   <Flutes>
-    <Flute name="woodenFlute" isByDefault="false" />
-    <Flute name="woodenIronFlute" isByDefault="true" />
+    <Flute name="woodenFlute" isByDefault="true" />
   </Flutes>
   <Balloon name="balloonLvl1" />
   <MusicalMasteryLvl name="apprentice" />
   <MusicSheets>
     <MusicSheet name="partiture1" />
-    <MusicSheet name="partiture2" />
-    <MusicSheet name="partiture3" />
-    <MusicSheet name="partiture4" />
-    <MusicSheet name="partiture5" />
-    <MusicSheet name="partiture6" />
-    <MusicSheet name="partiture7" />
-    <MusicSheet name="partiture8" />
-    <MusicSheet name="partiture9" />
-    <MusicSheet name="partiture10" />
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">
@@ -65,7 +56,7 @@
   </MineEntrances>
   <DirigentEntrances>
     <DirigentEntrance name="kasakirEntrance">
-      <shouldBeActive>true</shouldBeActive>
+      <shouldBeActive>false</shouldBeActive>
     </DirigentEntrance>
     <DirigentEntrance name="quizaniEntrance">
       <shouldBeActive>false</shouldBeActive>
@@ -74,7 +65,7 @@
       <shouldBeActive>false</shouldBeActive>
     </DirigentEntrance>
   </DirigentEntrances>
-  <Collectables quantity="5" />
+  <Collectables quantity="0" />
   <HabitantResults>
     <HabitantResult id="0">
       <Result>0</Result>
@@ -319,10 +310,10 @@
   </HabitantResults>
   <HabitantsInteracted>
     <HabitantInteracted id="0">
-      <Interacted>true</Interacted>
+      <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="1">
-      <Interacted>true</Interacted>
+      <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="2">
       <Interacted>false</Interacted>
