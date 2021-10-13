@@ -2,33 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Seti : MonoBehaviour
+public class Seti2 : MonoBehaviour
 {
-    public static Seti instance;
+
+    public static Seti2 instance;
+    public bool finishedPartiture = false;
+    public bool canPass = false;
     private Vector2 destiny;
-    public string[] goodLines = { "Wow ha sido algo impresionante, estoy feliz" };
-    public string[] badLines = { "No me gusto nada..." };
+    public string[] goodLines = { "Estoy agradecida, me has alegrado el dia" };
+    public string[] badLines = { "No me terminas de convencer, intentalo de nuevo" };
     private string[] noPartituresDialog = { "Parece que no tienes la partitura necesaria", "Vuelve cuando la tengas" };
+
     private string[] noFluteDialog = { "Tu flauta actual no puede interpretar esta partitura, intenta mejorando tu flauta" };
 
     public bool hasFinished = false;
-    public bool finishedPartiture = false;
     [SerializeField] private GameObject theEntrance;
-    public bool canPass = false;
     public Animator myAnim;
     public float moveSpeed;
     [SerializeField] private GameObject partitureSelectionPanel;
     public bool canActivatePartiturePanel = true;
     public bool notFound = false;
+    
     public bool notFoundFlutes = false;
     public int percentageToPass = 80;
-
     // Start is called before the first frame update
 
     void Start()
     {
         instance = this;
-        destiny = new Vector2(transform.position.x - 2, transform.position.y);
+        destiny = new Vector2(transform.position.x + 2, transform.position.y);
 
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
@@ -59,7 +61,7 @@ public class Seti : MonoBehaviour
             if (((PentagramManager.instance.correctNotes * 100) / (PentagramManager.instance.TotalNotes())) >= percentageToPass)
             {
                 canPass = true;
-                this.gameObject.GetComponent<DialogActivator>().lines = goodLines;
+               this.gameObject.GetComponent<DialogActivator>().lines = goodLines;
             }
             else
             {
@@ -72,12 +74,12 @@ public class Seti : MonoBehaviour
 
     public void CheckIfCanPass()
     {
-        if (canPass && finishedPartiture && Seti2.instance.canPass)
+        if (canPass && finishedPartiture && Seti.instance.canPass)
         {
             if (destiny.x != gameObject.transform.position.x)
             {
                 gameObject.transform.position = Vector2.MoveTowards(transform.position, destiny, moveSpeed * Time.deltaTime);
-                myAnim.SetFloat("moveX", -1);
+                myAnim.SetFloat("moveX", 1);
 
                 // Making the player Idle in the last direction
                 myAnim.SetFloat("lastMoveY", -1);
@@ -101,10 +103,9 @@ public class Seti : MonoBehaviour
 
     public void LimitPartitures()
     {
-        if (this.gameObject.GetComponent<PartitureHabitant>().conversationFinished == true && !canPass)
+        if (this.gameObject.GetComponent<PartitureHabitant>().conversationFinished == true && !canPass && canActivatePartiturePanel)
         {
             partitureSelectionPanel.SetActive(true);
-
         }
 
         if (partitureSelectionPanel.activeInHierarchy)
@@ -129,8 +130,6 @@ public class Seti : MonoBehaviour
             canActivatePartiturePanel = false;
             this.gameObject.GetComponent<PartitureHabitant>().canShowPartitures = false;
         }
-
-        
     }
 
     public bool NotFoundPartitures()
@@ -144,5 +143,4 @@ public class Seti : MonoBehaviour
         notFoundFlutes = true;
         return notFoundFlutes;
     }
-   
 }

@@ -94,7 +94,7 @@ public class PartitureSelection : MonoBehaviour
         FluteFilter();
     }
 
-    public void DeactivateMinePartitures2(string name, string name2)
+    public void DeactivateMinePartituresSeti(string name, string name2, string name3, GameObject habitant)
     {
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
@@ -115,14 +115,32 @@ public class PartitureSelection : MonoBehaviour
             }
         }
 
+        FluteFilter();
+
+
         if (!partituresFound)
         {
-            Debug.Log("ENTRANDO MIRA RANGEL");
-            Seti.instance.NotFoundPartitures();
-            //Seti.instance.notFound = true;
+            if (habitant.name == "Seti0")
+            {
+                Seti.instance.NotFoundPartitures();
+            }
+            else if (habitant.name == "Seti1")
+            {
+                Seti2.instance.NotFoundPartitures();
+            }
         }
-
-        FluteFilter();
+        // If the player has the partitures but not the flute
+        else if (partituresFound && AllPanelsInactive())
+        {
+            if (habitant.name == "Seti0")
+            {
+                Seti.instance.NotFoundFlutes();
+            }
+            else if (habitant.name == "Seti1")
+            {
+                Seti2.instance.NotFoundFlutes();
+            }
+        }
 
     }
 
@@ -157,7 +175,7 @@ public class PartitureSelection : MonoBehaviour
             Audience.instance.NotFoundPartitures();
         }
 
-        
+
     }
 
     //*************************************************************************************************************************
@@ -171,6 +189,8 @@ public class PartitureSelection : MonoBehaviour
         Debug.Log("Flute Filter");
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
+
+
 
         // Desactivar la que no tiene que tener
         for (int i = 0; i < gameData.flute.Length; i++)
@@ -190,6 +210,7 @@ public class PartitureSelection : MonoBehaviour
                 }
                 else if (gameData.flute[i].name == "woodenIronFlute")
                 {
+                    Debug.Log("Checkpoint");
                     // we shouldnt active partiturePanel7, 8, 9, 10
                     for (int k = 0; k < partiturePanels.Length; k++)
                     {
@@ -249,7 +270,17 @@ public class PartitureSelection : MonoBehaviour
     }
 
     //*************************************************************************************************************************
-
+    public bool AllPanelsInactive()
+    {
+        for (int i = 0; i < partiturePanels.Length; i++)
+        {
+            if (partiturePanels[i].activeInHierarchy)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
     public void BackPartitureSelection()
     {
         DeactivatePartitureSelectionPanel();

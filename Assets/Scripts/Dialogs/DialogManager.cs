@@ -114,6 +114,19 @@ public class DialogManager : MonoBehaviour
                             }
                         }
 
+                        if (habitant.GetComponent<Seti2>() != null)
+                        {
+                            if (!habitant.GetComponent<Seti2>().hasFinished)
+                            {
+                                habitant.GetComponent<Seti2>().LimitPartitures();
+                            }
+                            else
+                            {
+                                habitant.GetComponent<Seti2>().canPass = true;
+                                habitant.GetComponent<Seti2>().finishedPartiture = true;
+                            }
+                        }
+
                         if (habitant.GetComponent<Audience>() != null)
                         {
                             if (!habitant.GetComponent<Audience>().hasFinished)

@@ -17,7 +17,6 @@ public class Acan : MonoBehaviour
     public bool canPass = false;
     public Animator myAnim;
     public float moveSpeed;
-    [SerializeField] private GameObject pentagramPanel;
     [SerializeField] private GameObject partitureSelectionPanel;
     public bool canActivatePartiturePanel = true;
     public bool notFound = false;

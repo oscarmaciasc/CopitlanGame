@@ -98,7 +98,19 @@ public class PentagramManager : MonoBehaviour
             if (habitant.GetComponent<Seti>() != null)
             {
                 habitant.GetComponent<Seti>().finishedPartiture = true;
-                habitant.GetComponent<Seti>().BothFinished(habitant);
+                if (!habitant.GetComponent<Seti>().hasFinished)
+                {
+                    habitant.GetComponent<Seti>().GetPercentage();
+                }
+            }
+
+            if (habitant.GetComponent<Seti2>() != null)
+            {
+                habitant.GetComponent<Seti2>().finishedPartiture = true;
+                if (!habitant.GetComponent<Seti2>().hasFinished)
+                {
+                    habitant.GetComponent<Seti2>().GetPercentage();
+                }
             }
 
             if (habitant.GetComponent<Audience>() != null)
