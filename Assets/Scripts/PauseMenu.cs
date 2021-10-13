@@ -147,6 +147,14 @@ public class PauseMenu : MonoBehaviour
 
     private void SetInfo()
     {
+        if (gameData.isWoman)
+        {
+            femalePanel.SetActive(true);
+        }
+        else 
+        {
+            malePanel.SetActive(true);
+        }
         musicalMasteryLevel.transform.GetComponent<Text>().text = gameData.GetMusicalMasteryLevel();
 
         // *************************** KINDA FAKE ***************************
