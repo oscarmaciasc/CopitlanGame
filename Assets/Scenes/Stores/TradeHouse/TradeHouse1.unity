@@ -38576,7 +38576,6 @@ GameObject:
   - component: {fileID: 2088848080}
   - component: {fileID: 2088848079}
   - component: {fileID: 2088848078}
-  - component: {fileID: 2088848077}
   - component: {fileID: 2088848076}
   m_Layer: 0
   m_Name: Trader
@@ -38600,25 +38599,6 @@ MonoBehaviour:
   conversationFinished: 0
   tradeHouseInterface: {fileID: 1089876094}
   dialogBox: {fileID: 848295928}
---- !u!95 &2088848077
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2088848075}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 1e6b04b3f05c5ce469b59a5b0bffd0f8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!50 &2088848078
 Rigidbody2D:
   serializedVersion: 4
@@ -38673,7 +38653,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1.4375}
+    oldSize: {x: 1, y: 2}
     newSize: {x: 2, y: 4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -38699,7 +38679,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1.4375}
+    oldSize: {x: 1, y: 2}
     newSize: {x: 2, y: 4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -38748,7 +38728,7 @@ SpriteRenderer:
   m_SortingLayerID: -441503381
   m_SortingLayer: 4
   m_SortingOrder: -1
-  m_Sprite: {fileID: 4231241789423689243, guid: 8bd1afa279ce9e24a99ac9fca3b0eebe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3894f6244b27d534ab55a131728d0917, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

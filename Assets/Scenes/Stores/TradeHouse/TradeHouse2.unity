@@ -28354,7 +28354,6 @@ GameObject:
   - component: {fileID: 1171685866}
   - component: {fileID: 1171685865}
   - component: {fileID: 1171685864}
-  - component: {fileID: 1171685863}
   - component: {fileID: 1171685862}
   m_Layer: 0
   m_Name: Trader
@@ -28378,25 +28377,6 @@ MonoBehaviour:
   conversationFinished: 0
   tradeHouseInterface: {fileID: 1851244058}
   dialogBox: {fileID: 2011187212}
---- !u!95 &1171685863
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1171685861}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 1e6b04b3f05c5ce469b59a5b0bffd0f8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!50 &1171685864
 Rigidbody2D:
   serializedVersion: 4
