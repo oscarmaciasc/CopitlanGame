@@ -795,6 +795,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7417249011018122520, guid: b4b39ddb450104d49a0c4bb01a0ce63f, type: 3}
+      propertyPath: woman
+      value: 
+      objectReference: {fileID: 5865885559916751517, guid: 2b85e7dca368dc0479b6d235555e3eeb, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4b39ddb450104d49a0c4bb01a0ce63f, type: 3}
 --- !u!1 &675322289
@@ -2046,6 +2050,7 @@ MonoBehaviour:
   partitureSelectionPanel: {fileID: 80739966}
   canActivatePartiturePanel: 1
   notFound: 0
+  notFoundFlutes: 0
   percentageToPass: 80
 --- !u!114 &1146112889
 MonoBehaviour:
@@ -27417,6 +27422,7 @@ MonoBehaviour:
   partitureSelectionPanel: {fileID: 80739966}
   canActivatePartiturePanel: 1
   notFound: 0
+  notFoundFlutes: 0
   percentageToPass: 80
 --- !u!114 &2038755389
 MonoBehaviour:
