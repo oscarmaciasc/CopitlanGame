@@ -2081,8 +2081,8 @@ GameObject:
   - component: {fileID: 975772681}
   - component: {fileID: 975772680}
   - component: {fileID: 975772679}
-  - component: {fileID: 975772678}
   - component: {fileID: 975772677}
+  - component: {fileID: 975772678}
   - component: {fileID: 975772676}
   m_Layer: 0
   m_Name: NPC80
