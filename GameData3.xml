@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="gees" gender="false">
-  <TimePlayed time="125.296608" />
-  <TimeWalked time="280.833374" />
+  <TimePlayed time="839.6506" />
+  <TimeWalked time="1004.52161" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="0" />
   <Resources>
@@ -9,10 +9,10 @@
       <quantity>100</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>0</quantity>
+      <quantity>60</quantity>
     </Resource>
     <Resource name="gold">
-      <quantity>0</quantity>
+      <quantity>20</quantity>
     </Resource>
     <Resource name="fuel">
       <quantity>0</quantity>
@@ -20,6 +20,8 @@
   </Resources>
   <Permissions>
     <Permission name="outterCircle" />
+    <Permission name="triangle" />
+    <Permission name="innerCircle" />
   </Permissions>
   <Flutes>
     <Flute name="woodenFlute" isByDefault="false" />
@@ -41,10 +43,10 @@
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">
-      <result>0</result>
+      <result>88</result>
     </AudienceResult>
     <AudienceResult name="quizaniResult">
-      <result>0</result>
+      <result>76</result>
     </AudienceResult>
     <AudienceResult name="naranResult">
       <result>0</result>
@@ -55,10 +57,10 @@
   </AudienceResults>
   <MineEntrances>
     <MineEntrance name="tecalliEntrance">
-      <shouldBeActive>false</shouldBeActive>
+      <shouldBeActive>true</shouldBeActive>
     </MineEntrance>
     <MineEntrance name="acanEntrance">
-      <shouldBeActive>false</shouldBeActive>
+      <shouldBeActive>true</shouldBeActive>
     </MineEntrance>
     <MineEntrance name="setiEntrance">
       <shouldBeActive>true</shouldBeActive>
@@ -66,22 +68,22 @@
   </MineEntrances>
   <DirigentEntrances>
     <DirigentEntrance name="kasakirEntrance">
-      <shouldBeActive>false</shouldBeActive>
+      <shouldBeActive>true</shouldBeActive>
     </DirigentEntrance>
     <DirigentEntrance name="quizaniEntrance">
-      <shouldBeActive>false</shouldBeActive>
+      <shouldBeActive>true</shouldBeActive>
     </DirigentEntrance>
     <DirigentEntrance name="naranEntrance">
-      <shouldBeActive>false</shouldBeActive>
+      <shouldBeActive>true</shouldBeActive>
     </DirigentEntrance>
   </DirigentEntrances>
   <Collectables quantity="0" />
   <HabitantResults>
     <HabitantResult id="0">
-      <Result>0</Result>
+      <Result>90</Result>
     </HabitantResult>
     <HabitantResult id="1">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="2">
       <Result>0</Result>
@@ -320,10 +322,10 @@
   </HabitantResults>
   <HabitantsInteracted>
     <HabitantInteracted id="0">
-      <Interacted>false</Interacted>
+      <Interacted>true</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="1">
-      <Interacted>false</Interacted>
+      <Interacted>true</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="2">
       <Interacted>false</Interacted>
