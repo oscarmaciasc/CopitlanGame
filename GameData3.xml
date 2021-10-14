@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="gees" gender="false">
   <TimePlayed time="839.6506" />
-  <TimeWalked time="1209.82385" />
+  <TimeWalked time="1004.52161" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="0" />
   <Resources>
@@ -12,7 +12,7 @@
       <quantity>60</quantity>
     </Resource>
     <Resource name="gold">
-      <quantity>0</quantity>
+      <quantity>20</quantity>
     </Resource>
     <Resource name="fuel">
       <quantity>0</quantity>
@@ -26,7 +26,6 @@
   <Flutes>
     <Flute name="woodenFlute" isByDefault="false" />
     <Flute name="woodenIronFlute" isByDefault="true" />
-    <Flute name="ironFlute" isByDefault="false" />
   </Flutes>
   <Balloon name="balloonLvl1" />
   <MusicalMasteryLvl name="experienced" />
