@@ -89,18 +89,30 @@ public class InGame : MonoBehaviour
 
     private void CheckForInputs()
     {
-        if (GameManager.instance.escapePressed)
+        if (GameManager.instance.escapePressed && !exitMenu.activeInHierarchy)
         {
             ActivateExitMenu();
+            GameManager.instance.escapePressed = false;
         }
-        if (GameManager.instance.vPressed)
+        else if (GameManager.instance.escapePressed && exitMenu.activeInHierarchy)
         {
-            if (partitureSelectionPanel.activeInHierarchy == false)
-            {
-                ActivatePartitureSelectionPanelFreely();
-                GameManager.instance.pPressed = false;
-            }
+            Return();
+            GameManager.instance.escapePressed = false;
         }
+
+        if (GameManager.instance.vPressed && !partitureSelectionPanel.activeInHierarchy)
+        {
+            ActivatePartitureSelectionPanelFreely();
+            GameManager.instance.vPressed = false;
+        }
+        else if (GameManager.instance.vPressed && partitureSelectionPanel.activeInHierarchy)
+        {
+            DeactivatePartitureSelectionPanel();
+            GameManager.instance.vPressed = false;
+        }
+
+
+
         if (GameManager.instance.pPressed && !pauseMenuPanel.activeInHierarchy)
         {
             ActivatePauseMenuPanel();
@@ -118,7 +130,8 @@ public class InGame : MonoBehaviour
             FindObjectOfType<BalloonManager>().GetComponent<BalloonManager>().enabled = true;
             balloonActive = true;
             GameManager.instance.fPressed = false;
-        } else if (GameManager.instance.fPressed && balloonActive)
+        }
+        else if (GameManager.instance.fPressed && balloonActive)
         {
             FindObjectOfType<BalloonManager>().GetComponent<BalloonManager>().enabled = false;
             balloonActive = false;
