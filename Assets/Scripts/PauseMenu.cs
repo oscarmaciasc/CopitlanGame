@@ -20,6 +20,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject InvPartituresPanel;
     [SerializeField] private GameObject[] resourceQuantity = new GameObject[4];
     [SerializeField] private GameObject[] flutes = new GameObject[4];
+    [SerializeField] private GameObject[] defaultFluteLabel = new GameObject[4];
+    [SerializeField] private GameObject[] predetermineFluteButton = new GameObject[4];
     [SerializeField] private GameObject[] partitures = new GameObject[10];
     [SerializeField] private GameObject balloon1Panel;
     [SerializeField] private GameObject balloon2Panel;
@@ -62,6 +64,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuPanel.SetActive(true);
     }
 
+    // Loads the current gameData
     private void LoadGameData()
     {
         XmlManager.instance.UpdateTimePlayed(Time.time - InGame.instance.lastSaved);
@@ -69,6 +72,7 @@ public class PauseMenu : MonoBehaviour
         gameData = XmlManager.instance.LoadGame();
     }
 
+    // Activates the map panel and deactivates others
     public void ActivateMapPanel()
     {
         MapPanel.SetActive(true);
@@ -77,6 +81,7 @@ public class PauseMenu : MonoBehaviour
         InfoPanel.SetActive(false);
     }
 
+    // Activates the inventory panel and deactivates others
     public void ActivateInventoryPanel()
     {
         MapPanel.SetActive(false);
@@ -86,6 +91,7 @@ public class PauseMenu : MonoBehaviour
         InfoPanel.SetActive(false);
     }
 
+    // Activates the balloon panel and deactivates others
     public void ActivateBalloonPanel()
     {
         MapPanel.SetActive(false);
@@ -96,6 +102,7 @@ public class PauseMenu : MonoBehaviour
         InfoPanel.SetActive(false);
     }
 
+    // Sets the ballon information reading from the gameData
     private void SetBallon()
     {
         string balloonName = "";
@@ -127,6 +134,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    // Sets the fuel level reading from the gameData
     public void SetSlider()
     {
         GameData gameData = new GameData();
@@ -136,6 +144,7 @@ public class PauseMenu : MonoBehaviour
         BalloonPanel.transform.Find("FuelLayout").Find("FuelLevel").GetComponent<Slider>().value = gameData.GetCurrentResource(3);
     }
 
+    // Activates the info panel and deactivates others
     public void ActivateInfoPanel()
     {
         MapPanel.SetActive(false);
@@ -145,6 +154,7 @@ public class PauseMenu : MonoBehaviour
         SetInfo();
     }
 
+    // Sets the game info reading from the gameData
     private void SetInfo()
     {
         if (gameData.isWoman)
@@ -157,10 +167,8 @@ public class PauseMenu : MonoBehaviour
         }
         musicalMasteryLevel.transform.GetComponent<Text>().text = gameData.GetMusicalMasteryLevel();
 
-        // *************************** KINDA FAKE ***************************
         Debug.Log("Necalli: " + gameData.GetAudienceResult("necalliResult"));
         happinessPercentage.transform.GetComponent<Text>().text = gameData.happinessPercentage.percentage.ToString();
-        // *************************** KINDA FAKE ***************************
 
         minPlayed.transform.GetComponent<Text>().text = FormatTime(gameData.timePlayed.time);
         minWalked.transform.GetComponent<Text>().text = FormatTime(gameData.timeWalked.time);
@@ -207,6 +215,7 @@ public class PauseMenu : MonoBehaviour
 
     }
 
+    // Activates the resources panel in inventory panel and deactivates others
     public void ActivateInvResourcesPanel()
     {
         InvResourcesPanel.SetActive(true);
@@ -215,6 +224,7 @@ public class PauseMenu : MonoBehaviour
         InvPartituresPanel.SetActive(false);
     }
 
+    // Sets the resources quantity reading from files
     private void SetResourcesQuantity()
     {
         for (int i = 0; i < 4; i++)
@@ -223,6 +233,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    // Activates the flutes panel in inventory panel and deactivates others
     public void ActivateInvFlutesPanel()
     {
         InvResourcesPanel.SetActive(false);
@@ -231,12 +242,21 @@ public class PauseMenu : MonoBehaviour
         InvPartituresPanel.SetActive(false);
     }
 
+    // Activate or deactivate the flute panels depending in if they exist in the gameData
     private void SetFlutes()
     {
-        for (int i = 0; i <= gameData.flute.Length; i++)
+        int fluteIndex = 1000;
+
+        for (int i = 0; i < gameData.flute.Length; i++)
         {
             flutes[i].SetActive(true);
+
+            if(gameData.flute[i].isByDefault) {
+                fluteIndex = i;
+            }
         }
+
+        SetDefaultFluteOnInterface(fluteIndex);
 
         if (gameData.flute.Length < 4)
         {
@@ -247,6 +267,44 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    // Set wooden flute as default
+    public void PredetermineWoodenFlute() {
+        XmlManager.instance.SetDefaultFlute("woodenFlute");
+        SetDefaultFluteOnInterface(0);
+    }
+
+    // Set woodenIron flute as default
+    public void PredetermineWoodenIronFlute() {
+        XmlManager.instance.SetDefaultFlute("woodenIronFlute");
+        SetDefaultFluteOnInterface(1);
+    }
+
+    // Set iron flute as default
+    public void PredetermineIronFlute() {
+        XmlManager.instance.SetDefaultFlute("ironFlute");
+        SetDefaultFluteOnInterface(2);
+    }
+
+    // Set golden flute as default
+    public void PredetermineGoldenFlute() {
+        XmlManager.instance.SetDefaultFlute("goldenFlute");
+        SetDefaultFluteOnInterface(3);
+    }
+
+    private void SetDefaultFluteOnInterface(int fluteIndex) {
+        for(int i = 0; i < 4; i++) {
+            if(i == fluteIndex) {
+                defaultFluteLabel[i].SetActive(true);
+                predetermineFluteButton[i].SetActive(false);
+            }
+            else {
+                defaultFluteLabel[i].SetActive(false);
+                predetermineFluteButton[i].SetActive(true);
+            }
+        }
+    }
+
+    // Activates the partitures panel in inventory panel and deactivates others
     public void ActivateInvPartituresPanel()
     {
         InvResourcesPanel.SetActive(false);
@@ -255,6 +313,7 @@ public class PauseMenu : MonoBehaviour
         SetPartitures();
     }
 
+    // Activate or deactivate the partiture panels depending in if they exist in the gameData
     private void SetPartitures()
     {
         string partitureName = "";
@@ -275,12 +334,14 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    // Deactivates the whole pause menu interface
     public void DeactivatePauseMenuPanel()
     {
         pauseMenuPanel.gameObject.SetActive(false);
         GameManager.instance.pPressed = false;
     }
 
+    // Formats a float into a minutes fomat
     private string FormatTime(float time)
     {
         int minutes = (int)time / 60;

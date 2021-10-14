@@ -13299,6 +13299,16 @@ MonoBehaviour:
   - {fileID: 962457287542606425}
   - {fileID: 6576819389343045850}
   - {fileID: 5949271668682311735}
+  defaultFluteLabel:
+  - {fileID: 6406201868410273526}
+  - {fileID: 5208836817637430671}
+  - {fileID: 6561990473976820003}
+  - {fileID: 3030726522446525209}
+  predetermineFluteButton:
+  - {fileID: 6108312292961636365}
+  - {fileID: 1481027243820722316}
+  - {fileID: 4764603350197551996}
+  - {fileID: 7790585249571130228}
   partitures:
   - {fileID: 2817840374969812463}
   - {fileID: 8701180903757218762}
@@ -17153,7 +17163,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2972110164283879315}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3395636447836825938}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: PredetermineWoodenIronFlute
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1485234030754442487
 GameObject:
   m_ObjectHideFlags: 0
@@ -25358,7 +25380,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4540657527586955678}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3395636447836825938}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: PredetermineIronFlute
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4803161314066674029
 GameObject:
   m_ObjectHideFlags: 0
@@ -28864,7 +28898,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1785124591335387270}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3395636447836825938}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: PredetermineWoodenFlute
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6114908129353576723
 GameObject:
   m_ObjectHideFlags: 0
@@ -33772,7 +33818,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5706755418615621057}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3395636447836825938}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: PredetermineGoldenFlute
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7811960368175495569
 GameObject:
   m_ObjectHideFlags: 0
