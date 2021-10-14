@@ -14,6 +14,8 @@ public class PartitureSelection : MonoBehaviour
     [SerializeField] private GameObject pentagramPanel;
     public string panelPartitureName;
     private bool partituresFound = false;
+    private string flute;
+    private bool isByDefault;
 
 
     private void Awake()
@@ -40,6 +42,7 @@ public class PartitureSelection : MonoBehaviour
     void OnEnable()
     {
         partituresFound = false;
+
     }
 
     public void DeactivateNoOwnedPartiturePanels()
@@ -129,18 +132,6 @@ public class PartitureSelection : MonoBehaviour
                 Seti2.instance.NotFoundPartitures();
             }
         }
-        // If the player has the partitures but not the flute
-        else if (partituresFound && AllPanelsInactive())
-        {
-            if (habitant.name == "Seti0")
-            {
-                Seti.instance.NotFoundFlutes();
-            }
-            else if (habitant.name == "Seti1")
-            {
-                Seti2.instance.NotFoundFlutes();
-            }
-        }
 
     }
 
@@ -175,10 +166,27 @@ public class PartitureSelection : MonoBehaviour
             Audience.instance.NotFoundPartitures();
         }
 
+        if (NotFoundFlute())
+        {
+            Audience.instance.NotFoundFlute();
+        }
 
     }
 
     //*************************************************************************************************************************
+
+    private bool NotFoundFlute()
+    {
+        for (int i = 0; i < partiturePanels.Length; i++)
+        {
+            if (partiturePanels[i].activeInHierarchy)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 
     //*************************************************************************************************************************
 
@@ -186,53 +194,53 @@ public class PartitureSelection : MonoBehaviour
 
     public void FluteFilter()
     {
+        flute = PartitureHabitant.instance.ReturnFlute();
+
         Debug.Log("Flute Filter");
-        GameData gameData = new GameData();
-        gameData = XmlManager.instance.LoadGame();
-
-
-
         // Desactivar la que no tiene que tener
-        for (int i = 0; i < gameData.flute.Length; i++)
+
+        Debug.Log("La flauta (" + PartitureHabitant.instance.flute + ")");
+
+        Debug.Log("flauta: " + flute);
+        if (flute == "woodenFlute")
         {
-            if (gameData.flute[i].isByDefault)
+            // we shouldnt active partiturePanel4, 5, 6, 7, 8, 9, 10
+            for (int j = 0; j < partiturePanels.Length; j++)
             {
-                if (gameData.flute[i].name == "woodenFlute")
+                if (partiturePanels[j].name == "PanelPartiture4" || partiturePanels[j].name == "PanelPartiture5" || partiturePanels[j].name == "PanelPartiture6" || partiturePanels[j].name == "PanelPartiture6" || partiturePanels[j].name == "PanelPartiture7" || partiturePanels[j].name == "PanelPartiture8" || partiturePanels[j].name == "PanelPartiture9" || partiturePanels[j].name == "PanelPartiture10")
                 {
-                    // we shouldnt active partiturePanel4, 5, 6, 7, 8, 9, 10
-                    for (int j = 0; j < partiturePanels.Length; j++)
-                    {
-                        if (partiturePanels[j].name == "PanelPartiture4" || partiturePanels[j].name == "PanelPartiture5" || partiturePanels[j].name == "PanelPartiture6" || partiturePanels[j].name == "PanelPartiture6" || partiturePanels[j].name == "PanelPartiture7" || partiturePanels[j].name == "PanelPartiture8" || partiturePanels[j].name == "PanelPartiture9" || partiturePanels[j].name == "PanelPartiture10")
-                        {
-                            partiturePanels[j].SetActive(false);
-                        }
-                    }
-                }
-                else if (gameData.flute[i].name == "woodenIronFlute")
-                {
-                    Debug.Log("Checkpoint");
-                    // we shouldnt active partiturePanel7, 8, 9, 10
-                    for (int k = 0; k < partiturePanels.Length; k++)
-                    {
-                        if (partiturePanels[k].name == "PanelPartiture7" || partiturePanels[k].name == "PanelPartiture8" || partiturePanels[k].name == "PanelPartiture9" || partiturePanels[k].name == "PanelPartiture10")
-                        {
-                            partiturePanels[k].SetActive(false);
-                        }
-                    }
-                }
-                else if (gameData.flute[i].name == "ironFlute")
-                {
-                    // we shouldnt active partiturePane10
-                    for (int l = 0; l < partiturePanels.Length; l++)
-                    {
-                        if (partiturePanels[l].name == "PanelPartiture10")
-                        {
-                            partiturePanels[l].SetActive(false);
-                        }
-                    }
+                    partiturePanels[j].SetActive(false);
                 }
             }
         }
+        else if (flute == "woodenIronFlute")
+        {
+            Debug.Log("Checkpoint");
+            // we shouldnt active partiturePanel7, 8, 9, 10
+            for (int k = 0; k < partiturePanels.Length; k++)
+            {
+                if (partiturePanels[k].name == "PanelPartiture7" || partiturePanels[k].name == "PanelPartiture8" || partiturePanels[k].name == "PanelPartiture9" || partiturePanels[k].name == "PanelPartiture10")
+                {
+                    partiturePanels[k].SetActive(false);
+                }
+            }
+        }
+        else if (flute == "ironFlute")
+        {
+            Debug.Log("Esto si funciona");
+            // we shouldnt active partiturePanel10
+            for (int l = 0; l < partiturePanels.Length; l++)
+            {
+                if (partiturePanels[l].name == "PanelPartiture10")
+                {
+                    partiturePanels[l].SetActive(false);
+                }
+            }
+        }
+
+
+
+        // We have to identify if after flute partitures the panels are still inactive, then change dialog to no flute dialog and close the partiture selection interface
     }
 
     //*************************************************************************************************************************

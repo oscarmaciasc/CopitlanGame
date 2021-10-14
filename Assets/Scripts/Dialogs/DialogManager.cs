@@ -39,6 +39,7 @@ public class DialogManager : MonoBehaviour
         {
             if (Input.GetKeyUp(KeyCode.Return))
             {
+
                 if (!justStarted)
                 {
                     currentLine++;
@@ -53,6 +54,7 @@ public class DialogManager : MonoBehaviour
                         {
                             habitant.GetComponent<PartitureHabitant>().conversationFinished = true;
                             habitant.GetComponent<PartitureHabitant>().firstTime = true;
+                            //habitant.GetComponent<PartitureHabitant>().GetFlute();
                         }
 
                         if (habitant.GetComponent<KasakirGuard>() != null)
@@ -142,7 +144,7 @@ public class DialogManager : MonoBehaviour
 
                         if (habitant.GetComponent<Leader>() != null)
                         {
-                            if(!habitant.GetComponent<Leader>().hasFinished)
+                            if (!habitant.GetComponent<Leader>().hasFinished)
                             {
                                 habitant.GetComponent<Leader>().LimitPartitures(habitant);
                             }
@@ -214,7 +216,8 @@ public class DialogManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "BlacksmithHouse1" && habitant.GetComponent<Blacksmith>().justStartedShouldBeFalse)
         {
             justStarted = false;
-        } else if (SceneManager.GetActiveScene().name == "BlacksmithHouse1" && !habitant.GetComponent<Blacksmith>().justStartedShouldBeFalse)
+        }
+        else if (SceneManager.GetActiveScene().name == "BlacksmithHouse1" && !habitant.GetComponent<Blacksmith>().justStartedShouldBeFalse)
         {
             justStarted = true;
         }
@@ -222,7 +225,8 @@ public class DialogManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "BlacksmithHouse2" && habitant.GetComponent<Blacksmith>().justStartedShouldBeFalse)
         {
             justStarted = false;
-        } else if (SceneManager.GetActiveScene().name == "BlacksmithHouse2" && !habitant.GetComponent<Blacksmith>().justStartedShouldBeFalse)
+        }
+        else if (SceneManager.GetActiveScene().name == "BlacksmithHouse2" && !habitant.GetComponent<Blacksmith>().justStartedShouldBeFalse)
         {
             justStarted = true;
         }
@@ -230,7 +234,8 @@ public class DialogManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Workshop1" && habitant.GetComponent<Workshop>().justStartedShouldBeFalse)
         {
             justStarted = false;
-        } else if (SceneManager.GetActiveScene().name == "Workshop1" && !habitant.GetComponent<Workshop>().justStartedShouldBeFalse)
+        }
+        else if (SceneManager.GetActiveScene().name == "Workshop1" && !habitant.GetComponent<Workshop>().justStartedShouldBeFalse)
         {
             justStarted = true;
         }
@@ -238,7 +243,8 @@ public class DialogManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Workshop2" && habitant.GetComponent<Workshop>().justStartedShouldBeFalse)
         {
             justStarted = false;
-        } else if (SceneManager.GetActiveScene().name == "Workshop2" && !habitant.GetComponent<Workshop>().justStartedShouldBeFalse)
+        }
+        else if (SceneManager.GetActiveScene().name == "Workshop2" && !habitant.GetComponent<Workshop>().justStartedShouldBeFalse)
         {
             justStarted = true;
         }

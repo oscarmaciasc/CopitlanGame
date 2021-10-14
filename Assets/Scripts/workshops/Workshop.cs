@@ -140,6 +140,8 @@ public class Workshop : MonoBehaviour
     public void OnClickWoodWorkshop1()
     {
         confirmationWood.SetActive(true);
+        confirmationIron.SetActive(false);
+        confirmationGold.SetActive(false);
     }
 
     public void OnClickConfirmationIronWorkshop1()
@@ -151,6 +153,8 @@ public class Workshop : MonoBehaviour
      public void OnClickIronWorkshop1()
     {
         confirmationIron.SetActive(true);
+        confirmationWood.SetActive(false);
+        confirmationGold.SetActive(false);
     }
 
     public void OnClickConfirmationGoldWorkshop1()
@@ -162,6 +166,8 @@ public class Workshop : MonoBehaviour
     public void OnClickGoldWorkshop1()
     {
         confirmationGold.SetActive(true);
+        confirmationWood.SetActive(false);
+        confirmationIron.SetActive(false);
     }
 
     // ************************************************

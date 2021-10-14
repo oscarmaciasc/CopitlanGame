@@ -9,6 +9,7 @@ public class Audience : MonoBehaviour
     public int res = 0;
     public bool canPass = false;
     public bool notFound = false;
+    public bool notFoundFlute = false;
     public bool canActivatePartiturePanel = true;
     public int percentageToPass;
     private string[] noPartituresDialog = { "Parece que no tienes la partitura necesaria", "Vuelve cuando la tengas" };
@@ -27,6 +28,7 @@ public class Audience : MonoBehaviour
     public string[] goodLinesKasakir = { "Adelante, continua tu camino viajero", "Quizani no es facil de convencer" };
     public string[] goodLinesQuizani = { "Adelante, continua tu camino viajero", "Naran no es facil de convencer" };
     public string[] goodLinesNaran = { "Has llegado demasiado lejos", "continua con tu camino y convence al lider Necalli" };
+    public string[] noFlutesDialog = { "No tienes la flauta necesaria para interpretar la siguiente partitura", "prueba mejorando tu flauta" };
     private bool successInterpretation = false;
     public bool hasFinished = false;
     public GameObject habitant;
@@ -179,6 +181,14 @@ public class Audience : MonoBehaviour
                 canActivatePartiturePanel = false;
                 habitant.GetComponent<PartitureHabitant>().canShowPartitures = false;
             }
+
+            if (notFoundFlute)
+            {
+                partitureSelectionPanel.SetActive(false);
+                habitant.GetComponent<DialogActivator>().lines = noFlutesDialog;
+                canActivatePartiturePanel = false;
+                habitant.GetComponent<PartitureHabitant>().canShowPartitures = false;
+            }
         }
     }
 
@@ -253,5 +263,11 @@ public class Audience : MonoBehaviour
     {
         notFound = true;
         return notFound;
+    }
+
+    public bool NotFoundFlute()
+    {
+        notFoundFlute = true;
+        return notFoundFlute;
     }
 }
