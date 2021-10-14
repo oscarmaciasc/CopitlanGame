@@ -163,6 +163,39 @@ public class XmlManager : MonoBehaviour
         return true;
     }
 
+    public void SetDefaultFlute(string fluteName) {
+        int gameIndex = GetGameIndex();
+
+        GameData gameData = LoadGame();
+
+        for(int i = 0; i < gameData.flute.Length; i++) { 
+            if(i == GetFluteIndex(fluteName)) {
+                gameData.flute[i].isByDefault = true;
+            }
+            else {
+                gameData.flute[i].isByDefault = false;
+            }
+        }
+        
+        Save(gameIndex, gameData);
+    }
+
+    private int GetFluteIndex(string fluteName) {
+        if(fluteName == "woodenFlute") {
+            return 0;
+        }
+        else if(fluteName == "woodenIronFlute") {
+            return 1;
+        }
+        else if(fluteName == "ironFlute") {
+            return 2;
+        }
+        else if(fluteName == "goldenFlute") {
+            return 3;
+        }
+        return 1000;
+    }
+
     public void SaveAudienceResult(int audienceResultID, int result)
     {
         int gameIndex = GetGameIndex();

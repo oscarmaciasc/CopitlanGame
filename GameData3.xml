@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="shaped" gender="true">
-  <TimePlayed time="0" />
-  <TimeWalked time="20.38066" />
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="gees" gender="false">
+  <TimePlayed time="1088.55261" />
+  <TimeWalked time="1219.95435" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="0" />
   <Resources>

@@ -339,4 +339,14 @@ public class GameData
 
         return res;
     }
+
+    public int GetDefaultFlute() {
+        for(int i = 0; i < flute.Length; i++) {
+            if(flute[i].isByDefault) {
+                return i;
+            }
+        }
+        
+        return 1000;
+    }
 }
