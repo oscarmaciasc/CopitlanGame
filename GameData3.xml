@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="gees" gender="false">
-  <TimePlayed time="839.6506" />
-  <TimeWalked time="1248.91187" />
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="shaped" gender="true">
+  <TimePlayed time="0" />
+  <TimeWalked time="20.38066" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="0" />
   <Resources>
     <Resource name="wood">
-      <quantity>100</quantity>
+      <quantity>0</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>60</quantity>
+      <quantity>0</quantity>
     </Resource>
     <Resource name="gold">
       <quantity>0</quantity>
@@ -20,34 +20,21 @@
   </Resources>
   <Permissions>
     <Permission name="outterCircle" />
-    <Permission name="triangle" />
-    <Permission name="innerCircle" />
   </Permissions>
   <Flutes>
-    <Flute name="woodenFlute" isByDefault="false" />
-    <Flute name="woodenIronFlute" isByDefault="false" />
-    <Flute name="ironFlute" isByDefault="true" />
+    <Flute name="woodenFlute" isByDefault="true" />
   </Flutes>
   <Balloon name="balloonLvl1" />
-  <MusicalMasteryLvl name="experienced" />
+  <MusicalMasteryLvl name="apprentice" />
   <MusicSheets>
     <MusicSheet name="partiture1" />
-    <MusicSheet name="partiture2" />
-    <MusicSheet name="partiture3" />
-    <MusicSheet name="partiture4" />
-    <MusicSheet name="partiture5" />
-    <MusicSheet name="partiture6" />
-    <MusicSheet name="partiture7" />
-    <MusicSheet name="partiture8" />
-    <MusicSheet name="partiture9" />
-    <MusicSheet name="partiture10" />
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">
-      <result>88</result>
+      <result>0</result>
     </AudienceResult>
     <AudienceResult name="quizaniResult">
-      <result>76</result>
+      <result>0</result>
     </AudienceResult>
     <AudienceResult name="naranResult">
       <result>0</result>
@@ -58,33 +45,33 @@
   </AudienceResults>
   <MineEntrances>
     <MineEntrance name="tecalliEntrance">
-      <shouldBeActive>true</shouldBeActive>
+      <shouldBeActive>false</shouldBeActive>
     </MineEntrance>
     <MineEntrance name="acanEntrance">
-      <shouldBeActive>true</shouldBeActive>
+      <shouldBeActive>false</shouldBeActive>
     </MineEntrance>
     <MineEntrance name="setiEntrance">
-      <shouldBeActive>true</shouldBeActive>
+      <shouldBeActive>false</shouldBeActive>
     </MineEntrance>
   </MineEntrances>
   <DirigentEntrances>
     <DirigentEntrance name="kasakirEntrance">
-      <shouldBeActive>true</shouldBeActive>
+      <shouldBeActive>false</shouldBeActive>
     </DirigentEntrance>
     <DirigentEntrance name="quizaniEntrance">
-      <shouldBeActive>true</shouldBeActive>
+      <shouldBeActive>false</shouldBeActive>
     </DirigentEntrance>
     <DirigentEntrance name="naranEntrance">
-      <shouldBeActive>true</shouldBeActive>
+      <shouldBeActive>false</shouldBeActive>
     </DirigentEntrance>
   </DirigentEntrances>
   <Collectables quantity="0" />
   <HabitantResults>
     <HabitantResult id="0">
-      <Result>90</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="1">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="2">
       <Result>0</Result>
@@ -323,10 +310,10 @@
   </HabitantResults>
   <HabitantsInteracted>
     <HabitantInteracted id="0">
-      <Interacted>true</Interacted>
+      <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="1">
-      <Interacted>true</Interacted>
+      <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="2">
       <Interacted>false</Interacted>
@@ -806,7 +793,7 @@
       <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="161">
-      <Interacted>false</Interacted>
+      <Interacted>true</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="162">
       <Interacted>false</Interacted>
@@ -878,6 +865,36 @@
       <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="185">
+      <Interacted>false</Interacted>
+    </HabitantInteracted>
+    <HabitantInteracted id="186">
+      <Interacted>true</Interacted>
+    </HabitantInteracted>
+    <HabitantInteracted id="187">
+      <Interacted>false</Interacted>
+    </HabitantInteracted>
+    <HabitantInteracted id="188">
+      <Interacted>false</Interacted>
+    </HabitantInteracted>
+    <HabitantInteracted id="189">
+      <Interacted>false</Interacted>
+    </HabitantInteracted>
+    <HabitantInteracted id="190">
+      <Interacted>false</Interacted>
+    </HabitantInteracted>
+    <HabitantInteracted id="191">
+      <Interacted>false</Interacted>
+    </HabitantInteracted>
+    <HabitantInteracted id="192">
+      <Interacted>false</Interacted>
+    </HabitantInteracted>
+    <HabitantInteracted id="193">
+      <Interacted>false</Interacted>
+    </HabitantInteracted>
+    <HabitantInteracted id="194">
+      <Interacted>false</Interacted>
+    </HabitantInteracted>
+    <HabitantInteracted id="195">
       <Interacted>false</Interacted>
     </HabitantInteracted>
   </HabitantsInteracted>

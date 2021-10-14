@@ -21,6 +21,7 @@ public class BalloonMovement : MonoBehaviour
 
     private Vector3 bottomLeftLimit;
     private Vector3 topRightLimit;
+    [SerializeField] GameObject dialogBox;
 
     // Start is called before the first frame update
     void Start()
@@ -29,61 +30,61 @@ public class BalloonMovement : MonoBehaviour
         currentPositionX = gameObject.transform.position.x;
         currentPositionY = gameObject.transform.position.y;
 
-        GameData gameData = new GameData();
-        gameData = XmlManager.instance.LoadGame();
-
-        if (gameData.GetCurrentResource(3) > 0)
-        {
-            GetRandomCoordTest();
-        }
+        GetRandomCoordTest();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        GameData gameData = new GameData();
-        gameData = XmlManager.instance.LoadGame();
 
-        if (gameData.GetCurrentResource(3) > 0)
+        AvoidingCollisions();
+
+        if (counter == 2)
         {
-            AvoidingCollisions();
+            // Wait 20 seconds
+            timeToWait = 20f;
 
-            if (counter == 2)
-            {
-                // Wait 5 seconds
-                timeToWait = 5f;
+            // The balloon its not moving and then we can talk
+            this.gameObject.GetComponent<DialogActivator>().canActivate = true;
 
-                counter = 0;
-                GetRandomCoordTest();
-            }
+            counter = 0;
+            GetRandomCoordTest();
+        }
 
-            // This condition waits 5 seconds
+        // This condition waits 20 seconds
+        // The countdown its only when were not talking to the npc
+        if (!dialogBox.activeInHierarchy)
+        {
             timeToWait -= Time.deltaTime;
-            if (timeToWait <= 0)
+        }
+        if (timeToWait <= 0)
+        {
+            // The balloon is moving and then we cannot talk
+            this.gameObject.GetComponent<DialogActivator>().canActivate = false;
+
+            if (firstMovement == 1)
             {
-                if (firstMovement == 1)
+                // If the habitant stop moving in x
+                if (myAnim.GetFloat("moveX") == 0)
                 {
-                    // If the habitant stop moving in x
-                    if (myAnim.GetFloat("moveX") == 0)
-                    {
-                        // This assigns a value in x and let the value in y of the gameobject current position.
-                        vector2DestinyX = new Vector2(transform.position.x + randomX, currentPositionY);
-                    }
-                    MoveXTest();
+                    // This assigns a value in x and let the value in y of the gameobject current position.
+                    vector2DestinyX = new Vector2(transform.position.x + randomX, currentPositionY);
                 }
-                else
+                MoveXTest();
+            }
+            else
+            {
+                // If the habitant stop moving in y
+                if (myAnim.GetFloat("moveY") == 0)
                 {
-                    // If the habitant stop moving in y
-                    if (myAnim.GetFloat("moveY") == 0)
-                    {
-                        // This assigns a value in y and let the value in x of the gameobject current position.
-                        vector2DestinyY = new Vector2(currentPositionX, transform.position.y + randomY);
-                    }
-                    MoveYTest();
+                    // This assigns a value in y and let the value in x of the gameobject current position.
+                    vector2DestinyY = new Vector2(currentPositionX, transform.position.y + randomY);
                 }
+                MoveYTest();
             }
         }
+
 
         // // Keeping the npc inside the map
         // transform.position = new Vector3(Mathf.Clamp(transform.position.x, theMap.localBounds.min.x, topRightLimit.x), Mathf.Clamp(transform.position.y, bottomLeftLimit.y, topRightLimit.y), transform.position.z);
@@ -123,8 +124,8 @@ public class BalloonMovement : MonoBehaviour
 
     private void GetRandomCoordTest()
     {
-        randomX = Random.Range(-5, 5);
-        randomY = Random.Range(-5, 5);
+        randomX = Random.Range(-10, 10);
+        randomY = Random.Range(-10, 10);
         firstMovement = Random.Range(1, 2);
     }
 
@@ -195,5 +196,5 @@ public class BalloonMovement : MonoBehaviour
         }
     }
 
-    
+
 }

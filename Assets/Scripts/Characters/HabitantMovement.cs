@@ -43,6 +43,9 @@ public class HabitantMovement : MonoBehaviour
             // Wait 5 seconds
             timeToWait = 5f;
 
+            // The habitant its not moving and then we can talk
+            this.gameObject.GetComponent<DialogActivator>().canActivate = true;
+
             counter = 0;
             GetRandomCoordTest();
         }
@@ -51,6 +54,10 @@ public class HabitantMovement : MonoBehaviour
         timeToWait -= Time.deltaTime;
         if (timeToWait <= 0)
         {
+
+            // The habitant is moving and then we cannot talk
+            this.gameObject.GetComponent<DialogActivator>().canActivate = false;
+            
             if (firstMovement == 1)
             {
                 // If the habitant stop moving in x

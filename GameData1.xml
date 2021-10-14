@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="tragedy" gender="false">
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="telex" gender="false">
   <TimePlayed time="0" />
   <TimeWalked time="0" />
   <TimeBalloon time="0" />
@@ -865,6 +865,36 @@
       <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="185">
+      <Interacted>false</Interacted>
+    </HabitantInteracted>
+    <HabitantInteracted id="186">
+      <Interacted>false</Interacted>
+    </HabitantInteracted>
+    <HabitantInteracted id="187">
+      <Interacted>false</Interacted>
+    </HabitantInteracted>
+    <HabitantInteracted id="188">
+      <Interacted>false</Interacted>
+    </HabitantInteracted>
+    <HabitantInteracted id="189">
+      <Interacted>false</Interacted>
+    </HabitantInteracted>
+    <HabitantInteracted id="190">
+      <Interacted>false</Interacted>
+    </HabitantInteracted>
+    <HabitantInteracted id="191">
+      <Interacted>false</Interacted>
+    </HabitantInteracted>
+    <HabitantInteracted id="192">
+      <Interacted>false</Interacted>
+    </HabitantInteracted>
+    <HabitantInteracted id="193">
+      <Interacted>false</Interacted>
+    </HabitantInteracted>
+    <HabitantInteracted id="194">
+      <Interacted>false</Interacted>
+    </HabitantInteracted>
+    <HabitantInteracted id="195">
       <Interacted>false</Interacted>
     </HabitantInteracted>
   </HabitantsInteracted>

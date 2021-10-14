@@ -305,9 +305,9 @@ public class GameData
 
     public void habitantInteractedInitializer()
     {
-        this.habitantInteracted = new HabitantInteracted[186];
+        this.habitantInteracted = new HabitantInteracted[196];
 
-         for (int i = 0; i < 186; i++)
+        for (int i = 0; i < 196; i++)
         {
             this.habitantInteracted[i] = new HabitantInteracted();
             this.habitantInteracted[i].id = i;
