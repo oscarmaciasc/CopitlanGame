@@ -16,7 +16,6 @@ public class PartitureHabitant : MonoBehaviour
     public bool canShowPartitures = true;
     public string[] newLines;
     public GameObject habitant;
-    public string flute;
 
     // Start is called before the first frame update
     void Start()
@@ -75,24 +74,5 @@ public class PartitureHabitant : MonoBehaviour
     {
         // habitant is the npc im talking to
         habitant = getHabitant;
-    }
-
-    public void GetFlute()
-    {
-        GameData gameData = new GameData();
-        gameData = XmlManager.instance.LoadGame();
-
-        for (int i = 0; i < gameData.flute.Length; i++)
-        {
-            if (gameData.flute[i].isByDefault)
-            {
-                flute =  gameData.flute[i].name;
-            }
-        }
-    }
-
-    public string ReturnFlute()
-    {
-        return flute;
     }
 }
