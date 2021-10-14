@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="jigsaw" gender="true">
-  <TimePlayed time="0" />
-  <TimeWalked time="0" />
-  <TimeBalloon time="0" />
+  <TimePlayed time="1298.69006" />
+  <TimeWalked time="287.174469" />
+  <TimeBalloon time="19.0858822" />
   <HappinessPercentage percentage="0" />
   <Resources>
     <Resource name="wood">

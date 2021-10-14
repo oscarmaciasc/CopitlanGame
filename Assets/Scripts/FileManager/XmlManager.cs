@@ -355,6 +355,17 @@ public class XmlManager : MonoBehaviour
         Save(gameIndex, gameData);
     }
 
+    public void UpdateTimeWalkedBalloon(float timeWalkedBalloon)
+    {
+        int gameIndex = GetGameIndex();
+
+        GameData gameData = LoadGame();
+
+        gameData.timeBalloon.time += timeWalkedBalloon;
+
+        Save(gameIndex, gameData);
+    }
+
     // Fill gameData array
     public GameData[] LoadAllGames()
     {

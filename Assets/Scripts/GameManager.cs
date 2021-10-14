@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public bool escapePressed;
     public bool vPressed;
     public bool pPressed;
+    public bool fPressed;
 
     private void Awake()
     {
@@ -51,7 +52,7 @@ public class GameManager : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.F))
         {
-            //
+            fPressed = true;
             Debug.Log("Globo");
         }
 

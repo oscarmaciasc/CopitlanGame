@@ -272,6 +272,11 @@ public class GameData
         return 1000;
     }
 
+    public void SetFuelToZero()
+    {
+        resource[3].quantity = 0;
+    }
+
     public string GetBalloonName()
     {
         return balloon.name;

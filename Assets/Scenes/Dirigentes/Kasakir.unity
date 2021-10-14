@@ -281,6 +281,7 @@ MonoBehaviour:
   res: 0
   canPass: 0
   notFound: 0
+  notFoundFlute: 0
   canActivatePartiturePanel: 1
   percentageToPass: 60
   goodLinesKasakir:
@@ -292,6 +293,9 @@ MonoBehaviour:
   goodLinesNaran:
   - Has llegado demasiado lejos
   - continua con tu camino y convence al lider Necalli
+  noFlutesDialog:
+  - No tienes la flauta necesaria para interpretar la siguiente partitura
+  - prueba mejorando tu flauta
   hasFinished: 0
   habitant: {fileID: 0}
   partitureSelectionPanel: {fileID: 1606483015}
@@ -21313,7 +21317,7 @@ MonoBehaviour:
   kasakirEntrance: {fileID: 0}
   quizaniEntrance: {fileID: 0}
   naranEntrance: {fileID: 0}
-  PauseMenuPanel: {fileID: 1606483012}
+  pauseMenuPanel: {fileID: 1606483012}
   lastSaved: 0
 --- !u!1 &1606483026 stripped
 GameObject:

@@ -2845,7 +2845,7 @@ MonoBehaviour:
   kasakirEntrance: {fileID: 0}
   quizaniEntrance: {fileID: 0}
   naranEntrance: {fileID: 0}
-  PauseMenuPanel: {fileID: 120873220971971120}
+  pauseMenuPanel: {fileID: 120873220971971120}
   lastSaved: 0
 --- !u!114 &225096585
 MonoBehaviour:
@@ -5848,7 +5848,6 @@ GameObject:
   - component: {fileID: 453290680}
   - component: {fileID: 453290679}
   - component: {fileID: 453290678}
-  - component: {fileID: 453290677}
   - component: {fileID: 453290684}
   m_Layer: 0
   m_Name: Artisan
@@ -5857,25 +5856,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &453290677
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 453290676}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 1e6b04b3f05c5ce469b59a5b0bffd0f8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!50 &453290678
 Rigidbody2D:
   serializedVersion: 4
@@ -60971,6 +60951,16 @@ MonoBehaviour:
   - {fileID: 962457287318583608}
   - {fileID: 6576819389127666619}
   - {fileID: 5949271668771814230}
+  defaultFluteLabel:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  predetermineFluteButton:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   partitures:
   - {fileID: 2817840375018747534}
   - {fileID: 8701180903570157739}

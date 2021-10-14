@@ -31172,7 +31172,7 @@ MonoBehaviour:
   kasakirEntrance: {fileID: 0}
   quizaniEntrance: {fileID: 0}
   naranEntrance: {fileID: 0}
-  PauseMenuPanel: {fileID: 2132399113}
+  pauseMenuPanel: {fileID: 2132399113}
   lastSaved: 0
 --- !u!114 &2132399150
 MonoBehaviour:

@@ -43,6 +43,9 @@ public class BalloonManager : MonoBehaviour
 
     public void fuelDecrease()
     {
+        GameData gameData = new GameData();
+        gameData = XmlManager.instance.LoadGame();
+
         if (canMove)
         {
             if (this.gameObject.transform.position.x >= initialPosition.x + 10 || this.gameObject.transform.position.x <= initialPosition.x - 10 || this.gameObject.transform.position.y >= initialPosition.y + 10 || this.gameObject.transform.position.y <= initialPosition.y - 10)
@@ -54,6 +57,7 @@ public class BalloonManager : MonoBehaviour
 
                 if (currentFuel <= 0)
                 {
+                    gameData.SetFuelToZero();
                     canMove = false;
                     myAnim.SetFloat("moveX", 0);
                     myAnim.SetFloat("moveY", 0);

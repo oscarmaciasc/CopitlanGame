@@ -26,7 +26,8 @@ public class InGame : MonoBehaviour
     [SerializeField] private GameObject kasakirEntrance;
     [SerializeField] private GameObject quizaniEntrance;
     [SerializeField] private GameObject naranEntrance;
-    [SerializeField] private GameObject PauseMenuPanel;
+    [SerializeField] private GameObject pauseMenuPanel;
+    public bool balloonActive = false;
     private bool pauseMenuHasBeenStarted = false;
     public float lastSaved = 0f;
 
@@ -97,14 +98,31 @@ public class InGame : MonoBehaviour
             if (partitureSelectionPanel.activeInHierarchy == false)
             {
                 ActivatePartitureSelectionPanelFreely();
+                GameManager.instance.pPressed = false;
             }
         }
-        if (GameManager.instance.pPressed)
+        if (GameManager.instance.pPressed && !pauseMenuPanel.activeInHierarchy)
         {
-            if (PauseMenuPanel.activeInHierarchy == false)
-            {
-                ActivatePauseMenuPanel();
-            }
+            ActivatePauseMenuPanel();
+            GameManager.instance.pPressed = false;
+        }
+        else if (GameManager.instance.pPressed && pauseMenuPanel.activeInHierarchy)
+        {
+            DeactivatePauseMenuPanel();
+            GameManager.instance.pPressed = false;
+        }
+
+        if (GameManager.instance.fPressed && !balloonActive)
+        {
+            //Activate ballonManager Script
+            FindObjectOfType<BalloonManager>().GetComponent<BalloonManager>().enabled = true;
+            balloonActive = true;
+            GameManager.instance.fPressed = false;
+        } else if (GameManager.instance.fPressed && balloonActive)
+        {
+            FindObjectOfType<BalloonManager>().GetComponent<BalloonManager>().enabled = false;
+            balloonActive = false;
+            GameManager.instance.fPressed = false;
         }
     }
 
@@ -122,28 +140,32 @@ public class InGame : MonoBehaviour
 
     private void ActivateExitMenu()
     {
-        if(partitureSelectionPanel.activeInHierarchy || pentagramPanel.activeInHierarchy) {
+        if (partitureSelectionPanel.activeInHierarchy || pentagramPanel.activeInHierarchy)
+        {
             GameManager.instance.escapePressed = false;
         }
-        else {
+        else
+        {
             exitMenu.SetActive(true);
         }
     }
 
     public void ActivatePauseMenuPanel()
     {
-        if(!this.pauseMenuHasBeenStarted) {
-            PauseMenuPanel.SetActive(true);
+        if (!this.pauseMenuHasBeenStarted)
+        {
+            pauseMenuPanel.SetActive(true);
             pauseMenuHasBeenStarted = true;
         }
-        else {
+        else
+        {
             PauseMenu.instance.ActivatePanel();
         }
     }
 
     public void DeactivatePauseMenuPanel()
     {
-        PauseMenuPanel.SetActive(false);
+        pauseMenuPanel.SetActive(false);
     }
 
 
@@ -181,25 +203,27 @@ public class InGame : MonoBehaviour
         savePanel.SetActive(true);
         returnArrow.interactable = false;
     }
-    
+
     public void DeactivateSavePanel()
     {
         savePanel.SetActive(false);
         returnArrow.interactable = true;
     }
 
-    public void ActivateSaveOverwritePanel() {
+    public void ActivateSaveOverwritePanel()
+    {
         overwriteSavePanel.SetActive(true);
         savePanel.SetActive(false);
     }
-    
+
     public void DeactivateSaveOverwritePanel()
     {
         overwriteSavePanel.SetActive(false);
         returnArrow.interactable = true;
     }
 
-    public void ActivateSaveSuccessfullyPanel() {
+    public void ActivateSaveSuccessfullyPanel()
+    {
         succesfullySavePanel.SetActive(true);
         overwriteSavePanel.SetActive(false);
     }
@@ -237,18 +261,20 @@ public class InGame : MonoBehaviour
         exitPanel.SetActive(false);
     }
 
-    public void ActivateExitOverwritePanel() {
+    public void ActivateExitOverwritePanel()
+    {
         overwriteExitPanel.SetActive(true);
         saveOnExitPanel.SetActive(false);
     }
-    
+
     public void DeactivateExitOverwritePanel()
     {
         overwriteExitPanel.SetActive(false);
         returnArrow.interactable = true;
     }
 
-    public void ActivateExitSuccessfullyPanel() {
+    public void ActivateExitSuccessfullyPanel()
+    {
         successfullyExitPanel.SetActive(true);
         overwriteExitPanel.SetActive(false);
     }

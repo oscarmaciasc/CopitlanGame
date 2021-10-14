@@ -2857,7 +2857,7 @@ MonoBehaviour:
   kasakirEntrance: {fileID: 692343708}
   quizaniEntrance: {fileID: 920663909}
   naranEntrance: {fileID: 2005247306}
-  PauseMenuPanel: {fileID: 425948754}
+  pauseMenuPanel: {fileID: 425948754}
   lastSaved: 0
 --- !u!1 &1224067205
 GameObject:
@@ -2961,8 +2961,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af715aa748a029948b9a8efe6414b4c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  areaToLoad: TradeHouse1
-  areaTransitionName: InGame-TradeHouse1
+  areaToLoad: TradeHouse2
+  areaTransitionName: InGame-TradeHouse2
   theEntrance: {fileID: 1690035834}
   waitToLoad: 1
 --- !u!61 &1231748919

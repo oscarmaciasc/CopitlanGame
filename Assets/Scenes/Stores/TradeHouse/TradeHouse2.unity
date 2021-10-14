@@ -38033,7 +38033,7 @@ MonoBehaviour:
   kasakirEntrance: {fileID: 0}
   quizaniEntrance: {fileID: 0}
   naranEntrance: {fileID: 0}
-  PauseMenuPanel: {fileID: 2011187209}
+  pauseMenuPanel: {fileID: 2011187209}
   lastSaved: 0
 --- !u!114 &2011187247
 MonoBehaviour:
