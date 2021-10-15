@@ -211,19 +211,25 @@ public class PlayerController : MonoBehaviour
 
     public void SaveTimeWalked()
     {
-        stopWalked = Time.time;
-        Debug.Log("stopWalked: " + stopWalked);
-        XmlManager.instance.UpdateTimeWalked(stopWalked - startWalked);
-        startWalked = 0;
-        stopWalked = 0;
+        if (!InGame.instance.noFuelPanel.activeInHierarchy)
+        {
+            stopWalked = Time.time;
+            Debug.Log("stopWalked: " + stopWalked);
+            XmlManager.instance.UpdateTimeWalked(stopWalked - startWalked);
+            startWalked = 0;
+            stopWalked = 0;
+        }
     }
 
     public void SaveTimeWalkedBalloon()
     {
-        stopWalkedBalloon = Time.time;
-        Debug.Log("stopWalkedBalloon: " + stopWalkedBalloon);
-        XmlManager.instance.UpdateTimeWalkedBalloon(stopWalkedBalloon - startWalkedBallon);
-        startWalkedBallon = 0;
-        stopWalkedBalloon = 0;
+        if (!InGame.instance.noFuelPanel.activeInHierarchy)
+        {
+            stopWalkedBalloon = Time.time;
+            Debug.Log("stopWalkedBalloon: " + stopWalkedBalloon);
+            XmlManager.instance.UpdateTimeWalkedBalloon(stopWalkedBalloon - startWalkedBallon);
+            startWalkedBallon = 0;
+            stopWalkedBalloon = 0;
+        }
     }
 }

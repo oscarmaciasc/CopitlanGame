@@ -186,4 +186,4 @@ MonoBehaviour:
   currentFuel: 0
   canMove: 1
   initialPosition: {x: 0, y: 0}
-  myAnim: {fileID: 0}
+  myAnim: {fileID: 5865885559916751511}

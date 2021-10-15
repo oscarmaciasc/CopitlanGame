@@ -27,6 +27,7 @@ public class InGame : MonoBehaviour
     [SerializeField] private GameObject quizaniEntrance;
     [SerializeField] private GameObject naranEntrance;
     [SerializeField] private GameObject pauseMenuPanel;
+    public GameObject noFuelPanel;
     public bool balloonActive = false;
     private bool pauseMenuHasBeenStarted = false;
     public float lastSaved = 0f;
@@ -85,6 +86,7 @@ public class InGame : MonoBehaviour
     {
         CheckForInputs();
         CheckCanMove();
+        NoFuelPanel();
     }
 
     private void CheckForInputs()
@@ -292,16 +294,32 @@ public class InGame : MonoBehaviour
         overwriteExitPanel.SetActive(false);
     }
 
+    public void ActivateNoFuelPanel()
+    {
+        noFuelPanel.SetActive(true);
+    }
+
     public void Exit()
     {
         Debug.Log("Bye");
         Application.Quit();
     }
 
+     private void NoFuelPanel()
+    {
+        if (noFuelPanel.activeInHierarchy)
+        {
+            if (Input.GetKeyUp(KeyCode.Return))
+            {
+                noFuelPanel.SetActive(false);
+            }
+        }
+    }
+
     //********************************************************************************
     public void CheckCanMove()
     {
-        if (partitureSelectionPanel.activeInHierarchy || dialogBox.activeInHierarchy || pentagramPanel.activeInHierarchy)
+        if (partitureSelectionPanel.activeInHierarchy || dialogBox.activeInHierarchy || pentagramPanel.activeInHierarchy || noFuelPanel.activeInHierarchy)
         {
             PlayerController.instance.canMove = false;
         }

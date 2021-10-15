@@ -22,17 +22,8 @@ public class BalloonManager : MonoBehaviour
 
         SetBalloonInfo(gameData.GetBalloonName());
 
-        initialPosition = this.gameObject.transform.position;
-
         // Fill tank with file info
         currentFuel = gameData.GetCurrentResource(3);
-
-        if (currentFuel != 0)
-        {
-            canMove = true;
-        }
-
-        //currentFuel = this.fuelLimit;
     }
 
     // Update is called once per frame
@@ -41,10 +32,24 @@ public class BalloonManager : MonoBehaviour
         fuelDecrease();
     }
 
+    void OnEnable()
+    {
+        initialPosition = this.gameObject.transform.position;
+    }
+
     public void fuelDecrease()
     {
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
+
+        if (gameData.resource[3].quantity <= 0)
+        {
+            canMove = false;
+        }
+        else
+        {
+            canMove = true;
+        }
 
         if (canMove)
         {
@@ -54,19 +59,17 @@ public class BalloonManager : MonoBehaviour
                 initialPosition = this.gameObject.transform.position;
                 currentFuel--;
                 XmlManager.instance.IncreaseResource(3, -1);
-
-                if (currentFuel <= 0)
-                {
-                    gameData.SetFuelToZero();
-                    canMove = false;
-                    myAnim.SetFloat("moveX", 0);
-                    myAnim.SetFloat("moveY", 0);
-                }
             }
         }
         else
         {
+            gameData.SetFuelToZero();
             Debug.Log("Te has acabado el combustible, compra");
+            InGame.instance.ActivateNoFuelPanel();
+            FindObjectOfType<BalloonManager>().GetComponent<BalloonManager>().enabled = false;
+            InGame.instance.balloonActive = false;
+            myAnim.SetFloat("moveX", 0);
+            myAnim.SetFloat("moveY", 0);
         }
     }
 
@@ -92,4 +95,6 @@ public class BalloonManager : MonoBehaviour
             this.velocity = 4;
         }
     }
+
+    
 }

@@ -196,6 +196,7 @@ public class DialogManager : MonoBehaviour
             pentagramPanel.GetComponent<PentagramManager>().GetHabitant(this.habitant);
         }
 
+
     }
 
     public void ShowDialog(string[] newLines)
