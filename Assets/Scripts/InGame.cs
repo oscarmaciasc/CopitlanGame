@@ -87,6 +87,7 @@ public class InGame : MonoBehaviour
         CheckForInputs();
         CheckCanMove();
         NoFuelPanel();
+
     }
 
     private void CheckForInputs()
@@ -305,7 +306,7 @@ public class InGame : MonoBehaviour
         Application.Quit();
     }
 
-     private void NoFuelPanel()
+    private void NoFuelPanel()
     {
         if (noFuelPanel.activeInHierarchy)
         {

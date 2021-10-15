@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="jigsaw" gender="true">
   <TimePlayed time="1488.46851" />
-  <TimeWalked time="3182.137" />
+  <TimeWalked time="3227.15942" />
   <TimeBalloon time="65.57924" />
   <HappinessPercentage percentage="0" />
   <Resources>
@@ -56,7 +56,7 @@
   </MineEntrances>
   <DirigentEntrances>
     <DirigentEntrance name="kasakirEntrance">
-      <shouldBeActive>false</shouldBeActive>
+      <shouldBeActive>true</shouldBeActive>
     </DirigentEntrance>
     <DirigentEntrance name="quizaniEntrance">
       <shouldBeActive>false</shouldBeActive>
