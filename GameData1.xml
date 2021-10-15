@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="jigsaw" gender="true">
-  <TimePlayed time="33.3427353" />
-  <TimeWalked time="5.51705933" />
+  <TimePlayed time="416.795319" />
+  <TimeWalked time="148.105881" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="0" />
   <Resources>
     <Resource name="wood">
-      <quantity>0</quantity>
+      <quantity>100</quantity>
     </Resource>
     <Resource name="iron">
       <quantity>0</quantity>
@@ -30,6 +30,7 @@
   <MusicalMasteryLvl name="apprentice" />
   <MusicSheets>
     <MusicSheet name="partiture1" />
+    <MusicSheet name="partiture7" />
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">

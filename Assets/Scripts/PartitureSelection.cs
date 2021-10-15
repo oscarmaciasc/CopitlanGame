@@ -14,7 +14,12 @@ public class PartitureSelection : MonoBehaviour
     [SerializeField] private GameObject pentagramPanel;
     public string panelPartitureName;
     private bool partituresFound = false;
+    private bool fluteFound = false;
     private bool isByDefault;
+    private string fluteDifficulty;
+    private string partitureDifficulty1;
+    private string partitureDifficulty2;
+    private string partitureDifficulty3;
 
 
     private void Awake()
@@ -29,8 +34,6 @@ public class PartitureSelection : MonoBehaviour
     void Start()
     {
         instance = this;
-        //DeactivateNoOwnedPartiturePanels();
-        //DeativateArrowsPartitureSelection();
     }
 
     void Update()
@@ -41,7 +44,13 @@ public class PartitureSelection : MonoBehaviour
     void OnEnable()
     {
         partituresFound = false;
+        fluteFound = false;
 
+        fluteDifficulty = "";
+
+        partitureDifficulty1 = "";
+        partitureDifficulty2 = "";
+        partitureDifficulty3 = "";
     }
 
     public void DeactivateNoOwnedPartiturePanels()
@@ -144,6 +153,17 @@ public class PartitureSelection : MonoBehaviour
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
 
+        // Get Flute Difficulty
+        GetFluteDifficulty(gameData);
+
+        // Get Partiture Difficulty to compare
+        partitureDifficulty1 = GetPartitureDifficulty(name);
+        Debug.Log("partitureDifficulty1: " + partitureDifficulty1);
+        partitureDifficulty2 = GetPartitureDifficulty(name2);
+        Debug.Log("partitureDifficulty2: " + partitureDifficulty2);
+        partitureDifficulty3 = GetPartitureDifficulty(name3);
+        Debug.Log("partitureDifficulty3: " + partitureDifficulty3);
+
         for (int i = 0; i < 10; i++)
         {
             if ((gameData.DoesHavePartiture("partiture" + (i + 1))) && ((partiturePanels[i].name == name) || (partiturePanels[i].name == name2) || (partiturePanels[i].name == name3)))
@@ -155,9 +175,16 @@ public class PartitureSelection : MonoBehaviour
             {
                 partiturePanels[i].SetActive(false);
             }
-        }
 
-        FluteFilter();
+            if (partitureDifficulty1 == fluteDifficulty && partitureDifficulty2 == fluteDifficulty && partitureDifficulty3 == fluteDifficulty)
+            {
+                fluteFound = true;
+            }
+        }
+        Debug.Log("partituresFound: " + partituresFound);
+        Debug.Log("fluteFound: " + fluteFound);
+
+        //FluteFilter();
 
         // If partitures are not found set boolean in Audience algorithm
         if (!partituresFound)
@@ -165,27 +192,65 @@ public class PartitureSelection : MonoBehaviour
             Audience.instance.NotFoundPartitures();
         }
 
-        if (NotFoundFlute())
+        if (!fluteFound)
         {
             Audience.instance.NotFoundFlute();
         }
 
     }
 
-    //*************************************************************************************************************************
-
-    private bool NotFoundFlute()
+    private void GetFluteDifficulty(GameData gameData)
     {
-        for (int i = 0; i < partiturePanels.Length; i++)
+        for (int i = 0; i < gameData.flute.Length; i++)
         {
-            if (partiturePanels[i].activeInHierarchy)
+            if (gameData.flute[i].isByDefault)
             {
-                return false;
+                Debug.Log("Flauta por default: " + gameData.flute[i].name);
+                if (gameData.flute[i].name == "woodenFlute")
+                {
+                    fluteDifficulty = "easy";
+                }
+                else if (gameData.flute[i].name == "woodenIronFlute")
+                {
+                    fluteDifficulty = "medium";
+                }
+                else if (gameData.flute[i].name == "ironFlute")
+                {
+                    fluteDifficulty = "hard";
+                }
+                else if (gameData.flute[i].name == "goldenFlute")
+                {
+                    fluteDifficulty = "epic";
+                }
             }
         }
 
-        return true;
+        Debug.Log("fluteDifficulty: " + fluteDifficulty);
     }
+
+    private string GetPartitureDifficulty(string name)
+    {
+        if (name == "PanelPartiture1" || name == "PanelPartiture2" || name == "PanelPartiture3")
+        {
+            return "easy";
+        }
+        else if (name == "PanelPartiture4" || name == "PanelPartiture5" || name == "PanelPartiture6")
+        {
+            return "medium";
+        }
+        else if (name == "PanelPartiture7" || name == "PanelPartiture8" || name == "PanelPartiture9")
+        {
+            return "hard";
+        }
+        else if (name == "PanelPartiture10")
+        {
+            return "epic";
+        }
+
+        return "none";
+    }
+
+    //*************************************************************************************************************************
 
     //*************************************************************************************************************************
 

@@ -69,7 +69,6 @@ public class PlayerController : MonoBehaviour
                     if (startWalked == 0)
                     {
                         SetFirstWalked();
-                        Debug.Log("startWalked: " + startWalked);
                     }
 
                     myAnim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
@@ -79,25 +78,21 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKeyUp(KeyCode.UpArrow))
             {
-                Debug.Log("ReleaseUpArrow");
                 CheckIfIsMoving();
             }
 
             if (Input.GetKeyUp(KeyCode.DownArrow))
             {
-                Debug.Log("ReleaseDownArrow");
                 CheckIfIsMoving();
             }
 
             if (Input.GetKeyUp(KeyCode.LeftArrow))
             {
-                Debug.Log("ReleaseLeftArrow");
                 CheckIfIsMoving();
             }
 
             if (Input.GetKeyUp(KeyCode.RightArrow))
             {
-                Debug.Log("ReleaseRightArrow");
                 CheckIfIsMoving();
             }
         }
@@ -119,7 +114,6 @@ public class PlayerController : MonoBehaviour
                         if (startWalkedBallon == 0)
                         {
                             SetFirstWalkedBalloon();
-                            Debug.Log("startWalkedBalloon: " + startWalkedBallon);
                         }
 
                         balloonAnim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
@@ -129,25 +123,21 @@ public class PlayerController : MonoBehaviour
 
                 if (Input.GetKeyUp(KeyCode.UpArrow))
                 {
-                    Debug.Log("ReleaseUpArrow");
                     CheckIfIsMovingBalloon();
                 }
 
                 if (Input.GetKeyUp(KeyCode.DownArrow))
                 {
-                    Debug.Log("ReleaseDownArrow");
                     CheckIfIsMovingBalloon();
                 }
 
                 if (Input.GetKeyUp(KeyCode.LeftArrow))
                 {
-                    Debug.Log("ReleaseLeftArrow");
                     CheckIfIsMovingBalloon();
                 }
 
                 if (Input.GetKeyUp(KeyCode.RightArrow))
                 {
-                    Debug.Log("ReleaseRightArrow");
                     CheckIfIsMovingBalloon();
                 }
             }
