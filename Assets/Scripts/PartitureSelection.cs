@@ -176,7 +176,7 @@ public class PartitureSelection : MonoBehaviour
                 partiturePanels[i].SetActive(false);
             }
 
-            if (partitureDifficulty1 == fluteDifficulty && partitureDifficulty2 == fluteDifficulty && partitureDifficulty3 == fluteDifficulty)
+            if (partitureDifficulty1 == fluteDifficulty || partitureDifficulty2 == fluteDifficulty || partitureDifficulty3 == fluteDifficulty)
             {
                 fluteFound = true;
             }
@@ -198,6 +198,8 @@ public class PartitureSelection : MonoBehaviour
         }
 
     }
+
+
 
     private void GetFluteDifficulty(GameData gameData)
     {
