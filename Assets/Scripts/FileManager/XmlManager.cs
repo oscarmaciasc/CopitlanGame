@@ -123,6 +123,17 @@ public class XmlManager : MonoBehaviour
         Save(gameIndex, gameData);
     }
 
+    public void IncreaseCollectable()
+    {
+        int gameIndex = GetGameIndex();
+
+        GameData gameData = LoadGame();
+
+        gameData.collectable.quantity += 1;
+
+        Save(gameIndex, gameData);
+    }
+
     public void AddBalloon(string balloonName)
     {
         int gameIndex = GetGameIndex();
@@ -162,6 +173,7 @@ public class XmlManager : MonoBehaviour
 
         return true;
     }
+
 
     public void SetDefaultFlute(string fluteName) {
         int gameIndex = GetGameIndex();
