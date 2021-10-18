@@ -14,6 +14,7 @@ public class InitSequence1 : MonoBehaviour
     {
         PlayerController.instance.myAnim.SetFloat("lastMoveX", 0);
         PlayerController.instance.myAnim.SetFloat("lastMoveY", 1);
+        PlayerController.instance.gameObject.transform.position = new Vector3(2.93f, 0.08f, 0f);
         StartCoroutine(InitSequence1Dialogs());
     }
 
