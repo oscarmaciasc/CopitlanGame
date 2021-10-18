@@ -15,13 +15,15 @@ public class Workshop : MonoBehaviour
     private string[] notEnoughResources = { "No tienes la cantidad de recursos necesarios para esta compra" };
     private string[] welcome = { "Buenas, bienvenido al taller", "Aqui podras mejorar tu flauta" };
     private string[] congratulations = { "Felicidades por tu nueva compra", "continua con tu viaje" };
+    private string[] goldenFluteReward = { "Vaya, veo que has conseguido los 20 coleccionables", "Felicidades, te obsequio con la flauta de oro", "Una flauta especial y muy fina" };
     public bool shouldOpenInterface = true;
     public bool justStartedShouldBeFalse = false;
+    public bool conversationFinished = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        HasFlute();
+
     }
 
     // Update is called once per frame
@@ -31,6 +33,9 @@ public class Workshop : MonoBehaviour
         {
             dialogBox.SetActive(false);
         }
+
+        GetGoldenFlute();
+        HasFlute();
     }
 
     public void BuyFlute(string fluteToBuy, int resourceToSustractID, int quantityToSustract)
@@ -85,7 +90,13 @@ public class Workshop : MonoBehaviour
             if (!gameData.DoesHaveFlute("goldenFlute"))
             {
                 // Change workshop habitant dialog lines to say the goldenFluteReward lines
-                XmlManager.instance.AddFlute("goldenFlute");
+                workshopHabitant.GetComponent<DialogActivator>().lines = goldenFluteReward;
+                if (conversationFinished)
+                {
+                    XmlManager.instance.AddFlute("goldenFlute");
+                    shouldOpenInterface = false;
+                    workshopInterface.SetActive(false);
+                }
             }
         }
     }
@@ -95,12 +106,25 @@ public class Workshop : MonoBehaviour
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
 
+
+        if (gameData.DoesHaveFlute("goldenFlute"))
+        {
+
+            workshopHabitant.GetComponent<DialogActivator>().lines = welcome;
+            workshopHabitant.GetComponent<Workshop>().justStartedShouldBeFalse = false;
+        }
+
+
         // Check if the player already has the balloon
         if (gameData.DoesHaveFlute(fluteAvailable))
         {
             // Change blacksmith dialog to say
             workshopHabitant.GetComponent<DialogActivator>().lines = hasFlute;
             shouldOpenInterface = false;
+        }
+        else if (!gameData.DoesHaveFlute(fluteAvailable))
+        {
+            shouldOpenInterface = true;
         }
     }
 
@@ -150,7 +174,7 @@ public class Workshop : MonoBehaviour
         BuyFlute("woodenIronFlute", 1, 50);
     }
 
-     public void OnClickIronWorkshop1()
+    public void OnClickIronWorkshop1()
     {
         confirmationIron.SetActive(true);
         confirmationWood.SetActive(false);

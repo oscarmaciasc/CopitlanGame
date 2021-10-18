@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="jesus" gender="false">
-  <TimePlayed time="0" />
-  <TimeWalked time="0" />
+  <TimePlayed time="124.778221" />
+  <TimeWalked time="98.84501" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="0" />
   <Resources>
@@ -23,6 +23,7 @@
   </Permissions>
   <Flutes>
     <Flute name="woodenFlute" isByDefault="true" />
+    <Flute name="goldenFlute" isByDefault="false" />
   </Flutes>
   <Balloon name="balloonLvl1" />
   <MusicalMasteryLvl name="apprentice" />
@@ -65,7 +66,7 @@
       <shouldBeActive>false</shouldBeActive>
     </DirigentEntrance>
   </DirigentEntrances>
-  <Collectables quantity="0" />
+  <Collectables quantity="20" />
   <HabitantResults>
     <HabitantResult id="0">
       <Result>0</Result>

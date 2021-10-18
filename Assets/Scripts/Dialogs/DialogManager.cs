@@ -163,6 +163,7 @@ public class DialogManager : MonoBehaviour
                         if (habitant.GetComponent<Workshop>() != null)
                         {
                             habitant.GetComponent<Workshop>().ShouldOpenInterface();
+                            habitant.GetComponent<Workshop>().conversationFinished = true;
                         }
 
                         if (habitant.GetComponent<Trader>() != null)

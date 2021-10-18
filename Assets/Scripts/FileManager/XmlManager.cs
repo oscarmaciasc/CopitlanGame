@@ -322,6 +322,20 @@ public class XmlManager : MonoBehaviour
         Save(gameIndex, gameData);
     }
 
+    public void AddGoldenFlute()
+    {
+        int gameIndex = GetGameIndex();
+        GameData gameData = LoadGame();
+
+        Flute[] flutes = new Flute[3];
+
+        flutes[gameData.flute.Length + 1] = new Flute("goldenFlute", false);
+
+        gameData.flute = flutes;
+
+        Save(gameIndex, gameData);
+    }
+
     public void AddMusicalMasteryLvl(string name)
     {
         int gameIndex = GetGameIndex();
