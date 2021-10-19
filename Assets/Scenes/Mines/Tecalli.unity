@@ -1890,7 +1890,7 @@ GameObject:
   - component: {fileID: 776869171}
   - component: {fileID: 776869170}
   m_Layer: 0
-  m_Name: Collectable
+  m_Name: Collectable0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
