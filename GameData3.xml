@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="jesus" gender="false">
-  <TimePlayed time="200.992081" />
-  <TimeWalked time="124.857422" />
+  <TimePlayed time="252.140045" />
+  <TimeWalked time="143.401642" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="0" />
   <Resources>
@@ -66,7 +66,7 @@
       <shouldBeActive>false</shouldBeActive>
     </DirigentEntrance>
   </DirigentEntrances>
-  <Collectables quantity="2" />
+  <Collectables quantity="3" />
   <HabitantResults>
     <HabitantResult id="0">
       <Result>0</Result>
