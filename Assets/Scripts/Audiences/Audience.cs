@@ -163,15 +163,15 @@ public class Audience : MonoBehaviour
         {
             if (habitant.name == "Kasakir")
             {
-                PartitureSelection.instance.DeactivateDirigentPartitures("PanelPartiture1", "PanelPartiture2", "PanelPartiture3");
+                PartitureSelection.instance.DeactivateDirigentPartitures("PanelPartiture3");
             }
             else if (habitant.name == "Quizani")
             {
-                PartitureSelection.instance.DeactivateDirigentPartitures("PanelPartiture4", "PanelPartiture5", "PanelPartiture6");
+                PartitureSelection.instance.DeactivateDirigentPartitures("PanelPartiture6");
             }
             else if (habitant.name == "Naran")
             {
-                PartitureSelection.instance.DeactivateDirigentPartitures("PanelPartiture7", "PanelPartiture8", "PanelPartiture9");
+                PartitureSelection.instance.DeactivateDirigentPartitures("PanelPartiture9");
             }
 
             if (notFound)

@@ -146,7 +146,7 @@ public class PartitureSelection : MonoBehaviour
     //*************************************************************************************************************************
 
     // Dirigents
-    public void DeactivateDirigentPartitures(string name, string name2, string name3)
+    public void DeactivateDirigentPartitures(string name)
     {
         Debug.Log("Entering Deactivate");
 
@@ -159,14 +159,10 @@ public class PartitureSelection : MonoBehaviour
         // Get Partiture Difficulty to compare
         partitureDifficulty1 = GetPartitureDifficulty(name);
         Debug.Log("partitureDifficulty1: " + partitureDifficulty1);
-        partitureDifficulty2 = GetPartitureDifficulty(name2);
-        Debug.Log("partitureDifficulty2: " + partitureDifficulty2);
-        partitureDifficulty3 = GetPartitureDifficulty(name3);
-        Debug.Log("partitureDifficulty3: " + partitureDifficulty3);
 
         for (int i = 0; i < 10; i++)
         {
-            if ((gameData.DoesHavePartiture("partiture" + (i + 1))) && ((partiturePanels[i].name == name) || (partiturePanels[i].name == name2) || (partiturePanels[i].name == name3)))
+            if ((gameData.DoesHavePartiture("partiture" + (i + 1))) && ((partiturePanels[i].name == name)))
             {
                 partituresFound = true;
                 partiturePanels[i].SetActive(true);
@@ -176,7 +172,7 @@ public class PartitureSelection : MonoBehaviour
                 partiturePanels[i].SetActive(false);
             }
 
-            if (partitureDifficulty1 == fluteDifficulty || partitureDifficulty2 == fluteDifficulty || partitureDifficulty3 == fluteDifficulty)
+            if (partitureDifficulty1 == fluteDifficulty)
             {
                 fluteFound = true;
             }
