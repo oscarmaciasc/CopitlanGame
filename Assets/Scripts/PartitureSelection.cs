@@ -292,18 +292,18 @@ public class PartitureSelection : MonoBehaviour
                         }
                     }
                 }
-                else if (gameData.flute[i].name == "ironFlute")
-                {
-                    Debug.Log("Esto si funciona");
-                    // we shouldnt active partiturePanel10
-                    for (int l = 0; l < partiturePanels.Length; l++)
-                    {
-                        if (partiturePanels[l].name == "PanelPartiture10")
-                        {
-                            partiturePanels[l].SetActive(false);
-                        }
-                    }
-                }
+                // else if (gameData.flute[i].name == "ironFlute")
+                // {
+                //     Debug.Log("Esto si funciona");
+                //     // we shouldnt active partiturePanel10
+                //     for (int l = 0; l < partiturePanels.Length; l++)
+                //     {
+                //         if (partiturePanels[l].name == "PanelPartiture10")
+                //         {
+                //             partiturePanels[l].SetActive(false);
+                //         }
+                //     }
+                // }
             }
         }
         // We have to identify if after flute partitures the panels are still inactive, then change dialog to no flute dialog and close the partiture selection interface

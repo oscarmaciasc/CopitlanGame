@@ -187,17 +187,17 @@ public class Leader : MonoBehaviour
         if (final == 1)
         {
             Debug.Log("Final 1");
-            //SceneManager.LoadScene("Final1");
+            SceneManager.LoadScene("Final1");
         }
         else if (final == 2)
         {
             Debug.Log("Final 2");
-            //SceneManager.LoadScene("Final2");
+            SceneManager.LoadScene("Final2");
         }
         else if (final == 3)
         {
             Debug.Log("Final 3");
-            //SceneManager.LoadScene("Final3");
+            SceneManager.LoadScene("Final3");
         }
     }
 
