@@ -51,8 +51,8 @@ public class GameData
     [XmlArray("DirigentEntrances")]
     public DirigentEntrance[] dirigentEntrance { get; set; }
 
-    [XmlElement("Collectables")]
-    public Collectable collectable { get; set; }
+    [XmlArray("Collectables")]
+    public Collectable[] collectable { get; set; }
 
     [XmlArray("HabitantResults")]
     public HabitantResult[] habitantResult { get; set; }
@@ -66,10 +66,9 @@ public class GameData
     // Player Initialization 
     public GameData(string playerName, bool playerGender)
     {
-        this.collectable = new Collectable();
 
         this.timePlayed = new TimePlayed();
-        
+
         this.timeWalked = new TimeWalked();
 
         this.timeBalloon = new TimeBalloon();
@@ -111,11 +110,10 @@ public class GameData
         this.dirigentEntrance[1] = new DirigentEntrance();
         this.dirigentEntrance[2] = new DirigentEntrance();
 
-        habitantInitializer();
-        habitantInteractedInitializer();
+        HabitantInitializer();
+        HabitantInteractedInitializer();
 
         this.name = playerName;
-        this.collectable.quantity = 0;
         this.isWoman = playerGender;
         this.timePlayed.time = 0f;
         this.timeWalked.time = 0f;
@@ -207,12 +205,24 @@ public class GameData
 
     public bool DoesHaveAllCollectables()
     {
-        if(collectable.quantity == 20)
+        int counter = 0;
+
+        for (int i = 0; i < collectable.Length; i++)
+        {
+            if (collectable[i].shouldBeDestroyed)
+            {
+                counter++;
+            }
+        }
+
+        if (counter == 20)
         {
             return true;
         }
-
-        return false;
+        else
+        {
+            return false;
+        }
     }
 
     public bool DoesHaveMusicalMasteryLevel(string nombre)
@@ -261,9 +271,9 @@ public class GameData
 
     public int GetCurrentResource(int id)
     {
-        for (int i=0; i < resource.Length; i++)
+        for (int i = 0; i < resource.Length; i++)
         {
-            if(i == id)
+            if (i == id)
             {
                 return resource[i].quantity;
             }
@@ -282,21 +292,24 @@ public class GameData
         return balloon.name;
     }
 
-    public int GetBalloonCapacity() {
+    public int GetBalloonCapacity()
+    {
         string balloonName;
-        
-        for(int i = 0; i < 3; i++) {
+
+        for (int i = 0; i < 3; i++)
+        {
             balloonName = "balloonLvl";
             balloonName += (i + 1).ToString();
-            if(GetBalloonName() == balloonName) {
+            if (GetBalloonName() == balloonName)
+            {
                 return 10 * (i + 2);
             }
         }
-        
+
         return 1000;
     }
 
-    public void habitantInitializer()
+    public void HabitantInitializer()
     {
         this.habitantResult = new HabitantResult[80];
 
@@ -308,7 +321,7 @@ public class GameData
         }
     }
 
-    public void habitantInteractedInitializer()
+    public void HabitantInteractedInitializer()
     {
         this.habitantInteracted = new HabitantInteracted[196];
 
@@ -345,13 +358,16 @@ public class GameData
         return res;
     }
 
-    public int GetDefaultFlute() {
-        for(int i = 0; i < flute.Length; i++) {
-            if(flute[i].isByDefault) {
+    public int GetDefaultFlute()
+    {
+        for (int i = 0; i < flute.Length; i++)
+        {
+            if (flute[i].isByDefault)
+            {
                 return i;
             }
         }
-        
+
         return 1000;
     }
 }

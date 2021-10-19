@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -161,7 +159,7 @@ public class PauseMenu : MonoBehaviour
         {
             femalePanel.SetActive(true);
         }
-        else 
+        else
         {
             malePanel.SetActive(true);
         }
@@ -173,14 +171,22 @@ public class PauseMenu : MonoBehaviour
         minPlayed.transform.GetComponent<Text>().text = FormatTime(gameData.timePlayed.time);
         minWalked.transform.GetComponent<Text>().text = FormatTime(gameData.timeWalked.time);
         minBalloon.transform.GetComponent<Text>().text = FormatTime(gameData.timeBalloon.time);
-        collectables.transform.GetComponent<Text>().text = gameData.collectable.quantity.ToString();
-        
+        if (gameData.collectable == null)
+        {
+            collectables.transform.GetComponent<Text>().text = "0";
+        }
+        else
+        {
+            Debug.Log("Length collectables: " + gameData.collectable.Length);
+            collectables.transform.GetComponent<Text>().text = gameData.collectable.Length.ToString();
+        }
+
         for (int i = 0; i < gameData.habitantInteracted.Length; i++)
         {
-            if(gameData.habitantInteracted[i].interacted)
+            if (gameData.habitantInteracted[i].interacted)
             {
                 Debug.Log("counter: " + counter);
-                counter ++;
+                counter++;
             }
         }
 
@@ -251,7 +257,8 @@ public class PauseMenu : MonoBehaviour
         {
             flutes[i].SetActive(true);
 
-            if(gameData.flute[i].isByDefault) {
+            if (gameData.flute[i].isByDefault)
+            {
                 fluteIndex = i;
             }
         }
@@ -268,36 +275,44 @@ public class PauseMenu : MonoBehaviour
     }
 
     // Set wooden flute as default
-    public void PredetermineWoodenFlute() {
+    public void PredetermineWoodenFlute()
+    {
         XmlManager.instance.SetDefaultFlute("woodenFlute");
         SetDefaultFluteOnInterface(0);
     }
 
     // Set woodenIron flute as default
-    public void PredetermineWoodenIronFlute() {
+    public void PredetermineWoodenIronFlute()
+    {
         XmlManager.instance.SetDefaultFlute("woodenIronFlute");
         SetDefaultFluteOnInterface(1);
     }
 
     // Set iron flute as default
-    public void PredetermineIronFlute() {
+    public void PredetermineIronFlute()
+    {
         XmlManager.instance.SetDefaultFlute("ironFlute");
         SetDefaultFluteOnInterface(2);
     }
 
     // Set golden flute as default
-    public void PredetermineGoldenFlute() {
+    public void PredetermineGoldenFlute()
+    {
         XmlManager.instance.SetDefaultFlute("goldenFlute");
         SetDefaultFluteOnInterface(3);
     }
 
-    private void SetDefaultFluteOnInterface(int fluteIndex) {
-        for(int i = 0; i < 4; i++) {
-            if(i == fluteIndex) {
+    private void SetDefaultFluteOnInterface(int fluteIndex)
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            if (i == fluteIndex)
+            {
                 defaultFluteLabel[i].SetActive(true);
                 predetermineFluteButton[i].SetActive(false);
             }
-            else {
+            else
+            {
                 defaultFluteLabel[i].SetActive(false);
                 predetermineFluteButton[i].SetActive(true);
             }

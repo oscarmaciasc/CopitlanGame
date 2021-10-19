@@ -123,13 +123,36 @@ public class XmlManager : MonoBehaviour
         Save(gameIndex, gameData);
     }
 
-    public void IncreaseCollectable()
+    public void IncreaseCollectable(int collectableID)
     {
+        int newLength;
+
         int gameIndex = GetGameIndex();
 
         GameData gameData = LoadGame();
 
-        gameData.collectable.quantity += 1;
+        Collectable[] collectables;
+
+        if (gameData.collectable != null)
+        {
+            newLength = gameData.collectable.Length + 1;
+            collectables = new Collectable[gameData.collectable.Length + 1];
+
+            // Filling the new array with the previous array values
+            for (int i = 0; i < gameData.collectable.Length; i++)
+            {
+                collectables[i] = gameData.collectable[i];
+            }
+        }
+        else
+        {
+            newLength = 1;
+            collectables = new Collectable[1];
+        }
+
+        collectables[newLength - 1] = new Collectable(collectableID, true);
+
+        gameData.collectable = collectables;
 
         Save(gameIndex, gameData);
     }
@@ -145,29 +168,31 @@ public class XmlManager : MonoBehaviour
         Save(gameIndex, gameData);
     }
 
-    public bool ThereIsEnoughSpace(int resourceID, int quantityAdded) 
+    public bool ThereIsEnoughSpace(int resourceID, int quantityAdded)
     {
         int gameIndex = GetGameIndex();
         int maxQuantity = 0;
 
         GameData gameData = LoadGame();
-        
-        switch(resourceID) {
+
+        switch (resourceID)
+        {
             case 0:
                 maxQuantity = 5000;
-            break;
+                break;
             case 1:
                 maxQuantity = 500;
-            break;
+                break;
             case 2:
                 maxQuantity = 50;
-            break;
+                break;
             case 3:
                 maxQuantity = gameData.GetBalloonCapacity();
-            break;
+                break;
         }
 
-        if((gameData.resource[resourceID].quantity + quantityAdded) > maxQuantity) {
+        if ((gameData.resource[resourceID].quantity + quantityAdded) > maxQuantity)
+        {
             return false;
         }
 
@@ -175,34 +200,43 @@ public class XmlManager : MonoBehaviour
     }
 
 
-    public void SetDefaultFlute(string fluteName) {
+    public void SetDefaultFlute(string fluteName)
+    {
         int gameIndex = GetGameIndex();
 
         GameData gameData = LoadGame();
 
-        for(int i = 0; i < gameData.flute.Length; i++) { 
-            if(i == GetFluteIndex(fluteName)) {
+        for (int i = 0; i < gameData.flute.Length; i++)
+        {
+            if (i == GetFluteIndex(fluteName))
+            {
                 gameData.flute[i].isByDefault = true;
             }
-            else {
+            else
+            {
                 gameData.flute[i].isByDefault = false;
             }
         }
-        
+
         Save(gameIndex, gameData);
     }
 
-    private int GetFluteIndex(string fluteName) {
-        if(fluteName == "woodenFlute") {
+    private int GetFluteIndex(string fluteName)
+    {
+        if (fluteName == "woodenFlute")
+        {
             return 0;
         }
-        else if(fluteName == "woodenIronFlute") {
+        else if (fluteName == "woodenIronFlute")
+        {
             return 1;
         }
-        else if(fluteName == "ironFlute") {
+        else if (fluteName == "ironFlute")
+        {
             return 2;
         }
-        else if(fluteName == "goldenFlute") {
+        else if (fluteName == "goldenFlute")
+        {
             return 3;
         }
         return 1000;
@@ -247,10 +281,11 @@ public class XmlManager : MonoBehaviour
 
         GameData gameData = LoadGame();
 
-        if(gameData.habitantInteracted[index].interacted)
+        if (gameData.habitantInteracted[index].interacted)
         {
             return true;
-        } else
+        }
+        else
         {
             return false;
         }
@@ -273,13 +308,14 @@ public class XmlManager : MonoBehaviour
         int gameIndex = GetGameIndex();
 
         GameData gamedata = LoadGame();
-        
+
         gamedata.habitantResult[habitantID].result = res;
 
         Save(gameIndex, gamedata);
     }
 
-    public void UpdateHappinessPercentage(int percentage) {
+    public void UpdateHappinessPercentage(int percentage)
+    {
         int gameIndex = GetGameIndex();
 
         GameData gameData = LoadGame();
@@ -359,7 +395,7 @@ public class XmlManager : MonoBehaviour
         Save(gameIndex, gameData);
     }
 
-    public void UpdateTimePlayed(float timePlayed) 
+    public void UpdateTimePlayed(float timePlayed)
     {
         int gameIndex = GetGameIndex();
 

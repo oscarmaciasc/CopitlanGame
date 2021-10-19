@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="barba" gender="true">
-  <TimePlayed time="0" />
-  <TimeWalked time="0" />
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="lolo" gender="false">
+  <TimePlayed time="141.027954" />
+  <TimeWalked time="50.0111275" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="0" />
   <Resources>
@@ -45,7 +45,7 @@
   </AudienceResults>
   <MineEntrances>
     <MineEntrance name="tecalliEntrance">
-      <shouldBeActive>false</shouldBeActive>
+      <shouldBeActive>true</shouldBeActive>
     </MineEntrance>
     <MineEntrance name="acanEntrance">
       <shouldBeActive>false</shouldBeActive>
@@ -65,7 +65,9 @@
       <shouldBeActive>false</shouldBeActive>
     </DirigentEntrance>
   </DirigentEntrances>
-  <Collectables quantity="0" />
+  <Collectables>
+    <Collectable id="0" shouldBeDestroyed="true" />
+  </Collectables>
   <HabitantResults>
     <HabitantResult id="0">
       <Result>0</Result>
@@ -538,7 +540,7 @@
       <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="76">
-      <Interacted>false</Interacted>
+      <Interacted>true</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="77">
       <Interacted>false</Interacted>
