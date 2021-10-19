@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="lolo" gender="false">
-  <TimePlayed time="141.027954" />
-  <TimeWalked time="50.0111275" />
+  <TimePlayed time="291.81955" />
+  <TimeWalked time="144.8832" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="0" />
   <Resources>
     <Resource name="wood">
-      <quantity>0</quantity>
+      <quantity>500</quantity>
     </Resource>
     <Resource name="iron">
       <quantity>0</quantity>
@@ -23,8 +23,9 @@
   </Permissions>
   <Flutes>
     <Flute name="woodenFlute" isByDefault="true" />
+    <Flute name="woodenIronFlute" isByDefault="false" />
   </Flutes>
-  <Balloon name="balloonLvl1" />
+  <Balloon name="balloonLvl2" />
   <MusicalMasteryLvl name="apprentice" />
   <MusicSheets>
     <MusicSheet name="partiture1" />

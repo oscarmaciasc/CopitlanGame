@@ -115,6 +115,7 @@ public class Blacksmith : MonoBehaviour
         {
             // Change blacksmith dialog to say
             blacksmithHabitant.GetComponent<DialogActivator>().lines = hasBalloon;
+            blacksmithHabitant.GetComponent<Blacksmith>().justStartedShouldBeFalse = false;
             shouldOpenInterface = false;
         }
     }

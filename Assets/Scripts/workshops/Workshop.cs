@@ -86,9 +86,11 @@ public class Workshop : MonoBehaviour
 
         if (gameData.DoesHaveAllCollectables())
         {
+            Debug.Log("Si tiene todos los coleccionables");
             // This is to avoid having many goldenFlutes saved and do it only once
             if (!gameData.DoesHaveFlute("goldenFlute"))
             {
+                Debug.Log("No se tiene la de oro");
                 // Change workshop habitant dialog lines to say the goldenFluteReward lines
                 workshopHabitant.GetComponent<DialogActivator>().lines = goldenFluteReward;
                 if (conversationFinished)
@@ -120,6 +122,7 @@ public class Workshop : MonoBehaviour
         {
             // Change blacksmith dialog to say
             workshopHabitant.GetComponent<DialogActivator>().lines = hasFlute;
+            workshopHabitant.GetComponent<Workshop>().justStartedShouldBeFalse = false;
             shouldOpenInterface = false;
         }
         else if (!gameData.DoesHaveFlute(fluteAvailable))
