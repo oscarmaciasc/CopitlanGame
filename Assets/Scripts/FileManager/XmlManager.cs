@@ -347,6 +347,28 @@ public class XmlManager : MonoBehaviour
         Save(gameIndex, gameData);
     }
 
+    public void AddPartiture3()
+    {
+        int gameIndex = GetGameIndex();
+
+        GameData gameData = LoadGame();
+
+        int newLength = gameData.musicSheet.Length + 1;
+
+        MusicSheet[] musicSheets = new MusicSheet[newLength];
+
+        for (int i = 0; i < gameData.musicSheet.Length; i++)
+        {
+            musicSheets[i] = gameData.musicSheet[i];
+        }
+
+        musicSheets[newLength - 1] = new MusicSheet("partiture3");
+
+        gameData.musicSheet = musicSheets;
+
+        Save(gameIndex, gameData);
+    }
+
     public void AddFlute(string newFlute)
     {
         int gameIndex = GetGameIndex();

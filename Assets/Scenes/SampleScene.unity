@@ -1960,6 +1960,7 @@ GameObject:
   - component: {fileID: 975772677}
   - component: {fileID: 975772678}
   - component: {fileID: 975772676}
+  - component: {fileID: 975772683}
   m_Layer: 0
   m_Name: NPC80
   m_TagString: PartitureHabitant
@@ -1979,7 +1980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f46e3c2b4110c5a4ea7702a0e7affe5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: 1
+  index: 80
 --- !u!50 &975772677
 Rigidbody2D:
   serializedVersion: 4
@@ -2014,9 +2015,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - No me gustan los caracoles
-  - Pero mi hermana insiste en que son saludables
-  - ...
+  - He encontrado un antiguo pergamino en el suelo
+  - Creo que podria servirte
+  - Toma, te lo regalo
   canActivate: 0
 --- !u!61 &975772679
 BoxCollider2D:
@@ -2135,6 +2136,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &975772683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975772675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728a091ad72c78641b2419553177f053, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversationFinished: 0
+  canCheck: 1
 --- !u!1 &996694214
 GameObject:
   m_ObjectHideFlags: 0

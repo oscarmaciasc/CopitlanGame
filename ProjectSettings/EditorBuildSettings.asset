@@ -51,6 +51,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Final/Final3.unity
     guid: 4b5359e554111bb41828f475a7523a43
   - enabled: 1
+    path: Assets/Scenes/Final/PapatacaFinal.unity
+    guid: 6c20a4e02c4cc25478675ccaf6a39086
+  - enabled: 1
     path: Assets/Scenes/Stores/TradeHouse/TradeHouse1.unity
     guid: 66feb529413a84b43a79f57403da2e14
   - enabled: 1

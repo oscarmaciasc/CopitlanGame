@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="lolo" gender="false">
-  <TimePlayed time="539.6633" />
-  <TimeWalked time="302.3519" />
+  <TimePlayed time="549.777039" />
+  <TimeWalked time="358.579956" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="79" />
   <Resources>
@@ -33,10 +33,11 @@
   <MusicalMasteryLvl name="apprentice" />
   <MusicSheets>
     <MusicSheet name="partiture1" />
-    <MusicSheet name="partiture3" />
     <MusicSheet name="partiture6" />
     <MusicSheet name="partiture9" />
     <MusicSheet name="partiture10" />
+    <MusicSheet name="partiture3" />
+    <MusicSheet name="partiture5" />
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">
@@ -324,7 +325,7 @@
       <Interacted>true</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="1">
-      <Interacted>false</Interacted>
+      <Interacted>true</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="2">
       <Interacted>false</Interacted>
@@ -552,7 +553,7 @@
       <Interacted>true</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="77">
-      <Interacted>false</Interacted>
+      <Interacted>true</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="78">
       <Interacted>false</Interacted>

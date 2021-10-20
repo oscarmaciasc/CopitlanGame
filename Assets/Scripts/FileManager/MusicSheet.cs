@@ -8,4 +8,10 @@ public class MusicSheet
 {
     [XmlAttribute("name")]
     public string name;
+
+    public MusicSheet(){}
+    public MusicSheet(string name)
+    {
+        this.name = name;
+    }
 }
