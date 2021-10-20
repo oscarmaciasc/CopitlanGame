@@ -137,6 +137,7 @@ public class PentagramManager : MonoBehaviour
             {
                 habitant.GetComponent<HabitantMath>().finishedPartiture = true;
                 habitant.GetComponent<HabitantMath>().GetPercentage(habitant);
+                habitant.GetComponent<HabitantMath>().ChangeHabitantDialogLines(habitant);
             }
 
             // Save musicalmasterylevel

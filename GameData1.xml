@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="lolo" gender="false">
   <TimePlayed time="539.6633" />
-  <TimeWalked time="292.647339" />
+  <TimeWalked time="302.3519" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="79" />
   <Resources>
@@ -30,7 +30,7 @@
     <Flute name="ironFlute" isByDefault="true" />
   </Flutes>
   <Balloon name="balloonLvl2" />
-  <MusicalMasteryLvl name="legend" />
+  <MusicalMasteryLvl name="apprentice" />
   <MusicSheets>
     <MusicSheet name="partiture1" />
     <MusicSheet name="partiture3" />
@@ -321,7 +321,7 @@
   </HabitantResults>
   <HabitantsInteracted>
     <HabitantInteracted id="0">
-      <Interacted>false</Interacted>
+      <Interacted>true</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="1">
       <Interacted>false</Interacted>
