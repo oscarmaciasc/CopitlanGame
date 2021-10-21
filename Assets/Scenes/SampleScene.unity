@@ -3102,6 +3102,7 @@ MonoBehaviour:
   partitureSelectionPanel: {fileID: 80739966}
   canActivatePartiturePanel: 1
   notFound: 0
+  notFoundFlute: 0
   percentageToPass: 65
 --- !u!114 &1328285341
 MonoBehaviour:
@@ -3936,6 +3937,7 @@ GameObject:
   - component: {fileID: 1572518541}
   - component: {fileID: 1572518542}
   - component: {fileID: 1572518543}
+  - component: {fileID: 1572518544}
   m_Layer: 0
   m_Name: NPC0
   m_TagString: PartitureHabitant
@@ -4167,6 +4169,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
+--- !u!114 &1572518544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572518533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54e893db4d50ebe418261c8745e701be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finishedPartiture: 0
+  rewardGiven: 0
+  conversationFinished: 0
+  index: 0
 --- !u!1 &1583705629
 GameObject:
   m_ObjectHideFlags: 0
@@ -4374,6 +4392,7 @@ MonoBehaviour:
   canActivatePartiturePanel: 1
   notFound: 0
   percentageToPass: 50
+  notFoundFlutes: 0
 --- !u!95 &1583705637
 Animator:
   serializedVersion: 3

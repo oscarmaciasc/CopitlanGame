@@ -178,6 +178,17 @@ public class DialogManager : MonoBehaviour
                             habitant.GetComponent<Habitant80Partiture3>().AddPartiture3();
                         }
 
+                        if (habitant.GetComponent<ResourceRewardPartiture>() != null && habitant.GetComponent<DialogActivator>().lines == habitant.GetComponent<ResourceRewardPartiture>().reward)
+                        {
+                            habitant.GetComponent<ResourceRewardPartiture>().conversationFinishedReward = true;
+                            habitant.GetComponent<ResourceRewardPartiture>().rewardGiven = true;
+
+
+                            habitant.GetComponent<HabitantMath>().ChangeHabitantDialogLines(habitant);
+
+                            Debug.Log("Pongo conversation finished en: " + habitant.GetComponent<ResourceRewardPartiture>().conversationFinishedReward);
+                        }
+
 
                     }
                     else

@@ -18,6 +18,7 @@ public class PentagramManager : MonoBehaviour
     public static PentagramManager instance;
     public bool partitureFinished = false;
     public bool doOnlyOnce = true;
+    public bool doOnlyOnceReward = true;
     public int correctNotes = 0;
     public static int globalCounter = 0;
     [SerializeField] private GameObject habitant;
@@ -133,13 +134,24 @@ public class PentagramManager : MonoBehaviour
                 }
             }
 
-            if (habitant.GetComponent<HabitantMath>() != null)
+            if (habitant.GetComponent<HabitantMath>() != null && habitant.GetComponent<ResourceRewardPartiture>() == null)
             {
                 habitant.GetComponent<HabitantMath>().finishedPartiture = true;
                 habitant.GetComponent<HabitantMath>().GetPercentage(habitant);
                 habitant.GetComponent<HabitantMath>().ChangeHabitantDialogLines(habitant);
             }
 
+            if (habitant.GetComponent<ResourceRewardPartiture>() != null && habitant.GetComponent<HabitantMath>() != null)
+            {
+                habitant.GetComponent<HabitantMath>().finishedPartiture = true;
+                habitant.GetComponent<HabitantMath>().GetPercentage(habitant);
+                habitant.GetComponent<ResourceRewardPartiture>().finishedPartiture = true;
+                habitant.GetComponent<ResourceRewardPartiture>().GiveResourceReward(habitant);
+                Debug.Log("RewardGiven: " + habitant.GetComponent<ResourceRewardPartiture>().rewardGiven);
+                Debug.Log("conversationFinished" + habitant.GetComponent<ResourceRewardPartiture>().conversationFinishedReward);
+
+            
+            }
             // Save musicalmasterylevel
             SaveMusicalMasteryLvl();
 

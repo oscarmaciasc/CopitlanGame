@@ -5,7 +5,7 @@ using System;
 
 public class HabitantMath : MonoBehaviour
 {
-
+    public static HabitantMath instance;
     public bool finishedPartiture = false;
     public int uniqueHabitantPercentage = 0;
     public int index;
@@ -17,6 +17,8 @@ public class HabitantMath : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
+        
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
 
