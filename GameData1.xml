@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="lolo" gender="false">
   <TimePlayed time="549.777039" />
-  <TimeWalked time="358.579956" />
+  <TimeWalked time="449.8923" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="79" />
   <Resources>
@@ -41,21 +41,21 @@
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">
-      <result>72</result>
+      <result>0</result>
     </AudienceResult>
     <AudienceResult name="quizaniResult">
-      <result>76</result>
+      <result>0</result>
     </AudienceResult>
     <AudienceResult name="naranResult">
-      <result>88</result>
+      <result>0</result>
     </AudienceResult>
     <AudienceResult name="necalliResult">
-      <result>99</result>
+      <result>0</result>
     </AudienceResult>
   </AudienceResults>
   <MineEntrances>
     <MineEntrance name="tecalliEntrance">
-      <shouldBeActive>true</shouldBeActive>
+      <shouldBeActive>false</shouldBeActive>
     </MineEntrance>
     <MineEntrance name="acanEntrance">
       <shouldBeActive>false</shouldBeActive>
@@ -77,6 +77,7 @@
   </DirigentEntrances>
   <Collectables>
     <Collectable id="0" shouldBeDestroyed="true" />
+    <Collectable id="17" shouldBeDestroyed="true" />
   </Collectables>
   <HabitantResults>
     <HabitantResult id="0">

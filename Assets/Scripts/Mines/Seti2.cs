@@ -111,7 +111,7 @@ public class Seti2 : MonoBehaviour
         if (partitureSelectionPanel.activeInHierarchy)
         {
             // Deactivate everything but easyPartiture 2
-            PartitureSelection.instance.DeactivateMinePartituresSeti("PanelPartiture4", "PanelPartiture5", "PanelPartiture6", this.gameObject);
+            PartitureSelection.instance.DeactivateMinePartitures("PanelPartiture4", "PanelPartiture5", "PanelPartiture6", this.gameObject);
             Debug.Log("Filter Partitures");
         }
 

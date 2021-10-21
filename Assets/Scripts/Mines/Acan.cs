@@ -20,6 +20,7 @@ public class Acan : MonoBehaviour
     [SerializeField] private GameObject partitureSelectionPanel;
     public bool canActivatePartiturePanel = true;
     public bool notFound = false;
+    public bool notFoundFlute = false;
     public int percentageToPass = 65;
 
     // Start is called before the first frame update
@@ -105,7 +106,7 @@ public class Acan : MonoBehaviour
         if (partitureSelectionPanel.activeInHierarchy)
         {
             // Deactivate everything but easyPartiture 2
-            PartitureSelection.instance.DeactivateMinePartitures("PanelPartiture2", this.gameObject);
+            PartitureSelection.instance.DeactivateAcanPartitures("PanelPartiture2");
             Debug.Log("Filter Partitures");
         }
 
@@ -122,5 +123,11 @@ public class Acan : MonoBehaviour
     {
         notFound = true;
         return notFound;
+    }
+
+    public bool NotFoundFlute()
+    {
+        notFoundFlute = true;
+        return notFoundFlute;
     }
 }

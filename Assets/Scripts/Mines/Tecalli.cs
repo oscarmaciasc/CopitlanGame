@@ -22,6 +22,8 @@ public class Tecalli : MonoBehaviour
     public bool canActivatePartiturePanel = true;
     public bool notFound = false;
     public int percentageToPass = 50;
+    
+    public bool notFoundFlutes = false;
 
     // Start is called before the first frame update
     void Start()
@@ -106,7 +108,7 @@ public class Tecalli : MonoBehaviour
         if (partitureSelectionPanel.activeInHierarchy)
         {
             // Deactivate everything but easyPartiture 1
-            PartitureSelection.instance.DeactivateMinePartitures("PanelPartiture1", this.gameObject);
+            PartitureSelection.instance.DeactivateMinePartitures("PanelPartiture1", "PanelPartiture2", "PanelPartiture3", this.gameObject);
         }
 
         if (notFound)
@@ -122,5 +124,11 @@ public class Tecalli : MonoBehaviour
     {
         notFound = true;
         return notFound;
+    }
+
+    public bool NotFoundFlutes()
+    {
+        notFoundFlutes = true;
+        return notFoundFlutes;
     }
 }

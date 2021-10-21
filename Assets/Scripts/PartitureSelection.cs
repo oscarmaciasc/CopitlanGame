@@ -16,10 +16,11 @@ public class PartitureSelection : MonoBehaviour
     private bool partituresFound = false;
     private bool fluteFound = false;
     private bool isByDefault;
-    private string fluteDifficulty;
-    private string partitureDifficulty1;
-    private string partitureDifficulty2;
-    private string partitureDifficulty3;
+    private int fluteDifficulty;
+    private int partitureDifficulty1;
+    private int partitureDifficultyMine1;
+    private int partitureDifficultyMine2;
+    private int partitureDifficultyMine3;
 
 
     private void Awake()
@@ -45,12 +46,6 @@ public class PartitureSelection : MonoBehaviour
     {
         partituresFound = false;
         fluteFound = false;
-
-        fluteDifficulty = "";
-
-        partitureDifficulty1 = "";
-        partitureDifficulty2 = "";
-        partitureDifficulty3 = "";
     }
 
     public void DeactivateNoOwnedPartiturePanels()
@@ -71,11 +66,22 @@ public class PartitureSelection : MonoBehaviour
         }
     }
 
-    public void DeactivateMinePartitures(string name, GameObject habitant)
+    //************************************************************************************************************************
+    // Acan
+
+    public void DeactivateAcanPartitures(string name)
     {
+        Debug.Log("Entering Deactivate");
 
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
+
+        // Get Flute Difficulty
+        GetFluteDifficulty(gameData);
+
+        // Get Partiture Difficulty to compare
+        partitureDifficulty1 = GetPartitureDifficulty(name);
+        Debug.Log("partitureDifficulty1: " + partitureDifficulty1);
 
         for (int i = 0; i < 10; i++)
         {
@@ -87,6 +93,65 @@ public class PartitureSelection : MonoBehaviour
             else
             {
                 partiturePanels[i].SetActive(false);
+            }
+
+            if (partitureDifficulty1 <= fluteDifficulty)
+            {
+                fluteFound = true;
+            }
+        }
+        Debug.Log("partituresFound: " + partituresFound);
+        Debug.Log("fluteFound: " + fluteFound);
+
+        //FluteFilter();
+
+        // If partitures are not found set boolean in Audience algorithm
+        if (!partituresFound)
+        {
+            Acan.instance.NotFoundPartitures();
+        }
+
+        if (!fluteFound)
+        {
+            Acan.instance.NotFoundFlute();
+        }
+
+    }
+    
+
+
+
+    //************************************************************************************************************************
+
+// Tecalli and Seti
+    public void DeactivateMinePartitures(string name, string name2, string name3, GameObject habitant)
+    {
+
+        GameData gameData = new GameData();
+        gameData = XmlManager.instance.LoadGame();
+
+        GetFluteDifficulty(gameData);
+
+        // Get Partiture Difficulty to compare
+        partitureDifficultyMine1 = GetPartitureDifficulty(name);
+        Debug.Log("partitureDifficulty1: " + partitureDifficultyMine1);
+        partitureDifficultyMine2 = GetPartitureDifficulty(name);
+
+        for (int i = 0; i < 10; i++)
+        {
+            if ((gameData.DoesHavePartiture("partiture" + (i + 1))) && ((partiturePanels[i].name == name) || (partiturePanels[i].name == name2) || (partiturePanels[i].name == name3)))
+            {
+                partituresFound = true;
+                partiturePanels[i].SetActive(true);
+            }
+            else
+            {
+                partiturePanels[i].SetActive(false);
+            }
+
+            if (partitureDifficultyMine1 <= fluteDifficulty)
+            {
+                fluteFound = true;
             }
         }
 
@@ -102,45 +167,39 @@ public class PartitureSelection : MonoBehaviour
             }
         }
 
-        FluteFilter();
-    }
+        Debug.Log("partituresFound: " + partituresFound);
+        Debug.Log("fluteFound: " + fluteFound);
 
-    public void DeactivateMinePartituresSeti(string name, string name2, string name3, GameObject habitant)
-    {
-        GameData gameData = new GameData();
-        gameData = XmlManager.instance.LoadGame();
 
-        Debug.Log("FUNCION MINAS SETI");
-
-        for (int i = 0; i < 10; i++)
-        {
-            if ((gameData.DoesHavePartiture("partiture" + (i + 1))) && ((partiturePanels[i].name == name) || (partiturePanels[i].name == name2)))
-            {
-                Debug.Log("Si encuentro");
-                partituresFound = true;
-                partiturePanels[i].SetActive(true);
-            }
-            else
-            {
-                partiturePanels[i].SetActive(false);
-            }
-        }
-
-        FluteFilter();
-
+        //FluteFilter();
 
         if (!partituresFound)
         {
-            if (habitant.name == "Seti0")
+            if(habitant.name == "Tecalli76")
+            {
+                Tecalli.instance.NotFoundPartitures();
+            } else if (habitant.name == "Seti0")
             {
                 Seti.instance.NotFoundPartitures();
-            }
-            else if (habitant.name == "Seti1")
+            } else if (habitant.name == "Seti1")
             {
                 Seti2.instance.NotFoundPartitures();
             }
         }
 
+        if (!fluteFound)
+        {
+            if(habitant.name == "Tecalli76")
+            {
+                Tecalli.instance.NotFoundFlutes();
+            } else if (habitant.name == "Seti0")
+            {
+                Seti.instance.NotFoundFlutes();
+            } else if (habitant.name == "Seti1")
+            {
+                Seti2.instance.NotFoundFlutes();
+            }
+        }
     }
 
     //*************************************************************************************************************************
@@ -172,15 +231,13 @@ public class PartitureSelection : MonoBehaviour
                 partiturePanels[i].SetActive(false);
             }
 
-            if (partitureDifficulty1 == fluteDifficulty)
+            if (partitureDifficulty1 <= fluteDifficulty)
             {
                 fluteFound = true;
             }
         }
         Debug.Log("partituresFound: " + partituresFound);
         Debug.Log("fluteFound: " + fluteFound);
-
-        //FluteFilter();
 
         // If partitures are not found set boolean in Audience algorithm
         if (!partituresFound)
@@ -195,8 +252,6 @@ public class PartitureSelection : MonoBehaviour
 
     }
 
-
-
     private void GetFluteDifficulty(GameData gameData)
     {
         for (int i = 0; i < gameData.flute.Length; i++)
@@ -206,19 +261,19 @@ public class PartitureSelection : MonoBehaviour
                 Debug.Log("Flauta por default: " + gameData.flute[i].name);
                 if (gameData.flute[i].name == "woodenFlute")
                 {
-                    fluteDifficulty = "easy";
+                    fluteDifficulty = 0;
                 }
                 else if (gameData.flute[i].name == "woodenIronFlute")
                 {
-                    fluteDifficulty = "medium";
+                    fluteDifficulty = 1;
                 }
                 else if (gameData.flute[i].name == "ironFlute")
                 {
-                    fluteDifficulty = "hard";
+                    fluteDifficulty = 2;
                 }
                 else if (gameData.flute[i].name == "goldenFlute")
                 {
-                    fluteDifficulty = "epic";
+                    fluteDifficulty = 2;
                 }
             }
         }
@@ -226,33 +281,32 @@ public class PartitureSelection : MonoBehaviour
         Debug.Log("fluteDifficulty: " + fluteDifficulty);
     }
 
-    private string GetPartitureDifficulty(string name)
+    private int GetPartitureDifficulty(string name)
     {
         if (name == "PanelPartiture1" || name == "PanelPartiture2" || name == "PanelPartiture3")
         {
-            return "easy";
+            return 0;
         }
         else if (name == "PanelPartiture4" || name == "PanelPartiture5" || name == "PanelPartiture6")
         {
-            return "medium";
+            return 1;
         }
         else if (name == "PanelPartiture7" || name == "PanelPartiture8" || name == "PanelPartiture9")
         {
-            return "hard";
+            return 2;
         }
         else if (name == "PanelPartiture10")
         {
-            return "epic";
+            return 2;
         }
 
-        return "none";
+        return 1000;
     }
 
     //*************************************************************************************************************************
 
     //*************************************************************************************************************************
 
-    // FluteFilter
 
     public void FluteFilter()
     {
