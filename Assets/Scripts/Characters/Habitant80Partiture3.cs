@@ -36,7 +36,7 @@ public class Habitant80Partiture3 : MonoBehaviour
         }
     }
 
-    public void AddPartiture3()
+    public void AddPartiture()
     {
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
@@ -44,7 +44,7 @@ public class Habitant80Partiture3 : MonoBehaviour
         if (conversationFinished && !gameData.DoesHavePartiture("partiture3"))
         {
             Debug.Log("Regalando Partitura3");
-            XmlManager.instance.AddPartiture3();
+            XmlManager.instance.AddPartiture("partiture3");
         }
     }
 }

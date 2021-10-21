@@ -347,7 +347,7 @@ public class XmlManager : MonoBehaviour
         Save(gameIndex, gameData);
     }
 
-    public void AddPartiture3()
+    public void AddPartiture(string partitureName)
     {
         int gameIndex = GetGameIndex();
 
@@ -362,7 +362,7 @@ public class XmlManager : MonoBehaviour
             musicSheets[i] = gameData.musicSheet[i];
         }
 
-        musicSheets[newLength - 1] = new MusicSheet("partiture3");
+        musicSheets[newLength - 1] = new MusicSheet(partitureName);
 
         gameData.musicSheet = musicSheets;
 
