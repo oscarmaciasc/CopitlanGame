@@ -39,7 +39,6 @@ public class FadeMessage : MonoBehaviour
             // Debug.Log("ShouldFadeToTransparent: " + shouldFadeToTransparent);
             if (message.GetComponent<SpriteRenderer>().color.a == 0f)
             {
-                Debug.Log("Entro mamarracho");
                 shouldFadeToTransparent = false;
                 message.SetActive(false);
             }

@@ -16,6 +16,7 @@ public class DialogManagerFinal : MonoBehaviour
     //Keep track in wich line we are
     public int currentLine;
     public bool justStarted;
+    private bool hasFinished = false;
 
     private float timeToWait = 3f;
 
@@ -45,12 +46,7 @@ public class DialogManagerFinal : MonoBehaviour
                     currentLine++;
                     if (currentLine >= dialogLines.Length)
                     {
-                        dialogBoxShouldBeActive = false;
-                        FadeMessage.instance.FadeToTransparent();
-                        FadeMessage2.instance.FadeToTransparent2();
-                        DeactivateDialogs();
-
-                        ChangeScene();
+                        hasFinished = true;
                     }
                     else
                     {
@@ -63,16 +59,29 @@ public class DialogManagerFinal : MonoBehaviour
                 }
             }
         }
+
+        if (hasFinished)
+        {
+            dialogBoxShouldBeActive = false;
+            FadeMessage.instance.FadeToTransparent();
+            FadeMessage2.instance.FadeToTransparent2();
+            DeactivateDialogs();
+
+            if (!dialogBox.activeInHierarchy)
+            {
+                ChangeScene();
+            }
+        }
     }
 
     private void ChangeScene()
     {
-        // timeToWait -= Time.deltaTime;
-        // if (timeToWait <= 0)
-        // {
-            UIFade.instance.FadeToBlack();
-            SceneManager.LoadScene("PapatacaFinal");
-        //}
+        timeToWait -= Time.deltaTime;
+        if (timeToWait <= 0)
+        {
+        UIFade.instance.FadeToBlack();
+        SceneManager.LoadScene("PapatacaFinal");
+        }
     }
 
     private void ChangeMessagePosition()

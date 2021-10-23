@@ -24068,6 +24068,10 @@ PrefabInstance:
       propertyPath: theMap
       value: 
       objectReference: {fileID: 1197840814}
+    - target: {fileID: 4070676006020204680, guid: f519f797a9eb7fa4a85268d10ad2af7d, type: 3}
+      propertyPath: musicToPlay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4070676006020204681, guid: f519f797a9eb7fa4a85268d10ad2af7d, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -26820,6 +26824,10 @@ PrefabInstance:
     - target: {fileID: 1260937302, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267667178, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1298444319, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_AnchorMax.y

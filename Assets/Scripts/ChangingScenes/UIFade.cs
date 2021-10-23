@@ -13,7 +13,7 @@ public class UIFade : MonoBehaviour
     public static UIFade instance;
 
     public Image fadeScreen;
-    public float fadeSpeed;
+    private float fadeSpeed = 1f;
 
     public bool shouldFadeToBlack;
     public bool shouldFadeFromBlack;
