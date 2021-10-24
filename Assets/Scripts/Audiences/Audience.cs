@@ -29,6 +29,7 @@ public class Audience : MonoBehaviour
     public string[] goodLinesQuizani = { "Adelante, continua tu camino viajero", "Naran no es facil de convencer" };
     public string[] goodLinesNaran = { "Has llegado demasiado lejos", "continua con tu camino y convence al lider Necalli" };
     public string[] noFlutesDialog = { "No tienes la flauta necesaria para interpretar la siguiente partitura", "prueba mejorando tu flauta" };
+    private string[] normalLines;
     private bool successInterpretation = false;
     public bool hasFinished = false;
     public GameObject habitant;
@@ -74,6 +75,13 @@ public class Audience : MonoBehaviour
                 habitant.GetComponent<PartitureHabitant>().canShowPartitures = false;
             }
         }
+
+        // Change this to a place where habitant already exist on the scene, for example: when you talk to the npc.
+        if (habitant != null)
+        {
+            normalLines = habitant.GetComponent<DialogActivator>().lines;
+        }
+
     }
 
     // Update is called once per frame
@@ -137,7 +145,8 @@ public class Audience : MonoBehaviour
                 if (res >= percentageToPass)
                 {
                     successInterpretation = true;
-                } else 
+                }
+                else
                 {
                     successInterpretation = false;
                     canPass = false;
@@ -154,39 +163,43 @@ public class Audience : MonoBehaviour
 
     public void LimitPartitures(GameObject habitant)
     {
-        if (habitant.GetComponent<PartitureHabitant>().conversationFinished == true && !canPass && canActivatePartiturePanel)
+        if (habitant.GetComponent<PartitureHabitant>().conversationFinished == true && !canPass /*&& canActivatePartiturePanel*/)
         {
+            Debug.Log("ENTROOOOOOO AAAA");
             partitureSelectionPanel.SetActive(true);
         }
 
         if (partitureSelectionPanel.activeInHierarchy)
         {
+            Debug.Log("Entro OOOOOOOOOOOO");
             if (habitant.name == "Kasakir")
             {
-                PartitureSelection.instance.DeactivateDirigentPartitures("PanelPartiture3");
+                PartitureSelection.instance.DeactivateDirigentPartitures("PanelPartiture3", habitant);
             }
             else if (habitant.name == "Quizani")
             {
-                PartitureSelection.instance.DeactivateDirigentPartitures("PanelPartiture6");
+                PartitureSelection.instance.DeactivateDirigentPartitures("PanelPartiture6", habitant);
             }
             else if (habitant.name == "Naran")
             {
-                PartitureSelection.instance.DeactivateDirigentPartitures("PanelPartiture9");
+                PartitureSelection.instance.DeactivateDirigentPartitures("PanelPartiture9", habitant);
             }
 
+            Debug.Log("1: " + notFound);
             if (notFound)
             {
                 partitureSelectionPanel.SetActive(false);
                 habitant.GetComponent<DialogActivator>().lines = noPartituresDialog;
-                canActivatePartiturePanel = false;
+                //canActivatePartiturePanel = false;
                 habitant.GetComponent<PartitureHabitant>().canShowPartitures = false;
             }
 
+            Debug.Log("2: " + notFoundFlute);
             if (notFoundFlute)
             {
                 partitureSelectionPanel.SetActive(false);
                 habitant.GetComponent<DialogActivator>().lines = noFlutesDialog;
-                canActivatePartiturePanel = false;
+                //canActivatePartiturePanel = false;
                 habitant.GetComponent<PartitureHabitant>().canShowPartitures = false;
             }
         }
@@ -269,5 +282,17 @@ public class Audience : MonoBehaviour
     {
         notFoundFlute = true;
         return notFoundFlute;
+    }  
+
+    public void SetFound()
+    {
+        notFoundFlute = false;
+        notFound = false;
+    }
+
+    public void SetNormalLines(GameObject habitant)
+    {
+        habitant.GetComponent<DialogActivator>().lines = normalLines;
+        Debug.Log("Lines: " + habitant.GetComponent<DialogActivator>().lines);
     }
 }

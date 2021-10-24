@@ -77,7 +77,7 @@ public class PartitureSelection : MonoBehaviour
         gameData = XmlManager.instance.LoadGame();
 
         // Get Flute Difficulty
-        GetFluteDifficulty(gameData);
+        GetFluteDifficulty();
 
         // Get Partiture Difficulty to compare
         partitureDifficulty1 = GetPartitureDifficulty(name);
@@ -117,20 +117,20 @@ public class PartitureSelection : MonoBehaviour
         }
 
     }
-    
+
 
 
 
     //************************************************************************************************************************
 
-// Tecalli and Seti
+    // Tecalli and Seti
     public void DeactivateMinePartitures(string name, string name2, string name3, GameObject habitant)
     {
 
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
 
-        GetFluteDifficulty(gameData);
+        GetFluteDifficulty();
 
         // Get Partiture Difficulty to compare
         partitureDifficultyMine1 = GetPartitureDifficulty(name);
@@ -175,13 +175,15 @@ public class PartitureSelection : MonoBehaviour
 
         if (!partituresFound)
         {
-            if(habitant.name == "Tecalli76")
+            if (habitant.name == "Tecalli76")
             {
                 Tecalli.instance.NotFoundPartitures();
-            } else if (habitant.name == "Seti0")
+            }
+            else if (habitant.name == "Seti0")
             {
                 Seti.instance.NotFoundPartitures();
-            } else if (habitant.name == "Seti1")
+            }
+            else if (habitant.name == "Seti1")
             {
                 Seti2.instance.NotFoundPartitures();
             }
@@ -189,13 +191,15 @@ public class PartitureSelection : MonoBehaviour
 
         if (!fluteFound)
         {
-            if(habitant.name == "Tecalli76")
+            if (habitant.name == "Tecalli76")
             {
                 Tecalli.instance.NotFoundFlutes();
-            } else if (habitant.name == "Seti0")
+            }
+            else if (habitant.name == "Seti0")
             {
                 Seti.instance.NotFoundFlutes();
-            } else if (habitant.name == "Seti1")
+            }
+            else if (habitant.name == "Seti1")
             {
                 Seti2.instance.NotFoundFlutes();
             }
@@ -205,7 +209,7 @@ public class PartitureSelection : MonoBehaviour
     //*************************************************************************************************************************
 
     // Dirigents
-    public void DeactivateDirigentPartitures(string name)
+    public void DeactivateDirigentPartitures(string name, GameObject habitant)
     {
         Debug.Log("Entering Deactivate");
 
@@ -213,7 +217,7 @@ public class PartitureSelection : MonoBehaviour
         gameData = XmlManager.instance.LoadGame();
 
         // Get Flute Difficulty
-        GetFluteDifficulty(gameData);
+        GetFluteDifficulty();
 
         // Get Partiture Difficulty to compare
         partitureDifficulty1 = GetPartitureDifficulty(name);
@@ -250,10 +254,23 @@ public class PartitureSelection : MonoBehaviour
             Audience.instance.NotFoundFlute();
         }
 
+        if (partituresFound && fluteFound)
+        {
+            Audience.instance.SetFound();
+            Audience.instance.SetNormalLines(habitant);
+            Debug.Log("Activo el partiture selection panel");
+            //partitureSelectionPanel.SetActive(true);
+        }
+
+
     }
 
-    private void GetFluteDifficulty(GameData gameData)
+    private void GetFluteDifficulty()
     {
+
+        GameData gameData = new GameData();
+        gameData = XmlManager.instance.LoadGame();
+
         for (int i = 0; i < gameData.flute.Length; i++)
         {
             if (gameData.flute[i].isByDefault)
