@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
     // References to the objects
     public AudioSource[] sfx;
     public AudioSource[] backgroundMusic;
+    private int secondsToFadeOut = 5;
 
     public static AudioManager instance;
 
@@ -52,12 +53,16 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBGM(int musicToPlay)
     {
-            // stop any other sound playing before
-            StopMusic();
+        // stop any other sound playing before
+        StopMusic();
 
         if (musicToPlay < backgroundMusic.Length)
         {
             backgroundMusic[musicToPlay].Play();
+            while (backgroundMusic[musicToPlay].volume < 1f)
+            {
+                backgroundMusic[musicToPlay].volume += Time.deltaTime / secondsToFadeOut;
+            }
         }
     }
 
@@ -65,6 +70,11 @@ public class AudioManager : MonoBehaviour
     {
         for (int i = 0; i < backgroundMusic.Length; i++)
         {
+            // Check Music Volume and Fade Out
+            while (backgroundMusic[i].volume > 0.01f)
+            {
+                backgroundMusic[i].volume -= Time.deltaTime / secondsToFadeOut;
+            }
             backgroundMusic[i].Stop();
         }
     }
