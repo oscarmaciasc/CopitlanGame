@@ -17,19 +17,21 @@ public class Audience : MonoBehaviour
     private string[] KasakirSuccess2 = { "Estoy realmente sorprendido", "tienes que mostrarle esto al mundo entero", "te otorgo el permiso del triangulo para que vayas y hagas felices a mas personas" };
     private string[] KasakirSuccess3 = { "Estoy profundamente conmovido", "jamas habia escuchado nada igual", "mis ojos se humedecen al escuchar algo tan bello", "te otorgo el permiso del triangulo para que vayas y hagas felices a mas personas" };
     private string[] KasakirFailure = { "No me has convencido del todo", "no veo el valor de esto en la ciudad", "reintentalo si quieres..." };
+    private string[] kasakirNormalLines = { "Hola viajero", "He escuchado que quieres mostrarme algo", "Adelante..." };
     private string[] QuizaniSuccess1 = { "Me has convencido", "te otorgo el permiso del circulo interior para que vayas y hagas entrar en razon a Naran", "esto tiene que ser escuchado" };
     private string[] QuizaniSuccess2 = { "Estoy realmente sorprendido", "te otorgo el permiso del circulo interior para que vayas y hagas entrar en razon a Naran", "suerte viajero" };
     private string[] QuizaniSuccess3 = { "Estoy profundamente conmovido", "me siento feliz y diferente, como si mi alma sonriera", "te otorgo el permiso del circulo interior para que vayas y hagas entrar en razon a Naran" };
     private string[] QuizaniFailure = { "Ni siquiera tocaste bien", "se escuchaba algo extraño", "vuelve a intentarlo" };
+    private string[] quizaniNormalLines = { "Asi que has venido hasta aqui con ese objeto raro entre las manos...", "Tengo que admitir que me causa cierto interes", "*Expresion de intriga*" };
     private string[] NaranSucces1 = { "Me has convencido", "adelante, ve con nuestro lider" };
     private string[] NaranSucces2 = { "Estoy realmente sorprendido", "adelante, nuestro lider Necalli estara feliz de escuchar esto" };
     private string[] NaranSucces3 = { "Estoy profundamente conmovido", "ahora la vida cobra color y me siento muy feliz", "no tengo palabras para agradecerte", "tienes que mostrarle esto al lider Naran, sigue tu camino" };
     private string[] NaranFailure = { "No veo por que el lider deberia de escuchar algo asi", "reintentalo a ver si me gusta esta vez..." };
+    private string[] naranNormalLines = { "Soy el dirigente Naran", "A mi no me suele impresionar nadie", "Puedes intentarlo, pero no creo que resulte muchahito" };
     public string[] goodLinesKasakir = { "Adelante, continua tu camino viajero", "Quizani no es facil de convencer" };
     public string[] goodLinesQuizani = { "Adelante, continua tu camino viajero", "Naran no es facil de convencer" };
     public string[] goodLinesNaran = { "Has llegado demasiado lejos", "continua con tu camino y convence al lider Necalli" };
     public string[] noFlutesDialog = { "No tienes la flauta necesaria para interpretar la siguiente partitura", "prueba mejorando tu flauta" };
-    private string[] normalLines;
     private bool successInterpretation = false;
     public bool hasFinished = false;
     public GameObject habitant;
@@ -75,13 +77,6 @@ public class Audience : MonoBehaviour
                 habitant.GetComponent<PartitureHabitant>().canShowPartitures = false;
             }
         }
-
-        // Change this to a place where habitant already exist on the scene, for example: when you talk to the npc.
-        if (habitant != null)
-        {
-            normalLines = habitant.GetComponent<DialogActivator>().lines;
-        }
-
     }
 
     // Update is called once per frame
@@ -163,6 +158,11 @@ public class Audience : MonoBehaviour
 
     public void LimitPartitures(GameObject habitant)
     {
+        if (!notFound && !notFoundFlute)
+        {
+            SetNormalLines(habitant);
+        }
+
         if (habitant.GetComponent<PartitureHabitant>().conversationFinished == true && !canPass /*&& canActivatePartiturePanel*/)
         {
             Debug.Log("ENTROOOOOOO AAAA");
@@ -282,7 +282,7 @@ public class Audience : MonoBehaviour
     {
         notFoundFlute = true;
         return notFoundFlute;
-    }  
+    }
 
     public void SetFound()
     {
@@ -292,7 +292,23 @@ public class Audience : MonoBehaviour
 
     public void SetNormalLines(GameObject habitant)
     {
-        habitant.GetComponent<DialogActivator>().lines = normalLines;
-        Debug.Log("Lines: " + habitant.GetComponent<DialogActivator>().lines);
+        if (habitant.name == "Kasakir")
+        {
+            Debug.Log("kasa");
+            habitant.gameObject.GetComponent<DialogActivator>().lines = kasakirNormalLines;
+            Debug.Log("Lines: " + habitant.GetComponent<DialogActivator>().lines);
+        }
+        else if (habitant.name == "Quizani")
+        {
+            Debug.Log("Quiza");
+            habitant.gameObject.GetComponent<DialogActivator>().lines = quizaniNormalLines;
+            Debug.Log("Lines: " + habitant.GetComponent<DialogActivator>().lines);
+        }
+        else if (habitant.name == "Naran")
+        {
+            Debug.Log("Nara");
+            habitant.gameObject.GetComponent<DialogActivator>().lines = naranNormalLines;
+            Debug.Log("Lines: " + habitant.GetComponent<DialogActivator>().lines);
+        }
     }
 }

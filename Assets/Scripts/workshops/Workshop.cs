@@ -34,8 +34,8 @@ public class Workshop : MonoBehaviour
             dialogBox.SetActive(false);
         }
 
-        GetGoldenFlute();
         HasFlute();
+        GetGoldenFlute();
     }
 
     public void BuyFlute(string fluteToBuy, int resourceToSustractID, int quantityToSustract)

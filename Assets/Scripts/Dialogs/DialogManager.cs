@@ -133,6 +133,7 @@ public class DialogManager : MonoBehaviour
                         {
                             if (!habitant.GetComponent<Audience>().hasFinished)
                             {
+                                habitant.GetComponent<Audience>().SetNormalLines(habitant);
                                 habitant.GetComponent<Audience>().LimitPartitures(habitant);
                             }
                             else

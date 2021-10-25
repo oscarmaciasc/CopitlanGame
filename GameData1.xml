@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="lolo" gender="false">
-  <TimePlayed time="1258.78674" />
-  <TimeWalked time="909.141968" />
+  <TimePlayed time="1680.90674" />
+  <TimeWalked time="1118.79956" />
   <TimeBalloon time="0" />
-  <HappinessPercentage percentage="0" />
+  <HappinessPercentage percentage="80" />
   <Resources>
     <Resource name="wood">
       <quantity>0</quantity>
@@ -26,11 +26,12 @@
   </Permissions>
   <Flutes>
     <Flute name="woodenFlute" isByDefault="false" />
-    <Flute name="woodenIronFlute" isByDefault="true" />
-    <Flute name="ironFlute" isByDefault="false" />
+    <Flute name="woodenIronFlute" isByDefault="false" />
+    <Flute name="ironFlute" isByDefault="true" />
+    <Flute name="goldenFlute" isByDefault="false" />
   </Flutes>
   <Balloon name="balloonLvl2" />
-  <MusicalMasteryLvl name="apprentice" />
+  <MusicalMasteryLvl name="experienced" />
   <MusicSheets>
     <MusicSheet name="partiture1" />
     <MusicSheet name="partiture6" />
@@ -42,16 +43,16 @@
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">
-      <result>0</result>
+      <result>80</result>
     </AudienceResult>
     <AudienceResult name="quizaniResult">
-      <result>0</result>
+      <result>100</result>
     </AudienceResult>
     <AudienceResult name="naranResult">
-      <result>0</result>
+      <result>90</result>
     </AudienceResult>
     <AudienceResult name="necalliResult">
-      <result>0</result>
+      <result>100</result>
     </AudienceResult>
   </AudienceResults>
   <MineEntrances>
@@ -78,8 +79,25 @@
   </DirigentEntrances>
   <Collectables>
     <Collectable id="0" shouldBeDestroyed="true" />
+    <Collectable id="1" shouldBeDestroyed="true" />
+    <Collectable id="2" shouldBeDestroyed="true" />
+    <Collectable id="3" shouldBeDestroyed="true" />
+    <Collectable id="4" shouldBeDestroyed="true" />
+    <Collectable id="5" shouldBeDestroyed="true" />
+    <Collectable id="6" shouldBeDestroyed="true" />
+    <Collectable id="7" shouldBeDestroyed="true" />
+    <Collectable id="8" shouldBeDestroyed="true" />
+    <Collectable id="9" shouldBeDestroyed="true" />
+    <Collectable id="10" shouldBeDestroyed="true" />
+    <Collectable id="11" shouldBeDestroyed="true" />
+    <Collectable id="12" shouldBeDestroyed="true" />
+    <Collectable id="13" shouldBeDestroyed="true" />
+    <Collectable id="14" shouldBeDestroyed="true" />
+    <Collectable id="15" shouldBeDestroyed="true" />
+    <Collectable id="16" shouldBeDestroyed="true" />
     <Collectable id="17" shouldBeDestroyed="true" />
     <Collectable id="18" shouldBeDestroyed="true" />
+    <Collectable id="19" shouldBeDestroyed="true" />
   </Collectables>
   <HabitantResults>
     <HabitantResult id="0">
