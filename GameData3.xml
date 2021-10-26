@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="gees" gender="false">
-  <TimePlayed time="1088.55261" />
-  <TimeWalked time="1219.95435" />
+  <TimePlayed time="1223.22742" />
+  <TimeWalked time="1276.00012" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="0" />
   <Resources>
     <Resource name="wood">
-      <quantity>100</quantity>
+      <quantity>4950</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>60</quantity>
+      <quantity>40</quantity>
     </Resource>
     <Resource name="gold">
       <quantity>0</quantity>
     </Resource>
     <Resource name="fuel">
-      <quantity>0</quantity>
+      <quantity>10</quantity>
     </Resource>
   </Resources>
   <Permissions>
