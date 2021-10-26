@@ -26,9 +26,10 @@ public class Leader : MonoBehaviour
     private string[] necalliFailure = { "No me convence", "no veo por que te dejaron pasar a mi palacio", "quiza estes nervioso", "reintentalo si tienes el valor..." };
     private string[] goodLinesNecalli = { "*se escuchan sollozos de felicidad*", "es increible, no tengo palabras" };
     [SerializeField] private GameObject partitureSelectionPanel;
+    [SerializeField] private GameObject pentagramPanel;
     public bool hasFinished = false;
     private GameObject habitant;
-
+    public bool conversationFinished = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -95,7 +96,8 @@ public class Leader : MonoBehaviour
                 {
                     successInterpretation = true;
                     canActivateFinal = true;
-                } else
+                }
+                else
                 {
                     successInterpretation = false;
                     canPass = false;
@@ -115,17 +117,37 @@ public class Leader : MonoBehaviour
         if (successInterpretation)
         {
             Debug.Log("necalli: " + aprobationPercentageNecalli);
+            Debug.Log("Comprobation");
             if (aprobationPercentageNecalli >= 90 && aprobationPercentageNecalli < 94)
             {
                 habitant.gameObject.GetComponent<DialogActivator>().lines = necalliSuccess1;
+                //if (!pentagramPanel.activeInHierarchy)
+                //{
+                Debug.Log("1");
+                DialogManager.instance.ShowDialog(necalliSuccess1);
+                DialogManager.instance.justStarted = false;
+                //}
             }
             else if (aprobationPercentageNecalli >= 94 && aprobationPercentageNecalli < 97)
             {
                 habitant.gameObject.GetComponent<DialogActivator>().lines = necalliSuccess2;
+                //if (!pentagramPanel.activeInHierarchy)
+                //{
+                Debug.Log("2");
+                DialogManager.instance.ShowDialog(necalliSuccess2);
+                DialogManager.instance.justStarted = false;
+                //}
+
             }
             else if (aprobationPercentageNecalli >= 97)
             {
                 habitant.gameObject.GetComponent<DialogActivator>().lines = necalliSuccess3;
+                //if (!pentagramPanel.activeInHierarchy)
+                //{
+                Debug.Log("3");
+                DialogManager.instance.ShowDialog(necalliSuccess3);
+                DialogManager.instance.justStarted = false;
+                //}
             }
         }
         else
@@ -169,36 +191,43 @@ public class Leader : MonoBehaviour
 
         if (cityHappinessPercentage >= 72 && cityHappinessPercentage < 90)
         {
-            ActivateFinal(1);
+            StartCoroutine(ActivateFinal(1));
         }
         else if (cityHappinessPercentage >= 90 && cityHappinessPercentage < 95)
         {
-            ActivateFinal(2);
+            StartCoroutine(ActivateFinal(2));
         }
         else if (cityHappinessPercentage >= 95 && cityHappinessPercentage <= 100)
         {
-            ActivateFinal(3);
+            StartCoroutine(ActivateFinal(3));
         }
 
     }
 
-    public void ActivateFinal(int final)
+    IEnumerator ActivateFinal(int final)
     {
-        if (final == 1)
+        Debug.Log("Activate final");
+        Debug.Log("Condition Activate Final");
+        yield return new WaitForSeconds(5);
+        if (conversationFinished && (this.gameObject.GetComponent<DialogActivator>().lines == necalliSuccess1 || this.gameObject.GetComponent<DialogActivator>().lines == necalliSuccess2 || this.gameObject.GetComponent<DialogActivator>().lines == necalliSuccess3))
         {
-            Debug.Log("Final 1");
-            SceneManager.LoadScene("Final1");
+            if (final == 1)
+            {
+                Debug.Log("Final 1");
+                SceneManager.LoadScene("Final1");
+            }
+            else if (final == 2)
+            {
+                Debug.Log("Final 2");
+                SceneManager.LoadScene("Final2");
+            }
+            else if (final == 3)
+            {
+                Debug.Log("Final 3");
+                SceneManager.LoadScene("Final3");
+            }
         }
-        else if (final == 2)
-        {
-            Debug.Log("Final 2");
-            SceneManager.LoadScene("Final2");
-        }
-        else if (final == 3)
-        {
-            Debug.Log("Final 3");
-            SceneManager.LoadScene("Final3");
-        }
+
     }
 
     public bool NotFoundPartitures()

@@ -148,9 +148,11 @@ public class DialogManager : MonoBehaviour
                             if (!habitant.GetComponent<Leader>().hasFinished)
                             {
                                 habitant.GetComponent<Leader>().LimitPartitures(habitant);
+                                habitant.GetComponent<Leader>().conversationFinished = true;
                             }
                             else
                             {
+                                habitant.GetComponent<Leader>().conversationFinished = true;
                                 habitant.GetComponent<Leader>().canPass = true;
                                 habitant.GetComponent<Leader>().finishedPartiture = true;
                             }
@@ -190,7 +192,6 @@ public class DialogManager : MonoBehaviour
                             Debug.Log("Pongo conversation finished en: " + habitant.GetComponent<ResourceRewardPartiture>().conversationFinishedReward);
                         }
 
-
                     }
                     else
                     {
@@ -220,6 +221,7 @@ public class DialogManager : MonoBehaviour
 
     public void ShowDialog(string[] newLines)
     {
+        Debug.Log("HEY");
         dialogLines = newLines;
 
         currentLine = 0;

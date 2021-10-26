@@ -27,6 +27,7 @@ public class InGame : MonoBehaviour
     [SerializeField] private GameObject quizaniEntrance;
     [SerializeField] private GameObject naranEntrance;
     [SerializeField] private GameObject pauseMenuPanel;
+    public bool pentagramActive = true;
     public GameObject noFuelPanel;
     public bool balloonActive = false;
     private bool pauseMenuHasBeenStarted = false;
@@ -337,7 +338,9 @@ public class InGame : MonoBehaviour
 
     IEnumerator DeactivatePentagramPanel()
     {
+        Debug.Log("Deactivating pentagrampanel");
         yield return new WaitForSeconds(1);
         pentagramPanel.SetActive(false);
+        pentagramActive = false;
     }
 }

@@ -78,9 +78,8 @@ public class PentagramManager : MonoBehaviour
         }
         else if (globalCounter == generatedNotes)
         {
-            partitureFinished = true;
             InGame.instance.HasFinishedPartiture();
-
+             partitureFinished = true;
             if (habitant.GetComponent<PartitureHabitant>() != null)
             {
                 habitant.GetComponent<PartitureHabitant>().partitureFinished = true;

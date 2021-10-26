@@ -2671,6 +2671,7 @@ MonoBehaviour:
   finishedPartiture: 0
   canActivateFinal: 0
   partitureSelectionPanel: {fileID: 498112150}
+  pentagramPanel: {fileID: 498112149}
   hasFinished: 0
 --- !u!114 &1648064316
 MonoBehaviour:
