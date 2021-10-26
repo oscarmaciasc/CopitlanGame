@@ -1850,6 +1850,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84ecaed6a310972418457e929cb1f891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &498112147 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2011644848, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+  m_PrefabInstance: {fileID: 498112145}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &498112149 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2045364576, guid: cc6deea581a65364391abd104cfaced7, type: 3}
@@ -2672,7 +2677,9 @@ MonoBehaviour:
   canActivateFinal: 0
   partitureSelectionPanel: {fileID: 498112150}
   pentagramPanel: {fileID: 498112149}
+  dialogBox: {fileID: 498112147}
   hasFinished: 0
+  conversationFinished: 0
 --- !u!114 &1648064316
 MonoBehaviour:
   m_ObjectHideFlags: 0

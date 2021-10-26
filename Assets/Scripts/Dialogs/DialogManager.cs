@@ -149,6 +149,15 @@ public class DialogManager : MonoBehaviour
                             {
                                 habitant.GetComponent<Leader>().LimitPartitures(habitant);
                                 habitant.GetComponent<Leader>().conversationFinished = true;
+
+                                Debug.Log("AQUIIIIIIIIIIIII");
+                                Debug.Log(dialogLines[0]);
+                                Debug.Log(Leader.instance.necalliSuccess3[0]);
+                                if (dialogLines == Leader.instance.necalliSuccess1 || dialogLines == Leader.instance.necalliSuccess2 || dialogLines == Leader.instance.necalliSuccess3)
+                                {
+                                    Debug.Log("Entramos al if");
+                                    Leader.instance.ShouldGetCityHappinessPercentage();
+                                }
                             }
                             else
                             {

@@ -15,19 +15,23 @@ public class Leader : MonoBehaviour
     public bool canActivatePartiturePanel = true;
     public bool finishedPartiture = false;
     private int resNecalli = 0;
+    private float timeToWait = 3f;
     private int aprobationPercentageNecalli = 0;
     private int cityHappinessPercentage = 0;
     public bool canActivateFinal = false;
     private bool successInterpretation = false;
-    private string[] noPartituresDialog = { "Parece que no tienes la partitura necesaria", "Vuelve cuando la tengas" };
-    private string[] necalliSuccess1 = { "Me has convencido", "Enhoabuena, la musica regresara a Copitlan" };
-    private string[] necalliSuccess2 = { "Estoy realmente sorprendido", "No entiendo como podiamos vivir sin esto", "te nombro Fundador de la Musica en Copitlan" };
-    private string[] necalliSuccess3 = { "Estoy profundamente conmovido", "mis ojos se llenan de lagrimas pero no siento tristeza, solo una inmensa alegria", "esto es lo mejor que le ha pasado a Copitlan en siglos", "la musica volvera y te nombrare guardian de la felicidad" };
+    public string[] noPartituresDialog = { "Parece que no tienes la partitura necesaria", "Vuelve cuando la tengas" };
+    public string[] necalliSuccess1 = { "Me has convencido", "Enhoabuena, la musica regresara a Copitlan" };
+    public string[] necalliSuccess2 = { "Estoy realmente sorprendido", "No entiendo como podiamos vivir sin esto", "te nombro Fundador de la Musica en Copitlan" };
+    public string[] necalliSuccess3 = { "Estoy profundamente conmovido", "mis ojos se llenan de lagrimas pero no siento tristeza, solo una inmensa alegria", "esto es lo mejor que le ha pasado a Copitlan en siglos", "la musica volvera y te nombrare guardian de la felicidad" };
     private string[] necalliFailure = { "No me convence", "no veo por que te dejaron pasar a mi palacio", "quiza estes nervioso", "reintentalo si tienes el valor..." };
     private string[] goodLinesNecalli = { "*se escuchan sollozos de felicidad*", "es increible, no tengo palabras" };
     [SerializeField] private GameObject partitureSelectionPanel;
     [SerializeField] private GameObject pentagramPanel;
+    [SerializeField] private GameObject dialogBox;
     public bool hasFinished = false;
+    public bool shouldTryAgain = false;
+    public bool shouldGetCityHappinessPercentage = false;
     private GameObject habitant;
     public bool conversationFinished = false;
     // Start is called before the first frame update
@@ -53,7 +57,13 @@ public class Leader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log(finishedPartiture);
+        Debug.Log(canActivateFinal);
+        Debug.Log(shouldGetCityHappinessPercentage);
+        if (finishedPartiture && canActivateFinal && shouldGetCityHappinessPercentage)
+        {
+            GetCityHappinessPercentage();
+        }
     }
 
     public void GetAudienceResults()
@@ -102,18 +112,22 @@ public class Leader : MonoBehaviour
                     successInterpretation = false;
                     canPass = false;
                     finishedPartiture = false;
+                    shouldTryAgain = true;
                 }
             }
             else
             {
                 canPass = false;
                 finishedPartiture = false;
+                shouldTryAgain = true;
             }
         }
     }
 
     public void ChangeLeaderDialogLines(GameObject habitant)
     {
+        Debug.Log("SuccessInterpretation: " + successInterpretation);
+        Debug.Log("shouldTryAgain: " + shouldTryAgain);
         if (successInterpretation)
         {
             Debug.Log("necalli: " + aprobationPercentageNecalli);
@@ -121,36 +135,21 @@ public class Leader : MonoBehaviour
             if (aprobationPercentageNecalli >= 90 && aprobationPercentageNecalli < 94)
             {
                 habitant.gameObject.GetComponent<DialogActivator>().lines = necalliSuccess1;
-                //if (!pentagramPanel.activeInHierarchy)
-                //{
-                Debug.Log("1");
-                DialogManager.instance.ShowDialog(necalliSuccess1);
-                DialogManager.instance.justStarted = false;
-                //}
+                StartCoroutine(ShowDialogs(necalliSuccess1, habitant));
             }
             else if (aprobationPercentageNecalli >= 94 && aprobationPercentageNecalli < 97)
             {
                 habitant.gameObject.GetComponent<DialogActivator>().lines = necalliSuccess2;
-                //if (!pentagramPanel.activeInHierarchy)
-                //{
-                Debug.Log("2");
-                DialogManager.instance.ShowDialog(necalliSuccess2);
-                DialogManager.instance.justStarted = false;
-                //}
+                StartCoroutine(ShowDialogs(necalliSuccess2, habitant));
 
             }
             else if (aprobationPercentageNecalli >= 97)
             {
                 habitant.gameObject.GetComponent<DialogActivator>().lines = necalliSuccess3;
-                //if (!pentagramPanel.activeInHierarchy)
-                //{
-                Debug.Log("3");
-                DialogManager.instance.ShowDialog(necalliSuccess3);
-                DialogManager.instance.justStarted = false;
-                //}
+                StartCoroutine(ShowDialogs(necalliSuccess3, habitant));
             }
         }
-        else
+        else if (!successInterpretation && shouldTryAgain)
         {
             habitant.gameObject.GetComponent<DialogActivator>().lines = necalliFailure;
         }
@@ -206,11 +205,12 @@ public class Leader : MonoBehaviour
 
     IEnumerator ActivateFinal(int final)
     {
-        Debug.Log("Activate final");
-        Debug.Log("Condition Activate Final");
-        yield return new WaitForSeconds(5);
-        if (conversationFinished && (this.gameObject.GetComponent<DialogActivator>().lines == necalliSuccess1 || this.gameObject.GetComponent<DialogActivator>().lines == necalliSuccess2 || this.gameObject.GetComponent<DialogActivator>().lines == necalliSuccess3))
+        Debug.Log(conversationFinished);
+        Debug.Log(this.gameObject.GetComponent<DialogActivator>().lines);
+        Debug.Log(dialogBox.activeInHierarchy);
+        if (conversationFinished && (this.gameObject.GetComponent<DialogActivator>().lines == necalliSuccess1 || this.gameObject.GetComponent<DialogActivator>().lines == necalliSuccess2 || this.gameObject.GetComponent<DialogActivator>().lines == necalliSuccess3) && !dialogBox.activeInHierarchy)
         {
+            yield return new WaitForSeconds(2);
             if (final == 1)
             {
                 Debug.Log("Final 1");
@@ -234,5 +234,29 @@ public class Leader : MonoBehaviour
     {
         notFound = true;
         return notFound;
+    }
+
+    private void ChangeScene()
+    {
+        timeToWait -= Time.deltaTime;
+        if (timeToWait <= 0)
+        {
+            UIFade.instance.FadeToBlack();
+            SceneManager.LoadScene("PapatacaFinal");
+        }
+    }
+
+    IEnumerator ShowDialogs(string[] lines, GameObject habitant)
+    {
+        yield return new WaitForSeconds(2);
+
+        Debug.Log("1");
+        DialogManager.instance.ShowDialog(lines);
+        DialogManager.instance.justStarted = false;
+    }
+
+    public void ShouldGetCityHappinessPercentage()
+    {
+        shouldGetCityHappinessPercentage = true;
     }
 }
