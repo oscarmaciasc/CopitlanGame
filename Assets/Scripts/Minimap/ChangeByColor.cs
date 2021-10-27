@@ -17,6 +17,7 @@ public class ChangeByColor : MonoBehaviour
     public void Enable() {
         colorPanel.GetComponent<Image>().color = new Color32(50, 30, 14, 255);
         SetPlaceInfo(GetCopitlanInfo());
+        Debug.Log("Set Copitlan info");
     }
     
     public void ColorSelected(Color colorRGBA)
@@ -102,7 +103,7 @@ public class ChangeByColor : MonoBehaviour
             "Hogar" , // CharacterHouse
             "Mina de Hierro Tecalli" , // TecalliMine
             "Mina de Hierro Acan" , // AcanMine
-            "Mina de Oro" ,  // SetiMine
+            "Mina de Oro Seti" ,  // SetiMine
             "Murallas de la ciudad"   // Walls
         };
 
@@ -121,15 +122,15 @@ public class ChangeByColor : MonoBehaviour
             "En la casa de comercio es posible acudir para realizar intercambio de unos recursos por otros.\nAqui se puede intercambiar con madera, hierro, oro y combustible para globo." , // TradeHouse
             "En el taller es posible acudir para intercambiar recursos por un producto unico elaborado a mano segun los requerimientos del que acude.\nLos artesanos crean piezas de calidad y las detallan de tal forma que es muy dificil replicarlas para un habitante comun." , // Workshop
             "A la herreria se acude para intercambiar recursos por un producto elaborado segun los requerimientos del que acude.\nLos herreros crean artefactos resistentes de uso cotidiano.\nAqui se pueden obtener globos aerostaticos personales y sus respectivas mejoras." , // Blacksmith
-            "Palacio del Dirigente Kasakir" , // KasakirPalace
-            "Palacio del Dirigente Quizani" , // QuizaniPalace
-            "Palacio del Dirigente Naran" , // NaranPalace
-            "Palacio Real del Lider Necalli" , // NecalliRoyalPalace
-            "Hogar" , // CharacterHouse
-            "Mina de Hierro Tecalli" , // TecalliMine
-            "Mina de Hierro Acan" , // AcanMine
-            "Mina de Oro" ,  // SetiMine
-            "Murallas de la ciudad"   // Walls
+            "Desde este palacio, el Dirigente Kasakir se hace cargo de velar por las necesidades de los habitantes del Circulo exterior.\nCualquier habitante puede solicitar una audiencia para exponer alguna situacion que considere debe ser atendida y corresponde al Dirigente decidir." , // KasakirPalace
+            "Desde este palacio, el Dirigente Quizani se hace cargo de velar por las necesidades de los habitantes del Triangulo.\nCualquier habitante puede solicitar una audiencia para exponer alguna situacion que considere debe ser atendida y corresponde al Dirigente decidir." , // QuizaniPalace
+            "Desde este palacio, el Dirigente Naran se hace cargo de velar por las necesidades de los habitantes del Circulo interior.\nCualquier habitante puede solicitar una audiencia para exponer alguna situacion que considere debe ser atendida y corresponde al Dirigente decidir." , // NaranPalace
+            "Desde el palacio real, el Lider Necalli se encarga de garatizar la estabilidad y prosperidad de Copitlan.\nSi bien no todos los habitantes tienen permitido entrar aqui, los mas destacados pueden hacerlo cuando el Lider deba anunciar un cambio importante en la ciudad." , // NecalliRoyalPalace
+            "Este es tu hogar fuera de las murallas, en el bosque Papataca, donde todo es mas tranquilo.\nAqui tienes lo necesario para vivir el dia a dia comodamente sin preocupaciones, aunque seguro que la ordinariez no es tu destino." , // CharacterHouse
+            "La mina Tecalli se encuentra en la zona sur del bosque Papataca.\nLos habitantes de Copitlan pueden internase en ella libremente para obtener hierro que despues pueden utilizar para intercambiar por algun producto u objeto que necesiten." , // TecalliMine
+            "La mina Acan se encuentra en la zona norte del bosque Papataca.\nLos habitantes de Copitlan pueden internase en ella libremente para obtener hierro que despues pueden utilizar para intercambiar por algun producto u objeto que necesiten." , // AcanMine
+            "La mina Seti se encuentra en la zona norte del bosque Papataca.\nLos habitantes de Copitlan pueden internase en ella libremente para obtener oro, aunque es muy dificil de encontrar." ,  // SetiMine
+            "Las murallas rodean cada zona de la ciudad y estan hechas de bloques masivos de piedra gris.\nHan estado ahi desde hace tanto tiempo que ni los habitantes mas ancianos de Copitlan tienen una idea de cuando pudieron haber sido construidas."   // Walls
         };
         
         return new string[] {placeName[placeID], placeDescription[placeID]};
