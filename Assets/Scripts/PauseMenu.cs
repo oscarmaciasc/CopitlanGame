@@ -74,6 +74,8 @@ public class PauseMenu : MonoBehaviour
     public void ActivateMapPanel()
     {
         MapPanel.SetActive(true);
+        ChangeByColor.instance.Enable();
+        ZoomImage.instance.Enable();
         InventoryPanel.SetActive(false);
         BalloonPanel.SetActive(false);
         InfoPanel.SetActive(false);
