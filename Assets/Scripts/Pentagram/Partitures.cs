@@ -10,7 +10,7 @@ public class Partitures : MonoBehaviour
     public string partitureDifficulty;
     public float velocity;
     public float partitureVelocity;
-    public string musicToPlay;
+    public int partitureToPlay;
     public int upStreak = 10;
     public int limitStreak;
     public bool canAddAuxStreak = false;
@@ -68,7 +68,7 @@ public class Partitures : MonoBehaviour
         }
     }
 
-    public void setVelocity(string partitureName)
+    public void SetVelocity(string partitureName)
     {
         this.partitureName = partitureName;
         if (partitureName == "Partitura 1" || partitureName == "Partitura 2" || partitureName == "Partitura 3")
@@ -77,7 +77,7 @@ public class Partitures : MonoBehaviour
             this.velocity = 1f;
             this.partitureVelocity = 1f;
             this.limitStreak = 10;
-            this.numberOfPartitureNotes = 10;
+            this.numberOfPartitureNotes = 20;
 
             for (int i = 0; i < 4; i++)
             {
@@ -87,17 +87,17 @@ public class Partitures : MonoBehaviour
             // Filling a new array deleting the null positions of numberNotes[]
             this.numberNotes = numberNotes.Where(x => !string.IsNullOrEmpty(x)).ToArray();
 
-            if (partitureName == "1")
+            if (partitureName == "Partitura 1")
             {
-                this.musicToPlay = "/track1";
+                this.partitureToPlay = 0;
             }
-            if (partitureName == "2")
+            if (partitureName == "Partitura 2")
             {
-                this.musicToPlay = "/track2";
+                this.partitureToPlay = 1;
             }
-            if (partitureName == "3")
+            if (partitureName == "Partitura 3")
             {
-                this.musicToPlay = "/track3";
+                this.partitureToPlay = 2;
             }
         }
 
@@ -117,17 +117,17 @@ public class Partitures : MonoBehaviour
             // Filling a new array deleting the null positions of numberNotes[]
             this.numberNotes = numberNotes.Where(x => !string.IsNullOrEmpty(x)).ToArray();
 
-            if (partitureName == "4")
+            if (partitureName == "Partitura 4")
             {
-                this.musicToPlay = "/track4";
+                this.partitureToPlay = 3;
             }
-            if (partitureName == "5")
+            if (partitureName == "Partitura 5")
             {
-                this.musicToPlay = "/track5";
+                this.partitureToPlay = 4;
             }
-            if (partitureName == "6")
+            if (partitureName == "Partitura 6")
             {
-                this.musicToPlay = "/track6";
+                this.partitureToPlay = 5;
             }
         }
 
@@ -147,17 +147,17 @@ public class Partitures : MonoBehaviour
             // Filling a new array deleting the null positions of numberNotes[]
             this.numberNotes = numberNotes.Where(x => !string.IsNullOrEmpty(x)).ToArray();
 
-            if (partitureName == "7")
+            if (partitureName == "Partitura 7")
             {
-                this.musicToPlay = "/track7";
+                this.partitureToPlay = 6;
             }
-            if (partitureName == "8")
+            if (partitureName == "Partitura 8")
             {
-                this.musicToPlay = "/track8";
+                this.partitureToPlay = 7;
             }
-            if (partitureName == "9")
+            if (partitureName == "Partitura 9")
             {
-                this.musicToPlay = "/track9";
+                this.partitureToPlay = 8;
             }
         }
 
@@ -177,7 +177,7 @@ public class Partitures : MonoBehaviour
             // Filling a new array deleting the null positions of numberNotes[]
             this.numberNotes = numberNotes.Where(x => !string.IsNullOrEmpty(x)).ToArray();
 
-            this.musicToPlay = "/track10";
+            this.partitureToPlay = 9;
         }
     }
 }

@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="lolo" gender="false">
-  <TimePlayed time="1733.4248" />
-  <TimeWalked time="3335.39282" />
+  <TimePlayed time="1800.02869" />
+  <TimeWalked time="3468.474" />
   <TimeBalloon time="0" />
-  <HappinessPercentage percentage="80" />
+  <HappinessPercentage percentage="68" />
   <Resources>
     <Resource name="wood">
-      <quantity>0</quantity>
+      <quantity>48</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>2</quantity>
+      <quantity>9</quantity>
     </Resource>
     <Resource name="gold">
       <quantity>0</quantity>
@@ -31,7 +31,7 @@
     <Flute name="goldenFlute" isByDefault="false" />
   </Flutes>
   <Balloon name="balloonLvl2" />
-  <MusicalMasteryLvl name="legend" />
+  <MusicalMasteryLvl name="apprentice" />
   <MusicSheets>
     <MusicSheet name="partiture1" />
     <MusicSheet name="partiture6" />
@@ -101,10 +101,10 @@
   </Collectables>
   <HabitantResults>
     <HabitantResult id="0">
-      <Result>80</Result>
+      <Result>85</Result>
     </HabitantResult>
     <HabitantResult id="1">
-      <Result>0</Result>
+      <Result>80</Result>
     </HabitantResult>
     <HabitantResult id="2">
       <Result>0</Result>

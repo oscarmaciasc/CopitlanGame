@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
     // References to the objects
     public AudioSource[] sfx;
     public AudioSource[] backgroundMusic;
+    public AudioSource[] partitureMusic;
     private int secondsToFadeOut = 5;
 
     public static AudioManager instance;
@@ -36,10 +37,7 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (Input.GetKeyDown(KeyCode.T))
-        // {
-        //     PlaySFX(0);
-        // }
+        
     }
 
     // SoundEffects
@@ -76,6 +74,14 @@ public class AudioManager : MonoBehaviour
                 backgroundMusic[i].volume -= Time.deltaTime / secondsToFadeOut;
             }
             backgroundMusic[i].Stop();
+        }
+    }
+
+    public void PlayPartiture(int partitureToPlay)
+    {
+        if (partitureToPlay < partitureMusic.Length)
+        {
+            partitureMusic[partitureToPlay].Play();
         }
     }
 }

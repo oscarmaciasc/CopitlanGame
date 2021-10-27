@@ -30,7 +30,7 @@ public class PentagramManagerTutorial : MonoBehaviour
         partitureName = PartitureSelectionTutorial.instance.panelPartitureName;
 
         Debug.Log("You have selected: " + partitureName);
-        Partitures.instance.setVelocity(partitureName);
+        Partitures.instance.SetVelocity(partitureName);
     }
 
     // Update is called once per frame

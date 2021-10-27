@@ -63,8 +63,6 @@ public class NoteManager : MonoBehaviour
     //Identfy that the collider is the playpanel collider
     void OnTriggerEnter2D(Collider2D col)
     {
-        // Key to compare = NoteText
-        // This was in update but it fits better here
         numberNote = number;
         if (col.gameObject.GetComponent<PlayPanelManager>() != null)
         {
@@ -72,6 +70,13 @@ public class NoteManager : MonoBehaviour
             canPress = true;
         }
         PentagramManager.instance.passedNotes++;
+
+        Debug.Log("noteName: " + this.gameObject.name);
+        if (this.gameObject.name == "note: 0(Clone)")
+        {
+            AudioManager.instance.PlayPartiture(Partitures.instance.partitureToPlay);
+        }
+
     }
 
     void OnTriggerExit2D(Collider2D col)
@@ -160,7 +165,7 @@ public class NoteManager : MonoBehaviour
             {
                 Debug.Log("streakADENTRO: " + PentagramManager.streak);
                 PentagramManager.streak++;
-                 Debug.Log("streakADENTRO++: " + PentagramManager.streak);
+                Debug.Log("streakADENTRO++: " + PentagramManager.streak);
             }
             Debug.Log("streakDESPUES: " + PentagramManager.streak);
             //Debug.Log("ARRIBA2");
@@ -188,7 +193,7 @@ public class NoteManager : MonoBehaviour
                     PentagramManager.maxStreak2 = PentagramManager.auxStreak;
                 }
             }
-            
+
             PentagramManager.streakRes = PentagramManager.maxStreak + PentagramManager.maxStreak2;
             Debug.Log("streakRes: " + PentagramManager.streakRes + " = maxStreak[" + PentagramManager.maxStreak + "] + maxStreak2[" + PentagramManager.maxStreak2 + "]");
             //Debug.Log("ARRIBA5");
@@ -211,6 +216,8 @@ public class NoteManager : MonoBehaviour
             {
                 PentagramManager.auxStreak = 0;
             }
+
+            AudioManager.instance.PlaySFX(2);
         }
 
         Partitures.instance.LimitStreak();

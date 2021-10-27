@@ -257,7 +257,7 @@ public class PartitureSelection : MonoBehaviour
         if (partituresFound && fluteFound)
         {
             Audience.instance.SetFound();
-            
+
             Audience.instance.SetNormalLines(habitant);
             Debug.Log("Activo el partiture selection panel");
             //partitureSelectionPanel.SetActive(true);

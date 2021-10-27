@@ -11,16 +11,14 @@ public class PentagramManager : MonoBehaviour
     public static int maxStreak = 0;
     public static int maxStreak2 = 0;
     public static int streakRes = 0;
-    public GameObject objectTest;
     public string partitureName;
     public int generatedNotes = 0;
     public int passedNotes = 0;
     public static PentagramManager instance;
     public bool partitureFinished = false;
-    public bool doOnlyOnce = true;
-    public bool doOnlyOnceReward = true;
     public int correctNotes = 0;
     public static int globalCounter = 0;
+    private int noteCounter = 0;
     [SerializeField] private GameObject habitant;
 
     private void Awake()
@@ -37,7 +35,9 @@ public class PentagramManager : MonoBehaviour
         partitureName = PartitureSelection.instance.panelPartitureName;
 
         Debug.Log("You have selected: " + partitureName);
-        Partitures.instance.setVelocity(partitureName);
+        Partitures.instance.SetVelocity(partitureName);
+
+        Debug.Log("NOTA: " + noteCounter);
     }
 
     void OnEnable()
@@ -51,19 +51,20 @@ public class PentagramManager : MonoBehaviour
         maxStreak2 = 0;
         auxStreak = 0;
         streak = 0;
+        noteCounter = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
         // Generating random notes for testing purposes
         if (generatedNotes < Partitures.instance.numberOfPartitureNotes)
         {
             if ((Time.time - timeLastNote) >= Partitures.instance.velocity)
             {
                 Instantiate(this.notePrefab, this.transform.position, Quaternion.identity).transform.SetParent(this.gameObject.transform);
+                notePrefab.name = "note: " + noteCounter;
+                noteCounter++;
                 timeLastNote = Time.time;
                 generatedNotes++;
             }

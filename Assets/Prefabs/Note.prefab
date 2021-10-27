@@ -164,6 +164,7 @@ MonoBehaviour:
   noteSuccessful: 0
   canPress: 0
   haveBeenPressed: 0
+  correctNotes: 0
 --- !u!50 &6113512804648500324
 Rigidbody2D:
   serializedVersion: 4
