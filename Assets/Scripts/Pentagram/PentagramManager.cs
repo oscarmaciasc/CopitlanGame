@@ -63,8 +63,9 @@ public class PentagramManager : MonoBehaviour
             if ((Time.time - timeLastNote) >= Partitures.instance.velocity)
             {
                 Instantiate(this.notePrefab, this.transform.position, Quaternion.identity).transform.SetParent(this.gameObject.transform);
-                notePrefab.name = "note: " + noteCounter;
-                noteCounter++;
+                //notePrefab.name = "note: " + noteCounter;
+                //Debug.Log("noteName: " + notePrefab.name);
+                //noteCounter++;
                 timeLastNote = Time.time;
                 generatedNotes++;
             }
@@ -80,7 +81,7 @@ public class PentagramManager : MonoBehaviour
         else if (globalCounter == generatedNotes)
         {
             InGame.instance.HasFinishedPartiture();
-             partitureFinished = true;
+            partitureFinished = true;
             if (habitant.GetComponent<PartitureHabitant>() != null)
             {
                 habitant.GetComponent<PartitureHabitant>().partitureFinished = true;
@@ -127,8 +128,8 @@ public class PentagramManager : MonoBehaviour
                 habitant.GetComponent<Leader>().GetAudienceResults();
                 habitant.GetComponent<Leader>().GetPercentage(habitant);
                 habitant.GetComponent<Leader>().ChangeLeaderDialogLines(habitant);
-                
-                
+
+
             }
 
             if (habitant.GetComponent<HabitantMath>() != null && habitant.GetComponent<ResourceRewardPartiture>() == null)
@@ -147,10 +148,11 @@ public class PentagramManager : MonoBehaviour
                 Debug.Log("RewardGiven: " + habitant.GetComponent<ResourceRewardPartiture>().rewardGiven);
                 Debug.Log("conversationFinished" + habitant.GetComponent<ResourceRewardPartiture>().conversationFinishedReward);
 
-            
+
             }
             // Save musicalmasterylevel
             SaveMusicalMasteryLvl();
+            noteCounter = 0;
 
         }
     }

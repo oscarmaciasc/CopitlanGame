@@ -71,8 +71,8 @@ public class NoteManager : MonoBehaviour
         }
         PentagramManager.instance.passedNotes++;
 
-        Debug.Log("noteName: " + this.gameObject.name);
-        if (this.gameObject.name == "note: 0(Clone)")
+    
+        if (!AudioManager.instance.partitureMusic[Partitures.instance.partitureToPlay].isPlaying)
         {
             AudioManager.instance.PlayPartiture(Partitures.instance.partitureToPlay);
         }

@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="lolo" gender="false">
-  <TimePlayed time="1882.28076" />
-  <TimeWalked time="3468.474" />
+  <TimePlayed time="2141.35986" />
+  <TimeWalked time="3533.53638" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="68" />
   <Resources>
     <Resource name="wood">
-      <quantity>48</quantity>
+      <quantity>63</quantity>
     </Resource>
     <Resource name="iron">
       <quantity>9</quantity>
@@ -101,10 +101,10 @@
   </Collectables>
   <HabitantResults>
     <HabitantResult id="0">
-      <Result>85</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="1">
-      <Result>80</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="2">
       <Result>0</Result>
@@ -346,7 +346,7 @@
       <Interacted>true</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="1">
-      <Interacted>true</Interacted>
+      <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="2">
       <Interacted>false</Interacted>

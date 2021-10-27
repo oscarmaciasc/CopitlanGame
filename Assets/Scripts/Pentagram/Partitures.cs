@@ -77,7 +77,7 @@ public class Partitures : MonoBehaviour
             this.velocity = 1f;
             this.partitureVelocity = 1f;
             this.limitStreak = 10;
-            this.numberOfPartitureNotes = 20;
+            this.numberOfPartitureNotes = 19;
 
             for (int i = 0; i < 4; i++)
             {
