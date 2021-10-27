@@ -33,11 +33,7 @@ public class PentagramManager : MonoBehaviour
     void Start()
     {
         partitureName = PartitureSelection.instance.panelPartitureName;
-
-        Debug.Log("You have selected: " + partitureName);
         Partitures.instance.SetVelocity(partitureName);
-
-        Debug.Log("NOTA: " + noteCounter);
     }
 
     void OnEnable()
@@ -71,10 +67,14 @@ public class PentagramManager : MonoBehaviour
             }
 
             // If the habitant doesnt has audience, then streak = 0.
-            if (habitant.GetComponent<Audience>() == null && habitant.GetComponent<Leader>() == null)
+            if (habitant != null)
             {
-                Debug.Log("Hago referencia a: " + habitant.name);
-                Debug.Log("pongo a 0 la racha");
+                if (habitant.GetComponent<Audience>() == null && habitant.GetComponent<Leader>() == null)
+                {
+                    streak = 0;
+                }
+            } else if (habitant == null)
+            {
                 streak = 0;
             }
         }
@@ -82,73 +82,71 @@ public class PentagramManager : MonoBehaviour
         {
             InGame.instance.HasFinishedPartiture();
             partitureFinished = true;
-            if (habitant.GetComponent<PartitureHabitant>() != null)
-            {
-                habitant.GetComponent<PartitureHabitant>().partitureFinished = true;
-            }
 
-            if (habitant.GetComponent<Tecalli>() != null)
+            if (habitant != null)
             {
-                habitant.GetComponent<Tecalli>().finishedPartiture = true;
-            }
-
-            if (habitant.GetComponent<Acan>() != null)
-            {
-                habitant.GetComponent<Acan>().finishedPartiture = true;
-            }
-
-            if (habitant.GetComponent<Seti>() != null)
-            {
-                habitant.GetComponent<Seti>().finishedPartiture = true;
-                if (!habitant.GetComponent<Seti>().hasFinished)
+                if (habitant.GetComponent<PartitureHabitant>() != null)
                 {
-                    habitant.GetComponent<Seti>().GetPercentage();
+                    habitant.GetComponent<PartitureHabitant>().partitureFinished = true;
                 }
-            }
 
-            if (habitant.GetComponent<Seti2>() != null)
-            {
-                habitant.GetComponent<Seti2>().finishedPartiture = true;
-                if (!habitant.GetComponent<Seti2>().hasFinished)
+                if (habitant.GetComponent<Tecalli>() != null)
                 {
-                    habitant.GetComponent<Seti2>().GetPercentage();
+                    habitant.GetComponent<Tecalli>().finishedPartiture = true;
                 }
-            }
 
-            if (habitant.GetComponent<Audience>() != null)
-            {
-                habitant.GetComponent<Audience>().finishedPartiture = true;
-                habitant.GetComponent<Audience>().GetPercentage(habitant);
-                habitant.GetComponent<Audience>().ChangeDirigentDialogLines(habitant);
-            }
+                if (habitant.GetComponent<Acan>() != null)
+                {
+                    habitant.GetComponent<Acan>().finishedPartiture = true;
+                }
 
-            if (habitant.GetComponent<Leader>() != null)
-            {
-                habitant.GetComponent<Leader>().finishedPartiture = true;
-                habitant.GetComponent<Leader>().GetAudienceResults();
-                habitant.GetComponent<Leader>().GetPercentage(habitant);
-                habitant.GetComponent<Leader>().ChangeLeaderDialogLines(habitant);
+                if (habitant.GetComponent<Seti>() != null)
+                {
+                    habitant.GetComponent<Seti>().finishedPartiture = true;
+                    if (!habitant.GetComponent<Seti>().hasFinished)
+                    {
+                        habitant.GetComponent<Seti>().GetPercentage();
+                    }
+                }
 
+                if (habitant.GetComponent<Seti2>() != null)
+                {
+                    habitant.GetComponent<Seti2>().finishedPartiture = true;
+                    if (!habitant.GetComponent<Seti2>().hasFinished)
+                    {
+                        habitant.GetComponent<Seti2>().GetPercentage();
+                    }
+                }
 
-            }
+                if (habitant.GetComponent<Audience>() != null)
+                {
+                    habitant.GetComponent<Audience>().finishedPartiture = true;
+                    habitant.GetComponent<Audience>().GetPercentage(habitant);
+                    habitant.GetComponent<Audience>().ChangeDirigentDialogLines(habitant);
+                }
 
-            if (habitant.GetComponent<HabitantMath>() != null && habitant.GetComponent<ResourceRewardPartiture>() == null)
-            {
-                habitant.GetComponent<HabitantMath>().finishedPartiture = true;
-                habitant.GetComponent<HabitantMath>().GetPercentage(habitant);
-                habitant.GetComponent<HabitantMath>().ChangeHabitantDialogLines(habitant);
-            }
+                if (habitant.GetComponent<Leader>() != null)
+                {
+                    habitant.GetComponent<Leader>().finishedPartiture = true;
+                    habitant.GetComponent<Leader>().GetAudienceResults();
+                    habitant.GetComponent<Leader>().GetPercentage(habitant);
+                    habitant.GetComponent<Leader>().ChangeLeaderDialogLines(habitant);
+                }
 
-            if (habitant.GetComponent<ResourceRewardPartiture>() != null && habitant.GetComponent<HabitantMath>() != null)
-            {
-                habitant.GetComponent<HabitantMath>().finishedPartiture = true;
-                habitant.GetComponent<HabitantMath>().GetPercentage(habitant);
-                habitant.GetComponent<ResourceRewardPartiture>().finishedPartiture = true;
-                habitant.GetComponent<ResourceRewardPartiture>().GiveResourceReward(habitant);
-                Debug.Log("RewardGiven: " + habitant.GetComponent<ResourceRewardPartiture>().rewardGiven);
-                Debug.Log("conversationFinished" + habitant.GetComponent<ResourceRewardPartiture>().conversationFinishedReward);
+                if (habitant.GetComponent<HabitantMath>() != null && habitant.GetComponent<ResourceRewardPartiture>() == null)
+                {
+                    habitant.GetComponent<HabitantMath>().finishedPartiture = true;
+                    habitant.GetComponent<HabitantMath>().GetPercentage(habitant);
+                    habitant.GetComponent<HabitantMath>().ChangeHabitantDialogLines(habitant);
+                }
 
-
+                if (habitant.GetComponent<ResourceRewardPartiture>() != null && habitant.GetComponent<HabitantMath>() != null)
+                {
+                    habitant.GetComponent<HabitantMath>().finishedPartiture = true;
+                    habitant.GetComponent<HabitantMath>().GetPercentage(habitant);
+                    habitant.GetComponent<ResourceRewardPartiture>().finishedPartiture = true;
+                    habitant.GetComponent<ResourceRewardPartiture>().GiveResourceReward(habitant);
+                }
             }
             // Save musicalmasterylevel
             SaveMusicalMasteryLvl();

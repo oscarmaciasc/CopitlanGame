@@ -17,7 +17,6 @@ public class ChangeByColor : MonoBehaviour
     public void Enable() {
         colorPanel.GetComponent<Image>().color = new Color32(50, 30, 14, 255);
         SetPlaceInfo(GetCopitlanInfo());
-        Debug.Log("Set Copitlan info");
     }
     
     public void ColorSelected(Color colorRGBA)

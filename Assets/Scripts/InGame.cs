@@ -338,7 +338,6 @@ public class InGame : MonoBehaviour
 
     IEnumerator DeactivatePentagramPanel()
     {
-        Debug.Log("Deactivating pentagrampanel");
         yield return new WaitForSeconds(1);
         pentagramPanel.SetActive(false);
         pentagramActive = false;

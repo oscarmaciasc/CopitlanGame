@@ -18,6 +18,7 @@ public class PartitureSelection : MonoBehaviour
     private bool isByDefault;
     private int fluteDifficulty;
     private int partitureDifficulty1;
+    private int partitureDifficultyLeader;
     private int partitureDifficultyMine1;
     private int partitureDifficultyMine2;
     private int partitureDifficultyMine3;
@@ -100,8 +101,7 @@ public class PartitureSelection : MonoBehaviour
                 fluteFound = true;
             }
         }
-        Debug.Log("partituresFound: " + partituresFound);
-        Debug.Log("fluteFound: " + fluteFound);
+       
 
         //FluteFilter();
 
@@ -167,9 +167,6 @@ public class PartitureSelection : MonoBehaviour
             }
         }
 
-        Debug.Log("partituresFound: " + partituresFound);
-        Debug.Log("fluteFound: " + fluteFound);
-
 
         //FluteFilter();
 
@@ -208,10 +205,61 @@ public class PartitureSelection : MonoBehaviour
 
     //*************************************************************************************************************************
 
+    //*************************************************************************************************************************
+
+    // Leader
+    public void DeactivateLeaderPartitures(string name, GameObject habitant)
+    {
+        GameData gameData = new GameData();
+        gameData = XmlManager.instance.LoadGame();
+
+        GetFluteDifficulty();
+
+        partitureDifficultyLeader = GetPartitureDifficulty(name);
+
+        for (int i = 0; i < 10; i++)
+        {
+            if ((gameData.DoesHavePartiture("partiture" + (i + 1))) && (partiturePanels[i].name == name))
+            {
+                partituresFound = true;
+                partiturePanels[i].SetActive(true);
+            }
+            else
+            {
+                partiturePanels[i].SetActive(false);
+            }
+
+            if (partitureDifficultyLeader <= fluteDifficulty)
+            {
+                fluteFound = true;
+            }
+        }
+
+        // If partitures are not found set boolean in Audience algorithm
+        if (!partituresFound)
+        {
+            Leader.instance.NotFoundPartitures();
+        }
+
+        if (!fluteFound)
+        {
+            Leader.instance.NotFoundFlute();
+        }
+
+        if (partituresFound && fluteFound)
+        {
+            Leader.instance.SetFound();
+
+            Leader.instance.SetNormalLines(habitant);
+            //partitureSelectionPanel.SetActive(true);
+        }
+    }
+
+    //*************************************************************************************************************************
+
     // Dirigents
     public void DeactivateDirigentPartitures(string name, GameObject habitant)
     {
-        Debug.Log("Entering Deactivate");
 
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
@@ -221,7 +269,6 @@ public class PartitureSelection : MonoBehaviour
 
         // Get Partiture Difficulty to compare
         partitureDifficulty1 = GetPartitureDifficulty(name);
-        Debug.Log("partitureDifficulty1: " + partitureDifficulty1);
 
         for (int i = 0; i < 10; i++)
         {
@@ -240,8 +287,6 @@ public class PartitureSelection : MonoBehaviour
                 fluteFound = true;
             }
         }
-        Debug.Log("partituresFound: " + partituresFound);
-        Debug.Log("fluteFound: " + fluteFound);
 
         // If partitures are not found set boolean in Audience algorithm
         if (!partituresFound)
@@ -259,7 +304,6 @@ public class PartitureSelection : MonoBehaviour
             Audience.instance.SetFound();
 
             Audience.instance.SetNormalLines(habitant);
-            Debug.Log("Activo el partiture selection panel");
             //partitureSelectionPanel.SetActive(true);
         }
 
@@ -295,8 +339,6 @@ public class PartitureSelection : MonoBehaviour
                 }
             }
         }
-
-        Debug.Log("fluteDifficulty: " + fluteDifficulty);
     }
 
     private int GetPartitureDifficulty(string name)
@@ -328,11 +370,7 @@ public class PartitureSelection : MonoBehaviour
 
     public void FluteFilter()
     {
-
-        Debug.Log("Flute Filter");
         // Desactivar la que no tiene que tener
-
-
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
 
@@ -340,7 +378,6 @@ public class PartitureSelection : MonoBehaviour
         {
             if (gameData.flute[i].isByDefault)
             {
-                Debug.Log("flauta: " + gameData.flute[i].name);
                 if (gameData.flute[i].name == "woodenFlute")
                 {
                     // we shouldnt active partiturePanel4, 5, 6, 7, 8, 9, 10
@@ -354,7 +391,6 @@ public class PartitureSelection : MonoBehaviour
                 }
                 else if (gameData.flute[i].name == "woodenIronFlute")
                 {
-                    Debug.Log("Checkpoint");
                     // we shouldnt active partiturePanel7, 8, 9, 10
                     for (int k = 0; k < partiturePanels.Length; k++)
                     {
@@ -364,18 +400,6 @@ public class PartitureSelection : MonoBehaviour
                         }
                     }
                 }
-                // else if (gameData.flute[i].name == "ironFlute")
-                // {
-                //     Debug.Log("Esto si funciona");
-                //     // we shouldnt active partiturePanel10
-                //     for (int l = 0; l < partiturePanels.Length; l++)
-                //     {
-                //         if (partiturePanels[l].name == "PanelPartiture10")
-                //         {
-                //             partiturePanels[l].SetActive(false);
-                //         }
-                //     }
-                // }
             }
         }
         // We have to identify if after flute partitures the panels are still inactive, then change dialog to no flute dialog and close the partiture selection interface
@@ -383,39 +407,6 @@ public class PartitureSelection : MonoBehaviour
 
     //*************************************************************************************************************************
 
-    //*************************************************************************************************************************
-
-    // Leader
-    public void DeactivateLeaderPartitures(string name)
-    {
-
-        GameData gameData = new GameData();
-        gameData = XmlManager.instance.LoadGame();
-
-        for (int i = 0; i < 10; i++)
-        {
-            if ((gameData.DoesHavePartiture("partiture" + (i + 1))) && (partiturePanels[i].name == name))
-            {
-                partituresFound = true;
-                partiturePanels[i].SetActive(true);
-            }
-            else
-            {
-                partiturePanels[i].SetActive(false);
-            }
-        }
-
-        FluteFilter();
-
-        // If partitures are not found set boolean in Audience algorithm
-        if (!partituresFound)
-        {
-            Leader.instance.NotFoundPartitures();
-
-        }
-    }
-
-    //*************************************************************************************************************************
     public bool AllPanelsInactive()
     {
         for (int i = 0; i < partiturePanels.Length; i++)
@@ -486,8 +477,6 @@ public class PartitureSelection : MonoBehaviour
 
         // get partiture name and send it to PentagramManager
         panelPartitureName = partiturePanels[3].gameObject.transform.Find("InfoLayout4").gameObject.transform.Find("HorizontalLayout4").gameObject.transform.Find("Name4").gameObject.GetComponent<Text>().text;
-
-        Debug.Log(panelPartitureName);
     }
 
     public void onClickPartiturePanel5()
@@ -496,8 +485,6 @@ public class PartitureSelection : MonoBehaviour
 
         // get partiture name and send it to PentagramManager
         panelPartitureName = partiturePanels[4].gameObject.transform.Find("InfoLayout5").gameObject.transform.Find("HorizontalLayout5").gameObject.transform.Find("Name5").gameObject.GetComponent<Text>().text;
-
-        Debug.Log(panelPartitureName);
     }
 
     public void onClickPartiturePanel6()
@@ -546,8 +533,6 @@ public class PartitureSelection : MonoBehaviour
 
         // get partiture name and send it to PentagramManager
         panelPartitureName = partiturePanels[9].gameObject.transform.Find("InfoLayout10").gameObject.transform.Find("HorizontalLayout10").gameObject.transform.Find("Name10").gameObject.GetComponent<Text>().text;
-
-        Debug.Log(panelPartitureName);
     }
 
     public void partiturePanelPressed(int partitureSelected)

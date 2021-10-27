@@ -11,6 +11,7 @@ public class Leader : MonoBehaviour
     public int naranResult = 0;
     public int resAudience = 0;
     public bool notFound = false;
+    public bool notFoundFlute = false;
     public bool canPass = false;
     public bool canActivatePartiturePanel = true;
     public bool finishedPartiture = false;
@@ -21,11 +22,13 @@ public class Leader : MonoBehaviour
     public bool canActivateFinal = false;
     private bool successInterpretation = false;
     public string[] noPartituresDialog = { "Parece que no tienes la partitura necesaria", "Vuelve cuando la tengas" };
+    public string[] necalliNormalLines = { "Soy el lider de la ciudad", "Me han dicho que lo que tienes para mostrarme cambiara la vida de todos en la ciudad", "Veamos si es cierto..." };
     public string[] necalliSuccess1 = { "Me has convencido", "Enhoabuena, la musica regresara a Copitlan" };
     public string[] necalliSuccess2 = { "Estoy realmente sorprendido", "No entiendo como podiamos vivir sin esto", "te nombro Fundador de la Musica en Copitlan" };
     public string[] necalliSuccess3 = { "Estoy profundamente conmovido", "mis ojos se llenan de lagrimas pero no siento tristeza, solo una inmensa alegria", "esto es lo mejor que le ha pasado a Copitlan en siglos", "la musica volvera y te nombrare guardian de la felicidad" };
     private string[] necalliFailure = { "No me convence", "no veo por que te dejaron pasar a mi palacio", "quiza estes nervioso", "reintentalo si tienes el valor..." };
     private string[] goodLinesNecalli = { "*se escuchan sollozos de felicidad*", "es increible, no tengo palabras" };
+    public string[] noFlutesDialog = { "No tienes la flauta necesaria para interpretar la siguiente partitura", "prueba mejorando tu flauta" };
     [SerializeField] private GameObject partitureSelectionPanel;
     [SerializeField] private GameObject pentagramPanel;
     [SerializeField] private GameObject dialogBox;
@@ -57,9 +60,6 @@ public class Leader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(finishedPartiture);
-        Debug.Log(canActivateFinal);
-        Debug.Log(shouldGetCityHappinessPercentage);
         if (finishedPartiture && canActivateFinal && shouldGetCityHappinessPercentage)
         {
             GetCityHappinessPercentage();
@@ -126,12 +126,8 @@ public class Leader : MonoBehaviour
 
     public void ChangeLeaderDialogLines(GameObject habitant)
     {
-        Debug.Log("SuccessInterpretation: " + successInterpretation);
-        Debug.Log("shouldTryAgain: " + shouldTryAgain);
         if (successInterpretation)
         {
-            Debug.Log("necalli: " + aprobationPercentageNecalli);
-            Debug.Log("Comprobation");
             if (aprobationPercentageNecalli >= 90 && aprobationPercentageNecalli < 94)
             {
                 habitant.gameObject.GetComponent<DialogActivator>().lines = necalliSuccess1;
@@ -167,7 +163,7 @@ public class Leader : MonoBehaviour
 
             if (habitant.name == "Necalli")
             {
-                PartitureSelection.instance.DeactivateLeaderPartitures("PanelPartiture10");
+                PartitureSelection.instance.DeactivateLeaderPartitures("PanelPartiture10", habitant);
             }
 
             if (notFound)
@@ -175,6 +171,14 @@ public class Leader : MonoBehaviour
                 partitureSelectionPanel.SetActive(false);
                 habitant.GetComponent<DialogActivator>().lines = noPartituresDialog;
                 canActivatePartiturePanel = false;
+                habitant.GetComponent<PartitureHabitant>().canShowPartitures = false;
+            }
+
+            if (notFoundFlute)
+            {
+                partitureSelectionPanel.SetActive(false);
+                habitant.GetComponent<DialogActivator>().lines = noFlutesDialog;
+                //canActivatePartiturePanel = false;
                 habitant.GetComponent<PartitureHabitant>().canShowPartitures = false;
             }
         }
@@ -258,5 +262,22 @@ public class Leader : MonoBehaviour
     public void ShouldGetCityHappinessPercentage()
     {
         shouldGetCityHappinessPercentage = true;
+    }
+
+    public bool NotFoundFlute()
+    {
+        notFoundFlute = true;
+        return notFoundFlute;
+    }
+
+    public void SetFound()
+    {
+        notFoundFlute = false;
+        notFound = false;
+    }
+
+    public void SetNormalLines(GameObject habitant)
+    {
+        habitant.gameObject.GetComponent<DialogActivator>().lines = necalliNormalLines;
     }
 }

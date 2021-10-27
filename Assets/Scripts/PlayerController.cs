@@ -149,7 +149,6 @@ public class PlayerController : MonoBehaviour
                     theBalloonRB.velocity = Vector2.zero;
                     balloonAnim.SetFloat("moveX", 0);
                     balloonAnim.SetFloat("moveY", 0);
-                    Debug.Log("No puedes moverte hasta que compres combustible");
                 }
             }
 
@@ -187,12 +186,7 @@ public class PlayerController : MonoBehaviour
     {
         if (theRB.velocity == Vector2.zero)
         {
-            Debug.Log("Not Moving");
             SaveTimeWalked();
-        }
-        else
-        {
-            Debug.Log("Moving");
         }
     }
 
@@ -200,12 +194,7 @@ public class PlayerController : MonoBehaviour
     {
         if (theBalloonRB.velocity == Vector2.zero)
         {
-            Debug.Log("Not Moving Balloon");
             SaveTimeWalkedBalloon();
-        }
-        else
-        {
-            Debug.Log("Moving Balloon");
         }
     }
 
@@ -231,7 +220,6 @@ public class PlayerController : MonoBehaviour
         if (!InGame.instance.noFuelPanel.activeInHierarchy)
         {
             stopWalked = Time.time;
-            Debug.Log("stopWalked: " + stopWalked);
             XmlManager.instance.UpdateTimeWalked(stopWalked - startWalked);
             startWalked = 0;
             stopWalked = 0;
@@ -243,7 +231,6 @@ public class PlayerController : MonoBehaviour
         if (!InGame.instance.noFuelPanel.activeInHierarchy)
         {
             stopWalkedBalloon = Time.time;
-            Debug.Log("stopWalkedBalloon: " + stopWalkedBalloon);
             XmlManager.instance.UpdateTimeWalkedBalloon(stopWalkedBalloon - startWalkedBallon);
             startWalkedBallon = 0;
             stopWalkedBalloon = 0;

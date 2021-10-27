@@ -133,7 +133,6 @@ public class DialogManager : MonoBehaviour
                         {
                             if (!habitant.GetComponent<Audience>().hasFinished)
                             {
-                                habitant.GetComponent<Audience>().SetNormalLines(habitant);
                                 habitant.GetComponent<Audience>().LimitPartitures(habitant);
                             }
                             else
@@ -149,13 +148,8 @@ public class DialogManager : MonoBehaviour
                             {
                                 habitant.GetComponent<Leader>().LimitPartitures(habitant);
                                 habitant.GetComponent<Leader>().conversationFinished = true;
-
-                                Debug.Log("AQUIIIIIIIIIIIII");
-                                Debug.Log(dialogLines[0]);
-                                Debug.Log(Leader.instance.necalliSuccess3[0]);
                                 if (dialogLines == Leader.instance.necalliSuccess1 || dialogLines == Leader.instance.necalliSuccess2 || dialogLines == Leader.instance.necalliSuccess3)
                                 {
-                                    Debug.Log("Entramos al if");
                                     Leader.instance.ShouldGetCityHappinessPercentage();
                                 }
                             }
@@ -197,8 +191,6 @@ public class DialogManager : MonoBehaviour
 
 
                             habitant.GetComponent<HabitantMath>().ChangeHabitantDialogLines(habitant);
-
-                            Debug.Log("Pongo conversation finished en: " + habitant.GetComponent<ResourceRewardPartiture>().conversationFinishedReward);
                         }
 
                     }
@@ -230,7 +222,6 @@ public class DialogManager : MonoBehaviour
 
     public void ShowDialog(string[] newLines)
     {
-        Debug.Log("HEY");
         dialogLines = newLines;
 
         currentLine = 0;
@@ -285,6 +276,5 @@ public class DialogManager : MonoBehaviour
     {
         // habitant is the npc im talking to
         habitant = getHabitant;
-        Debug.Log("Nombre de habitante: " + getHabitant.name);
     }
 }

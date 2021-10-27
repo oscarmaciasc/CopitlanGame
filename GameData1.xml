@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="lolo" gender="false">
-  <TimePlayed time="2141.35986" />
-  <TimeWalked time="3533.53638" />
+  <TimePlayed time="2818.12036" />
+  <TimeWalked time="4579.433" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="68" />
   <Resources>
@@ -36,28 +36,28 @@
     <MusicSheet name="partiture1" />
     <MusicSheet name="partiture6" />
     <MusicSheet name="partiture9" />
-    <MusicSheet name="partiture10" />
     <MusicSheet name="partiture3" />
     <MusicSheet name="partiture5" />
     <MusicSheet name="partiture4" />
+    <MusicSheet name="partiture10" />
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">
       <result>80</result>
     </AudienceResult>
     <AudienceResult name="quizaniResult">
-      <result>100</result>
+      <result>0</result>
     </AudienceResult>
     <AudienceResult name="naranResult">
       <result>90</result>
     </AudienceResult>
     <AudienceResult name="necalliResult">
-      <result>85</result>
+      <result>0</result>
     </AudienceResult>
   </AudienceResults>
   <MineEntrances>
     <MineEntrance name="tecalliEntrance">
-      <shouldBeActive>true</shouldBeActive>
+      <shouldBeActive>false</shouldBeActive>
     </MineEntrance>
     <MineEntrance name="acanEntrance">
       <shouldBeActive>false</shouldBeActive>

@@ -89,18 +89,13 @@ public class Audience : MonoBehaviour
     {
         if (finishedPartiture)
         {
-            Debug.Log("Notas correctas: " + PentagramManager.instance.correctNotes);
-            Debug.Log("Notes: " + PentagramManager.instance.TotalNotes());
             if (((PentagramManager.instance.correctNotes * 100) / (PentagramManager.instance.TotalNotes())) >= 60)
             {
                 canPass = true;
                 res = (60) + (((PentagramManager.streakRes) * (40)) / ((PentagramManager.instance.TotalNotes())));
-                Debug.Log("streakRes: " + PentagramManager.streakRes);
-                Debug.Log("Resultado: " + res);
 
                 GameData gameData = new GameData();
                 gameData = XmlManager.instance.LoadGame();
-
 
                 // send res as array to a file
                 if (habitant.name == "Kasakir")
@@ -158,20 +153,15 @@ public class Audience : MonoBehaviour
 
     public void LimitPartitures(GameObject habitant)
     {
-        if (!notFound && !notFoundFlute)
-        {
-            SetNormalLines(habitant);
-        }
+        
 
         if (habitant.GetComponent<PartitureHabitant>().conversationFinished == true && !canPass /*&& canActivatePartiturePanel*/)
         {
-            Debug.Log("ENTROOOOOOO AAAA");
             partitureSelectionPanel.SetActive(true);
         }
 
         if (partitureSelectionPanel.activeInHierarchy)
         {
-            Debug.Log("Entro OOOOOOOOOOOO");
             if (habitant.name == "Kasakir")
             {
                 PartitureSelection.instance.DeactivateDirigentPartitures("PanelPartiture3", habitant);
@@ -185,7 +175,6 @@ public class Audience : MonoBehaviour
                 PartitureSelection.instance.DeactivateDirigentPartitures("PanelPartiture9", habitant);
             }
 
-            Debug.Log("1: " + notFound);
             if (notFound)
             {
                 partitureSelectionPanel.SetActive(false);
@@ -194,7 +183,6 @@ public class Audience : MonoBehaviour
                 habitant.GetComponent<PartitureHabitant>().canShowPartitures = false;
             }
 
-            Debug.Log("2: " + notFoundFlute);
             if (notFoundFlute)
             {
                 partitureSelectionPanel.SetActive(false);
@@ -294,21 +282,15 @@ public class Audience : MonoBehaviour
     {
         if (habitant.name == "Kasakir")
         {
-            Debug.Log("kasa");
             habitant.gameObject.GetComponent<DialogActivator>().lines = kasakirNormalLines;
-            Debug.Log("Lines: " + habitant.GetComponent<DialogActivator>().lines);
         }
         else if (habitant.name == "Quizani")
         {
-            Debug.Log("Quiza");
             habitant.gameObject.GetComponent<DialogActivator>().lines = quizaniNormalLines;
-            Debug.Log("Lines: " + habitant.GetComponent<DialogActivator>().lines);
         }
         else if (habitant.name == "Naran")
         {
-            Debug.Log("Nara");
             habitant.gameObject.GetComponent<DialogActivator>().lines = naranNormalLines;
-            Debug.Log("Lines: " + habitant.GetComponent<DialogActivator>().lines);
         }
     }
 }
