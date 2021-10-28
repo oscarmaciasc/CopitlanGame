@@ -41,9 +41,6 @@ public class PlayerController : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-
-        // This is the real line of code we need
-        //indexGame = XmlManager.instance.gameIndex;
     }
 
     // Update is called once per frame

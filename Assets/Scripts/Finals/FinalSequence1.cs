@@ -9,11 +9,18 @@ public class FinalSequence1 : MonoBehaviour
     private string[] finalDialogs2 = { "Cuentan las historias que hace mucho tiempo existio alguien que le devolvio la felicidad a la ciudad", "Se llamaba ", "LLego un dia con una flauta en la mano y una determinacion de acero", "convencio a todos los de la ciudad de que la musica valia la pena", "Y ahora miranos, afuera de una orquesta fundada en su nombre", "Wow, ahora entiendo por que la escuela de musica se llama asi", "Es una gran historia y sin duda una inspiracion para todos", "siempre sera recordado por la ciudad de Copitlan y todos sus habitantes" };
     private string[] finalDialogs3 = { "Wow, esta estatua es increible y la historia detras de ella es aun mejor", "Todos conocemos la historia de como ", "Incluso el lider Necalli fundo una escuela de musica y una orquesta en su nombre", "Es mi ejemplo a seguir, es verdaderamente admirable", "Espero que algun dia me hagan una estatua como esta" };
     private string name;
+    public GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
         UIFade.instance.FadeFromBlack();
+
+        //Destroy the player gameobject
+        //MaleCharacter(Clone)
+        player = FindObjectOfType<PlayerController>().transform.gameObject;
+        Destroy(player);
+
         StartCoroutine(FinalDialogs());
 
         GameData gameData = new GameData();
