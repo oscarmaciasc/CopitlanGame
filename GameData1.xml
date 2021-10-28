@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="lolo" gender="false">
   <TimePlayed time="3128.14355" />
-  <TimeWalked time="4895.588" />
+  <TimeWalked time="5156.198" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="68" />
   <Resources>
@@ -9,10 +9,10 @@
       <quantity>63</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>9</quantity>
+      <quantity>14</quantity>
     </Resource>
     <Resource name="gold">
-      <quantity>0</quantity>
+      <quantity>9</quantity>
     </Resource>
     <Resource name="fuel">
       <quantity>0</quantity>
@@ -31,7 +31,7 @@
     <Flute name="goldenFlute" isByDefault="false" />
   </Flutes>
   <Balloon name="balloonLvl2" />
-  <MusicalMasteryLvl name="master" />
+  <MusicalMasteryLvl name="apprentice" />
   <MusicSheets>
     <MusicSheet name="partiture1" />
     <MusicSheet name="partiture2" />
@@ -61,7 +61,7 @@
       <shouldBeActive>false</shouldBeActive>
     </MineEntrance>
     <MineEntrance name="acanEntrance">
-      <shouldBeActive>false</shouldBeActive>
+      <shouldBeActive>true</shouldBeActive>
     </MineEntrance>
     <MineEntrance name="setiEntrance">
       <shouldBeActive>false</shouldBeActive>

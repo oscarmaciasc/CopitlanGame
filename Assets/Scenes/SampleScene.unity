@@ -2895,6 +2895,7 @@ MonoBehaviour:
   - {fileID: 2780565272749316320, guid: bd19bb17ae814d84c93557dd94cbff26, type: 3}
   - {fileID: 875199510570534738, guid: 324b6dd67cdc10b40a14077516bfc1ea, type: 3}
   - {fileID: 953601144459696580, guid: 0d211c4c7d17c014dbb49f84d1b98799, type: 3}
+  emptyObject: {fileID: 1257689855631405408, guid: c627ffbd295d3da488807ae498a1dfa1, type: 3}
 --- !u!4 &1246286150
 Transform:
   m_ObjectHideFlags: 0
