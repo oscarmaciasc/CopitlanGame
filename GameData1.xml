@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="lolo" gender="false">
-  <TimePlayed time="3461.36328" />
-  <TimeWalked time="5526.898" />
+  <TimePlayed time="3128.14355" />
+  <TimeWalked time="5156.198" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="91" />
   <Resources>
@@ -9,10 +9,10 @@
       <quantity>63</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>9</quantity>
+      <quantity>14</quantity>
     </Resource>
     <Resource name="gold">
-      <quantity>0</quantity>
+      <quantity>9</quantity>
     </Resource>
     <Resource name="fuel">
       <quantity>0</quantity>
