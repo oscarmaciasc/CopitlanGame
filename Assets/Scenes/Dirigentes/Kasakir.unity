@@ -506,7 +506,6 @@ GameObject:
   - component: {fileID: 607797511}
   - component: {fileID: 607797510}
   - component: {fileID: 607797509}
-  - component: {fileID: 607797508}
   - component: {fileID: 607797507}
   - component: {fileID: 607797506}
   m_Layer: 0
@@ -535,6 +534,20 @@ MonoBehaviour:
   notFoundFlute: 0
   canActivatePartiturePanel: 1
   percentageToPass: 60
+  noPartituresDialog:
+  - Parece que no tienes la partitura necesaria
+  - Vuelve cuando la tengas
+  KasakirFailure:
+  - No me has convencido del todo
+  - no veo el valor de esto en la ciudad
+  - reintentalo si quieres...
+  QuizaniFailure:
+  - Ni siquiera tocaste bien
+  - se escuchaba algo raro
+  - vuelve a intentarlo
+  NaranFailure:
+  - No veo por que el lider deberia de escuchar algo asi
+  - reintentalo a ver si me gusta esta vez...
   goodLinesKasakir:
   - Adelante, continua tu camino viajero
   - Quizani no es facil de convencer
@@ -570,25 +583,6 @@ MonoBehaviour:
   canShowPartitures: 1
   newLines: []
   habitant: {fileID: 0}
---- !u!95 &607797508
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 607797505}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 1e6b04b3f05c5ce469b59a5b0bffd0f8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!50 &607797509
 Rigidbody2D:
   serializedVersion: 4
@@ -644,7 +638,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1.4375}
+    oldSize: {x: 1, y: 2}
     newSize: {x: 2, y: 4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -670,7 +664,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1.4375}
+    oldSize: {x: 1, y: 2}
     newSize: {x: 2, y: 4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -719,7 +713,7 @@ SpriteRenderer:
   m_SortingLayerID: -441503381
   m_SortingLayer: 4
   m_SortingOrder: -1
-  m_Sprite: {fileID: 4231241789423689243, guid: 8bd1afa279ce9e24a99ac9fca3b0eebe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0687f20c1c0db6f479b7c541407eb53f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
