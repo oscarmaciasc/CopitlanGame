@@ -43,18 +43,21 @@ public class DialogActivator : MonoBehaviour
 
                 if (this.gameObject.GetComponent<Audience>() != null)
                 {
-                    if (this.gameObject.name == "Kasakir" && (lines == this.gameObject.GetComponent<Audience>().noFlutesDialog || lines == this.gameObject.GetComponent<Audience>().noPartituresDialog))
+                    if (lines == this.gameObject.GetComponent<Audience>().noFlutesDialog || lines == this.gameObject.GetComponent<Audience>().noPartituresDialog)
                     {
-                        ChangeDialogs("partiture3", 0, kasakirNormalLines, "woodenFlute");
-                    }
-                    else if (this.gameObject.name == "Quizani" && lines != this.gameObject.GetComponent<Audience>().QuizaniFailure)
-                    {
-                        Debug.Log("Entro al if quizani");
-                        ChangeDialogs("partiture6", 1, quizaniNormalLines, "woodenIronFlute");
-                    }
-                    else if (this.gameObject.name == "Naran" && lines != this.gameObject.GetComponent<Audience>().NaranFailure)
-                    {
-                        ChangeDialogs("partiture9", 2, naranNormalLines, "ironFlute");
+                        if (this.gameObject.name == "Kasakir" && (lines == this.gameObject.GetComponent<Audience>().noFlutesDialog || lines == this.gameObject.GetComponent<Audience>().noPartituresDialog))
+                        {
+                            ChangeDialogs("partiture3", 0, kasakirNormalLines, "woodenFlute");
+                        }
+                        else if (this.gameObject.name == "Quizani")
+                        {
+                            Debug.Log("Entro al if quizani");
+                            ChangeDialogs("partiture6", 1, quizaniNormalLines, "woodenIronFlute");
+                        }
+                        else if (this.gameObject.name == "Naran" && lines != this.gameObject.GetComponent<Audience>().NaranFailure)
+                        {
+                            ChangeDialogs("partiture9", 2, naranNormalLines, "ironFlute");
+                        }
                     }
                 }
 

@@ -21,7 +21,7 @@ public class Audience : MonoBehaviour
     private string[] QuizaniSuccess1 = { "Me has convencido", "te otorgo el permiso del circulo interior para que vayas y hagas entrar en razon a Naran", "esto tiene que ser escuchado" };
     private string[] QuizaniSuccess2 = { "Estoy realmente sorprendido", "te otorgo el permiso del circulo interior para que vayas y hagas entrar en razon a Naran", "suerte viajero" };
     private string[] QuizaniSuccess3 = { "Estoy profundamente conmovido", "me siento feliz y diferente, como si mi alma sonriera", "te otorgo el permiso del circulo interior para que vayas y hagas entrar en razon a Naran" };
-    public string[] QuizaniFailure = { "Ni siquiera tocaste bien", "se escuchaba algo extraño", "vuelve a intentarlo" };
+    public string[] QuizaniFailure = { "Ni siquiera tocaste bien", "se escuchaba algo raro", "vuelve a intentarlo" };
     private string[] quizaniNormalLines = { "Asi que has venido hasta aqui con ese objeto raro entre las manos...", "Tengo que admitir que me causa cierto interes", "*Expresion de intriga*" };
     private string[] NaranSucces1 = { "Me has convencido", "adelante, ve con nuestro lider" };
     private string[] NaranSucces2 = { "Estoy realmente sorprendido", "adelante, nuestro lider Necalli estara feliz de escuchar esto" };
