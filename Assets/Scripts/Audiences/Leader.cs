@@ -16,7 +16,7 @@ public class Leader : MonoBehaviour
     public bool canActivatePartiturePanel = true;
     public bool finishedPartiture = false;
     private int resNecalli = 0;
-    private float timeToWait = 3f;
+    private float timeToWait = 4f;
     private int aprobationPercentageNecalli = 0;
     private int cityHappinessPercentage = 0;
     public bool canActivateFinal = false;
@@ -26,7 +26,7 @@ public class Leader : MonoBehaviour
     public string[] necalliSuccess1 = { "Me has convencido", "Enhoabuena, la musica regresara a Copitlan" };
     public string[] necalliSuccess2 = { "Estoy realmente sorprendido", "No entiendo como podiamos vivir sin esto", "te nombro Fundador de la Musica en Copitlan" };
     public string[] necalliSuccess3 = { "Estoy profundamente conmovido", "mis ojos se llenan de lagrimas pero no siento tristeza, solo una inmensa alegria", "esto es lo mejor que le ha pasado a Copitlan en siglos", "la musica volvera y te nombrare guardian de la felicidad" };
-    private string[] necalliFailure = { "No me convence", "no veo por que te dejaron pasar a mi palacio", "quiza estes nervioso", "reintentalo si tienes el valor..." };
+    public string[] necalliFailure = { "No me convence", "no veo por que te dejaron pasar a mi palacio", "quiza estes nervioso", "reintentalo si tienes el valor..." };
     private string[] goodLinesNecalli = { "*se escuchan sollozos de felicidad*", "es increible, no tengo palabras" };
     public string[] noFlutesDialog = { "No tienes la flauta necesaria para interpretar la siguiente partitura", "prueba mejorando tu flauta" };
     [SerializeField] private GameObject partitureSelectionPanel;

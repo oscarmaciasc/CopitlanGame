@@ -79,22 +79,51 @@ public class DialogManagerFinal : MonoBehaviour
         timeToWait -= Time.deltaTime;
         if (timeToWait <= 0)
         {
-        UIFade.instance.FadeToBlack();
-        SceneManager.LoadScene("PapatacaFinal");
+            UIFade.instance.FadeToBlack();
+            SceneManager.LoadScene("PapatacaFinal");
         }
     }
 
     private void ChangeMessagePosition()
     {
-        if ((currentLine >= 0 && currentLine <= 3) || (currentLine == 7))
+        if (SceneManager.GetActiveScene().name == "Final1")
         {
-            FadeMessage.instance.FadeToColor();
-            FadeMessage2.instance.FadeToTransparent2();
+            if ((currentLine >= 0 && currentLine <= 3) || (currentLine == 7))
+            {
+                FadeMessage.instance.FadeToColor();
+                FadeMessage2.instance.FadeToTransparent2();
+            }
+            else
+            {
+                FadeMessage.instance.FadeToTransparent();
+                FadeMessage2.instance.FadeToColor2();
+            }
         }
-        else
+        else if (SceneManager.GetActiveScene().name == "Final2")
         {
-            FadeMessage.instance.FadeToTransparent();
-            FadeMessage2.instance.FadeToColor2();
+            if ((currentLine >= 0 && currentLine <= 4))
+            {
+                FadeMessage.instance.FadeToColor();
+                FadeMessage2.instance.FadeToTransparent2();
+            }
+            else
+            {
+                FadeMessage.instance.FadeToTransparent();
+                FadeMessage2.instance.FadeToColor2();
+            }
+        }
+        else if (SceneManager.GetActiveScene().name == "Final3")
+        {
+            if ((currentLine >= 0 && currentLine <= 2))
+            {
+                FadeMessage.instance.FadeToColor();
+                FadeMessage2.instance.FadeToTransparent2();
+            }
+            else
+            {
+                FadeMessage.instance.FadeToTransparent();
+                FadeMessage2.instance.FadeToColor2();
+            }
         }
     }
 

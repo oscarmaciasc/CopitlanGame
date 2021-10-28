@@ -38,34 +38,37 @@ public class DialogActivator : MonoBehaviour
                 PartitureHabitant.instance.GetHabitant(this.gameObject);
                 DialogManager.instance.GetHabitant(this.gameObject);
 
+                GameData gameData = new GameData();
+                gameData = XmlManager.instance.LoadGame();
+
                 if (this.gameObject.GetComponent<Audience>() != null)
                 {
-                    if (this.gameObject.name == "Kasakir")
+                    if (this.gameObject.name == "Kasakir" && (lines == this.gameObject.GetComponent<Audience>().noFlutesDialog || lines == this.gameObject.GetComponent<Audience>().noPartituresDialog))
                     {
                         ChangeDialogs("partiture3", 0, kasakirNormalLines, "woodenFlute");
                     }
-                    else if (this.gameObject.name == "Quizani")
+                    else if (this.gameObject.name == "Quizani" && lines != this.gameObject.GetComponent<Audience>().QuizaniFailure)
                     {
                         Debug.Log("Entro al if quizani");
                         ChangeDialogs("partiture6", 1, quizaniNormalLines, "woodenIronFlute");
                     }
-                    else if (this.gameObject.name == "Naran")
+                    else if (this.gameObject.name == "Naran" && lines != this.gameObject.GetComponent<Audience>().NaranFailure)
                     {
                         ChangeDialogs("partiture9", 2, naranNormalLines, "ironFlute");
                     }
                 }
 
-                if (this.gameObject.GetComponent<Leader>() != null)
+                if (this.gameObject.GetComponent<Leader>() != null && lines != this.gameObject.GetComponent<Leader>().necalliFailure)
                 {
                     ChangeDialogsLeader("partiture10", 2, necalliNormalLines, "ironFlute", "goldenFlute");
                 }
 
-                if (this.gameObject.GetComponent<Seti>() != null)
+                if (this.gameObject.GetComponent<Seti>() != null && lines != this.gameObject.GetComponent<Seti>().badLines)
                 {
                     ChangeDialogsSeti("partiture4", "partiture5", "partiture6", 1, setiNormalLines0, "woodenIronFlute");
                 }
 
-                if (this.gameObject.GetComponent<Seti2>() != null)
+                if (this.gameObject.GetComponent<Seti2>() != null && lines != this.gameObject.GetComponent<Seti2>().badLines)
                 {
                     ChangeDialogsSeti("partiture4", "partiture5", "partiture6", 1, setiNormalLines1, "woodenIronFlute");
                 }

@@ -71,12 +71,14 @@ public class NoteManager : MonoBehaviour
         }
         PentagramManager.instance.passedNotes++;
 
-    
-        if (!AudioManager.instance.partitureMusic[Partitures.instance.partitureToPlay].isPlaying)
+        if (Partitures.instance.partitureToPlay < AudioManager.instance.partitureMusic.Length)
         {
-            AudioManager.instance.PlayPartiture(Partitures.instance.partitureToPlay);
-        }
+            if (!AudioManager.instance.partitureMusic[Partitures.instance.partitureToPlay].isPlaying)
+            {
+                AudioManager.instance.PlayPartiture(Partitures.instance.partitureToPlay);
+            }
 
+        }
     }
 
     void OnTriggerExit2D(Collider2D col)

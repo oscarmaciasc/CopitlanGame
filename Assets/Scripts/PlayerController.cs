@@ -217,23 +217,29 @@ public class PlayerController : MonoBehaviour
 
     public void SaveTimeWalked()
     {
-        if (!InGame.instance.noFuelPanel.activeInHierarchy)
+        if (SceneManager.GetActiveScene().name == "InGame")
         {
-            stopWalked = Time.time;
-            XmlManager.instance.UpdateTimeWalked(stopWalked - startWalked);
-            startWalked = 0;
-            stopWalked = 0;
+            if (!InGame.instance.noFuelPanel.activeInHierarchy)
+            {
+                stopWalked = Time.time;
+                XmlManager.instance.UpdateTimeWalked(stopWalked - startWalked);
+                startWalked = 0;
+                stopWalked = 0;
+            }
         }
     }
 
     public void SaveTimeWalkedBalloon()
     {
-        if (!InGame.instance.noFuelPanel.activeInHierarchy)
+        if (SceneManager.GetActiveScene().name == "InGame")
         {
-            stopWalkedBalloon = Time.time;
-            XmlManager.instance.UpdateTimeWalkedBalloon(stopWalkedBalloon - startWalkedBallon);
-            startWalkedBallon = 0;
-            stopWalkedBalloon = 0;
+            if (!InGame.instance.noFuelPanel.activeInHierarchy)
+            {
+                stopWalkedBalloon = Time.time;
+                XmlManager.instance.UpdateTimeWalkedBalloon(stopWalkedBalloon - startWalkedBallon);
+                startWalkedBallon = 0;
+                stopWalkedBalloon = 0;
+            }
         }
     }
 }
