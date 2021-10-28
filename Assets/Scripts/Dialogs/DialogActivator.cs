@@ -10,10 +10,13 @@ public class DialogActivator : MonoBehaviour
     public string[] lines;
     private int fluteDifficulty;
     public bool canActivate;
+    private int setiPartituresCounter = 0;
     private string[] kasakirNormalLines = { "Hola viajero", "He escuchado que quieres mostrarme algo", "Adelante..." };
     private string[] quizaniNormalLines = { "Asi que has venido hasta aqui con ese objeto raro entre las manos...", "Tengo que admitir que me causa cierto interes", "*Expresion de intriga*" };
     private string[] naranNormalLines = { "Soy el dirigente Naran", "A mi no me suele impresionar nadie", "Puedes intentarlo, pero no creo que resulte muchahito" };
     private string[] necalliNormalLines = { "Soy el lider de la ciudad", "Me han dicho que lo que tienes para mostrarme cambiara la vida de todos en la ciudad", "Veamos si es cierto..." };
+    private string[] setiNormalLines0 = { "Estamos acampando", "Escucha los sonidos de la naturaleza", "*se escucha una rana*" };
+    private string[] setiNormalLines1 = { "Ya me aburri de estar aqui", "..." };
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +58,16 @@ public class DialogActivator : MonoBehaviour
                 if (this.gameObject.GetComponent<Leader>() != null)
                 {
                     ChangeDialogsLeader("partiture10", 2, necalliNormalLines, "ironFlute", "goldenFlute");
+                }
+
+                if (this.gameObject.GetComponent<Seti>() != null)
+                {
+                    ChangeDialogsSeti("partiture4", "partiture5", "partiture6", 1, setiNormalLines0, "woodenIronFlute");
+                }
+
+                if (this.gameObject.GetComponent<Seti2>() != null)
+                {
+                    ChangeDialogsSeti("partiture4", "partiture5", "partiture6", 1, setiNormalLines1, "woodenIronFlute");
                 }
 
                 DialogManager.instance.ShowDialog(lines);
@@ -151,6 +164,40 @@ public class DialogActivator : MonoBehaviour
         {
             lines = normalLines;
             this.gameObject.GetComponent<Leader>().canActivatePartiturePanel = true;
+        }
+    }
+
+    private void ChangeDialogsSeti(string partitureSeti1, string partitureSeti2, string partitureSeti3, int partitureDifficulty, string[] normalLines, string flute)
+    {
+        GameData gameData = new GameData();
+        gameData = XmlManager.instance.LoadGame();
+
+        GetFluteDifficulty();
+
+        if (gameData.DoesHavePartiture(partitureSeti1))
+        {
+            setiPartituresCounter++;
+        }
+        if (gameData.DoesHavePartiture(partitureSeti2))
+        {
+            setiPartituresCounter++;
+        }
+        if (gameData.DoesHavePartiture(partitureSeti3))
+        {
+            setiPartituresCounter++;
+        }
+
+        if (setiPartituresCounter >= 2 && partitureDifficulty <= fluteDifficulty && gameData.DoesHaveFlute(flute))
+        {
+            lines = normalLines;
+            if (this.gameObject.name == "Seti0")
+            {
+                this.gameObject.GetComponent<Seti>().canActivatePartiturePanel = true;
+            }
+            else if (this.gameObject.name == "Seti1")
+            {
+                this.gameObject.GetComponent<Seti2>().canActivatePartiturePanel = true;
+            }
         }
     }
 }

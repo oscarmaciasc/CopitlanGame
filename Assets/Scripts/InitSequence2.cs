@@ -29,8 +29,6 @@ public class InitSequence2 : MonoBehaviour
         hasBeenActivated = false;
         justStarted = true;
         PlayerController.instance.canMove = true;
-
-        Debug.Log("STARTING TUTORIAL");
     }
 
     // Update is called once per frame
@@ -100,7 +98,6 @@ public class InitSequence2 : MonoBehaviour
 
     private void DeactivateNoOwnedPartiturePanels()
     {
-        Debug.Log("Deactivating no owned partiture panels");
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
 

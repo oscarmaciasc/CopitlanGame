@@ -28,8 +28,6 @@ public class PentagramManagerTutorial : MonoBehaviour
     void Start()
     {
         partitureName = PartitureSelectionTutorial.instance.panelPartitureName;
-
-        Debug.Log("You have selected: " + partitureName);
         Partitures.instance.SetVelocity(partitureName);
     }
 

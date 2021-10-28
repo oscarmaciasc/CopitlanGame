@@ -70,6 +70,7 @@ public class Partitures : MonoBehaviour
 
     public void SetVelocity(string partitureName)
     {
+        Debug.Log("setVelocity");
         this.partitureName = partitureName;
         if (partitureName == "Partitura 1" || partitureName == "Partitura 2" || partitureName == "Partitura 3")
         {
@@ -93,6 +94,7 @@ public class Partitures : MonoBehaviour
             }
             if (partitureName == "Partitura 2")
             {
+                Debug.Log("sound 1");
                 this.partitureToPlay = 1;
             }
             if (partitureName == "Partitura 3")
@@ -107,7 +109,7 @@ public class Partitures : MonoBehaviour
             this.velocity = 0.9f;
             this.partitureVelocity = 0.9f;
             this.limitStreak = 20;
-            this.numberOfPartitureNotes = 30;
+            this.numberOfPartitureNotes = 20;
 
             for (int i = 0; i < 7; i++)
             {

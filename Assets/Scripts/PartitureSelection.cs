@@ -101,7 +101,7 @@ public class PartitureSelection : MonoBehaviour
                 fluteFound = true;
             }
         }
-       
+
 
         //FluteFilter();
 
@@ -134,8 +134,6 @@ public class PartitureSelection : MonoBehaviour
 
         // Get Partiture Difficulty to compare
         partitureDifficultyMine1 = GetPartitureDifficulty(name);
-        Debug.Log("partitureDifficulty1: " + partitureDifficultyMine1);
-        partitureDifficultyMine2 = GetPartitureDifficulty(name);
 
         for (int i = 0; i < 10; i++)
         {
@@ -154,21 +152,6 @@ public class PartitureSelection : MonoBehaviour
                 fluteFound = true;
             }
         }
-
-        if (!partituresFound)
-        {
-            if (habitant.name == "Tecalli0")
-            {
-                Tecalli.instance.NotFoundPartitures();
-            }
-            else if (habitant.name == "Acan0")
-            {
-                Acan.instance.NotFoundPartitures();
-            }
-        }
-
-
-        //FluteFilter();
 
         if (!partituresFound)
         {
@@ -199,6 +182,25 @@ public class PartitureSelection : MonoBehaviour
             else if (habitant.name == "Seti1")
             {
                 Seti2.instance.NotFoundFlutes();
+            }
+        }
+
+        if (partituresFound && fluteFound)
+        {   
+            if (habitant.name == "Tecalli76")
+            {
+                Tecalli.instance.SetFound();
+                Tecalli.instance.SetNormalLines(habitant);
+            }
+            else if (habitant.name == "Seti0")
+            {
+                Seti.instance.SetFound();
+                Seti.instance.SetiNormalLines(habitant);
+            }
+            else if (habitant.name == "Seti1")
+            {
+                Seti2.instance.SetFound();
+                Seti2.instance.SetiNormalLines(habitant);
             }
         }
     }

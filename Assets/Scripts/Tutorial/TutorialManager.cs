@@ -23,8 +23,6 @@ public class TutorialManager : MonoBehaviour
         dialog2.gameObject.SetActive(false);
         dialog3.gameObject.SetActive(false);
         startPlayingPanel.gameObject.SetActive(false);
-
-        Debug.Log("Entering TutorialManager");
     }
 
     private void Update()

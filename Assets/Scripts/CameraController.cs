@@ -44,10 +44,13 @@ public class CameraController : MonoBehaviour
         // Keep the camera inside the bounds
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, bottomLeftLimit.x, topRightLimit.x), Mathf.Clamp(transform.position.y, bottomLeftLimit.y, topRightLimit.y), transform.position.z);
 
-        if(!musicStarted)
+        if (!musicStarted)
         {
             musicStarted = true;
-            AudioManager.instance.PlayBGM(musicToPlay);
+            if (AudioManager.instance != null)
+            {
+                AudioManager.instance.PlayBGM(musicToPlay);
+            }
         }
     }
 }

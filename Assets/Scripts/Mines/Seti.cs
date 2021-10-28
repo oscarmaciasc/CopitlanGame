@@ -10,6 +10,7 @@ public class Seti : MonoBehaviour
     public string[] badLines = { "No me gusto nada..." };
     private string[] noPartituresDialog = { "Parece que no tienes la partitura necesaria", "Vuelve cuando la tengas" };
     private string[] noFluteDialog = { "Tu flauta actual no puede interpretar esta partitura, intenta mejorando tu flauta" };
+    private string[] setiNormalLines = {"Estamos acampando", "Escucha los sonidos de la naturaleza", "*se escucha una rana*"};
 
     public bool hasFinished = false;
     public bool finishedPartiture = false;
@@ -104,7 +105,6 @@ public class Seti : MonoBehaviour
         if (this.gameObject.GetComponent<PartitureHabitant>().conversationFinished == true && !canPass)
         {
             partitureSelectionPanel.SetActive(true);
-
         }
 
         if (partitureSelectionPanel.activeInHierarchy)
@@ -142,6 +142,17 @@ public class Seti : MonoBehaviour
     {
         notFoundFlutes = true;
         return notFoundFlutes;
+    }
+
+    public void SetFound()
+    {
+        notFoundFlutes = false;
+        notFound = false;
+    }
+
+    public void SetiNormalLines(GameObject habitant)
+    {
+        habitant.gameObject.GetComponent<DialogActivator>().lines = setiNormalLines;
     }
    
 }

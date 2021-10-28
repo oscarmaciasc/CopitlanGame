@@ -71,6 +71,11 @@ public class NoteManagerTutorial : MonoBehaviour
             canPress = true;
         }
         PentagramManagerTutorial.instance.passedNotes++;
+
+        if (!AudioManager.instance.partitureMusic[0].isPlaying)
+        {
+            AudioManager.instance.PlayPartiture(0);
+        }
     }
 
     void OnTriggerExit2D(Collider2D col)
@@ -158,10 +163,10 @@ public class NoteManagerTutorial : MonoBehaviour
             canPress = false;
             haveBeenPressed = true;
             PentagramManager.streak = 0;
+            AudioManager.instance.PlaySFX(2);
         }
 
         Partitures.instance.LimitStreak();
-        Debug.Log("Racha: " + PentagramManager.streak);
     }
 
     public void SetGreen()

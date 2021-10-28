@@ -81,7 +81,6 @@ public class GameSelection : MonoBehaviour
             {
                 if (gamesData[i] != null)
                 {
-                    Debug.Log(gamesData[i].name);
                     gamePanels[i].gameObject.SetActive(true);
                     FillGamePanel(i);
                 }

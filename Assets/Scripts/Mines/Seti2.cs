@@ -12,8 +12,8 @@ public class Seti2 : MonoBehaviour
     public string[] goodLines = { "Estoy agradecida, me has alegrado el dia" };
     public string[] badLines = { "No me terminas de convencer, intentalo de nuevo" };
     private string[] noPartituresDialog = { "Parece que no tienes la partitura necesaria", "Vuelve cuando la tengas" };
-
     private string[] noFluteDialog = { "Tu flauta actual no puede interpretar esta partitura, intenta mejorando tu flauta" };
+    private string[] seti2NormalLines = {"Ya me aburri de estar aqui", "..."};
 
     public bool hasFinished = false;
     [SerializeField] private GameObject theEntrance;
@@ -103,14 +103,13 @@ public class Seti2 : MonoBehaviour
 
     public void LimitPartitures()
     {
-        if (this.gameObject.GetComponent<PartitureHabitant>().conversationFinished == true && !canPass && canActivatePartiturePanel)
+        if (this.gameObject.GetComponent<PartitureHabitant>().conversationFinished == true && !canPass)
         {
             partitureSelectionPanel.SetActive(true);
         }
 
         if (partitureSelectionPanel.activeInHierarchy)
         {
-            // Deactivate everything but easyPartiture 2
             PartitureSelection.instance.DeactivateMinePartitures("PanelPartiture4", "PanelPartiture5", "PanelPartiture6", this.gameObject);
             Debug.Log("Filter Partitures");
         }
@@ -142,5 +141,16 @@ public class Seti2 : MonoBehaviour
     {
         notFoundFlutes = true;
         return notFoundFlutes;
+    }
+
+    public void SetFound()
+    {
+        notFoundFlutes = false;
+        notFound = false;
+    }
+
+    public void SetiNormalLines(GameObject habitant)
+    {
+        habitant.gameObject.GetComponent<DialogActivator>().lines = seti2NormalLines;
     }
 }
