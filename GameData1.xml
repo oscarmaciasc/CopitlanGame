@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="lolo" gender="false">
-  <TimePlayed time="3128.14355" />
-  <TimeWalked time="5156.198" />
+  <TimePlayed time="3463.12939" />
+  <TimeWalked time="5526.898" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="91" />
   <Resources>
