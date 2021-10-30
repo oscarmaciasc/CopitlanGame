@@ -32,10 +32,7 @@ public class BalloonManager : MonoBehaviour
         fuelDecrease();
     }
 
-    void OnEnable()
-    {
-        initialPosition = this.gameObject.transform.position;
-    }
+
 
     public void fuelDecrease()
     {
