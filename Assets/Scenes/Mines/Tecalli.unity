@@ -2214,7 +2214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   theMap: {fileID: 1749310729}
-  musicToPlay: 0
+  musicToPlay: 2
 --- !u!81 &1339839538
 AudioListener:
   m_ObjectHideFlags: 0
