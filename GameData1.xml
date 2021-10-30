@@ -3,7 +3,7 @@
   <TimePlayed time="3463.12939" />
   <TimeWalked time="5526.898" />
   <TimeBalloon time="0" />
-  <HappinessPercentage percentage="91" />
+  <HappinessPercentage percentage="97" />
   <Resources>
     <Resource name="wood">
       <quantity>63</quantity>
@@ -238,79 +238,79 @@
       <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="45">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="46">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="47">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="48">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="49">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="50">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="51">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="52">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="53">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="54">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="55">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="56">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="57">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="58">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="59">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="60">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="61">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="62">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="63">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="64">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="65">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="66">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="67">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="68">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="69">
-      <Result>0</Result>
+      <Result>100</Result>
     </HabitantResult>
     <HabitantResult id="70">
       <Result>0</Result>
