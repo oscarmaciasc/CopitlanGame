@@ -137,11 +137,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theRB: {fileID: 5865885559916751506}
-  theBalloonRB: {fileID: 0}
+  theBalloonRB: {fileID: 5865885559916751506}
   moveSpeed: 3
-  moveSpeedBalloon: 0
+  moveSpeedBalloon: 3
   myAnim: {fileID: 5865885559916751511}
-  balloonAnim: {fileID: 0}
+  balloonAnim: {fileID: 5865885559916751511}
   areaTransitionName: 
   indexGame: 0
   canMove: 1
@@ -186,4 +186,4 @@ MonoBehaviour:
   currentFuel: 0
   canMove: 1
   initialPosition: {x: 0, y: 0}
-  myAnim: {fileID: 0}
+  myAnim: {fileID: 5865885559916751511}

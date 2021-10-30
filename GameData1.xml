@@ -15,7 +15,7 @@
       <quantity>9</quantity>
     </Resource>
     <Resource name="fuel">
-      <quantity>0</quantity>
+      <quantity>10</quantity>
     </Resource>
   </Resources>
   <Permissions>
