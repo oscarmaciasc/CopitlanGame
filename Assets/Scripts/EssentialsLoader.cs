@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class EssentialsLoader : MonoBehaviour
 {
 
@@ -23,13 +23,25 @@ public class EssentialsLoader : MonoBehaviour
             {
                 PlayerController clonePlayer = Instantiate(woman).GetComponent<PlayerController>();
                 PlayerController.instance = clonePlayer;
+
+                if (SceneManager.GetActiveScene().name == "SampleScene")
+                {
+                    clonePlayer.transform.position = new Vector3(168, -160, 0);
+                }
             }
             else
             {
                 PlayerController clonePlayer = Instantiate(man).GetComponent<PlayerController>();
                 PlayerController.instance = clonePlayer;
+
+                if (SceneManager.GetActiveScene().name == "SampleScene")
+                {
+                    clonePlayer.transform.position = new Vector3(168, -160, 0);
+                }
             }
-            
+
+
+
         }
     }
 
