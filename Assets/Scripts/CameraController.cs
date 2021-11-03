@@ -6,20 +6,19 @@ using UnityEngine.Tilemaps;
 
 public class CameraController : MonoBehaviour
 {
-
-
     public Transform target;
     public Tilemap theMap;
     private Vector3 bottomLeftLimit;
     private Vector3 topRightLimit;
 
     // These values are for the camera
-
     private float halfHeight;
     private float halfWidth;
 
+    // These values handles music
     public int musicToPlay;
     private bool musicStarted;
+
     void Start()
     {
         target = FindObjectOfType<PlayerController>().transform;
@@ -28,7 +27,6 @@ public class CameraController : MonoBehaviour
         halfWidth = halfHeight * Camera.main.aspect;
 
         //  We assign the corners of our map
-
         theMap.CompressBounds();
         bottomLeftLimit = theMap.localBounds.min + new Vector3(halfWidth, halfHeight, 0f);
         topRightLimit = theMap.localBounds.max + new Vector3(-halfWidth, -halfHeight, 0f);

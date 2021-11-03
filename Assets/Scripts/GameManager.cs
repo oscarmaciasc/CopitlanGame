@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public bool vPressed;
     public bool pPressed;
     public bool fPressed;
+    public bool ePressed;
+    public bool mPressed;
 
     private void Awake()
     {
@@ -26,6 +28,9 @@ public class GameManager : MonoBehaviour
         escapePressed = false;
         vPressed = false;
         pPressed = false;
+        fPressed = false;
+        ePressed = false;
+        mPressed = false;
     }
 
     // Update is called once per frame
@@ -55,24 +60,15 @@ public class GameManager : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.E))
         {
-            //
             Debug.Log("Inventario");
+            ePressed = true;
         }
 
 
         if(Input.GetKeyDown(KeyCode.M))
         {
-            //
             Debug.Log("Mapa");
+            mPressed = true;
         }
-
-    }
-
-    public void SaveData()
-    {
-        PlayerPrefs.SetString("Current_Scene", SceneManager.GetActiveScene().name);
-        PlayerPrefs.SetFloat("Player_Position_x", PlayerController.instance.transform.position.x);
-        PlayerPrefs.SetFloat("Player_Position_y", PlayerController.instance.transform.position.y);
-        PlayerPrefs.SetFloat("Player_Position_z", PlayerController.instance.transform.position.z);
     }
 }

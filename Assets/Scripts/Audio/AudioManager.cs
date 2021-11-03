@@ -16,14 +16,14 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // This means that there can be only one player in the scene
+        // This means that there can be only one AudioManager in the scene
         if (instance == null)
         {
             instance = this;
         }
         else
         {
-            // if theres another payerController with the instance set, destroy myself
+            // if theres another AudioManager with the instance set, destroy myself
             // but if the instance has been set but its me, then dont destroy me
             if (instance != this)
             {
