@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5865885559916751507}
   - component: {fileID: 5865885559916751516}
   - component: {fileID: 5865885559916751511}
-  - component: {fileID: 7529153228410324910}
   m_Layer: 0
   m_Name: MaleCharacter
   m_TagString: Player
@@ -137,11 +136,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theRB: {fileID: 5865885559916751506}
-  theBalloonRB: {fileID: 5865885559916751506}
   moveSpeed: 3
-  moveSpeedBalloon: 3
   myAnim: {fileID: 5865885559916751511}
-  balloonAnim: {fileID: 5865885559916751511}
   areaTransitionName: 
   indexGame: 0
   canMove: 1
@@ -168,22 +164,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7529153228410324910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5865885559916751517}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5b047775956896438b4dfe7e6a6c32b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  balloonName: 
-  fuelLimit: 0
-  velocity: 0
-  currentFuel: 0
-  canMove: 1
-  initialPosition: {x: 0, y: 0}
-  myAnim: {fileID: 5865885559916751511}

@@ -45,3 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   woman: {fileID: 5865885559916751517, guid: 2b85e7dca368dc0479b6d235555e3eeb, type: 3}
   man: {fileID: 5865885559916751517, guid: f26d8ccb71cf9904b8441aa08b93a6a1, type: 3}
+  womanBalloon: {fileID: 8015530750017427037, guid: ebd9c3b78d004714ba7b83bcbe487f97, type: 3}
+  maleBalloon: {fileID: 7020709712914918299, guid: 4c799083c2f53ff41826fb8f1c3ce26d, type: 3}

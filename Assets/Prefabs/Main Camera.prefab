@@ -96,4 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 138e3ccc6e379294ab965b1c02034bcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 5865885559916751517, guid: f26d8ccb71cf9904b8441aa08b93a6a1, type: 3}
+  target: {fileID: 0}
+  theMap: {fileID: 0}
+  musicToPlay: 0
+  womanBalloon: {fileID: 8015530750017427037, guid: ebd9c3b78d004714ba7b83bcbe487f97, type: 3}
+  manBalloon: {fileID: 7020709712914918299, guid: 4c799083c2f53ff41826fb8f1c3ce26d, type: 3}

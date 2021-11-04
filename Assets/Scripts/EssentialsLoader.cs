@@ -8,6 +8,8 @@ public class EssentialsLoader : MonoBehaviour
     //public GameObject UIScreen;
     public GameObject woman;
     public GameObject man;
+    public GameObject womanBalloon;
+    public GameObject maleBalloon;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,8 @@ public class EssentialsLoader : MonoBehaviour
 
                 if (SceneManager.GetActiveScene().name == "SampleScene")
                 {
+                    BalloonPlayerController cloneBalloon = Instantiate(womanBalloon).GetComponent<BalloonPlayerController>();
+                    BalloonPlayerController.instance = cloneBalloon;
                     clonePlayer.transform.position = new Vector3(-60, -30, 0);
                 }
             }
@@ -36,6 +40,8 @@ public class EssentialsLoader : MonoBehaviour
 
                 if (SceneManager.GetActiveScene().name == "SampleScene")
                 {
+                    BalloonPlayerController cloneBalloon = Instantiate(maleBalloon).GetComponent<BalloonPlayerController>();
+                    BalloonPlayerController.instance = cloneBalloon;
                     clonePlayer.transform.position = new Vector3(-60, -30, 0);
                 }
             }

@@ -27,6 +27,8 @@ public class InGame : MonoBehaviour
     [SerializeField] private GameObject quizaniEntrance;
     [SerializeField] private GameObject naranEntrance;
     [SerializeField] private GameObject pauseMenuPanel;
+    private GameObject player;
+    private GameObject balloon;
     public bool pentagramActive = true;
     public GameObject noFuelPanel;
     public bool balloonActive = false;
@@ -50,6 +52,14 @@ public class InGame : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "SampleScene")
         {
+
+            // Reference to the balloon
+            balloon = FindObjectOfType<BalloonPlayerController>().gameObject;
+            balloon.SetActive(false);
+
+            // Reference to the player
+            player = FindObjectOfType<PlayerController>().gameObject;
+
             GameData gameData = new GameData();
             gameData = XmlManager.instance.LoadGame();
 
@@ -115,8 +125,6 @@ public class InGame : MonoBehaviour
             GameManager.instance.vPressed = false;
         }
 
-
-
         if (GameManager.instance.pPressed && !pauseMenuPanel.activeInHierarchy)
         {
             ActivatePauseMenuPanel();
@@ -128,18 +136,16 @@ public class InGame : MonoBehaviour
             GameManager.instance.pPressed = false;
         }
 
-        if (GameManager.instance.fPressed && !balloonActive)
+        if (GameManager.instance.fPressed && !balloonActive && SceneManager.GetActiveScene().name == "SampleScene")
         {
-            //Activate ballonManager Script
-            FindObjectOfType<BalloonManager>().GetComponent<BalloonManager>().enabled = true;
+            balloon.SetActive(true);
+            player.SetActive(false);
             balloonActive = true;
             GameManager.instance.fPressed = false;
         }
-        else if (GameManager.instance.fPressed && balloonActive)
+        else if (GameManager.instance.fPressed && balloonActive && SceneManager.GetActiveScene().name == "SampleScene")
         {
-            FindObjectOfType<BalloonManager>().GetComponent<BalloonManager>().enabled = false;
-            balloonActive = false;
-            GameManager.instance.fPressed = false;
+            DeactivateBalloon();
         }
     }
 
@@ -200,6 +206,18 @@ public class InGame : MonoBehaviour
         }
 
 
+    }
+
+    public void DeactivateBalloon()
+    {
+        balloon.SetActive(false);
+        player.transform.position = balloon.transform.position;
+        player.SetActive(true);
+        balloonActive = false;
+
+        // We set the velocity to 0 to reassign the velocity for possible upgrades.
+        balloon.GetComponent<BalloonPlayerController>().moveSpeedBalloon = 0;
+        GameManager.instance.fPressed = false;
     }
 
     public void ActivatePartitureSelectionPanelFreely()
@@ -324,10 +342,12 @@ public class InGame : MonoBehaviour
         if (partitureSelectionPanel.activeInHierarchy || dialogBox.activeInHierarchy || pentagramPanel.activeInHierarchy || noFuelPanel.activeInHierarchy)
         {
             PlayerController.instance.canMove = false;
+            BalloonPlayerController.instance.canMove = false;
         }
         else
         {
             PlayerController.instance.canMove = true;
+            BalloonPlayerController.instance.canMove = true;
         }
     }
 

@@ -7,5 +7,21 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BalloonMaleCharacterController
-  m_Controller: {fileID: 0}
-  m_Clips: []
+  m_Controller: {fileID: 9100000, guid: 459f53afb4526d143a7879c957021e1a, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: dd6e59d5fead8354ba6e1ed300ef9d4f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3773f8c0b90986142895fa613030770f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f00cb8cd7a667424cadaa4dd0fc9b4c0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b5d0323a7af931a4892b47d41f20a7b8, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b3ea5261b5f549547b86b97e049f2b4f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a3f422eab04d9b147985f959d67e7f0d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: cce1ac58917e2be45b441b14cd485015, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 752729bf57772a04cb83400d6e4a3a28, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 998f76071aecf96408df2e2ac3188cbe, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: cbff36d54493d5045a78ec670d79fd89, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 68c8191fb3aa0b847a61f38d5557bd5b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 051414d99227bfe41affb9f937441a0e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: feca86226c2c55141bbfadcdcfa0d816, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3cb4c610e6d8c8f4f8ba2f5af727cb07, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 347bd69192563324f826bc272842220a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b388f8c59606d1343a65ff0104ac53e1, type: 2}

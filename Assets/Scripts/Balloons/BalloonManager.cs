@@ -63,8 +63,7 @@ public class BalloonManager : MonoBehaviour
             gameData.SetFuelToZero();
             Debug.Log("Te has acabado el combustible, compra");
             InGame.instance.ActivateNoFuelPanel();
-            FindObjectOfType<BalloonManager>().GetComponent<BalloonManager>().enabled = false;
-            InGame.instance.balloonActive = false;
+            InGame.instance.DeactivateBalloon();
             myAnim.SetFloat("moveX", 0);
             myAnim.SetFloat("moveY", 0);
         }

@@ -21,7 +21,6 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
-        target = FindObjectOfType<PlayerController>().transform;
 
         halfHeight = Camera.main.orthographicSize;
         halfWidth = halfHeight * Camera.main.aspect;
@@ -32,7 +31,36 @@ public class CameraController : MonoBehaviour
         topRightLimit = theMap.localBounds.max + new Vector3(-halfWidth, -halfHeight, 0f);
 
         //  We send the bound limits to the PlayerController script to keep the player inside the map
-        PlayerController.instance.SetBounds(theMap.localBounds.min, theMap.localBounds.max);
+        if (PlayerController.instance != null)
+        {
+            PlayerController.instance.SetBounds(theMap.localBounds.min, theMap.localBounds.max);
+        }
+
+        if (BalloonPlayerController.instance != null)
+        {
+            BalloonPlayerController.instance.SetBounds(theMap.localBounds.min, theMap.localBounds.max);
+        }
+    }
+
+    void Update()
+    {
+        if (InGame.instance != null)
+        {
+            if (!InGame.instance.balloonActive)
+            {
+                if (PlayerController.instance != null)
+                {
+                    target = FindObjectOfType<PlayerController>().transform;
+                }
+            }
+            else if (InGame.instance.balloonActive)
+            {
+                if (BalloonPlayerController.instance != null)
+                {
+                    target = FindObjectOfType<BalloonPlayerController>().gameObject.transform;
+                }
+            }
+        }
     }
 
     void LateUpdate()

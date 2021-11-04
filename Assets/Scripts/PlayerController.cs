@@ -7,13 +7,10 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
     public Rigidbody2D theRB;
-    public Rigidbody2D theBalloonRB;
     public float moveSpeed;
-    public float moveSpeedBalloon;
     private Vector3 bottomLeftLimit;
     private Vector3 topRightLimit;
     public Animator myAnim;
-    public Animator balloonAnim;
     public string areaTransitionName;
     public int indexGame = 0;
     public bool canMove = true;
@@ -42,112 +39,60 @@ public class PlayerController : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
+     
 
     // Update is called once per frame
     void Update()
     {
         if (SceneManager.GetActiveScene().name != "InitSequence1" && SceneManager.GetActiveScene().name != "InitSequence2")
         {
-            if (!InGame.instance.balloonActive)
+
+            if (canMove)
+            {
+                theRB.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed;
+            }
+            else
+            {
+                theRB.velocity = Vector2.zero;
+            }
+
+            myAnim.SetFloat("moveX", theRB.velocity.x);
+            myAnim.SetFloat("moveY", theRB.velocity.y);
+
+            if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
             {
                 if (canMove)
                 {
-                    theRB.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed;
-                }
-                else
-                {
-                    theRB.velocity = Vector2.zero;
-                }
-
-                myAnim.SetFloat("moveX", theRB.velocity.x);
-                myAnim.SetFloat("moveY", theRB.velocity.y);
-
-                if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
-                {
-                    if (canMove)
+                    if (startWalked == 0)
                     {
-                        if (startWalked == 0)
-                        {
-                            SetFirstWalked();
-                        }
-
-                        myAnim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
-                        myAnim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
+                        SetFirstWalked();
                     }
-                }
 
-                if (Input.GetKeyUp(KeyCode.UpArrow))
-                {
-                    CheckIfIsMoving();
-                }
-
-                if (Input.GetKeyUp(KeyCode.DownArrow))
-                {
-                    CheckIfIsMoving();
-                }
-
-                if (Input.GetKeyUp(KeyCode.LeftArrow))
-                {
-                    CheckIfIsMoving();
-                }
-
-                if (Input.GetKeyUp(KeyCode.RightArrow))
-                {
-                    CheckIfIsMoving();
+                    myAnim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
+                    myAnim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
                 }
             }
-            else if (InGame.instance.balloonActive)
+
+            if (Input.GetKeyUp(KeyCode.UpArrow))
             {
-                GameData gameData = new GameData();
-                gameData = XmlManager.instance.LoadGame();
-
-                if (canMove && gameData.GetCurrentResource(3) > 0)
-                {
-                    theBalloonRB.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeedBalloon;
-                    balloonAnim.SetFloat("moveX", theBalloonRB.velocity.x);
-                    balloonAnim.SetFloat("moveY", theBalloonRB.velocity.y);
-
-                    if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
-                    {
-                        if (canMove)
-                        {
-                            if (startWalkedBallon == 0)
-                            {
-                                SetFirstWalkedBalloon();
-                            }
-
-                            balloonAnim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
-                            balloonAnim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
-                        }
-                    }
-
-                    if (Input.GetKeyUp(KeyCode.UpArrow))
-                    {
-                        CheckIfIsMovingBalloon();
-                    }
-
-                    if (Input.GetKeyUp(KeyCode.DownArrow))
-                    {
-                        CheckIfIsMovingBalloon();
-                    }
-
-                    if (Input.GetKeyUp(KeyCode.LeftArrow))
-                    {
-                        CheckIfIsMovingBalloon();
-                    }
-
-                    if (Input.GetKeyUp(KeyCode.RightArrow))
-                    {
-                        CheckIfIsMovingBalloon();
-                    }
-                }
-                else
-                {
-                    theBalloonRB.velocity = Vector2.zero;
-                    balloonAnim.SetFloat("moveX", 0);
-                    balloonAnim.SetFloat("moveY", 0);
-                }
+                CheckIfIsMoving();
             }
+
+            if (Input.GetKeyUp(KeyCode.DownArrow))
+            {
+                CheckIfIsMoving();
+            }
+
+            if (Input.GetKeyUp(KeyCode.LeftArrow))
+            {
+                CheckIfIsMoving();
+            }
+
+            if (Input.GetKeyUp(KeyCode.RightArrow))
+            {
+                CheckIfIsMoving();
+            }
+
 
         }
         else if (SceneManager.GetActiveScene().name == "InitSequence1" || SceneManager.GetActiveScene().name == "InitSequence2")
@@ -187,13 +132,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void CheckIfIsMovingBalloon()
-    {
-        if (theBalloonRB.velocity == Vector2.zero)
-        {
-            SaveTimeWalkedBalloon();
-        }
-    }
+
 
     public void SetBounds(Vector3 botLeft, Vector3 topRight)
     {
@@ -207,11 +146,6 @@ public class PlayerController : MonoBehaviour
         startWalked = Time.time;
     }
 
-    public void SetFirstWalkedBalloon()
-    {
-        startWalkedBallon = Time.time;
-    }
-
     public void SaveTimeWalked()
     {
         if (SceneManager.GetActiveScene().name == "InGame")
@@ -222,20 +156,6 @@ public class PlayerController : MonoBehaviour
                 XmlManager.instance.UpdateTimeWalked(stopWalked - startWalked);
                 startWalked = 0;
                 stopWalked = 0;
-            }
-        }
-    }
-
-    public void SaveTimeWalkedBalloon()
-    {
-        if (SceneManager.GetActiveScene().name == "InGame")
-        {
-            if (!InGame.instance.noFuelPanel.activeInHierarchy)
-            {
-                stopWalkedBalloon = Time.time;
-                XmlManager.instance.UpdateTimeWalkedBalloon(stopWalkedBalloon - startWalkedBallon);
-                startWalkedBallon = 0;
-                stopWalkedBalloon = 0;
             }
         }
     }
