@@ -26,7 +26,7 @@ public class EssentialsLoader : MonoBehaviour
 
                 if (SceneManager.GetActiveScene().name == "SampleScene")
                 {
-                    clonePlayer.transform.position = new Vector3(0, -155, 0);
+                    clonePlayer.transform.position = new Vector3(-60, -30, 0);
                 }
             }
             else
@@ -36,7 +36,7 @@ public class EssentialsLoader : MonoBehaviour
 
                 if (SceneManager.GetActiveScene().name == "SampleScene")
                 {
-                    clonePlayer.transform.position = new Vector3(0, -155, 0);
+                    clonePlayer.transform.position = new Vector3(-60, -30, 0);
                 }
             }
 
