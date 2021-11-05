@@ -30,7 +30,7 @@ public class EssentialsLoader : MonoBehaviour
                 {
                     BalloonPlayerController cloneBalloon = Instantiate(womanBalloon).GetComponent<BalloonPlayerController>();
                     BalloonPlayerController.instance = cloneBalloon;
-                    clonePlayer.transform.position = new Vector3(-60, -30, 0);
+                    clonePlayer.transform.position = new Vector3(22, -27, 0);
                 }
             }
             else
@@ -42,7 +42,7 @@ public class EssentialsLoader : MonoBehaviour
                 {
                     BalloonPlayerController cloneBalloon = Instantiate(maleBalloon).GetComponent<BalloonPlayerController>();
                     BalloonPlayerController.instance = cloneBalloon;
-                    clonePlayer.transform.position = new Vector3(-60, -30, 0);
+                    clonePlayer.transform.position = new Vector3(22, -27, 0);
                 }
             }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="lolo" gender="true">
-  <TimePlayed time="3681.41455" />
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="lolo" gender="false">
+  <TimePlayed time="3762.867" />
   <TimeWalked time="5526.898" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="97" />
@@ -15,7 +15,7 @@
       <quantity>9</quantity>
     </Resource>
     <Resource name="fuel">
-      <quantity>0</quantity>
+      <quantity>7</quantity>
     </Resource>
   </Resources>
   <Permissions>
