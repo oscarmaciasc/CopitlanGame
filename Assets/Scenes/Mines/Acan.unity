@@ -8194,8 +8194,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1368400116}
   - component: {fileID: 1368400115}
-  - component: {fileID: 1368400117}
   - component: {fileID: 1368400118}
+  - component: {fileID: 1368400117}
   m_Layer: 0
   m_Name: mineAcanColliders
   m_TagString: Untagged
