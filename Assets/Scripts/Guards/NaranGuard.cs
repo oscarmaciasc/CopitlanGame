@@ -8,6 +8,8 @@ public class NaranGuard : MonoBehaviour
     private string[] noPermit = { "No tienes el permiso necesario", "Obten el permiso convenciendo a los dirigentes", "Suerte y hasta la proxima" };
     private string[] permit = { "Adelante caballero", "Tiene el permiso necesario" };
     private string[] finished = { "Espero te vaya bien", "el siguiente dirigente es dificil de convencer" };
+    
+    [SerializeField] private GameObject doorObstruction;
     public GameObject habitant;
     public Animator myAnim;
     public float moveSpeed;
@@ -33,10 +35,11 @@ public class NaranGuard : MonoBehaviour
         {
             // The player has the requested permission
             habitant.GetComponent<DialogActivator>().lines = permit;
+            doorObstruction.SetActive(false);
 
             if (conversationFinished)
             {
-                Move();
+                //Move();
                 habitant.GetComponent<DialogActivator>().lines = finished;
             }
         }
@@ -46,22 +49,22 @@ public class NaranGuard : MonoBehaviour
         }
     }
 
-    public void Move()
-    {
-        if (destiny.x != gameObject.transform.position.x)
-        {
-            gameObject.transform.position = Vector2.MoveTowards(transform.position, destiny, moveSpeed * Time.deltaTime);
-            myAnim.SetFloat("moveX", 1);
+    // public void Move()
+    // {
+    //     if (destiny.x != gameObject.transform.position.x)
+    //     {
+    //         gameObject.transform.position = Vector2.MoveTowards(transform.position, destiny, moveSpeed * Time.deltaTime);
+    //         myAnim.SetFloat("moveX", 1);
 
-            // Making the player Idle in the last direction
-            myAnim.SetFloat("lastMoveY", -1);
-        }
-        else
-        {
-            // Finish the movement
-            myAnim.SetFloat("moveX", 0);
-            theEntrance.SetActive(true);
-            XmlManager.instance.SaveDirigentEntranceState(2, true);
-        }
-    }
+    //         // Making the player Idle in the last direction
+    //         myAnim.SetFloat("lastMoveY", -1);
+    //     }
+    //     else
+    //     {
+    //         // Finish the movement
+    //         myAnim.SetFloat("moveX", 0);
+    //         theEntrance.SetActive(true);
+    //         XmlManager.instance.SaveDirigentEntranceState(2, true);
+    //     }
+    // }
 }

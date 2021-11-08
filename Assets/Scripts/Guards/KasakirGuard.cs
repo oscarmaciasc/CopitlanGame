@@ -8,12 +8,10 @@ public class KasakirGuard : MonoBehaviour
 
     private string[] permit = { "Adelante caballero", "Tiene el permiso necesario" };
     private string[] finished = { "Sigue tu aventura", "espero regreses pronto" };
+    [SerializeField] private GameObject doorObstruction;
+
 
     public GameObject habitant;
-
-    public Animator myAnim;
-    public float moveSpeed;
-    private Vector2 destiny;
     [SerializeField] private GameObject theEntrance;
 
     public bool conversationFinished = false;
@@ -21,7 +19,7 @@ public class KasakirGuard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        destiny = new Vector2(transform.position.x + 2, transform.position.y);
+        //destiny = new Vector2(transform.position.x + 2, transform.position.y);
     }
 
     // Update is called once per frame
@@ -36,9 +34,13 @@ public class KasakirGuard : MonoBehaviour
             // The player has the requested permission
             habitant.GetComponent<DialogActivator>().lines = permit;
 
+            
+            doorObstruction.SetActive(false);
+            
+
             if (conversationFinished)
             {
-                Move();
+                //Move();
                 habitant.GetComponent<DialogActivator>().lines = finished;
             }
         }
@@ -49,24 +51,24 @@ public class KasakirGuard : MonoBehaviour
 
     }
 
-    public void Move()
-    {
-        if (destiny.x != gameObject.transform.position.x)
-        {
-            gameObject.transform.position = Vector2.MoveTowards(transform.position, destiny, moveSpeed * Time.deltaTime);
-            myAnim.SetFloat("moveX", 1);
+    // public void Move()
+    // {
+    //     if (destiny.x != gameObject.transform.position.x)
+    //     {
+    //         gameObject.transform.position = Vector2.MoveTowards(transform.position, destiny, moveSpeed * Time.deltaTime);
+    //         myAnim.SetFloat("moveX", 1);
 
-            // Making the player Idle in the last direction
-            myAnim.SetFloat("lastMoveY", -1);
-        }
-        else
-        {
-            // Finish the movement
-            myAnim.SetFloat("moveX", 0);
-            theEntrance.SetActive(true);
-            XmlManager.instance.SaveDirigentEntranceState(0, true);
-            Debug.Log("ya guarde la info");
-        }
-    }
+    //         // Making the player Idle in the last direction
+    //         myAnim.SetFloat("lastMoveY", -1);
+    //     }
+    //     else
+    //     {
+    //         // Finish the movement
+    //         myAnim.SetFloat("moveX", 0);
+    //         theEntrance.SetActive(true);
+    //         XmlManager.instance.SaveDirigentEntranceState(0, true);
+    //         Debug.Log("ya guarde la info");
+    //     }
+    // }
 
 }

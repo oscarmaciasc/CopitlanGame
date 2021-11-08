@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="lolo" gender="false">
-  <TimePlayed time="3762.867" />
+  <TimePlayed time="3965.161" />
   <TimeWalked time="5526.898" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="97" />
@@ -15,15 +15,10 @@
       <quantity>9</quantity>
     </Resource>
     <Resource name="fuel">
-      <quantity>7</quantity>
+      <quantity>0</quantity>
     </Resource>
   </Resources>
-  <Permissions>
-    <Permission name="outterCircle" />
-    <Permission name="triangle" />
-    <Permission name="innerCircle" />
-    <Permission name="necalliRoyalPalace" />
-  </Permissions>
+  <Permissions />
   <Flutes>
     <Flute name="woodenFlute" isByDefault="false" />
     <Flute name="woodenIronFlute" isByDefault="false" />
