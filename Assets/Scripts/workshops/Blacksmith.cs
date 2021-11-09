@@ -30,7 +30,8 @@ public class Blacksmith : MonoBehaviour
         if (blacksmithInterface.activeInHierarchy)
         {
             blacksmithHabitant.GetComponent<DialogActivator>().canActivate = false;
-        } else
+        }
+        else
         {
             blacksmithHabitant.GetComponent<DialogActivator>().canActivate = true;
         }
@@ -64,7 +65,7 @@ public class Blacksmith : MonoBehaviour
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
 
-        
+
 
         // If we have the necessary amount of resource we do the trade
         if (gameData.GetCurrentResource(resourceToSustractID) >= quantityToSustract)
@@ -74,6 +75,14 @@ public class Blacksmith : MonoBehaviour
 
             // Add new balloon
             XmlManager.instance.AddBalloon(balloonToBuy);
+
+            //Destroy the previous balloon and create the new object
+            // if (BalloonManager.instance != null && EssentialsLoader.instance != null)
+            // {
+            //     Destroy(FindObjectOfType<BalloonManager>());
+
+            //     EssentialsLoader.instance.LoadBalloon();
+            // }
 
             blacksmithInterface.SetActive(false);
             Debug.Log("Desactivando interfaz");

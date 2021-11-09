@@ -92,6 +92,19 @@ public class InGame : MonoBehaviour
         }
     }
 
+    void OnEnable()
+    {
+        if (SceneManager.GetActiveScene().name == "SampleScene")
+        {
+            // Reference to the balloon
+            balloon = FindObjectOfType<BalloonPlayerController>().gameObject;
+            balloon.SetActive(false);
+
+            // Reference to the player
+            player = FindObjectOfType<PlayerController>().gameObject;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
