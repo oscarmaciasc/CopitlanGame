@@ -80,4 +80,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/School/School2.unity
     guid: d921be195c4b09f45b0ef70e781e0f95
+  - enabled: 1
+    path: Assets/Scenes/Library/Library.unity
+    guid: ca4327140a46a3b408cd463981b29d46
   m_configObjects: {}
