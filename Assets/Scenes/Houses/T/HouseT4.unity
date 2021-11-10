@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 351322150}
   - component: {fileID: 351322149}
   - component: {fileID: 351322148}
+  - component: {fileID: 351322156}
   m_Layer: 0
   m_Name: OutsideColliders
   m_TagString: Untagged
@@ -479,12 +480,38 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 351322147}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.932413, y: -0.9415405, z: -9.87128}
+  m_LocalPosition: {x: -0.932413, y: -0.9415405, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &351322156
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351322147}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.5684333, y: -2.1686187}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0015125, y: 0.21351051}
+  m_EdgeRadius: 0
 --- !u!1 &437749015
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,17 +643,19 @@ PolygonCollider2D:
       - {x: 4.21875, y: -2.875}
       - {x: 4.3125, y: -2.8125}
       - {x: 4.3125, y: -0.15625}
-    - - {x: -0.4375, y: -1.6875}
-      - {x: -0.4375, y: -0.28125}
+    - - {x: -0.57577145, y: -1.7105453}
+      - {x: -0.46797347, y: -1.5107056}
+      - {x: -0.45404088, y: -0.24816811}
       - {x: -0.5625, y: -0.03125}
       - {x: -0.6875, y: 0.0625}
       - {x: -2.34375, y: 0.0625}
       - {x: -2.4375, y: -0.03125}
       - {x: -2.5625, y: -0.1875}
-      - {x: -2.5625, y: -1.625}
-      - {x: -2.40625, y: -1.96875}
-      - {x: -2.375, y: -2.0625}
-      - {x: -0.625, y: -2.0625}
+      - {x: -2.495861, y: -1.5557494}
+      - {x: -2.397956, y: -1.6179981}
+      - {x: -2.3852444, y: -1.8742247}
+      - {x: -2.3301096, y: -1.991454}
+      - {x: -0.68382645, y: -1.9850776}
     - - {x: 2.25, y: 0.9375}
       - {x: 1.75, y: 0.9375}
 --- !u!1 &809795843
@@ -2680,7 +2709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6003845974467207115, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
       propertyPath: m_Size.y
-      value: 0.53727436
+      value: 0.09346151
       objectReference: {fileID: 0}
     - target: {fileID: -6003845974467207115, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
       propertyPath: m_Offset.x
@@ -2688,7 +2717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6003845974467207115, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
       propertyPath: m_Offset.y
-      value: -0.23136282
+      value: -0.45326924
       objectReference: {fileID: 0}
     - target: {fileID: 1789286872359436609, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
       propertyPath: transitionName
@@ -2696,11 +2725,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2898164435462665868, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.3
+      value: -1.35
       objectReference: {fileID: 0}
     - target: {fileID: 2898164435462665868, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.54
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 6239821966134746270, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
       propertyPath: m_RootOrder
@@ -2982,6 +3011,8 @@ MonoBehaviour:
   CI1HouseHabitantB: {fileID: 0}
   CI2HouseHabitantA: {fileID: 0}
   CI2HouseHabitantB: {fileID: 0}
+  partiture5: {fileID: 0}
+  houseID: 0
   habitantID: 0
 --- !u!4 &1395108217
 Transform:
