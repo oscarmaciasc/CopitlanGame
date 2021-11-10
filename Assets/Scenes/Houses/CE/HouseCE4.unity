@@ -123,6 +123,99 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &212757146
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -6003845974467207115, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_Size.x
+      value: 1.9974144
+      objectReference: {fileID: 0}
+    - target: {fileID: -6003845974467207115, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_Size.y
+      value: 0.87876225
+      objectReference: {fileID: 0}
+    - target: {fileID: -6003845974467207115, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.42155576
+      objectReference: {fileID: 0}
+    - target: {fileID: -6003845974467207115, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.060618877
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789286872359436609, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: transitionName
+      value: InGame-HouseCE4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2898164435462665868, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 2898164435462665868, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239821966134746270, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239821966134746270, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239821966134746270, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.496
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239821966134746270, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239821966134746270, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239821966134746270, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239821966134746270, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239821966134746270, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239821966134746270, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239821966134746270, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239821966134746270, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8905299658810223276, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: m_Name
+      value: Area Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021669119073903171, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: areaToLoad
+      value: SampleScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021669119073903171, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
+      propertyPath: areaTransitionName
+      value: InGame-HouseCE4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
 --- !u!1 &284219555
 GameObject:
   m_ObjectHideFlags: 0
