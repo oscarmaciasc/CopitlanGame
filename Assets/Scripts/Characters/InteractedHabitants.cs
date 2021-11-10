@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class InteractedHabitants : MonoBehaviour
 {
+    public static InteractedHabitants instance;
     public int index;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        instance = this;
     }
 
     // Update is called once per frame
@@ -24,5 +25,10 @@ public class InteractedHabitants : MonoBehaviour
         {
             XmlManager.instance.SaveInteractedHabitantState(index);
         }
+    }
+
+    public void SetIndex(int habitantID)
+    {
+        index = habitantID;
     }
 }

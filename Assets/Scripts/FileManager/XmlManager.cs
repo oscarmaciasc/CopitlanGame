@@ -30,12 +30,35 @@ public class XmlManager : MonoBehaviour
     // Called when a game is selected in GameSelection interface;
     public void CreateTempFile(int gameIndex)
     {
-        TempFile tempFile = new TempFile(gameIndex);
+        TempFile tempFile = new TempFile(gameIndex, 1000);
 
         XmlSerializer serializer = new XmlSerializer(typeof(TempFile));
         FileStream xmlWriter = new FileStream(CurrentDirectory + "/TempFile.xml", FileMode.Create);
         serializer.Serialize(xmlWriter, tempFile);
         xmlWriter.Close();
+    }
+
+    public void SaveTempFile(TempFile tempFile)
+    {
+        XmlSerializer serializer = new XmlSerializer(typeof(TempFile));
+        FileStream xmlWriter = new FileStream(CurrentDirectory + "/TempFile.xml", FileMode.Create);
+        serializer.Serialize(xmlWriter, tempFile);
+        xmlWriter.Close();
+    }
+
+    public void HouseIDTempFile(int houseID)
+    {
+        TempFile tempFile = new TempFile();
+
+        XmlSerializer serializer = new XmlSerializer(typeof(TempFile));
+        FileStream xmlRead = new FileStream(CurrentDirectory + "/TempFile.xml", FileMode.Open);
+        tempFile = serializer.Deserialize(xmlRead) as TempFile;
+        xmlRead.Close();
+
+        tempFile.houseID = houseID;
+
+        SaveTempFile(tempFile);
+
     }
 
     // Delete the temporal file
@@ -545,5 +568,17 @@ public class XmlManager : MonoBehaviour
         xmlRead.Close();
 
         return tempFile.gameIndex;
+    }
+
+    public int GetHouseId()
+    {
+        TempFile tempFile = new TempFile();
+
+        XmlSerializer serializer = new XmlSerializer(typeof(TempFile));
+        FileStream xmlRead = new FileStream(CurrentDirectory + "/TempFile.xml", FileMode.Open);
+        tempFile = serializer.Deserialize(xmlRead) as TempFile;
+        xmlRead.Close();
+
+        return tempFile.houseID;
     }
 }
