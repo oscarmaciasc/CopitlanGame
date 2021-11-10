@@ -12,10 +12,10 @@
       <quantity>14</quantity>
     </Resource>
     <Resource name="gold">
-      <quantity>9</quantity>
+      <quantity>6</quantity>
     </Resource>
     <Resource name="fuel">
-      <quantity>0</quantity>
+      <quantity>1</quantity>
     </Resource>
   </Resources>
   <Permissions />
