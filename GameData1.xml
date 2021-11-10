@@ -37,6 +37,7 @@
     <MusicSheet name="partiture8" />
     <MusicSheet name="partiture9" />
     <MusicSheet name="partiture10" />
+    <MusicSheet name="partiture5" />
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">
@@ -340,7 +341,7 @@
   </HabitantResults>
   <HabitantsInteracted>
     <HabitantInteracted id="0">
-      <Interacted>true</Interacted>
+      <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="1">
       <Interacted>false</Interacted>
@@ -613,10 +614,10 @@
       <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="91">
-      <Interacted>false</Interacted>
+      <Interacted>true</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="92">
-      <Interacted>false</Interacted>
+      <Interacted>true</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="93">
       <Interacted>false</Interacted>
@@ -640,10 +641,10 @@
       <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="100">
-      <Interacted>false</Interacted>
+      <Interacted>true</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="101">
-      <Interacted>false</Interacted>
+      <Interacted>true</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="102">
       <Interacted>false</Interacted>
@@ -667,13 +668,13 @@
       <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="109">
-      <Interacted>false</Interacted>
+      <Interacted>true</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="110">
-      <Interacted>false</Interacted>
+      <Interacted>true</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="111">
-      <Interacted>false</Interacted>
+      <Interacted>true</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="112">
       <Interacted>false</Interacted>
@@ -697,10 +698,10 @@
       <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="119">
-      <Interacted>false</Interacted>
+      <Interacted>true</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="120">
-      <Interacted>false</Interacted>
+      <Interacted>true</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="121">
       <Interacted>false</Interacted>
@@ -727,7 +728,7 @@
       <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="129">
-      <Interacted>false</Interacted>
+      <Interacted>true</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="130">
       <Interacted>false</Interacted>

@@ -11,6 +11,11 @@ public class InteractedHabitants : MonoBehaviour
     void Start()
     {
         instance = this;
+
+        if(HabitantLoader.instance != null)
+        {
+            index = HabitantLoader.instance.habitantID;
+        }
     }
 
     // Update is called once per frame
@@ -25,10 +30,5 @@ public class InteractedHabitants : MonoBehaviour
         {
             XmlManager.instance.SaveInteractedHabitantState(index);
         }
-    }
-
-    public void SetIndex(int habitantID)
-    {
-        index = habitantID;
     }
 }

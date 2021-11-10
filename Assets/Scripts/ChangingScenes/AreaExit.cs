@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class AreaExit : MonoBehaviour
 {
-
+    public static AreaExit instance;
     public string areaToLoad;
     public string areaTransitionName;
     public AreaEntrance theEntrance;
@@ -18,6 +18,7 @@ public class AreaExit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         theEntrance.transitionName = areaTransitionName;
         shouldLoadAfterFade = false;
     }
@@ -25,10 +26,10 @@ public class AreaExit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(shouldLoadAfterFade)
+        if (shouldLoadAfterFade)
         {
             waitToLoad -= Time.deltaTime;
-            if(waitToLoad <= 0)
+            if (waitToLoad <= 0)
             {
                 shouldLoadAfterFade = false;
                 SceneManager.LoadScene(areaToLoad);
@@ -38,7 +39,7 @@ public class AreaExit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
             shouldLoadAfterFade = true;
             UIFade.instance.FadeToBlack();

@@ -3558,6 +3558,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CE1HouseHabitantA: {fileID: 194375450}
   CE1HouseHabitantB: {fileID: 1230306515}
+  CE2HouseHabitantA: {fileID: 0}
+  CE2HouseHabitantB: {fileID: 0}
+  CE3HouseHabitantA: {fileID: 0}
+  CE3HouseHabitantB: {fileID: 0}
+  CE4HouseHabitantA: {fileID: 0}
+  CE4HouseHabitantB: {fileID: 0}
+  T1HouseHabitantA: {fileID: 0}
+  T1HouseHabitanB: {fileID: 0}
+  T2HouseHabitantA: {fileID: 0}
+  T2HouseHabitanB: {fileID: 0}
+  T3HouseHabitantA: {fileID: 0}
+  T3HouseHabitanB: {fileID: 0}
+  T4HouseHabitantA: {fileID: 0}
+  T4HouseHabitanB: {fileID: 0}
   CI1HouseHabitantA: {fileID: 0}
   CI1HouseHabitantB: {fileID: 0}
   habitantID: 0
