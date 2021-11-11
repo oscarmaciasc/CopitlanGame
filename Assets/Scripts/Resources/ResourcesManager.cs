@@ -22,6 +22,8 @@ public class ResourcesManager : MonoBehaviour
 
     void Start()
     {
+        // Dos pesos de cilantro
+        
         instance = this;
 
         if(isWood) {
