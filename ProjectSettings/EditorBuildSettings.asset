@@ -113,4 +113,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Houses/CI/HouseCI2.unity
     guid: aef379e891dfea142b03648af7c0efda
+  - enabled: 1
+    path: Assets/Scenes/LoadingScreen.unity
+    guid: 91493bf7d9937a249b9f1d98dadb4a1f
   m_configObjects: {}
