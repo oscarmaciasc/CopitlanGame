@@ -27,10 +27,10 @@ public class ResourcesManager : MonoBehaviour
         if(isWood) {
             resourceIndex = 0;
             spawnLapse = 1f;
-            maxX = 13f;
-            minX = -13f;
-            maxY = 14.5f;
-            minY = -14.5f;
+            maxX = 199f;
+            minX = -199f;
+            maxY = 199f;
+            minY = -199f;
         }
         else if(isIron) {
             resourceIndex = 1;
@@ -80,15 +80,30 @@ public class ResourcesManager : MonoBehaviour
     }
 
     public void GetNewSpawnPosition() {
+        bool outOfCopitlan = false;
+        float distanceFromCenter = 0f;
+
         Debug.Log("Getting new position");
 
-        nextSpawnPosition = new Vector3(Random.Range(maxX, minX), Random.Range(maxY, minY), 1f);
+        do {
+            nextSpawnPosition = new Vector3(Random.Range(maxX, minX), Random.Range(maxY, minY), 1f);
+
+            distanceFromCenter = (float) System.Math.Sqrt((nextSpawnPosition.x*nextSpawnPosition.x) + (nextSpawnPosition.y*nextSpawnPosition.y));
+
+            Debug.Log("Ramdom: " + distanceFromCenter);
+
+            if(distanceFromCenter > 172) {
+                outOfCopitlan = true;
+                Debug.Log("Buena: " + distanceFromCenter);
+            }
+            
+        } while(!outOfCopitlan);
 
         GameObject newPosition = Instantiate(this.emptyObject, nextSpawnPosition, Quaternion.identity);
 
         newPosition.transform.SetParent(this.gameObject.transform);
 
-        Destroy(newPosition, .1f);
+        Destroy(newPosition, .05f);
     }
 
     // Called when a resource is collected.

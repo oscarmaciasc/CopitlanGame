@@ -360,7 +360,9 @@ public class InGame : MonoBehaviour
         else
         {
             PlayerController.instance.canMove = true;
-            BalloonPlayerController.instance.canMove = true;
+            if(BalloonPlayerController.instance != null) {
+                BalloonPlayerController.instance.canMove = true;
+            }
         }
     }
 
