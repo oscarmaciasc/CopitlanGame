@@ -116,4 +116,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoadingScreen.unity
     guid: 91493bf7d9937a249b9f1d98dadb4a1f
+  - enabled: 1
+    path: Assets/Scenes/Sectors/InnerCircle/InnerCircle.unity
+    guid: 8cf2e303080d2489094188639000b14b
+  - enabled: 1
+    path: Assets/Scenes/Sectors/OutterCircle/E-OutterCircle.unity
+    guid: d73d2d37d86974863b0cdc9e4decf3e8
+  - enabled: 1
+    path: Assets/Scenes/Sectors/OutterCircle/S-OutterCircle.unity
+    guid: a708112a33af743378e0bf2c3a9e0411
+  - enabled: 1
+    path: Assets/Scenes/Sectors/OutterCircle/W-OutterCircle.unity
+    guid: d9cfdf1e79334458191ee4842f0b4a18
+  - enabled: 1
+    path: Assets/Scenes/Sectors/Papataca/NE-Papataca.unity
+    guid: c4394a250db0a4bcfb333fd8bf8dea7d
+  - enabled: 1
+    path: Assets/Scenes/Sectors/Papataca/NW-Papataca.unity
+    guid: 3d50ac3c6cf854905b84231318cba498
+  - enabled: 1
+    path: Assets/Scenes/Sectors/Papataca/SE-Papataca.unity
+    guid: c03144014fdda48a4a9fe1b3efce0151
+  - enabled: 1
+    path: Assets/Scenes/Sectors/Papataca/SW-Papataca.unity
+    guid: 78a6fa8d8b95141ad90cd7a2d104b86e
+  - enabled: 1
+    path: Assets/Scenes/Sectors/Triangle/Triangle.unity
+    guid: 267e2dfa0cf294982a379db697a91c6f
   m_configObjects: {}

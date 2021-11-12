@@ -18,7 +18,10 @@
       <quantity>10</quantity>
     </Resource>
   </Resources>
-  <Permissions />
+  <Permissions>
+    <Permission name="outterCircle" />
+    <Permission name="triangle" />
+  </Permissions>
   <Flutes>
     <Flute name="woodenFlute" isByDefault="false" />
     <Flute name="woodenIronFlute" isByDefault="false" />
