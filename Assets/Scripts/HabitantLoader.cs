@@ -143,14 +143,19 @@ public class HabitantLoader : MonoBehaviour
 
         // Formula y despues mandar el id resultante a la instancia de habitant interacted
         habitantID = houseID + 91;
-        InteractedHabitants.instance.index = habitantID;
+
+        if(InteractedHabitants.instance != null)
+        {
+            InteractedHabitants.instance.index = habitantID;
+            Debug.Log("InteractedhabitantIndex: " + InteractedHabitants.instance.index);
+        }
+
         AreaExit.instance.areaTransitionName += "-" + houseID;
         AreaExit.instance.theEntrance.transitionName = AreaExit.instance.areaTransitionName;
         AreaEntrance.instance.CheckTransitionName();
 
         Debug.Log("habitantID: " + habitantID);
         Debug.Log("houseID: " + houseID);
-        Debug.Log("InteractedhabitantIndex: " + InteractedHabitants.instance.index);
     }
 
     // Update is called once per frame
