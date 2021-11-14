@@ -56,6 +56,7 @@ public class Blacksmith : MonoBehaviour
     public void BuyBalloon(string balloonToBuy, int resourceToSustractID, int quantityToSustract)
     {
 
+
         if (doOnlyOnce)
         {
             welcome[1] += balloonName;
@@ -77,6 +78,34 @@ public class Blacksmith : MonoBehaviour
             XmlManager.instance.AddBalloon(balloonToBuy);
 
             //Destroy the previous balloon and create the new object
+
+            // Why does the balloon destroy itself when changing scenes
+
+            if (!gameData.isWoman)
+            {
+                if (balloonToBuy == "balloonLvl2")
+                {
+                    Destroy(GameObject.Find("MaleBalloon(Clone)").gameObject.transform.Find("MaleBalloonLvl1"));
+                } 
+                else if (balloonToBuy == "balloonLvl3")
+                {
+                    Destroy(GameObject.Find("MaleBalloon(Clone)").gameObject.transform.Find("MaleBalloonLvl2"));
+                }
+            }
+            else
+            {
+                if (balloonToBuy == "balloonLvl2")
+                {
+                    Destroy(GameObject.Find("FemaleBalloon(Clone)").gameObject.transform.Find("FemaleBalloonLvl1"));
+                } 
+                else if (balloonToBuy == "balloonLvl3")
+                {
+                    Destroy(GameObject.Find("FemaleBalloon(Clone)").gameObject.transform.Find("FemaleBalloonLvl2"));
+                }
+            }
+
+
+
             // if (BalloonManager.instance != null && EssentialsLoader.instance != null)
             // {
             //     Destroy(FindObjectOfType<BalloonManager>());

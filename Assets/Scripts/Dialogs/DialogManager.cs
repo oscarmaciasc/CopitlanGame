@@ -49,7 +49,10 @@ public class DialogManager : MonoBehaviour
                         dialogBox.SetActive(false);
 
                         PlayerController.instance.canMove = true;
-                        BalloonPlayerController.instance.canMove = true;
+                        if(BalloonPlayerController.instance != null)
+                        {
+                            BalloonPlayerController.instance.canMove = true;
+                        }
 
                         if (habitant.GetComponent<PartitureHabitant>() != null)
                         {

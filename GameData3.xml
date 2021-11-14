@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="criatura" gender="false">
-  <TimePlayed time="0" />
+  <TimePlayed time="121.590118" />
   <TimeWalked time="0" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="0" />
@@ -9,25 +9,27 @@
       <quantity>0</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>0</quantity>
+      <quantity>100</quantity>
     </Resource>
     <Resource name="gold">
       <quantity>0</quantity>
     </Resource>
     <Resource name="fuel">
-      <quantity>0</quantity>
+      <quantity>4</quantity>
     </Resource>
   </Resources>
   <Permissions>
     <Permission name="outterCircle" />
+    <Permission name="triangle" />
   </Permissions>
   <Flutes>
     <Flute name="woodenFlute" isByDefault="true" />
   </Flutes>
-  <Balloon name="balloonLvl1" />
+  <Balloon name="balloonLvl2" />
   <MusicalMasteryLvl name="apprentice" />
   <MusicSheets>
     <MusicSheet name="partiture1" />
+    <MusicSheet name="partiture3" />
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">
@@ -56,7 +58,7 @@
   </MineEntrances>
   <DirigentEntrances>
     <DirigentEntrance name="kasakirEntrance">
-      <shouldBeActive>false</shouldBeActive>
+      <shouldBeActive>true</shouldBeActive>
     </DirigentEntrance>
     <DirigentEntrance name="quizaniEntrance">
       <shouldBeActive>false</shouldBeActive>
@@ -552,7 +554,7 @@
       <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="80">
-      <Interacted>false</Interacted>
+      <Interacted>true</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="81">
       <Interacted>false</Interacted>

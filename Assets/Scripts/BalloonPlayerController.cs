@@ -39,10 +39,8 @@ public class BalloonPlayerController : MonoBehaviour
 
     void OnEnable()
     {
-        if (BalloonPlayerController.instance != null)
-        {
-            this.transform.position = FindObjectOfType<PlayerController>().transform.position;
-        }
+        this.transform.position = FindObjectOfType<PlayerController>().transform.position;
+
     }
 
     // Update is called once per frame

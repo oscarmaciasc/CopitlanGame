@@ -45,7 +45,6 @@ public class KasakirGuard : MonoBehaviour
             //theEntrance.SetActive(true);
             XmlManager.instance.SaveDirigentEntranceState(0, true);
             doorObstruction.SetActive(false);
-            Debug.Log("tengo el permiso outtercircle");
             
 
             if (conversationFinished)

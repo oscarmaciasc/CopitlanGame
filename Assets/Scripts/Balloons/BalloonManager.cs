@@ -76,19 +76,19 @@ public class BalloonManager : MonoBehaviour
         if (balloonName == "balloonLvl1")
         {
             this.fuelLimit = 20;
-            this.velocity = 3;
+            this.velocity = 5;
         }
 
         if (balloonName == "balloonLvl2")
         {
             this.fuelLimit = 30;
-            this.velocity = 3.5f;
+            this.velocity = 6f;
         }
 
         if (balloonName == "balloonLvl3")
         {
             this.fuelLimit = 40;
-            this.velocity = 4;
+            this.velocity = 7f;
         }
     }
 
