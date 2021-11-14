@@ -1,66 +1,59 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="lolo" gender="false">
-  <TimePlayed time="4153.415" />
-  <TimeWalked time="5526.898" />
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Jackie" gender="true">
+  <LastSaved>
+    <scene>SE-Papataca</scene>
+    <coordX>168</coordX>
+    <coordY>-158</coordY>
+  </LastSaved>
+  <TimePlayed time="0" />
+  <TimeWalked time="0" />
   <TimeBalloon time="0" />
-  <HappinessPercentage percentage="97" />
+  <HappinessPercentage percentage="0" />
   <Resources>
     <Resource name="wood">
-      <quantity>400</quantity>
+      <quantity>0</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>15</quantity>
+      <quantity>0</quantity>
     </Resource>
     <Resource name="gold">
-      <quantity>9</quantity>
+      <quantity>0</quantity>
     </Resource>
     <Resource name="fuel">
-      <quantity>20</quantity>
+      <quantity>0</quantity>
     </Resource>
   </Resources>
   <Permissions>
     <Permission name="outterCircle" />
   </Permissions>
   <Flutes>
-    <Flute name="woodenFlute" isByDefault="false" />
-    <Flute name="woodenIronFlute" isByDefault="false" />
-    <Flute name="ironFlute" isByDefault="false" />
-    <Flute name="goldenFlute" isByDefault="true" />
+    <Flute name="woodenFlute" isByDefault="true" />
   </Flutes>
-  <Balloon name="balloonLvl2" />
+  <Balloon name="balloonLvl1" />
   <MusicalMasteryLvl name="apprentice" />
   <MusicSheets>
     <MusicSheet name="partiture1" />
-    <MusicSheet name="partiture2" />
-    <MusicSheet name="partiture3" />
-    <MusicSheet name="partiture4" />
-    <MusicSheet name="partiture6" />
-    <MusicSheet name="partiture7" />
-    <MusicSheet name="partiture8" />
-    <MusicSheet name="partiture9" />
-    <MusicSheet name="partiture10" />
-    <MusicSheet name="partiture5" />
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">
       <result>0</result>
     </AudienceResult>
     <AudienceResult name="quizaniResult">
-      <result>100</result>
+      <result>0</result>
     </AudienceResult>
     <AudienceResult name="naranResult">
-      <result>100</result>
+      <result>0</result>
     </AudienceResult>
     <AudienceResult name="necalliResult">
-      <result>100</result>
+      <result>0</result>
     </AudienceResult>
   </AudienceResults>
   <MineEntrances>
     <MineEntrance name="tecalliEntrance">
-      <shouldBeActive>true</shouldBeActive>
+      <shouldBeActive>false</shouldBeActive>
     </MineEntrance>
     <MineEntrance name="acanEntrance">
-      <shouldBeActive>true</shouldBeActive>
+      <shouldBeActive>false</shouldBeActive>
     </MineEntrance>
     <MineEntrance name="setiEntrance">
       <shouldBeActive>false</shouldBeActive>
@@ -68,7 +61,7 @@
   </MineEntrances>
   <DirigentEntrances>
     <DirigentEntrance name="kasakirEntrance">
-      <shouldBeActive>true</shouldBeActive>
+      <shouldBeActive>false</shouldBeActive>
     </DirigentEntrance>
     <DirigentEntrance name="quizaniEntrance">
       <shouldBeActive>false</shouldBeActive>
@@ -77,238 +70,216 @@
       <shouldBeActive>false</shouldBeActive>
     </DirigentEntrance>
   </DirigentEntrances>
-  <Collectables>
-    <Collectable id="0" shouldBeDestroyed="true" />
-    <Collectable id="1" shouldBeDestroyed="true" />
-    <Collectable id="2" shouldBeDestroyed="true" />
-    <Collectable id="3" shouldBeDestroyed="true" />
-    <Collectable id="4" shouldBeDestroyed="true" />
-    <Collectable id="5" shouldBeDestroyed="true" />
-    <Collectable id="6" shouldBeDestroyed="true" />
-    <Collectable id="7" shouldBeDestroyed="true" />
-    <Collectable id="8" shouldBeDestroyed="true" />
-    <Collectable id="9" shouldBeDestroyed="true" />
-    <Collectable id="10" shouldBeDestroyed="true" />
-    <Collectable id="11" shouldBeDestroyed="true" />
-    <Collectable id="12" shouldBeDestroyed="true" />
-    <Collectable id="13" shouldBeDestroyed="true" />
-    <Collectable id="14" shouldBeDestroyed="true" />
-    <Collectable id="15" shouldBeDestroyed="true" />
-    <Collectable id="16" shouldBeDestroyed="true" />
-    <Collectable id="17" shouldBeDestroyed="true" />
-    <Collectable id="18" shouldBeDestroyed="true" />
-    <Collectable id="19" shouldBeDestroyed="true" />
-  </Collectables>
   <HabitantResults>
     <HabitantResult id="0">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="1">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="2">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="3">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="4">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="5">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="6">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="7">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="8">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="9">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="10">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="11">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="12">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="13">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="14">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="15">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="16">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="17">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="18">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="19">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="20">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="21">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="22">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="23">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="24">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="25">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="26">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="27">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="28">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="29">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="30">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="31">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="32">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="33">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="34">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="35">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="36">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="37">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="38">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="39">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="40">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="41">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="42">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="43">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="44">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="45">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="46">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="47">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="48">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="49">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="50">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="51">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="52">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="53">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="54">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="55">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="56">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="57">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="58">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="59">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="60">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="61">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="62">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="63">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="64">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="65">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="66">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="67">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="68">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="69">
-      <Result>100</Result>
+      <Result>0</Result>
     </HabitantResult>
     <HabitantResult id="70">
       <Result>0</Result>
@@ -571,10 +542,10 @@
       <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="76">
-      <Interacted>true</Interacted>
+      <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="77">
-      <Interacted>true</Interacted>
+      <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="78">
       <Interacted>false</Interacted>
@@ -583,7 +554,7 @@
       <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="80">
-      <Interacted>true</Interacted>
+      <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="81">
       <Interacted>false</Interacted>
@@ -616,10 +587,10 @@
       <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="91">
-      <Interacted>true</Interacted>
+      <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="92">
-      <Interacted>true</Interacted>
+      <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="93">
       <Interacted>false</Interacted>
@@ -643,10 +614,10 @@
       <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="100">
-      <Interacted>true</Interacted>
+      <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="101">
-      <Interacted>true</Interacted>
+      <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="102">
       <Interacted>false</Interacted>
@@ -670,13 +641,13 @@
       <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="109">
-      <Interacted>true</Interacted>
+      <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="110">
-      <Interacted>true</Interacted>
+      <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="111">
-      <Interacted>true</Interacted>
+      <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="112">
       <Interacted>false</Interacted>
@@ -700,10 +671,10 @@
       <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="119">
-      <Interacted>true</Interacted>
+      <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="120">
-      <Interacted>true</Interacted>
+      <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="121">
       <Interacted>false</Interacted>
@@ -730,7 +701,7 @@
       <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="129">
-      <Interacted>true</Interacted>
+      <Interacted>false</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="130">
       <Interacted>false</Interacted>

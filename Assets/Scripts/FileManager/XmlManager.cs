@@ -473,6 +473,21 @@ public class XmlManager : MonoBehaviour
         Save(gameIndex, gameData);
     }
 
+    public void UpdateLastSaved(string scene, float coordX, float coordY)
+    {
+        int gameIndex = GetGameIndex();
+
+        GameData gameData = LoadGame();
+
+        gameData.lastSaved.scene = scene;
+
+        gameData.lastSaved.coordX = coordX;
+
+        gameData.lastSaved.coordY = coordY;
+
+        Save(gameIndex, gameData);
+    }
+
     // Fill gameData array
     public GameData[] LoadAllGames()
     {

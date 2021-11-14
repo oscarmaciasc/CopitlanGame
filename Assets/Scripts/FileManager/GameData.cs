@@ -12,6 +12,9 @@ public class GameData
     [XmlAttribute("gender")]
     public bool isWoman { get; set; }
 
+    [XmlElement("LastSaved")]
+    public LastSaved lastSaved { get; set; }
+
     [XmlElement("TimePlayed")]
     public TimePlayed timePlayed { get; set; }
 
@@ -66,6 +69,7 @@ public class GameData
     // Player Initialization 
     public GameData(string playerName, bool playerGender)
     {
+        this.lastSaved = new LastSaved();
 
         this.timePlayed = new TimePlayed();
 
@@ -115,6 +119,9 @@ public class GameData
 
         this.name = playerName;
         this.isWoman = playerGender;
+        this.lastSaved.scene = "SE-Papataca";
+        this.lastSaved.coordX = 168f;
+        this.lastSaved.coordY = -158f;
         this.timePlayed.time = 0f;
         this.timeWalked.time = 0f;
         this.timeBalloon.time = 0f;
@@ -378,5 +385,20 @@ public class GameData
         }
 
         return 1000;
+    }
+
+    public string GetLastSavedScene()
+    {
+        return this.lastSaved.scene;
+    }
+
+    public float GetLastSavedXCoord()
+    {
+        return this.lastSaved.coordX;
+    }
+
+    public float GetLastSavedYCoord()
+    {
+        return this.lastSaved.coordY;
     }
 }
