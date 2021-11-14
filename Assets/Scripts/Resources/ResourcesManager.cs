@@ -109,9 +109,24 @@ public class ResourcesManager : MonoBehaviour
     }
 
     public void GetNewSpawnPosition() {
-        Debug.Log("Getting new position");
+        bool outOfCopitlan = false;
+        float distanceFromCenter = 0f;
 
-        nextSpawnPosition = new Vector3(Random.Range(maxX, minX), Random.Range(maxY, minY), 1f);
+        Debug.Log("Getting new position");
+        
+        do {
+            nextSpawnPosition = new Vector3(Random.Range(maxX, minX), Random.Range(maxY, minY), 1f);
+
+            distanceFromCenter = (float) System.Math.Sqrt((nextSpawnPosition.x*nextSpawnPosition.x) + (nextSpawnPosition.y*nextSpawnPosition.y));
+
+            Debug.Log("Ramdom: " + distanceFromCenter);
+
+            if(distanceFromCenter > 172) {
+                outOfCopitlan = true;
+                Debug.Log("Buena: " + distanceFromCenter);
+            }
+            
+        } while(!outOfCopitlan);
 
         GameObject newPosition = Instantiate(this.emptyObject, nextSpawnPosition, Quaternion.identity);
 
