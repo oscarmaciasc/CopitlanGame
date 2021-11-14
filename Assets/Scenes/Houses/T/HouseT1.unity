@@ -352,6 +352,7 @@ GameObject:
   - component: {fileID: 172720686}
   - component: {fileID: 172720685}
   - component: {fileID: 172720684}
+  - component: {fileID: 172720694}
   m_Layer: 0
   m_Name: OutsideColliders
   m_TagString: Untagged
@@ -607,6 +608,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &172720694
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172720683}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.43021306, y: -3.13582}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.99852103, y: 0.1555636}
+  m_EdgeRadius: 0
 --- !u!1 &324848440
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,6 +940,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7728140893198606288, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2188.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728140893198606288, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1242
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728140893198606288, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -10.355
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728140893198606288, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.00051117
+      objectReference: {fileID: 0}
     - target: {fileID: 7728140893198606294, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -1077,7 +1120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1789286872359436609, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
       propertyPath: transitionName
-      value: InGame-HouseT1
+      value: Triangle-HouseT1
       objectReference: {fileID: 0}
     - target: {fileID: 2898164435462665868, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1137,11 +1180,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9021669119073903171, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
       propertyPath: areaToLoad
-      value: SampleScene
+      value: Triangle
       objectReference: {fileID: 0}
     - target: {fileID: 9021669119073903171, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
       propertyPath: areaTransitionName
-      value: InGame-HouseT1
+      value: Triangle-HouseT1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
@@ -1540,6 +1583,7 @@ MonoBehaviour:
   CI2HouseHabitantA: {fileID: 0}
   CI2HouseHabitantB: {fileID: 0}
   partiture5: {fileID: 1924617930}
+  houseID: 0
   habitantID: 0
 --- !u!4 &1824719054
 Transform:

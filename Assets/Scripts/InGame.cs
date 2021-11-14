@@ -28,7 +28,7 @@ public class InGame : MonoBehaviour
     [SerializeField] private GameObject naranEntrance;
     [SerializeField] private GameObject pauseMenuPanel;
     private GameObject player;
-    private GameObject balloon;
+    public GameObject balloon;
     public bool pentagramActive = true;
     public GameObject noFuelPanel;
     public bool balloonActive = false;
@@ -50,11 +50,12 @@ public class InGame : MonoBehaviour
 
         UIFade.instance.FadeFromBlack();
 
-        if (SceneManager.GetActiveScene().name == "SampleScene")
+        if (SceneManager.GetActiveScene().name != "TradeHouse1") //or tradehouse2, etc
         {
 
             // Reference to the balloon
             balloon = FindObjectOfType<BalloonPlayerController>().gameObject;
+
             balloon.SetActive(false);
 
             // Reference to the player
@@ -63,45 +64,52 @@ public class InGame : MonoBehaviour
             GameData gameData = new GameData();
             gameData = XmlManager.instance.LoadGame();
 
-
-            if (gameData.mineEntrance[0].shouldBeActive)
+            if (SceneManager.GetActiveScene().name == "SW-Papataca")
             {
-                tecalliEntrance.SetActive(true);
-            }
-            if (gameData.mineEntrance[1].shouldBeActive)
-            {
-                acanEntrance.SetActive(true);
-            }
-            if (gameData.mineEntrance[2].shouldBeActive)
-            {
-                setiEntrance.SetActive(true);
+                if (gameData.mineEntrance[0].shouldBeActive)
+                {
+                    tecalliEntrance.SetActive(true);
+                }
             }
 
-            if (gameData.dirigentEntrance[0].shouldBeActive)
+            if (SceneManager.GetActiveScene().name == "NW-Papataca")
             {
-                kasakirEntrance.SetActive(true);
+                if (gameData.mineEntrance[1].shouldBeActive)
+                {
+                    acanEntrance.SetActive(true);
+                }
+                if (gameData.mineEntrance[2].shouldBeActive)
+                {
+                    setiEntrance.SetActive(true);
+                }
             }
-            if (gameData.dirigentEntrance[1].shouldBeActive)
-            {
-                quizaniEntrance.SetActive(true);
-            }
-            if (gameData.dirigentEntrance[2].shouldBeActive)
-            {
-                naranEntrance.SetActive(true);
-            }
-        }
-    }
 
-    void OnEnable()
-    {
-        if (SceneManager.GetActiveScene().name == "SampleScene")
-        {
-            // Reference to the balloon
-            balloon = FindObjectOfType<BalloonPlayerController>().gameObject;
-            balloon.SetActive(false);
+            if (SceneManager.GetActiveScene().name == "S-OutterCircle")
+            {
+                Debug.Log("Entro a S-OutterCircle");
+                DontDestroyOnLoad(balloon);
 
-            // Reference to the player
-            player = FindObjectOfType<PlayerController>().gameObject;
+                if (gameData.dirigentEntrance[0].shouldBeActive)
+                {
+                    kasakirEntrance.SetActive(true);
+                }
+            }
+
+            if (SceneManager.GetActiveScene().name == "Triangle")
+            {
+                if (gameData.dirigentEntrance[1].shouldBeActive)
+                {
+                    quizaniEntrance.SetActive(true);
+                }
+            }
+
+            if (SceneManager.GetActiveScene().name == "InnerCircle")
+            {
+                if (gameData.dirigentEntrance[2].shouldBeActive)
+                {
+                    naranEntrance.SetActive(true);
+                }
+            }
         }
     }
 
@@ -111,7 +119,6 @@ public class InGame : MonoBehaviour
         CheckForInputs();
         CheckCanMove();
         NoFuelPanel();
-
     }
 
     private void CheckForInputs()
@@ -149,14 +156,14 @@ public class InGame : MonoBehaviour
             GameManager.instance.pPressed = false;
         }
 
-        if (GameManager.instance.fPressed && !balloonActive && SceneManager.GetActiveScene().name == "SampleScene")
+        if (GameManager.instance.fPressed && !balloonActive && ((SceneManager.GetActiveScene().name != "TradeHouse1") || (SceneManager.GetActiveScene().name != "TradeHouse2") || (SceneManager.GetActiveScene().name != "TradeHouse3")))
         {
             balloon.SetActive(true);
             player.SetActive(false);
             balloonActive = true;
             GameManager.instance.fPressed = false;
         }
-        else if (GameManager.instance.fPressed && balloonActive && SceneManager.GetActiveScene().name == "SampleScene")
+        else if (GameManager.instance.fPressed && balloonActive && ((SceneManager.GetActiveScene().name != "TradeHouse1") || (SceneManager.GetActiveScene().name != "TradeHouse2") || (SceneManager.GetActiveScene().name != "TradeHouse3")))
         {
             DeactivateBalloon();
         }

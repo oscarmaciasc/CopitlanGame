@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3358677195569774469}
   - component: {fileID: 7458488054554442550}
   m_Layer: 0
-  m_Name: WomanBalloon
+  m_Name: WomanBalloonLvl1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

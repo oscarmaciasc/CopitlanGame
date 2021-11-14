@@ -143,19 +143,88 @@ public class HabitantLoader : MonoBehaviour
 
         // Formula y despues mandar el id resultante a la instancia de habitant interacted
         habitantID = houseID + 91;
-        InteractedHabitants.instance.index = habitantID;
+
+        if(InteractedHabitants.instance != null)
+        {
+            InteractedHabitants.instance.index = habitantID;
+            Debug.Log("InteractedhabitantIndex: " + InteractedHabitants.instance.index);
+        }
+
+        CheckEntrances();
+
         AreaExit.instance.areaTransitionName += "-" + houseID;
         AreaExit.instance.theEntrance.transitionName = AreaExit.instance.areaTransitionName;
         AreaEntrance.instance.CheckTransitionName();
 
         Debug.Log("habitantID: " + habitantID);
         Debug.Log("houseID: " + houseID);
-        Debug.Log("InteractedhabitantIndex: " + InteractedHabitants.instance.index);
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    public void CheckEntrances()
+    {
+        // S-OutterCircle
+        if(houseID == 0 || houseID == 13 || houseID == 18 || houseID == 23 || houseID == 28)
+        {
+            AreaExit.instance.areaToLoad = "S-OutterCircle";
+
+            if(houseID == 0)
+            {
+                AreaExit.instance.areaTransitionName = "OutterCircleS-HouseCE1";
+            } 
+
+            if(houseID == 13)
+            {
+                AreaExit.instance.areaTransitionName = "OutterCircleS-HouseCE2";
+            }
+
+            if(houseID == 18 || houseID == 23)
+            {
+                AreaExit.instance.areaTransitionName = "OutterCircleS-HouseCE3";
+            } 
+
+            if(houseID == 28)
+            {
+                AreaExit.instance.areaTransitionName = "OutterCircleS-HouseCE4";
+            }
+
+        } 
+        
+        // E-OutterCircle
+        if((houseID >= 5 && houseID <= 8) || (houseID >= 14 && houseID <= 17) || (houseID >= 24 && houseID <= 27) || (houseID >= 33 && houseID <= 36))
+        {
+            AreaExit.instance.areaToLoad = "E-OutterCircle";
+            
+            if(houseID >= 5 && houseID <= 8)
+            {
+                AreaExit.instance.areaTransitionName = "OutterCircleE-HouseCE1";
+            }
+
+            if(houseID >= 14 && houseID <= 17)
+            {
+                AreaExit.instance.areaTransitionName = "OutterCircleE-HouseCE2";
+            }
+
+            if(houseID >= 24 && houseID <= 27)
+            {
+                AreaExit.instance.areaTransitionName = "OutterCircleE-HouseCE3";
+            }
+
+            if(houseID >= 33 && houseID <= 36)
+            {
+                AreaExit.instance.areaTransitionName = "OutterCircleE-HouseCE4";
+            }
+        }
+
+        // W-OutterCircle
+
+
+        // Triangle
+        
     }
 }

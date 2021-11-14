@@ -26,11 +26,11 @@ public class EssentialsLoader : MonoBehaviour
                 PlayerController clonePlayer = Instantiate(woman).GetComponent<PlayerController>();
                 PlayerController.instance = clonePlayer;
 
-                if (SceneManager.GetActiveScene().name == "SampleScene")
+                if (SceneManager.GetActiveScene().name == "S-OutterCircle")
                 {
                     BalloonPlayerController cloneBalloon = Instantiate(womanBalloon).GetComponent<BalloonPlayerController>();
                     BalloonPlayerController.instance = cloneBalloon;
-                    clonePlayer.transform.position = new Vector3(12, -39, 0);
+                    clonePlayer.transform.position = new Vector3(0, -98, 0);
                 }
             }
             else
@@ -38,11 +38,11 @@ public class EssentialsLoader : MonoBehaviour
                 PlayerController clonePlayer = Instantiate(man).GetComponent<PlayerController>();
                 PlayerController.instance = clonePlayer;
 
-                if (SceneManager.GetActiveScene().name == "SampleScene")
+                if (SceneManager.GetActiveScene().name == "S-OutterCircle")
                 {
                     BalloonPlayerController cloneBalloon = Instantiate(maleBalloon).GetComponent<BalloonPlayerController>();
                     BalloonPlayerController.instance = cloneBalloon;
-                    clonePlayer.transform.position = new Vector3(12, -39, 0);
+                    clonePlayer.transform.position = new Vector3(0, -98, 0);
                 }
             }
 

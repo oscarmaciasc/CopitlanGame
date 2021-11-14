@@ -9588,6 +9588,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7728140893198606288, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2187.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728140893198606288, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1242
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728140893198606288, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -10.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728140893198606288, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.00051117
+      objectReference: {fileID: 0}
     - target: {fileID: 7728140893198606294, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -15761,7 +15777,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1789286872359436609, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
       propertyPath: transitionName
-      value: InGame-TradeHouse1
+      value: OutterCircleS-TradeHouse1
       objectReference: {fileID: 0}
     - target: {fileID: 2898164435462665868, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15821,11 +15837,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9021669119073903171, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
       propertyPath: areaToLoad
-      value: SampleScene
+      value: S-OutterCircle
       objectReference: {fileID: 0}
     - target: {fileID: 9021669119073903171, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
       propertyPath: areaTransitionName
-      value: InGame-TradeHouse1
+      value: OutterCircleS-TradeHouse1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
@@ -16023,6 +16039,7 @@ MonoBehaviour:
   quizaniEntrance: {fileID: 0}
   naranEntrance: {fileID: 0}
   pauseMenuPanel: {fileID: 1635896250}
+  balloon: {fileID: 0}
   pentagramActive: 1
   noFuelPanel: {fileID: 1155269063}
   balloonActive: 0
