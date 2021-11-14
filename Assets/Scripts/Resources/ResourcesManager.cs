@@ -11,6 +11,7 @@ public class ResourcesManager : MonoBehaviour
     [SerializeField] private bool isGold;
     [SerializeField] private GameObject[] resourcesPreFabs = new GameObject[3];
     [SerializeField] private GameObject emptyObject;
+    [SerializeField] private int papatacaSector;
     private int resourceIndex = 0;
     private float lastSpawn;
     private float spawnLapse;
@@ -29,10 +30,36 @@ public class ResourcesManager : MonoBehaviour
         if(isWood) {
             resourceIndex = 0;
             spawnLapse = 1f;
-            maxX = 13f;
-            minX = -13f;
-            maxY = 14.5f;
-            minY = -14.5f;
+
+            switch (papatacaSector) {
+                case 1:
+                    maxX = 0f;
+                    minX = -200f;
+                    maxY = 200f;
+                    minY = 0f;
+                break;
+                case 2:
+                    maxX = 200f;
+                    minX = 0f;
+                    maxY = 200f;
+                    minY = 0f;
+                break;
+                case 3:
+                    maxX = 0f;
+                    minX = -200f;
+                    maxY = 0f;
+                    minY = -200f;
+                break;
+                case 4:
+                    maxX = 200f;
+                    minX = 0f;
+                    maxY = 0f;
+                    minY = -200f;
+                break;
+                default:
+                    Debug.Log("Sector is 0");
+                break;
+            }
         }
         else if(isIron) {
             resourceIndex = 1;
@@ -82,15 +109,30 @@ public class ResourcesManager : MonoBehaviour
     }
 
     public void GetNewSpawnPosition() {
-        Debug.Log("Getting new position");
+        bool outOfCopitlan = false;
+        float distanceFromCenter = 0f;
 
-        nextSpawnPosition = new Vector3(Random.Range(maxX, minX), Random.Range(maxY, minY), 1f);
+        Debug.Log("Getting new position");
+        
+        do {
+            nextSpawnPosition = new Vector3(Random.Range(maxX, minX), Random.Range(maxY, minY), 1f);
+
+            distanceFromCenter = (float) System.Math.Sqrt((nextSpawnPosition.x*nextSpawnPosition.x) + (nextSpawnPosition.y*nextSpawnPosition.y));
+
+            Debug.Log("Ramdom: " + distanceFromCenter);
+
+            if(distanceFromCenter > 172) {
+                outOfCopitlan = true;
+                Debug.Log("Buena: " + distanceFromCenter);
+            }
+            
+        } while(!outOfCopitlan);
 
         GameObject newPosition = Instantiate(this.emptyObject, nextSpawnPosition, Quaternion.identity);
 
         newPosition.transform.SetParent(this.gameObject.transform);
 
-        Destroy(newPosition, .1f);
+        Destroy(newPosition, .5f);
     }
 
     // Called when a resource is collected.
