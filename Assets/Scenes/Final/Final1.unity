@@ -479,7 +479,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -441503381
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: -1
   m_Sprite: {fileID: 2285118326115823335, guid: 7be679a9b4f2c3643a8f4e1d104009ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -22965,7 +22965,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -441503381
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: -1
   m_Sprite: {fileID: 4231241789423689243, guid: 8bd1afa279ce9e24a99ac9fca3b0eebe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -23374,6 +23374,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2acf8baa8f5c5ff47b09b35e7e5a048d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maleStatue: {fileID: 0}
+  femaleStatue: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &7728140891808527722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23480,7 +23483,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeScreen: {fileID: 7728140891992036409}
-  fadeSpeed: 3
   shouldFadeToBlack: 0
   shouldFadeFromBlack: 0
 --- !u!114 &7728140891808527728
@@ -23593,6 +23595,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.509375, y: 0.5}
-  m_AnchoredPosition: {x: -9, y: -0.0025024}
-  m_SizeDelta: {x: 1902, y: 1080}
+  m_AnchoredPosition: {x: -10.35, y: -0.00051117}
+  m_SizeDelta: {x: 2187.3, y: 1242}
   m_Pivot: {x: 0.5, y: 0.5}

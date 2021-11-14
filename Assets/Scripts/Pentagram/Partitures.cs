@@ -70,7 +70,6 @@ public class Partitures : MonoBehaviour
 
     public void SetVelocity(string partitureName)
     {
-        Debug.Log("setVelocity");
         this.partitureName = partitureName;
         if (partitureName == "Partitura 1" || partitureName == "Partitura 2" || partitureName == "Partitura 3")
         {

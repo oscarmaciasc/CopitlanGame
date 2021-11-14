@@ -490,9 +490,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7728140893198606288, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2187.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728140893198606288, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1242
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728140893198606288, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -10.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728140893198606288, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.00051117
+      objectReference: {fileID: 0}
     - target: {fileID: 7728140893198606294, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_Color.a
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc6deea581a65364391abd104cfaced7, type: 3}
@@ -890,11 +906,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
---- !u!1 &1179658108 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8905299658810223276, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
-  m_PrefabInstance: {fileID: 1179658107}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1230306515
 GameObject:
   m_ObjectHideFlags: 0
@@ -3582,7 +3593,6 @@ MonoBehaviour:
   CI2HouseHabitantA: {fileID: 0}
   CI2HouseHabitantB: {fileID: 0}
   partiture5: {fileID: 0}
-  areaExit: {fileID: 1179658108}
   houseID: 0
   habitantID: 0
 --- !u!4 &2051139005

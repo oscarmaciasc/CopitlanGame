@@ -20,6 +20,15 @@ public class KasakirGuard : MonoBehaviour
     void Start()
     {
         //destiny = new Vector2(transform.position.x + 2, transform.position.y);
+
+        GameData gameData = new GameData();
+        gameData = XmlManager.instance.LoadGame();
+
+        if(gameData.dirigentEntrance[0].shouldBeActive)
+        {
+            theEntrance.SetActive(true);
+
+        }
     }
 
     // Update is called once per frame
@@ -33,9 +42,10 @@ public class KasakirGuard : MonoBehaviour
         {
             // The player has the requested permission
             habitant.GetComponent<DialogActivator>().lines = permit;
-
-            
+            //theEntrance.SetActive(true);
+            XmlManager.instance.SaveDirigentEntranceState(0, true);
             doorObstruction.SetActive(false);
+            Debug.Log("tengo el permiso outtercircle");
             
 
             if (conversationFinished)

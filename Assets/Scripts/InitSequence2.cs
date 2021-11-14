@@ -21,7 +21,6 @@ public class InitSequence2 : MonoBehaviour
     public bool secondMessage = false;
     public bool shouldCountDown = false;
     public float waitToLoad = 1f;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -150,7 +149,8 @@ public class InitSequence2 : MonoBehaviour
         waitToLoad -= Time.deltaTime;
         if (waitToLoad <= 0)
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("SE-Papataca");
+            PlayerController.instance.areaTransitionName = "Tutorial-PapatacaSE";
         }
     }
 }

@@ -155,4 +155,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sectors/MidSections/DownPapatacaMid.unity
     guid: 08b9831a27e424fe89ee736f05310848
+  - enabled: 1
+    path: Assets/Scenes/Sectors/MidSections/LeftPapatacaMid.unity
+    guid: 972e1b236c91c42659cea4cb0130aa0a
   m_configObjects: {}

@@ -29,6 +29,7 @@ public class CameraController : MonoBehaviour
         theMap.CompressBounds();
         bottomLeftLimit = theMap.localBounds.min + new Vector3(halfWidth, halfHeight, 0f);
         topRightLimit = theMap.localBounds.max + new Vector3(-halfWidth, -halfHeight, 0f);
+        target = FindObjectOfType<PlayerController>().transform;
 
         //  We send the bound limits to the PlayerController script to keep the player inside the map
         if (PlayerController.instance != null)

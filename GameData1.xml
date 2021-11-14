@@ -9,7 +9,7 @@
       <quantity>400</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>14</quantity>
+      <quantity>15</quantity>
     </Resource>
     <Resource name="gold">
       <quantity>9</quantity>
@@ -19,7 +19,7 @@
     </Resource>
   </Resources>
   <Permissions>
-    <Permission name="innerCircle" />
+    <Permission name="outterCircle" />
   </Permissions>
   <Flutes>
     <Flute name="woodenFlute" isByDefault="false" />
@@ -43,7 +43,7 @@
   </MusicSheets>
   <AudienceResults>
     <AudienceResult name="kasakirResult">
-      <result>100</result>
+      <result>0</result>
     </AudienceResult>
     <AudienceResult name="quizaniResult">
       <result>100</result>
@@ -63,7 +63,7 @@
       <shouldBeActive>true</shouldBeActive>
     </MineEntrance>
     <MineEntrance name="setiEntrance">
-      <shouldBeActive>true</shouldBeActive>
+      <shouldBeActive>false</shouldBeActive>
     </MineEntrance>
   </MineEntrances>
   <DirigentEntrances>
@@ -71,10 +71,10 @@
       <shouldBeActive>true</shouldBeActive>
     </DirigentEntrance>
     <DirigentEntrance name="quizaniEntrance">
-      <shouldBeActive>true</shouldBeActive>
+      <shouldBeActive>false</shouldBeActive>
     </DirigentEntrance>
     <DirigentEntrance name="naranEntrance">
-      <shouldBeActive>true</shouldBeActive>
+      <shouldBeActive>false</shouldBeActive>
     </DirigentEntrance>
   </DirigentEntrances>
   <Collectables>
