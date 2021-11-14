@@ -11276,7 +11276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1789286872359436609, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
       propertyPath: transitionName
-      value: InGame-Quizani
+      value: Triangle-Quizani
       objectReference: {fileID: 0}
     - target: {fileID: 2898164435462665868, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11336,11 +11336,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9021669119073903171, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
       propertyPath: areaToLoad
-      value: SampleScene
+      value: Triangle
       objectReference: {fileID: 0}
     - target: {fileID: 9021669119073903171, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
       propertyPath: areaTransitionName
-      value: InGame-Quizani
+      value: Triangle-Quizani
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}

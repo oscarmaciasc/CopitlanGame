@@ -172,6 +172,8 @@ MonoBehaviour:
   CI1HouseHabitantB: {fileID: 0}
   CI2HouseHabitantA: {fileID: 0}
   CI2HouseHabitantB: {fileID: 0}
+  partiture5: {fileID: 0}
+  houseID: 0
   habitantID: 0
 --- !u!4 &235188466
 Transform:
@@ -3457,7 +3459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1789286872359436609, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
       propertyPath: transitionName
-      value: InGame-HouseCE3
+      value: OutterCircleS-HouseCE3
       objectReference: {fileID: 0}
     - target: {fileID: 2898164435462665868, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3517,11 +3519,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9021669119073903171, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
       propertyPath: areaToLoad
-      value: SampleScene
+      value: S-OutterCircle
       objectReference: {fileID: 0}
     - target: {fileID: 9021669119073903171, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}
       propertyPath: areaTransitionName
-      value: InGame-HouseCE3
+      value: OutterCircleS-HouseCE3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be9d80aa9b0069e4eb8a43f36010ece8, type: 3}

@@ -33,6 +33,8 @@ public class BalloonPlayerController : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+
+        Debug.Log("Starting Balloon");
     }
 
     void OnEnable()

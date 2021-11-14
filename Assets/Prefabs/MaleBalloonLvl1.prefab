@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8130598409185284601}
   - component: {fileID: 6353537929709982843}
   m_Layer: 0
-  m_Name: MaleBalloon
+  m_Name: MaleBalloonLvl1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

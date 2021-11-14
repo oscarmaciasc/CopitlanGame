@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   areaToLoad: HouseCI2
-  areaTransitionName: InGame-HouseCI2-65
+  areaTransitionName: InnerCircle-HouseCI2-65
   theEntrance: {fileID: 484316717}
   waitToLoad: 1
 --- !u!61 &27769580
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   areaToLoad: HouseCI1
-  areaTransitionName: InGame-HouseCI1-59
+  areaTransitionName: InnerCircle-HouseCI1-59
   theEntrance: {fileID: 984036792}
   waitToLoad: 1
 --- !u!61 &49630223
@@ -361,7 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   areaToLoad: HouseCI1
-  areaTransitionName: InGame-HouseCI1-62
+  areaTransitionName: InnerCircle-HouseCI1-62
   theEntrance: {fileID: 106670315}
   waitToLoad: 1
 --- !u!61 &72196735
@@ -448,7 +448,6 @@ GameObject:
   - component: {fileID: 110583532}
   - component: {fileID: 110583531}
   - component: {fileID: 110583530}
-  - component: {fileID: 110583529}
   - component: {fileID: 110583528}
   m_Layer: 0
   m_Name: DoorGuard13
@@ -485,29 +484,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorObstruction: {fileID: 1349205667}
   habitant: {fileID: 110583526}
-  myAnim: {fileID: 110583529}
+  myAnim: {fileID: 0}
   moveSpeed: 1
   theEntrance: {fileID: 1344246016}
   conversationFinished: 0
---- !u!95 &110583529
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 110583526}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 6fdfc8c9a9d40d342aca9f340d5056e4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!50 &110583530
 Rigidbody2D:
   serializedVersion: 4
@@ -649,6 +629,108 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &112664571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 112664572}
+  - component: {fileID: 112664575}
+  - component: {fileID: 112664574}
+  - component: {fileID: 112664573}
+  m_Layer: 0
+  m_Name: AreaExit-Down
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &112664572
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112664571}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.020000458, y: 82.36, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1783197846}
+  m_Father: {fileID: 326329753}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &112664573
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112664571}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.4859476, y: -2.0422897}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.092245, y: 0.4501419}
+  m_EdgeRadius: 0
+--- !u!114 &112664574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112664571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af715aa748a029948b9a8efe6414b4c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaToLoad: Triangle
+  areaTransitionName: Triangle-InnerCircleDown
+  theEntrance: {fileID: 1783197847}
+  waitToLoad: 1
+--- !u!61 &112664575
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112664571}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.494037, y: -0.6425743}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.070867, y: 2.2851486}
+  m_EdgeRadius: 0
 --- !u!1 &119870227
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,7 +777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   areaToLoad: Workshop2
-  areaTransitionName: InGame-Workshop2
+  areaTransitionName: InnerCircle-Workshop2
   theEntrance: {fileID: 1221631061}
   waitToLoad: 1
 --- !u!61 &119870230
@@ -770,7 +852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   areaToLoad: TradeHouse3
-  areaTransitionName: InGame-TradeHouse3
+  areaTransitionName: InnerCircle-TradeHouse3
   theEntrance: {fileID: 1127537283}
   waitToLoad: 1
 --- !u!61 &167439481
@@ -845,7 +927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   areaToLoad: BlacksmithHouse2
-  areaTransitionName: InGame-BlacksmithHouse2
+  areaTransitionName: InnerCircle-BlacksmithHouse2
   theEntrance: {fileID: 872702738}
   waitToLoad: 1
 --- !u!61 &180024643
@@ -934,7 +1016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   areaToLoad: HouseCI2
-  areaTransitionName: InGame-HouseCI2-68
+  areaTransitionName: InnerCircle-HouseCI2-68
   theEntrance: {fileID: 1991055773}
   waitToLoad: 1
 --- !u!61 &260662515
@@ -963,6 +1045,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9425354, y: 0.98926544}
   m_EdgeRadius: 0
+--- !u!1 &326329752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 326329753}
+  m_Layer: 0
+  m_Name: TriangleEntrance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &326329753
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326329752}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.5300007, y: -129.09, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 112664572}
+  - {fileID: 1522613694}
+  - {fileID: 903636426}
+  - {fileID: 1876427934}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &327054368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,7 +1139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   areaToLoad: HouseCI2
-  areaTransitionName: InGame-HouseCI2-67
+  areaTransitionName: InnerCircle-HouseCI2-67
   theEntrance: {fileID: 826390191}
   waitToLoad: 1
 --- !u!61 &327054372
@@ -1144,7 +1260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   areaToLoad: HouseCI1
-  areaTransitionName: InGame-HouseCI1-61
+  areaTransitionName: InnerCircle-HouseCI1-61
   theEntrance: {fileID: 1367580341}
   waitToLoad: 1
 --- !u!61 &415346732
@@ -1173,6 +1289,50 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9425354, y: 0.98926544}
   m_EdgeRadius: 0
+--- !u!1 &462355078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 462355079}
+  - component: {fileID: 462355080}
+  m_Layer: 0
+  m_Name: AreaEntrance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &462355079
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462355078}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.79, y: -3.62, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1876427934}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &462355080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462355078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696d3e3d955284c448839e0281d531b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionName: 
 --- !u!1 &484316715
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,7 +1423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   areaToLoad: Library
-  areaTransitionName: InGame-Library
+  areaTransitionName: InnerCircle-Library
   theEntrance: {fileID: 1278261460}
   waitToLoad: 1
 --- !u!61 &550184698
@@ -1651,7 +1811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   areaToLoad: HouseCI1
-  areaTransitionName: InGame-HouseCI1-60
+  areaTransitionName: InnerCircle-HouseCI1-60
   theEntrance: {fileID: 2089348516}
   waitToLoad: 1
 --- !u!61 &750698983
@@ -2027,6 +2187,108 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionName: 
+--- !u!1 &903636425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 903636426}
+  - component: {fileID: 903636429}
+  - component: {fileID: 903636428}
+  - component: {fileID: 903636427}
+  m_Layer: 0
+  m_Name: AreaExit-Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &903636426
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903636425}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -45.61, y: 129.61, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1617106045}
+  m_Father: {fileID: 326329753}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &903636427
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903636425}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -5.4322433, y: -0.8875685}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.66166687, y: 2.7595844}
+  m_EdgeRadius: 0
+--- !u!114 &903636428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903636425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af715aa748a029948b9a8efe6414b4c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaToLoad: Triangle
+  areaTransitionName: Triangle-InnerCircleLeft
+  theEntrance: {fileID: 1617106046}
+  waitToLoad: 1
+--- !u!61 &903636429
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903636425}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -4.4643173, y: -0.8763523}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2463989, y: 2.7527046}
+  m_EdgeRadius: 0
 --- !u!1 &909463330
 GameObject:
   m_ObjectHideFlags: 0
@@ -2500,6 +2762,22 @@ PrefabInstance:
     - target: {fileID: 7728140893017095836, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728140893198606288, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2306.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728140893198606288, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1242
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728140893198606288, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -10.912
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728140893198606288, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.00014496
       objectReference: {fileID: 0}
     - target: {fileID: 7728140893198606294, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_Color.a
@@ -116591,9 +116869,7 @@ PolygonCollider2D:
       - {x: -10.03125, y: 7}
       - {x: -9.957256, y: 6.0956836}
       - {x: -9.065871, y: 6.131476}
-      - {x: -8.97904, y: 7.232745}
       - {x: -8.999318, y: 8.020807}
-      - {x: -8.022162, y: 7.987142}
       - {x: 8.0625, y: 7.84375}
       - {x: 8.875, y: 6.09375}
       - {x: 9.71875, y: 5.9375}
@@ -116651,10 +116927,8 @@ PolygonCollider2D:
       - {x: 23.0625, y: 6.96875}
       - {x: 23.0625, y: -8.21875}
       - {x: 22.90625, y: -7.03125}
-      - {x: 20.334587, y: -7.096357}
       - {x: 20.087002, y: -7.067916}
       - {x: 20.0625, y: -8.21875}
-      - {x: 19.842735, y: -7.4785295}
       - {x: 19.472301, y: -7.350614}
       - {x: 19.072771, y: -7.9235697}
       - {x: 18.976873, y: 0.9965601}
@@ -116716,7 +116990,6 @@ PolygonCollider2D:
       - {x: 12.058108, y: -23.164286}
       - {x: 12.115787, y: -11.02661}
       - {x: 27.11092, y: -11.014124}
-      - {x: 27.021751, y: 9.289411}
       - {x: 27.044987, y: 10.031531}
       - {x: 12.043032, y: 10.054474}
       - {x: 12.065696, y: 23.04866}
@@ -116748,7 +117021,6 @@ PolygonCollider2D:
       - {x: 18.995426, y: -15.739819}
       - {x: 19, y: -22.0625}
       - {x: 27, y: -22.0625}
-      - {x: 27.008818, y: -15.742842}
       - {x: 27.007498, y: -15.736105}
     - - {x: -10.96875, y: -21.78125}
       - {x: -10.96875, y: -21.90625}
@@ -117523,7 +117795,6 @@ PolygonCollider2D:
       - {x: -14, y: 39.0625}
       - {x: -18, y: 39.0625}
       - {x: -18.0625, y: 38.0625}
-      - {x: -20.04678, y: 38.03361}
       - {x: -22.8125, y: 37.6875}
       - {x: -23, y: 38.0625}
       - {x: -19.34375, y: 38.0625}
@@ -117539,9 +117810,7 @@ PolygonCollider2D:
       - {x: -18.03125, y: 43.6875}
       - {x: -21.78125, y: 43.625}
       - {x: -22.03125, y: 41.65625}
-      - {x: -26.64493, y: 41.596794}
       - {x: -26.980415, y: 41.343}
-      - {x: -27.013672, y: 38.064247}
       - {x: -27.018187, y: 37.003384}
       - {x: -28.995977, y: 37}
       - {x: -29, y: 29.9375}
@@ -117560,8 +117829,6 @@ PolygonCollider2D:
       - {x: 29, y: 29.9375}
       - {x: 29.0625, y: 36.25}
       - {x: 27.28027, y: 36.27632}
-      - {x: 27.267668, y: 37.27181}
-      - {x: 27.015549, y: 37.288948}
       - {x: 27.03125, y: 41.25}
       - {x: 26.6875, y: 41.6875}
       - {x: 22.03125, y: 41.65625}
@@ -117724,7 +117991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   areaToLoad: Naran
-  areaTransitionName: InGame-Naran
+  areaTransitionName: InnerCircle-Naran
   theEntrance: {fileID: 1679894903}
   waitToLoad: 1
 --- !u!61 &1344246019
@@ -117838,7 +118105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1349205668}
   m_Layer: 0
-  m_Name: Door3
+  m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118065,6 +118332,108 @@ Transform:
   m_Father: {fileID: 609941282}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1522613693
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1522613694}
+  - component: {fileID: 1522613697}
+  - component: {fileID: 1522613696}
+  - component: {fileID: 1522613695}
+  m_Layer: 0
+  m_Name: AreaExit-Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1522613694
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522613693}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 49.97, y: 129.61, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1841063990}
+  m_Father: {fileID: 326329753}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1522613695
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522613693}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -3.3219073, y: -0.8875685}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.31529284, y: 2.7595844}
+  m_EdgeRadius: 0
+--- !u!114 &1522613696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522613693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af715aa748a029948b9a8efe6414b4c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaToLoad: Triangle
+  areaTransitionName: Triangle-InnerCircleRight
+  theEntrance: {fileID: 1841063991}
+  waitToLoad: 1
+--- !u!61 &1522613697
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522613693}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -4.2013264, y: -0.8763523}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4131737, y: 2.7527046}
+  m_EdgeRadius: 0
 --- !u!1 &1550089352
 GameObject:
   m_ObjectHideFlags: 0
@@ -118125,7 +118494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   areaToLoad: HouseCI2
-  areaTransitionName: InGame-HouseCI2-64
+  areaTransitionName: InnerCircle-HouseCI2-64
   theEntrance: {fileID: 618995954}
   waitToLoad: 1
 --- !u!61 &1550089356
@@ -118211,6 +118580,50 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.8439078, y: 3.0648339}
   m_EdgeRadius: 0
+--- !u!1 &1617106044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1617106045}
+  - component: {fileID: 1617106046}
+  m_Layer: 0
+  m_Name: AreaEntrance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1617106045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617106044}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.53, y: -1.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 903636426}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1617106046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617106044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696d3e3d955284c448839e0281d531b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionName: 
 --- !u!1 &1643443374
 GameObject:
   m_ObjectHideFlags: 0
@@ -118271,7 +118684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   areaToLoad: HouseCI2
-  areaTransitionName: InGame-HouseCI2-66
+  areaTransitionName: InnerCircle-HouseCI2-66
   theEntrance: {fileID: 1892642881}
   waitToLoad: 1
 --- !u!61 &1643443378
@@ -118944,6 +119357,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1783197845
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1783197846}
+  - component: {fileID: 1783197847}
+  m_Layer: 0
+  m_Name: AreaEntrance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1783197846
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783197845}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.71, y: 4.11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 112664572}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1783197847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783197845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696d3e3d955284c448839e0281d531b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionName: 
 --- !u!1 &1824512772
 GameObject:
   m_ObjectHideFlags: 0
@@ -119057,6 +119514,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1841063989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1841063990}
+  - component: {fileID: 1841063991}
+  m_Layer: 0
+  m_Name: AreaEntrance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1841063990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841063989}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.84, y: -1.12, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1522613694}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1841063991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841063989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696d3e3d955284c448839e0281d531b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionName: 
 --- !u!1001 &1866123917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -119118,6 +119619,108 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f519f797a9eb7fa4a85268d10ad2af7d, type: 3}
+--- !u!1 &1876427933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1876427934}
+  - component: {fileID: 1876427937}
+  - component: {fileID: 1876427936}
+  - component: {fileID: 1876427935}
+  m_Layer: 0
+  m_Name: AreaExit-Up
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1876427934
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876427933}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.020000458, y: 179.55, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 462355079}
+  m_Father: {fileID: 326329753}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1876427935
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876427933}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.4859476, y: 0.8665867}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.092245, y: 0.29541397}
+  m_EdgeRadius: 0
+--- !u!114 &1876427936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876427933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af715aa748a029948b9a8efe6414b4c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaToLoad: Triangle
+  areaTransitionName: Triangle-InnerCircleUp
+  theEntrance: {fileID: 462355080}
+  waitToLoad: 1
+--- !u!61 &1876427937
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876427933}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.494037, y: -0.12607002}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.070867, y: 1.6544075}
+  m_EdgeRadius: 0
 --- !u!1 &1892642879
 GameObject:
   m_ObjectHideFlags: 0
@@ -119222,7 +119825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   areaToLoad: HouseCI1
-  areaTransitionName: InGame-HouseCI1-63
+  areaTransitionName: InnerCircle-HouseCI1-63
   theEntrance: {fileID: 693228300}
   waitToLoad: 1
 --- !u!61 &1903531356
@@ -119265,7 +119868,6 @@ GameObject:
   - component: {fileID: 1918939950}
   - component: {fileID: 1918939949}
   - component: {fileID: 1918939948}
-  - component: {fileID: 1918939947}
   - component: {fileID: 1918939946}
   m_Layer: 0
   m_Name: DoorGuard14
@@ -119302,29 +119904,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorObstruction: {fileID: 1349205667}
   habitant: {fileID: 1918939944}
-  myAnim: {fileID: 1918939947}
+  myAnim: {fileID: 0}
   moveSpeed: 1
   theEntrance: {fileID: 1344246016}
   conversationFinished: 0
---- !u!95 &1918939947
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1918939944}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 6fdfc8c9a9d40d342aca9f340d5056e4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!50 &1918939948
 Rigidbody2D:
   serializedVersion: 4
