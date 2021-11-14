@@ -25,6 +25,7 @@ public class Seti2 : MonoBehaviour
     
     public bool notFoundFlutes = false;
     public int percentageToPass = 80;
+    public bool canMove = true;
     // Start is called before the first frame update
 
     void Start()
@@ -37,6 +38,9 @@ public class Seti2 : MonoBehaviour
 
         if (gameData.mineEntrance[2].shouldBeActive)
         {
+            theEntrance.SetActive(true);
+            canMove = false;
+            this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x + 3, this.gameObject.transform.position.y, this.gameObject.transform.position.z);
             hasFinished = true;
             this.gameObject.GetComponent<DialogActivator>().lines = goodLines;
             this.gameObject.GetComponent<PartitureHabitant>().canShowPartitures = false;
@@ -74,7 +78,7 @@ public class Seti2 : MonoBehaviour
 
     public void CheckIfCanPass()
     {
-        if (canPass && finishedPartiture && Seti.instance.canPass)
+        if (canPass && finishedPartiture && Seti.instance.canPass && canMove)
         {
             if (destiny.x != gameObject.transform.position.x)
             {

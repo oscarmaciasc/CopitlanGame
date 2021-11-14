@@ -25,6 +25,7 @@ public class Tecalli : MonoBehaviour
     public int percentageToPass = 50;
     
     public bool notFoundFlutes = false;
+    public bool canMove = true;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,9 @@ public class Tecalli : MonoBehaviour
 
         if (gameData.mineEntrance[0].shouldBeActive)
         {
+            theEntrance.SetActive(true);
+            canMove = false;
+            this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x + 3, this.gameObject.transform.position.y, this.gameObject.transform.position.z);
             hasFinished = true;
             this.gameObject.GetComponent<DialogActivator>().lines = goodLines;
             this.gameObject.GetComponent<PartitureHabitant>().canShowPartitures = false;
@@ -73,7 +77,7 @@ public class Tecalli : MonoBehaviour
 
     public void CheckIfCanPass()
     {
-        if (canPass && finishedPartiture)
+        if (canPass && finishedPartiture && canMove)
         {
             if (destiny.x != gameObject.transform.position.x)
             {

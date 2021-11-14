@@ -79,6 +79,7 @@ public class PauseMenu : MonoBehaviour
         InventoryPanel.SetActive(false);
         BalloonPanel.SetActive(false);
         InfoPanel.SetActive(false);
+        //AudioManager.instance.PlaySFX(4);
     }
 
     // Activates the inventory panel and deactivates others
@@ -89,6 +90,7 @@ public class PauseMenu : MonoBehaviour
         ActivateInvResourcesPanel();
         BalloonPanel.SetActive(false);
         InfoPanel.SetActive(false);
+        //AudioManager.instance.PlaySFX(4);
     }
 
     // Activates the balloon panel and deactivates others
@@ -100,6 +102,7 @@ public class PauseMenu : MonoBehaviour
         SetBallon();
         SetSlider();
         InfoPanel.SetActive(false);
+        //AudioManager.instance.PlaySFX(4);
     }
 
     // Sets the ballon information reading from the gameData
@@ -152,6 +155,7 @@ public class PauseMenu : MonoBehaviour
         BalloonPanel.SetActive(false);
         InfoPanel.SetActive(true);
         SetInfo();
+        //AudioManager.instance.PlaySFX(4);
     }
 
     // Sets the game info reading from the gameData
@@ -356,6 +360,7 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuPanel.gameObject.SetActive(false);
         GameManager.instance.pPressed = false;
+        //AudioManager.instance.PlaySFX(3);
     }
 
     // Formats a float into a minutes fomat
