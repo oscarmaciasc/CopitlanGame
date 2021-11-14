@@ -295,6 +295,7 @@ public class InGame : MonoBehaviour
     public void Save()
     {
         XmlManager.instance.UpdateTimePlayed(Time.time - lastSaved);
+        XmlManager.instance.UpdateLastSaved(SceneManager.GetActiveScene().name, PlayerController.instance.gameObject.transform.position.x, PlayerController.instance.gameObject.transform.position.y);
         lastSaved = Time.time;
     }
 

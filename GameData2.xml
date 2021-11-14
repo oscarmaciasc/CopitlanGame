@@ -1,7 +1,12 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="lechuga" gender="false">
-  <TimePlayed time="8.720132" />
-  <TimeWalked time="11.870286" />
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Wilson" gender="false">
+  <LastSaved>
+    <scene>SE-Papataca</scene>
+    <coordX>149.069077</coordX>
+    <coordY>-147.849</coordY>
+  </LastSaved>
+  <TimePlayed time="39.7243" />
+  <TimeWalked time="0" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="0" />
   <Resources>
@@ -56,7 +61,7 @@
   </MineEntrances>
   <DirigentEntrances>
     <DirigentEntrance name="kasakirEntrance">
-      <shouldBeActive>true</shouldBeActive>
+      <shouldBeActive>false</shouldBeActive>
     </DirigentEntrance>
     <DirigentEntrance name="quizaniEntrance">
       <shouldBeActive>false</shouldBeActive>
