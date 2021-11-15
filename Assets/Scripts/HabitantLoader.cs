@@ -222,9 +222,29 @@ public class HabitantLoader : MonoBehaviour
         }
 
         // W-OutterCircle
+        if((houseID >= 1 && houseID <= 4) || (houseID >= 9 && houseID <= 12) || (houseID >= 19 && houseID <= 22) || (houseID >= 29 && houseID <= 32))
+        {
+            AreaExit.instance.areaToLoad = "E-OutterCircle";
 
+            if(houseID >= 1 && houseID <= 4)
+            {
+                AreaExit.instance.areaTransitionName = "OutterCircleW-HouseCE1";
+            }
 
-        // Triangle
-        
+            if(houseID >= 9 && houseID <= 12)
+            {
+                AreaExit.instance.areaTransitionName = "OutterCircleW-HouseCE2";
+            }
+
+            if(houseID >= 19 && houseID <= 22)
+            {
+                AreaExit.instance.areaTransitionName = "OutterCircleW-HouseCE3";
+            }
+
+            if(houseID >= 29 && houseID <= 32)
+            {
+                AreaExit.instance.areaTransitionName = "OutterCircleW-HouseCE4";
+            }
+        }
     }
 }
