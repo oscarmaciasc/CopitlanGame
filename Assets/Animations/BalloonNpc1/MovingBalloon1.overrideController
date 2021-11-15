@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MovingBalloon1
+  m_Controller: {fileID: 9100000, guid: 459f53afb4526d143a7879c957021e1a, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: dd6e59d5fead8354ba6e1ed300ef9d4f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 007c346f53b8b4450a7758cca495c7f0, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f00cb8cd7a667424cadaa4dd0fc9b4c0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 51232ffac4649407b97e7bb108287745, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b3ea5261b5f549547b86b97e049f2b4f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 45bb294224887434daa8148299802968, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: cce1ac58917e2be45b441b14cd485015, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 999c7badd346f478db59bad2911ddc23, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 998f76071aecf96408df2e2ac3188cbe, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 18cbf43004eca490086875417d829002, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 68c8191fb3aa0b847a61f38d5557bd5b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c8b0803ffe95b4061a2c5da1955c087f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: feca86226c2c55141bbfadcdcfa0d816, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a70365e11be2048f8aaf91f541fce30e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 347bd69192563324f826bc272842220a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: dc51b6e271f33415192d8386c2b94ddf, type: 2}

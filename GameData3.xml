@@ -6,12 +6,12 @@
     <CoordY>178.316589</CoordY>
   </LastSaved>
   <TimePlayed time="6094.75049" />
-  <TimeWalked time="3165.582" />
+  <TimeWalked time="3188.21948" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="0" />
   <Resources>
     <Resource name="wood">
-      <quantity>5</quantity>
+      <quantity>6</quantity>
     </Resource>
     <Resource name="iron">
       <quantity>16</quantity>
