@@ -19,7 +19,7 @@ public class DialogManagerFinal : MonoBehaviour
     private bool hasFinished = false;
 
     private float timeToWait = 3f;
-
+    [SerializeField] private GameObject camera;
 
     // Start is called before the first frame update
     void Start()
@@ -67,7 +67,9 @@ public class DialogManagerFinal : MonoBehaviour
             FadeMessage2.instance.FadeToTransparent2();
             DeactivateDialogs();
 
-            if (!dialogBox.activeInHierarchy)
+            camera.GetComponent<Animator>().enabled = true;
+
+            if (!dialogBox.activeInHierarchy && FinalCamera.instance.animationEnd)
             {
                 ChangeScene();
             }
