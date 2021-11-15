@@ -111,16 +111,23 @@ public class ResourcesManager : MonoBehaviour
         bool outOfCopitlan = false;
         float distanceFromCenter = 0f;
         
-        do {
-            nextSpawnPosition = new Vector3(Random.Range(maxX, minX), Random.Range(maxY, minY), 1f);
+        if(isWood)
+        {
+            do {
+                nextSpawnPosition = new Vector3(Random.Range(maxX, minX), Random.Range(maxY, minY), 1f);
 
-            distanceFromCenter = (float) System.Math.Sqrt((nextSpawnPosition.x*nextSpawnPosition.x) + (nextSpawnPosition.y*nextSpawnPosition.y));
+                distanceFromCenter = (float) System.Math.Sqrt((nextSpawnPosition.x*nextSpawnPosition.x) + (nextSpawnPosition.y*nextSpawnPosition.y));
 
-            if(distanceFromCenter > 172) {
-                outOfCopitlan = true;
-            }
+                if(distanceFromCenter > 172) {
+                    outOfCopitlan = true;
+                }
             
-        } while(!outOfCopitlan);
+            } while(!outOfCopitlan);
+        }
+        else
+        {
+            nextSpawnPosition = new Vector3(Random.Range(maxX, minX), Random.Range(maxY, minY), 1f);
+        }
 
         GameObject newPosition = Instantiate(this.emptyObject, nextSpawnPosition, Quaternion.identity);
 
