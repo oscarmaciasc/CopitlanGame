@@ -20,7 +20,7 @@
       <quantity>40</quantity>
     </Resource>
     <Resource name="fuel">
-      <quantity>1</quantity>
+      <quantity>20</quantity>
     </Resource>
   </Resources>
   <Permissions>
@@ -906,4 +906,4 @@
       <Interacted>false</Interacted>
     </HabitantInteracted>
   </HabitantsInteracted>
-</gameData>
+</gameData> 

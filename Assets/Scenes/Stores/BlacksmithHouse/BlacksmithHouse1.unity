@@ -5624,6 +5624,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: PartitureSelection, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 1217552451, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: canActivateBalloon
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1240519340, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

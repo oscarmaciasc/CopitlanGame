@@ -27,6 +27,7 @@ public class InGame : MonoBehaviour
     [SerializeField] private GameObject quizaniEntrance;
     [SerializeField] private GameObject naranEntrance;
     [SerializeField] private GameObject pauseMenuPanel;
+    [SerializeField] private bool canActivateBalloon;
     private GameObject player;
     public GameObject balloon;
     public bool pentagramActive = true;
@@ -163,11 +164,12 @@ public class InGame : MonoBehaviour
             GameManager.instance.pPressed = false;
         }
 
-        if (GameManager.instance.fPressed && !balloonActive && ((SceneManager.GetActiveScene().name != "TradeHouse1") || (SceneManager.GetActiveScene().name != "TradeHouse2") || (SceneManager.GetActiveScene().name != "TradeHouse3")))
+        // canActivateBalloon is set directly in the editor
+        if (GameManager.instance.fPressed && !balloonActive && canActivateBalloon)
         {
             ActivateBalloon();
         }
-        else if (GameManager.instance.fPressed && balloonActive && ((SceneManager.GetActiveScene().name != "TradeHouse1") || (SceneManager.GetActiveScene().name != "TradeHouse2") || (SceneManager.GetActiveScene().name != "TradeHouse3")))
+        else if (GameManager.instance.fPressed && balloonActive && canActivateBalloon)
         {
             DeactivateBalloon();
         }
