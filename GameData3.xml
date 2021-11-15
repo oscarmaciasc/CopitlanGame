@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="speed" gender="false">
-  <LastSaved wasLoadedAlready="false">
+  <LastSaved wasLoadedAlready="true">
     <Scene>InnerCircle</Scene>
     <CoordX>-25.4526577</CoordX>
     <CoordY>14.405509</CoordY>
   </LastSaved>
-  <TimePlayed time="5900.427" />
-  <TimeWalked time="2980.9126" />
+  <TimePlayed time="5965.599" />
+  <TimeWalked time="3014.40259" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="0" />
   <Resources>
@@ -14,7 +14,7 @@
       <quantity>0</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>7</quantity>
+      <quantity>14</quantity>
     </Resource>
     <Resource name="gold">
       <quantity>50</quantity>
@@ -89,6 +89,7 @@
     <Collectable id="18" shouldBeDestroyed="true" />
     <Collectable id="10" shouldBeDestroyed="true" />
     <Collectable id="8" shouldBeDestroyed="true" />
+    <Collectable id="1" shouldBeDestroyed="true" />
   </Collectables>
   <HabitantResults>
     <HabitantResult id="0">
