@@ -4860,6 +4860,8 @@ MonoBehaviour:
   blacksmithInterface: {fileID: 1251347074}
   dialogBox: {fileID: 2132399111}
   blacksmithHabitant: {fileID: 1279763687}
+  balloonToGiveMale: {fileID: 7824392390336479736, guid: 3a2e48d4493a444bdb64284bf430f65b, type: 3}
+  balloonToGiveFemale: {fileID: 603842978407244425, guid: c25cda9c36d204d28aafc06e7d182a2a, type: 3}
 --- !u!50 &1279763690
 Rigidbody2D:
   serializedVersion: 4

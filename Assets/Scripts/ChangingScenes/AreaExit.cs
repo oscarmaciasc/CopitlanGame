@@ -45,6 +45,11 @@ public class AreaExit : MonoBehaviour
             UIFade.instance.FadeToBlack();
 
             PlayerController.instance.areaTransitionName = areaTransitionName;
+
+            if (SceneManager.GetActiveScene().name != "InitSequence1" && SceneManager.GetActiveScene().name != "InitSequence2")
+            {
+                InGame.instance.balloon.GetComponent<BalloonPlayerController>().enabled = true;
+            }
         }
     }
 }

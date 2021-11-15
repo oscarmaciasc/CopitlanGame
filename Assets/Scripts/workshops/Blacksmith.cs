@@ -17,6 +17,8 @@ public class Blacksmith : MonoBehaviour
     [SerializeField] private GameObject blacksmithInterface;
     [SerializeField] private GameObject dialogBox;
     [SerializeField] private GameObject blacksmithHabitant;
+    [SerializeField] private GameObject balloonToGiveMale;
+    [SerializeField] private GameObject balloonToGiveFemale;
 
     // Start is called before the first frame update
     void Start()
@@ -79,29 +81,18 @@ public class Blacksmith : MonoBehaviour
 
             //Destroy the previous balloon and create the new object
 
-            // Why does the balloon destroy itself when changing scenes
-
-            if (!gameData.isWoman)
+            //Destroy(InGame.instance.balloon.gameObject);
+            if (gameData.isWoman)
             {
-                if (balloonToBuy == "balloonLvl2")
-                {
-                    Destroy(GameObject.Find("MaleBalloon(Clone)").gameObject.transform.Find("MaleBalloonLvl1"));
-                } 
-                else if (balloonToBuy == "balloonLvl3")
-                {
-                    Destroy(GameObject.Find("MaleBalloon(Clone)").gameObject.transform.Find("MaleBalloonLvl2"));
-                }
+                //Create balloon
+                BalloonPlayerController cloneBalloon = Instantiate(balloonToGiveFemale).GetComponent<BalloonPlayerController>();
+                BalloonPlayerController.instance = cloneBalloon;
             }
             else
             {
-                if (balloonToBuy == "balloonLvl2")
-                {
-                    Destroy(GameObject.Find("FemaleBalloon(Clone)").gameObject.transform.Find("FemaleBalloonLvl1"));
-                } 
-                else if (balloonToBuy == "balloonLvl3")
-                {
-                    Destroy(GameObject.Find("FemaleBalloon(Clone)").gameObject.transform.Find("FemaleBalloonLvl2"));
-                }
+                //Create Balloon
+                BalloonPlayerController cloneBalloon = Instantiate(balloonToGiveMale).GetComponent<BalloonPlayerController>();
+                BalloonPlayerController.instance = cloneBalloon;
             }
 
 

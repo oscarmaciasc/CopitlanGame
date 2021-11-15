@@ -52,11 +52,11 @@ public class InGame : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name != "TradeHouse1") //or tradehouse2, etc
         {
-
+            
             // Reference to the balloon
             balloon = FindObjectOfType<BalloonPlayerController>().gameObject;
 
-            balloon.SetActive(false);
+            balloon.GetComponent<BalloonPlayerController>().enabled = false;
 
             // Reference to the player
             player = FindObjectOfType<PlayerController>().gameObject;
@@ -158,10 +158,7 @@ public class InGame : MonoBehaviour
 
         if (GameManager.instance.fPressed && !balloonActive && ((SceneManager.GetActiveScene().name != "TradeHouse1") || (SceneManager.GetActiveScene().name != "TradeHouse2") || (SceneManager.GetActiveScene().name != "TradeHouse3")))
         {
-            balloon.SetActive(true);
-            player.SetActive(false);
-            balloonActive = true;
-            GameManager.instance.fPressed = false;
+            ActivateBalloon();
         }
         else if (GameManager.instance.fPressed && balloonActive && ((SceneManager.GetActiveScene().name != "TradeHouse1") || (SceneManager.GetActiveScene().name != "TradeHouse2") || (SceneManager.GetActiveScene().name != "TradeHouse3")))
         {
@@ -228,15 +225,30 @@ public class InGame : MonoBehaviour
 
     }
 
+    public void ActivateBalloon()
+    {
+        balloon.GetComponent<BalloonPlayerController>().enabled = true;
+        balloon.GetComponent<BalloonManager>().enabled = true;
+        balloon.GetComponent<SpriteRenderer>().enabled = true;
+
+        player.SetActive(false);
+        balloonActive = true;
+        GameManager.instance.fPressed = false;
+    }
+
     public void DeactivateBalloon()
     {
-        balloon.SetActive(false);
+        //balloon.SetActive(false);
+        balloon.GetComponent<BalloonPlayerController>().enabled = false;
+        balloon.GetComponent<BalloonManager>().enabled = false;
+        balloon.GetComponent<SpriteRenderer>().enabled = false;
+
         player.transform.position = balloon.transform.position;
         player.SetActive(true);
         balloonActive = false;
 
         // We set the velocity to 0 to reassign the velocity for possible upgrades.
-        balloon.GetComponent<BalloonPlayerController>().moveSpeedBalloon = 0;
+        //balloon.GetComponent<BalloonPlayerController>().moveSpeedBalloon = 0;
         GameManager.instance.fPressed = false;
     }
 
@@ -367,7 +379,7 @@ public class InGame : MonoBehaviour
         else
         {
             PlayerController.instance.canMove = true;
-            if(BalloonPlayerController.instance != null)
+            if (BalloonPlayerController.instance != null)
             {
                 BalloonPlayerController.instance.canMove = true;
             }

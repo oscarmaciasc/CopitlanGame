@@ -6666,9 +6666,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4070676006020204692, guid: f519f797a9eb7fa4a85268d10ad2af7d, type: 3}
     - target: {fileID: 7417249011018122520, guid: b4b39ddb450104d49a0c4bb01a0ce63f, type: 3}
+      propertyPath: maleBalloon
+      value: 
+      objectReference: {fileID: 1277057804819268882, guid: d65b652daba294a01b1ee45843045238, type: 3}
+    - target: {fileID: 7417249011018122520, guid: b4b39ddb450104d49a0c4bb01a0ce63f, type: 3}
       propertyPath: cameraLoader
       value: 
       objectReference: {fileID: 4070676006020204692, guid: f519f797a9eb7fa4a85268d10ad2af7d, type: 3}
+    - target: {fileID: 7417249011018122520, guid: b4b39ddb450104d49a0c4bb01a0ce63f, type: 3}
+      propertyPath: womanBalloon
+      value: 
+      objectReference: {fileID: 2589609392718157867, guid: a6c9ce6a80b974897ae0022969c55990, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4b39ddb450104d49a0c4bb01a0ce63f, type: 3}
 --- !u!1 &1052525042
