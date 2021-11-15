@@ -23,7 +23,8 @@ public class FinalPapataca : MonoBehaviour
 
     IEnumerator FinishGame()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(7);
+        UIFade.instance.FadeToBlack();
         SceneManager.LoadScene("MainMenu");
     }
 }

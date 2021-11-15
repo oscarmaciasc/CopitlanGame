@@ -209,9 +209,7 @@ public class Leader : MonoBehaviour
 
     IEnumerator ActivateFinal(int final)
     {
-        Debug.Log(conversationFinished);
-        Debug.Log(this.gameObject.GetComponent<DialogActivator>().lines);
-        Debug.Log(dialogBox.activeInHierarchy);
+        UIFade.instance.FadeToBlack();
         if (conversationFinished && (this.gameObject.GetComponent<DialogActivator>().lines == necalliSuccess1 || this.gameObject.GetComponent<DialogActivator>().lines == necalliSuccess2 || this.gameObject.GetComponent<DialogActivator>().lines == necalliSuccess3) && !dialogBox.activeInHierarchy)
         {
             yield return new WaitForSeconds(2);

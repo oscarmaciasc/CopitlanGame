@@ -12,6 +12,8 @@ public class FinalSequence1 : MonoBehaviour
     [SerializeField] private GameObject femaleStatue;
     private string name;
     public GameObject player;
+    [SerializeField] private GameObject years;
+    private bool doOnlyOnce = true;
 
     // Start is called before the first frame update
     void Start()
@@ -43,13 +45,17 @@ public class FinalSequence1 : MonoBehaviour
             }
         }
 
-        StartCoroutine(FinalDialogs());
+        years.GetComponent<Animator>().enabled = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if(YearsScreen.instance.animationEnd && doOnlyOnce)
+        {
+            StartCoroutine(FinalDialogs());
+            doOnlyOnce = false;
+        }
     }
 
     IEnumerator FinalDialogs()
