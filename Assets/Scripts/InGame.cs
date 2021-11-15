@@ -237,6 +237,7 @@ public class InGame : MonoBehaviour
         balloon.GetComponent<BalloonPlayerController>().enabled = true;
         balloon.GetComponent<BalloonManager>().enabled = true;
         balloon.GetComponent<SpriteRenderer>().enabled = true;
+        balloon.GetComponent<CircleCollider2D>().enabled = true;
 
         player.SetActive(false);
         balloonActive = true;
@@ -249,6 +250,7 @@ public class InGame : MonoBehaviour
         balloon.GetComponent<BalloonPlayerController>().enabled = false;
         balloon.GetComponent<BalloonManager>().enabled = false;
         balloon.GetComponent<SpriteRenderer>().enabled = false;
+        balloon.GetComponent<CircleCollider2D>().enabled = false;
 
         player.transform.position = balloon.transform.position;
         player.SetActive(true);

@@ -20,7 +20,7 @@
       <quantity>0</quantity>
     </Resource>
     <Resource name="fuel">
-      <quantity>0</quantity>
+      <quantity>20</quantity>
     </Resource>
   </Resources>
   <Permissions>

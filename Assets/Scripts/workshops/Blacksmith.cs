@@ -81,18 +81,25 @@ public class Blacksmith : MonoBehaviour
 
             //Destroy the previous balloon and create the new object
 
-            //Destroy(InGame.instance.balloon.gameObject);
+            Destroy(FindObjectOfType<BalloonPlayerController>().gameObject);
+
             if (gameData.isWoman)
             {
                 //Create balloon
                 BalloonPlayerController cloneBalloon = Instantiate(balloonToGiveFemale).GetComponent<BalloonPlayerController>();
                 BalloonPlayerController.instance = cloneBalloon;
+
+                InGame.instance.balloon = cloneBalloon.gameObject;
+                InGame.instance.DeactivateBalloon();
             }
             else
             {
                 //Create Balloon
                 BalloonPlayerController cloneBalloon = Instantiate(balloonToGiveMale).GetComponent<BalloonPlayerController>();
                 BalloonPlayerController.instance = cloneBalloon;
+
+                InGame.instance.balloon = cloneBalloon.gameObject;
+                InGame.instance.DeactivateBalloon();
             }
 
 
