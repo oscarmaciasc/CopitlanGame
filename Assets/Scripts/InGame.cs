@@ -50,6 +50,13 @@ public class InGame : MonoBehaviour
 
         UIFade.instance.FadeFromBlack();
 
+        if(!XmlManager.instance.LoadGame().WasLoadedAlready())
+        {
+            Debug.Log("Loading position");
+            FindObjectOfType<PlayerController>().gameObject.transform.position = new Vector3(XmlManager.instance.LoadGame().lastSaved.coordX, XmlManager.instance.LoadGame().lastSaved.coordY, 0f);
+            XmlManager.instance.WasLoadedAlready(true);
+        }
+
         if (SceneManager.GetActiveScene().name != "TradeHouse1") //or tradehouse2, etc
         {
 
@@ -342,7 +349,8 @@ public class InGame : MonoBehaviour
 
     public void Exit()
     {
-        Debug.Log("Bye");
+        Debug.Log("******** Bye ********");
+        XmlManager.instance.WasLoadedAlready(false);
         Application.Quit();
     }
 

@@ -488,6 +488,17 @@ public class XmlManager : MonoBehaviour
         Save(gameIndex, gameData);
     }
 
+    public void WasLoadedAlready(bool wasLoadedSalready)
+    {
+        int gameIndex = GetGameIndex();
+
+        GameData gameData = LoadGame();
+
+        gameData.lastSaved.wasLoadedAlready = wasLoadedSalready;
+
+        Save(gameIndex, gameData);
+    }
+
     // Fill gameData array
     public GameData[] LoadAllGames()
     {

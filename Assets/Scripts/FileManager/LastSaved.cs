@@ -6,12 +6,15 @@ using System.Xml.Serialization;
 
 public class LastSaved
 {
-    [XmlElement("scene")]
+    [XmlAttribute("wasLoadedAlready")]
+    public bool wasLoadedAlready { get; set; }
+
+    [XmlElement("Scene")]
     public string scene { get; set; }
 
-    [XmlElement("coordX")]
+    [XmlElement("CoordX")]
     public float coordX { get; set; }
 
-    [XmlElement("coordY")]
+    [XmlElement("CoordY")]
     public float coordY { get; set; }
 }

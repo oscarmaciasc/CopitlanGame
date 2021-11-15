@@ -145,6 +145,7 @@ public class GameSelection : MonoBehaviour
     public void Load()
     {
         XmlManager.instance.CreateTempFile(index);
+        SceneManager.LoadScene(XmlManager.instance.LoadGame().lastSaved.scene);
     }
 
     public void Delete()
