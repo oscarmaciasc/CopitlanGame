@@ -119,6 +119,7 @@ public class GameData
 
         this.name = playerName;
         this.isWoman = playerGender;
+        this.lastSaved.wasLoadedAlready = true;
         this.lastSaved.scene = "SE-Papataca";
         this.lastSaved.coordX = 168f;
         this.lastSaved.coordY = -158f;
@@ -385,6 +386,11 @@ public class GameData
         }
 
         return 1000;
+    }
+
+    public bool WasLoadedAlready()
+    {
+        return this.lastSaved.wasLoadedAlready;
     }
 
     public string GetLastSavedScene()

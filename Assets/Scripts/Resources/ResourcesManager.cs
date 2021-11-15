@@ -101,7 +101,6 @@ public class ResourcesManager : MonoBehaviour
     {
         if((Time.time - lastSpawn) >= spawnLapse)
         {
-            Debug.Log("Spawning");
             Instantiate(this.resourcesPreFabs[resourceIndex], nextSpawnPosition, Quaternion.identity).transform.SetParent(this.gameObject.transform);
             lastSpawn = Time.time;
             GetNewSpawnPosition();
@@ -111,19 +110,14 @@ public class ResourcesManager : MonoBehaviour
     public void GetNewSpawnPosition() {
         bool outOfCopitlan = false;
         float distanceFromCenter = 0f;
-
-        Debug.Log("Getting new position");
         
         do {
             nextSpawnPosition = new Vector3(Random.Range(maxX, minX), Random.Range(maxY, minY), 1f);
 
             distanceFromCenter = (float) System.Math.Sqrt((nextSpawnPosition.x*nextSpawnPosition.x) + (nextSpawnPosition.y*nextSpawnPosition.y));
 
-            Debug.Log("Ramdom: " + distanceFromCenter);
-
             if(distanceFromCenter > 172) {
                 outOfCopitlan = true;
-                Debug.Log("Buena: " + distanceFromCenter);
             }
             
         } while(!outOfCopitlan);

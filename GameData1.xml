@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
-<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Jackie" gender="true">
-  <LastSaved>
-    <scene>SE-Papataca</scene>
-    <coordX>168</coordX>
-    <coordY>-158</coordY>
+<gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Lucas" gender="false">
+  <LastSaved wasLoadedAlready="true">
+    <Scene>SW-Papataca</Scene>
+    <CoordX>-17.3100071</CoordX>
+    <CoordY>-183.210022</CoordY>
   </LastSaved>
-  <TimePlayed time="0" />
+  <TimePlayed time="229.6788" />
   <TimeWalked time="0" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="0" />
   <Resources>
     <Resource name="wood">
-      <quantity>0</quantity>
+      <quantity>11</quantity>
     </Resource>
     <Resource name="iron">
       <quantity>0</quantity>
@@ -61,7 +61,7 @@
   </MineEntrances>
   <DirigentEntrances>
     <DirigentEntrance name="kasakirEntrance">
-      <shouldBeActive>false</shouldBeActive>
+      <shouldBeActive>true</shouldBeActive>
     </DirigentEntrance>
     <DirigentEntrance name="quizaniEntrance">
       <shouldBeActive>false</shouldBeActive>
