@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ChangeByColor : MonoBehaviour
 {
@@ -15,17 +16,22 @@ public class ChangeByColor : MonoBehaviour
     }
 
     public void Enable() {
-        colorPanel.GetComponent<Image>().color = new Color32(50, 30, 14, 255);
-        SetPlaceInfo(GetCopitlanInfo());
+        if(!(SceneManager.GetActiveScene().name == "Acan" || SceneManager.GetActiveScene().name == "Tecalli" || SceneManager.GetActiveScene().name == "Seti"))
+        {
+            colorPanel.GetComponent<Image>().color = new Color32(50, 30, 14, 255);
+            SetPlaceInfo(GetCopitlanInfo());
+        }
     }
     
     public void ColorSelected(Color colorRGBA)
     {
-        string colorHEX = ColorUtility.ToHtmlStringRGBA(colorRGBA);
+        if (!(SceneManager.GetActiveScene().name == "Acan" || SceneManager.GetActiveScene().name == "Tecalli" || SceneManager.GetActiveScene().name == "Seti"))
+        {
+            string colorHEX = ColorUtility.ToHtmlStringRGBA(colorRGBA);
+            string[] placeData = GetPlaceData(GetPlaceIndex(colorHEX));
+            SetPlaceInfo(placeData);
+        }
 
-        string[] placeData = GetPlaceData(GetPlaceIndex(colorHEX));
-
-        SetPlaceInfo(placeData);
     }
 
     private void SetPlaceInfo(string[] placeData)

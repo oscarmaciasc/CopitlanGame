@@ -20,16 +20,20 @@ public class ResourcesManager : MonoBehaviour
     private float minX;
     private float maxY;
     private float minY;
+    private int spawned;
+    private int maxToSpawn;
 
     void Start()
     {
         // Dos pesos de cilantro
         
         instance = this;
+        spawned = 0;
 
         if(isWood) {
             resourceIndex = 0;
             spawnLapse = 1f;
+            maxToSpawn = 20;
 
             switch (papatacaSector) {
                 case 1:
@@ -64,6 +68,8 @@ public class ResourcesManager : MonoBehaviour
         else if(isIron) {
             resourceIndex = 1;
             spawnLapse = 5f;
+            maxToSpawn = 6;
+
             if(SceneManager.GetActiveScene().name == "Acan") {
                 maxX = 11.5f;
                 minX = -11.5f;
@@ -80,6 +86,8 @@ public class ResourcesManager : MonoBehaviour
         else if(isGold) {
             resourceIndex = 2;
             spawnLapse = 10f;
+            maxToSpawn = 5;
+
             maxX = 16.5f;
             minX = -16.5f;
             maxY = 13f;
@@ -99,11 +107,12 @@ public class ResourcesManager : MonoBehaviour
 
     private void ControlGeneration()
     {
-        if((Time.time - lastSpawn) >= spawnLapse)
+        if((Time.time - lastSpawn) >= spawnLapse && spawned < maxToSpawn)
         {
             Instantiate(this.resourcesPreFabs[resourceIndex], nextSpawnPosition, Quaternion.identity).transform.SetParent(this.gameObject.transform);
             lastSpawn = Time.time;
             GetNewSpawnPosition();
+            spawned++;
         }
     }
 
