@@ -5,16 +5,16 @@
     <CoordX>-136.183289</CoordX>
     <CoordY>178.316589</CoordY>
   </LastSaved>
-  <TimePlayed time="5965.599" />
-  <TimeWalked time="3122.01831" />
+  <TimePlayed time="6094.75049" />
+  <TimeWalked time="3165.582" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="0" />
   <Resources>
     <Resource name="wood">
-      <quantity>2</quantity>
+      <quantity>5</quantity>
     </Resource>
     <Resource name="iron">
-      <quantity>13</quantity>
+      <quantity>16</quantity>
     </Resource>
     <Resource name="gold">
       <quantity>0</quantity>
