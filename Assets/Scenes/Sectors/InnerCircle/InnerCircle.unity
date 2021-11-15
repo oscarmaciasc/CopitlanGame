@@ -2463,7 +2463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7728140893198606294, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_Color.a
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc6deea581a65364391abd104cfaced7, type: 3}
@@ -117747,8 +117747,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af715aa748a029948b9a8efe6414b4c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  areaToLoad: Naran
-  areaTransitionName: Naran - NecalliSampleScene
+  areaToLoad: Necalli
+  areaTransitionName: Naran - Necalli
   theEntrance: {fileID: 909463332}
   waitToLoad: 1
 --- !u!61 &1345184024
