@@ -151,6 +151,7 @@ public class ResourcesManager : MonoBehaviour
     // Gold = 2
     // Fuel = 3
     public void resourceCollected(int resourceID, int quantity) {
+        spawned--;
         if(XmlManager.instance.ThereIsEnoughSpace(resourceID, quantity)) {
             XmlManager.instance.IncreaseResource(resourceID, quantity);
         }
