@@ -6,7 +6,7 @@
     <CoordY>14.405509</CoordY>
   </LastSaved>
   <TimePlayed time="5965.599" />
-  <TimeWalked time="3014.40259" />
+  <TimeWalked time="3056.39917" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="0" />
   <Resources>
@@ -17,7 +17,7 @@
       <quantity>14</quantity>
     </Resource>
     <Resource name="gold">
-      <quantity>50</quantity>
+      <quantity>40</quantity>
     </Resource>
     <Resource name="fuel">
       <quantity>0</quantity>
@@ -32,7 +32,7 @@
     <Flute name="woodenFlute" isByDefault="false" />
     <Flute name="woodenIronFlute" isByDefault="true" />
   </Flutes>
-  <Balloon name="balloonLvl1" />
+  <Balloon name="balloonLvl2" />
   <MusicalMasteryLvl name="experienced" />
   <MusicSheets>
     <MusicSheet name="partiture1" />
