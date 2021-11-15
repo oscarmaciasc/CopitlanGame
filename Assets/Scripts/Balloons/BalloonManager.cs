@@ -50,6 +50,8 @@ public class BalloonManager : MonoBehaviour
 
         if (canMove)
         {
+            // condition to avoid spending fuel when appear far from the balloon
+            // we need to avoid the butter kind of movement the balloon makes when sitching to the player
             if (this.gameObject.transform.position.x >= initialPosition.x + 10 || this.gameObject.transform.position.x <= initialPosition.x - 10 || this.gameObject.transform.position.y >= initialPosition.y + 10 || this.gameObject.transform.position.y <= initialPosition.y - 10)
             {
                 Debug.Log("Entering IF");
@@ -76,19 +78,19 @@ public class BalloonManager : MonoBehaviour
         if (balloonName == "balloonLvl1")
         {
             this.fuelLimit = 20;
-            this.velocity = 3;
+            this.velocity = 5;
         }
 
         if (balloonName == "balloonLvl2")
         {
             this.fuelLimit = 30;
-            this.velocity = 3.5f;
+            this.velocity = 6f;
         }
 
         if (balloonName == "balloonLvl3")
         {
             this.fuelLimit = 40;
-            this.velocity = 4;
+            this.velocity = 7f;
         }
     }
 

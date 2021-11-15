@@ -39,10 +39,8 @@ public class BalloonPlayerController : MonoBehaviour
 
     void OnEnable()
     {
-        if (BalloonPlayerController.instance != null)
-        {
-            this.transform.position = FindObjectOfType<PlayerController>().transform.position;
-        }
+        this.transform.position = FindObjectOfType<PlayerController>().transform.position;
+
     }
 
     // Update is called once per frame
@@ -137,15 +135,12 @@ public class BalloonPlayerController : MonoBehaviour
 
     public void SaveTimeWalkedBalloon()
     {
-        if (SceneManager.GetActiveScene().name == "InGame")
+        if (!InGame.instance.noFuelPanel.activeInHierarchy)
         {
-            if (!InGame.instance.noFuelPanel.activeInHierarchy)
-            {
-                stopWalkedBalloon = Time.time;
-                XmlManager.instance.UpdateTimeWalkedBalloon(stopWalkedBalloon - startWalkedBallon);
-                startWalkedBallon = 0;
-                stopWalkedBalloon = 0;
-            }
+            stopWalkedBalloon = Time.time;
+            XmlManager.instance.UpdateTimeWalkedBalloon(stopWalkedBalloon - startWalkedBallon);
+            startWalkedBallon = 0;
+            stopWalkedBalloon = 0;
         }
     }
 }

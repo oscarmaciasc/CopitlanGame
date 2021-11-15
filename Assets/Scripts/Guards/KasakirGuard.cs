@@ -24,11 +24,11 @@ public class KasakirGuard : MonoBehaviour
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
 
-        if(gameData.dirigentEntrance[0].shouldBeActive)
-        {
-            theEntrance.SetActive(true);
+        // if(gameData.dirigentEntrance[0].shouldBeActive)
+        // {
+        //     theEntrance.SetActive(true);
 
-        }
+        // }
     }
 
     // Update is called once per frame
@@ -45,7 +45,6 @@ public class KasakirGuard : MonoBehaviour
             //theEntrance.SetActive(true);
             XmlManager.instance.SaveDirigentEntranceState(0, true);
             doorObstruction.SetActive(false);
-            Debug.Log("tengo el permiso outtercircle");
             
 
             if (conversationFinished)

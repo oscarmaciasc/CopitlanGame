@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
-     
+
 
     // Update is called once per frame
     void Update()
@@ -148,15 +148,12 @@ public class PlayerController : MonoBehaviour
 
     public void SaveTimeWalked()
     {
-        if (SceneManager.GetActiveScene().name == "InGame")
+        if (!InGame.instance.noFuelPanel.activeInHierarchy)
         {
-            if (!InGame.instance.noFuelPanel.activeInHierarchy)
-            {
-                stopWalked = Time.time;
-                XmlManager.instance.UpdateTimeWalked(stopWalked - startWalked);
-                startWalked = 0;
-                stopWalked = 0;
-            }
+            stopWalked = Time.time;
+            XmlManager.instance.UpdateTimeWalked(stopWalked - startWalked);
+            startWalked = 0;
+            stopWalked = 0;
         }
     }
 }

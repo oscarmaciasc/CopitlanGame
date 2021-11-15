@@ -17,6 +17,8 @@ public class Blacksmith : MonoBehaviour
     [SerializeField] private GameObject blacksmithInterface;
     [SerializeField] private GameObject dialogBox;
     [SerializeField] private GameObject blacksmithHabitant;
+    [SerializeField] private GameObject balloonToGiveMale;
+    [SerializeField] private GameObject balloonToGiveFemale;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +58,7 @@ public class Blacksmith : MonoBehaviour
     public void BuyBalloon(string balloonToBuy, int resourceToSustractID, int quantityToSustract)
     {
 
+
         if (doOnlyOnce)
         {
             welcome[1] += balloonName;
@@ -77,6 +80,23 @@ public class Blacksmith : MonoBehaviour
             XmlManager.instance.AddBalloon(balloonToBuy);
 
             //Destroy the previous balloon and create the new object
+
+            //Destroy(InGame.instance.balloon.gameObject);
+            if (gameData.isWoman)
+            {
+                //Create balloon
+                BalloonPlayerController cloneBalloon = Instantiate(balloonToGiveFemale).GetComponent<BalloonPlayerController>();
+                BalloonPlayerController.instance = cloneBalloon;
+            }
+            else
+            {
+                //Create Balloon
+                BalloonPlayerController cloneBalloon = Instantiate(balloonToGiveMale).GetComponent<BalloonPlayerController>();
+                BalloonPlayerController.instance = cloneBalloon;
+            }
+
+
+
             // if (BalloonManager.instance != null && EssentialsLoader.instance != null)
             // {
             //     Destroy(FindObjectOfType<BalloonManager>());
