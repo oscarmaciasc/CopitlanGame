@@ -145,7 +145,15 @@ public class GameSelection : MonoBehaviour
     public void Load()
     {
         XmlManager.instance.CreateTempFile(index);
-        SceneManager.LoadScene(XmlManager.instance.LoadGame().lastSaved.scene);
+
+        if(XmlManager.instance.LoadGame().happinessPercentage.percentage < 72)
+        {
+            SceneManager.LoadScene(XmlManager.instance.LoadGame().lastSaved.scene);
+        }
+        else
+        {
+            SceneManager.LoadScene("GameFinished");
+        }
     }
 
     public void Delete()
