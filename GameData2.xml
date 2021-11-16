@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <gameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="fernando" gender="false">
-  <LastSaved wasLoadedAlready="true">
+  <LastSaved wasLoadedAlready="false">
     <Scene>Triangle</Scene>
-    <CoordX>42.9</CoordX>
-    <CoordY>-53.7</CoordY>
+    <CoordX>-24.6158371</CoordX>
+    <CoordY>62.2099762</CoordY>
   </LastSaved>
-  <TimePlayed time="317.726044" />
-  <TimeWalked time="85.73854" />
+  <TimePlayed time="455.9494" />
+  <TimeWalked time="137.8523" />
   <TimeBalloon time="33.5915833" />
   <HappinessPercentage percentage="0" />
   <Resources>
@@ -906,4 +906,4 @@
       <Interacted>false</Interacted>
     </HabitantInteracted>
   </HabitantsInteracted>
-</gameData> 
+</gameData>
