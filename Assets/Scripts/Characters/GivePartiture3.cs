@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Habitant80Partiture3 : MonoBehaviour
+public class GivePartiture3 : MonoBehaviour
 {
-    public static Habitant80Partiture3 instance;
+    public static GivePartiture3 instance;
     public bool conversationFinished = false;
     public bool canCheck = true;
     private string[] lines = { "Buen dia, espero te haya servido el regalo" };

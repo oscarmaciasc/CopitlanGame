@@ -182,10 +182,10 @@ public class DialogManager : MonoBehaviour
                             habitant.GetComponent<Trader>().Trade(habitant);
                         }
 
-                        if (habitant.GetComponent<Habitant80Partiture3>() != null)
+                        if (habitant.GetComponent<GivePartiture3>() != null)
                         {
-                            habitant.GetComponent<Habitant80Partiture3>().conversationFinished = true;
-                            habitant.GetComponent<Habitant80Partiture3>().AddPartiture();
+                            habitant.GetComponent<GivePartiture3>().conversationFinished = true;
+                            habitant.GetComponent<GivePartiture3>().AddPartiture();
                         }
 
                         if (habitant.GetComponent<ResourceRewardPartiture>() != null && habitant.GetComponent<DialogActivator>().lines == habitant.GetComponent<ResourceRewardPartiture>().reward)
