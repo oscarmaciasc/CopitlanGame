@@ -33,7 +33,7 @@ public class XmlManager : MonoBehaviour
         TempFile tempFile = new TempFile(gameIndex, 1000);
 
         XmlSerializer serializer = new XmlSerializer(typeof(TempFile));
-        FileStream xmlWriter = new FileStream(CurrentDirectory + "/TempFile.xml", FileMode.Create);
+        FileStream xmlWriter = new FileStream(Application.persistentDataPath + "/TempFile.xml", FileMode.Create);
         serializer.Serialize(xmlWriter, tempFile);
         xmlWriter.Close();
     }
@@ -41,7 +41,7 @@ public class XmlManager : MonoBehaviour
     public void SaveTempFile(TempFile tempFile)
     {
         XmlSerializer serializer = new XmlSerializer(typeof(TempFile));
-        FileStream xmlWriter = new FileStream(CurrentDirectory + "/TempFile.xml", FileMode.Create);
+        FileStream xmlWriter = new FileStream(Application.persistentDataPath + "/TempFile.xml", FileMode.Create);
         serializer.Serialize(xmlWriter, tempFile);
         xmlWriter.Close();
     }
@@ -51,7 +51,7 @@ public class XmlManager : MonoBehaviour
         TempFile tempFile = new TempFile();
 
         XmlSerializer serializer = new XmlSerializer(typeof(TempFile));
-        FileStream xmlRead = new FileStream(CurrentDirectory + "/TempFile.xml", FileMode.Open);
+        FileStream xmlRead = new FileStream(Application.persistentDataPath + "/TempFile.xml", FileMode.Open);
         tempFile = serializer.Deserialize(xmlRead) as TempFile;
         xmlRead.Close();
 
@@ -64,7 +64,7 @@ public class XmlManager : MonoBehaviour
     // Delete the temporal file
     public void DeleteTempFile()
     {
-        File.Delete(CurrentDirectory + "/TempFile.xml");
+        File.Delete(Application.persistentDataPath + "/TempFile.xml");
     }
 
     // Called when a new game is created
@@ -128,7 +128,7 @@ public class XmlManager : MonoBehaviour
                 break;
         }
 
-        FileStream xmlWriter = new FileStream(CurrentDirectory + fileName, FileMode.Create);
+        FileStream xmlWriter = new FileStream(Application.persistentDataPath + fileName, FileMode.Create);
         serializer.Serialize(xmlWriter, gameData);
         xmlWriter.Close();
     }
@@ -506,12 +506,19 @@ public class XmlManager : MonoBehaviour
         GameData[] gamesData = new GameData[3];
         GameData gameData = new GameData();
 
+        Debug.Log("Path: " + Application.persistentDataPath);
+
+        if (!Directory.Exists(Application.persistentDataPath))
+        {
+            Directory.CreateDirectory(Application.persistentDataPath);
+        }
+
         for (int i = 0; i < 3; i++)
         {
             if (count[i])
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(GameData));
-                FileStream xmlRead = new FileStream(CurrentDirectory + "/GameData" + (i + 1) + ".xml", FileMode.Open);
+                FileStream xmlRead = new FileStream(Application.persistentDataPath + "/GameData" + (i + 1) + ".xml", FileMode.Open);
                 gameData = serializer.Deserialize(xmlRead) as GameData;
                 xmlRead.Close();
                 gamesData[i] = gameData;
@@ -530,7 +537,7 @@ public class XmlManager : MonoBehaviour
         if (count[index - 1])
         {
             XmlSerializer serializer = new XmlSerializer(typeof(GameData));
-            FileStream xmlRead = new FileStream(CurrentDirectory + "/GameData" + index + ".xml", FileMode.Open);
+            FileStream xmlRead = new FileStream(Application.persistentDataPath + "/GameData" + index + ".xml", FileMode.Open);
             gameData = serializer.Deserialize(xmlRead) as GameData;
             xmlRead.Close();
         }
@@ -546,7 +553,7 @@ public class XmlManager : MonoBehaviour
     public void Delete(int index)
     {
         string filePath = "/GameData" + index + ".xml";
-        File.Delete(CurrentDirectory + filePath);
+        File.Delete(Application.persistentDataPath + filePath);
     }
 
     // Return an bool array in wich are the positions of existent games
@@ -554,7 +561,7 @@ public class XmlManager : MonoBehaviour
     {
         bool[] count = new bool[3];
 
-        if (File.Exists(CurrentDirectory + "/GameData1.xml"))
+        if (File.Exists(Application.persistentDataPath + "/GameData1.xml"))
         {
             count[0] = true;
         }
@@ -563,7 +570,7 @@ public class XmlManager : MonoBehaviour
             count[0] = false;
         }
 
-        if (File.Exists(CurrentDirectory + "/GameData2.xml"))
+        if (File.Exists(Application.persistentDataPath + "/GameData2.xml"))
         {
             count[1] = true;
         }
@@ -572,7 +579,7 @@ public class XmlManager : MonoBehaviour
             count[1] = false;
         }
 
-        if (File.Exists(CurrentDirectory + "/GameData3.xml"))
+        if (File.Exists(Application.persistentDataPath + "/GameData3.xml"))
         {
             count[2] = true;
         }
@@ -589,7 +596,7 @@ public class XmlManager : MonoBehaviour
         TempFile tempFile = new TempFile();
 
         XmlSerializer serializer = new XmlSerializer(typeof(TempFile));
-        FileStream xmlRead = new FileStream(CurrentDirectory + "/TempFile.xml", FileMode.Open);
+        FileStream xmlRead = new FileStream(Application.persistentDataPath + "/TempFile.xml", FileMode.Open);
         tempFile = serializer.Deserialize(xmlRead) as TempFile;
         xmlRead.Close();
 
@@ -601,7 +608,7 @@ public class XmlManager : MonoBehaviour
         TempFile tempFile = new TempFile();
 
         XmlSerializer serializer = new XmlSerializer(typeof(TempFile));
-        FileStream xmlRead = new FileStream(CurrentDirectory + "/TempFile.xml", FileMode.Open);
+        FileStream xmlRead = new FileStream(Application.persistentDataPath + "/TempFile.xml", FileMode.Open);
         tempFile = serializer.Deserialize(xmlRead) as TempFile;
         xmlRead.Close();
 
