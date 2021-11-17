@@ -27,6 +27,11 @@ public class XmlManager : MonoBehaviour
         }
     }
 
+    void OnAplicationQuit()
+    {
+        WasLoadedAlready(false);
+    }
+
     // Called when a game is selected in GameSelection interface;
     public void CreateTempFile(int gameIndex)
     {

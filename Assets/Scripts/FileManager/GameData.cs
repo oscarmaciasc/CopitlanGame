@@ -134,7 +134,7 @@ public class GameData
         this.resource[2].name = "gold";
         this.resource[2].quantity = 0;
         this.resource[3].name = "fuel";
-        this.resource[3].quantity = 0;
+        this.resource[3].quantity = 10;
         this.permission[0].name = "outterCircle";
         this.flute[0].name = "woodenFlute";
         this.flute[0].isByDefault = true;
