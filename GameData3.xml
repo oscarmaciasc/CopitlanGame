@@ -5,8 +5,8 @@
     <CoordX>-136.183289</CoordX>
     <CoordY>178.316589</CoordY>
   </LastSaved>
-  <TimePlayed time="6094.75049" />
-  <TimeWalked time="3188.21948" />
+  <TimePlayed time="6110.714" />
+  <TimeWalked time="3198.45337" />
   <TimeBalloon time="0" />
   <HappinessPercentage percentage="0" />
   <Resources>
@@ -321,7 +321,7 @@
   </HabitantResults>
   <HabitantsInteracted>
     <HabitantInteracted id="0">
-      <Interacted>false</Interacted>
+      <Interacted>true</Interacted>
     </HabitantInteracted>
     <HabitantInteracted id="1">
       <Interacted>false</Interacted>

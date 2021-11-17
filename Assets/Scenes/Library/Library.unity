@@ -7899,19 +7899,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7728140893198606288, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 2187.3
+      value: 1902
       objectReference: {fileID: 0}
     - target: {fileID: 7728140893198606288, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1242
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 7728140893198606288, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -10.353
+      value: -9.0009
       objectReference: {fileID: 0}
     - target: {fileID: 7728140893198606288, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.00014496
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7728140893198606294, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_Color.a
@@ -8168,3 +8168,251 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &46741178833452164
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46741178833452172}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0034091473, y: -0.61575973}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 2, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.2204251, y: 2.9315274}
+  m_EdgeRadius: 0
+--- !u!212 &46741178833452165
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46741178833452172}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -441503381
+  m_SortingLayer: 6
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 8531029878543443940, guid: 9da7206f2333fa3499829e173cceb8db, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2, y: 4}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &46741178833452166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46741178833452172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8ae95dc2133faf4186aad3f29142000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lines:
+  - Hoy es un dia triste, me gustaria que pasara algo diferente
+  - Pero mi hermana insiste en que son saludables
+  - ...
+  canActivate: 0
+--- !u!61 &46741178833452167
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46741178833452172}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0029153824, y: -0.00060266256}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 2, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8775487, y: 1.690936}
+  m_EdgeRadius: 0
+--- !u!50 &46741178833452168
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46741178833452172}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!114 &46741178833452169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46741178833452172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf43f54d5788f1940aec6bcd352477a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canInterpretatePartiture: 1
+  conversationFinished: 0
+  canActivate: 0
+  partitureFinished: 0
+  firstTime: 1
+  canShowPartitures: 1
+  newLines:
+  - El dirigente Naran es una gran persona
+  - lastima que se encuentre lejos de aqui
+  habitant: {fileID: 0}
+--- !u!114 &46741178833452170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46741178833452172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f46e3c2b4110c5a4ea7702a0e7affe5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 75
+--- !u!114 &46741178833452171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46741178833452172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c4923cf9bd3b343a7c7be1dec074a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finishedPartiture: 0
+  uniqueHabitantPercentage: 0
+  index: 75
+--- !u!1 &46741178833452172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 46741178833452173}
+  - component: {fileID: 46741178833452165}
+  - component: {fileID: 46741178833452164}
+  - component: {fileID: 46741178833452167}
+  - component: {fileID: 46741178833452166}
+  - component: {fileID: 46741178833452169}
+  - component: {fileID: 46741178833452168}
+  - component: {fileID: 46741178833452171}
+  - component: {fileID: 46741178833452170}
+  - component: {fileID: 2234062327259236838}
+  m_Layer: 0
+  m_Name: NPC75
+  m_TagString: PartitureHabitant
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &46741178833452173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46741178833452172}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -14.49, y: 0.93, z: 25.330015}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2234062327259236838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46741178833452172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54e893db4d50ebe418261c8745e701be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finishedPartiture: 0
+  rewardGiven: 0
+  conversationFinishedReward: 0
+  reward:
+  - 'Me ha gustado tu interpretacion, te otorgo '
+  index: 0
