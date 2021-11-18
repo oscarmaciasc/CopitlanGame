@@ -34,12 +34,6 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     // SoundEffects
     public void PlaySFX(int soundToPlay)
     {

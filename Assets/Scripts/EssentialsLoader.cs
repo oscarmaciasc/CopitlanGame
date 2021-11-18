@@ -5,17 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class EssentialsLoader : MonoBehaviour
 {
-    //public GameObject UIScreen;
     public GameObject woman;
-
     public GameObject man;
-
     public GameObject womanBalloon;
     public GameObject maleBalloon;
     [SerializeField] private GameObject maleBalloonLvl2;
     [SerializeField] private GameObject maleBalloonLvl3;
     [SerializeField] private GameObject femaleBalloonLvl2;
     [SerializeField] private GameObject femaleBalloonLvl3;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -28,45 +26,13 @@ public class EssentialsLoader : MonoBehaviour
             {
                 PlayerController clonePlayer = Instantiate(woman).GetComponent<PlayerController>();
                 PlayerController.instance = clonePlayer;
-
-                if (SceneManager.GetActiveScene().name == "SE-Papataca")
-                {
-                    clonePlayer.transform.position = new Vector3(166, -162, 0);
-                }
             }
             else
             {
                 PlayerController clonePlayer = Instantiate(man).GetComponent<PlayerController>();
                 PlayerController.instance = clonePlayer;
-
-                if (SceneManager.GetActiveScene().name == "SE-Papataca")
-                {
-                    clonePlayer.transform.position = new Vector3(166, -162, 0);
-                }
             }
         }
-        // else if (PlayerController.instance != null && PlayerController.instance.areaTransitionName == "Tutorial-PapatacaSE")
-        // {
-        //     // If the player is already loaded due to the tutorial but were in the first scene
-        //     if (gameData.isWoman)
-        //     {
-        //         BalloonPlayerController cloneBalloon = Instantiate(womanBalloon).GetComponent<BalloonPlayerController>();
-        //         BalloonPlayerController.instance = cloneBalloon;
-
-        //         cloneBalloon.GetComponent<BalloonPlayerController>().enabled = false;
-        //         cloneBalloon.GetComponent<BalloonManager>().enabled = false;
-        //         cloneBalloon.GetComponent<SpriteRenderer>().enabled = false;
-        //     } 
-        //     else
-        //     {
-        //         BalloonPlayerController cloneBalloon = Instantiate(maleBalloon).GetComponent<BalloonPlayerController>();
-        //         BalloonPlayerController.instance = cloneBalloon;
-
-        //         cloneBalloon.GetComponent<BalloonPlayerController>().enabled = false;
-        //         cloneBalloon.GetComponent<BalloonManager>().enabled = false;
-        //         cloneBalloon.GetComponent<SpriteRenderer>().enabled = false;
-        //     }
-        // }
 
         LoadBalloon();
         
