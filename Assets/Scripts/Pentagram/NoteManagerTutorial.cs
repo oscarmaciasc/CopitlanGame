@@ -163,7 +163,7 @@ public class NoteManagerTutorial : MonoBehaviour
             canPress = false;
             haveBeenPressed = true;
             PentagramManager.streak = 0;
-            AudioManager.instance.PlaySFX(2);
+            AudioManager.instance.PlaySFX(1);
         }
 
         Partitures.instance.LimitStreak();
