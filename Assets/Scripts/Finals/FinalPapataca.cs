@@ -5,25 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class FinalPapataca : MonoBehaviour
 {
-    
-    public GameObject player;
+    public AudioSource partiture3;
 
     // Start is called before the first frame update
     void Start()
     {
         UIFade.instance.FadeFromBlack();
-        StartCoroutine(FinishGame());
+        partiture3 = GetComponent<AudioSource>();
+        partiture3.Play(0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(!this.gameObject.GetComponent<AudioSource>().isPlaying)
+        {
+            FinishGame();
+        }
     }
 
-    IEnumerator FinishGame()
+    private void FinishGame()
     {
-        yield return new WaitForSeconds(7);
+        Debug.Log("Final");
         UIFade.instance.FadeToBlack();
         SceneManager.LoadScene("MainMenu");
     }

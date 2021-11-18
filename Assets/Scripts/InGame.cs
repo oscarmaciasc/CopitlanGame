@@ -407,6 +407,8 @@ public class InGame : MonoBehaviour
     IEnumerator DeactivatePentagramPanel()
     {
         yield return new WaitForSeconds(1);
+        // Restoring the dimension of the array to avoid indexOutOfRange Exceptions.
+        Partitures.instance.numberNotes = new string[10];
         pentagramPanel.SetActive(false);
         pentagramActive = false;
     }

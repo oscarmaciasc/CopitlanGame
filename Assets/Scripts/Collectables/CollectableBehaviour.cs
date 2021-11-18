@@ -22,6 +22,7 @@ public class CollectableBehaviour : MonoBehaviour
         if (collider.gameObject.GetComponent<PlayerController>() != null)
         {
             CollectableCollected();
+            AudioManager.instance.PlaySFX(2);
             Destroy(this.gameObject);
         }
     }

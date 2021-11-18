@@ -25,6 +25,11 @@ public class Partitures : MonoBehaviour
         }
     }
 
+    void OnEnable()
+    {
+        //this.numberNotes = new string[10];
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -99,6 +104,7 @@ public class Partitures : MonoBehaviour
             if (partitureName == "Partitura 3")
             {
                 this.partitureToPlay = 2;
+                this.numberOfPartitureNotes = 66;
             }
         }
 
@@ -129,6 +135,7 @@ public class Partitures : MonoBehaviour
             if (partitureName == "Partitura 6")
             {
                 this.partitureToPlay = 5;
+                this.numberOfPartitureNotes = 73;
             }
         }
 
@@ -138,7 +145,7 @@ public class Partitures : MonoBehaviour
             this.velocity = 0.8f;
             this.partitureVelocity = 0.8f;
             this.limitStreak = 20;
-            this.numberOfPartitureNotes = 10;
+            this.numberOfPartitureNotes = 23;
 
             for (int i = 0; i < 10; i++)
             {
@@ -159,6 +166,7 @@ public class Partitures : MonoBehaviour
             if (partitureName == "Partitura 9")
             {
                 this.partitureToPlay = 8;
+                this.numberOfPartitureNotes = 83;
             }
         }
 
@@ -168,7 +176,7 @@ public class Partitures : MonoBehaviour
             this.velocity = 0.7f;
             this.partitureVelocity = 0.7f;
             this.limitStreak = 10;
-            this.numberOfPartitureNotes = 10;
+            this.numberOfPartitureNotes = 412;
 
             for (int i = 0; i < 10; i++)
             {
