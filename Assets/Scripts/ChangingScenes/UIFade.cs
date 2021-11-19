@@ -11,10 +11,8 @@ public class UIFade : MonoBehaviour
     // image, the script will turn off too.
 
     public static UIFade instance;
-
     public Image fadeScreen;
     private float fadeSpeed = 1f;
-
     public bool shouldFadeToBlack;
     public bool shouldFadeFromBlack;
 

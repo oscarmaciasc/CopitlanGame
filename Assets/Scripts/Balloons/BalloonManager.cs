@@ -32,8 +32,6 @@ public class BalloonManager : MonoBehaviour
         fuelDecrease();
     }
 
-
-
     public void fuelDecrease()
     {
         GameData gameData = new GameData();
