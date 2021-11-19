@@ -22,6 +22,7 @@ public class PartitureCollectable : MonoBehaviour
         if (collider.gameObject.GetComponent<PlayerController>() != null)
         {
             PartitureCollected();
+            AudioManager.instance.PlaySFX(2);
             Destroy(this.gameObject);
         }
     }

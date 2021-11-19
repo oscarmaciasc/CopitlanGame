@@ -103,6 +103,8 @@ public class NoteManager : MonoBehaviour
 
     public void CompareKeys()
     {
+        Debug.Log("Racha: " + PentagramManager.streak);
+        Debug.Log("Velocidad: " + Partitures.instance.velocity);
         //Detecting the key pressed
         //Si la tecla presionada corresponde al número de la nota entonces marcar correcto
 
@@ -196,6 +198,7 @@ public class NoteManager : MonoBehaviour
             canPress = false;
             haveBeenPressed = true;
             PentagramManager.streak = 0;
+            Partitures.instance.upStreak = 10;
             if (Partitures.instance.canAddAuxStreak)
             {
                 PentagramManager.auxStreak = 0;

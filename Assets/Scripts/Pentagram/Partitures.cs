@@ -54,8 +54,10 @@ public class Partitures : MonoBehaviour
 
         if (PentagramManager.streak < limitStreak)
         {
+            Debug.Log("Racha[" + PentagramManager.streak + "] == upStreak[" + upStreak + "]");
             if (PentagramManager.streak == upStreak)
             {
+                Debug.Log("Entro a subir racha");
                 velocity -= 0.15f;
                 upStreak += 10;
             }
@@ -113,7 +115,7 @@ public class Partitures : MonoBehaviour
             this.partitureDifficulty = "medium";
             this.velocity = 0.9f;
             this.partitureVelocity = 0.9f;
-            this.limitStreak = 20;
+            this.limitStreak = 10;
             this.numberOfPartitureNotes = 20;
 
             for (int i = 0; i < 7; i++)
@@ -144,7 +146,7 @@ public class Partitures : MonoBehaviour
             this.partitureDifficulty = "hard";
             this.velocity = 0.8f;
             this.partitureVelocity = 0.8f;
-            this.limitStreak = 20;
+            this.limitStreak = 10;
             this.numberOfPartitureNotes = 23;
 
             for (int i = 0; i < 10; i++)

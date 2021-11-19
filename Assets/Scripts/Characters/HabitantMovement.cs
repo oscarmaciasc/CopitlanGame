@@ -21,6 +21,7 @@ public class HabitantMovement : MonoBehaviour
 
     private Vector3 bottomLeftLimit;
     private Vector3 topRightLimit;
+    public bool movingHabitantCanTalk = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,22 @@ public class HabitantMovement : MonoBehaviour
 
         GetRandomCoordTest();
 
+    }
+
+     void OnTriggerEnter2D(Collider2D other)
+    {
+        if(movingHabitantCanTalk && other.tag == "Player")
+        {
+            this.gameObject.GetComponent<DialogActivator>().canActivate = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.tag == "Player")
+        {
+            this.gameObject.GetComponent<DialogActivator>().canActivate = false;
+        }
     }
 
     // Update is called once per frame
@@ -44,7 +61,7 @@ public class HabitantMovement : MonoBehaviour
             timeToWait = 5f;
 
             // The habitant its not moving and then we can talk
-            this.gameObject.GetComponent<DialogActivator>().canActivate = true;
+            movingHabitantCanTalk = true;
 
             counter = 0;
             GetRandomCoordTest();
@@ -56,7 +73,7 @@ public class HabitantMovement : MonoBehaviour
         {
 
             // The habitant is moving and then we cannot talk
-            this.gameObject.GetComponent<DialogActivator>().canActivate = false;
+            movingHabitantCanTalk = false;
             
             if (firstMovement == 1)
             {

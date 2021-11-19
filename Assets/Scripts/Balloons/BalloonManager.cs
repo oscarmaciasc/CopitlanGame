@@ -51,7 +51,7 @@ public class BalloonManager : MonoBehaviour
         if (canMove)
         {
             // condition to avoid spending fuel when appear far from the balloon
-            if (this.gameObject.transform.position.x >= initialPosition.x + 10 || this.gameObject.transform.position.x <= initialPosition.x - 10 || this.gameObject.transform.position.y >= initialPosition.y + 10 || this.gameObject.transform.position.y <= initialPosition.y - 10)
+            if (this.gameObject.transform.position.x >= initialPosition.x + 20 || this.gameObject.transform.position.x <= initialPosition.x - 20 || this.gameObject.transform.position.y >= initialPosition.y + 20 || this.gameObject.transform.position.y <= initialPosition.y - 20)
             {
                 Debug.Log("Entering IF");
                 initialPosition = this.gameObject.transform.position;

@@ -16057,6 +16057,10 @@ PrefabInstance:
       propertyPath: partitureSelectionPanel
       value: 
       objectReference: {fileID: 1840980853}
+    - target: {fileID: 1217552451, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: canActivateBalloon
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 120873221050265937, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_IsActive
       value: 0

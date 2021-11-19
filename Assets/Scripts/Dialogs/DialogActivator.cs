@@ -33,13 +33,14 @@ public class DialogActivator : MonoBehaviour
         if (canActivate && Input.GetKeyDown(KeyCode.Return) && !DialogManager.instance.dialogBox.activeInHierarchy)
         {
             // Only show dialogs when partitureSelectionPanel and pentagramManager are not active
-            if (!DialogManager.instance.partitureSelectionPanel.activeInHierarchy && !DialogManager.instance.pentagramPanel.activeInHierarchy)
+            if (!DialogManager.instance.partitureSelectionPanel.activeInHierarchy && !DialogManager.instance.pentagramPanel.activeInHierarchy && !InGame.instance.noFuelPanel.activeInHierarchy)
             {
                 if(PartitureHabitant.instance != null)
                 {
                     PartitureHabitant.instance.GetHabitant(this.gameObject);
                 }
                 DialogManager.instance.GetHabitant(this.gameObject);
+                Debug.Log("habitant: " + this.gameObject);
 
                 GameData gameData = new GameData();
                 gameData = XmlManager.instance.LoadGame();
@@ -96,6 +97,7 @@ public class DialogActivator : MonoBehaviour
         if (other.tag == "Player")
         {
             canActivate = true;
+            Debug.Log("Pongo canActivate en: " + canActivate);
         }
     }
 
@@ -104,6 +106,7 @@ public class DialogActivator : MonoBehaviour
         if (other.tag == "Player")
         {
             canActivate = false;
+            Debug.Log("Pongo canActivate en: " + canActivate);
         }
     }
 

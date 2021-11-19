@@ -22,6 +22,7 @@ public class BalloonMovement : MonoBehaviour
     private Vector3 bottomLeftLimit;
     private Vector3 topRightLimit;
     [SerializeField] GameObject dialogBox;
+    public bool balloonCanTalk = false;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,22 @@ public class BalloonMovement : MonoBehaviour
 
         GetRandomCoordTest();
 
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(balloonCanTalk && other.tag == "Player")
+        {
+            this.gameObject.GetComponent<DialogActivator>().canActivate = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.tag == "Player")
+        {
+            this.gameObject.GetComponent<DialogActivator>().canActivate = false;
+        }
     }
 
     // Update is called once per frame
@@ -46,7 +63,7 @@ public class BalloonMovement : MonoBehaviour
             timeToWait = 20f;
 
             // The balloon its not moving and then we can talk
-            this.gameObject.GetComponent<DialogActivator>().canActivate = true;
+            balloonCanTalk = true;
 
             counter = 0;
             GetRandomCoordTest();
@@ -61,7 +78,8 @@ public class BalloonMovement : MonoBehaviour
         if (timeToWait <= 0)
         {
             // The balloon is moving and then we cannot talk
-            this.gameObject.GetComponent<DialogActivator>().canActivate = false;
+            //this.gameObject.GetComponent<DialogActivator>().canActivate = false;
+            balloonCanTalk = false;
 
             if (firstMovement == 1)
             {
