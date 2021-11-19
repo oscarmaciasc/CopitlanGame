@@ -318,7 +318,6 @@ public class GameData
             this.habitantResult[i].result = 0;
         }
     }
-
     public void HabitantInteractedInitializer()
     {
         this.habitantInteracted = new HabitantInteracted[196];
