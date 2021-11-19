@@ -35,7 +35,7 @@ public class ResourceRewardPartiture : MonoBehaviour
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
 
-        if (finishedPartiture && gameData.habitantResult[index].result >= 60 && !rewardGiven)
+        if (finishedPartiture && !rewardGiven)
         {
             // GetRandomResourceID
             randomResourceID = (int)Random.Range(0, 2);
@@ -58,9 +58,18 @@ public class ResourceRewardPartiture : MonoBehaviour
             }
 
             habitant.GetComponent<DialogActivator>().lines = reward;
+
+            Debug.Log("Cambio lineas y doy recurso");
+
             XmlManager.instance.IncreaseResource(randomResourceID, randomQuantity);
             rewardGiven = true;
             
+        }
+        else
+        {
+            Debug.Log("finished partiture: " + finishedPartiture);
+            Debug.Log("gameData.habitantResult[index].result: " + gameData.habitantResult[index].result);
+            Debug.Log("regarw given: " + rewardGiven);
         }
     }
 }
