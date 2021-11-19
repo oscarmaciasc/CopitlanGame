@@ -7,8 +7,8 @@ public class NoteManager : MonoBehaviour
 {
     public static NoteManager instance;
     public string number = "";
-    private int[] arrayPositions = { 34, 67, 100, 133, 166 };
-
+    //private int[] arrayPositions = { 34, 67, 100, 133, 166 };
+    private float[] arrayPositions = { 16.66f, 0.2f, 0.25f, 0.33f, 0.5f, 1f};
     [SerializeField] private GameObject note;
     public bool noteSuccessful;
     public bool canPress;
@@ -28,12 +28,12 @@ public class NoteManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int positionY = arrayPositions[Random.Range(0, arrayPositions.Length)];
+        float positionY = arrayPositions[Random.Range(0, arrayPositions.Length)];
         number = Partitures.instance.numberNotes[Random.Range(0, Partitures.instance.numberNotes.Length)];
 
         //Replace "+700" by the anchor position of the Pentagram
         //This only works for FullHD Resolutions
-        gameObject.transform.position = new Vector3(transform.parent.position.x + 730, transform.parent.position.y + positionY, 0);
+        gameObject.transform.position = new Vector3(transform.parent.position.x + 730, transform.parent.position.y * positionY, 0);
         gameObject.transform.Find("NoteText").gameObject.GetComponent<Text>().text = number;
 
         //***************************************************************************************************************************
