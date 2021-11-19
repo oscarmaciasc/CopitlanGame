@@ -80,8 +80,5 @@ public class TutorialManager : MonoBehaviour
         this.gameObject.SetActive(false);
         pentagramPanel.SetActive(true);
         pentagramPanel.gameObject.SetActive(true);
-
-        
-        // Get to the Game Scene
     }
 }

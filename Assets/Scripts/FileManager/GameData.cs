@@ -213,25 +213,6 @@ public class GameData
 
     public bool DoesHaveAllCollectables()
     {
-        // int counter = 0;
-
-        // for (int i = 0; i < collectable.Length; i++)
-        // {
-        //     if (collectable[i].shouldBeDestroyed)
-        //     {
-        //         counter++;
-        //     }
-        // }
-
-        // if (counter == 19)
-        // {
-        //     return true;
-        // }
-        // else
-        // {
-        //     return false;
-        // }
-
         if (collectable.Length == 20)
         {
             return true;
