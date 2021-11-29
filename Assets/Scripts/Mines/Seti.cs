@@ -11,7 +11,6 @@ public class Seti : MonoBehaviour
     private string[] noPartituresDialog = { "Parece que no tienes la partitura necesaria", "Vuelve cuando la tengas" };
     private string[] noFluteDialog = { "Tu flauta actual no puede interpretar esta partitura, intenta mejorando tu flauta" };
     private string[] setiNormalLines = {"Estamos acampando", "Escucha los sonidos de la naturaleza", "*se escucha una rana*"};
-
     public bool hasFinished = false;
     public bool finishedPartiture = false;
     [SerializeField] private GameObject theEntrance;
@@ -43,7 +42,6 @@ public class Seti : MonoBehaviour
             hasFinished = true;
             this.gameObject.GetComponent<DialogActivator>().lines = goodLines;
             this.gameObject.GetComponent<PartitureHabitant>().canShowPartitures = false;
-            
         }
     }
 
@@ -132,8 +130,6 @@ public class Seti : MonoBehaviour
             canActivatePartiturePanel = false;
             this.gameObject.GetComponent<PartitureHabitant>().canShowPartitures = false;
         }
-
-        
     }
 
     public bool NotFoundPartitures()

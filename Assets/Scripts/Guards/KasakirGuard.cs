@@ -21,8 +21,8 @@ public class KasakirGuard : MonoBehaviour
     {
         //destiny = new Vector2(transform.position.x + 2, transform.position.y);
 
-        GameData gameData = new GameData();
-        gameData = XmlManager.instance.LoadGame();
+        // GameData gameData = new GameData();
+        // gameData = XmlManager.instance.LoadGame();
 
         // if(gameData.dirigentEntrance[0].shouldBeActive)
         // {

@@ -9,7 +9,7 @@ public class DialogActivator : MonoBehaviour
     public static DialogActivator instance;
     public string[] lines;
     private int fluteDifficulty;
-    public bool canActivate;
+    public bool canActivate = false;
     private int setiPartituresCounter = 0;
     private string[] kasakirNormalLines = { "Hola viajero", "He escuchado que quieres mostrarme algo", "Adelante..." };
     private string[] quizaniNormalLines = { "Asi que has venido hasta aqui con ese objeto raro entre las manos...", "Tengo que admitir que me causa cierto interes", "*Expresion de intriga*" };
@@ -22,7 +22,6 @@ public class DialogActivator : MonoBehaviour
     void Start()
     {
         instance = this;
-        canActivate = false;
     }
 
     // Update is called once per frame
@@ -112,12 +111,6 @@ public class DialogActivator : MonoBehaviour
 
     public bool CanActive()
     {
-        return canActivate;
-    }
-
-    public bool CanActiveFalse()
-    {
-        canActivate = false;
         return canActivate;
     }
 

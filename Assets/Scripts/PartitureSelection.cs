@@ -102,10 +102,6 @@ public class PartitureSelection : MonoBehaviour
             }
         }
 
-
-        //FluteFilter();
-
-        // If partitures are not found set boolean in Audience algorithm
         if (!partituresFound)
         {
             Acan.instance.NotFoundPartitures();
@@ -115,7 +111,6 @@ public class PartitureSelection : MonoBehaviour
         {
             Acan.instance.NotFoundFlute();
         }
-
     }
 
 

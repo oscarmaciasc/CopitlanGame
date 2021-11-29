@@ -17,7 +17,6 @@ public class DialogManagerFinal : MonoBehaviour
     public int currentLine;
     public bool justStarted;
     private bool hasFinished = false;
-
     private float timeToWait = 3f;
     [SerializeField] private GameObject camera;
 

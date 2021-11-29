@@ -21,7 +21,6 @@ public class ResourceRewardPartiture : MonoBehaviour
         {
             rewardGiven = true;
         }
-
     }
 
     // Update is called once per frame

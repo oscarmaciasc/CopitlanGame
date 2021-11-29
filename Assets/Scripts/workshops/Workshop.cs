@@ -49,7 +49,7 @@ public class Workshop : MonoBehaviour
             // Sustract the flute cost from the files
             XmlManager.instance.IncreaseResource(resourceToSustractID, quantityToSustract * -1);
 
-            // Add new balloon
+            // Add new flute
             XmlManager.instance.AddFlute(fluteToBuy);
 
             workshopInterface.SetActive(false);
@@ -117,10 +117,10 @@ public class Workshop : MonoBehaviour
         }
 
 
-        // Check if the player already has the balloon
+        // Check if the player already has the flute
         if (gameData.DoesHaveFlute(fluteAvailable))
         {
-            // Change blacksmith dialog to say
+            // Change artisan dialog to say
             workshopHabitant.GetComponent<DialogActivator>().lines = hasFlute;
             workshopHabitant.GetComponent<Workshop>().justStartedShouldBeFalse = false;
             shouldOpenInterface = false;

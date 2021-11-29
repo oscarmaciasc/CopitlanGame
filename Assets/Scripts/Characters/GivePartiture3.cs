@@ -28,12 +28,12 @@ public class GivePartiture3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameData gameData = new GameData();
-        gameData = XmlManager.instance.LoadGame();
-        if (gameData.DoesHavePartiture("partiture3"))
-        {
-            this.gameObject.GetComponent<DialogActivator>().lines = lines;
-        }
+        // GameData gameData = new GameData();
+        // gameData = XmlManager.instance.LoadGame();
+        // if (gameData.DoesHavePartiture("partiture3"))
+        // {
+        //     this.gameObject.GetComponent<DialogActivator>().lines = lines;
+        // }
     }
 
     public void AddPartiture()

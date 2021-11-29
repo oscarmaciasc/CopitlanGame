@@ -63,7 +63,6 @@ public class XmlManager : MonoBehaviour
         tempFile.houseID = houseID;
 
         SaveTempFile(tempFile);
-
     }
 
     // Delete the temporal file
@@ -548,7 +547,7 @@ public class XmlManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("There is not a game file cabeza huevo");
+            Debug.Log("There is not a game file");
         }
 
         return gameData;

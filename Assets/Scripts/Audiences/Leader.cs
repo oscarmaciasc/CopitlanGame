@@ -41,20 +41,6 @@ public class Leader : MonoBehaviour
     void Start()
     {
         instance = this;
-
-        GameData gameData = new GameData();
-        gameData = XmlManager.instance.LoadGame();
-
-        if (gameData.audienceResult[3].result >= 60)
-        {
-            habitant = GameObject.Find("Necalli");
-            if (habitant != null)
-            {
-                habitant.GetComponent<Leader>().hasFinished = true;
-                habitant.GetComponent<DialogActivator>().lines = goodLinesNecalli;
-                habitant.GetComponent<PartitureHabitant>().canShowPartitures = false;
-            }
-        }
     }
 
     // Update is called once per frame
@@ -204,7 +190,6 @@ public class Leader : MonoBehaviour
         {
             StartCoroutine(ActivateFinal(3));
         }
-
     }
 
     IEnumerator ActivateFinal(int final)
@@ -229,23 +214,12 @@ public class Leader : MonoBehaviour
                 SceneManager.LoadScene("Final3");
             }
         }
-
     }
 
     public bool NotFoundPartitures()
     {
         notFound = true;
         return notFound;
-    }
-
-    private void ChangeScene()
-    {
-        timeToWait -= Time.deltaTime;
-        if (timeToWait <= 0)
-        {
-            UIFade.instance.FadeToBlack();
-            SceneManager.LoadScene("PapatacaFinal");
-        }
     }
 
     IEnumerator ShowDialogs(string[] lines, GameObject habitant)

@@ -113,20 +113,28 @@ public class HabitantMovement : MonoBehaviour
             {
                 // move x to 5
                 vector2DestinyX = new Vector2(transform.position.x + 3, currentPositionY);
+                // Debug.Log("new coords");
+                // GetRandomCoordTest();
             }
             else if (myAnim.GetFloat("moveX") == 1)
             {
                 // move x to 5
                 vector2DestinyX = new Vector2(transform.position.x - 3, currentPositionY);
+                // Debug.Log("new coords");
+                // GetRandomCoordTest();
             }
 
             if (myAnim.GetFloat("moveY") == -1)
             {
                 vector2DestinyY = new Vector2(currentPositionX, transform.position.y + 3);
+                // Debug.Log("new coords");
+                // GetRandomCoordTest();
             }
             else if (myAnim.GetFloat("moveY") == 1)
             {
                 vector2DestinyY = new Vector2(currentPositionX, transform.position.y - 3);
+                // Debug.Log("new coords");
+                // GetRandomCoordTest();
             }
 
             transform.Find("collider").GetComponent<AvoidCollision>().hasCollided = false;

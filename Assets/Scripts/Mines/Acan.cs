@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class Acan : MonoBehaviour
 {
-
     public static Acan instance;
     private Vector2 destiny;
     public string[] goodLines = { "Estoy agradecida, me has alegrado el dia" };
     public string[] badLines = { "No me terminas de convencer, intentalo de nuevo" };
     private string[] noPartituresDialog = { "Parece que no tienes la partitura necesaria", "Vuelve cuando la tengas" };
-
     public bool hasFinished = false;
     public bool finishedPartiture = false;
     [SerializeField] private GameObject theEntrance;

@@ -11,10 +11,7 @@ public class NaranGuard : MonoBehaviour
     
     [SerializeField] private GameObject doorObstruction;
     public GameObject habitant;
-    public Animator myAnim;
-    public float moveSpeed;
     private Vector2 destiny;
-    [SerializeField] private GameObject theEntrance;
 
     public bool conversationFinished = false;
 

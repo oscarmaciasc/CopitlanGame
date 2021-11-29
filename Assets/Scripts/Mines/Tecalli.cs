@@ -11,19 +11,16 @@ public class Tecalli : MonoBehaviour
     public string[] badLines = { "No me terminas de convencer, intentalo de nuevo" };
     private string[] noPartituresDialog = { "Parece que no tienes la partitura necesaria", "Vuelve cuando la tengas" };
     private string[] tecalliNormalLines = {"Estoy molesta", "No dejare pasar a nadie", "*sonidos de clara molestia*"};
-
     public bool hasFinished = false;
     public bool finishedPartiture = false;
     [SerializeField] private GameObject theEntrance;
     public bool canPass = false;
     public Animator myAnim;
     public float moveSpeed;
-    [SerializeField] private GameObject pentagramPanel;
     [SerializeField] private GameObject partitureSelectionPanel;
     public bool canActivatePartiturePanel = true;
     public bool notFound = false;
     public int percentageToPass = 50;
-    
     public bool notFoundFlutes = false;
     public bool canMove = true;
 

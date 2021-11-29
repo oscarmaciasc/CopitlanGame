@@ -9,16 +9,11 @@ public class DialogManager : MonoBehaviour
 
     public Text dialogText;
     public GameObject dialogBox;
-
     public string[] dialogLines;
-
     //Keep track in wich line we are
     public int currentLine;
     public bool justStarted;
     public static DialogManager instance;
-
-    public bool conversationIsFinished = false;
-
     public GameObject habitant;
     public GameObject pentagramPanel;
     public GameObject partitureSelectionPanel;
@@ -220,8 +215,6 @@ public class DialogManager : MonoBehaviour
             // Send the habitant to PentagramManager script
             pentagramPanel.GetComponent<PentagramManager>().GetHabitant(this.habitant);
         }
-
-
     }
 
     public void ShowDialog(string[] newLines)

@@ -8,13 +8,11 @@ public class PartitureHabitant : MonoBehaviour
     // Partiture Habitants
 
     public static PartitureHabitant instance;
-    public bool canInterpretatePartiture = true;
     public bool conversationFinished = false;
     public bool canActivate;
     public bool partitureFinished = false;
     public bool firstTime = true;
     public bool canShowPartitures = true;
-    public string[] newLines;
     public GameObject habitant;
 
     // Start is called before the first frame update
@@ -39,8 +37,6 @@ public class PartitureHabitant : MonoBehaviour
 
         if (partitureFinished && this.gameObject.GetComponent<Tecalli>() == null && this.gameObject.GetComponent<Acan>() == null && this.gameObject.GetComponent<Seti>() == null && this.gameObject.GetComponent<Seti2>() == null && this.gameObject.GetComponent<Audience>() == null && this.gameObject.GetComponent<Leader>() == null)
         {
-
-
             canShowPartitures = false;
             // change lines
             //this.gameObject.GetComponent<DialogActivator>().lines = newLines;
@@ -51,11 +47,6 @@ public class PartitureHabitant : MonoBehaviour
             GameManager.instance.vPressed = false;
         }
 
-    }
-
-    public void HasFinishedPartiture()
-    {
-        partitureFinished = true;
     }
 
     public bool HasPartituresFilter()
