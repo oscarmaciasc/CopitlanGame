@@ -41,46 +41,56 @@ public class HabitantLoader : MonoBehaviour
         if ((houseID >= 0 && houseID <= 8) && houseID % 2 == 0)
         {
             CE1HouseHabitantA.SetActive(true);
+            CE1HouseHabitantA.GetComponent<DialogActivator>().lines = new string[] {"Bienvenido a mi casa, espero te sientas comodo"};
         }
         else if ((houseID >= 0 && houseID <= 8) && houseID % 2 != 0)
         {
             CE1HouseHabitantB.SetActive(true);
+            CE1HouseHabitantB.GetComponent<DialogActivator>().lines = new string[] {"Hola, estas casas son modestas pero acogedoras"};
         }
 
         //OutterCircle2 houses
         if ((houseID >= 9 && houseID <= 17) && houseID % 2 == 0)
         {
             CE2HouseHabitantA.SetActive(true);
+            CE2HouseHabitantA.GetComponent<DialogActivator>().lines = new string[] {"Me meti a la casa porque afuera hacia mucho calor"};
         }
         else if ((houseID >= 9 && houseID <= 17) && houseID % 2 != 0)
         {
             CE2HouseHabitantB.SetActive(true);
+            CE2HouseHabitantB.GetComponent<DialogActivator>().lines = new string[] {"Vengo de las minas, ahora soy rico en hierro"};
         }
 
         //OutterCircle3 houses
         if ((houseID >= 18 && houseID <= 27) && houseID % 2 == 0)
         {
             CE3HouseHabitantA.SetActive(true);
+            CE3HouseHabitantA.GetComponent<DialogActivator>().lines = new string[] {"Quisiera vivir en el triangulo, ahi las casas son mas bonitas"};
         }
         else if ((houseID >= 18 && houseID <= 27) && houseID % 2 != 0)
         {
             CE3HouseHabitantB.SetActive(true);
+            CE3HouseHabitantB.GetComponent<DialogActivator>().lines = new string[] {"Mi hermana salio al bosque y no ha regresado..."};
         }
 
         //OutterCircle4 houses
         if ((houseID >= 28 && houseID <= 36) && houseID % 2 == 0)
         {
             CE4HouseHabitantA.SetActive(true);
+            CE4HouseHabitantA.GetComponent<DialogActivator>().lines = new string[] {"Acabo de llegar de visitar a Kasakir, ultimamente esta muy serio"};
         }
         else if ((houseID >= 28 && houseID <= 36) && houseID % 2 != 0)
         {
             CE4HouseHabitantB.SetActive(true);
+            CE4HouseHabitantB.GetComponent<DialogActivator>().lines = new string[] {"La proxima semana voy a ir al circulo a comprar un globo"};
         }
 
         //Triangle1 houses
         if ((houseID >= 37 && houseID <= 41) && houseID % 2 == 0)
         {
             T1HouseHabitantA.SetActive(true);
+            T1HouseHabitantA.GetComponent<DialogActivator>().lines = new string[] {"Bienvenido al triangulo, espero te guste la zona"};
+
             if(houseID == 38)
             {
                 partiture5.SetActive(true);
@@ -89,56 +99,67 @@ public class HabitantLoader : MonoBehaviour
         else if ((houseID >= 37 && houseID <= 41) && houseID % 2 != 0)
         {
             T1HouseHabitanB.SetActive(true);
+            T1HouseHabitanB.GetComponent<DialogActivator>().lines = new string[] {"Acabo de llegar del cementerio, se encuentra en la parte Este del bosque"};
         }
 
         //Triangle2 houses
         if ((houseID >= 42 && houseID <= 47) && houseID % 2 == 0)
         {
             T2HouseHabitantA.SetActive(true);
+            T2HouseHabitantA.GetComponent<DialogActivator>().lines = new string[] {"Mi padre se dedica a la construccion de casas", "El hizo la mayoria del triangulo"};
         }
         else if ((houseID >= 42 && houseID <= 47) && houseID % 2 != 0)
         {
             T2HouseHabitanB.SetActive(true);
+            T2HouseHabitanB.GetComponent<DialogActivator>().lines = new string[] {"La escuela esta abandonada, asi que estudiamos desde casa"};
         }
 
         //Triangle3 houses
         if ((houseID >= 48 && houseID <= 53) && houseID % 2 == 0)
         {
             T3HouseHabitantA.SetActive(true);
+            T3HouseHabitantA.GetComponent<DialogActivator>().lines = new string[] {"El dirigente Quizani es dificil de convencer", "pero todos aqui confiamos en su juicio"};
         }
         else if ((houseID >= 48 && houseID <= 53) && houseID % 2 != 0)
         {
             T3HouseHabitanB.SetActive(true);
+            T3HouseHabitanB.GetComponent<DialogActivator>().lines = new string[] {"Las casas del circulo interior son hermosas, aunque algo mas pequeñas que las de aqui"};
         }
 
         //Triangle4 houses
         if ((houseID >= 54 && houseID <= 58) && houseID % 2 == 0)
         {
             T4HouseHabitantA.SetActive(true);
+            T4HouseHabitantA.GetComponent<DialogActivator>().lines = new string[] {"El herrero de esta zona es impresionante", "Aunque dicen que el del circulo interior puede hacer artefactos mas avanzados"};
         }
         else if ((houseID >= 54 && houseID <= 58) && houseID % 2 != 0)
         {
             T4HouseHabitanB.SetActive(true);
+            T4HouseHabitanB.GetComponent<DialogActivator>().lines = new string[] {"Aunque la madera es muy util a veces es mejor intentar conseguir hierro u oro","Son mas valiosos..."};
         }
 
         //InnerCircle1 houses
         if ((houseID >= 59 && houseID <= 63) && houseID % 2 == 0)
         {
             CI1HouseHabitantA.SetActive(true);
+            CI1HouseHabitantA.GetComponent<DialogActivator>().lines = new string[] {"Bienvenido al Circulo Interior", "Esta es la zona mas avanzada de la ciudad"};
         }
         else if ((houseID >= 59 && houseID <= 63) && houseID % 2 != 0)
         {
             CI1HouseHabitantB.SetActive(true);
+            CI1HouseHabitantB.GetComponent<DialogActivator>().lines = new string[] {"El dirigente Naran es muy exigente", "tanto asi que muy pocos han podido convencerlo de ver al lider Necalli"};
         }
 
         //InnerCircle2 houses
         if ((houseID >= 64 && houseID <= 68) && houseID % 2 == 0)
         {
             CI2HouseHabitantA.SetActive(true);
+            CI2HouseHabitantA.GetComponent<DialogActivator>().lines = new string[] {"Algun dia quiero llegar a ser un herrero", "Es por eso que me la paso todo el dia en la biblioteca"};
         }
         else if ((houseID >= 64 && houseID <= 68) && houseID % 2 != 0)
         {
             CI2HouseHabitantB.SetActive(true);
+            CI2HouseHabitantB.GetComponent<DialogActivator>().lines = new string[] {"Vi al lider Necalli", "lo juro, lo vi con mis propios ojos"};
         }
 
         // Formula y despues mandar el id resultante a la instancia de habitant interacted

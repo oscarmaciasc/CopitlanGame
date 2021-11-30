@@ -367,7 +367,8 @@ public class InGame : MonoBehaviour
     {
         Debug.Log("******** Bye ********");
         XmlManager.instance.WasLoadedAlready(false);
-        Application.Quit();
+        //Application.Quit();
+        SceneManager.LoadScene("MainMenu");
     }
 
     private void NoFuelPanel()

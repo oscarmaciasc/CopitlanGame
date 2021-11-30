@@ -11,6 +11,8 @@ public class HabitantMovement : MonoBehaviour
     public float moveSpeed;
     public Vector2 vector2DestinyX;
     public Vector2 vector2DestinyY;
+    // public Vector2 vectorCollision;
+    // public int collisionCounter = 0;
     public float currentPositionX = 0;
     public float currentPositionY = 0;
     public int counter = 0;
@@ -48,6 +50,7 @@ public class HabitantMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         AvoidingCollisions();
 
         if (counter == 2)
@@ -60,6 +63,9 @@ public class HabitantMovement : MonoBehaviour
 
             counter = 0;
             GetRandomCoordTest();
+        } else
+        {
+            DialogActivator.instance.canActivate = false;
         }
 
         // This condition waits 5 seconds
@@ -102,6 +108,21 @@ public class HabitantMovement : MonoBehaviour
             myAnim.SetFloat("moveY", 0);
             vector2DestinyX = new Vector2(transform.position.x, transform.position.y);
             vector2DestinyY = new Vector2(transform.position.x, transform.position.y);
+            counter = 2;
+
+            if(currentPositionX < vector2DestinyX.x)
+            {
+                myAnim.SetFloat("lastMoveX", 1);
+            } else if(currentPositionX > vector2DestinyX.x)
+            {
+                myAnim.SetFloat("lastMoveX", -1);
+            } else if(currentPositionY < vector2DestinyY.y)
+            {
+                myAnim.SetFloat("lastMoveY", 1);
+            } else if(currentPositionY > vector2DestinyY.y)
+            {
+                myAnim.SetFloat("lastMoveY", -1);
+            }
         }
     }
 
@@ -113,33 +134,38 @@ public class HabitantMovement : MonoBehaviour
         // Access the child of the object habitant to have the specific habitant is colliding
         if (transform.Find("collider").GetComponent<AvoidCollision>().hasCollided == true)
         {
+            //vectorCollision = new Vector2(transform.position.x, transform.position.y);
+
             if (myAnim.GetFloat("moveX") == -1)
             {
                 // move x to 5
                 vector2DestinyX = new Vector2(transform.position.x + 1, currentPositionY);
-                // Debug.Log("new coords");
-                // GetRandomCoordTest();
+                
             }
             else if (myAnim.GetFloat("moveX") == 1)
             {
                 // move x to 5
                 vector2DestinyX = new Vector2(transform.position.x - 1, currentPositionY);
-                // Debug.Log("new coords");
-                // GetRandomCoordTest();
+                
             }
 
             if (myAnim.GetFloat("moveY") == -1)
             {
                 vector2DestinyY = new Vector2(currentPositionX, transform.position.y + 1);
-                // Debug.Log("new coords");
-                // GetRandomCoordTest();
+                
             }
             else if (myAnim.GetFloat("moveY") == 1)
             {
                 vector2DestinyY = new Vector2(currentPositionX, transform.position.y - 1);
-                // Debug.Log("new coords");
-                // GetRandomCoordTest();
+                
             }
+
+            // if(this.transform.position.x == vectorCollision.x && this.transform.position.y == vectorCollision.y)
+            // {
+            //     collisionCounter ++;
+            // }
+
+            // Debug.Log("collisionCounter: " + collisionCounter);
 
             transform.Find("collider").GetComponent<AvoidCollision>().hasCollided = false;
         }

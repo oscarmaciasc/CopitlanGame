@@ -45,7 +45,7 @@ public class ChangeByColor : MonoBehaviour
     private string[] GetCopitlanInfo() {
         return new string[] {
             "Copitlan" ,
-            "Copitlan es una ciudad oculta entre los arboles del bosque Papataca.\nTiene tres zonas principales divididas por murallas, con un Dirigente encangado de cada una de ellas.\nCuenta tambien con un Lider que esta al mando y se encarga de garantizar la estabilidad de toda la ciudad."
+            "Copitlan es una ciudad oculta entre los arboles del bosque Papataca.\nTiene tres zonas principales divididas por murallas, con un Dirigente encargado de cada una de ellas.\nCuenta tambien con un Lider que esta al mando y se encarga de garantizar la estabilidad de toda la ciudad."
         };
     }
 

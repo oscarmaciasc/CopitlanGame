@@ -61,6 +61,9 @@ public class BalloonMovement : MonoBehaviour
 
             counter = 0;
             GetRandomCoordTest();
+        } else
+        {
+            DialogActivator.instance.canActivate = false;
         }
 
         // This condition waits 20 seconds
@@ -94,6 +97,29 @@ public class BalloonMovement : MonoBehaviour
                     vector2DestinyY = new Vector2(currentPositionX, transform.position.y + randomY);
                 }
                 MoveYTest();
+            }
+        }
+
+        if(dialogBox.activeInHierarchy)
+        {
+            myAnim.SetFloat("moveX", 0);
+            myAnim.SetFloat("moveY", 0);
+            vector2DestinyX = new Vector2(transform.position.x, transform.position.y);
+            vector2DestinyY = new Vector2(transform.position.x, transform.position.y);
+            counter = 2;
+
+            if(currentPositionX < vector2DestinyX.x)
+            {
+                myAnim.SetFloat("lastMoveX", 1);
+            } else if(currentPositionX > vector2DestinyX.x)
+            {
+                myAnim.SetFloat("lastMoveX", -1);
+            } else if(currentPositionY < vector2DestinyY.y)
+            {
+                myAnim.SetFloat("lastMoveY", 1);
+            } else if(currentPositionY > vector2DestinyY.y)
+            {
+                myAnim.SetFloat("lastMoveY", -1);
             }
         }
 
