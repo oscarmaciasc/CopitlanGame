@@ -2108,9 +2108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - He encontrado un antiguo pergamino en el suelo
-  - Creo que podria servirte
-  - Toma, te lo regalo
+  - Es facil perderse en la mina
+  - Ten cuidado
   canActivate: 0
 --- !u!50 &1254400019
 Rigidbody2D:
@@ -2375,9 +2374,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - He encontrado un antiguo pergamino en el suelo
-  - Creo que podria servirte
-  - Toma, te lo regalo
+  - Ya me aburri
+  - ya me voy
   canActivate: 0
 --- !u!50 &1364219848
 Rigidbody2D:
@@ -16481,9 +16479,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - He encontrado un antiguo pergamino en el suelo
-  - Creo que podria servirte
-  - Toma, te lo regalo
+  - La otra vez me parecio ver un murcielago
+  - o un monstruo
+  - quiza fue mi imaginacion
   canActivate: 0
 --- !u!50 &2110052325
 Rigidbody2D:

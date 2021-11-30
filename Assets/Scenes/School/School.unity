@@ -5821,8 +5821,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - Hoy es un dia triste, me gustaria que pasara algo diferente
-  - Pero mi hermana insiste en que son saludables
+  - Esta escuela esta abandonada
+  - Nunca nadie viene por aqui
   - ...
   canActivate: 0
 --- !u!4 &5231439010169908552
@@ -5894,15 +5894,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf43f54d5788f1940aec6bcd352477a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canInterpretatePartiture: 1
   conversationFinished: 0
   canActivate: 0
   partitureFinished: 0
   firstTime: 1
   canShowPartitures: 1
-  newLines:
-  - El dirigente Naran es una gran persona
-  - lastima que se encuentre lejos de aqui
   habitant: {fileID: 0}
 --- !u!50 &5231439010169908557
 Rigidbody2D:

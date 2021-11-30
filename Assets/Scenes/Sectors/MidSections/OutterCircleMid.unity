@@ -171,9 +171,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - He encontrado un antiguo pergamino en el suelo
-  - Creo que podria servirte
-  - Toma, te lo regalo
+  - He encontrado oro en una mina cerca de aqui
+  - Estaba fuera de la ciudad
   canActivate: 0
 --- !u!50 &34900578
 Rigidbody2D:
@@ -16344,9 +16343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - Hoy es un dia triste, me gustaria que pasara algo diferente
-  - Pero mi hermana insiste en que son saludables
-  - ...
+  - El triangulo es de las zonas mas bonitas de la ciudad
   canActivate: 0
 --- !u!114 &5957934722623299752
 MonoBehaviour:
@@ -16360,15 +16357,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf43f54d5788f1940aec6bcd352477a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canInterpretatePartiture: 1
   conversationFinished: 0
   canActivate: 0
   partitureFinished: 0
   firstTime: 1
   canShowPartitures: 1
-  newLines:
-  - El dirigente Naran es una gran persona
-  - lastima que se encuentre lejos de aqui
   habitant: {fileID: 0}
 --- !u!50 &5957934722623299753
 Rigidbody2D:
@@ -16508,15 +16501,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf43f54d5788f1940aec6bcd352477a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canInterpretatePartiture: 1
   conversationFinished: 0
   canActivate: 0
   partitureFinished: 0
   firstTime: 1
   canShowPartitures: 1
-  newLines:
-  - El dirigente Naran es una gran persona
-  - lastima que se encuentre lejos de aqui
   habitant: {fileID: 0}
 --- !u!50 &7145891063295377941
 Rigidbody2D:
@@ -16683,7 +16672,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - Hoy es un dia triste, me gustaria que pasara algo diferente
-  - Pero mi hermana insiste en que son saludables
-  - ...
+  - Estoy triste
   canActivate: 0

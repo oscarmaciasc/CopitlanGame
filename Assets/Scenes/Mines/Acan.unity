@@ -9237,9 +9237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - He encontrado un antiguo pergamino en el suelo
-  - Creo que podria servirte
-  - Toma, te lo regalo
+  - Buenas
+  - espero no te asusten los sonidos de esta mina
   canActivate: 0
 --- !u!50 &1543186638
 Rigidbody2D:
@@ -10807,9 +10806,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - He encontrado un antiguo pergamino en el suelo
-  - Creo que podria servirte
-  - Toma, te lo regalo
+  - Hola viajero
+  - estoy buscando hierro
   canActivate: 0
 --- !u!50 &1956777019
 Rigidbody2D:

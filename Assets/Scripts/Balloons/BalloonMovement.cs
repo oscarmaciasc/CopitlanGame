@@ -7,9 +7,6 @@ public class BalloonMovement : MonoBehaviour
     private int randomX;
     private int randomY;
     private int firstMovement;
-    private int destinyCoordX;
-    private int destinyCoordY;
-    public bool canMove;
     public Animator myAnim;
     public float moveSpeed;
     public Vector2 vector2DestinyX;
@@ -18,9 +15,6 @@ public class BalloonMovement : MonoBehaviour
     public float currentPositionY = 0;
     public int counter = 0;
     public float timeToWait = 0f;
-
-    private Vector3 bottomLeftLimit;
-    private Vector3 topRightLimit;
     [SerializeField] GameObject dialogBox;
     public bool balloonCanTalk = false;
 
@@ -71,7 +65,7 @@ public class BalloonMovement : MonoBehaviour
 
         // This condition waits 20 seconds
         // The countdown its only when were not talking to the npc
-        if (!dialogBox.activeInHierarchy)
+        if (!dialogBox.activeInHierarchy && !this.gameObject.GetComponent<DialogActivator>().canActivate)
         {
             timeToWait -= Time.deltaTime;
         }

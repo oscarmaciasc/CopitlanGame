@@ -7,9 +7,6 @@ public class HabitantMovement : MonoBehaviour
     private int randomX;
     private int randomY;
     private int firstMovement;
-    private int destinyCoordX;
-    private int destinyCoordY;
-    public bool canMove;
     public Animator myAnim;
     public float moveSpeed;
     public Vector2 vector2DestinyX;
@@ -18,10 +15,8 @@ public class HabitantMovement : MonoBehaviour
     public float currentPositionY = 0;
     public int counter = 0;
     public float timeToWait = 0f;
-
-    private Vector3 bottomLeftLimit;
-    private Vector3 topRightLimit;
     public bool movingHabitantCanTalk = false;
+    [SerializeField] private GameObject dialogBox;
 
     // Start is called before the first frame update
     void Start()
@@ -68,7 +63,11 @@ public class HabitantMovement : MonoBehaviour
         }
 
         // This condition waits 5 seconds
-        timeToWait -= Time.deltaTime;
+        // The countdown its only when were not talking to the npc
+        if (!dialogBox.activeInHierarchy && !this.gameObject.GetComponent<DialogActivator>().canActivate)
+        {
+            timeToWait -= Time.deltaTime;
+        }
         if (timeToWait <= 0)
         {
 
@@ -97,8 +96,13 @@ public class HabitantMovement : MonoBehaviour
             }
         }
 
-        // // Keeping the npc inside the map
-        // transform.position = new Vector3(Mathf.Clamp(transform.position.x, theMap.localBounds.min.x, topRightLimit.x), Mathf.Clamp(transform.position.y, bottomLeftLimit.y, topRightLimit.y), transform.position.z);
+        if(dialogBox.activeInHierarchy)
+        {
+            myAnim.SetFloat("moveX", 0);
+            myAnim.SetFloat("moveY", 0);
+            vector2DestinyX = new Vector2(transform.position.x, transform.position.y);
+            vector2DestinyY = new Vector2(transform.position.x, transform.position.y);
+        }
     }
 
     private void AvoidingCollisions()
@@ -112,27 +116,27 @@ public class HabitantMovement : MonoBehaviour
             if (myAnim.GetFloat("moveX") == -1)
             {
                 // move x to 5
-                vector2DestinyX = new Vector2(transform.position.x + 3, currentPositionY);
+                vector2DestinyX = new Vector2(transform.position.x + 1, currentPositionY);
                 // Debug.Log("new coords");
                 // GetRandomCoordTest();
             }
             else if (myAnim.GetFloat("moveX") == 1)
             {
                 // move x to 5
-                vector2DestinyX = new Vector2(transform.position.x - 3, currentPositionY);
+                vector2DestinyX = new Vector2(transform.position.x - 1, currentPositionY);
                 // Debug.Log("new coords");
                 // GetRandomCoordTest();
             }
 
             if (myAnim.GetFloat("moveY") == -1)
             {
-                vector2DestinyY = new Vector2(currentPositionX, transform.position.y + 3);
+                vector2DestinyY = new Vector2(currentPositionX, transform.position.y + 1);
                 // Debug.Log("new coords");
                 // GetRandomCoordTest();
             }
             else if (myAnim.GetFloat("moveY") == 1)
             {
-                vector2DestinyY = new Vector2(currentPositionX, transform.position.y - 3);
+                vector2DestinyY = new Vector2(currentPositionX, transform.position.y - 1);
                 // Debug.Log("new coords");
                 // GetRandomCoordTest();
             }
@@ -152,7 +156,9 @@ public class HabitantMovement : MonoBehaviour
     {
         if (vector2DestinyX.x != gameObject.transform.position.x)
         {
+            
             gameObject.transform.position = Vector2.MoveTowards(transform.position, vector2DestinyX, moveSpeed * Time.deltaTime);
+            
 
             if (vector2DestinyX.x > gameObject.transform.position.x)
             {
@@ -186,7 +192,9 @@ public class HabitantMovement : MonoBehaviour
     {
         if (vector2DestinyY.y != gameObject.transform.position.y)
         {
+           
             gameObject.transform.position = Vector2.MoveTowards(transform.position, vector2DestinyY, moveSpeed * Time.deltaTime);
+            
 
             if (vector2DestinyY.y > gameObject.transform.position.y)
             {

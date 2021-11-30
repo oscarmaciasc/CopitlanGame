@@ -1080,15 +1080,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf43f54d5788f1940aec6bcd352477a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canInterpretatePartiture: 1
   conversationFinished: 0
   canActivate: 0
   partitureFinished: 0
   firstTime: 1
   canShowPartitures: 1
-  newLines:
-  - Vaya, nunca habia escuchado algo asi
-  - Gracias
   habitant: {fileID: 0}
 --- !u!114 &279378354
 MonoBehaviour:
@@ -1103,9 +1099,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - Hola!
-  - Estoy algo aburrida
-  - Ojala alguien hiciera algo interesante por aqui de vez en cuando
+  - Aqui cerca esta la biblioteca
+  - Me encanta leer asi que a veces voy
   canActivate: 0
 --- !u!61 &279378355
 BoxCollider2D:
@@ -116563,15 +116558,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf43f54d5788f1940aec6bcd352477a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canInterpretatePartiture: 1
   conversationFinished: 0
   canActivate: 0
   partitureFinished: 0
   firstTime: 1
   canShowPartitures: 1
-  newLines:
-  - El dirigente Naran es una gran persona
-  - lastima que se encuentre lejos de aqui
   habitant: {fileID: 0}
 --- !u!114 &1297237326
 MonoBehaviour:
@@ -116586,9 +116577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - Hoy es un dia triste, me gustaria que pasara algo diferente
-  - Pero mi hermana insiste en que son saludables
-  - ...
+  - Bienvenido al circulo interior
   canActivate: 0
 --- !u!61 &1297237327
 BoxCollider2D:
@@ -118887,15 +118876,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf43f54d5788f1940aec6bcd352477a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canInterpretatePartiture: 1
   conversationFinished: 0
   canActivate: 0
   partitureFinished: 0
   firstTime: 1
   canShowPartitures: 1
-  newLines:
-  - El dirigente Naran es una gran persona
-  - lastima que se encuentre lejos de aqui
   habitant: {fileID: 0}
 --- !u!114 &1614591345
 MonoBehaviour:
@@ -118910,9 +118895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - Hoy es un dia triste, me gustaria que pasara algo diferente
-  - Pero mi hermana insiste en que son saludables
-  - ...
+  - Si sigues por este camino llegaras al palacio del dirigentre Naran
   canActivate: 0
 --- !u!61 &1614591346
 BoxCollider2D:
@@ -119375,15 +119358,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf43f54d5788f1940aec6bcd352477a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canInterpretatePartiture: 1
   conversationFinished: 0
   canActivate: 0
   partitureFinished: 0
   firstTime: 1
   canShowPartitures: 1
-  newLines:
-  - El dirigente Naran es una gran persona
-  - lastima que se encuentre lejos de aqui
   habitant: {fileID: 0}
 --- !u!114 &1681218690
 MonoBehaviour:
@@ -119398,9 +119377,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - Hoy es un dia triste, me gustaria que pasara algo diferente
-  - Pero mi hermana insiste en que son saludables
-  - ...
+  - Acabo de ir con Naran
+  - Es una gran persona
+  - Siempre pone atencion a los que queremos decirle los habitantes
   canActivate: 0
 --- !u!61 &1681218691
 BoxCollider2D:
@@ -120581,15 +120560,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf43f54d5788f1940aec6bcd352477a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canInterpretatePartiture: 1
   conversationFinished: 0
   canActivate: 0
   partitureFinished: 0
   firstTime: 1
   canShowPartitures: 1
-  newLines:
-  - El dirigente Naran es una gran persona
-  - lastima que se encuentre lejos de aqui
   habitant: {fileID: 0}
 --- !u!114 &1949571158
 MonoBehaviour:
@@ -120604,9 +120579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - No me gustan los caracoles
-  - Pero mi hermana insiste en que son saludables
-  - ...
+  - Las casas de esta zona son verdaderamente hermosas
   canActivate: 0
 --- !u!61 &1949571159
 BoxCollider2D:

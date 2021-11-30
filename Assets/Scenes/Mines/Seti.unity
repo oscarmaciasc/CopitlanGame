@@ -1125,9 +1125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - He encontrado un antiguo pergamino en el suelo
-  - Creo que podria servirte
-  - Toma, te lo regalo
+  - En esta mina se puede encontrar oro
   canActivate: 0
 --- !u!50 &1674665880
 Rigidbody2D:
@@ -1485,9 +1483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - He encontrado un antiguo pergamino en el suelo
-  - Creo que podria servirte
-  - Toma, te lo regalo
+  - Esta es la mejor mina de todas
   canActivate: 0
 --- !u!50 &1918308160
 Rigidbody2D:
@@ -1719,9 +1715,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - He encontrado un antiguo pergamino en el suelo
-  - Creo que podria servirte
-  - Toma, te lo regalo
+  - Hay algo ahi delante
+  - no se que sea
   canActivate: 0
 --- !u!50 &1929901828
 Rigidbody2D:

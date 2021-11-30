@@ -224,7 +224,7 @@ public class HabitantLoader : MonoBehaviour
         // W-OutterCircle
         if((houseID >= 1 && houseID <= 4) || (houseID >= 9 && houseID <= 12) || (houseID >= 19 && houseID <= 22) || (houseID >= 29 && houseID <= 32))
         {
-            AreaExit.instance.areaToLoad = "E-OutterCircle";
+            AreaExit.instance.areaToLoad = "W-OutterCircle";
 
             if(houseID >= 1 && houseID <= 4)
             {
