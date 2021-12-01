@@ -7,6 +7,7 @@ public class DialogActivatorTutorial : MonoBehaviour
 {
 
     public static DialogActivatorTutorial instance;
+    [SerializeField] private GameObject talkHud;
     public string[] lines;
     public bool canActivate;
 
@@ -15,6 +16,14 @@ public class DialogActivatorTutorial : MonoBehaviour
     {
         instance = this;
         canActivate = false;
+        DeactivateTalkHud();
+    }
+
+    public void DeactivateTalkHud()
+    {
+        if(SceneManager.GetActiveScene().name == "InitSequence2"){
+            talkHud.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -33,6 +42,7 @@ public class DialogActivatorTutorial : MonoBehaviour
         if (other.tag == "Player")
         {
             canActivate = true;
+            talkHud.SetActive(true);
         }
     }
 
@@ -41,6 +51,7 @@ public class DialogActivatorTutorial : MonoBehaviour
         if (other.tag == "Player")
         {
             canActivate = false;
+            talkHud.SetActive(false);
         }
     }
 
