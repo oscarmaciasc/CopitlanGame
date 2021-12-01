@@ -8,19 +8,16 @@ public class InitSequence2 : MonoBehaviour
 {
     public static InitSequence2 instance;
     [SerializeField] private GameObject tutorialInterface;
-    [SerializeField] private GameObject startPlayingPanel;
     [SerializeField] private GameObject pressVPanel;
     [SerializeField] private GameObject partitureSelectionPanel;
     [SerializeField] private GameObject backArrow;
     [SerializeField] private GameObject pentagramPanel;
-    [SerializeField] private GameObject dialogBox;
     public string[] childReaction;
     public bool hasBeenActivated;
-    public bool hasfinishedDialogs = false;
     public bool justStarted = false;
     public bool secondMessage = false;
-    public bool shouldCountDown = false;
     public float waitToLoad = 1f;
+    public int score = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,16 +49,16 @@ public class InitSequence2 : MonoBehaviour
         }
 
         // This is made to avoid the second enter on the message dialog when the player finishes the partiture
-        if (DialogManagerTutorial.instance.dialogLines[0] == "Que linda cancion")
-        {
-            DialogManagerTutorial.instance.justStarted = false;
+        // if (DialogManagerTutorial.instance.dialogLines[0] == "Que linda cancion")
+        // {
+        //     DialogManagerTutorial.instance.justStarted = false;
 
-            // Flag to tell we are in the second message
-            secondMessage = true;
-            PlayerController.instance.canMove = false;
-        }
+        //     // Flag to tell we are in the second message
+        //     secondMessage = true;
+        //     PlayerController.instance.canMove = false;
+        // }
 
-        if (secondMessage && DialogManagerTutorial.instance.currentLine >= 1)
+        if (DialogManagerTutorial.instance.conversationIsFinished)
         {
             Invoke("ChangeScene", 2f);
         }
@@ -116,16 +113,9 @@ public class InitSequence2 : MonoBehaviour
     public void HasFinishedPartiture()
     {
         StartCoroutine(DeactivatePentagramPanel());
-
-        // Change npc0 dialogs
-
-        // IF %notes is high {} fill a new array with the dialogs
-
-
-        // if the conversation is finished passed to the other scene
-
+        GetPercentage();
+        ChangeHabitantDialogLines();
         StartCoroutine(ShowChildDialogs());
-
     }
 
     IEnumerator DeactivatePentagramPanel()
@@ -152,5 +142,31 @@ public class InitSequence2 : MonoBehaviour
             SceneManager.LoadScene("SE-Papataca");
             PlayerController.instance.areaTransitionName = "Tutorial-PapatacaSE";
         }
+    }
+
+    public void GetPercentage()
+    {
+        score = (PentagramManagerTutorial.instance.correctNotes * 100) / (19);
+    }
+
+    public void ChangeHabitantDialogLines()
+    {
+        if (score >= 0 && score <= 30)
+        {
+            Debug.Log("score: " + score);
+            childReaction = new string[] {"A decir verdad sonó horrible", "Pero supongo que mejoraras con el tiempo"};
+        } else if (score >= 40 && score <= 70)
+        {
+            Debug.Log("score: " + score);
+            childReaction = new string[] {"Wow, ha estado bastante bien", "Nunca antes habia escuchado algo asi"};
+        } else if (score >= 80 && score <= 100)
+        {
+            childReaction = new string[] {"Wooooooow es lo mas bello que he escuchado nunca", "me siento conmovida y profundamente feliz", "Te agradezco, suerte en tu viaje"};
+        }
+
+        secondMessage = true;
+        DialogManagerTutorial.instance.justStarted = false;
+        PlayerController.instance.canMove = false;
+        Debug.Log(childReaction[0]);
     }
 }

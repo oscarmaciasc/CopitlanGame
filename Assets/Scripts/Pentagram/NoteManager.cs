@@ -93,6 +93,7 @@ public class NoteManager : MonoBehaviour
             canPress = false;
             PentagramManager.streak = 0;
             PentagramManager.globalCounter++;
+            AudioManager.instance.PlaySFX(1);
             if (Partitures.instance.canAddAuxStreak)
             {
                 PentagramManager.auxStreak = 0;

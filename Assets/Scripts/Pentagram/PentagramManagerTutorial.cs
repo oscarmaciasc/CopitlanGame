@@ -13,6 +13,7 @@ public class PentagramManagerTutorial : MonoBehaviour
     public string partitureName;
     public int generatedNotes = 0;
     public int passedNotes = 0;
+    public int correctNotes = 0;
     public static PentagramManagerTutorial instance;
 
     private void Awake()

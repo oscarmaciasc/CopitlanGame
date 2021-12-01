@@ -2585,6 +2585,7 @@ MonoBehaviour:
   partitureName: 
   generatedNotes: 0
   passedNotes: 0
+  correctNotes: 0
 --- !u!212 &381781946
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21546,21 +21547,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialInterface: {fileID: 1818296043}
-  startPlayingPanel: {fileID: 2116909077}
   pressVPanel: {fileID: 1545694597}
   partitureSelectionPanel: {fileID: 1282875400}
   backArrow: {fileID: 529932800}
   pentagramPanel: {fileID: 381781944}
-  dialogBox: {fileID: 444040196}
   childReaction:
   - Que linda cancion
   - Me has hecho muy feliz
   hasBeenActivated: 0
-  hasfinishedDialogs: 0
   justStarted: 0
   secondMessage: 0
-  shouldCountDown: 0
   waitToLoad: 1
+  score: 0
 --- !u!1 &1871497980
 GameObject:
   m_ObjectHideFlags: 0
@@ -21662,8 +21660,6 @@ MonoBehaviour:
   - Ultimamente he estado tan triste
   - No se que me pasa
   - Siento que algo me falta
-  - De pronto me siento muy feliz
-  - Fue hermoso, gracias!
   canActivate: 0
 --- !u!61 &1882008348
 BoxCollider2D:

@@ -18,6 +18,7 @@ public class DialogManagerTutorial : MonoBehaviour
     public static DialogManagerTutorial instance;
 
     public bool conversationIsFinished = false;
+    public bool secondDialog = false;
 
     public GameObject habitant;
 
@@ -43,9 +44,12 @@ public class DialogManagerTutorial : MonoBehaviour
                     if (currentLine >= dialogLines.Length)
                     {
                         dialogBox.SetActive(false);
-
                         PlayerController.instance.canMove = true;
-                       
+
+                        if(InitSequence2.instance != null && InitSequence2.instance.secondMessage)
+                        {
+                            conversationIsFinished = true;
+                        }   
                     }
                     else
                     {
@@ -56,7 +60,6 @@ public class DialogManagerTutorial : MonoBehaviour
                 {
                     justStarted = false;
                 }
-
             }
             DialogActivatorTutorial.instance.DeactivateTalkHud();
         }

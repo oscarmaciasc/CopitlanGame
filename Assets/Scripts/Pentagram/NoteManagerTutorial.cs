@@ -89,7 +89,9 @@ public class NoteManagerTutorial : MonoBehaviour
             keyPressed = "";
             noteSuccessful = false;
             canPress = false;
-            PentagramManager.streak = 0;
+            PentagramManagerTutorial.streak = 0;
+            AudioManager.instance.PlaySFX(1);
+
         }
         gameObject.GetComponent<NoteManagerTutorial>().SetMediumOpacity();
     }
@@ -150,9 +152,10 @@ public class NoteManagerTutorial : MonoBehaviour
             SetGreen();
 
             noteSuccessful = true;
-            PentagramManager.streak++;
+            PentagramManagerTutorial.streak++;
             canPress = false;
             haveBeenPressed = true;
+            PentagramManagerTutorial.instance.correctNotes++;
         }
         else if (keyPressed != numberNote && keyPressed != "")
         {
