@@ -27,7 +27,7 @@ public class InGame : MonoBehaviour
     [SerializeField] private GameObject quizaniEntrance;
     [SerializeField] private GameObject naranEntrance;
     [SerializeField] private GameObject pauseMenuPanel;
-    [SerializeField] private bool canActivateBalloon;
+    [SerializeField] public bool canActivateBalloon;
     private GameObject player;
     public GameObject balloon;
     public bool pentagramActive = true;

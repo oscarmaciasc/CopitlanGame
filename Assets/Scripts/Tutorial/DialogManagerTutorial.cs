@@ -58,6 +58,7 @@ public class DialogManagerTutorial : MonoBehaviour
                 }
 
             }
+            DialogActivatorTutorial.instance.DeactivateTalkHud();
         }
     }
 

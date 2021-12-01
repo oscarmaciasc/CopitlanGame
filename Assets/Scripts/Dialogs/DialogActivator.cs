@@ -97,6 +97,7 @@ public class DialogActivator : MonoBehaviour
         if (other.tag == "Player")
         {
             canActivate = true;
+            HudController.instance.ActivateTalkHud();
             Debug.Log("Pongo canActivate en: " + canActivate);
         }
     }
@@ -106,6 +107,7 @@ public class DialogActivator : MonoBehaviour
         if (other.tag == "Player")
         {
             canActivate = false;
+            HudController.instance.DeactivateTalkHud();
             Debug.Log("Pongo canActivate en: " + canActivate);
         }
     }
