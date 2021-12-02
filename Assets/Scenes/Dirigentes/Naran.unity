@@ -271,13 +271,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf43f54d5788f1940aec6bcd352477a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canInterpretatePartiture: 1
   conversationFinished: 0
   canActivate: 0
   partitureFinished: 0
   firstTime: 1
   canShowPartitures: 1
-  newLines: []
   habitant: {fileID: 0}
 --- !u!50 &228479513
 Rigidbody2D:
@@ -1038,6 +1036,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: PartitureSelection, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 974284129, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 983860233, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1204,7 +1206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1267667178, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1298444319, guid: cc6deea581a65364391abd104cfaced7, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3928,6 +3930,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723811698}
   m_CullTransparentMesh: 1
+--- !u!1001 &1790111135
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2409781314854505325, guid: 8896d7b832ec6d84aaa079c1413190ff, type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2409781314854505325, guid: 8896d7b832ec6d84aaa079c1413190ff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.495725
+      objectReference: {fileID: 0}
+    - target: {fileID: 2409781314854505325, guid: 8896d7b832ec6d84aaa079c1413190ff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.249066
+      objectReference: {fileID: 0}
+    - target: {fileID: 2409781314854505325, guid: 8896d7b832ec6d84aaa079c1413190ff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -249.16568
+      objectReference: {fileID: 0}
+    - target: {fileID: 2409781314854505325, guid: 8896d7b832ec6d84aaa079c1413190ff, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2409781314854505325, guid: 8896d7b832ec6d84aaa079c1413190ff, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2409781314854505325, guid: 8896d7b832ec6d84aaa079c1413190ff, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2409781314854505325, guid: 8896d7b832ec6d84aaa079c1413190ff, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2409781314854505325, guid: 8896d7b832ec6d84aaa079c1413190ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2409781314854505325, guid: 8896d7b832ec6d84aaa079c1413190ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2409781314854505325, guid: 8896d7b832ec6d84aaa079c1413190ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2409781314854505327, guid: 8896d7b832ec6d84aaa079c1413190ff, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8896d7b832ec6d84aaa079c1413190ff, type: 3}
 --- !u!1 &1938294848
 GameObject:
   m_ObjectHideFlags: 0
@@ -14850,13 +14909,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf43f54d5788f1940aec6bcd352477a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canInterpretatePartiture: 1
   conversationFinished: 0
   canActivate: 0
   partitureFinished: 0
   firstTime: 1
   canShowPartitures: 1
-  newLines:
-  - Vaya, nunca habia escuchado algo asi
-  - Gracias
   habitant: {fileID: 0}
