@@ -35,7 +35,7 @@ public class CharacterSelection : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneLoader.LoadScene("MainMenu");
     }
 
     public void LimitInputString()
@@ -116,6 +116,6 @@ public class CharacterSelection : MonoBehaviour
         
         XmlManager.instance.Create(nameInputField.transform.Find("Text").GetComponent<Text>().text, gender);
 
-        SceneManager.LoadScene("InitSequence1");
+        SceneLoader.LoadScene("InitSequence1");
     }
 }

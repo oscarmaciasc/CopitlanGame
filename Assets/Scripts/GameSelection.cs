@@ -138,7 +138,7 @@ public class GameSelection : MonoBehaviour
 
     public void Create() {
         if(XmlManager.instance.CanCreateGame() != 0) {
-            SceneManager.LoadScene("CharacterSelection");
+            SceneLoader.LoadScene("CharacterSelection");
         }
     }
 
@@ -148,11 +148,11 @@ public class GameSelection : MonoBehaviour
 
         if(XmlManager.instance.LoadGame().happinessPercentage.percentage < 72)
         {
-            SceneManager.LoadScene(XmlManager.instance.LoadGame().lastSaved.scene);
+            SceneLoader.LoadScene(XmlManager.instance.LoadGame().lastSaved.scene);
         }
         else
         {
-            SceneManager.LoadScene("GameFinished");
+            SceneLoader.LoadScene("GameFinished");
         }
     }
 
@@ -161,7 +161,7 @@ public class GameSelection : MonoBehaviour
         XmlManager.instance.Delete(index);
         DeactivateWindowDelete();
         DeactivateButtons();
-        SceneManager.LoadScene("GameSelection");
+        SceneLoader.LoadScene("GameSelection");
     }
 
     public void ActivateDeletePanel()
@@ -176,7 +176,7 @@ public class GameSelection : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneLoader.LoadScene("MainMenu");
     }
 
     public void GameSelected()
