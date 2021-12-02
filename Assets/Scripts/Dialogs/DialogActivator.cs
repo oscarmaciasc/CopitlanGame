@@ -28,7 +28,7 @@ public class DialogActivator : MonoBehaviour
     void Update()
     {
         // if we are in the interactuable zone and we press enter and the dialog box is not already open
-
+        Debug.Log("canActivate: " + canActivate);
         if (canActivate && Input.GetKeyDown(KeyCode.Return) && !DialogManager.instance.dialogBox.activeInHierarchy)
         {
             // Only show dialogs when partitureSelectionPanel and pentagramManager are not active

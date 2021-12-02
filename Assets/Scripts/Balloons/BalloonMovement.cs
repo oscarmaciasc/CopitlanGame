@@ -42,6 +42,7 @@ public class BalloonMovement : MonoBehaviour
         if(other.tag == "Player")
         {
             this.gameObject.GetComponent<DialogActivator>().canActivate = false;
+            Debug.Log("BalloonMovement1 pone canActivate en: " +  this.gameObject.GetComponent<DialogActivator>().canActivate);
         }
     }
 
@@ -63,7 +64,8 @@ public class BalloonMovement : MonoBehaviour
             GetRandomCoordTest();
         } else
         {
-            DialogActivator.instance.canActivate = false;
+             this.gameObject.GetComponent<DialogActivator>().canActivate = false;
+            Debug.Log("BalloonMovement2 pone canActivate en: " +  this.gameObject.GetComponent<DialogActivator>().canActivate);
         }
 
         // This condition waits 20 seconds

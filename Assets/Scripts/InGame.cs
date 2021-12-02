@@ -368,6 +368,7 @@ public class InGame : MonoBehaviour
         Debug.Log("******** Bye ********");
         XmlManager.instance.WasLoadedAlready(false);
         //Application.Quit();
+        AudioManager.instance.StopMusic();
         SceneManager.LoadScene("MainMenu");
     }
 
