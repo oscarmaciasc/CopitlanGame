@@ -173,6 +173,35 @@ public class InGame : MonoBehaviour
         {
             DeactivateBalloon();
         }
+
+        if(GameManager.instance.mPressed && pauseMenuHasBeenStarted) {
+            if(!PauseMenu.instance.MapPanel.activeInHierarchy) {
+                ActivatePauseMenuPanel();
+            }
+            else
+            {
+                DeactivatePauseMenuPanel();
+            }
+            GameManager.instance.mPressed = false;
+        }
+        else if(GameManager.instance.mPressed) {
+            ActivatePauseMenuPanel();
+        }
+
+        if(GameManager.instance.ePressed && pauseMenuHasBeenStarted) {
+            if(!PauseMenu.instance.InventoryPanel.activeInHierarchy) {
+                ActivatePauseMenuPanel();
+                PauseMenu.instance.ActivateInventoryPanel();
+            }
+            else
+            {
+                DeactivatePauseMenuPanel();
+            }
+            GameManager.instance.ePressed = false;
+        }
+        else if(GameManager.instance.ePressed) {
+            ActivatePauseMenuPanel();
+        }
     }
 
     private void DeactivateAllExitMenuPanels()
@@ -368,7 +397,7 @@ public class InGame : MonoBehaviour
         Debug.Log("******** Bye ********");
         XmlManager.instance.WasLoadedAlready(false);
         //Application.Quit();
-        SceneManager.LoadScene("MainMenu");
+        SceneLoader.LoadScene("MainMenu");
     }
 
     private void NoFuelPanel()

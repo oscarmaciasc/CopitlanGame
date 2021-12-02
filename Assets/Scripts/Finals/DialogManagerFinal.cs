@@ -81,7 +81,7 @@ public class DialogManagerFinal : MonoBehaviour
         if (timeToWait <= 0)
         {
             UIFade.instance.FadeToBlack();
-            SceneManager.LoadScene("PapatacaFinal");
+            SceneLoader.LoadScene("PapatacaFinal");
         }
     }
 

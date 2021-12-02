@@ -35,12 +35,12 @@ public class MainMenu : MonoBehaviour
     //Functions for each button of the MainMenu
     public void Continue()
     {
-        SceneManager.LoadScene(gameSelectionScene);
+        SceneLoader.LoadScene(gameSelectionScene);
     }
 
     public void NewGame()
     {
-        SceneManager.LoadScene(characterSelectionScene);
+        SceneLoader.LoadScene(characterSelectionScene);
     }
 
     public void ConfirmationWindowDisplay()

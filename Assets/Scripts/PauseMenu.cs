@@ -9,8 +9,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject BalloonButton;
     [SerializeField] private GameObject InfoButton;
     [SerializeField] private GameObject BackButton;
-    [SerializeField] private GameObject MapPanel;
-    [SerializeField] private GameObject InventoryPanel;
+    [SerializeField] public GameObject MapPanel;
+    [SerializeField] public GameObject InventoryPanel;
     [SerializeField] private GameObject BalloonPanel;
     [SerializeField] private GameObject InfoPanel;
     [SerializeField] private GameObject InvResourcesPanel;

@@ -32,7 +32,7 @@ public class AreaExit : MonoBehaviour
             if (waitToLoad <= 0)
             {
                 shouldLoadAfterFade = false;
-                SceneManager.LoadScene(areaToLoad);
+                SceneLoader.LoadScene(areaToLoad);
             }
         }
     }

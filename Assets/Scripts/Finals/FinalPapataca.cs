@@ -28,6 +28,6 @@ public class FinalPapataca : MonoBehaviour
     {
         Debug.Log("Final");
         UIFade.instance.FadeToBlack();
-        SceneManager.LoadScene("MainMenu");
+        SceneLoader.LoadScene("MainMenu");
     }
 }

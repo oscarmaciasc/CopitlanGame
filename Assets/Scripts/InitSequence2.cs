@@ -149,7 +149,7 @@ public class InitSequence2 : MonoBehaviour
         waitToLoad -= Time.deltaTime;
         if (waitToLoad <= 0)
         {
-            SceneManager.LoadScene("SE-Papataca");
+            SceneLoader.LoadScene("SE-Papataca");
             PlayerController.instance.areaTransitionName = "Tutorial-PapatacaSE";
         }
     }
