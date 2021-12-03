@@ -94,7 +94,7 @@ public class GameFinished : MonoBehaviour
     }
     public void Return()
     {
-        SceneLoader.LoadScene("GameSelection");
+        SceneManager.LoadScene("GameSelection");
     }
 
     // Formats a float into a minutes fomat

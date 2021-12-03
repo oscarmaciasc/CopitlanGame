@@ -138,7 +138,7 @@ public class GameSelection : MonoBehaviour
 
     public void Create() {
         if(XmlManager.instance.CanCreateGame() != 0) {
-            SceneLoader.LoadScene("CharacterSelection");
+            SceneManager.LoadScene("CharacterSelection");
         }
     }
 
@@ -161,7 +161,7 @@ public class GameSelection : MonoBehaviour
         XmlManager.instance.Delete(index);
         DeactivateWindowDelete();
         DeactivateButtons();
-        SceneLoader.LoadScene("GameSelection");
+        SceneManager.LoadScene("GameSelection");
     }
 
     public void ActivateDeletePanel()
@@ -176,7 +176,7 @@ public class GameSelection : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        SceneLoader.LoadScene("MainMenu");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void GameSelected()
