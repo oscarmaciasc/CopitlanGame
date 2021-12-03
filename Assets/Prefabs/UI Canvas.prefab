@@ -36250,6 +36250,7 @@ MonoBehaviour:
   naranEntrance: {fileID: 0}
   pauseMenuPanel: {fileID: 120873221050265937}
   canActivateBalloon: 1
+  hudInterface: {fileID: 2440272148045050984}
   balloon: {fileID: 0}
   pentagramActive: 1
   noFuelPanel: {fileID: 1267667177}
