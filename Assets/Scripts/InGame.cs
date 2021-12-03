@@ -28,6 +28,7 @@ public class InGame : MonoBehaviour
     [SerializeField] private GameObject naranEntrance;
     [SerializeField] private GameObject pauseMenuPanel;
     [SerializeField] public bool canActivateBalloon;
+    [SerializeField] public GameObject hudInterface;
     private GameObject player;
     public GameObject balloon;
     public bool pentagramActive = true;
@@ -127,6 +128,16 @@ public class InGame : MonoBehaviour
         CheckForInputs();
         CheckCanMove();
         NoFuelPanel();
+        CheckForActiveInterfaces();
+    }
+
+    private void CheckForActiveInterfaces() {
+        if(pentagramPanel.activeInHierarchy || partitureSelectionPanel.activeInHierarchy || dialogBox.activeInHierarchy || noFuelPanel.activeInHierarchy || exitMenu.activeInHierarchy || pauseMenuPanel.activeInHierarchy) {
+            hudInterface.SetActive(false);
+        }
+        else {
+            hudInterface.SetActive(true);
+        }
     }
 
     private void CheckForInputs()
