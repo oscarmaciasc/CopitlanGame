@@ -35,7 +35,7 @@ public class CharacterSelection : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        SceneLoader.LoadScene("MainMenu");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void LimitInputString()
