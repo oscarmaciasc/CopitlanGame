@@ -19849,6 +19849,7 @@ MonoBehaviour:
   naranEntrance: {fileID: 0}
   pauseMenuPanel: {fileID: 2011187209}
   canActivateBalloon: 0
+  hudInterface: {fileID: 2011187248}
   balloon: {fileID: 0}
   pentagramActive: 1
   noFuelPanel: {fileID: 748032810}
@@ -19892,6 +19893,11 @@ MonoBehaviour:
   - {fileID: 2011187215}
   pentagramPanel: {fileID: 2011187213}
   panelPartitureName: 
+--- !u!1 &2011187248 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2440272148045050984, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+  m_PrefabInstance: {fileID: 2011187207}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2013278527
 GameObject:
   m_ObjectHideFlags: 0

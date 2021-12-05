@@ -10331,6 +10331,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+--- !u!1 &878872154 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2440272148045050984, guid: cc6deea581a65364391abd104cfaced7, type: 3}
+  m_PrefabInstance: {fileID: 878872153}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &882788656
 GameObject:
   m_ObjectHideFlags: 0
@@ -17141,6 +17146,7 @@ MonoBehaviour:
   naranEntrance: {fileID: 0}
   pauseMenuPanel: {fileID: 1635896250}
   canActivateBalloon: 0
+  hudInterface: {fileID: 878872154}
   balloon: {fileID: 0}
   pentagramActive: 1
   noFuelPanel: {fileID: 1155269063}
