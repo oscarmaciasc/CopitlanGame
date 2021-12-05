@@ -2260,8 +2260,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - El dirigente Kasakir es algo enojon
-  - pero es una gran persona
+  - Somos los guardias
+  - Siempre vigilantes, siempre atentos
   canActivate: 0
 --- !u!61 &716252907
 BoxCollider2D:
@@ -3208,8 +3208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - El dirigente Kasakir es algo enojon
-  - pero es una gran persona
+  - Estamos orgullosos de servir y proteger al dirigente Naran
   canActivate: 0
 --- !u!61 &990486144
 BoxCollider2D:
@@ -14704,8 +14703,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - Hola!
-  - Estoy algo aburrida
-  - Ojala alguien hiciera algo interesante por aqui de vez en cuando
+  - Acabo de terminar de hablar con Naran
+  - No pude convencerlo
   canActivate: 0
 --- !u!61 &5603078299715216721
 BoxCollider2D:

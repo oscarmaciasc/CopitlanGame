@@ -48,7 +48,7 @@ public class AudioManager : MonoBehaviour
         // stop any other sound playing before
         StopMusic();
 
-        if (musicToPlay < backgroundMusic.Length)
+        if (musicToPlay < backgroundMusic.Length && musicToPlay != 1000)
         {
             backgroundMusic[musicToPlay].Play();
             while (backgroundMusic[musicToPlay].volume < 1f)
