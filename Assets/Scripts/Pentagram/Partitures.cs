@@ -58,7 +58,7 @@ public class Partitures : MonoBehaviour
             if (PentagramManager.streak == upStreak)
             {
                 Debug.Log("Entro a subir racha");
-                velocity -= 0.15f;
+                velocity -= 0.05f;
                 upStreak += 10;
             }
 
@@ -83,7 +83,7 @@ public class Partitures : MonoBehaviour
             this.partitureDifficulty = "easy";
             this.velocity = 1f;
             this.partitureVelocity = 1f;
-            this.limitStreak = 10;
+            this.limitStreak = 11;
             this.numberOfPartitureNotes = 19;
 
             for (int i = 0; i < 4; i++)
@@ -115,7 +115,7 @@ public class Partitures : MonoBehaviour
             this.partitureDifficulty = "medium";
             this.velocity = 0.9f;
             this.partitureVelocity = 0.9f;
-            this.limitStreak = 10;
+            this.limitStreak = 11;
             this.numberOfPartitureNotes = 20;
 
             for (int i = 0; i < 7; i++)
@@ -144,10 +144,10 @@ public class Partitures : MonoBehaviour
         if (partitureName == "Partitura 7" || partitureName == "Partitura 8" || partitureName == "Partitura 9")
         {
             this.partitureDifficulty = "hard";
-            this.velocity = 0.8f;
-            this.partitureVelocity = 0.8f;
-            this.limitStreak = 10;
-            this.numberOfPartitureNotes = 23;
+            this.velocity = 0.85f;
+            this.partitureVelocity = 0.85f;
+            this.limitStreak = 11;
+            this.numberOfPartitureNotes = 22;
 
             for (int i = 0; i < 10; i++)
             {
@@ -168,17 +168,17 @@ public class Partitures : MonoBehaviour
             if (partitureName == "Partitura 9")
             {
                 this.partitureToPlay = 8;
-                this.numberOfPartitureNotes = 83;
+                this.numberOfPartitureNotes = 78;
             }
         }
 
         if (partitureName == "Partitura 10")
         {
             this.partitureDifficulty = "epic";
-            this.velocity = 0.7f;
-            this.partitureVelocity = 0.7f;
-            this.limitStreak = 10;
-            this.numberOfPartitureNotes = 412;
+            this.velocity = 0.80f;
+            this.partitureVelocity = 0.80f;
+            this.limitStreak = 11;
+            this.numberOfPartitureNotes = 361;
 
             for (int i = 0; i < 10; i++)
             {

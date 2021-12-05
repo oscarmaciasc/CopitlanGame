@@ -10864,8 +10864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - Saludos
-  - Mucha suerte, la necesitaras
+  - Espero te vaya bien
   canActivate: 0
 --- !u!61 &1398328940
 BoxCollider2D:
@@ -11648,9 +11647,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - Hoy es un dia triste, me gustaria que pasara algo diferente
-  - Pero mi hermana insiste en que son saludables
-  - ...
+  - Quizani es un dirigente sabio
+  - Siempre sabe que hacer
   canActivate: 0
 --- !u!212 &3525325059307500870
 SpriteRenderer:

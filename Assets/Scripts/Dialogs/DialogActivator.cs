@@ -107,7 +107,7 @@ public class DialogActivator : MonoBehaviour
         {
             canActivate = false;
             HudController.instance.DeactivateTalkHud();
-            Debug.Log("Pongo canActivate en: " + canActivate);
+            //Debug.Log("Pongo canActivate en: " + canActivate);
         }
     }
 

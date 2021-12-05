@@ -73,8 +73,10 @@ public class Leader : MonoBehaviour
             if (((PentagramManager.instance.correctNotes * 100) / (PentagramManager.instance.TotalNotes())) >= 60)
             {
                 canPass = true;
-                resNecalli = (60) + (((PentagramManager.streakRes) * (40)) / ((PentagramManager.instance.TotalNotes())));
+                resNecalli = (70) + (((PentagramManager.streakRes) * (40)) / ((PentagramManager.instance.TotalNotes())));
+                Debug.Log("resNecalli(" + resNecalli + ") = 70 + streakres("+ PentagramManager.streakRes+ ") * 40 / totalNotes("+ PentagramManager.instance.TotalNotes() +")");
                 aprobationPercentageNecalli = (resNecalli) + (resAudience / 30);
+                Debug.Log("approbationPercentageNecalli("+ aprobationPercentageNecalli +") = resNecalli("+resNecalli+") + resAudience("+ resAudience +") / 30");
 
                 if (aprobationPercentageNecalli >= 100)
                 {
