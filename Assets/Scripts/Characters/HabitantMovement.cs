@@ -63,10 +63,6 @@ public class HabitantMovement : MonoBehaviour
 
             counter = 0;
             GetRandomCoordTest();
-        } else
-        {
-            this.gameObject.GetComponent<DialogActivator>().canActivate = false;
-            //DialogActivator.instance.canActivate = false;
         }
 
         // This condition waits 5 seconds

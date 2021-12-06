@@ -1837,7 +1837,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Heredada de madre
+  m_Text: Heredada de mi madre
 --- !u!222 &246189979
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24097,4 +24097,5 @@ MonoBehaviour:
   currentLine: 0
   justStarted: 0
   conversationIsFinished: 0
+  secondDialog: 0
   habitant: {fileID: 0}
