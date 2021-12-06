@@ -35,7 +35,7 @@ public class InGame : MonoBehaviour
     public GameObject noFuelPanel;
     public bool balloonActive = false;
     private bool pauseMenuHasBeenStarted = false;
-    public float lastSaved = 0f;
+    public float lastSaved;
 
     private void Awake()
     {
@@ -51,6 +51,8 @@ public class InGame : MonoBehaviour
         DeactivateAllExitMenuPanels();
 
         UIFade.instance.FadeFromBlack();
+
+        lastSaved = Time.time;
 
         if(!XmlManager.instance.LoadGame().WasLoadedAlready())
         {
@@ -356,8 +358,13 @@ public class InGame : MonoBehaviour
 
     public void Save()
     {
-        XmlManager.instance.UpdateTimePlayed(Time.time - lastSaved);
         XmlManager.instance.UpdateLastSaved(SceneManager.GetActiveScene().name, PlayerController.instance.gameObject.transform.position.x, PlayerController.instance.gameObject.transform.position.y);
+        SaveTime();
+    }
+
+    public void SaveTime()
+    {
+        XmlManager.instance.UpdateTimePlayed(Time.time - lastSaved);
         lastSaved = Time.time;
     }
 
