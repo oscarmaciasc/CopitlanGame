@@ -85,22 +85,22 @@ public class BalloonPlayerController : MonoBehaviour
                     }
                 }
 
-                if (Input.GetKeyUp(KeyCode.UpArrow))
+                if (Input.GetKeyUp(KeyCode.UpArrow) && startWalkedBallon != 0)
                 {
                     CheckIfIsMovingBalloon();
                 }
 
-                if (Input.GetKeyUp(KeyCode.DownArrow))
+                if (Input.GetKeyUp(KeyCode.DownArrow) && startWalkedBallon != 0)
                 {
                     CheckIfIsMovingBalloon();
                 }
 
-                if (Input.GetKeyUp(KeyCode.LeftArrow))
+                if (Input.GetKeyUp(KeyCode.LeftArrow) && startWalkedBallon != 0)
                 {
                     CheckIfIsMovingBalloon();
                 }
 
-                if (Input.GetKeyUp(KeyCode.RightArrow))
+                if (Input.GetKeyUp(KeyCode.RightArrow) && startWalkedBallon != 0)
                 {
                     CheckIfIsMovingBalloon();
                 }

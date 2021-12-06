@@ -65,7 +65,7 @@ public class BalloonMovement : MonoBehaviour
         } else
         {
              this.gameObject.GetComponent<DialogActivator>().canActivate = false;
-            Debug.Log("BalloonMovement2 pone canActivate en: " +  this.gameObject.GetComponent<DialogActivator>().canActivate);
+            // Debug.Log("BalloonMovement2 pone canActivate en: " +  this.gameObject.GetComponent<DialogActivator>().canActivate);
         }
 
         // This condition waits 20 seconds

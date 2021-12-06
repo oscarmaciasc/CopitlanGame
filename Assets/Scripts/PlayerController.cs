@@ -58,10 +58,7 @@ public class PlayerController : MonoBehaviour
         {
             if (canMove)
             {
-                theRB.velocity =
-                    new Vector2(Input.GetAxisRaw("Horizontal"),
-                        Input.GetAxisRaw("Vertical")) *
-                    moveSpeed;
+                theRB.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed;
             }
             else
             {
@@ -83,7 +80,6 @@ public class PlayerController : MonoBehaviour
                     if (startWalked == 0)
                     {
                         SetFirstWalked();
-                        Debug.Log("startWalked: " + startWalked);
                     }
 
                     myAnim
@@ -92,22 +88,22 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyUp(KeyCode.UpArrow))
+            if (Input.GetKeyUp(KeyCode.UpArrow) && startWalked != 0)
             {
                 CheckIfIsMoving();
             }
 
-            if (Input.GetKeyUp(KeyCode.DownArrow))
+            if (Input.GetKeyUp(KeyCode.DownArrow) && startWalked != 0)
             {
                 CheckIfIsMoving();
             }
 
-            if (Input.GetKeyUp(KeyCode.LeftArrow))
+            if (Input.GetKeyUp(KeyCode.LeftArrow) && startWalked != 0)
             {
                 CheckIfIsMoving();
             }
 
-            if (Input.GetKeyUp(KeyCode.RightArrow))
+            if (Input.GetKeyUp(KeyCode.RightArrow) && startWalked != 0)
             {
                 CheckIfIsMoving();
             }
@@ -185,8 +181,6 @@ public class PlayerController : MonoBehaviour
     {
         stopWalked = Time.time;
         XmlManager.instance.UpdateTimeWalked(stopWalked - startWalked);
-        Debug.Log("stopWalked: " + stopWalked);
-        Debug.Log("resta: " + (stopWalked - startWalked));
         startWalked = 0;
         stopWalked = 0;
     }
