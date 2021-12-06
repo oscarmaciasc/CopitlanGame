@@ -59,8 +59,7 @@ public class InGame : MonoBehaviour
             XmlManager.instance.WasLoadedAlready(true);
         }
 
-        if (SceneManager.GetActiveScene().name != "TradeHouse1") //or tradehouse2, etc
-        {
+        
             
             // Reference to the balloon
             balloon = FindObjectOfType<BalloonPlayerController>().gameObject;
@@ -119,7 +118,7 @@ public class InGame : MonoBehaviour
                     naranEntrance.SetActive(true);
                 }
             }
-        }
+        
     }
 
     // Update is called once per frame
