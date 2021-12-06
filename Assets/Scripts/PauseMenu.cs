@@ -65,8 +65,7 @@ public class PauseMenu : MonoBehaviour
     // Loads the current gameData
     private void LoadGameData()
     {
-        XmlManager.instance.UpdateTimePlayed(Time.time - InGame.instance.lastSaved);
-        InGame.instance.lastSaved = Time.time;
+        InGame.instance.SaveTime();
         gameData = XmlManager.instance.LoadGame();
     }
 
