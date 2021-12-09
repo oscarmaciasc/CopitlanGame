@@ -18,7 +18,7 @@ public class Leader : MonoBehaviour
     private int resNecalli = 0;
     private float timeToWait = 4f;
     private int aprobationPercentageNecalli = 0;
-    private int cityHappinessPercentage = 0;
+    private double cityHappinessPercentage = 0;
     public bool canActivateFinal = false;
     private bool successInterpretation = false;
     public string[] noPartituresDialog = { "Parece que no tienes la partitura necesaria", "Vuelve cuando la tengas" };

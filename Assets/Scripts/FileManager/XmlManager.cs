@@ -341,7 +341,7 @@ public class XmlManager : MonoBehaviour
         Save(gameIndex, gamedata);
     }
 
-    public void UpdateHappinessPercentage(int percentage)
+    public void UpdateHappinessPercentage(double percentage)
     {
         int gameIndex = GetGameIndex();
 

@@ -8,6 +8,7 @@ public class HabitantMath : MonoBehaviour
     public static HabitantMath instance;
     public bool finishedPartiture = false;
     public int uniqueHabitantPercentage = 0;
+    private double cityHappinessPercentage = 0;
     public int index;
     private string[] lines1 = {"Si te soy sincero... he quedado un poco indiferente"};
     private string[] lines2 = {"Me siento reconfortado y feliz"};
@@ -34,6 +35,15 @@ public class HabitantMath : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void GetCityHappinessPercentage()
+    {
+        GameData gameData = new GameData();
+        gameData = XmlManager.instance.LoadGame();
+
+        cityHappinessPercentage = gameData.GetAndSaveHappinesPercentage();
+        Debug.Log("CityHappiness: " + cityHappinessPercentage);
     }
 
     public void GetPercentage(GameObject habitant)
