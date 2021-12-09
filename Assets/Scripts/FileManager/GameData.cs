@@ -344,12 +344,11 @@ public class GameData
         return habitantHappinessPercentage;
     }
 
-    public int GetAndSaveHappinesPercentage()
+    public double GetAndSaveHappinesPercentage()
     {
         double necalliPercentage = GetAudienceResult("necalliResult") * (0.8);
         double habitantPercentage = GetHabitantHappinesPercentage() * (0.2);
-        int res = (int)necalliPercentage + (int)habitantPercentage;
-
+        double res = necalliPercentage + habitantPercentage;
         XmlManager.instance.UpdateHappinessPercentage(res);
 
         return res;

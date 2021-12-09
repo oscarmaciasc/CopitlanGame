@@ -7,5 +7,5 @@ using System.Xml.Serialization;
 public class HappinessPercentage
 {
     [XmlAttribute("percentage")]
-    public int percentage { get; set; }
+    public double percentage { get; set; }
 }

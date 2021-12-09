@@ -23,7 +23,6 @@ public class InitSequence2 : MonoBehaviour
     {
         instance = this;
         hasBeenActivated = false;
-        justStarted = true;
         PlayerController.instance.canMove = true;
     }
 
@@ -48,15 +47,10 @@ public class InitSequence2 : MonoBehaviour
             }
         }
 
-        // This is made to avoid the second enter on the message dialog when the player finishes the partiture
-        // if (DialogManagerTutorial.instance.dialogLines[0] == "Que linda cancion")
-        // {
-        //     DialogManagerTutorial.instance.justStarted = false;
-
-        //     // Flag to tell we are in the second message
-        //     secondMessage = true;
-        //     PlayerController.instance.canMove = false;
-        // }
+        if (secondMessage && DialogManagerTutorial.instance.currentLine == 0)
+        {
+            justStarted = false;
+        }
 
         if (DialogManagerTutorial.instance.conversationIsFinished)
         {
@@ -153,13 +147,11 @@ public class InitSequence2 : MonoBehaviour
     {
         if (score >= 0 && score <= 30)
         {
-            Debug.Log("score: " + score);
-            childReaction = new string[] {"A decir verdad sonó horrible", "Pero supongo que mejoraras con el tiempo"};
-        } else if (score >= 40 && score <= 70)
+            childReaction = new string[] {"A decir verdad sono horrible", "Pero supongo que mejoraras con el tiempo"};
+        } else if (score >= 31 && score <= 70)
         {
-            Debug.Log("score: " + score);
             childReaction = new string[] {"Wow, ha estado bastante bien", "Nunca antes habia escuchado algo asi"};
-        } else if (score >= 80 && score <= 100)
+        } else if (score >= 71 && score <= 100)
         {
             childReaction = new string[] {"Wooooooow es lo mas bello que he escuchado nunca", "me siento conmovida y profundamente feliz", "Te agradezco, suerte en tu viaje"};
         }

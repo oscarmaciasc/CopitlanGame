@@ -140,6 +140,7 @@ public class PentagramManager : MonoBehaviour
                     habitant.GetComponent<HabitantMath>().finishedPartiture = true;
                     habitant.GetComponent<HabitantMath>().GetPercentage(habitant);
                     habitant.GetComponent<HabitantMath>().ChangeHabitantDialogLines(habitant);
+                    habitant.GetComponent<HabitantMath>().GetCityHappinessPercentage();
                 }
 
                 if (habitant.GetComponent<ResourceRewardPartiture>() != null && habitant.GetComponent<HabitantMath>() != null)

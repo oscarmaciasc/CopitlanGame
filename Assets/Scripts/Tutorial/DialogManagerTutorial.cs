@@ -32,6 +32,14 @@ public class DialogManagerTutorial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // DELETING THE SECOND ENTER ON TUTORIAL
+        if(InitSequence2.instance != null)
+        {
+            if(InitSequence2.instance.secondMessage)
+            {
+                justStarted = false;
+            }
+        }
         // if dialog box is open and the player release the Enter key we pass to other line and update the text
         if (dialogBox.activeInHierarchy)
         {

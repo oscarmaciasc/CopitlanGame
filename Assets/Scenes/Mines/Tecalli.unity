@@ -2432,7 +2432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - Ya me aburri
-  - ya me voy
+  - No se que hacer para divertirme
   canActivate: 0
 --- !u!50 &1364219848
 Rigidbody2D:
