@@ -148,6 +148,10 @@ public class GameSelection : MonoBehaviour
 
         if(XmlManager.instance.LoadGame().happinessPercentage.percentage < 72)
         {
+            if(XmlManager.instance.WasLoadedAlready()) {
+                XmlManager.instance.UpdateLastSaved("SE-Papataca", 168f, -158f);
+                XmlManager.instance.ChangeWasLoadedAlready(false);
+            }
             SceneLoader.LoadScene(XmlManager.instance.LoadGame().lastSaved.scene);
         }
         else
