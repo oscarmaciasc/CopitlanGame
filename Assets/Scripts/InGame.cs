@@ -198,6 +198,7 @@ public class InGame : MonoBehaviour
         }
         else if(GameManager.instance.mPressed) {
             ActivatePauseMenuPanel();
+            GameManager.instance.mPressed = false;
         }
 
         if(GameManager.instance.ePressed && pauseMenuHasBeenStarted) {
