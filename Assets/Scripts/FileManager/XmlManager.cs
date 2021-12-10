@@ -29,7 +29,7 @@ public class XmlManager : MonoBehaviour
 
     void OnAplicationQuit()
     {
-        WasLoadedAlready(false);
+        ChangeWasLoadedAlready(false);
     }
 
     // Called when a game is selected in GameSelection interface;
@@ -492,7 +492,7 @@ public class XmlManager : MonoBehaviour
         Save(gameIndex, gameData);
     }
 
-    public void WasLoadedAlready(bool wasLoadedSalready)
+    public void ChangeWasLoadedAlready(bool wasLoadedSalready)
     {
         int gameIndex = GetGameIndex();
 
@@ -501,6 +501,13 @@ public class XmlManager : MonoBehaviour
         gameData.lastSaved.wasLoadedAlready = wasLoadedSalready;
 
         Save(gameIndex, gameData);
+    }
+
+    public bool WasLoadedAlready()
+    {
+        GameData gameData = LoadGame();
+
+        return gameData.lastSaved.wasLoadedAlready;
     }
 
     // Fill gameData array

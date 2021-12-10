@@ -58,68 +58,66 @@ public class InGame : MonoBehaviour
         {
             Debug.Log("Loading position");
             FindObjectOfType<PlayerController>().gameObject.transform.position = new Vector3(XmlManager.instance.LoadGame().lastSaved.coordX, XmlManager.instance.LoadGame().lastSaved.coordY, 0f);
-            XmlManager.instance.WasLoadedAlready(true);
+            XmlManager.instance.ChangeWasLoadedAlready(true);
+        }
+            
+        // Reference to the balloon
+        balloon = FindObjectOfType<BalloonPlayerController>().gameObject;
+
+        balloon.GetComponent<BalloonPlayerController>().enabled = false;
+
+        // Reference to the player
+        player = FindObjectOfType<PlayerController>().gameObject;
+
+        GameData gameData = new GameData();
+        gameData = XmlManager.instance.LoadGame();
+
+        if (SceneManager.GetActiveScene().name == "SW-Papataca")
+        {
+            if (gameData.mineEntrance[0].shouldBeActive)
+            {
+                tecalliEntrance.SetActive(true);
+            }
         }
 
-        
-            
-            // Reference to the balloon
-            balloon = FindObjectOfType<BalloonPlayerController>().gameObject;
-
-            balloon.GetComponent<BalloonPlayerController>().enabled = false;
-
-            // Reference to the player
-            player = FindObjectOfType<PlayerController>().gameObject;
-
-            GameData gameData = new GameData();
-            gameData = XmlManager.instance.LoadGame();
-
-            if (SceneManager.GetActiveScene().name == "SW-Papataca")
+        if (SceneManager.GetActiveScene().name == "NW-Papataca")
+        {
+            if (gameData.mineEntrance[1].shouldBeActive)
             {
-                if (gameData.mineEntrance[0].shouldBeActive)
-                {
-                    tecalliEntrance.SetActive(true);
-                }
+                acanEntrance.SetActive(true);
             }
-
-            if (SceneManager.GetActiveScene().name == "NW-Papataca")
+            if (gameData.mineEntrance[2].shouldBeActive)
             {
-                if (gameData.mineEntrance[1].shouldBeActive)
-                {
-                    acanEntrance.SetActive(true);
-                }
-                if (gameData.mineEntrance[2].shouldBeActive)
-                {
-                    setiEntrance.SetActive(true);
-                }
+                setiEntrance.SetActive(true);
             }
+        }
 
-            if (SceneManager.GetActiveScene().name == "S-OutterCircle")
+        if (SceneManager.GetActiveScene().name == "S-OutterCircle")
+        {
+            Debug.Log("Entro a S-OutterCircle");
+            DontDestroyOnLoad(balloon);
+
+            if (gameData.dirigentEntrance[0].shouldBeActive)
             {
-                Debug.Log("Entro a S-OutterCircle");
-                DontDestroyOnLoad(balloon);
-
-                if (gameData.dirigentEntrance[0].shouldBeActive)
-                {
-                    kasakirEntrance.SetActive(true);
-                }
+                kasakirEntrance.SetActive(true);
             }
+        }
 
-            if (SceneManager.GetActiveScene().name == "Triangle")
+        if (SceneManager.GetActiveScene().name == "Triangle")
+        {
+            if (gameData.dirigentEntrance[1].shouldBeActive)
             {
-                if (gameData.dirigentEntrance[1].shouldBeActive)
-                {
-                    quizaniEntrance.SetActive(true);
-                }
+                quizaniEntrance.SetActive(true);
             }
+        }
 
-            if (SceneManager.GetActiveScene().name == "InnerCircle")
+        if (SceneManager.GetActiveScene().name == "InnerCircle")
+        {
+            if (gameData.dirigentEntrance[2].shouldBeActive)
             {
-                if (gameData.dirigentEntrance[2].shouldBeActive)
-                {
-                    naranEntrance.SetActive(true);
-                }
+                naranEntrance.SetActive(true);
             }
+        }
         
     }
 
@@ -413,7 +411,7 @@ public class InGame : MonoBehaviour
     public void Exit()
     {
         Debug.Log("******** Bye ********");
-        XmlManager.instance.WasLoadedAlready(false);
+        XmlManager.instance.ChangeWasLoadedAlready(false);
         //Application.Quit();
         SceneLoader.LoadScene("MainMenu");
         AudioManager.instance.StopMusic();
