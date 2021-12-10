@@ -357,6 +357,11 @@ public class InGame : MonoBehaviour
 
     public void Save()
     {
+        if(!FindObjectOfType<PlayerController>(true).gameObject.activeInHierarchy &&
+        FindObjectOfType<BalloonPlayerController>() != null) {
+            FindObjectOfType<PlayerController>(true).gameObject.transform.position = FindObjectOfType<BalloonPlayerController>().gameObject.transform.position;
+        }
+
         XmlManager.instance.UpdateLastSaved(SceneManager.GetActiveScene().name, PlayerController.instance.gameObject.transform.position.x, PlayerController.instance.gameObject.transform.position.y);
         SaveTime();
     }
