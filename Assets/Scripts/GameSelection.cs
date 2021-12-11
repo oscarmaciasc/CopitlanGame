@@ -151,6 +151,7 @@ public class GameSelection : MonoBehaviour
             if(XmlManager.instance.WasLoadedAlready()) {
                 XmlManager.instance.UpdateLastSaved("SE-Papataca", 168f, -158f);
                 XmlManager.instance.ChangeWasLoadedAlready(false);
+                Debug.Log("Saving error");
             }
             SceneLoader.LoadScene(XmlManager.instance.LoadGame().lastSaved.scene);
         }

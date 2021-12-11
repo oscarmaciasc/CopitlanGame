@@ -59,6 +59,7 @@ public class InGame : MonoBehaviour
             Debug.Log("Loading position, scene: " + XmlManager.instance.LoadGame().lastSaved.scene + ", coords(" + XmlManager.instance.LoadGame().GetLastSavedXCoord() + ", " + XmlManager.instance.LoadGame().GetLastSavedYCoord() + ")");
             FindObjectOfType<PlayerController>().gameObject.transform.position = new Vector3(XmlManager.instance.LoadGame().lastSaved.coordX, XmlManager.instance.LoadGame().lastSaved.coordY, 0f);
             XmlManager.instance.ChangeWasLoadedAlready(true);
+            Debug.Log("currentPlayerPosition: " + FindObjectOfType<PlayerController>().transform.position.x + ", " + FindObjectOfType<PlayerController>().transform.position.y);
         }
             
         // Reference to the balloon
