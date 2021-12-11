@@ -85,22 +85,22 @@ public class BalloonPlayerController : MonoBehaviour
                     }
                 }
 
-                if (Input.GetKeyUp(KeyCode.UpArrow) && startWalkedBallon != 0)
+                if ((Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W)) && startWalkedBallon != 0)
                 {
                     CheckIfIsMovingBalloon();
                 }
 
-                if (Input.GetKeyUp(KeyCode.DownArrow) && startWalkedBallon != 0)
+                if ((Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S)) && startWalkedBallon != 0)
                 {
                     CheckIfIsMovingBalloon();
                 }
 
-                if (Input.GetKeyUp(KeyCode.LeftArrow) && startWalkedBallon != 0)
+                if ((Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A)) && startWalkedBallon != 0)
                 {
                     CheckIfIsMovingBalloon();
                 }
 
-                if (Input.GetKeyUp(KeyCode.RightArrow) && startWalkedBallon != 0)
+                if ((Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D)) && startWalkedBallon != 0)
                 {
                     CheckIfIsMovingBalloon();
                 }
@@ -131,6 +131,7 @@ public class BalloonPlayerController : MonoBehaviour
     public void SetFirstWalkedBalloon()
     {
         startWalkedBallon = Time.time;
+        Debug.Log("[Balloon] startWalked: " + startWalkedBallon);
     }
 
     public void SaveTimeWalkedBalloon()
@@ -138,7 +139,10 @@ public class BalloonPlayerController : MonoBehaviour
         if (!InGame.instance.noFuelPanel.activeInHierarchy)
         {
             stopWalkedBalloon = Time.time;
+            Debug.Log("[Balloon] stopWalked: " + stopWalkedBalloon);
             XmlManager.instance.UpdateTimeWalkedBalloon(stopWalkedBalloon - startWalkedBallon);
+            Debug.Log("[Balloon] Resta stopWalked - startWalked: " + (stopWalkedBalloon - startWalkedBallon));
+            Debug.Log("[Balloon] TimeBalloon: " + XmlManager.instance.LoadGame().timeBalloon);
             startWalkedBallon = 0;
             stopWalkedBalloon = 0;
         }

@@ -56,7 +56,7 @@ public class InGame : MonoBehaviour
 
         if(!XmlManager.instance.LoadGame().WasLoadedAlready())
         {
-            Debug.Log("Loading position");
+            Debug.Log("Loading position, scene: " + XmlManager.instance.LoadGame().lastSaved.scene + ", coords(" + XmlManager.instance.LoadGame().GetLastSavedXCoord() + ", " + XmlManager.instance.LoadGame().GetLastSavedYCoord() + ")");
             FindObjectOfType<PlayerController>().gameObject.transform.position = new Vector3(XmlManager.instance.LoadGame().lastSaved.coordX, XmlManager.instance.LoadGame().lastSaved.coordY, 0f);
             XmlManager.instance.ChangeWasLoadedAlready(true);
         }
@@ -364,6 +364,8 @@ public class InGame : MonoBehaviour
 
         XmlManager.instance.UpdateLastSaved(SceneManager.GetActiveScene().name, PlayerController.instance.gameObject.transform.position.x, PlayerController.instance.gameObject.transform.position.y);
         SaveTime();
+
+        Debug.Log("Saving position, scene: " + XmlManager.instance.LoadGame().lastSaved.scene + ", coords(" + XmlManager.instance.LoadGame().GetLastSavedXCoord() + ", " + XmlManager.instance.LoadGame().GetLastSavedYCoord() + ")");
     }
 
     public void SaveTime()
