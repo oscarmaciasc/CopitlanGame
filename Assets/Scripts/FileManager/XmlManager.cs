@@ -35,12 +35,28 @@ public class XmlManager : MonoBehaviour
     // Called when a game is selected in GameSelection interface;
     public void CreateTempFile(int gameIndex)
     {
+
+
         TempFile tempFile = new TempFile(gameIndex, 1000);
 
         XmlSerializer serializer = new XmlSerializer(typeof(TempFile));
         FileStream xmlWriter = new FileStream(Application.persistentDataPath + "/TempFile.xml", FileMode.Create);
         serializer.Serialize(xmlWriter, tempFile);
         xmlWriter.Close();
+    }
+
+    public void ChangeTempFileGameID(int gameIndex)
+    {
+        TempFile tempFile = new TempFile();
+
+        XmlSerializer serializer = new XmlSerializer(typeof(TempFile));
+        FileStream xmlRead = new FileStream(Application.persistentDataPath + "/TempFile.xml", FileMode.Open);
+        tempFile = serializer.Deserialize(xmlRead) as TempFile;
+        xmlRead.Close();
+
+        tempFile.gameIndex = gameIndex;
+        
+        SaveTempFile(tempFile);
     }
 
     public void SaveTempFile(TempFile tempFile)

@@ -144,7 +144,7 @@ public class GameSelection : MonoBehaviour
 
     public void Load()
     {
-        XmlManager.instance.CreateTempFile(index);
+        XmlManager.instance.ChangeTempFileGameID(index);
 
         if(XmlManager.instance.LoadGame().happinessPercentage.percentage < 72)
         {

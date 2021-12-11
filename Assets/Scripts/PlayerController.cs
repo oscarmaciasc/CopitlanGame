@@ -58,7 +58,10 @@ public class PlayerController : MonoBehaviour
         {
             if (canMove)
             {
-                theRB.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed;
+                theRB.velocity =
+                    new Vector2(Input.GetAxisRaw("Horizontal"),
+                        Input.GetAxisRaw("Vertical")) *
+                    moveSpeed;
             }
             else
             {
@@ -88,22 +91,42 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if ((Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W)) && startWalked != 0)
+            if (
+                (
+                Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W)
+                ) &&
+                startWalked != 0
+            )
             {
                 CheckIfIsMoving();
             }
 
-            if ((Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S)) && startWalked != 0)
+            if (
+                (
+                Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S)
+                ) &&
+                startWalked != 0
+            )
             {
                 CheckIfIsMoving();
             }
 
-            if ((Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A)) && startWalked != 0)
+            if (
+                (
+                Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A)
+                ) &&
+                startWalked != 0
+            )
             {
                 CheckIfIsMoving();
             }
 
-            if ((Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D)) && startWalked != 0)
+            if (
+                (
+                Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D)
+                ) &&
+                startWalked != 0
+            )
             {
                 CheckIfIsMoving();
             }
@@ -155,6 +178,11 @@ public class PlayerController : MonoBehaviour
                     bottomLeftLimit.y,
                     topRightLimit.y),
                 transform.position.z);
+
+        if(SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void CheckIfIsMoving()
@@ -183,8 +211,12 @@ public class PlayerController : MonoBehaviour
         stopWalked = Time.time;
         Debug.Log("[Player] stopWalked: " + stopWalked);
         XmlManager.instance.UpdateTimeWalked(stopWalked - startWalked);
-        Debug.Log("[Player] Resta stopWalked - startWalked: " + (stopWalked - startWalked));
-        Debug.Log("[Player] TimeWalked: " + XmlManager.instance.LoadGame().timeWalked);
+        Debug
+            .Log("[Player] Resta stopWalked - startWalked: " +
+            (stopWalked - startWalked));
+        Debug
+            .Log("[Player] TimeWalked: " +
+            XmlManager.instance.LoadGame().timeWalked);
         startWalked = 0;
         stopWalked = 0;
     }
