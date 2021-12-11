@@ -3662,6 +3662,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08b168b4bc5f52149ac2d82f5ba575a5, type: 3}
+--- !u!1 &317686087 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3139893609883344256, guid: 08b168b4bc5f52149ac2d82f5ba575a5, type: 3}
+  m_PrefabInstance: {fileID: 317686086}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &445125067
 GameObject:
   m_ObjectHideFlags: 0
@@ -4133,7 +4138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversationFinished: 0
-  tradeHouseInterface: {fileID: 0}
+  tradeHouseInterface: {fileID: 317686087}
   dialogBox: {fileID: 2011187212}
 --- !u!50 &1171685864
 Rigidbody2D:
