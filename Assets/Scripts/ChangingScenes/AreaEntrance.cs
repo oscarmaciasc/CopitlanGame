@@ -27,6 +27,11 @@ public class AreaEntrance : MonoBehaviour
         if(transitionName == PlayerController.instance.areaTransitionName)
         {
             PlayerController.instance.transform.position = this.transform.position;
+            BalloonPlayerController.instance.transform.position = this.transform.position;
+            if(!InGame.instance.canActivateBalloon) {
+                InGame.instance.DeactivateBalloon();
+                Debug.Log("Deactivating balloon area entrance");
+            }
         }
     }
 }

@@ -119,5 +119,15 @@ public class EssentialsLoader : MonoBehaviour
                 }
             }
         }
+        else if(!FindObjectOfType<PlayerController>(true).gameObject.activeInHierarchy && InGame.instance.canActivateBalloon)
+        {
+            Invoke("ActivateBallon", .5f);
+        }
+    }
+
+    private void ActivateBallon()
+    {
+        Debug.Log("Activating balloon Essentials");
+        InGame.instance.ActivateBalloon();
     }
 }

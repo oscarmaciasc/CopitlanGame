@@ -39,7 +39,7 @@ public class AreaExit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" || other.gameObject.GetComponent<BalloonPlayerController>() != null)
         {
             shouldLoadAfterFade = true;
             UIFade.instance.FadeToBlack();

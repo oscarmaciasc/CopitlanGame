@@ -31,6 +31,11 @@ public class HudController : MonoBehaviour
         talkHud.SetActive(true);
     }
 
+    public bool IsTalkHudActive()
+    {
+        return talkHud.gameObject.activeInHierarchy;
+    }
+
     private void SetBalloon()
     {
         if(!InGame.instance.canActivateBalloon) {

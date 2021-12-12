@@ -208,10 +208,6 @@ public class DialogManager : MonoBehaviour
                 }
 
             }
-            HudController.instance.DeactivateTalkHud();
-        }
-        else if (DialogActivator.instance.canActivate){
-            HudController.instance.ActivateTalkHud();
         }
 
         if (pentagramPanel.activeInHierarchy)

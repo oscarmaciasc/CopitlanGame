@@ -29,7 +29,14 @@ public class CameraController : MonoBehaviour
         theMap.CompressBounds();
         bottomLeftLimit = theMap.localBounds.min + new Vector3(halfWidth, halfHeight, 0f);
         topRightLimit = theMap.localBounds.max + new Vector3(-halfWidth, -halfHeight, 0f);
-        target = FindObjectOfType<PlayerController>().transform;
+
+        if(FindObjectOfType<PlayerController>(true).gameObject.activeInHierarchy) {
+            target = FindObjectOfType<PlayerController>().transform;
+        }
+        else if (FindObjectOfType<BalloonPlayerController>(true).gameObject != null){
+            target = FindObjectOfType<BalloonPlayerController>().transform;
+        }
+        
 
         //  We send the bound limits to the PlayerController script to keep the player inside the map
         if (PlayerController.instance != null)
@@ -51,7 +58,7 @@ public class CameraController : MonoBehaviour
             {
                 if (PlayerController.instance != null)
                 {
-                    target = FindObjectOfType<PlayerController>().transform;
+                    target = FindObjectOfType<PlayerController>(true).transform;
                 }
             }
             else if (InGame.instance.balloonActive)

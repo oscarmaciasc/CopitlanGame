@@ -91,7 +91,6 @@ public class DialogActivator : MonoBehaviour
                 }
             }
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -99,7 +98,8 @@ public class DialogActivator : MonoBehaviour
         if (other.tag == "Player")
         {
             canActivate = true;
-            // HudController.instance.ActivateTalkHud();
+            HudController.instance.ActivateTalkHud();
+            Debug.Log("ACTIVATE HUD: OnTriggerExit");
             // Debug.Log("Pongo canActivate en: " + canActivate);
         }
     }
@@ -110,6 +110,7 @@ public class DialogActivator : MonoBehaviour
         {
             canActivate = false;
             HudController.instance.DeactivateTalkHud();
+            Debug.Log("DEACTIVATE HUD: OnTriggerExit");
             // Debug.Log("Pongo canActivate en: " + canActivate);
         }
     }
