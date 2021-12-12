@@ -179,10 +179,10 @@ public class PlayerController : MonoBehaviour
                     topRightLimit.y),
                 transform.position.z);
 
-        if(SceneManager.GetActiveScene().name == "MainMenu")
-        {
-            Destroy(gameObject);
-        }
+        // if(SceneManager.GetActiveScene().name == "MainMenu")
+        // {
+        //     Destroy(gameObject);
+        // }
     }
 
     public void CheckIfIsMoving()

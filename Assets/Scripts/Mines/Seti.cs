@@ -11,6 +11,7 @@ public class Seti : MonoBehaviour
     private string[] noPartituresDialog = { "Parece que no tienes la partitura necesaria", "Vuelve cuando la tengas" };
     private string[] noFluteDialog = { "Tu flauta actual no puede interpretar esta partitura, intenta mejorando tu flauta" };
     private string[] setiNormalLines = {"Estamos acampando", "Escucha los sonidos de la naturaleza", "*se escucha una rana*"};
+    private string[] sisterIsNotReady = {"Me has convencido a mi, pero mi hermana no parece convencida aun", "Habla con ella..."};
     public bool hasFinished = false;
     public bool finishedPartiture = false;
     [SerializeField] private GameObject theEntrance;
@@ -23,6 +24,7 @@ public class Seti : MonoBehaviour
     public bool notFoundFlutes = false;
     public int percentageToPass = 80;
     public bool canMove = true;
+    public bool hasShownMessage = false;
 
     // Start is called before the first frame update
 
@@ -48,10 +50,6 @@ public class Seti : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (!hasFinished)
-        // {
-        //     GetPercentage();
-        // }
         CheckIfCanPass();
     }
 
@@ -97,6 +95,16 @@ public class Seti : MonoBehaviour
                 {
                     XmlManager.instance.SaveMineEntranceState(2, true);
                 }
+            }
+        } else if(canPass && finishedPartiture && !Seti2.instance.canPass && canMove)
+        {            
+            if(!InGame.instance.dialogBox.activeInHierarchy && !hasShownMessage)
+            {
+                Debug.Log("Cambio lineas a sisterLines");
+                DialogManager.instance.ShowDialog(sisterIsNotReady);
+                DialogManager.instance.justStarted = false;
+                hasShownMessage = true;
+                this.gameObject.GetComponent<DialogActivator>().lines = sisterIsNotReady;
             }
         }
     }
@@ -152,6 +160,7 @@ public class Seti : MonoBehaviour
 
     public void SetiNormalLines(GameObject habitant)
     {
+        Debug.Log("Pongo setinormalLines");
         habitant.gameObject.GetComponent<DialogActivator>().lines = setiNormalLines;
     }
    

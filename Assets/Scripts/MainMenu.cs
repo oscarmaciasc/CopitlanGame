@@ -20,6 +20,18 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(FindObjectOfType<BalloonPlayerController>(true) != null)
+        {
+            Destroy(FindObjectOfType<BalloonPlayerController>(true).gameObject);
+            Debug.Log("Destroying Balloon");
+        }
+
+        if(FindObjectOfType<PlayerController>(true) != null)
+        {
+            Destroy(FindObjectOfType<PlayerController>(true).gameObject);
+            Debug.Log("Destroying Player");
+        }
+
         if(XmlManager.instance.CanCreateGame() == 0) {
             DeactivateNewGameButton();
         }

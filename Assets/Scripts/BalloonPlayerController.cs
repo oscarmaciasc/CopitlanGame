@@ -112,6 +112,11 @@ public class BalloonPlayerController : MonoBehaviour
                 balloonAnim.SetFloat("moveY", 0);
             }
         }
+
+        // if(SceneManager.GetActiveScene().name == "MainMenu")
+        // {
+        //     Destroy(gameObject);
+        // }
     }
 
     public void SetBounds(Vector3 botLeft, Vector3 topRight)
