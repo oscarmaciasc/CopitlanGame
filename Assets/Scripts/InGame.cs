@@ -68,7 +68,7 @@ public class InGame : MonoBehaviour
         balloon.GetComponent<BalloonPlayerController>().enabled = false;
 
         // Reference to the player
-        player = FindObjectOfType<PlayerController>().gameObject;
+        player = FindObjectOfType<PlayerController>(true).gameObject;
 
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();

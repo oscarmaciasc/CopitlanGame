@@ -39,7 +39,7 @@ public class BalloonPlayerController : MonoBehaviour
 
     void OnEnable()
     {
-        this.transform.position = FindObjectOfType<PlayerController>().transform.position;
+        this.transform.position = FindObjectOfType<PlayerController>(true).transform.position;
 
     }
 
