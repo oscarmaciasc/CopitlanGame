@@ -13,6 +13,7 @@ public class Seti2 : MonoBehaviour
     public string[] badLines = { "No me terminas de convencer, intentalo de nuevo" };
     private string[] noPartituresDialog = { "Parece que no tienes la partitura necesaria", "Vuelve cuando la tengas" };
     private string[] noFluteDialog = { "Tu flauta actual no puede interpretar esta partitura, intenta mejorando tu flauta" };
+      private string[] sisterIsNotReady = {"Me has convencido a mi, pero mi hermana no parece convencida aun", "Habla con ella..."};
     private string[] seti2NormalLines = {"Ya me aburri de estar aqui", "..."};
 
     public bool hasFinished = false;
@@ -25,6 +26,7 @@ public class Seti2 : MonoBehaviour
     
     public bool notFoundFlutes = false;
     public int percentageToPass = 80;
+    public bool hasShownMessage = false;
     public bool canMove = true;
     // Start is called before the first frame update
 
@@ -100,6 +102,16 @@ public class Seti2 : MonoBehaviour
                 {
                     XmlManager.instance.SaveMineEntranceState(2, true);
                 }
+            }
+        }  else if(canPass && finishedPartiture && !Seti.instance.canPass && canMove)
+        {            
+            if(!InGame.instance.dialogBox.activeInHierarchy && !hasShownMessage)
+            {
+                Debug.Log("Cambio lineas a sisterLines");
+                DialogManager.instance.ShowDialog(sisterIsNotReady);
+                DialogManager.instance.justStarted = false;
+                hasShownMessage = true;
+                this.gameObject.GetComponent<DialogActivator>().lines = sisterIsNotReady;
             }
         }
     }

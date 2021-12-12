@@ -19,7 +19,7 @@ public class InGame : MonoBehaviour
     [SerializeField] private Button returnArrow;
     [SerializeField] public GameObject partitureSelectionPanel;
     [SerializeField] public GameObject pentagramPanel;
-    [SerializeField] private GameObject dialogBox;
+    [SerializeField] public GameObject dialogBox;
     [SerializeField] private GameObject tecalliEntrance;
     [SerializeField] private GameObject acanEntrance;
     [SerializeField] private GameObject setiEntrance;

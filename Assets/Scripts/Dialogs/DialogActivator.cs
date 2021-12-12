@@ -17,6 +17,7 @@ public class DialogActivator : MonoBehaviour
     private string[] necalliNormalLines = { "Soy el lider de la ciudad", "Me han dicho que lo que tienes para mostrarme cambiara la vida de todos en la ciudad", "Veamos si es cierto..." };
     private string[] setiNormalLines0 = { "Estamos acampando", "Escucha los sonidos de la naturaleza", "*se escucha una rana*" };
     private string[] setiNormalLines1 = { "Ya me aburri de estar aqui", "..." };
+    private string[] notEnoughPartitures = {"Debes tener un minimo de dos partituras de dificultad media", "Vuelve cuando tengas mas"};
 
     // Start is called before the first frame update
     void Start()
@@ -69,13 +70,15 @@ public class DialogActivator : MonoBehaviour
                     ChangeDialogsLeader("partiture10", 2, necalliNormalLines, "ironFlute", "goldenFlute");
                 }
 
-                if (this.gameObject.GetComponent<Seti>() != null && lines != this.gameObject.GetComponent<Seti>().badLines)
+                if (this.gameObject.GetComponent<Seti>() != null && lines != this.gameObject.GetComponent<Seti>().badLines && !this.gameObject.GetComponent<Seti>().canPass)
                 {
+                    Debug.Log("Change Dialogs Seti");
                     ChangeDialogsSeti("partiture4", "partiture5", "partiture6", 1, setiNormalLines0, "woodenIronFlute");
                 }
 
-                if (this.gameObject.GetComponent<Seti2>() != null && lines != this.gameObject.GetComponent<Seti2>().badLines)
+                if (this.gameObject.GetComponent<Seti2>() != null && lines != this.gameObject.GetComponent<Seti2>().badLines && !this.gameObject.GetComponent<Seti2>().canPass)
                 {
+                    Debug.Log("Change Dialogs Seti");
                     ChangeDialogsSeti("partiture4", "partiture5", "partiture6", 1, setiNormalLines1, "woodenIronFlute");
                 }
 
@@ -176,6 +179,7 @@ public class DialogActivator : MonoBehaviour
 
     private void ChangeDialogsSeti(string partitureSeti1, string partitureSeti2, string partitureSeti3, int partitureDifficulty, string[] normalLines, string flute)
     {
+        Debug.Log("ChangeDialogsSeti");
         GameData gameData = new GameData();
         gameData = XmlManager.instance.LoadGame();
 
@@ -196,6 +200,7 @@ public class DialogActivator : MonoBehaviour
 
         if (setiPartituresCounter >= 2 && partitureDifficulty <= fluteDifficulty && gameData.DoesHaveFlute(flute))
         {
+            Debug.Log("SetiCounter: " + setiPartituresCounter);
             lines = normalLines;
             if (this.gameObject.name == "Seti0")
             {

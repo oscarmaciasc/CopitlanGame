@@ -9409,7 +9409,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -441503381
   m_SortingLayer: 6
-  m_SortingOrder: -1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 4508727794016004917, guid: 9da7206f2333fa3499829e173cceb8db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9483,9 +9483,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - He encontrado un antiguo pergamino en el suelo
-  - Creo que podria servirte
-  - Toma, te lo regalo
+  - La mina Acan me gusta mas que la mina Tecalli
+  - "Es mas peque\xF1a y encuentras recursos mas rapido"
   canActivate: 0
 --- !u!50 &1579323700
 Rigidbody2D:
